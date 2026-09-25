@@ -38,7 +38,8 @@ OUTPUTS (in --out)
   decisions.jsonl   one line per evaluated repo with status and reason;
                     allows interrupting and resuming the run
   selected.csv      accepted repos (SHA, stars, share, #units, description)
-  summary.json      counts per status, for the paper's selection funnel
+  summary.json      run configuration (incl. run date and last-commit
+                    cutoff) + counts per status, for the selection funnel
 
 USAGE
   # .env (same directory, never commit it):  GITHUB_TOKEN=ghp_...
@@ -46,6 +47,7 @@ USAGE
   python mine_repos.py --lang csharp --out data/csharp
   python mine_repos.py --lang java --out data/java --env-file ~/secrets/gnn.env
 """
+
 import argparse
 import csv
 import datetime as dt
@@ -84,12 +86,31 @@ LANGS = {
 }
 
 # Keywords from the protocol (+ plural forms)
-DEFAULT_KEYWORDS = {"demo", "demos", "exam", "exams", "example", "examples",
-                    "test", "tests", "sample", "samples"}
+DEFAULT_KEYWORDS = {
+    "demo",
+    "demos",
+    "exam",
+    "exams",
+    "example",
+    "examples",
+    "test",
+    "tests",
+    "sample",
+    "samples",
+}
 
 # Directories ignored when counting packages/namespaces
-SKIP_DIRS = {"test", "tests", "bin", "obj", "target", "build", "generated",
-             ".git", "node_modules"}
+SKIP_DIRS = {
+    "test",
+    "tests",
+    "bin",
+    "obj",
+    "target",
+    "build",
+    "generated",
+    ".git",
+    "node_modules",
+}
 
 
 # --------------------------------------------------------------------- utils
@@ -190,8 +211,10 @@ def search_slice(session, base_q, start, end, out):
 
 
 def collect_candidates(session, args, cfg, cutoff):
-    base_q = (f"language:{cfg['query']} stars:>={args.min_stars} "
-              f"fork:false archived:false pushed:>={cutoff.isoformat()}")
+    base_q = (
+        f"language:{cfg['query']} stars:>={args.min_stars} "
+        f"fork:false archived:false pushed:>={cutoff.isoformat()}"
+    )
     out = {}
     search_slice(session, base_q, args.created_from, args.created_to, out)
     return list(out.values())
@@ -201,7 +224,11 @@ def collect_candidates(session, args, cfg, cutoff):
 def keyword_hit(repo, keywords):
     fields = {
         "name": tokens(repo["full_name"].split("/")[1]),
-        "topics": set().union(*(tokens(t) for t in repo["topics"])) if repo["topics"] else set(),
+        "topics": (
+            set().union(*(tokens(t) for t in repo["topics"]))
+            if repo["topics"]
+            else set()
+        ),
         "description": tokens(repo["description"]),
     }
     for field, toks in fields.items():
@@ -223,8 +250,11 @@ def language_share(session, repo, linguist_name):
 
 def last_commit(session, repo):
     """(sha, ISO date) of the last commit on the default branch, via API."""
-    r = gh_get(session, f"{API}/repos/{repo['full_name']}/commits",
-               {"sha": repo["default_branch"], "per_page": 1})
+    r = gh_get(
+        session,
+        f"{API}/repos/{repo['full_name']}/commits",
+        {"sha": repo["default_branch"], "per_page": 1},
+    )
     if r.status_code != 200 or not r.json():
         return None
     c = r.json()[0]
@@ -234,12 +264,33 @@ def last_commit(session, repo):
 # --------------------------------------------- S4: clone, date, packages
 def shallow_clone(repo, dest, timeout):
     env = dict(os.environ, GIT_TERMINAL_PROMPT="0")
-    cmd = ["git", "clone", "--depth", "1", "--single-branch", "--no-tags",
-           "--quiet", "--branch", repo["default_branch"], repo["clone_url"], str(dest)]
-    subprocess.run(cmd, check=True, timeout=timeout, env=env,
-                   stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    out = subprocess.run(["git", "-C", str(dest), "log", "-1", "--format=%H %cI"],
-                         check=True, capture_output=True, text=True).stdout.split()
+    cmd = [
+        "git",
+        "clone",
+        "--depth",
+        "1",
+        "--single-branch",
+        "--no-tags",
+        "--quiet",
+        "--branch",
+        repo["default_branch"],
+        repo["clone_url"],
+        str(dest),
+    ]
+    subprocess.run(
+        cmd,
+        check=True,
+        timeout=timeout,
+        env=env,
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+    )
+    out = subprocess.run(
+        ["git", "-C", str(dest), "log", "-1", "--format=%H %cI"],
+        check=True,
+        capture_output=True,
+        text=True,
+    ).stdout.split()
     return out[0], out[1]
 
 
@@ -247,16 +298,23 @@ def count_units(root, cfg, exclude_tests):
     """Number of distinct package (Java) / namespace (C#) declarations."""
     names, n_files = set(), 0
     for dirpath, dirnames, filenames in os.walk(root):
-        dirnames[:] = [d for d in dirnames
-                       if not (exclude_tests and (d.lower() in SKIP_DIRS
-                               or d.lower().endswith((".tests", ".test"))))
-                       and d != ".git"]
+        dirnames[:] = [
+            d
+            for d in dirnames
+            if not (
+                exclude_tests
+                and (d.lower() in SKIP_DIRS or d.lower().endswith((".tests", ".test")))
+            )
+            and d != ".git"
+        ]
         for fn in filenames:
             if not fn.endswith(cfg["ext"]):
                 continue
             n_files += 1
             try:
-                with open(os.path.join(dirpath, fn), encoding="utf-8", errors="ignore") as f:
+                with open(
+                    os.path.join(dirpath, fn), encoding="utf-8", errors="ignore"
+                ) as f:
                     head = f.read(65536)
             except OSError:
                 continue
@@ -272,23 +330,36 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--lang", choices=LANGS, required=True)
     ap.add_argument("--out", type=Path, required=True)
-    ap.add_argument("--target", type=int, default=1400,
-                    help="accepted repositories (oversample: tools will fail on some)")
+    ap.add_argument(
+        "--target",
+        type=int,
+        default=1400,
+        help="accepted repositories (oversample: tools will fail on some)",
+    )
     ap.add_argument("--min-stars", type=int, default=100)
     ap.add_argument("--years", type=float, default=2.0, help="max age of last commit")
     ap.add_argument("--min-lang-share", type=float, default=0.80)
     ap.add_argument("--min-units", type=int, default=10, help="min packages/namespaces")
     ap.add_argument("--extra-keywords", nargs="*", default=[])
-    ap.add_argument("--no-exclude-tests", action="store_true",
-                    help="count packages/namespaces in test directories too")
-    ap.add_argument("--created-from", type=dt.date.fromisoformat, default=dt.date(2008, 1, 1))
+    ap.add_argument(
+        "--no-exclude-tests",
+        action="store_true",
+        help="count packages/namespaces in test directories too",
+    )
+    ap.add_argument(
+        "--created-from", type=dt.date.fromisoformat, default=dt.date(2008, 1, 1)
+    )
     ap.add_argument("--created-to", type=dt.date.fromisoformat, default=dt.date.today())
     ap.add_argument("--seed", type=int, default=42)
     ap.add_argument("--clone-timeout", type=int, default=600)
     ap.add_argument("--workers", type=int, default=8, help="parallel clones")
     ap.add_argument("--refresh", action="store_true", help="re-run the search stage")
-    ap.add_argument("--env-file", type=Path, default=Path(".env"),
-                    help="file with GITHUB_TOKEN=... (default: ./.env)")
+    ap.add_argument(
+        "--env-file",
+        type=Path,
+        default=Path(".env"),
+        help="file with GITHUB_TOKEN=... (default: ./.env)",
+    )
     args = ap.parse_args()
     load_env(args.env_file)
 
@@ -414,12 +485,17 @@ def main():
                 except Exception as e:  # never lose the whole run for one repo
                     status, info = "error_other", {"error": repr(e)[:200]}
                 if status == "accepted" and accepted >= args.target:
-                    status = "surplus"  # in-flight after target reached
+                    # in-flight when the target was reached: not recorded, so it
+                    # is re-evaluated if the run is resumed with a larger target
+                    refill()
+                    continue
                 record(repo, status, **info)
                 if status == "accepted":
                     accepted += 1
-                    log(f"[{accepted}/{args.target}] {repo['full_name']} "
-                        f"units={info['n_units']} share={info['lang_share']:.2f}")
+                    log(
+                        f"[{accepted}/{args.target}] {repo['full_name']} "
+                        f"units={info['n_units']} share={info['lang_share']:.2f}"
+                    )
                 refill()
     finally:
         dec_f.close()
@@ -429,23 +505,58 @@ def main():
     by_name = {c["full_name"]: c for c in candidates}
     with (args.out / "selected.csv").open("w", newline="") as f:
         w = csv.writer(f)
-        w.writerow(["full_name", "html_url", "default_branch", "head_sha",
-                    "head_commit_date", "stars", "lang_share", "n_units",
-                    "n_files", "description", "manual_check"])
+        w.writerow(
+            [
+                "full_name",
+                "html_url",
+                "default_branch",
+                "head_sha",
+                "head_commit_date",
+                "stars",
+                "lang_share",
+                "n_units",
+                "n_files",
+                "description",
+                "manual_check",
+            ]
+        )
         for d in done.values():
             if d["status"] != "accepted":
                 continue
             c = by_name.get(d["full_name"], {})
-            w.writerow([d["full_name"], c.get("html_url"), c.get("default_branch"),
-                        d["head_sha"], d["head_commit_date"], c.get("stars"),
-                        d["lang_share"], d["n_units"], d["n_files"],
-                        c.get("description", ""), ""])
+            w.writerow(
+                [
+                    d["full_name"],
+                    c.get("html_url"),
+                    c.get("default_branch"),
+                    d["head_sha"],
+                    d["head_commit_date"],
+                    c.get("stars"),
+                    d["lang_share"],
+                    d["n_units"],
+                    d["n_files"],
+                    c.get("description", ""),
+                    "",
+                ]
+            )
 
     counts = {}
     for d in done.values():
         counts[d["status"]] = counts.get(d["status"], 0) + 1
     counts["_candidates_S1"] = len(candidates)
-    (args.out / "summary.json").write_text(json.dumps(counts, indent=2))
+    run_config = {
+        k: (str(v) if isinstance(v, (Path, dt.date)) else v)
+        for k, v in vars(args).items()
+        if k != "env_file"
+    }
+    run_config.update(
+        run_date=dt.date.today().isoformat(),
+        last_commit_cutoff=cutoff.isoformat(),
+        keywords=sorted(keywords),
+    )
+    (args.out / "summary.json").write_text(
+        json.dumps({"config": run_config, "counts": counts}, indent=2)
+    )
     log(f"done: {json.dumps(counts)}")
     if accepted < args.target:
         log(f"WARNING: pool exhausted, only {accepted}/{args.target} accepted")
