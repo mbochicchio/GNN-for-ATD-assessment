@@ -1,0 +1,43 @@
+{
+  "config": {
+    "lang": "csharp",
+    "out": "data\\csharp",
+    "target": 1400,
+    "min_stars": 100,
+    "years": 2.0,
+    "min_lang_share": 0.8,
+    "min_units": 10,
+    "extra_keywords": [],
+    "no_exclude_tests": false,
+    "created_from": "2008-01-01",
+    "created_to": "2026-09-26",
+    "seed": 42,
+    "clone_timeout": 600,
+    "workers": 8,
+    "refresh": false,
+    "run_date": "2026-09-26",
+    "last_commit_cutoff": "2024-09-26",
+    "keywords": [
+      "demo",
+      "demos",
+      "exam",
+      "example",
+      "examples",
+      "exams",
+      "sample",
+      "samples",
+      "test",
+      "tests"
+    ]
+  },
+  "counts": {
+    "rejected_keyword": 440,
+    "rejected_units": 1048,
+    "accepted": 1400,
+    "rejected_lang_share": 505,
+    "rejected_last_commit": 96,
+    "error_clone": 58,
+    "error_other": 1,
+    "_candidates_S1": 7576
+  }
+}
