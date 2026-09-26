@@ -35,7 +35,8 @@ PIPELINE (cheapest stage first)
 
 OUTPUTS (in --out)
   candidates.jsonl  all S1 results (cache; --refresh to redo the search)
-  decisions.jsonl   one line per evaluated repo with status and reason;
+  decisions.jsonl   one line per evaluated repo with status and reason
+                    (incl. package/namespace names, for duplicate detection);
                     allows interrupting and resuming the run
   selected.csv      accepted repos (SHA, stars, share, #units, description)
   summary.json      run configuration (incl. run date and last-commit
@@ -322,7 +323,7 @@ def count_units(root, cfg, exclude_tests):
             if cfg["ext"] == ".java":
                 found = found[:1]
             names.update(found)
-    return len(names), n_files
+    return len(names), n_files, sorted(names)
 
 
 # -------------------------------------------------------------------- main
@@ -382,11 +383,11 @@ def main():
     # ---- S1
     cand_path = args.out / "candidates.jsonl"
     if cand_path.exists() and not args.refresh:
-        candidates = [json.loads(l) for l in cand_path.open()]
+        candidates = [json.loads(l) for l in cand_path.open(encoding="utf-8")]
         log(f"loaded {len(candidates)} candidates from cache")
     else:
         candidates = collect_candidates(session, args, cfg, cutoff)
-        with cand_path.open("w") as f:
+        with cand_path.open("w", encoding="utf-8") as f:
             for c in candidates:
                 f.write(json.dumps(c) + "\n")
         log(f"S1: {len(candidates)} candidates")
@@ -395,10 +396,10 @@ def main():
     dec_path = args.out / "decisions.jsonl"
     done = {}
     if dec_path.exists():
-        for l in dec_path.open():
+        for l in dec_path.open(encoding="utf-8"):
             d = json.loads(l)
             done[d["full_name"]] = d
-    dec_f = dec_path.open("a")
+    dec_f = dec_path.open("a", encoding="utf-8")
 
     def record(repo, status, **extra):
         d = {"full_name": repo["full_name"], "status": status, **extra}
@@ -452,8 +453,11 @@ def main():
         try:
             sha, commit_date = shallow_clone(repo, dest, args.clone_timeout)
             info.update(head_sha=sha, head_commit_date=commit_date)
-            n_units, n_files = count_units(dest, cfg, not args.no_exclude_tests)
-            info.update(n_units=n_units, n_files=n_files)
+            n_units, n_files, unit_names = count_units(
+                dest, cfg, not args.no_exclude_tests
+            )
+            # names kept for later near-duplicate detection (Jaccard on name sets)
+            info.update(n_units=n_units, n_files=n_files, unit_names=unit_names)
         except (subprocess.CalledProcessError, subprocess.TimeoutExpired, IndexError):
             return "error_clone", info
         finally:
@@ -503,7 +507,7 @@ def main():
 
     # ---- outputs
     by_name = {c["full_name"]: c for c in candidates}
-    with (args.out / "selected.csv").open("w", newline="") as f:
+    with (args.out / "selected.csv").open("w", newline="", encoding="utf-8-sig") as f:
         w = csv.writer(f)
         w.writerow(
             [
@@ -555,7 +559,7 @@ def main():
         keywords=sorted(keywords),
     )
     (args.out / "summary.json").write_text(
-        json.dumps({"config": run_config, "counts": counts}, indent=2)
+        json.dumps({"config": run_config, "counts": counts}, indent=2), encoding="utf-8"
     )
     log(f"done: {json.dumps(counts)}")
     if accepted < args.target:
