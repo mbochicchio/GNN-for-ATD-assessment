@@ -1,0 +1,39 @@
+{
+  "project": "DependencyCheck",
+  "n_nodes": 41,
+  "n_edges": 183,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 27,
+    "UD": 8,
+    "AI": 0,
+    "GC": 2,
+    "FC": 12,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 41,
+    "designite_packages": 41,
+    "matched": 41,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [
+      "$"
+    ],
+    "empty_container": [
+      "org.owasp.dependencycheck.ant",
+      "org",
+      "org.owasp",
+      "org.owasp.dependencycheck.data",
+      "org.owasp.dependencycheck.data.nvd",
+      "org.owasp.dependencycheck.data.update.nvd"
+    ]
+  },
+  "unknown_designite_smells": []
+}
