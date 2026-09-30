@@ -3,8 +3,9 @@
 End-to-end pipeline for the GNN-ATD dataset, one project at a time:
 
   1. CLONE     shallow fetch of the exact commit recorded in selected.csv
-               (.git removed afterwards: tools analyse the files as they are)
   2. PRUNE     test / example / demo / sample code removed (prune.py, rules R1-R4)
+               and the removal committed locally, so that HEAD = pruned code
+               whether a tool reads the working tree or the git history
   3. DESIGNITE labels   (Java: DesigniteJava.jar on the source folder;
                C#: DesigniteConsole.exe on a batch file listing every .csproj
                left after pruning, since it accepts .sln/.csproj/batch, not folders)
@@ -93,7 +94,14 @@ def run(cmd, timeout, name=None):
             subprocess.run(["docker", "rm", "-f", name], capture_output=True)
     except FileNotFoundError as e:
         ok, out = False, f"command not found: {e}"
-    return ok, round(time.time() - t0, 1), out[-2000:]
+    return ok, round(time.time() - t0, 1), clip(out)
+
+
+def clip(text, n=1500):
+    """Keep head and tail: tools often print the actual error first and a
+    long usage/help text afterwards."""
+    text = text.strip()
+    return text if len(text) <= 2 * n else f"{text[:n]}\n[...]\n{text[-n:]}"
 
 
 def safe_name(full_name):
@@ -108,12 +116,26 @@ def clone(url, sha, dest):
     for cmd in (["git", "init", "-q"],
                 ["git", "remote", "add", "origin", url],
                 ["git", "fetch", "-q", "--depth", "1", "origin", sha],
-                ["git", "checkout", "-q", "FETCH_HEAD"]):
+                ["git", "checkout", "-q", "-B", "gnn-atd", "FETCH_HEAD"]):
         p = subprocess.run(cmd, cwd=dest, env=env, timeout=900,
                            capture_output=True, text=True, errors="replace")
         if p.returncode != 0:
             raise RuntimeError(f"{' '.join(cmd[:3])}: {p.stderr.strip()[-500:]}")
-    rmtree(dest / ".git")
+
+
+def commit_pruning(repo):
+    """Commit the removal of pruned directories; return the new HEAD sha."""
+    git = ["git", "-c", "user.name=gnn-atd", "-c", "user.email=gnn-atd@localhost",
+           "-c", "commit.gpgsign=false"]
+    for cmd in (["add", "-A"],
+                ["commit", "-q", "--allow-empty", "--no-verify",
+                 "-m", "GNN-ATD: remove test/example/demo/sample code"]):
+        p = subprocess.run(git + cmd, cwd=repo, capture_output=True, text=True,
+                           errors="replace", timeout=900)
+        if p.returncode != 0:
+            raise RuntimeError(f"git {cmd[0]}: {p.stderr.strip()[-500:]}")
+    return subprocess.run(["git", "rev-parse", "HEAD"], cwd=repo, capture_output=True,
+                          text=True).stdout.strip()
 
 
 def designite_cs_batch(src, batch_path):
@@ -141,8 +163,9 @@ def arcan_cmd(lang, work_proj, name, container):
         else os.environ.get("ARCAN_LANG_CSHARP", "CSHARP")
     image = os.environ.get("ARCAN_IMAGE", "ghcr.io/arcan-tech/arcan-2-cli-trial:latest")
     return ["docker", "run", "--rm", "--name", container,
-            "-v", f"{work_proj.resolve()}:/data", image,
-            "analyse", "-i", "/data/src", "-p", name, "-o", "/data/arcan",
+            "-v", f"{(work_proj / 'src').resolve()}:/data/{name}",
+            "-v", f"{(work_proj / 'arcan').resolve()}:/out",
+            image, "analyse", "-i", f"/data/{name}", "-o", "/out",
             "--all", "-l", lang_flag, "output.writeDependencyGraph=true"]
 
 
@@ -180,10 +203,7 @@ def keep_raw(work_proj, raw_proj):
 
 
 def designite_dir(out):
-    """Locate Designite's output folder (it may write in a sub-folder).
-    Java: ArchitectureSmells.csv; C#: Designite_AnalysisSummary.csv or
-    per-project *_NamespaceMetrics.csv (ArchSmells files exist only for
-    projects with at least one smell)."""
+    """Locate Designite's output folder"""
     for pat in ("ArchitectureSmells.csv", "*AnalysisSummary.csv", "*_NamespaceMetrics.csv"):
         hit = next(iter(sorted(out.rglob(pat))), None)
         if hit:
@@ -199,7 +219,7 @@ def process(row, args):
            "failed_step": None, "times": {}, "started": dt.datetime.now().isoformat(timespec="seconds")}
 
     def fail(step, err):
-        rec.update(status="error", failed_step=step, error=err[-1500:])
+        rec.update(status="error", failed_step=step, error=clip(err))
         return rec
 
     try:
@@ -221,6 +241,10 @@ def process(row, args):
         (wp / "prune_report.json").write_text(json.dumps(rep, indent=2), encoding="utf-8")
         if rep["source_files_after"] == 0:
             return fail("prune", "no source files left after pruning")
+        try:
+            rec["pruned_commit"] = commit_pruning(wp / "src")
+        except Exception as e:  # noqa: BLE001
+            return fail("prune", f"commit of pruning failed: {e}")
 
         # 3 Designite
         (wp / "designite").mkdir(exist_ok=True)
@@ -241,7 +265,9 @@ def process(row, args):
         # 4 Arcan
         (wp / "arcan").mkdir(exist_ok=True)
         container = f"arcan-{name}".lower()[:60]
-        ok, sec, out = run(arcan_cmd(args.lang, wp, name, container), args.timeout, container)
+        acmd = arcan_cmd(args.lang, wp, name, container)
+        rec["arcan_cmd"] = " ".join(acmd)
+        ok, sec, out = run(acmd, args.timeout, container)
         rec["times"]["arcan"] = sec
         graph = find_graphml(wp / "arcan", name)
         if not ok or graph is None:
@@ -337,7 +363,7 @@ def main():
                 log(f"    ok  nodes={rec['n_nodes']} edges={rec['n_edges']} "
                     f"labels={rec['label_counts']} times={rec['times']}")
             else:
-                log(f"    ERROR at {rec['failed_step']}: {rec['error'][-300:]}")
+                log(f"    ERROR at {rec['failed_step']}: {rec['error'][:600]}")
 
     # summary
     final = {}
