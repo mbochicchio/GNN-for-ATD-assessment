@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 """
 Build the per-project dataset for the GNN-ATD framework from
-  - Arcan 2     : dependency-graph-*.graphml  (graph structure + node features)
-  - Designite   : ArchitectureSmells.csv, TypeMetrics.csv (node labels)
+  - Arcan       : dependency-graph-*.graphml  (graph structure + node features)
+  - Designite   : node labels
+                  Java: ArchitectureSmells.csv, TypeMetrics.csv
+                  C#  : Designite_<Project>_ArchSmells.csv, _NamespaceMetrics.csv,
+                        _ClassMetrics.csv (one set per analysed .csproj, merged)
 
 GRAPH  G = (V, E, F)
   V  Arcan `container` nodes (packages / namespaces), excluding
@@ -29,13 +32,15 @@ LABELS (Designite, 6 node-level smell types)
   AI  Ambiguous Interface     -> Package column
   GC  God Component           -> Package column
   FC  Feature Concentration   -> Package column
-  SF  Scattered Functionality -> Package column
+  SF  Scattered Functionality -> Package column + every component listed
+                                 as realising the same concern (Description)
   Dense Structure is reported by Designite for `<All packages>`, i.e. it is
   a project-level smell: stored as a graph-level flag, not as a node label.
 
 MASK
   label_mask = 1 if the node is also known to Designite (its package appears
-  in TypeMetrics.csv), 0 otherwise (labels unknown -> excluded from loss).
+  in TypeMetrics.csv / its namespace in *_NamespaceMetrics.csv or
+  *_ClassMetrics.csv), 0 otherwise (labels unknown -> excluded from loss).
 
 TARGET FOR RQ2
   atdi = Arcan ComponentAtdIndex (not a feature, reference score only)
@@ -74,7 +79,12 @@ SMELLS = {  # Designite name -> short code (node-level labels)
 LABELS = list(SMELLS.values())
 PROJECT_LEVEL = {"Dense Structure"}
 ALL_PACKAGES = "<All packages>"
-CYCLE_RE = re.compile(r"components in the cycle are:\s*(.*)", re.S)
+# smells involving several components: the other components are listed
+# only in the Description column
+PARTICIPANTS_RE = {
+    "CD": re.compile(r"components in the cycle are:\s*(.*)", re.S),
+    "SF": re.compile(r"components realize the same concern:\s*(.*)", re.S),
+}
 
 
 # ------------------------------------------------------------------ Arcan
@@ -153,20 +163,36 @@ def read_csv(path):
 
 
 def pkg_col(row):
-    # Java: "Package"; C# versions of Designite may use "Namespace"
+    # DesigniteJava: "Package"; Designite (C#): "Namespace"
     return (row.get("Package") or row.get("Namespace") or "").strip()
 
 
-def designite_labels(designite_dir):
-    d = Path(designite_dir)
-    smells = read_csv(d / "ArchitectureSmells.csv")
-    types = read_csv(d / "TypeMetrics.csv")
-    known = {pkg_col(r) for r in types} - {""}
+def designite_files(designite_dir):
+    """Return (smell rows, set of known packages/namespaces).
 
+    DesigniteJava : ArchitectureSmells.csv + TypeMetrics.csv (one file each)
+    Designite C#  : one file set per analysed .csproj, i.e.
+                    Designite_<Project>_ArchSmells.csv,
+                    Designite_<Project>_NamespaceMetrics.csv,
+                    Designite_<Project>_ClassMetrics.csv
+                    (no ArchSmells file when a project has no smells)."""
+    d = Path(designite_dir)
+    if (d / "ArchitectureSmells.csv").exists():
+        smells = read_csv(d / "ArchitectureSmells.csv")
+        known = {pkg_col(r) for r in read_csv(d / "TypeMetrics.csv")}
+    else:
+        smells = [r for f in sorted(d.glob("*_ArchSmells.csv")) for r in read_csv(f)]
+        known = {pkg_col(r) for pat in ("*_NamespaceMetrics.csv", "*_ClassMetrics.csv")
+                 for f in sorted(d.glob(pat)) for r in read_csv(f)}
+    return smells, known - {""}
+
+
+def designite_labels(designite_dir):
+    smells, known = designite_files(designite_dir)
     labels, project_level, unknown_smells = {}, set(), set()
     for r in smells:
         smell, pkg = r["Smell"].strip(), pkg_col(r)
-        if smell in PROJECT_LEVEL or pkg == ALL_PACKAGES:
+        if smell in PROJECT_LEVEL or pkg.startswith("<All"):
             project_level.add(smell)
             continue
         code = SMELLS.get(smell)
@@ -174,10 +200,12 @@ def designite_labels(designite_dir):
             unknown_smells.add(smell)
             continue
         targets = {pkg}
-        if code == "CD":
-            m = CYCLE_RE.search(r.get("Description", ""))
+        if code in PARTICIPANTS_RE:
+            m = PARTICIPANTS_RE[code].search(r.get("Description", ""))
             if m:
-                targets |= {p.strip().rstrip(".") for p in m.group(1).split(";") if p.strip()}
+                # list separator: ";" in DesigniteJava, "'" in Designite (C#)
+                targets |= {p.strip().rstrip(".") for p in re.split(r"[;']", m.group(1))
+                            if p.strip()}
         for p in targets:
             labels.setdefault(p, set()).add(code)
     return labels, known, project_level, unknown_smells
