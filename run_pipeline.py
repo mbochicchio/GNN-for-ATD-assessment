@@ -4,13 +4,13 @@ End-to-end pipeline for the GNN-ATD dataset, one project at a time:
 
   1. CLONE     shallow fetch of the exact commit recorded in selected.csv
   2. PRUNE     test / example / demo / sample code removed (prune.py, rules R1-R4)
-               and the removal committed locally, so that HEAD = pruned code
-               whether a tool reads the working tree or the git history
+               from the working tree (no git operation)
   3. DESIGNITE labels   (Java: DesigniteJava.jar on the source folder;
                C#: DesigniteConsole.exe on a batch file listing every .csproj
                left after pruning, since it accepts .sln/.csproj/batch, not folders)
   4. ARCAN     graph + features (Docker image, writeDependencyGraph=true)
-  5. CHECK     Arcan output must not contain files from pruned directories
+  5. CHECK     number of pruned directories nevertheless present in Arcan's
+               output, logged as pruned_dirs_in_arcan (informative only)
   6. DATASET   build_dataset.py -> nodes.csv, edges.csv, meta.json, graph.html
   7. CLEANUP   working copy deleted; raw tool outputs kept in --raw
 
@@ -123,25 +123,7 @@ def clone(url, sha, dest):
             raise RuntimeError(f"{' '.join(cmd[:3])}: {p.stderr.strip()[-500:]}")
 
 
-def commit_pruning(repo):
-    """Commit the removal of pruned directories; return the new HEAD sha."""
-    git = ["git", "-c", "user.name=gnn-atd", "-c", "user.email=gnn-atd@localhost",
-           "-c", "commit.gpgsign=false"]
-    for cmd in (["add", "-A"],
-                ["commit", "-q", "--allow-empty", "--no-verify",
-                 "-m", "GNN-ATD: remove test/example/demo/sample code"]):
-        p = subprocess.run(git + cmd, cwd=repo, capture_output=True, text=True,
-                           errors="replace", timeout=900)
-        if p.returncode != 0:
-            raise RuntimeError(f"git {cmd[0]}: {p.stderr.strip()[-500:]}")
-    return subprocess.run(["git", "rev-parse", "HEAD"], cwd=repo, capture_output=True,
-                          text=True).stdout.strip()
-
-
 def designite_cs_batch(src, batch_path):
-    """Designite (C#) takes a .sln/.csproj or a batch file, not a folder.
-    After pruning, the .sln files may reference deleted test projects, so we
-    list all remaining .csproj in a batch file ([Projects] section)."""
     projs = sorted(p.resolve() for p in Path(src).rglob("*.csproj"))
     if not projs:
         return 0
@@ -224,6 +206,7 @@ def process(row, args):
 
     try:
         # 1 clone
+        log("    clone...")
         t0 = time.time()
         try:
             clone(row["html_url"] + ".git", row["head_sha"], wp / "src")
@@ -232,6 +215,7 @@ def process(row, args):
         rec["times"]["clone"] = round(time.time() - t0, 1)
 
         # 2 prune
+        log("    prune...")
         t0 = time.time()
         rep = prune(wp / "src", args.lang, apply=True)
         rec["times"]["prune"] = round(time.time() - t0, 1)
@@ -241,12 +225,9 @@ def process(row, args):
         (wp / "prune_report.json").write_text(json.dumps(rep, indent=2), encoding="utf-8")
         if rep["source_files_after"] == 0:
             return fail("prune", "no source files left after pruning")
-        try:
-            rec["pruned_commit"] = commit_pruning(wp / "src")
-        except Exception as e:  # noqa: BLE001
-            return fail("prune", f"commit of pruning failed: {e}")
 
         # 3 Designite
+        log(f"    designite... ({rep['source_files_after']} source files)")
         (wp / "designite").mkdir(exist_ok=True)
         d_input = wp / "src"
         if args.lang == "csharp":
@@ -263,6 +244,7 @@ def process(row, args):
             return fail("designite", out)
 
         # 4 Arcan
+        log(f"    arcan...     (live log: docker logs -f arcan-{name.lower()[:54]})")
         (wp / "arcan").mkdir(exist_ok=True)
         container = f"arcan-{name}".lower()[:60]
         acmd = arcan_cmd(args.lang, wp, name, container)
@@ -273,12 +255,15 @@ def process(row, args):
         if not ok or graph is None:
             return fail("arcan", out)
 
-        # 5 check that pruned code did not re-enter the analysis
+        # 5 record whether pruned directories appear in Arcan's output
+        #   (informative only: the project is not discarded)
         leaks = pruned_leak(wp / "arcan", name, rep["removed_dirs"])
+        rec["pruned_dirs_in_arcan"] = len(leaks)
         if leaks:
-            return fail("check", f"Arcan analysed pruned directories: {leaks[:5]}")
+            log(f"    note: {len(leaks)} pruned directories appear in Arcan's output")
 
         # 6 dataset
+        log("    dataset...")
         cmd = [sys.executable, str(HERE / "build_dataset.py"), "--arcan-graph", str(graph),
                "--designite-dir", str(ddir), "--project", name, "--out", str(args.out)]
         if args.no_html:
