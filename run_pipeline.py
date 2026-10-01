@@ -2,7 +2,8 @@
 """
 End-to-end pipeline for the GNN-ATD dataset, one project at a time:
 
-  1. CLONE     shallow fetch of the exact commit recorded in selected.csv
+  1. CLONE     shallow fetch of the exact commit recorded in selected.csv,
+               checked out on the local branch gnn-atd (.git is kept)
   2. PRUNE     test / example / demo / sample code removed (prune.py, rules R1-R4)
                from the working tree (no git operation)
   3. DESIGNITE labels   (Java: DesigniteJava.jar on the source folder;
@@ -26,6 +27,13 @@ CONFIGURATION (.env next to this script, or environment variables)
   ARCAN_IMAGE          default: ghcr.io/arcan-tech/arcan-2-cli-trial:latest
   ARCAN_LANG_JAVA      default: JAVA
   ARCAN_LANG_CSHARP    default: CSHARP   (check with: arcan analyse -h)
+  ARCAN_JAVA_OPTS      optional JVM options for Arcan, e.g. -Xmx10g
+                       (default heap: 1/4 of the memory available to Docker)
+
+TIMEOUT
+  Each tool is stopped after --timeout seconds (default 1800 = 30 min);
+  the project is logged with failed_step designite_timeout / arcan_timeout
+  and excluded (exclusion criterion to be reported in the selection funnel).
 
 Usage
   python run_pipeline.py --lang java --selected data/java/selected.csv --n 50 --work D:/gnn_work --raw data/raw/java --out data/dataset/java
@@ -89,8 +97,11 @@ def run(cmd, timeout, name=None):
         ok, out = p.returncode == 0, (p.stdout + p.stderr)
     except subprocess.TimeoutExpired as e:
         ok, out = False, f"TIMEOUT after {timeout}s\n{e.stdout or ''}{e.stderr or ''}"
-        if name:  # stop the orphan container
-            subprocess.run(["docker", "rm", "-f", name], capture_output=True)
+        if name:  # stop the orphan container (best effort)
+            try:
+                subprocess.run(["docker", "rm", "-f", name], capture_output=True, timeout=120)
+            except (OSError, subprocess.SubprocessError):
+                pass
     except FileNotFoundError as e:
         ok, out = False, f"command not found: {e}"
     return ok, round(time.time() - t0, 1), clip(out)
@@ -143,7 +154,9 @@ def arcan_cmd(lang, work_proj, name, container):
     lang_flag = os.environ.get("ARCAN_LANG_JAVA", "JAVA") if lang == "java" \
         else os.environ.get("ARCAN_LANG_CSHARP", "CSHARP")
     image = os.environ.get("ARCAN_IMAGE", "ghcr.io/arcan-tech/arcan-2-cli-trial:latest")
-    return ["docker", "run", "--rm", "--name", container,
+    java_opts = os.environ.get("ARCAN_JAVA_OPTS", "").strip()
+    env = ["-e", f"JAVA_TOOL_OPTIONS={java_opts}"] if java_opts else []
+    return ["docker", "run", "--rm", "--name", container, *env,
             "-v", f"{(work_proj / 'src').resolve()}:/data/{name}",
             "-v", f"{(work_proj / 'arcan').resolve()}:/out",
             image, "analyse", "-i", f"/data/{name}", "-o", "/out",
@@ -184,7 +197,6 @@ def keep_raw(work_proj, raw_proj):
 
 
 def designite_dir(out):
-    """Locate Designite's output folder"""
     for pat in ("ArchitectureSmells.csv", "*AnalysisSummary.csv", "*_NamespaceMetrics.csv"):
         hit = next(iter(sorted(out.rglob(pat))), None)
         if hit:
@@ -240,7 +252,7 @@ def process(row, args):
         rec["times"]["designite"] = sec
         ddir = designite_dir(wp / "designite")
         if not ok or ddir is None:
-            return fail("designite", out)
+            return fail("designite_timeout" if out.startswith("TIMEOUT") else "designite", out)
 
         # 4 Arcan
         log(f"    arcan...     (live log: docker logs -f arcan-{name.lower()[:54]})")
@@ -252,7 +264,7 @@ def process(row, args):
         rec["times"]["arcan"] = sec
         graph = find_graphml(wp / "arcan", name)
         if not ok or graph is None:
-            return fail("arcan", out)
+            return fail("arcan_timeout" if out.startswith("TIMEOUT") else "arcan", out)
 
         # 5 record whether pruned directories appear in Arcan's output
         #   (informative only: the project is not discarded)
@@ -295,7 +307,9 @@ def main():
     ap.add_argument("--n", type=int, help="random sample size (pilot); default: all")
     ap.add_argument("--seed", type=int, default=42)
     ap.add_argument("--only", nargs="*", help="process only these full_names (debug)")
-    ap.add_argument("--timeout", type=int, default=3600, help="per tool, seconds")
+    ap.add_argument("--timeout", type=int, default=1800,
+                    help="per tool, seconds (default 30 min); projects exceeding it are "
+                         "logged as <tool>_timeout and excluded")
     ap.add_argument("--no-html", action="store_true")
     ap.add_argument("--no-raw", action="store_true", help="do not keep raw tool outputs")
     ap.add_argument("--keep-work", action="store_true", help="keep working copies (debug)")
