@@ -28,8 +28,7 @@ CONFIGURATION (.env next to this script, or environment variables)
   ARCAN_LANG_CSHARP    default: CSHARP   (check with: arcan analyse -h)
 
 Usage
-  python run_pipeline.py --lang java --selected data/java/selected.csv \\
-      --n 50 --work D:/gnn_work --raw data/raw/java --out data/dataset/java
+  python run_pipeline.py --lang java --selected data/java/selected.csv --n 50 --work D:/gnn_work --raw data/raw/java --out data/dataset/java
 """
 import argparse
 import csv
