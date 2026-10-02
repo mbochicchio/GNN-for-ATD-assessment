@@ -275,7 +275,7 @@ def process(row, args):
 
         # 6 dataset
         log("    dataset...")
-        cmd = [sys.executable, str(HERE / "build_dataset.py"), "--arcan-graph", str(graph),
+        cmd = [sys.executable, str(HERE / "graph_builder.py"), "--arcan-graph", str(graph),
                "--designite-dir", str(ddir), "--project", name, "--out", str(args.out)]
         if args.no_html:
             cmd.append("--no-html")
