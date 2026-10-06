@@ -385,7 +385,8 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# Pipeline trials
+# Pipeline trials & pilot
 data/trial
+data/pilot
 
 # End of https://www.toptal.com/developers/gitignore/api/python,java,windows,macos,linux,intellij
