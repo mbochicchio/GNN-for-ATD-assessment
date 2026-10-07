@@ -12,7 +12,7 @@ End-to-end pipeline for the GNN-ATD dataset, one project at a time:
   4. ARCAN     graph + features (Docker image, writeDependencyGraph=true)
   5. CHECK     number of pruned directories nevertheless present in Arcan's
                output, logged as pruned_dirs_in_arcan (informative only)
-  6. DATASET   build_dataset.py -> nodes.csv, edges.csv, meta.json, graph.html
+  6. DATASET   graph_builder.py -> nodes.csv, edges.csv, meta.json, graph.html
   7. CLEANUP   working copy deleted; raw tool outputs kept in --raw
 
 Every project gets one line in <out>/pipeline_log.jsonl (status, failing
@@ -362,7 +362,7 @@ def process(row, args):
         log("    dataset...")
         cmd = [
             sys.executable,
-            str(HERE / "build_dataset.py"),
+            str(HERE / "graph_builder.py"),
             "--arcan-graph",
             str(graph),
             "--designite-dir",
