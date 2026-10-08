@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
 Feasibility pilot: can a GNN learn Designite's architectural-smell labels from
-Arcan's package dependency graph better than models that ignore the graph?
+Arcan's package dependency graph better than models that use only node-level
+features (i.e. no information about the neighbours)?
 
 DATA       one folder per project produced by build_dataset.py
            (nodes.csv, edges.csv); nodes with label_mask = 0 are excluded
@@ -9,22 +10,29 @@ DATA       one folder per project produced by build_dataset.py
            in the whole dataset are dropped (and reported).
 FEATURES   Ab, In, D, FI, FO, LOC, PR; log1p on FI, FO, LOC; standardisation
            fitted on the training projects only.
-GRAPH      dependency edges made undirected (each edge in both directions).
+GRAPH      directed dependency edges: u -> v means "package u depends on v".
 SPLIT      project level, 60/20/20 (train/val/test), repeated on --splits
            random splits (seeds --seed, --seed+1, ...) to estimate variance.
 
 MODELS
-  graphsage  2 GraphSAGE layers (mean aggregator over the full neighbourhood,
-             h' = ReLU(W [h || mean_{u in N(v)} h_u]), no sampling: graphs are
-             small) + one linear head per smell type (sigmoid output)
-  mlp        same architecture without neighbourhood aggregation
+  graphsage  2 directed GraphSAGE layers: out- and in-neighbours aggregated
+             separately with the mean aggregator,
+             h' = ReLU(W [h || mean_{u in N_out(v)} h_u || mean_{u in N_in(v)} h_u])
+             (N_out: packages v depends on; N_in: packages depending on v;
+             full neighbourhood, no sampling: graphs are small)
+             + one linear head per smell type (sigmoid output)
+  mlp        same architecture without neighbourhood aggregation: each node is
+             classified from its own 7 features only (no edges as input)
   rf         Random Forest per smell type (class_weight=balanced)
   GraphSAGE and MLP: weighted binary cross-entropy (pos_weight = neg/pos per
   smell on the training nodes), Adam, early stopping on validation macro PR-AUC.
 
-METRICS    per smell type on the test projects: precision, recall, F1
-           (threshold 0.5) and PR-AUC (average precision); macro average over
-           smell types with at least one positive test node.
+METRICS    per smell type on the pooled test nodes (label_mask = 1): precision,
+           recall, F1 (threshold 0.5) and PR-AUC (average precision). In a split
+           where a smell type has no positive test node, its metrics are undefined
+           (NaN) and excluded. Macro average: unweighted mean over smell types per
+           split, then mean ± std over splits; also reported without smell types
+           having fewer than --min-positives positive nodes in the dataset.
 
 OUTPUT (in --out)
   results.csv         split x model x smell metrics
@@ -35,6 +43,7 @@ OUTPUT (in --out)
 Usage
   python train_pilot.py --data data/pilot/java --out results/pilot_java
 """
+
 import argparse
 import json
 import random
@@ -59,7 +68,9 @@ def load_projects(root):
     for d in sorted(Path(root).iterdir()):
         if not (d / "nodes.csv").exists() or not (d / "edges.csv").exists():
             continue
-        nodes = pd.read_csv(d / "nodes.csv").sort_values("node_id").reset_index(drop=True)
+        nodes = (
+            pd.read_csv(d / "nodes.csv").sort_values("node_id").reset_index(drop=True)
+        )
         if len(nodes) < 2:
             continue
         edges = pd.read_csv(d / "edges.csv")
@@ -67,11 +78,11 @@ def load_projects(root):
     return projects
 
 
-def undirected_edge_index(edges, n):
+def directed_edge_index(edges, n):
+    """Edges as (src, dst) = (dependant, dependee); duplicates and self-loops removed."""
     if len(edges) == 0:
         return np.zeros((2, 0), dtype=np.int64)
-    src, dst = edges["src"].to_numpy(), edges["dst"].to_numpy()
-    e = np.unique(np.stack([np.concatenate([src, dst]), np.concatenate([dst, src])], 1), axis=0)
+    e = np.unique(edges[["src", "dst"]].to_numpy(), axis=0)
     e = e[e[:, 0] != e[:, 1]]
     assert e.max() < n
     return e.T.astype(np.int64)
@@ -93,28 +104,41 @@ def merge(projects, labels, mean, std):
         xs.append((raw_features(p["nodes"]) - mean) / std)
         ys.append(p["nodes"][labels].to_numpy(dtype=np.float32))
         ms.append(p["nodes"]["label_mask"].to_numpy(dtype=bool))
-        es.append(undirected_edge_index(p["edges"], n) + off)
+        es.append(directed_edge_index(p["edges"], n) + off)
         off += n
-    return (torch.tensor(np.concatenate(xs), dtype=torch.float32),
-            torch.tensor(np.concatenate(es, 1), dtype=torch.long),
-            torch.tensor(np.concatenate(ys)),
-            torch.tensor(np.concatenate(ms)))
+    return (
+        torch.tensor(np.concatenate(xs), dtype=torch.float32),
+        torch.tensor(np.concatenate(es, 1), dtype=torch.long),
+        torch.tensor(np.concatenate(ys)),
+        torch.tensor(np.concatenate(ms)),
+    )
 
 
 # ----------------------------------------------------------------- models
-class SAGELayer(nn.Module):
-    """GraphSAGE layer, mean aggregator: h' = W [h || mean_{u in N(v)} h_u]."""
+def mean_aggregate(x, index_from, index_to):
+    """Mean of x[index_from] grouped by index_to (zero for nodes without neighbours)."""
+    agg = torch.zeros_like(x).index_add_(0, index_to, x[index_from])
+    deg = (
+        torch.zeros(x.size(0), device=x.device)
+        .index_add_(0, index_to, torch.ones(index_to.numel(), device=x.device))
+        .clamp(min=1)
+    )
+    return agg / deg.unsqueeze(1)
+
+
+class DirectedSAGELayer(nn.Module):
+    """Directed GraphSAGE layer (mean aggregator), edges u -> v = u depends on v:
+    h' = W [h || mean over out-neighbours || mean over in-neighbours]."""
 
     def __init__(self, d_in, d_out):
         super().__init__()
-        self.lin = nn.Linear(2 * d_in, d_out)
+        self.lin = nn.Linear(3 * d_in, d_out)
 
     def forward(self, x, edge_index):
         src, dst = edge_index
-        agg = torch.zeros_like(x).index_add_(0, dst, x[src])
-        deg = torch.zeros(x.size(0), device=x.device).index_add_(
-            0, dst, torch.ones(dst.numel(), device=x.device)).clamp(min=1)
-        return self.lin(torch.cat([x, agg / deg.unsqueeze(1)], 1))
+        out_mean = mean_aggregate(x, dst, src)  # for each v: packages v depends on
+        in_mean = mean_aggregate(x, src, dst)  # for each v: packages depending on v
+        return self.lin(torch.cat([x, out_mean, in_mean], 1))
 
 
 class Net(nn.Module):
@@ -125,7 +149,9 @@ class Net(nn.Module):
         super().__init__()
         self.graph = graph
         if graph:
-            self.l1, self.l2 = SAGELayer(d_in, hidden), SAGELayer(hidden, hidden)
+            self.l1, self.l2 = DirectedSAGELayer(d_in, hidden), DirectedSAGELayer(
+                hidden, hidden
+            )
         else:
             self.l1, self.l2 = nn.Linear(d_in, hidden), nn.Linear(hidden, hidden)
         self.heads = nn.Linear(hidden, n_labels)
@@ -154,7 +180,9 @@ def train_nn(graph, tr, va, n_labels, args, seed):
     torch.manual_seed(seed)
     x, ei, y, m = tr
     model = Net(x.size(1), args.hidden, n_labels, args.dropout, graph=graph)
-    opt = torch.optim.Adam(model.parameters(), lr=args.lr, weight_decay=args.weight_decay)
+    opt = torch.optim.Adam(
+        model.parameters(), lr=args.lr, weight_decay=args.weight_decay
+    )
     ym = y[m]
     pos = ym.sum(0)
     pos_weight = ((ym.size(0) - pos) / pos.clamp(min=1)).clamp(max=args.max_pos_weight)
@@ -189,11 +217,25 @@ def evaluate(y, p, m, labels):
     for k, lab in enumerate(labels):
         yk, pk = y[m, k], p[m, k]
         n_pos = int(yk.sum())
-        pr, rc, f1, _ = precision_recall_fscore_support(
-            yk, (pk >= 0.5).astype(int), average="binary", zero_division=0)
-        rows.append({"smell": lab, "n_test": int(m.sum()), "n_pos_test": n_pos,
-                     "precision": pr, "recall": rc, "f1": f1,
-                     "pr_auc": average_precision_score(yk, pk) if n_pos > 0 else np.nan})
+        if n_pos == 0:
+            # no positive test node: metrics undefined (NaN), excluded from all averages
+            pr = rc = f1 = ap = np.nan
+        else:
+            pr, rc, f1, _ = precision_recall_fscore_support(
+                yk, (pk >= 0.5).astype(int), average="binary", zero_division=0
+            )
+            ap = average_precision_score(yk, pk)
+        rows.append(
+            {
+                "smell": lab,
+                "n_test": int(m.sum()),
+                "n_pos_test": n_pos,
+                "precision": pr,
+                "recall": rc,
+                "f1": f1,
+                "pr_auc": ap,
+            }
+        )
     return rows
 
 
@@ -212,12 +254,21 @@ def main():
     ap.add_argument("--patience", type=int, default=50)
     ap.add_argument("--max-pos-weight", type=float, default=100.0)
     ap.add_argument("--rf-trees", type=int, default=300)
+    ap.add_argument(
+        "--min-positives",
+        type=int,
+        default=30,
+        help="smell types with fewer positive nodes in the dataset are also "
+        "reported separately (macro average without them)",
+    )
     args = ap.parse_args()
     args.out.mkdir(parents=True, exist_ok=True)
 
     projects = load_projects(args.data)
     if len(projects) < 5:
-        sys.exit(f"Only {len(projects)} projects found in {args.data}: at least 5 are needed.")
+        sys.exit(
+            f"Only {len(projects)} projects found in {args.data}: at least 5 are needed."
+        )
 
     # smell types with at least one positive (masked) node in the dataset
     allnodes = pd.concat([p["nodes"] for p in projects])
@@ -228,18 +279,56 @@ def main():
         "projects": len(projects),
         "nodes": int(sum(len(p["nodes"]) for p in projects)),
         "edges": int(sum(len(p["edges"]) for p in projects)),
-        "nodes_per_project": {"min": int(min(len(p["nodes"]) for p in projects)),
-                              "median": float(np.median([len(p["nodes"]) for p in projects])),
-                              "max": int(max(len(p["nodes"]) for p in projects))},
-        "prevalence": {lab: round(float(allnodes[lab].mean()), 4) for lab in ALL_LABELS},
+        "nodes_per_project": {
+            "min": int(min(len(p["nodes"]) for p in projects)),
+            "median": float(np.median([len(p["nodes"]) for p in projects])),
+            "max": int(max(len(p["nodes"]) for p in projects)),
+        },
+        "labelled_nodes": int(len(allnodes)),
+        "smell_counts": {lab: int(allnodes[lab].sum()) for lab in ALL_LABELS},
+        "projects_with_smell": {
+            lab: int(
+                sum(
+                    int(
+                        ((p["nodes"]["label_mask"] == 1) & (p["nodes"][lab] == 1)).any()
+                    )
+                    for p in projects
+                )
+            )
+            for lab in ALL_LABELS
+        },
+        "smelly_nodes": int((allnodes[ALL_LABELS].sum(axis=1) > 0).sum()),
+        "prevalence": {
+            lab: round(float(allnodes[lab].mean()), 4) for lab in ALL_LABELS
+        },
         "labels_used": labels,
         "labels_dropped_no_positives": dropped,
     }
-    (args.out / "dataset_stats.json").write_text(json.dumps(stats, indent=2), encoding="utf-8")
-    (args.out / "config.json").write_text(json.dumps({k: str(v) for k, v in vars(args).items()},
-                                                     indent=2), encoding="utf-8")
-    print(f"{len(projects)} projects, {stats['nodes']} nodes; labels: {labels}"
-          + (f"; dropped (no positives): {dropped}" if dropped else ""))
+    (args.out / "dataset_stats.json").write_text(
+        json.dumps(stats, indent=2), encoding="utf-8"
+    )
+    (args.out / "config.json").write_text(
+        json.dumps({k: str(v) for k, v in vars(args).items()}, indent=2),
+        encoding="utf-8",
+    )
+    print(
+        f"{len(projects)} projects, {stats['nodes']} nodes ({stats['labelled_nodes']} labelled), "
+        f"{stats['edges']} edges"
+    )
+    print(
+        f"smell-affected nodes: {stats['smelly_nodes']} "
+        f"({stats['smelly_nodes'] / max(stats['labelled_nodes'], 1):.1%})"
+    )
+    print(f"{'smell':<6}{'nodes':>8}{'prevalence':>12}{'projects':>10}")
+    for lab in ALL_LABELS:
+        print(
+            f"{lab:<6}{stats['smell_counts'][lab]:>8}{stats['prevalence'][lab]:>12.1%}"
+            f"{stats['projects_with_smell'][lab]:>7}/{len(projects)}"
+        )
+    print(
+        f"labels used: {labels}"
+        + (f"; dropped (no positives): {dropped}" if dropped else "")
+    )
 
     results = []
     for s in range(args.splits):
@@ -250,8 +339,8 @@ def main():
         random.Random(seed).shuffle(idx)
         n_tr, n_va = round(0.6 * len(idx)), round(0.2 * len(idx))
         tr_p = [projects[i] for i in idx[:n_tr]]
-        va_p = [projects[i] for i in idx[n_tr:n_tr + n_va]]
-        te_p = [projects[i] for i in idx[n_tr + n_va:]]
+        va_p = [projects[i] for i in idx[n_tr : n_tr + n_va]]
+        te_p = [projects[i] for i in idx[n_tr + n_va :]]
 
         xr = np.concatenate([raw_features(p["nodes"]) for p in tr_p])
         mean, std = xr.mean(0), xr.std(0)
@@ -274,36 +363,96 @@ def main():
             yk = y_tr[m_tr, k]
             if yk.sum() == 0:
                 continue  # no positive training node: predict 0
-            rf = RandomForestClassifier(n_estimators=args.rf_trees, class_weight="balanced",
-                                        random_state=seed, n_jobs=-1)
+            rf = RandomForestClassifier(
+                n_estimators=args.rf_trees,
+                class_weight="balanced",
+                random_state=seed,
+                n_jobs=-1,
+            )
             rf.fit(x_tr[m_tr], yk)
             p[:, k] = rf.predict_proba(te[0].numpy())[:, 1]
         for r in evaluate(y_te, p, m_te, labels):
             results.append({"split": s, "model": "rf", **r})
 
         sp = pd.DataFrame([r for r in results if r["split"] == s])
-        print(f"split {s}: train {len(tr_p)} / val {len(va_p)} / test {len(te_p)} projects | "
-              + " | ".join(f"{mdl} F1 {g['f1'].mean():.3f} PR-AUC {g['pr_auc'].mean():.3f}"
-                           for mdl, g in sp.groupby("model", sort=False)))
+        print(
+            f"split {s}: train {len(tr_p)} / val {len(va_p)} / test {len(te_p)} projects | "
+            + " | ".join(
+                f"{mdl} F1 {g['f1'].mean():.3f} PR-AUC {g['pr_auc'].mean():.3f}"
+                for mdl, g in sp.groupby("model", sort=False)
+            )
+        )
 
     df = pd.DataFrame(results)
     df.to_csv(args.out / "results.csv", index=False)
-    summ = (df.groupby(["model", "smell"])[["precision", "recall", "f1", "pr_auc"]]
-            .agg(["mean", "std"]).round(3))
+    summ = (
+        df.groupby(["model", "smell"])[["precision", "recall", "f1", "pr_auc"]]
+        .agg(["mean", "std"])
+        .round(3)
+    )
     summ.to_csv(args.out / "summary.csv")
 
-    macro = (df.groupby(["model", "split"])[["precision", "recall", "f1", "pr_auc"]].mean()
-             .groupby("model").agg(["mean", "std"]).round(3))
-    order = [m for m in ("graphsage", "mlp", "rf") if m in macro.index]
-    print("\nMacro average over smell types (mean ± std over splits)")
-    print(f"{'model':<10}" + "".join(f"{c:>18}" for c in ("precision", "recall", "f1", "pr_auc")))
-    for mdl in order:
-        print(f"{mdl:<10}" + "".join(
-            f"{macro.loc[mdl, (c, 'mean')]:>11.3f} ± {macro.loc[mdl, (c, 'std')]:.3f}"
-            for c in ("precision", "recall", "f1", "pr_auc")))
-    print("\nF1 per smell type (mean over splits)")
-    f1 = df.groupby(["smell", "model"])["f1"].mean().unstack()[order].round(3)
-    print(f1.reindex(labels).to_string())
+    metrics = ["precision", "recall", "f1", "pr_auc"]
+    order = [m for m in ("graphsage", "mlp", "rf") if m in set(df["model"])]
+
+    def print_macro(frame, title):
+        # per split: unweighted mean over smell types with >= 1 positive test node
+        # (NaN rows skipped); then mean and std over splits
+        macro = (
+            frame.groupby(["model", "split"])[metrics]
+            .mean()
+            .groupby("model")
+            .agg(["mean", "std"])
+        )
+        print(f"\n{title}")
+        print(f"{'model':<10}" + "".join(f"{c:>18}" for c in metrics))
+        for mdl in order:
+            print(
+                f"{mdl:<10}"
+                + "".join(
+                    f"{macro.loc[mdl, (c, 'mean')]:>11.3f} ± {macro.loc[mdl, (c, 'std')]:.3f}"
+                    for c in metrics
+                )
+            )
+
+    print_macro(
+        df,
+        "Macro average over smell types (mean ± std over splits; "
+        "smell types without positive test nodes excluded per split)",
+    )
+    rare = [lab for lab in labels if stats["smell_counts"][lab] < args.min_positives]
+    if rare and len(rare) < len(labels):
+        print_macro(
+            df[~df["smell"].isin(rare)],
+            f"Macro average without rare smell types {rare} "
+            f"(< {args.min_positives} positive nodes in the dataset)",
+        )
+
+    for c in ("f1", "pr_auc"):
+        tab = df.groupby(["smell", "model"])[c].agg(["mean", "std"])
+        print(
+            f"\n{c.upper()} per smell type (mean ± std over splits with positive test nodes)"
+        )
+        print(
+            f"{'smell':<6}{'prev.':>7}{'splits':>8}"
+            + "".join(f"{m:>17}" for m in order)
+        )
+        for lab in labels:
+            n_spl = int(
+                df[(df["smell"] == lab) & (df["model"] == order[0])][c].notna().sum()
+            )
+            cells = "".join(
+                (
+                    f"{tab.loc[(lab, m), 'mean']:>10.3f} ± {tab.loc[(lab, m), 'std']:.3f}"
+                    if n_spl
+                    else f"{'n/a':>17}"
+                )
+                for m in order
+            )
+            print(
+                f"{lab:<6}{stats['prevalence'][lab]:>7.1%}{n_spl:>5}/{args.splits}{cells}"
+            )
+    print("(prev. = prevalence = PR-AUC of a random classifier)")
     print(f"\nwritten {args.out / 'results.csv'}, {args.out / 'summary.csv'}")
 
 
