@@ -40,8 +40,17 @@ OUTPUT (in --out)
   dataset_stats.json  projects, nodes, edges, prevalence per smell
   config.json         all parameters, for reproducibility
 
+MLFLOW (optional, --mlflow)
+  One parent run per execution (all parameters, dataset statistics, output
+  files) with one nested run per model (metrics per smell type and macro
+  averages, mean and std over splits; per-split values logged as steps).
+  Default store: local SQLite file mlflow.db + artifacts in mlartifacts/.
+  View with:  mlflow ui --backend-store-uri sqlite:///mlflow.db
+
 Usage
   python train_pilot.py --data data/pilot/java --out results/pilot_java
+  python train_pilot.py --data data/pilot/java --out results/pilot_java_150 \
+      --mlflow --run-name directed-150
 """
 
 import argparse
@@ -239,6 +248,114 @@ def evaluate(y, p, m, labels):
     return rows
 
 
+# ----------------------------------------------------------------- MLflow
+METRICS = ["precision", "recall", "f1", "pr_auc"]
+
+
+def _finite(v):
+    return v is not None and not (isinstance(v, float) and np.isnan(v))
+
+
+def log_to_mlflow(args, stats, df, labels, rare, order):
+    """One parent run per execution (parameters, dataset statistics, output
+    files) and one nested run per model (metrics per smell type and macro
+    averages: mean and std over splits, plus per-split values as steps)."""
+    try:
+        import mlflow
+    except ImportError:
+        sys.exit("--mlflow requires MLflow: pip install mlflow")
+
+    mlflow.set_tracking_uri(args.tracking_uri)
+    exp = mlflow.get_experiment_by_name(args.experiment)
+    if exp is None:  # local artifact store next to the database
+        Path(args.artifact_root).mkdir(parents=True, exist_ok=True)
+        exp_id = mlflow.create_experiment(
+            args.experiment,
+            artifact_location=Path(args.artifact_root).resolve().as_uri(),
+        )
+    else:
+        exp_id = exp.experiment_id
+
+    params = {
+        k: str(v)
+        for k, v in vars(args).items()
+        if k
+        not in ("mlflow", "tracking_uri", "artifact_root", "experiment", "run_name")
+    }
+    params.update(
+        graph="directed",
+        labels_used=",".join(labels),
+        labels_dropped=",".join(stats["labels_dropped_no_positives"]) or "-",
+        rare_labels=",".join(rare) or "-",
+    )
+    with mlflow.start_run(experiment_id=exp_id, run_name=args.run_name) as parent:
+        mlflow.log_params(params)
+        mlflow.log_metrics(
+            {
+                "n_projects": stats["projects"],
+                "n_nodes": stats["nodes"],
+                "n_labelled_nodes": stats["labelled_nodes"],
+                "n_edges": stats["edges"],
+                "n_smelly_nodes": stats["smelly_nodes"],
+            }
+        )
+        mlflow.log_metrics(
+            {f"count_{lab}": stats["smell_counts"][lab] for lab in ALL_LABELS}
+        )
+        mlflow.log_metrics(
+            {f"prevalence_{lab}": stats["prevalence"][lab] for lab in ALL_LABELS}
+        )
+        for f in ("results.csv", "summary.csv", "dataset_stats.json", "config.json"):
+            if (args.out / f).exists():
+                mlflow.log_artifact(str(args.out / f))
+
+        for mdl in order:
+            d = df[df["model"] == mdl]
+            with mlflow.start_run(experiment_id=exp_id, run_name=mdl, nested=True):
+                mlflow.log_params(
+                    {
+                        "model": mdl,
+                        "graph": "directed" if mdl == "graphsage" else "none",
+                    }
+                )
+                m = {}
+                for lab in labels:
+                    dl = d[d["smell"] == lab]
+                    for c in METRICS:
+                        vals = dl[c].dropna()
+                        if len(vals):
+                            m[f"{c}_{lab}"] = float(vals.mean())
+                            m[f"{c}_{lab}_std"] = (
+                                float(vals.std(ddof=1)) if len(vals) > 1 else 0.0
+                            )
+                        for _, r in dl.iterrows():  # per-split values (step = split)
+                            if _finite(r[c]):
+                                mlflow.log_metric(
+                                    f"split_{c}_{lab}",
+                                    float(r[c]),
+                                    step=int(r["split"]),
+                                )
+                for name, frame in (
+                    ("macro", d),
+                    ("macro_norare", d[~d["smell"].isin(rare)]),
+                ):
+                    if name == "macro_norare" and not rare:
+                        continue
+                    per_split = frame.groupby("split")[METRICS].mean()
+                    for c in METRICS:
+                        vals = per_split[c].dropna()
+                        if len(vals):
+                            m[f"{name}_{c}"] = float(vals.mean())
+                            m[f"{name}_{c}_std"] = (
+                                float(vals.std(ddof=1)) if len(vals) > 1 else 0.0
+                            )
+                mlflow.log_metrics(m)
+        print(
+            f"MLflow: run '{parent.info.run_name}' logged in experiment '{args.experiment}' "
+            f"({args.tracking_uri})"
+        )
+
+
 # ------------------------------------------------------------------- main
 def main():
     ap = argparse.ArgumentParser()
@@ -254,6 +371,23 @@ def main():
     ap.add_argument("--patience", type=int, default=50)
     ap.add_argument("--max-pos-weight", type=float, default=100.0)
     ap.add_argument("--rf-trees", type=int, default=300)
+    ap.add_argument("--mlflow", action="store_true", help="log the run to MLflow")
+    ap.add_argument(
+        "--experiment", default="gnn-atd-pilot", help="MLflow experiment name"
+    )
+    ap.add_argument(
+        "--run-name", default=None, help="MLflow run name (e.g. directed-150)"
+    )
+    ap.add_argument(
+        "--tracking-uri",
+        default="sqlite:///mlflow.db",
+        help="MLflow backend store (default: local SQLite file)",
+    )
+    ap.add_argument(
+        "--artifact-root",
+        default="mlartifacts",
+        help="local folder for MLflow artifacts of new experiments",
+    )
     ap.add_argument(
         "--min-positives",
         type=int,
@@ -454,6 +588,8 @@ def main():
             )
     print("(prev. = prevalence = PR-AUC of a random classifier)")
     print(f"\nwritten {args.out / 'results.csv'}, {args.out / 'summary.csv'}")
+    if args.mlflow:
+        log_to_mlflow(args, stats, df, labels, rare, order)
 
 
 if __name__ == "__main__":

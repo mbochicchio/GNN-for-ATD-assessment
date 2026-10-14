@@ -389,4 +389,9 @@ $RECYCLE.BIN/
 data/trial
 data/pilot
 
+#MLflow
+mlflow.db
+mlartifacts/
+mlruns/
+
 # End of https://www.toptal.com/developers/gitignore/api/python,java,windows,macos,linux,intellij
