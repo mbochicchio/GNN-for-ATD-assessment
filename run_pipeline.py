@@ -12,7 +12,7 @@ End-to-end pipeline for the GNN-ATD dataset, one project at a time:
   4. ARCAN     graph + features (Docker image, writeDependencyGraph=true)
   5. CHECK     number of pruned directories nevertheless present in Arcan's
                output, logged as pruned_dirs_in_arcan (informative only)
-  6. DATASET   graph_builder.py -> nodes.csv, edges.csv, meta.json, graph.html
+  6. DATASET   build_dataset.py -> nodes.csv, edges.csv, meta.json, graph.html
   7. CLEANUP   working copy deleted; raw tool outputs kept in --raw
 
 Every project gets one line in <out>/pipeline_log.jsonl (status, failing
@@ -36,9 +36,9 @@ TIMEOUT
   and excluded (exclusion criterion to be reported in the selection funnel).
 
 Usage
-  python run_pipeline.py --lang java --selected data/java/selected.csv --n 50 --work D:/gnn_work --raw data/raw/java --out data/dataset/java
+  python run_pipeline.py --lang java --selected data/java/selected.csv \\
+      --n 50 --work D:/gnn_work --raw data/raw/java --out data/dataset/java
 """
-
 import argparse
 import csv
 import datetime as dt
@@ -58,14 +58,9 @@ sys.path.insert(0, str(HERE))
 from prune import prune  # noqa: E402
 
 # raw outputs kept after a successful run (the rest is deleted to save space)
-KEEP_DESIGNITE = (
-    "ArchitectureSmells.csv",
-    "TypeMetrics.csv",  # Java
-    "_ArchSmells.csv",
-    "_NamespaceMetrics.csv",  # C#
-    "_ClassMetrics.csv",
-    "AnalysisSummary.csv",
-)
+KEEP_DESIGNITE = ("ArchitectureSmells.csv", "TypeMetrics.csv",            # Java
+                  "_ArchSmells.csv", "_NamespaceMetrics.csv",               # C#
+                  "_ClassMetrics.csv", "AnalysisSummary.csv")
 KEEP_ARCAN_SUFFIX = (".graphml", ".csv")
 
 
@@ -81,19 +76,15 @@ def load_env(path):
         line = line.strip()
         if line and not line.startswith("#") and "=" in line:
             k, v = line.split("=", 1)
-            os.environ.setdefault(
-                k.strip().removeprefix("export ").strip(),
-                v.strip().strip('"').strip("'"),
-            )
+            os.environ.setdefault(k.strip().removeprefix("export ").strip(),
+                                  v.strip().strip('"').strip("'"))
 
 
 def rmtree(path):
     """rmtree that also works on Windows read-only files (e.g. .git objects)."""
-
     def onerror(func, p, _):
         os.chmod(p, stat.S_IWRITE)
         func(p)
-
     if Path(path).exists():
         shutil.rmtree(path, onerror=onerror)
 
@@ -102,22 +93,14 @@ def run(cmd, timeout, name=None):
     """Run a command; return (ok, seconds, output tail)."""
     t0 = time.time()
     try:
-        p = subprocess.run(
-            cmd,
-            capture_output=True,
-            text=True,
-            timeout=timeout,
-            encoding="utf-8",
-            errors="replace",
-        )
+        p = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout,
+                           encoding="utf-8", errors="replace")
         ok, out = p.returncode == 0, (p.stdout + p.stderr)
     except subprocess.TimeoutExpired as e:
         ok, out = False, f"TIMEOUT after {timeout}s\n{e.stdout or ''}{e.stderr or ''}"
         if name:  # stop the orphan container (best effort)
             try:
-                subprocess.run(
-                    ["docker", "rm", "-f", name], capture_output=True, timeout=120
-                )
+                subprocess.run(["docker", "rm", "-f", name], capture_output=True, timeout=120)
             except (OSError, subprocess.SubprocessError):
                 pass
     except FileNotFoundError as e:
@@ -141,21 +124,12 @@ def clone(url, sha, dest):
     rmtree(dest)
     dest.mkdir(parents=True)
     env = dict(os.environ, GIT_TERMINAL_PROMPT="0")
-    for cmd in (
-        ["git", "init", "-q"],
-        ["git", "remote", "add", "origin", url],
-        ["git", "fetch", "-q", "--depth", "1", "origin", sha],
-        ["git", "checkout", "-q", "-B", "gnn-atd", "FETCH_HEAD"],
-    ):
-        p = subprocess.run(
-            cmd,
-            cwd=dest,
-            env=env,
-            timeout=900,
-            capture_output=True,
-            text=True,
-            errors="replace",
-        )
+    for cmd in (["git", "init", "-q"],
+                ["git", "remote", "add", "origin", url],
+                ["git", "fetch", "-q", "--depth", "1", "origin", sha],
+                ["git", "checkout", "-q", "-B", "gnn-atd", "FETCH_HEAD"]):
+        p = subprocess.run(cmd, cwd=dest, env=env, timeout=900,
+                           capture_output=True, text=True, errors="replace")
         if p.returncode != 0:
             raise RuntimeError(f"{' '.join(cmd[:3])}: {p.stderr.strip()[-500:]}")
 
@@ -164,66 +138,35 @@ def designite_cs_batch(src, batch_path):
     projs = sorted(p.resolve() for p in Path(src).rglob("*.csproj"))
     if not projs:
         return 0
-    batch_path.write_text(
-        "[Projects]\n" + "\n".join(str(p) for p in projs) + "\n", encoding="utf-8"
-    )
+    batch_path.write_text("[Projects]\n" + "\n".join(str(p) for p in projs) + "\n",
+                          encoding="utf-8")
     return len(projs)
 
 
 def designite_cmd(lang, src, out):
     if lang == "java":
-        return [
-            "java",
-            "-jar",
-            os.environ["DESIGNITE_JAVA_JAR"],
-            "-i",
-            str(src),
-            "-o",
-            str(out),
-        ]
+        return ["java", "-jar", os.environ["DESIGNITE_JAVA_JAR"], "-i", str(src), "-o", str(out)]
     args = os.environ.get("DESIGNITE_CS_ARGS", "analyze -i {src} -o {out}")
     return [os.environ["DESIGNITE_CS_EXE"]] + [
-        a.format(src=str(src), out=str(out)) for a in shlex.split(args, posix=False)
-    ]
+        a.format(src=str(src), out=str(out)) for a in shlex.split(args, posix=False)]
 
 
 def arcan_cmd(lang, work_proj, name, container):
-    lang_flag = (
-        os.environ.get("ARCAN_LANG_JAVA", "JAVA")
-        if lang == "java"
+    lang_flag = os.environ.get("ARCAN_LANG_JAVA", "JAVA") if lang == "java" \
         else os.environ.get("ARCAN_LANG_CSHARP", "CSHARP")
-    )
     image = os.environ.get("ARCAN_IMAGE", "ghcr.io/arcan-tech/arcan-2-cli-trial:latest")
     java_opts = os.environ.get("ARCAN_JAVA_OPTS", "").strip()
     env = ["-e", f"JAVA_TOOL_OPTIONS={java_opts}"] if java_opts else []
-    return [
-        "docker",
-        "run",
-        "--rm",
-        "--name",
-        container,
-        *env,
-        "-v",
-        f"{(work_proj / 'src').resolve()}:/data/{name}",
-        "-v",
-        f"{(work_proj / 'arcan').resolve()}:/out",
-        image,
-        "analyse",
-        "-i",
-        f"/data/{name}",
-        "-o",
-        "/out",
-        "--all",
-        "-l",
-        lang_flag,
-        "output.writeDependencyGraph=true",
-    ]
+    return ["docker", "run", "--rm", "--name", container, *env,
+            "-v", f"{(work_proj / 'src').resolve()}:/data/{name}",
+            "-v", f"{(work_proj / 'arcan').resolve()}:/out",
+            image, "analyse", "-i", f"/data/{name}", "-o", "/out",
+            "--all", "-l", lang_flag, "output.writeDependencyGraph=true"]
 
 
 def find_graphml(arcan_dir, name):
-    hits = sorted(
-        (arcan_dir / "arcanOutput" / name).glob("dependency-graph-*.graphml")
-    ) or sorted(arcan_dir.rglob("dependency-graph-*.graphml"))
+    hits = sorted((arcan_dir / "arcanOutput" / name).glob("dependency-graph-*.graphml")) \
+        or sorted(arcan_dir.rglob("dependency-graph-*.graphml"))
     return hits[0] if hits else None
 
 
@@ -246,9 +189,8 @@ def pruned_leak(arcan_dir, name, removed_dirs):
 def keep_raw(work_proj, raw_proj):
     raw_proj.mkdir(parents=True, exist_ok=True)
     for f in (work_proj / "designite").rglob("*"):
-        if f.is_file() and (
-            f.name.endswith(KEEP_DESIGNITE) or f.name.lower().startswith("designitelog")
-        ):
+        if f.is_file() and (f.name.endswith(KEEP_DESIGNITE)
+                            or f.name.lower().startswith("designitelog")):
             shutil.copy2(f, raw_proj / f"designite_{f.name}")
     for f in (work_proj / "arcan").rglob("*"):
         if f.is_file() and f.name.endswith(KEEP_ARCAN_SUFFIX):
@@ -256,11 +198,7 @@ def keep_raw(work_proj, raw_proj):
 
 
 def designite_dir(out):
-    for pat in (
-        "ArchitectureSmells.csv",
-        "*AnalysisSummary.csv",
-        "*_NamespaceMetrics.csv",
-    ):
+    for pat in ("ArchitectureSmells.csv", "*AnalysisSummary.csv", "*_NamespaceMetrics.csv"):
         hit = next(iter(sorted(out.rglob(pat))), None)
         if hit:
             return hit.parent
@@ -271,14 +209,8 @@ def designite_dir(out):
 def process(row, args):
     name = safe_name(row["full_name"])
     wp = args.work / name
-    rec = {
-        "full_name": row["full_name"],
-        "head_sha": row["head_sha"],
-        "status": "ok",
-        "failed_step": None,
-        "times": {},
-        "started": dt.datetime.now().isoformat(timespec="seconds"),
-    }
+    rec = {"full_name": row["full_name"], "head_sha": row["head_sha"], "status": "ok",
+           "failed_step": None, "times": {}, "started": dt.datetime.now().isoformat(timespec="seconds")}
 
     def fail(step, err):
         rec.update(status="error", failed_step=step, error=clip(err))
@@ -299,19 +231,10 @@ def process(row, args):
         t0 = time.time()
         rep = prune(wp / "src", args.lang, apply=True)
         rec["times"]["prune"] = round(time.time() - t0, 1)
-        rec["prune"] = {
-            k: rep[k]
-            for k in (
-                "source_files_before",
-                "source_files_removed",
-                "removed_share",
-                "removed_by_rule",
-                "residual_test_files",
-            )
-        }
-        (wp / "prune_report.json").write_text(
-            json.dumps(rep, indent=2), encoding="utf-8"
-        )
+        rec["prune"] = {k: rep[k] for k in ("source_files_before", "source_files_removed",
+                                            "removed_share", "removed_by_rule",
+                                            "residual_test_files")}
+        (wp / "prune_report.json").write_text(json.dumps(rep, indent=2), encoding="utf-8")
         if rep["source_files_after"] == 0:
             return fail("prune", "no source files left after pruning")
 
@@ -324,20 +247,13 @@ def process(row, args):
             n_proj = designite_cs_batch(wp / "src", d_input)
             rec["csproj"] = n_proj
             if n_proj == 0:
-                return fail(
-                    "designite",
-                    "no .csproj file after pruning (e.g. Unity project "
-                    "without committed project files)",
-                )
-        ok, sec, out = run(
-            designite_cmd(args.lang, d_input, wp / "designite"), args.timeout
-        )
+                return fail("designite", "no .csproj file after pruning (e.g. Unity project "
+                                         "without committed project files)")
+        ok, sec, out = run(designite_cmd(args.lang, d_input, wp / "designite"), args.timeout)
         rec["times"]["designite"] = sec
         ddir = designite_dir(wp / "designite")
         if not ok or ddir is None:
-            return fail(
-                "designite_timeout" if out.startswith("TIMEOUT") else "designite", out
-            )
+            return fail("designite_timeout" if out.startswith("TIMEOUT") else "designite", out)
 
         # 4 Arcan
         log(f"    arcan...     (live log: docker logs -f arcan-{name.lower()[:54]})")
@@ -360,18 +276,8 @@ def process(row, args):
 
         # 6 dataset
         log("    dataset...")
-        cmd = [
-            sys.executable,
-            str(HERE / "graph_builder.py"),
-            "--arcan-graph",
-            str(graph),
-            "--designite-dir",
-            str(ddir),
-            "--project",
-            name,
-            "--out",
-            str(args.out),
-        ]
+        cmd = [sys.executable, str(HERE / "build_dataset.py"), "--arcan-graph", str(graph),
+               "--designite-dir", str(ddir), "--project", name, "--out", str(args.out)]
         if args.no_html:
             cmd.append("--no-html")
         ok, sec, out = run(cmd, 1800)
@@ -379,16 +285,11 @@ def process(row, args):
         if not ok:
             return fail("dataset", out)
         meta = json.loads((args.out / name / "meta.json").read_text(encoding="utf-8"))
-        rec.update(
-            n_nodes=meta["n_nodes"],
-            n_edges=meta["n_edges"],
-            label_counts=meta["label_counts"],
-            dense_structure=meta["dense_structure"],
-            matched=meta["matching"]["matched"],
-        )
-        (args.out / name / "prune_report.json").write_text(
-            json.dumps(rep, indent=2), encoding="utf-8"
-        )
+        rec.update(n_nodes=meta["n_nodes"], n_edges=meta["n_edges"],
+                   label_counts=meta["label_counts"], dense_structure=meta["dense_structure"],
+                   matched=meta["matching"]["matched"])
+        (args.out / name / "prune_report.json").write_text(json.dumps(rep, indent=2),
+                                                          encoding="utf-8")
         if not args.no_raw:
             keep_raw(wp, args.raw / name)
         return rec
@@ -403,41 +304,23 @@ def main():
     ap.add_argument("--selected", type=Path, required=True)
     ap.add_argument("--out", type=Path, required=True, help="dataset folder")
     ap.add_argument("--work", type=Path, required=True, help="temporary working folder")
-    ap.add_argument(
-        "--raw", type=Path, help="raw tool outputs (default: <out>/../raw_<lang>)"
-    )
+    ap.add_argument("--raw", type=Path, help="raw tool outputs (default: <out>/../raw_<lang>)")
     ap.add_argument("--n", type=int, help="random sample size (pilot); default: all")
     ap.add_argument("--seed", type=int, default=42)
     ap.add_argument("--only", nargs="*", help="process only these full_names (debug)")
-    ap.add_argument(
-        "--timeout",
-        type=int,
-        default=1800,
-        help="per tool, seconds (default 30 min); projects exceeding it are "
-        "logged as <tool>_timeout and excluded",
-    )
+    ap.add_argument("--timeout", type=int, default=1800,
+                    help="per tool, seconds (default 30 min); projects exceeding it are "
+                         "logged as <tool>_timeout and excluded")
     ap.add_argument("--no-html", action="store_true")
-    ap.add_argument(
-        "--no-raw", action="store_true", help="do not keep raw tool outputs"
-    )
-    ap.add_argument(
-        "--keep-work", action="store_true", help="keep working copies (debug)"
-    )
-    ap.add_argument(
-        "--retry-errors", action="store_true", help="re-run failed projects"
-    )
-    ap.add_argument(
-        "--target-ok",
-        type=int,
-        help="stop as soon as this many projects are processed successfully "
-        "(use with --n larger than the target, to absorb failures)",
-    )
-    ap.add_argument(
-        "--max-files",
-        type=int,
-        help="skip projects with more than this many source files (n_files in "
-        "selected.csv). Pilot only: it biases the sample towards small projects",
-    )
+    ap.add_argument("--no-raw", action="store_true", help="do not keep raw tool outputs")
+    ap.add_argument("--keep-work", action="store_true", help="keep working copies (debug)")
+    ap.add_argument("--retry-errors", action="store_true", help="re-run failed projects")
+    ap.add_argument("--target-ok", type=int,
+                    help="stop as soon as this many projects are processed successfully "
+                         "(use with --n larger than the target, to absorb failures)")
+    ap.add_argument("--max-files", type=int,
+                    help="skip projects with more than this many source files (n_files in "
+                         "selected.csv). Pilot only: it biases the sample towards small projects")
     ap.add_argument("--env-file", type=Path, default=HERE / ".env")
     args = ap.parse_args()
     load_env(args.env_file)
@@ -450,27 +333,32 @@ def main():
     if args.max_files:
         before = len(rows)
         rows = [r for r in rows if int(r.get("n_files") or 0) <= args.max_files]
-        log(
-            f"--max-files {args.max_files}: {before - len(rows)} projects excluded before sampling"
-        )
+        log(f"--max-files {args.max_files}: {before - len(rows)} projects excluded before sampling")
 
     if args.only:
         rows = [r for r in rows if r["full_name"] in set(args.only)]
     elif args.n:
         sample_path = args.out / "sample.csv"
+        by = {r["full_name"]: r for r in rows}
+        names = []
         if sample_path.exists():  # keep the same sample across resumed runs
             with open(sample_path, encoding="utf-8", newline="") as f:
                 names = [r["full_name"] for r in csv.DictReader(f)]
-            by = {r["full_name"]: r for r in rows}
-            rows = [by[n] for n in names if n in by]
-        else:
-            rows = random.Random(args.seed).sample(
-                sorted(rows, key=lambda r: r["full_name"]), min(args.n, len(rows))
-            )
+            names = [n for n in names if n in by]
+        if len(names) < args.n:
+            # draw (or extend the existing sample with) further projects at random;
+            # projects already in the sample keep their position
+            pool = sorted(set(by) - set(names))
+            random.Random(f"{args.seed}-{len(names)}").shuffle(pool)
+            added = pool[:args.n - len(names)]
+            if names:
+                log(f"sample extended from {len(names)} to {len(names) + len(added)} projects")
+            names += added
             with open(sample_path, "w", encoding="utf-8", newline="") as f:
-                w = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
+                w = csv.DictWriter(f, fieldnames=list(by[names[0]].keys()))
                 w.writeheader()
-                w.writerows(rows)
+                w.writerows(by[n] for n in names)
+        rows = [by[n] for n in names]
 
     log_path = args.out / "pipeline_log.jsonl"
     done = {}
@@ -478,15 +366,9 @@ def main():
         for line in log_path.open(encoding="utf-8"):
             d = json.loads(line)
             done[d["full_name"]] = d
-    todo = [
-        r
-        for r in rows
-        if r["full_name"] not in done
-        or (args.retry_errors and done[r["full_name"]]["status"] != "ok")
-    ]
-    log(
-        f"{len(rows)} projects, {len(rows) - len(todo)} already processed, {len(todo)} to go"
-    )
+    todo = [r for r in rows if r["full_name"] not in done
+            or (args.retry_errors and done[r["full_name"]]["status"] != "ok")]
+    log(f"{len(rows)} projects, {len(rows) - len(todo)} already processed, {len(todo)} to go")
 
     n_ok = sum(1 for d in done.values() if d["status"] == "ok")
     with log_path.open("a", encoding="utf-8") as lf:
@@ -501,10 +383,8 @@ def main():
             lf.flush()
             if rec["status"] == "ok":
                 n_ok += 1
-                log(
-                    f"    ok ({n_ok}{'/' + str(args.target_ok) if args.target_ok else ''})  nodes={rec['n_nodes']} edges={rec['n_edges']} "
-                    f"labels={rec['label_counts']} times={rec['times']}"
-                )
+                log(f"    ok ({n_ok}{'/' + str(args.target_ok) if args.target_ok else ''})  nodes={rec['n_nodes']} edges={rec['n_edges']} "
+                    f"labels={rec['label_counts']} times={rec['times']}")
             else:
                 log(f"    ERROR at {rec['failed_step']}: {rec['error'][:600]}")
 
@@ -517,9 +397,7 @@ def main():
     for d in final.values():
         k = d["status"] if d["status"] == "ok" else f"error_{d['failed_step']}"
         st[k] = st.get(k, 0) + 1
-    (args.out / "pipeline_summary.json").write_text(
-        json.dumps(st, indent=2), encoding="utf-8"
-    )
+    (args.out / "pipeline_summary.json").write_text(json.dumps(st, indent=2), encoding="utf-8")
     log(f"done: {st}")
 
 
