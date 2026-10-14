@@ -38,11 +38,17 @@ OUTPUT (in --out)
   results.csv         split x model x smell metrics
   summary.csv         mean and std over splits
   dataset_stats.json  projects, nodes, edges, prevalence per smell
+  dataset_manifest.csv  one row per project with SHA-256 of nodes/edges files
+  pr_curves.png       precision-recall curves per smell type (test nodes
+                      pooled over splits) with the random baseline
+  metrics_per_smell.png  F1 and PR-AUC per smell type, mean +- std over splits
   config.json         all parameters, for reproducibility
 
 MLFLOW (optional, --mlflow)
   One parent run per execution (all parameters, dataset statistics, output
-  files) with one nested run per model (metrics per smell type and macro
+  files and figures, the dataset used with its hash, and - automatically, if
+  the script is run inside a git repository - the code commit) with one
+  nested run per model (metrics per smell type and macro
   averages, mean and std over splits; per-split values logged as steps).
   Default store: local SQLite file mlflow.db + artifacts in mlartifacts/.
   View with:  mlflow ui --backend-store-uri sqlite:///mlflow.db
@@ -55,6 +61,7 @@ Usage
 
 import argparse
 import json
+import os
 import random
 import sys
 from pathlib import Path
@@ -248,6 +255,149 @@ def evaluate(y, p, m, labels):
     return rows
 
 
+# ------------------------------------------------- dataset manifest / figures
+def _sha256(path):
+    import hashlib
+
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for chunk in iter(lambda: f.read(1 << 20), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def dataset_manifest(projects, root):
+    """One row per project: size and SHA-256 of nodes.csv / edges.csv."""
+    rows = []
+    for p in projects:
+        d = Path(root) / p["name"]
+        rows.append(
+            {
+                "project": p["name"],
+                "n_nodes": len(p["nodes"]),
+                "n_edges": len(p["edges"]),
+                "nodes_sha256": _sha256(d / "nodes.csv"),
+                "edges_sha256": _sha256(d / "edges.csv"),
+            }
+        )
+    return pd.DataFrame(rows).sort_values("project").reset_index(drop=True)
+
+
+def dataset_hash(manifest):
+    import hashlib
+
+    payload = "".join(
+        f"{r.project}{r.nodes_sha256}{r.edges_sha256}" for r in manifest.itertuples()
+    )
+    return hashlib.sha256(payload.encode()).hexdigest()[:16]
+
+
+MODEL_STYLE = {
+    "graphsage": ("GraphSAGE", "#1f77b4"),
+    "mlp": ("MLP", "#ff7f0e"),
+    "rf": ("Random Forest", "#2ca02c"),
+}
+
+
+def make_figures(preds, df, labels, order, stats, out):
+    """pr_curves.png: precision-recall curves per smell type (test nodes pooled
+    over splits), with the random baseline (prevalence);
+    metrics_per_smell.png: F1 and PR-AUC per smell type, mean +- std over splits."""
+    import matplotlib
+
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    from sklearn.metrics import precision_recall_curve
+
+    files = []
+    k = len(labels)
+    fig, axes = plt.subplots(1, k, figsize=(3.6 * k, 3.6), squeeze=False)
+    for j, lab in enumerate(labels):
+        ax = axes[0, j]
+        for mdl in order:
+            ys, ps = [], []
+            for _s, name, y, p, m in preds:
+                if name == mdl:
+                    ys.append(y[m, j])
+                    ps.append(p[m, j])
+            y, p = np.concatenate(ys), np.concatenate(ps)
+            if y.sum() == 0:
+                continue
+            pr, rc, _ = precision_recall_curve(y, p)
+            label, color = MODEL_STYLE.get(mdl, (mdl, None))
+            ax.plot(
+                rc,
+                pr,
+                color=color,
+                lw=1.6,
+                label=f"{label} (AP {average_precision_score(y, p):.2f})",
+            )
+        prev = stats["prevalence"][lab]
+        ax.axhline(prev, color="grey", ls="--", lw=1, label=f"random ({prev:.2f})")
+        ax.set_title(lab)
+        ax.set_xlabel("recall")
+        ax.set_ylim(0, 1.02)
+        ax.set_xlim(0, 1)
+        if j == 0:
+            ax.set_ylabel("precision")
+        ax.legend(fontsize=7, loc="lower left", framealpha=0.85)
+    fig.tight_layout()
+    files.append(out / "pr_curves.png")
+    fig.savefig(files[-1], dpi=150)
+    plt.close(fig)
+
+    fig, axes = plt.subplots(1, 2, figsize=(11, 4.2))
+    x = np.arange(k)
+    w = 0.8 / max(len(order), 1)
+    for ax, c, title in (
+        (axes[0], "f1", "F1 (threshold 0.5)"),
+        (axes[1], "pr_auc", "PR-AUC"),
+    ):
+        g = df.groupby(["smell", "model"])[c].agg(["mean", "std"])
+        for i, mdl in enumerate(order):
+            means = [
+                g.loc[(lab, mdl), "mean"] if (lab, mdl) in g.index else np.nan
+                for lab in labels
+            ]
+            stds = [
+                g.loc[(lab, mdl), "std"] if (lab, mdl) in g.index else np.nan
+                for lab in labels
+            ]
+            label, color = MODEL_STYLE.get(mdl, (mdl, None))
+            ax.bar(
+                x + (i - (len(order) - 1) / 2) * w,
+                means,
+                w,
+                yerr=stds,
+                capsize=2,
+                color=color,
+                label=label,
+            )
+        if c == "pr_auc":
+            ax.scatter(
+                x,
+                [stats["prevalence"][lab] for lab in labels],
+                marker="_",
+                s=400,
+                color="black",
+                zorder=3,
+                label="random (prevalence)",
+            )
+        ax.set_xticks(x)
+        ax.set_xticklabels(labels)
+        ax.set_ylim(0, 1)
+        ax.set_title(title)
+    handles, labs = axes[1].get_legend_handles_labels()
+    fig.legend(
+        handles, labs, loc="lower center", ncol=len(labs), fontsize=8, frameon=False
+    )
+    fig.tight_layout(rect=(0, 0.08, 1, 1))
+    files.append(out / "metrics_per_smell.png")
+    fig.savefig(files[-1], dpi=150)
+    plt.close(fig)
+    return files
+
+
 # ----------------------------------------------------------------- MLflow
 METRICS = ["precision", "recall", "f1", "pr_auc"]
 
@@ -256,10 +406,11 @@ def _finite(v):
     return v is not None and not (isinstance(v, float) and np.isnan(v))
 
 
-def log_to_mlflow(args, stats, df, labels, rare, order):
+def log_to_mlflow(args, stats, df, labels, rare, order, manifest, figures):
     """One parent run per execution (parameters, dataset statistics, output
     files) and one nested run per model (metrics per smell type and macro
     averages: mean and std over splits, plus per-split values as steps)."""
+    os.environ.setdefault("MLFLOW_DISABLE_AGENT_HINT", "1")
     try:
         import mlflow
     except ImportError:
@@ -305,9 +456,30 @@ def log_to_mlflow(args, stats, df, labels, rare, order):
         mlflow.log_metrics(
             {f"prevalence_{lab}": stats["prevalence"][lab] for lab in ALL_LABELS}
         )
-        for f in ("results.csv", "summary.csv", "dataset_stats.json", "config.json"):
+        # dataset used by this run: per-project manifest with file hashes;
+        # its digest identifies the exact data (MLflow "Datasets used")
+        import warnings
+
+        with warnings.catch_warnings():  # harmless schema/source-type hints
+            warnings.simplefilter("ignore", UserWarning)
+            ds = mlflow.data.from_pandas(
+                manifest.astype({"n_nodes": float, "n_edges": float}),
+                source=Path(args.data).resolve().as_uri(),
+                name=f"{Path(args.data).name}-{len(manifest)}p",
+            )
+            mlflow.log_input(ds, context="training")
+        mlflow.log_param("dataset_hash", dataset_hash(manifest))
+        for f in (
+            "results.csv",
+            "summary.csv",
+            "dataset_stats.json",
+            "config.json",
+            "dataset_manifest.csv",
+        ):
             if (args.out / f).exists():
                 mlflow.log_artifact(str(args.out / f))
+        for f in figures:
+            mlflow.log_artifact(str(f), artifact_path="figures")
 
         for mdl in order:
             d = df[df["model"] == mdl]
@@ -465,6 +637,7 @@ def main():
     )
 
     results = []
+    preds = []  # (split, model, y_test, p_test, mask_test) for the figures
     for s in range(args.splits):
         seed = args.seed + s
         random.seed(seed)
@@ -487,6 +660,7 @@ def main():
             model = train_nn(graph, tr, va, len(labels), args, seed)
             with torch.no_grad():
                 p = torch.sigmoid(model(te[0], te[1])).numpy()
+            preds.append((s, name, y_te, p, m_te))
             for r in evaluate(y_te, p, m_te, labels):
                 results.append({"split": s, "model": name, **r})
 
@@ -505,6 +679,7 @@ def main():
             )
             rf.fit(x_tr[m_tr], yk)
             p[:, k] = rf.predict_proba(te[0].numpy())[:, 1]
+        preds.append((s, "rf", y_te, p, m_te))
         for r in evaluate(y_te, p, m_te, labels):
             results.append({"split": s, "model": "rf", **r})
 
@@ -588,8 +763,12 @@ def main():
             )
     print("(prev. = prevalence = PR-AUC of a random classifier)")
     print(f"\nwritten {args.out / 'results.csv'}, {args.out / 'summary.csv'}")
+    manifest = dataset_manifest(projects, args.data)
+    manifest.to_csv(args.out / "dataset_manifest.csv", index=False)
+    figures = make_figures(preds, df, labels, order, stats, args.out)
+    print(f"figures: {', '.join(f.name for f in figures)}")
     if args.mlflow:
-        log_to_mlflow(args, stats, df, labels, rare, order)
+        log_to_mlflow(args, stats, df, labels, rare, order, manifest, figures)
 
 
 if __name__ == "__main__":
