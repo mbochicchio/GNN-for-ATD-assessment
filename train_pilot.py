@@ -42,6 +42,12 @@ OUTPUT (in --out)
   pr_curves.png       precision-recall curves per smell type (test nodes
                       pooled over splits) with the random baseline
   metrics_per_smell.png  F1 and PR-AUC per smell type, mean +- std over splits
+  results_per_project.csv  F1 and PR-AUC of every test project, split and model
+  paired.csv          paired comparison GraphSAGE vs MLP / RF per smell type:
+                      split-level mean difference and splits won; Wilcoxon
+                      signed-rank test on test projects (metric averaged over
+                      the splits in which a project was tested), Holm-corrected
+                      over the non-rare smell types; Vargha-Delaney A12
   config.json         all parameters, for reproducibility
 
 MLFLOW (optional, --mlflow)
@@ -255,6 +261,146 @@ def evaluate(y, p, m, labels):
     return rows
 
 
+# ------------------------------------------------------ paired comparison
+def per_project_metrics(split, model, y, p, m, proj, labels):
+    """F1 (threshold 0.5) and average precision of each test project, per smell
+    type; projects without positive (labelled) nodes for a smell are skipped."""
+    rows = []
+    for name in pd.unique(proj):
+        sel = (proj == name) & m
+        for k, lab in enumerate(labels):
+            yk, pk = y[sel, k], p[sel, k]
+            if yk.sum() == 0:
+                continue
+            _, _, f1, _ = precision_recall_fscore_support(
+                yk, (pk >= 0.5).astype(int), average="binary", zero_division=0
+            )
+            rows.append(
+                {
+                    "split": split,
+                    "project": name,
+                    "model": model,
+                    "smell": lab,
+                    "n_pos": int(yk.sum()),
+                    "f1": f1,
+                    "pr_auc": average_precision_score(yk, pk),
+                }
+            )
+    return rows
+
+
+def a12(x, y):
+    """Vargha-Delaney A12: probability that a value of x is larger than one of y."""
+    x, y = np.asarray(x), np.asarray(y)
+    gt = (x[:, None] > y[None, :]).sum()
+    eq = (x[:, None] == y[None, :]).sum()
+    return (gt + 0.5 * eq) / (len(x) * len(y))
+
+
+def a12_magnitude(a):
+    d = abs(a - 0.5) * 2  # Romano et al. thresholds on |2*A12 - 1|
+    return (
+        "negligible"
+        if d < 0.147
+        else "small" if d < 0.33 else "medium" if d < 0.474 else "large"
+    )
+
+
+def holm(pvals):
+    p = np.asarray(pvals, dtype=float)
+    out = np.full_like(p, np.nan)
+    ok = ~np.isnan(p)
+    idx = np.argsort(p[ok])
+    q = p[ok][idx] * (ok.sum() - np.arange(ok.sum()))
+    q = np.minimum(np.maximum.accumulate(q), 1.0)
+    tmp = np.empty_like(q)
+    tmp[idx] = q
+    out[ok] = tmp
+    return out
+
+
+def paired_comparison(df, proj_df, labels, order, rare):
+    """GraphSAGE vs each baseline, per smell type and metric (F1, PR-AUC):
+    - mean_diff, splits_won: split-level difference (same test projects);
+    - Wilcoxon signed-rank test and A12 on project-level pairs: each test project
+      contributes one pair, its metric averaged over the splits in which it was in
+      the test set (so that pairs are independent); Holm correction over all
+      tests of the non-rare smell types."""
+    from scipy.stats import wilcoxon
+
+    rows = []
+    if "graphsage" not in order:
+        return pd.DataFrame(rows)
+    for base in [m for m in order if m != "graphsage"]:
+        for c in ("f1", "pr_auc"):
+            for lab in labels:
+                g = df[(df["smell"] == lab) & (df["model"] == "graphsage")].set_index(
+                    "split"
+                )[c]
+                b = df[(df["smell"] == lab) & (df["model"] == base)].set_index("split")[
+                    c
+                ]
+                d = (g - b).dropna()
+                pp = proj_df[proj_df["smell"] == lab]
+                pg = pp[pp["model"] == "graphsage"].groupby("project")[c].mean()
+                pb = pp[pp["model"] == base].groupby("project")[c].mean()
+                common = pg.index.intersection(pb.index)
+                xg, xb = pg[common].to_numpy(), pb[common].to_numpy()
+                pval = np.nan
+                if len(common) >= 6 and np.any(xg != xb):
+                    pval = float(wilcoxon(xg, xb).pvalue)
+                a = a12(xg, xb) if len(common) else np.nan
+                rows.append(
+                    {
+                        "baseline": base,
+                        "metric": c,
+                        "smell": lab,
+                        "rare": lab in rare,
+                        "mean_diff": float(d.mean()) if len(d) else np.nan,
+                        "splits_won": int((d > 0).sum()),
+                        "splits": int(len(d)),
+                        "n_projects": int(len(common)),
+                        "project_mean_diff": (
+                            float((xg - xb).mean()) if len(common) else np.nan
+                        ),
+                        "p_value": pval,
+                        "a12": a,
+                        "effect": a12_magnitude(a) if _finite(a) else "",
+                    }
+                )
+    out = pd.DataFrame(rows)
+    main = ~out["rare"]
+    out["p_holm"] = np.nan
+    out.loc[main, "p_holm"] = holm(out.loc[main, "p_value"])
+    return out
+
+
+def print_paired(paired):
+    if paired.empty:
+        return
+    print(
+        "\nPaired comparison: GraphSAGE vs baseline (Wilcoxon signed-rank on test projects, "
+        "Holm-corrected; A12 effect size)"
+    )
+    print(
+        f"{'baseline':<9}{'metric':<8}{'smell':<6}{'diff':>8}{'won':>7}{'proj':>6}"
+        f"{'p':>10}{'p_holm':>10}{'A12':>7}  effect"
+    )
+    for r in paired.itertuples():
+        p = f"{r.p_value:.2g}" if _finite(r.p_value) else "n/a"
+        ph = f"{r.p_holm:.2g}" if _finite(r.p_holm) else ("rare" if r.rare else "n/a")
+        a = f"{r.a12:.2f}" if _finite(r.a12) else "n/a"
+        diff = f"{r.mean_diff:+.3f}" if _finite(r.mean_diff) else "n/a"
+        print(
+            f"{r.baseline:<9}{r.metric:<8}{r.smell:<6}{diff:>8}{r.splits_won:>4}/{r.splits:<2}"
+            f"{r.n_projects:>6}{p:>10}{ph:>10}{a:>7}  {r.effect}"
+        )
+    print(
+        "(diff/won: split-level mean difference and splits won; proj: test projects compared; "
+        "A12 > 0.5 means GraphSAGE better)"
+    )
+
+
 # ------------------------------------------------- dataset manifest / figures
 def _sha256(path):
     import hashlib
@@ -406,7 +552,7 @@ def _finite(v):
     return v is not None and not (isinstance(v, float) and np.isnan(v))
 
 
-def log_to_mlflow(args, stats, df, labels, rare, order, manifest, figures):
+def log_to_mlflow(args, stats, df, labels, rare, order, manifest, figures, paired):
     """One parent run per execution (parameters, dataset statistics, output
     files) and one nested run per model (metrics per smell type and macro
     averages: mean and std over splits, plus per-split values as steps)."""
@@ -456,6 +602,15 @@ def log_to_mlflow(args, stats, df, labels, rare, order, manifest, figures):
         mlflow.log_metrics(
             {f"prevalence_{lab}": stats["prevalence"][lab] for lab in ALL_LABELS}
         )
+        pm = {}
+        for r in paired.itertuples():
+            key = f"paired_{r.baseline}_{r.metric}_{r.smell}"
+            for field in ("mean_diff", "splits_won", "p_value", "p_holm", "a12"):
+                v = getattr(r, field)
+                if _finite(v):
+                    pm[f"{key}_{field}"] = float(v)
+        if pm:
+            mlflow.log_metrics(pm)
         # dataset used by this run: per-project manifest with file hashes;
         # its digest identifies the exact data (MLflow "Datasets used")
         import warnings
@@ -475,6 +630,8 @@ def log_to_mlflow(args, stats, df, labels, rare, order, manifest, figures):
             "dataset_stats.json",
             "config.json",
             "dataset_manifest.csv",
+            "results_per_project.csv",
+            "paired.csv",
         ):
             if (args.out / f).exists():
                 mlflow.log_artifact(str(args.out / f))
@@ -638,6 +795,7 @@ def main():
 
     results = []
     preds = []  # (split, model, y_test, p_test, mask_test) for the figures
+    proj_rows = []  # per-project test metrics, for the paired comparison
     for s in range(args.splits):
         seed = args.seed + s
         random.seed(seed)
@@ -653,6 +811,7 @@ def main():
         mean, std = xr.mean(0), xr.std(0)
         std[std == 0] = 1.0
         tr, va, te = (merge(ps, labels, mean, std) for ps in (tr_p, va_p, te_p))
+        te_proj = np.repeat([q["name"] for q in te_p], [len(q["nodes"]) for q in te_p])
         y_te, m_te = te[2].numpy(), te[3].numpy()
 
         # GraphSAGE and MLP
@@ -661,6 +820,7 @@ def main():
             with torch.no_grad():
                 p = torch.sigmoid(model(te[0], te[1])).numpy()
             preds.append((s, name, y_te, p, m_te))
+            proj_rows += per_project_metrics(s, name, y_te, p, m_te, te_proj, labels)
             for r in evaluate(y_te, p, m_te, labels):
                 results.append({"split": s, "model": name, **r})
 
@@ -680,6 +840,7 @@ def main():
             rf.fit(x_tr[m_tr], yk)
             p[:, k] = rf.predict_proba(te[0].numpy())[:, 1]
         preds.append((s, "rf", y_te, p, m_te))
+        proj_rows += per_project_metrics(s, "rf", y_te, p, m_te, te_proj, labels)
         for r in evaluate(y_te, p, m_te, labels):
             results.append({"split": s, "model": "rf", **r})
 
@@ -763,12 +924,18 @@ def main():
             )
     print("(prev. = prevalence = PR-AUC of a random classifier)")
     print(f"\nwritten {args.out / 'results.csv'}, {args.out / 'summary.csv'}")
+    proj_df = pd.DataFrame(proj_rows)
+    proj_df.to_csv(args.out / "results_per_project.csv", index=False)
+    paired = paired_comparison(df, proj_df, labels, order, rare)
+    paired.to_csv(args.out / "paired.csv", index=False)
+    print_paired(paired)
+
     manifest = dataset_manifest(projects, args.data)
     manifest.to_csv(args.out / "dataset_manifest.csv", index=False)
     figures = make_figures(preds, df, labels, order, stats, args.out)
     print(f"figures: {', '.join(f.name for f in figures)}")
     if args.mlflow:
-        log_to_mlflow(args, stats, df, labels, rare, order, manifest, figures)
+        log_to_mlflow(args, stats, df, labels, rare, order, manifest, figures, paired)
 
 
 if __name__ == "__main__":
