@@ -4,7 +4,7 @@ Feasibility pilot: can a GNN learn Designite's architectural-smell labels from
 Arcan's package dependency graph better than models that use only node-level
 features (i.e. no information about the neighbours)?
 
-DATA       one folder per project produced by build_dataset.py
+DATA       one folder per project produced by graph_builder.py
            (nodes.csv, edges.csv); nodes with label_mask = 0 are excluded
            from loss and evaluation. Smell types without any positive node
            in the whole dataset are dropped (and reported).
@@ -47,7 +47,9 @@ OUTPUT (in --out)
                       split-level mean difference and splits won; Wilcoxon
                       signed-rank test on test projects (metric averaged over
                       the splits in which a project was tested), Holm-corrected
-                      over the non-rare smell types; Vargha-Delaney A12
+                      over the non-rare smell types; paired effect size:
+                      matched-pairs rank-biserial correlation and share of
+                      projects won / tied / lost
   config.json         all parameters, for reproducibility
 
 MLFLOW (optional, --mlflow)
@@ -289,20 +291,38 @@ def per_project_metrics(split, model, y, p, m, proj, labels):
     return rows
 
 
-def a12(x, y):
-    """Vargha-Delaney A12: probability that a value of x is larger than one of y."""
-    x, y = np.asarray(x), np.asarray(y)
-    gt = (x[:, None] > y[None, :]).sum()
-    eq = (x[:, None] == y[None, :]).sum()
-    return (gt + 0.5 * eq) / (len(x) * len(y))
+MIN_PAIRS = 6  # minimum number of non-tied project pairs for test and effect size
 
 
-def a12_magnitude(a):
-    d = abs(a - 0.5) * 2  # Romano et al. thresholds on |2*A12 - 1|
+def paired_effect(x, y):
+    """Effect size for paired samples (pairs with zero difference are dropped,
+    as in the Wilcoxon test):
+    - rank-biserial correlation r = (T+ - T-) / (T+ + T-), with T+/T- the sums of
+      the ranks of |x - y| for positive/negative differences; r in [-1, 1],
+      r > 0 means x better;
+    - share of pairs won, tied and lost by x.
+    r is not computed (NaN) with fewer than MIN_PAIRS non-tied pairs."""
+    from scipy.stats import rankdata
+
+    d = np.asarray(x, dtype=float) - np.asarray(y, dtype=float)
+    n = len(d)
+    if n == 0:
+        return np.nan, np.nan, np.nan, np.nan
+    won, tied, lost = (d > 0).mean(), (d == 0).mean(), (d < 0).mean()
+    nz = d[d != 0]
+    if len(nz) < MIN_PAIRS:  # too few non-tied pairs: effect size not meaningful
+        return np.nan, won, tied, lost
+    ranks = rankdata(np.abs(nz))
+    t_pos, t_neg = ranks[nz > 0].sum(), ranks[nz < 0].sum()
+    return float((t_pos - t_neg) / (t_pos + t_neg)), won, tied, lost
+
+
+def effect_magnitude(r):
+    a = abs(r)  # conventional thresholds for correlation-type effect sizes
     return (
         "negligible"
-        if d < 0.147
-        else "small" if d < 0.33 else "medium" if d < 0.474 else "large"
+        if a < 0.1
+        else "small" if a < 0.3 else "medium" if a < 0.5 else "large"
     )
 
 
@@ -322,7 +342,8 @@ def holm(pvals):
 def paired_comparison(df, proj_df, labels, order, rare):
     """GraphSAGE vs each baseline, per smell type and metric (F1, PR-AUC):
     - mean_diff, splits_won: split-level difference (same test projects);
-    - Wilcoxon signed-rank test and A12 on project-level pairs: each test project
+    - Wilcoxon signed-rank test and paired effect size (rank-biserial correlation,
+      share of projects won/tied/lost) on project-level pairs: each test project
       contributes one pair, its metric averaged over the splits in which it was in
       the test set (so that pairs are independent); Holm correction over all
       tests of the non-rare smell types."""
@@ -347,9 +368,9 @@ def paired_comparison(df, proj_df, labels, order, rare):
                 common = pg.index.intersection(pb.index)
                 xg, xb = pg[common].to_numpy(), pb[common].to_numpy()
                 pval = np.nan
-                if len(common) >= 6 and np.any(xg != xb):
+                if int((xg != xb).sum()) >= MIN_PAIRS:
                     pval = float(wilcoxon(xg, xb).pvalue)
-                a = a12(xg, xb) if len(common) else np.nan
+                r_rb, won, tied, lost = paired_effect(xg, xb)
                 rows.append(
                     {
                         "baseline": base,
@@ -364,8 +385,11 @@ def paired_comparison(df, proj_df, labels, order, rare):
                             float((xg - xb).mean()) if len(common) else np.nan
                         ),
                         "p_value": pval,
-                        "a12": a,
-                        "effect": a12_magnitude(a) if _finite(a) else "",
+                        "r_rb": r_rb,
+                        "projects_won": won,
+                        "projects_tied": tied,
+                        "projects_lost": lost,
+                        "effect": effect_magnitude(r_rb) if _finite(r_rb) else "",
                     }
                 )
     out = pd.DataFrame(rows)
@@ -380,24 +404,31 @@ def print_paired(paired):
         return
     print(
         "\nPaired comparison: GraphSAGE vs baseline (Wilcoxon signed-rank on test projects, "
-        "Holm-corrected; A12 effect size)"
+        "Holm-corrected; paired effect size)"
     )
     print(
-        f"{'baseline':<9}{'metric':<8}{'smell':<6}{'diff':>8}{'won':>7}{'proj':>6}"
-        f"{'p':>10}{'p_holm':>10}{'A12':>7}  effect"
+        f"{'baseline':<9}{'metric':<8}{'smell':<6}{'diff':>8}{'splits':>8}{'proj':>6}"
+        f"{'p':>10}{'p_holm':>10}{'r_rb':>7}{'won/tie/lost':>15}  effect"
     )
     for r in paired.itertuples():
         p = f"{r.p_value:.2g}" if _finite(r.p_value) else "n/a"
         ph = f"{r.p_holm:.2g}" if _finite(r.p_holm) else ("rare" if r.rare else "n/a")
-        a = f"{r.a12:.2f}" if _finite(r.a12) else "n/a"
+        rr = f"{r.r_rb:+.2f}" if _finite(r.r_rb) else "n/a"
+        eff = r.effect if r.effect else "(too few non-tied pairs)"
+        wtl = (
+            f"{r.projects_won:.0%}/{r.projects_tied:.0%}/{r.projects_lost:.0%}"
+            if _finite(r.projects_won)
+            else "n/a"
+        )
         diff = f"{r.mean_diff:+.3f}" if _finite(r.mean_diff) else "n/a"
         print(
-            f"{r.baseline:<9}{r.metric:<8}{r.smell:<6}{diff:>8}{r.splits_won:>4}/{r.splits:<2}"
-            f"{r.n_projects:>6}{p:>10}{ph:>10}{a:>7}  {r.effect}"
+            f"{r.baseline:<9}{r.metric:<8}{r.smell:<6}{diff:>8}{r.splits_won:>5}/{r.splits:<2}"
+            f"{r.n_projects:>6}{p:>10}{ph:>10}{rr:>7}{wtl:>15}  {eff}"
         )
     print(
-        "(diff/won: split-level mean difference and splits won; proj: test projects compared; "
-        "A12 > 0.5 means GraphSAGE better)"
+        "(diff/splits: split-level mean difference and splits won; proj: test projects compared;\n"
+        " r_rb: matched-pairs rank-biserial correlation, > 0 means GraphSAGE better;\n"
+        " won/tie/lost: share of test projects where GraphSAGE is better/equal/worse)"
     )
 
 
@@ -605,7 +636,16 @@ def log_to_mlflow(args, stats, df, labels, rare, order, manifest, figures, paire
         pm = {}
         for r in paired.itertuples():
             key = f"paired_{r.baseline}_{r.metric}_{r.smell}"
-            for field in ("mean_diff", "splits_won", "p_value", "p_holm", "a12"):
+            for field in (
+                "mean_diff",
+                "splits_won",
+                "p_value",
+                "p_holm",
+                "r_rb",
+                "projects_won",
+                "projects_tied",
+                "projects_lost",
+            ):
                 v = getattr(r, field)
                 if _finite(v):
                     pm[f"{key}_{field}"] = float(v)
@@ -700,6 +740,12 @@ def main():
     ap.add_argument("--patience", type=int, default=50)
     ap.add_argument("--max-pos-weight", type=float, default=100.0)
     ap.add_argument("--rf-trees", type=int, default=300)
+    ap.add_argument(
+        "--threads",
+        type=int,
+        default=1,
+        help="CPU threads for PyTorch (default 1: bit-identical results across runs)",
+    )
     ap.add_argument("--mlflow", action="store_true", help="log the run to MLflow")
     ap.add_argument(
         "--experiment", default="gnn-atd-pilot", help="MLflow experiment name"
@@ -726,6 +772,10 @@ def main():
     )
     args = ap.parse_args()
     args.out.mkdir(parents=True, exist_ok=True)
+    # reproducibility: deterministic kernels and a fixed number of CPU threads
+    # (multi-threaded float reductions change the summation order between runs)
+    torch.set_num_threads(args.threads)
+    torch.use_deterministic_algorithms(True, warn_only=True)
 
     projects = load_projects(args.data)
     if len(projects) < 5:
