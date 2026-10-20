@@ -52,7 +52,7 @@ OUTPUT (in --out/<project>/)
   nodes.csv   node_id, name, 7 features, 6 labels, label_mask, atdi
   edges.csv   src, dst, weight            (node_id indices)
   meta.json   graph-level info (Dense Structure flag) + matching statistics
-  graph.html  interactive view of the graph (requires visualize_dataset.py
+  graph.html  interactive view of the graph (requires visualize_graph.py
               in the same directory; disable with --no-html)
 
 Usage
@@ -318,10 +318,10 @@ def main():
     if not args.no_html:
         sys.path.insert(0, str(Path(__file__).resolve().parent))
         try:
-            from visualize_dataset import write_html
+            from visualize_graph import write_html
         except ImportError:
             print(
-                "WARNING: visualize_dataset.py not found next to this script; graph.html skipped"
+                "WARNING: visualize_graph.py not found next to this script; graph.html skipped"
             )
         else:
             print(f"written {write_html(out)}")
