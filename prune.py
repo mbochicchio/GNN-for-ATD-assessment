@@ -16,7 +16,8 @@ EXCLUSION RULES (directory level; matching is case-insensitive)
         src/it, testFixtures, integrationTest(s), functionalTest(s)
   R3  C# test-project naming conventions:
         *.Test(s), *.UnitTest(s), *.IntegrationTest(s), *.FunctionalTest(s),
-        *.Spec(s), and names ending in UnitTests / IntegrationTests
+        *.Spec(s), *.Sample(s), *.Example(s), *.Demo(s) (dotted project names,
+        e.g. DuckDB.NET.Samples), and names ending in UnitTests / IntegrationTests
       (*.Testing is NOT excluded: it usually denotes a shipped test-support
        library, e.g. Polly.Testing, i.e. production code)
   R4  C# project content: a directory containing a .csproj that references
@@ -26,10 +27,16 @@ EXCLUSION RULES (directory level; matching is case-insensitive)
 
   Benchmarks are kept: they are neither tests nor examples.
 
+RESIDUAL CHECK
+  After pruning, source files that still import a test framework are
+  counted (Java: org.junit, org.testng; C#: Xunit, NUnit.Framework,
+  Microsoft.VisualStudio.TestTools). A high count signals a rule gap.
+
 Usage (dry run, nothing is deleted):
   python prune.py path/to/repo --lang java
   python prune.py path/to/repo --lang csharp --apply     # actually delete
 """
+
 import argparse
 import json
 import os
@@ -43,14 +50,24 @@ EXT = {"java": ".java", "csharp": ".cs"}
 _KW = r"(test|testing|tests|example|examples|demo|demos|sample|samples)"
 R1 = re.compile(rf"^{_KW}$|[-_]{_KW}$|{_KW}[-_]", re.I)
 R2_JAVA = re.compile(r"^(it|testfixtures|integrationtests?|functionaltests?)$", re.I)
-R3_CS = re.compile(r"(\.(unit|integration|functional)?tests?|\.specs?"
-                   r"|(unit|integration|functional)tests?)$", re.I)
-R4_PKG = re.compile(r'Include\s*=\s*"(Microsoft\.NET\.Test\.Sdk|xunit[^"]*|NUnit[^"]*|'
-                    r'MSTest\.[^"]*)"', re.I)
+R3_CS = re.compile(
+    r"(\.(unit|integration|functional)?tests?|\.specs?"
+    r"|\.(samples?|examples?|demos?)"
+    r"|(unit|integration|functional)tests?)$",
+    re.I,
+)
+R4_PKG = re.compile(
+    r'Include\s*=\s*"(Microsoft\.NET\.Test\.Sdk|xunit[^"]*|NUnit[^"]*|'
+    r'MSTest\.[^"]*)"',
+    re.I,
+)
 RESIDUAL = {
     "java": re.compile(r"^\s*import\s+(static\s+)?(org\.junit|org\.testng)\b", re.M),
-    "csharp": re.compile(r"^\s*using\s+(Xunit|NUnit\.Framework|"
-                         r"Microsoft\.VisualStudio\.TestTools)\b", re.M),
+    "csharp": re.compile(
+        r"^\s*using\s+(Xunit|NUnit\.Framework|"
+        r"Microsoft\.VisualStudio\.TestTools)\b",
+        re.M,
+    ),
 }
 
 
@@ -102,8 +119,13 @@ def prune(root, lang, apply=False):
                 sub_files = []
             rule = rule_for(d, full, sub_files, lang)
             if rule:
-                removed.append({"path": full.relative_to(root).as_posix(), "rule": rule,
-                                "source_files": count_sources(full, ext)})
+                removed.append(
+                    {
+                        "path": full.relative_to(root).as_posix(),
+                        "rule": rule,
+                        "source_files": count_sources(full, ext),
+                    }
+                )
             else:
                 keep.append(d)
         dirnames[:] = keep  # do not descend into excluded directories
@@ -115,14 +137,25 @@ def prune(root, lang, apply=False):
     removed_files = sum(r["source_files"] for r in removed)
     residual = []
     for dirpath, dirnames, filenames in os.walk(root):
-        dirnames[:] = [d for d in dirnames if d != ".git" and
-                       (apply or (Path(dirpath, d).relative_to(root).as_posix()
-                                  not in {r["path"] for r in removed}))]
+        dirnames[:] = [
+            d
+            for d in dirnames
+            if d != ".git"
+            and (
+                apply
+                or (
+                    Path(dirpath, d).relative_to(root).as_posix()
+                    not in {r["path"] for r in removed}
+                )
+            )
+        ]
         for fn in filenames:
             if fn.endswith(ext):
                 p = Path(dirpath, fn)
                 try:
-                    if RESIDUAL[lang].search(p.read_text(encoding="utf-8", errors="ignore")):
+                    if RESIDUAL[lang].search(
+                        p.read_text(encoding="utf-8", errors="ignore")
+                    ):
                         residual.append(p.relative_to(root).as_posix())
                 except OSError:
                     pass
@@ -136,7 +169,9 @@ def prune(root, lang, apply=False):
         "source_files_before": total_before,
         "source_files_removed": removed_files,
         "source_files_after": total_before - removed_files,
-        "removed_share": round(removed_files / total_before, 4) if total_before else 0.0,
+        "removed_share": (
+            round(removed_files / total_before, 4) if total_before else 0.0
+        ),
         "removed_by_rule": by_rule,
         "removed_dirs": removed,
         "residual_test_files": len(residual),
@@ -155,8 +190,16 @@ def main():
     txt = json.dumps(rep, indent=2)
     if args.report:
         args.report.write_text(txt, encoding="utf-8")
-    summary = {k: rep[k] for k in ("source_files_before", "source_files_removed",
-                                   "removed_share", "removed_by_rule", "residual_test_files")}
+    summary = {
+        k: rep[k]
+        for k in (
+            "source_files_before",
+            "source_files_removed",
+            "removed_share",
+            "removed_by_rule",
+            "residual_test_files",
+        )
+    }
     print(json.dumps(summary, indent=2))
     return 0
 

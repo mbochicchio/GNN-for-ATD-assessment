@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Build the per-project dataset for the GNN-ATD framework from
-  - Arcan       : dependency-graph-*.graphml  (graph structure + node features)
+  - Arcan 2     : dependency-graph-*.graphml  (graph structure + node features)
   - Designite   : node labels
                   Java: ArchitectureSmells.csv, TypeMetrics.csv
                   C#  : Designite_<Project>_ArchSmells.csv, _NamespaceMetrics.csv,
@@ -38,6 +38,9 @@ LABELS (Designite, 6 node-level smell types)
   a project-level smell: stored as a graph-level flag, not as a node label.
 
 MASK
+  The default (global) package/namespace is excluded: Arcan "$" (Java) /
+  "DefaultNamespace" (C#), Designite "$" / "default".
+  coverage (meta.json) = |matched| / |Arcan nodes U Designite packages|.
   label_mask = 1 if the node is also known to Designite (its package appears
   in TypeMetrics.csv / its namespace in *_NamespaceMetrics.csv or
   *_ClassMetrics.csv), 0 otherwise (labels unknown -> excluded from loss).
@@ -49,7 +52,7 @@ OUTPUT (in --out/<project>/)
   nodes.csv   node_id, name, 7 features, 6 labels, label_mask, atdi
   edges.csv   src, dst, weight            (node_id indices)
   meta.json   graph-level info (Dense Structure flag) + matching statistics
-  graph.html  interactive view of the graph (requires visualize_graph.py
+  graph.html  interactive view of the graph (requires visualize_dataset.py
               in the same directory; disable with --no-html)
 
 Usage
@@ -57,6 +60,7 @@ Usage
                           --designite-dir path/to/designite_output \
                           --project DependencyCheck --out data/dataset/java
 """
+
 import argparse
 import csv
 import json
@@ -77,6 +81,9 @@ SMELLS = {  # Designite name -> short code (node-level labels)
     "Scattered Functionality": "SF",
 }
 LABELS = list(SMELLS.values())
+# default (unnamed / global) package or namespace, excluded from the graph and labels
+ARCAN_DEFAULT = {"$", "DefaultNamespace"}  # Java, C#
+DESIGNITE_DEFAULT = {"$", "default", "<Global>", "global", "(global)"}
 PROJECT_LEVEL = {"Dense Structure"}
 ALL_PACKAGES = "<All packages>"
 # smells involving several components: the other components are listed
@@ -94,11 +101,19 @@ def read_graphml(path):
     root = ET.parse(path).getroot()
     key_name = {k.get("id"): k.get("attr.name") for k in root.findall("g:key", NS)}
     graph = root.find("g:graph", NS)
-    nodes = {n.get("id"): {key_name[d.get("key")]: d.text for d in n.findall("g:data", NS)}
-             for n in graph.findall("g:node", NS)}
-    edges = [(e.get("id"), e.get("source"), e.get("target"),
-              {key_name[d.get("key")]: d.text for d in e.findall("g:data", NS)})
-             for e in graph.findall("g:edge", NS)]
+    nodes = {
+        n.get("id"): {key_name[d.get("key")]: d.text for d in n.findall("g:data", NS)}
+        for n in graph.findall("g:node", NS)
+    }
+    edges = [
+        (
+            e.get("id"),
+            e.get("source"),
+            e.get("target"),
+            {key_name[d.get("key")]: d.text for d in e.findall("g:data", NS)},
+        )
+        for e in graph.findall("g:edge", NS)
+    ]
     return nodes, edges
 
 
@@ -116,13 +131,17 @@ def arcan_graph(path):
     # units directly belonging to each container
     n_units = {i: 0 for i in containers}
     for _, s, t, a in edges:
-        if a.get("labelE") == "belongsTo" and nodes[s].get("labelV") == "unit" and t in n_units:
+        if (
+            a.get("labelE") == "belongsTo"
+            and nodes[s].get("labelV") == "unit"
+            and t in n_units
+        ):
             n_units[t] += 1
 
     dropped = {"default_package": [], "empty_container": []}
     keep = []
     for i, a in containers.items():
-        if a.get("name") == "$":
+        if a.get("name") in ARCAN_DEFAULT:
             dropped["default_package"].append(a.get("name"))
         elif n_units[i] == 0:
             dropped["empty_container"].append(a.get("name"))
@@ -135,23 +154,30 @@ def arcan_graph(path):
     for gid in keep:
         a = containers[gid]
         ab, ins = fnum(a.get("AbstractnessMetric")), fnum(a.get("InstabilityMetric"))
-        rows.append({
-            "node_id": idx[gid],
-            "name": a["name"],
-            "Ab": ab,
-            "In": ins,
-            "D": abs(ab + ins - 1.0),
-            "FI": fnum(a.get("FanIn")),
-            "FO": fnum(a.get("FanOut")),
-            "LOC": fnum(a.get("LinesOfCode")),
-            "PR": fnum(a.get("PageRank")),
-            "atdi": fnum(a.get("ComponentAtdIndex")),
-            "n_units": n_units[gid],
-        })
+        rows.append(
+            {
+                "node_id": idx[gid],
+                "name": a["name"],
+                "Ab": ab,
+                "In": ins,
+                "D": abs(ab + ins - 1.0),
+                "FI": fnum(a.get("FanIn")),
+                "FO": fnum(a.get("FanOut")),
+                "LOC": fnum(a.get("LinesOfCode")),
+                "PR": fnum(a.get("PageRank")),
+                "atdi": fnum(a.get("ComponentAtdIndex")),
+                "n_units": n_units[gid],
+            }
+        )
 
     E = []
     for _, s, t, a in edges:
-        if a.get("labelE") == "containerIsAfferentOf" and s in idx and t in idx and s != t:
+        if (
+            a.get("labelE") == "containerIsAfferentOf"
+            and s in idx
+            and t in idx
+            and s != t
+        ):
             E.append((idx[s], idx[t], fnum(a.get("Weight"), 1.0)))
     return rows, sorted(set(E)), dropped
 
@@ -182,9 +208,13 @@ def designite_files(designite_dir):
         known = {pkg_col(r) for r in read_csv(d / "TypeMetrics.csv")}
     else:
         smells = [r for f in sorted(d.glob("*_ArchSmells.csv")) for r in read_csv(f)]
-        known = {pkg_col(r) for pat in ("*_NamespaceMetrics.csv", "*_ClassMetrics.csv")
-                 for f in sorted(d.glob(pat)) for r in read_csv(f)}
-    return smells, known - {""}
+        known = {
+            pkg_col(r)
+            for pat in ("*_NamespaceMetrics.csv", "*_ClassMetrics.csv")
+            for f in sorted(d.glob(pat))
+            for r in read_csv(f)
+        }
+    return smells, known - {""} - DESIGNITE_DEFAULT
 
 
 def designite_labels(designite_dir):
@@ -204,8 +234,11 @@ def designite_labels(designite_dir):
             m = PARTICIPANTS_RE[code].search(r.get("Description", ""))
             if m:
                 # list separator: ";" in DesigniteJava, "'" in Designite (C#)
-                targets |= {p.strip().rstrip(".") for p in re.split(r"[;']", m.group(1))
-                            if p.strip()}
+                targets |= {
+                    p.strip().rstrip(".")
+                    for p in re.split(r"[;']", m.group(1))
+                    if p.strip()
+                }
         for p in targets:
             labels.setdefault(p, set()).add(code)
     return labels, known, project_level, unknown_smells
@@ -243,7 +276,9 @@ def main():
         w.writerow(["src", "dst", "weight"])
         w.writerows(edges)
 
-    labelled_missing = sorted(set(labels) - names)
+    labelled_missing = sorted(set(labels) - names - DESIGNITE_DEFAULT)
+    union = names | known
+    matched = names & known
     meta = {
         "project": args.project,
         "n_nodes": len(rows),
@@ -253,28 +288,41 @@ def main():
         "label_counts": {c: sum(r[c] for r in rows) for c in LABELS},
         "matching": {
             "arcan_nodes": len(rows),
-            "designite_packages": len(known - {"$"}),
-            "matched": len(names & known),
+            "designite_packages": len(known),
+            "matched": len(matched),
+            # share of all packages/namespaces (either tool) present in both
+            "coverage": round(len(matched) / len(union), 4) if union else 0.0,
             "arcan_only": sorted(names - known),
-            "designite_only": sorted(known - names - {"$"}),
+            "designite_only": sorted(known - names),
             "smelly_packages_not_in_graph": labelled_missing,
         },
         "dropped_containers": dropped,
         "unknown_designite_smells": sorted(unknown),
     }
     (out / "meta.json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
-    print(json.dumps({k: meta[k] for k in ("n_nodes", "n_edges", "label_counts", "dense_structure")}))
+    print(
+        json.dumps(
+            {
+                k: meta[k]
+                for k in ("n_nodes", "n_edges", "label_counts", "dense_structure")
+            }
+        )
+    )
     m = meta["matching"]
-    print(f"matched {m['matched']}/{m['arcan_nodes']} Arcan nodes; "
-          f"Designite-only {len(m['designite_only'])}; "
-          f"smelly packages lost {len(m['smelly_packages_not_in_graph'])}")
+    print(
+        f"matched {m['matched']}/{m['arcan_nodes']} Arcan nodes (coverage {m['coverage']:.0%}); "
+        f"Designite-only {len(m['designite_only'])}; "
+        f"smelly packages lost {len(m['smelly_packages_not_in_graph'])}"
+    )
 
     if not args.no_html:
         sys.path.insert(0, str(Path(__file__).resolve().parent))
         try:
-            from visualize_graph import write_html
+            from visualize_dataset import write_html
         except ImportError:
-            print("WARNING: visualize_graph.py not found next to this script; graph.html skipped")
+            print(
+                "WARNING: visualize_dataset.py not found next to this script; graph.html skipped"
+            )
         else:
             print(f"written {write_html(out)}")
 
