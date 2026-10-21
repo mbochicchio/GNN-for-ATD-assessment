@@ -110,17 +110,11 @@ def read_commits(repo, since, until, sha):
         yield commit
 
 
-def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--repo", type=Path, required=True)
-    ap.add_argument("--dataset", type=Path, required=True)
-    ap.add_argument("--snapshot", default="HEAD", help="analysed commit (default HEAD)")
-    ap.add_argument("--months", type=int, default=24, help="history window before the snapshot")
-    ap.add_argument("--max-files", type=int, default=0,
-                    help="exclude commits touching more source files (0 = keep all, default)")
-    ap.add_argument("--min-support", type=int, default=3,
-                    help="minimum number of commits changing both packages")
-    args = ap.parse_args()
+def compute(repo, dataset, snapshot="HEAD", months=24, max_files=0, min_support=3, verbose=True):
+    """Compute change features and co-change edges for one project (see module
+    docstring); writes the three output files and returns the meta dict."""
+    args = argparse.Namespace(repo=Path(repo), dataset=Path(dataset), snapshot=snapshot,
+                              months=months, max_files=max_files, min_support=min_support)
 
     nodes = pd.read_csv(args.dataset / "nodes.csv")
     edges = pd.read_csv(args.dataset / "edges.csv")
@@ -207,10 +201,25 @@ def main():
             "cochange_edges": len(cc),
             "cochange_edges_with_dependency": int(cc["dependency"].sum()) if len(cc) else 0}
     (args.dataset / "cochange_meta.json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
-    print(json.dumps(meta, indent=2))
-    if not history_ok:
-        print("WARNING: the clone history does not cover the whole window "
-              "(deepen it with git fetch --shallow-since=...)")
+    if verbose:
+        print(json.dumps(meta, indent=2))
+        if not history_ok:
+            print("NOTE: history shorter than the window (young repository or shallow clone)")
+    return meta
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--repo", type=Path, required=True)
+    ap.add_argument("--dataset", type=Path, required=True)
+    ap.add_argument("--snapshot", default="HEAD", help="analysed commit (default HEAD)")
+    ap.add_argument("--months", type=int, default=24, help="history window before the snapshot")
+    ap.add_argument("--max-files", type=int, default=0,
+                    help="exclude commits touching more source files (0 = keep all, default)")
+    ap.add_argument("--min-support", type=int, default=3,
+                    help="minimum number of commits changing both packages")
+    a = ap.parse_args()
+    compute(a.repo, a.dataset, a.snapshot, a.months, a.max_files, a.min_support)
     return 0
 
 
