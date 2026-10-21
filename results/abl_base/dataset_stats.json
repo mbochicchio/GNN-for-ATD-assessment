@@ -1,0 +1,45 @@
+{
+  "projects": 150,
+  "nodes": 5914,
+  "edges": 21701,
+  "nodes_per_project": {
+    "min": 5,
+    "median": 25.0,
+    "max": 309
+  },
+  "labelled_nodes": 5857,
+  "smell_counts": {
+    "CD": 1711,
+    "UD": 1010,
+    "AI": 15,
+    "GC": 169,
+    "FC": 1432,
+    "SF": 14
+  },
+  "projects_with_smell": {
+    "CD": 130,
+    "UD": 132,
+    "AI": 11,
+    "GC": 74,
+    "FC": 147,
+    "SF": 1
+  },
+  "smelly_nodes": 2601,
+  "prevalence": {
+    "CD": 0.2921,
+    "UD": 0.1724,
+    "AI": 0.0026,
+    "GC": 0.0289,
+    "FC": 0.2445,
+    "SF": 0.0024
+  },
+  "labels_used": [
+    "CD",
+    "UD",
+    "AI",
+    "GC",
+    "FC",
+    "SF"
+  ],
+  "labels_dropped_no_positives": []
+}
