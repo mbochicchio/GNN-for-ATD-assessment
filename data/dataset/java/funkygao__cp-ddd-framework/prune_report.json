@@ -1,0 +1,20 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 611,
+  "source_files_removed": 397,
+  "source_files_after": 214,
+  "removed_share": 0.6498,
+  "removed_by_rule": {
+    "R1_arcan_default": 397
+  },
+  "removed_dirs": [
+    {
+      "path": "dddplus-test",
+      "rule": "R1_arcan_default",
+      "source_files": 397
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

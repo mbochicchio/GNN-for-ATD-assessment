@@ -1,0 +1,52 @@
+{
+  "project": "commonmark__commonmark-java",
+  "n_nodes": 35,
+  "n_edges": 166,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 13,
+    "UD": 10,
+    "AI": 0,
+    "GC": 2,
+    "FC": 9,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 35,
+    "designite_packages": 36,
+    "matched": 35,
+    "coverage": 0.9722,
+    "arcan_only": [],
+    "designite_only": [
+      "org.commonmark"
+    ],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "org.commonmark.ext",
+      "org.commonmark.ext.task.list",
+      "org.commonmark.renderer.text",
+      "org.commonmark.ext.image",
+      "org.commonmark.parser.block",
+      "org.commonmark.node",
+      "org.commonmark.parser.beta",
+      "org.commonmark.text",
+      "org.commonmark.ext.heading",
+      "org.commonmark",
+      "org.commonmark",
+      "org.commonmark.parser",
+      "org.commonmark.ext.front",
+      "org.commonmark.renderer.html",
+      "org.commonmark.renderer.markdown",
+      "org.commonmark.ext.task",
+      "org",
+      "org.commonmark.ext.gfm"
+    ]
+  },
+  "unknown_designite_smells": []
+}

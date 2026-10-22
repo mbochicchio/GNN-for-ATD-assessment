@@ -1,0 +1,45 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 240,
+  "source_files_removed": 99,
+  "source_files_after": 141,
+  "removed_share": 0.4125,
+  "removed_by_rule": {
+    "R1_arcan_default": 99
+  },
+  "removed_dirs": [
+    {
+      "path": "demo",
+      "rule": "R1_arcan_default",
+      "source_files": 17
+    },
+    {
+      "path": "test",
+      "rule": "R1_arcan_default",
+      "source_files": 55
+    },
+    {
+      "path": "core/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 8
+    },
+    {
+      "path": "flowtracker/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "weaver/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 9
+    },
+    {
+      "path": "web/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 9
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

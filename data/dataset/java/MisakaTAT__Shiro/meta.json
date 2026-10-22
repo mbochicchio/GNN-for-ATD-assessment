@@ -1,0 +1,41 @@
+{
+  "project": "MisakaTAT__Shiro",
+  "n_nodes": 25,
+  "n_edges": 90,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 6,
+    "UD": 6,
+    "AI": 1,
+    "GC": 2,
+    "FC": 7,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 25,
+    "designite_packages": 23,
+    "matched": 23,
+    "coverage": 0.92,
+    "arcan_only": [
+      "com.mikuac.shiro.annotation",
+      "com.mikuac.shiro.annotation.common"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com.mikuac.shiro",
+      "com.mikuac.shiro.dto",
+      "com",
+      "com.mikuac",
+      "com.mikuac.shiro.common",
+      "com.mikuac.shiro.dto.action"
+    ]
+  },
+  "unknown_designite_smells": []
+}

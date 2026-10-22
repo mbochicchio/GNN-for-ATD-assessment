@@ -1,0 +1,38 @@
+{
+  "project": "AndroidJiang__StockChart",
+  "n_nodes": 18,
+  "n_edges": 72,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 10,
+    "UD": 6,
+    "AI": 0,
+    "GC": 0,
+    "FC": 4,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 18,
+    "designite_packages": 18,
+    "matched": 18,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com",
+      "com.github",
+      "com.github.mikephil",
+      "com.github.mikephil.charting.data.realm",
+      "com.github.mikephil.charting",
+      "com.github.mikephil.charting.interfaces"
+    ]
+  },
+  "unknown_designite_smells": []
+}

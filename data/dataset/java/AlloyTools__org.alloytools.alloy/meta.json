@@ -1,0 +1,51 @@
+{
+  "project": "AlloyTools__org.alloytools.alloy",
+  "n_nodes": 43,
+  "n_edges": 196,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 20,
+    "UD": 12,
+    "AI": 0,
+    "GC": 6,
+    "FC": 18,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 43,
+    "designite_packages": 42,
+    "matched": 42,
+    "coverage": 0.9767,
+    "arcan_only": [
+      "org.alloytools.alloy.infrastructure.api"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "edu.mit.csail",
+      "edu.mit.csail.sdg",
+      "edu",
+      "edu.mit",
+      "java_cup",
+      "org.alloytools.solvers",
+      "org.alloytools.solvers.natv",
+      "org.alloytools.alloy.infrastructure",
+      "org.alloytools.alloy.context",
+      "org.alloytools",
+      "org.alloytools.graphics",
+      "org.alloytools.util",
+      "org.alloytools.alloy",
+      "kodkod",
+      "org.alloytools.alloy.lsp",
+      "kodkod.util",
+      "org"
+    ]
+  },
+  "unknown_designite_smells": []
+}

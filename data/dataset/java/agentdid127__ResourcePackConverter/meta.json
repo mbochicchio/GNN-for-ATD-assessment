@@ -1,0 +1,45 @@
+{
+  "project": "agentdid127__ResourcePackConverter",
+  "n_nodes": 24,
+  "n_edges": 86,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 0,
+    "UD": 0,
+    "AI": 0,
+    "GC": 0,
+    "FC": 3,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 24,
+    "designite_packages": 24,
+    "matched": 24,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com.agentdid127.resourcepack.forwards.impl.v1_11",
+      "com",
+      "com.agentdid127.resourcepack.forwards.impl.v1_21",
+      "com.agentdid127",
+      "com.agentdid127.resourcepack.forwards.impl",
+      "com.agentdid127.resourcepack.forwards.impl.v1_21_11",
+      "com.agentdid127.resourcepack.forwards.impl.v1_9",
+      "com.agentdid127.resourcepack.forwards.impl.v1_20",
+      "com.agentdid127.resourcepack.forwards.impl.v1_19",
+      "com.agentdid127.resourcepack.forwards.impl.v1_18",
+      "com.agentdid127.resourcepack.forwards.impl.v1_15",
+      "com.agentdid127.resourcepack.forwards.impl.v1_13",
+      "com.agentdid127.resourcepack.forwards.impl.v1_14"
+    ]
+  },
+  "unknown_designite_smells": []
+}

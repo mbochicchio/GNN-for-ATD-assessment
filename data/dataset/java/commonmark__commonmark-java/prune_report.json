@@ -1,0 +1,85 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 300,
+  "source_files_removed": 87,
+  "source_files_after": 213,
+  "removed_share": 0.29,
+  "removed_by_rule": {
+    "R1_arcan_default": 87
+  },
+  "removed_dirs": [
+    {
+      "path": "commonmark-android-test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "commonmark-integration-test",
+      "rule": "R1_arcan_default",
+      "source_files": 9
+    },
+    {
+      "path": "commonmark-test-util",
+      "rule": "R1_arcan_default",
+      "source_files": 7
+    },
+    {
+      "path": "commonmark/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 40
+    },
+    {
+      "path": "commonmark-ext-autolink/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "commonmark-ext-footnotes/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "commonmark-ext-gfm-alerts/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 6
+    },
+    {
+      "path": "commonmark-ext-gfm-strikethrough/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "commonmark-ext-gfm-tables/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    },
+    {
+      "path": "commonmark-ext-heading-anchor/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "commonmark-ext-image-attributes/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "commonmark-ext-ins/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "commonmark-ext-task-list-items/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "commonmark-ext-yaml-front-matter/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 7
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

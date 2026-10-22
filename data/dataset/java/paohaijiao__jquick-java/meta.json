@@ -1,0 +1,35 @@
+{
+  "project": "paohaijiao__jquick-java",
+  "n_nodes": 20,
+  "n_edges": 37,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 4,
+    "UD": 3,
+    "AI": 0,
+    "GC": 1,
+    "FC": 4,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 20,
+    "designite_packages": 19,
+    "matched": 19,
+    "coverage": 0.95,
+    "arcan_only": [
+      "com.github.paohaijiao.anno"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com",
+      "com.github",
+      "com.github.paohaijiao"
+    ]
+  },
+  "unknown_designite_smells": []
+}

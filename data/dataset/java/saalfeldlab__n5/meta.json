@@ -1,0 +1,33 @@
+{
+  "project": "saalfeldlab__n5",
+  "n_nodes": 12,
+  "n_edges": 29,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 4,
+    "UD": 2,
+    "AI": 0,
+    "GC": 2,
+    "FC": 2,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 12,
+    "designite_packages": 12,
+    "matched": 12,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "org",
+      "org.janelia",
+      "org.janelia.saalfeldlab"
+    ]
+  },
+  "unknown_designite_smells": []
+}

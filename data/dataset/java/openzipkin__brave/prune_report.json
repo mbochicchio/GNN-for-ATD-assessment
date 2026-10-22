@@ -1,0 +1,281 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 712,
+  "source_files_removed": 400,
+  "source_files_after": 312,
+  "removed_share": 0.5618,
+  "removed_by_rule": {
+    "R1_arcan_default": 375,
+    "R2_java_build": 25
+  },
+  "removed_dirs": [
+    {
+      "path": "brave-tests",
+      "rule": "R1_arcan_default",
+      "source_files": 25
+    },
+    {
+      "path": "brave/src/it",
+      "rule": "R2_java_build",
+      "source_files": 1
+    },
+    {
+      "path": "brave/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 90
+    },
+    {
+      "path": "context/jfr/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "context/log4j12/src/it",
+      "rule": "R2_java_build",
+      "source_files": 0
+    },
+    {
+      "path": "context/log4j12/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "context/log4j2/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "context/slf4j/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "instrumentation/http-tests",
+      "rule": "R1_arcan_default",
+      "source_files": 12
+    },
+    {
+      "path": "instrumentation/http-tests-jakarta",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "instrumentation/benchmarks/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 34
+    },
+    {
+      "path": "instrumentation/dubbo/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 13
+    },
+    {
+      "path": "instrumentation/grpc/src/it",
+      "rule": "R2_java_build",
+      "source_files": 9
+    },
+    {
+      "path": "instrumentation/grpc/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 13
+    },
+    {
+      "path": "instrumentation/http/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 12
+    },
+    {
+      "path": "instrumentation/httpasyncclient/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "instrumentation/httpclient/src/it",
+      "rule": "R2_java_build",
+      "source_files": 2
+    },
+    {
+      "path": "instrumentation/httpclient/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "instrumentation/httpclient5/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 7
+    },
+    {
+      "path": "instrumentation/jaxrs2/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 6
+    },
+    {
+      "path": "instrumentation/jdbi3/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "instrumentation/jersey-server/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 9
+    },
+    {
+      "path": "instrumentation/jersey-server-jakarta/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 9
+    },
+    {
+      "path": "instrumentation/jms/src/it",
+      "rule": "R2_java_build",
+      "source_files": 2
+    },
+    {
+      "path": "instrumentation/jms/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 16
+    },
+    {
+      "path": "instrumentation/jms-jakarta/src/it",
+      "rule": "R2_java_build",
+      "source_files": 2
+    },
+    {
+      "path": "instrumentation/jms-jakarta/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 13
+    },
+    {
+      "path": "instrumentation/kafka-clients/src/it",
+      "rule": "R2_java_build",
+      "source_files": 1
+    },
+    {
+      "path": "instrumentation/kafka-clients/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 12
+    },
+    {
+      "path": "instrumentation/kafka-streams/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 7
+    },
+    {
+      "path": "instrumentation/messaging/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 6
+    },
+    {
+      "path": "instrumentation/mongodb/src/it",
+      "rule": "R2_java_build",
+      "source_files": 1
+    },
+    {
+      "path": "instrumentation/mongodb/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 5
+    },
+    {
+      "path": "instrumentation/mysql/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "instrumentation/mysql6/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "instrumentation/mysql8/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "instrumentation/netty-codec-http/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "instrumentation/okhttp3/src/it",
+      "rule": "R2_java_build",
+      "source_files": 2
+    },
+    {
+      "path": "instrumentation/okhttp3/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 5
+    },
+    {
+      "path": "instrumentation/rocketmq-client/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "instrumentation/rpc/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 14
+    },
+    {
+      "path": "instrumentation/servlet/src/it",
+      "rule": "R2_java_build",
+      "source_files": 2
+    },
+    {
+      "path": "instrumentation/servlet/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    },
+    {
+      "path": "instrumentation/servlet-jakarta/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "instrumentation/spring-rabbit/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 6
+    },
+    {
+      "path": "instrumentation/spring-web/src/it",
+      "rule": "R2_java_build",
+      "source_files": 1
+    },
+    {
+      "path": "instrumentation/spring-web/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 6
+    },
+    {
+      "path": "instrumentation/spring-webmvc/src/it",
+      "rule": "R2_java_build",
+      "source_files": 2
+    },
+    {
+      "path": "instrumentation/spring-webmvc/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 9
+    },
+    {
+      "path": "instrumentation/vertx-web/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "spring-beans/src/it",
+      "rule": "R2_java_build",
+      "source_files": 0
+    },
+    {
+      "path": "spring-beans/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 10
+    },
+    {
+      "path": "src/it",
+      "rule": "R2_java_build",
+      "source_files": 0
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

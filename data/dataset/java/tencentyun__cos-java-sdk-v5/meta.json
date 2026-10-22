@@ -1,0 +1,37 @@
+{
+  "project": "tencentyun__cos-java-sdk-v5",
+  "n_nodes": 42,
+  "n_edges": 218,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 30,
+    "UD": 18,
+    "AI": 0,
+    "GC": 11,
+    "FC": 24,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 42,
+    "designite_packages": 41,
+    "matched": 41,
+    "coverage": 0.9762,
+    "arcan_only": [
+      "com.qcloud.cos.annotation"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com",
+      "com.qcloud.cos.model.ciModel",
+      "com.qcloud"
+    ]
+  },
+  "unknown_designite_smells": []
+}

@@ -1,0 +1,43 @@
+{
+  "project": "ICIJ__datashare",
+  "n_nodes": 51,
+  "n_edges": 253,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 28,
+    "UD": 14,
+    "AI": 0,
+    "GC": 5,
+    "FC": 22,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 51,
+    "designite_packages": 49,
+    "matched": 49,
+    "coverage": 0.9608,
+    "arcan_only": [
+      "javax.annotation.processing",
+      "org.icij.datashare.db.tables"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "javax.annotation",
+      "org.icij",
+      "org.icij.task",
+      "org.icij.datashare.asynctasks.bus",
+      "javax",
+      "org.icij.datashare.com",
+      "org",
+      "org.icij.datashare.project"
+    ]
+  },
+  "unknown_designite_smells": []
+}

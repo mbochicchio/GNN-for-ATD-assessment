@@ -1,0 +1,45 @@
+{
+  "project": "houxinlin__cool-request",
+  "n_nodes": 83,
+  "n_edges": 527,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 32,
+    "UD": 18,
+    "AI": 0,
+    "GC": 6,
+    "FC": 32,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 83,
+    "designite_packages": 83,
+    "matched": 83,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com.cool.request.utils.file.os",
+      "com.cool.request.lib",
+      "com.cool.request.view.widget.btn.swing",
+      "com.cool.request",
+      "com",
+      "com.intellij",
+      "com.cool",
+      "com.intellij.openapi",
+      "com.cool.request.idea",
+      "com.cool.request.agent",
+      "com.intellij.openapi.util",
+      "com.cool.request.components.api",
+      "com.cool.request.plugin"
+    ]
+  },
+  "unknown_designite_smells": []
+}

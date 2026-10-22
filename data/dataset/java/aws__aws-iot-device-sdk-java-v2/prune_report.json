@@ -1,0 +1,52 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 410,
+  "source_files_removed": 80,
+  "source_files_after": 330,
+  "removed_share": 0.1951,
+  "removed_by_rule": {
+    "R1_arcan_default": 80
+  },
+  "removed_dirs": [
+    {
+      "path": "samples",
+      "rule": "R1_arcan_default",
+      "source_files": 14
+    },
+    {
+      "path": "android/iotdevicesdk/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "sdk/tests",
+      "rule": "R1_arcan_default",
+      "source_files": 8
+    },
+    {
+      "path": "sdk/greengrass/event-stream-rpc-client/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 11
+    },
+    {
+      "path": "sdk/greengrass/event-stream-rpc-model/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 26
+    },
+    {
+      "path": "sdk/greengrass/event-stream-rpc-server/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 16
+    },
+    {
+      "path": "sdk/greengrass/greengrass-client/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    }
+  ],
+  "residual_test_files": 1,
+  "residual_examples": [
+    "android/iotdevicesdk/src/androidTest/java/software/amazon/awssdk/iotdevicesdk/ExampleInstrumentedTest.java"
+  ]
+}

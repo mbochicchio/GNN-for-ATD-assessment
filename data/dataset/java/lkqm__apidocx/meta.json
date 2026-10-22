@@ -1,0 +1,37 @@
+{
+  "project": "lkqm__apidocx",
+  "n_nodes": 43,
+  "n_edges": 138,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 18,
+    "UD": 8,
+    "AI": 2,
+    "GC": 0,
+    "FC": 17,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 43,
+    "designite_packages": 43,
+    "matched": 43,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "io",
+      "io.apidocx.base.sdk",
+      "io.apidocx",
+      "io.apidocx.base",
+      "io.apidocx.handle"
+    ]
+  },
+  "unknown_designite_smells": []
+}

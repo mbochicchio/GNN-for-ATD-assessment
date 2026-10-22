@@ -1,0 +1,65 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 549,
+  "source_files_removed": 119,
+  "source_files_after": 430,
+  "removed_share": 0.2168,
+  "removed_by_rule": {
+    "R1_arcan_default": 119
+  },
+  "removed_dirs": [
+    {
+      "path": "org.alloytools.alloy.application/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 15
+    },
+    {
+      "path": "org.alloytools.alloy.cli/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "org.alloytools.alloy.core/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 5
+    },
+    {
+      "path": "org.alloytools.alloy.dist/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "org.alloytools.alloy.extra/extra/models/examples",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "org.alloytools.alloy.extra/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "org.alloytools.alloy.lsp/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "org.alloytools.api/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "org.alloytools.pardinus.core/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 99
+    },
+    {
+      "path": "org.alloytools.pardinus.native/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

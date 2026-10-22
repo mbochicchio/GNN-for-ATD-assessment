@@ -1,0 +1,32 @@
+{
+  "project": "AlbatrossHook__AlbatrossAndroid",
+  "n_nodes": 9,
+  "n_edges": 19,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 5,
+    "UD": 4,
+    "AI": 0,
+    "GC": 1,
+    "FC": 2,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 9,
+    "designite_packages": 9,
+    "matched": 9,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "qing",
+      "qing.albatross"
+    ]
+  },
+  "unknown_designite_smells": []
+}

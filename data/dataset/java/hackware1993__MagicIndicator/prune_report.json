@@ -1,0 +1,20 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 45,
+  "source_files_removed": 11,
+  "source_files_after": 34,
+  "removed_share": 0.2444,
+  "removed_by_rule": {
+    "R1_arcan_default": 11
+  },
+  "removed_dirs": [
+    {
+      "path": "app/src/main/java/net/lucode/hackware/magicindicatordemo/example",
+      "rule": "R1_arcan_default",
+      "source_files": 11
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

@@ -1,0 +1,43 @@
+{
+  "project": "haifengl__smile",
+  "n_nodes": 117,
+  "n_edges": 530,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 32,
+    "UD": 20,
+    "AI": 1,
+    "GC": 13,
+    "FC": 34,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 117,
+    "designite_packages": 114,
+    "matched": 114,
+    "coverage": 0.9744,
+    "arcan_only": [
+      "smile.datasets",
+      "smile.regression.gam",
+      "smile.stat.hypothesis"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "smile.plot",
+      "java",
+      "java.util",
+      "smile.llm.model",
+      "java.util.concurrent",
+      "java.util.concurrent.atomic",
+      "smile.feature"
+    ]
+  },
+  "unknown_designite_smells": []
+}

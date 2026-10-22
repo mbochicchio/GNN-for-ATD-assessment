@@ -1,0 +1,45 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 469,
+  "source_files_removed": 80,
+  "source_files_after": 389,
+  "removed_share": 0.1706,
+  "removed_by_rule": {
+    "R1_arcan_default": 80
+  },
+  "removed_dirs": [
+    {
+      "path": "sip-test",
+      "rule": "R1_arcan_default",
+      "source_files": 44
+    },
+    {
+      "path": "sip-common/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 8
+    },
+    {
+      "path": "sip-gateway/gateway-core/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    },
+    {
+      "path": "sip-gateway/gateway-gb28181/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "sip-gb28181/gb28181-client/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "sip-gb28181/gb28181-common/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 22
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

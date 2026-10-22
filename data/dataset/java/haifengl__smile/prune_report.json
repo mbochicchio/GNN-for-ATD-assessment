@@ -1,0 +1,85 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 1828,
+  "source_files_removed": 514,
+  "source_files_after": 1314,
+  "removed_share": 0.2812,
+  "removed_by_rule": {
+    "R1_arcan_default": 514
+  },
+  "removed_dirs": [
+    {
+      "path": "base/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 186
+    },
+    {
+      "path": "clojure/test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "core/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 169
+    },
+    {
+      "path": "deep/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 83
+    },
+    {
+      "path": "deep/src/main/cpp/test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "json/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "kotlin/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "nlp/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 26
+    },
+    {
+      "path": "plot/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 17
+    },
+    {
+      "path": "scala/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "serve/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 20
+    },
+    {
+      "path": "spark/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "studio/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 13
+    },
+    {
+      "path": "studio/src/universal/examples",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

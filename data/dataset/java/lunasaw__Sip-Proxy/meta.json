@@ -1,0 +1,48 @@
+{
+  "project": "lunasaw__Sip-Proxy",
+  "n_nodes": 117,
+  "n_edges": 436,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 11,
+    "UD": 10,
+    "AI": 0,
+    "GC": 0,
+    "FC": 18,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 117,
+    "designite_packages": 116,
+    "matched": 116,
+    "coverage": 0.9915,
+    "arcan_only": [
+      "io.github.lunasaw.sipgateway.core.api.envelope"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "io.github.lunasaw.gbproxy",
+      "io.github.lunasaw.gb28181",
+      "io.github.lunasaw.gb28181.common",
+      "io.github.lunasaw.gbproxy.client.transmit",
+      "io.github.lunasaw.gbproxy.client.transmit.request",
+      "io",
+      "io.github.lunasaw.gb28181.common.transmit",
+      "io.github.lunasaw.gbproxy.client.transmit.request.message.handler",
+      "io.github",
+      "io.github.lunasaw",
+      "io.github.lunasaw.sip",
+      "io.github.lunasaw.gbproxy.server.transmit",
+      "io.github.lunasaw.sipgateway",
+      "io.github.lunasaw.sipgateway.core",
+      "io.github.lunasaw.sipgateway.gb28181",
+      "io.github.lunasaw.gbproxy.client.eventbus"
+    ]
+  },
+  "unknown_designite_smells": []
+}

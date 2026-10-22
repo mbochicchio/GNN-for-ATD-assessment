@@ -1,0 +1,43 @@
+{
+  "project": "power721__alist-tvbox",
+  "n_nodes": 37,
+  "n_edges": 135,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 14,
+    "UD": 10,
+    "AI": 0,
+    "GC": 9,
+    "FC": 19,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 37,
+    "designite_packages": 35,
+    "matched": 35,
+    "coverage": 0.9459,
+    "arcan_only": [
+      "cn.har01d.alist_tvbox.dto.driver",
+      "cn.har01d.alist_tvbox.dto.qqmusic"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "cn.har01d.alist_tvbox.live",
+      "org",
+      "db.migration",
+      "cn",
+      "cn.har01d",
+      "db",
+      "org.springframework",
+      "org.springframework.http"
+    ]
+  },
+  "unknown_designite_smells": []
+}

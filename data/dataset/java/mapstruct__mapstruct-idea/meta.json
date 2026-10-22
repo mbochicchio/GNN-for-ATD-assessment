@@ -1,0 +1,41 @@
+{
+  "project": "mapstruct__mapstruct-idea",
+  "n_nodes": 20,
+  "n_edges": 16,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 0,
+    "UD": 0,
+    "AI": 0,
+    "GC": 3,
+    "FC": 8,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 20,
+    "designite_packages": 21,
+    "matched": 20,
+    "coverage": 0.9524,
+    "arcan_only": [],
+    "designite_only": [
+      "(default package)"
+    ],
+    "smelly_packages_not_in_graph": [
+      "(default package)"
+    ]
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "org.mapstruct.intellij.codeinsight",
+      "org",
+      "org.mapstruct",
+      "org.mapstruct.ap",
+      "org.mapstruct.helper",
+      "org.mapstruct.intellij.test",
+      "org.mapstruct.ap.test"
+    ]
+  },
+  "unknown_designite_smells": []
+}

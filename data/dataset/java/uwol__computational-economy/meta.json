@@ -1,0 +1,44 @@
+{
+  "project": "uwol__computational-economy",
+  "n_nodes": 61,
+  "n_edges": 447,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 8,
+    "UD": 3,
+    "AI": 0,
+    "GC": 0,
+    "FC": 5,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 61,
+    "designite_packages": 61,
+    "matched": 61,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "io.github.uwol.compecon.economy.bookkeeping",
+      "io.github.uwol.compecon.economy.sectors",
+      "io.github.uwol.compecon.engine.dao.inmemory",
+      "io.github",
+      "io.github.uwol",
+      "io",
+      "io.github.uwol.compecon.engine",
+      "io.github.uwol.compecon.simulation",
+      "io.github.uwol.compecon.simulation.minimal",
+      "io.github.uwol.compecon.simulation.minimal.csv",
+      "io.github.uwol.compecon.economy.security",
+      "io.github.uwol.compecon"
+    ]
+  },
+  "unknown_designite_smells": []
+}

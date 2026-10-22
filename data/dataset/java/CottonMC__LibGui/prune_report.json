@@ -1,0 +1,25 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 146,
+  "source_files_removed": 33,
+  "source_files_after": 113,
+  "removed_share": 0.226,
+  "removed_by_rule": {
+    "R1_arcan_default": 33
+  },
+  "removed_dirs": [
+    {
+      "path": "src/testMod/java/io/github/cottonmc/test",
+      "rule": "R1_arcan_default",
+      "source_files": 33
+    },
+    {
+      "path": "src/testMod/resources/assets/libgui-test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

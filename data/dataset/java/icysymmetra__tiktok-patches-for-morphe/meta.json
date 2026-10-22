@@ -1,0 +1,51 @@
+{
+  "project": "icysymmetra__tiktok-patches-for-morphe",
+  "n_nodes": 36,
+  "n_edges": 106,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 10,
+    "UD": 6,
+    "AI": 0,
+    "GC": 0,
+    "FC": 6,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 36,
+    "designite_packages": 36,
+    "matched": 36,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com.bytedance.ies.ugc.aweme.commercialize",
+      "com.bytedance.ies.ugc.aweme.commercialize.compliance",
+      "android",
+      "com.ss.android.ugc.aweme.feed",
+      "com.ss.android.ugc",
+      "com.bytedance.ies",
+      "com.bytedance.ies.ugc",
+      "com.ss.android.ugc.aweme.follow",
+      "com",
+      "com.bytedance",
+      "com.ss",
+      "com.ss.android.ugc.aweme",
+      "com.ss.android.ugc.aweme.base",
+      "com.ss.android",
+      "app.morphe.extension.tiktok.spoof",
+      "app",
+      "app.morphe",
+      "app.morphe.extension",
+      "com.bytedance.ies.ugc.aweme"
+    ]
+  },
+  "unknown_designite_smells": []
+}

@@ -1,0 +1,49 @@
+{
+  "project": "membrane__api-gateway",
+  "n_nodes": 203,
+  "n_edges": 1359,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 48,
+    "UD": 24,
+    "AI": 1,
+    "GC": 7,
+    "FC": 44,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 203,
+    "designite_packages": 203,
+    "matched": 203,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com.oracle.util",
+      "com.predic8.membrane.core.util.config",
+      "org",
+      "com.predic8.membrane.core.ws",
+      "org.apache.http.impl",
+      "org.brotli",
+      "com.predic8.membrane.core.util.wsdl",
+      "com.predic8.xml",
+      "com.predic8.membrane",
+      "com.predic8.membrane.core",
+      "com.predic8.membrane.balancer",
+      "com.predic8.membrane.servlet.config",
+      "org.apache",
+      "org.apache.http",
+      "com",
+      "com.oracle",
+      "com.predic8"
+    ]
+  },
+  "unknown_designite_smells": []
+}

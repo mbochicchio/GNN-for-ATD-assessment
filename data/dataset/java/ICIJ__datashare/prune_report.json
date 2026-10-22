@@ -1,0 +1,60 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 810,
+  "source_files_removed": 326,
+  "source_files_after": 484,
+  "removed_share": 0.4025,
+  "removed_by_rule": {
+    "R1_arcan_default": 326
+  },
+  "removed_dirs": [
+    {
+      "path": "commons-test",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    },
+    {
+      "path": "datashare-api/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 54
+    },
+    {
+      "path": "datashare-api/src/main/java/org/icij/datashare/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "datashare-app/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 159
+    },
+    {
+      "path": "datashare-cli/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 23
+    },
+    {
+      "path": "datashare-db/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 13
+    },
+    {
+      "path": "datashare-index/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 22
+    },
+    {
+      "path": "datashare-nlp-corenlp/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "datashare-tasks/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 48
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

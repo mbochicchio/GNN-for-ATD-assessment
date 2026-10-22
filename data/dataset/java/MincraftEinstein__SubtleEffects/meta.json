@@ -1,0 +1,38 @@
+{
+  "project": "MincraftEinstein__SubtleEffects",
+  "n_nodes": 44,
+  "n_edges": 287,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 25,
+    "UD": 13,
+    "AI": 1,
+    "GC": 1,
+    "FC": 19,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 44,
+    "designite_packages": 43,
+    "matched": 43,
+    "coverage": 0.9773,
+    "arcan_only": [
+      "einstein.subtle_effects.particle.option"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "einstein.subtle_effects.mixin",
+      "einstein.subtle_effects.client",
+      "einstein",
+      "einstein.subtle_effects.client.model"
+    ]
+  },
+  "unknown_designite_smells": []
+}

@@ -1,0 +1,31 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 227,
+  "source_files_removed": 57,
+  "source_files_after": 170,
+  "removed_share": 0.2511,
+  "removed_by_rule": {
+    "R1_arcan_default": 13,
+    "R2_java_build": 44
+  },
+  "removed_dirs": [
+    {
+      "path": "tests",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "src/it",
+      "rule": "R2_java_build",
+      "source_files": 44
+    },
+    {
+      "path": "src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 13
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

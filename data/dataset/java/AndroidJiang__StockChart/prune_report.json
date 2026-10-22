@@ -1,0 +1,30 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 206,
+  "source_files_removed": 51,
+  "source_files_after": 155,
+  "removed_share": 0.2476,
+  "removed_by_rule": {
+    "R1_arcan_default": 51
+  },
+  "removed_dirs": [
+    {
+      "path": "app/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "app/src/androidTest/java/com/example",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "app/src/main/java/com/example",
+      "rule": "R1_arcan_default",
+      "source_files": 49
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

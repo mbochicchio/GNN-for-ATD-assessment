@@ -1,0 +1,35 @@
+{
+  "project": "funkygao__cp-ddd-framework",
+  "n_nodes": 25,
+  "n_edges": 64,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 7,
+    "UD": 4,
+    "AI": 0,
+    "GC": 1,
+    "FC": 6,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 25,
+    "designite_packages": 23,
+    "matched": 23,
+    "coverage": 0.92,
+    "arcan_only": [
+      "io.github.dddplus.annotation",
+      "io.github.dddplus.model.encapsulation"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "io.github",
+      "io"
+    ]
+  },
+  "unknown_designite_smells": []
+}

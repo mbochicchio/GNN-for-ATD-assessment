@@ -1,0 +1,65 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 2255,
+  "source_files_removed": 965,
+  "source_files_after": 1290,
+  "removed_share": 0.4279,
+  "removed_by_rule": {
+    "R1_arcan_default": 965
+  },
+  "removed_dirs": [
+    {
+      "path": "test",
+      "rule": "R1_arcan_default",
+      "source_files": 6
+    },
+    {
+      "path": ".claude/skills/find-example",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": ".claude/skills/run-example-test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "annot/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 46
+    },
+    {
+      "path": "core/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 649
+    },
+    {
+      "path": "core/src/main/resources/test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "distribution/examples",
+      "rule": "R1_arcan_default",
+      "source_files": 9
+    },
+    {
+      "path": "distribution/performance-test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "distribution/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 245
+    },
+    {
+      "path": "war/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 7
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}
