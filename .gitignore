@@ -388,6 +388,8 @@ $RECYCLE.BIN/
 # Pipeline trials & pilot
 data/trial
 data/pilot
+data/dataset/gnn_work
+data/dataset/raw_java
 
 #MLflow
 mlflow.db
