@@ -1,0 +1,44 @@
+{
+  "project": "bither__bither-android",
+  "n_nodes": 47,
+  "n_edges": 270,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 31,
+    "UD": 19,
+    "AI": 0,
+    "GC": 6,
+    "FC": 18,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 47,
+    "designite_packages": 47,
+    "matched": 47,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com.google.protobuf",
+      "com.google.bitcoin",
+      "net.bither.image",
+      "net.bither.ui",
+      "com",
+      "com.google",
+      "kankan.wheel",
+      "org",
+      "org.bitcoinj",
+      "net",
+      "kankan",
+      "net.bither.activity"
+    ]
+  },
+  "unknown_designite_smells": []
+}

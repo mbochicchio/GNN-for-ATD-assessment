@@ -1,0 +1,37 @@
+{
+  "project": "Enigmatis__graphql-java-annotations",
+  "n_nodes": 24,
+  "n_edges": 93,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 9,
+    "UD": 6,
+    "AI": 0,
+    "GC": 0,
+    "FC": 5,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 24,
+    "designite_packages": 21,
+    "matched": 21,
+    "coverage": 0.875,
+    "arcan_only": [
+      "graphql.annotations.annotationTypes",
+      "graphql.annotations.annotationTypes.directives.activation",
+      "graphql.annotations.annotationTypes.directives.definition"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "graphql.relay",
+      "graphql",
+      "graphql.annotations.annotationTypes.directives"
+    ]
+  },
+  "unknown_designite_smells": []
+}

@@ -1,0 +1,37 @@
+{
+  "project": "andforce__Andclaw",
+  "n_nodes": 53,
+  "n_edges": 158,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 21,
+    "UD": 11,
+    "AI": 0,
+    "GC": 2,
+    "FC": 17,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 53,
+    "designite_packages": 53,
+    "matched": 53,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com.andforce",
+      "com.andforce.mdm",
+      "com",
+      "com.google",
+      "com.afwsamples",
+      "com.common",
+      "com.google.android"
+    ]
+  },
+  "unknown_designite_smells": []
+}

@@ -1,0 +1,45 @@
+{
+  "project": "Patresss__Java-Own-Framework---step-by-step",
+  "n_nodes": 50,
+  "n_edges": 72,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 0,
+    "UD": 0,
+    "AI": 0,
+    "GC": 0,
+    "FC": 0,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 50,
+    "designite_packages": 47,
+    "matched": 47,
+    "coverage": 0.94,
+    "arcan_only": [
+      "com.patres.ownframework.step3.framework.annotation",
+      "com.patres.ownframework.step4.framework.annotation",
+      "com.patres.ownframework.step5.framework.annotation"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com.patres.ownframework",
+      "com.patres.ownframework.step1",
+      "com.patres.ownframework.step2b",
+      "com.patres.ownframework.step4",
+      "com",
+      "com.patres.ownframework.step5",
+      "com.patres",
+      "com.patres.ownframework.step2a",
+      "com.patres.ownframework.step3",
+      "com.patres.ownframework.step6",
+      "com.patres.ownframework.step7"
+    ]
+  },
+  "unknown_designite_smells": []
+}

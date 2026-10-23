@@ -1,0 +1,74 @@
+{
+  "project": "jindrapetrik__jpexs-decompiler",
+  "n_nodes": 230,
+  "n_edges": 1898,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 114,
+    "UD": 72,
+    "AI": 0,
+    "GC": 25,
+    "FC": 89,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 230,
+    "designite_packages": 231,
+    "matched": 230,
+    "coverage": 0.9957,
+    "arcan_only": [],
+    "designite_only": [
+      "(default package)"
+    ],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com.jpexs.decompiler.flash.jna",
+      "com.jpexs.decompiler.flash.gui.jna",
+      "lt",
+      "gnu",
+      "com.jpexs.decompiler.flash.locales.docs",
+      "com.jpexs.decompiler.flash.locales.docs.pcode",
+      "com.jpexs.helpers.resource",
+      "SevenZip.Compression",
+      "com.jpexs.decompiler.flash.types.text",
+      "org.monte",
+      "org.doubletype",
+      "at",
+      "at.dhyan",
+      "de",
+      "de.hameister",
+      "com",
+      "com.jpexs",
+      "net.kroo",
+      "com.jpexs.decompiler.flash.jna.platform",
+      "de.javagl",
+      "javazoom",
+      "javazoom.jl",
+      "com.jpexs.decompiler.flash.gui.jna.platform",
+      "com.jpexs.decompiler.flash.locales",
+      "org.pushingpixels.flamingo",
+      "org.pushingpixels.flamingo.api",
+      "org.pushingpixels.flamingo.internal",
+      "net.weiner",
+      "macromedia",
+      "macromedia.asc",
+      "com.jpexs.decompiler",
+      "com.jpexs.decompiler.flash.amf",
+      "org.pushingpixels.substance",
+      "org.pushingpixels.substance.internal",
+      "lt.dkd",
+      "org.pushingpixels.flamingo.internal.ui",
+      "com.jpexs.decompiler.flash.exporters.amf",
+      "org",
+      "org.pushingpixels",
+      "net"
+    ]
+  },
+  "unknown_designite_smells": []
+}

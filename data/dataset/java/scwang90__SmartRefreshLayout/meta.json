@@ -1,0 +1,35 @@
+{
+  "project": "scwang90__SmartRefreshLayout",
+  "n_nodes": 31,
+  "n_edges": 116,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 2,
+    "UD": 3,
+    "AI": 0,
+    "GC": 1,
+    "FC": 7,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 31,
+    "designite_packages": 31,
+    "matched": 31,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com",
+      "com.scwang",
+      "com.scwang.smart",
+      "com.scwang.smart.refresh",
+      "com.scwang.refresh.layout.fragment"
+    ]
+  },
+  "unknown_designite_smells": []
+}

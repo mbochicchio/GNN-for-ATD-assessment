@@ -1,0 +1,36 @@
+{
+  "project": "apache__logging-flume",
+  "n_nodes": 37,
+  "n_edges": 134,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 4,
+    "UD": 3,
+    "AI": 0,
+    "GC": 1,
+    "FC": 16,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 37,
+    "designite_packages": 36,
+    "matched": 36,
+    "coverage": 0.973,
+    "arcan_only": [
+      "org.apache.flume.conf.internal"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "org.apache.flume.formatter",
+      "org.apache",
+      "org.apache.flume.source.shaded",
+      "org"
+    ]
+  },
+  "unknown_designite_smells": []
+}

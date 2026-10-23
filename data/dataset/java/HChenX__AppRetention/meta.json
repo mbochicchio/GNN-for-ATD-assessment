@@ -1,0 +1,34 @@
+{
+  "project": "HChenX__AppRetention",
+  "n_nodes": 18,
+  "n_edges": 49,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 3,
+    "UD": 1,
+    "AI": 0,
+    "GC": 0,
+    "FC": 3,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 18,
+    "designite_packages": 18,
+    "matched": 18,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com",
+      "com.hchen",
+      "com.hchen.hooktool",
+      "com.hchen.appretention.data"
+    ]
+  },
+  "unknown_designite_smells": []
+}

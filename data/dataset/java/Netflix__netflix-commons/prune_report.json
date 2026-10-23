@@ -1,0 +1,45 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 149,
+  "source_files_removed": 37,
+  "source_files_after": 112,
+  "removed_share": 0.2483,
+  "removed_by_rule": {
+    "R1_arcan_default": 37
+  },
+  "removed_dirs": [
+    {
+      "path": "netflix-commons-util/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "netflix-eventbus/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 10
+    },
+    {
+      "path": "netflix-eventbus-bridge/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "netflix-eventbus-rx/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "netflix-infix/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 20
+    },
+    {
+      "path": "netflix-lifecycle/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

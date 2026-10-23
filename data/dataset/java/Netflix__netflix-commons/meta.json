@@ -1,0 +1,40 @@
+{
+  "project": "Netflix__netflix-commons",
+  "n_nodes": 15,
+  "n_edges": 16,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 2,
+    "UD": 1,
+    "AI": 0,
+    "GC": 1,
+    "FC": 2,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 15,
+    "designite_packages": 15,
+    "matched": 15,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com.netflix.infix.lang",
+      "com.netflix.infix.lang.infix",
+      "com",
+      "com.netflix",
+      "com.netflix.jersey.guice",
+      "com.netflix.jersey.guice.providers",
+      "com.netflix.stats",
+      "com.netflix.eventbus",
+      "com.netflix.lifecycle",
+      "com.netflix.jersey"
+    ]
+  },
+  "unknown_designite_smells": []
+}

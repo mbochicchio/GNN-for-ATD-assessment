@@ -1,0 +1,40 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 175,
+  "source_files_removed": 72,
+  "source_files_after": 103,
+  "removed_share": 0.4114,
+  "removed_by_rule": {
+    "R1_arcan_default": 72
+  },
+  "removed_dirs": [
+    {
+      "path": "api/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 63
+    },
+    {
+      "path": "google/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "grpc/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "log4j2/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    },
+    {
+      "path": "slf4j/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

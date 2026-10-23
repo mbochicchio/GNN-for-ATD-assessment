@@ -1,0 +1,65 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 289,
+  "source_files_removed": 0,
+  "source_files_after": 289,
+  "removed_share": 0.0,
+  "removed_by_rule": {
+    "R1_arcan_default": 0
+  },
+  "removed_dirs": [
+    {
+      "path": "app/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "mdm/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "mdm/src/androidTest/java/com/demo",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "model/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "model/src/androidTest/java/com/demo",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "model/src/main/java/com/demo",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "services/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "setupcompat/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "setupdesign/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "setupdesign_strings/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

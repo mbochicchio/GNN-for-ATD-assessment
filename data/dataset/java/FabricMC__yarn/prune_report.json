@@ -1,0 +1,30 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 126,
+  "source_files_removed": 12,
+  "source_files_after": 114,
+  "removed_share": 0.0952,
+  "removed_by_rule": {
+    "R1_arcan_default": 12
+  },
+  "removed_dirs": [
+    {
+      "path": "filament/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 12
+    },
+    {
+      "path": "mappings/net/minecraft/test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "mappings/net/minecraft/util/profiling/jfr/sample",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

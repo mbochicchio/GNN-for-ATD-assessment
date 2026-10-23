@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CallForSanity__Gaalop · dependency graph</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EEF1F0; --panel:#F8FAF9; --ink:#1B2733; --muted:#5E6B78; --rule:#D3DAD8;
+  --edge:#9AA7B2; --clean:#C3CCD3; --focus:#1B2733;
+  --CD:#D55E00; --UD:#0072B2; --AI:#CC79A7; --GC:#009E73; --FC:#E69F00; --SF:#56B4E9;
+  --s0:#C3CCD3; --s1:#F2C27B; --s2:#E58A3C; --s3:#C4462A; --s4:#8E1F2A;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+  --bg:#141B21; --panel:#1B242C; --ink:#E4EAEE; --muted:#93A1AD; --rule:#2C3842;
+  --edge:#4E5E6B; --clean:#3E4B56; --focus:#E4EAEE; --s0:#3E4B56;
+}}
+:root[data-theme="dark"]{
+  --bg:#141B21; --panel:#1B242C; --ink:#E4EAEE; --muted:#93A1AD; --rule:#2C3842;
+  --edge:#4E5E6B; --clean:#3E4B56; --focus:#E4EAEE; --s0:#3E4B56;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{height:100%; scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0; height:100%; background:var(--bg); color:var(--ink);
+  font:14px/1.5 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+.app{display:grid; grid-template-columns:320px 1fr; height:100%}
+aside{background:var(--panel); border-right:1px solid var(--rule); overflow-y:auto; padding:20px 20px 28px}
+h1{font:500 22px/1.2 "IBM Plex Sans Condensed","IBM Plex Sans",sans-serif; margin:0 0 4px; word-break:break-word}
+.sub{color:var(--muted); margin:0 0 18px}
+.stats{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-bottom:18px}
+.stat b{display:block; font-size:20px; font-weight:600}
+.stat span{color:var(--muted); font-size:12px}
+section{border-top:1px solid var(--rule); padding-top:14px; margin-top:14px}
+h2{font-size:13px; font-weight:600; margin:0 0 8px}
+label.ctl{display:block; color:var(--muted); font-size:12px; margin:8px 0 4px}
+select,input[type=search]{width:100%; font:inherit; color:var(--ink); background:var(--bg);
+  border:1px solid var(--rule); border-radius:6px; padding:6px 8px}
+select:focus-visible,input:focus-visible,button:focus-visible{outline:2px solid var(--focus); outline-offset:2px}
+.check{display:flex; gap:8px; align-items:center; margin-top:10px; color:var(--muted); font-size:13px}
+.legend{display:flex; flex-wrap:wrap; gap:6px 12px; margin-top:10px; font-size:12px}
+.dot{display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:7px; vertical-align:-1px}
+.legend i{display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:5px; vertical-align:-1px}
+table{width:100%; border-collapse:collapse; font-size:13px}
+td{padding:3px 0; border-bottom:1px solid var(--rule)}
+td:last-child{text-align:right; font-variant-numeric:tabular-nums}
+.chips{display:flex; flex-wrap:wrap; gap:6px; margin:8px 0}
+.chip{font-size:12px; padding:2px 8px; border-radius:10px; color:#fff}
+.chip.none{background:var(--clean); color:var(--ink)}
+.detail-name{font-weight:600; word-break:break-all; margin-bottom:4px}
+.note{color:var(--muted); font-size:12px}
+ol.rank{margin:0; padding-left:20px; font-size:13px}
+ol.rank li{margin:2px 0}
+ol.rank button{all:unset; cursor:pointer; word-break:break-all}
+ol.rank button:hover{text-decoration:underline}
+ol.rank .v{color:var(--muted); font-variant-numeric:tabular-nums}
+main{position:relative; overflow:hidden}
+svg{width:100%; height:100%; display:block; cursor:grab}
+.link{stroke:var(--edge); stroke-opacity:.55; fill:none}
+.node circle{stroke:var(--panel); stroke-width:1.5}
+.node.nomask circle{stroke-dasharray:3 2; stroke:var(--muted)}
+.node text{font-size:11px; fill:var(--ink); pointer-events:none; paint-order:stroke;
+  stroke:var(--bg); stroke-width:3px}
+.dim{opacity:.12}
+.node.sel circle{stroke:var(--focus); stroke-width:3}
+#tip{position:absolute; pointer-events:none; background:var(--panel); border:1px solid var(--rule);
+  border-radius:6px; padding:6px 9px; font-size:12px; max-width:320px; display:none; word-break:break-all}
+.hint{position:absolute; right:14px; bottom:12px; color:var(--muted); font-size:12px}
+@media (max-width:760px){
+  .app{grid-template-columns:1fr; grid-template-rows:auto 70vh; height:auto}
+  aside{border-right:0; border-bottom:1px solid var(--rule)}
+}
+@media (prefers-reduced-motion:reduce){ *{transition:none!important} }
+</style>
+</head>
+<body>
+<div class="app">
+<aside>
+  <h1 id="title"></h1>
+  <p class="sub">Package-level dependency graph with Designite smell labels</p>
+  <div class="stats">
+    <div class="stat"><b id="nN"></b><span>components</span></div>
+    <div class="stat"><b id="nE"></b><span>dependencies</span></div>
+    <div class="stat"><b id="nS"></b><span>smell-affected components</span></div>
+  </div>
+
+  <label class="ctl" for="colorBy">Colour nodes by</label>
+  <select id="colorBy">
+    <option value="count">Number of smells</option>
+    <option value="CD">Cyclic Dependency</option>
+    <option value="UD">Unstable Dependency</option>
+    <option value="AI">Ambiguous Interface</option>
+    <option value="GC">God Component</option>
+    <option value="FC">Feature Concentration</option>
+    <option value="SF">Scattered Functionality</option>
+    <option value="atdi">ATDI (Arcan)</option>
+  </select>
+  <div class="legend" id="legend"></div>
+
+  <label class="ctl" for="search">Find a component</label>
+  <input id="search" type="search" placeholder="e.g. analyzer" list="names" autocomplete="off">
+  <datalist id="names"></datalist>
+  <label class="check"><input type="checkbox" id="showLabels"> Show all node labels</label>
+
+  <section id="detail">
+    <h2>Selected component</h2>
+    <p class="note">Select a node to inspect its features, labels, and dependencies.</p>
+  </section>
+
+  <section>
+    <h2>Smell distribution</h2>
+    <table id="smellTable"></table>
+    <p class="note" id="ds"></p>
+  </section>
+
+  <section>
+    <h2>Highest ATDI</h2>
+    <ol class="rank" id="rank"></ol>
+  </section>
+</aside>
+<main>
+  <svg id="svg" role="img" aria-label="Dependency graph"></svg>
+  <div id="tip"></div>
+  <div class="hint">Drag to pan, scroll to zoom</div>
+</main>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script>
+const DATA = {"nodes": [{"id": 0, "name": "datapath.graph", "mask": 1, "atdi": 10.12631182636018, "units": 20, "Ab": 0.15, "In": 0.5491803278688525, "D": 0.30081967213114746, "FI": 5.0, "FO": 5.0, "LOC": 1551.0, "PR": 0.02910929482736157, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 1, "name": "datapath.graph.display", "mask": 1, "atdi": 10.545165065946419, "units": 4, "Ab": 0.5, "In": 0.14285714285714285, "D": 0.3571428571428572, "FI": 4.0, "FO": 1.0, "LOC": 36.0, "PR": 0.013688508562504094, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 2, "name": "datapath.graph.display.dot", "mask": 1, "atdi": 0.0, "units": 4, "Ab": 0.0, "In": 0.7777777777777778, "D": 0.2222222222222222, "FI": 2.0, "FO": 3.0, "LOC": 75.0, "PR": 0.0037897011232687957, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 3, "name": "datapath.graph.modlib", "mask": 1, "atdi": 0.0, "units": 9, "Ab": 0.2222222222222222, "In": 0.0, "D": 0.7777777777777778, "FI": 2.0, "FO": 0.0, "LOC": 130.0, "PR": 0.014451076658367458, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 4, "name": "datapath.graph.modlib.parameter", "mask": 1, "atdi": 0.0, "units": 10, "Ab": 0.0, "In": 0.5, "D": 0.5, "FI": 1.0, "FO": 1.0, "LOC": 55.0, "PR": 0.007811427743849863, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 5, "name": "datapath.graph.operations", "mask": 1, "atdi": 15.345312585967854, "units": 48, "Ab": 0.14583333333333334, "In": 0.1951219512195122, "D": 0.6590447154471545, "FI": 6.0, "FO": 4.0, "LOC": 671.0, "PR": 0.021649858255120138, "CD": 1, "UD": 1, "AI": 0, "GC": 1, "FC": 0, "SF": 0}, {"id": 6, "name": "datapath.graph.operations.constValue", "mask": 1, "atdi": 0.0, "units": 4, "Ab": 0.25, "In": 0.0, "D": 0.75, "FI": 4.0, "FO": 0.0, "LOC": 16.0, "PR": 0.020640759610392228, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 7, "name": "datapath.graph.type", "mask": 1, "atdi": 0.0, "units": 4, "Ab": 0.25, "In": 0.038461538461538464, "D": 0.7115384615384616, "FI": 5.0, "FO": 1.0, "LOC": 130.0, "PR": 0.014412567298658583, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 8, "name": "de.gaalop", "mask": 1, "atdi": 65.32937508413151, "units": 39, "Ab": 0.5641025641025641, "In": 0.24161073825503357, "D": 0.19428669764240236, "FI": 38.0, "FO": 4.0, "LOC": 742.0, "PR": 0.09654743758064672, "CD": 1, "UD": 0, "AI": 0, "GC": 1, "FC": 1, "SF": 0}, {"id": 9, "name": "de.gaalop.algebra", "mask": 1, "atdi": 51.01438476550153, "units": 18, "Ab": 0.0, "In": 0.8076923076923077, "D": 0.1923076923076923, "FI": 7.0, "FO": 5.0, "LOC": 742.0, "PR": 0.010182955660129861, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 10, "name": "de.gaalop.algorithms", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 0.0, "FO": 0.0, "LOC": 34.0, "PR": 0.002862857661858191, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 11, "name": "de.gaalop.annotation", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 1.0, "FO": 0.0, "LOC": 7.0, "PR": 0.003968343438443221, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 12, "name": "de.gaalop.api.cfg", "mask": 1, "atdi": 28.602479575307484, "units": 5, "Ab": 0.0, "In": 0.8181818181818182, "D": 0.18181818181818177, "FI": 4.0, "FO": 4.0, "LOC": 80.0, "PR": 0.005522964683229692, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 13, "name": "de.gaalop.api.dfg", "mask": 1, "atdi": 9.852887376340766, "units": 5, "Ab": 0.0, "In": 0.8666666666666667, "D": 0.1333333333333333, "FI": 2.0, "FO": 1.0, "LOC": 340.0, "PR": 0.004515114315427315, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 14, "name": "de.gaalop.cfg", "mask": 1, "atdi": 279.77162741554383, "units": 25, "Ab": 0.12, "In": 0.05027932960893855, "D": 0.8297206703910615, "FI": 53.0, "FO": 3.0, "LOC": 858.0, "PR": 0.18768281633788778, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 15, "name": "de.gaalop.cli", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 2.0, "LOC": 172.0, "PR": 0.002862857661858191, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 16, "name": "de.gaalop.clucalc.input", "mask": 1, "atdi": 15.944306815572627, "units": 6, "Ab": 0.0, "In": 0.9487179487179487, "D": 0.05128205128205132, "FI": 2.0, "FO": 4.0, "LOC": 513.0, "PR": 0.005202304947739041, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 17, "name": "de.gaalop.clucalc.output", "mask": 1, "atdi": 0.0, "units": 5, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 4.0, "LOC": 300.0, "PR": 0.002862857661858191, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 18, "name": "de.gaalop.codegenGapp", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 3.0, "LOC": 33.0, "PR": 0.002862857661858191, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 19, "name": "de.gaalop.codegen_verilog", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 12.0, "LOC": 110.0, "PR": 0.002862857661858191, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 20, "name": "de.gaalop.codegen_verilog.VerilogIR", "mask": 1, "atdi": 5.16308392836472, "units": 3, "Ab": 0.0, "In": 0.8901098901098901, "D": 0.10989010989010994, "FI": 2.0, "FO": 9.0, "LOC": 478.0, "PR": 0.003983372199599249, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 21, "name": "de.gaalop.codegen_verilog.VerilogIR.VerilogNodes", "mask": 1, "atdi": 5.16308392836472, "units": 9, "Ab": 0.0, "In": 0.75, "D": 0.25, "FI": 1.0, "FO": 3.0, "LOC": 122.0, "PR": 0.003239063235777829, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 22, "name": "de.gaalop.compressed", "mask": 1, "atdi": 0.0, "units": 6, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 4.0, "LOC": 375.0, "PR": 0.002862857661858191, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 23, "name": "de.gaalop.cpp", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.0, "In": 0.896551724137931, "D": 0.10344827586206895, "FI": 3.0, "FO": 3.0, "LOC": 169.0, "PR": 0.004160679903497322, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 24, "name": "de.gaalop.csharp", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 3.0, "LOC": 207.0, "PR": 0.002862857661858191, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 25, "name": "de.gaalop.dfg", "mask": 1, "atdi": 80.64917234147465, "units": 31, "Ab": 0.16129032258064516, "In": 0.012987012987012988, "D": 0.8257226644323419, "FI": 44.0, "FO": 1.0, "LOC": 598.0, "PR": 0.12188760073116228, "CD": 1, "UD": 1, "AI": 0, "GC": 1, "FC": 1, "SF": 0}, {"id": 26, "name": "de.gaalop.dot", "mask": 1, "atdi": 0.0, "units": 4, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 3.0, "LOC": 202.0, "PR": 0.002862857661858191, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 27, "name": "de.gaalop.gaalet", "mask": 1, "atdi": 5.509376427554059, "units": 10, "Ab": 0.0, "In": 0.9210526315789473, "D": 0.07894736842105265, "FI": 2.0, "FO": 4.0, "LOC": 598.0, "PR": 0.004427233024207146, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 28, "name": "de.gaalop.gaalet.antlr", "mask": 1, "atdi": 5.509376427554059, "units": 3, "Ab": 0.0, "In": 0.9565217391304348, "D": 0.04347826086956519, "FI": 1.0, "FO": 3.0, "LOC": 5479.0, "PR": 0.0038036400560865044, "CD": 1, "UD": 1, "AI": 0, "GC": 1, "FC": 0, "SF": 0}, {"id": 29, "name": "de.gaalop.gaalet.output", "mask": 1, "atdi": 0.0, "units": 5, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 5.0, "LOC": 312.0, "PR": 0.002862857661858191, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 30, "name": "de.gaalop.ganja", "mask": 1, "atdi": 0.0, "units": 9, "Ab": 0.1111111111111111, "In": 1.0, "D": 0.11111111111111116, "FI": 0.0, "FO": 3.0, "LOC": 686.0, "PR": 0.002862857661858191, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 31, "name": "de.gaalop.ganjaVisualCodeInserter", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 3.0, "LOC": 35.0, "PR": 0.002862857661858191, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 32, "name": "de.gaalop.gapp", "mask": 1, "atdi": 304.1359880333491, "units": 13, "Ab": 0.07692307692307693, "In": 0.4375, "D": 0.48557692307692313, "FI": 9.0, "FO": 7.0, "LOC": 106.0, "PR": 0.06949032865348499, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 33, "name": "de.gaalop.gapp.executer", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 0.9565217391304348, "D": 0.04347826086956519, "FI": 1.0, "FO": 4.0, "LOC": 236.0, "PR": 0.00313323729553301, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 34, "name": "de.gaalop.gapp.importing", "mask": 1, "atdi": 81.60324446081749, "units": 14, "Ab": 0.0, "In": 0.9746835443037974, "D": 0.025316455696202556, "FI": 2.0, "FO": 11.0, "LOC": 948.0, "PR": 0.012383180222952055, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 35, "name": "de.gaalop.gapp.importing.optimization", "mask": 1, "atdi": 22.409020420468828, "units": 5, "Ab": 0.0, "In": 0.9285714285714286, "D": 0.0714285714285714, "FI": 1.0, "FO": 5.0, "LOC": 83.0, "PR": 0.003819742683411135, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 36, "name": "de.gaalop.gapp.importing.parallelObjects", "mask": 1, "atdi": 17.78766124933101, "units": 10, "Ab": 0.2, "In": 0.21428571428571427, "D": 0.5857142857142857, "FI": 1.0, "FO": 3.0, "LOC": 166.0, "PR": 0.003819742683411135, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 37, "name": "de.gaalop.gapp.instructionSet", "mask": 1, "atdi": 26.98366811851539, "units": 10, "Ab": 0.1, "In": 0.3611111111111111, "D": 0.5388888888888889, "FI": 9.0, "FO": 3.0, "LOC": 165.0, "PR": 0.02013019852959469, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 38, "name": "de.gaalop.gapp.statistics", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 5.0, "LOC": 127.0, "PR": 0.002862857661858191, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 39, "name": "de.gaalop.gapp.variables", "mask": 1, "atdi": 0.0, "units": 10, "Ab": 0.4, "In": 0.0, "D": 0.6, "FI": 9.0, "FO": 0.0, "LOC": 71.0, "PR": 0.024751493527673783, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 40, "name": "de.gaalop.gapp.visitor", "mask": 1, "atdi": 21.057027682526574, "units": 6, "Ab": 0.3333333333333333, "In": 0.5869565217391305, "D": 0.07971014492753614, "FI": 8.0, "FO": 4.0, "LOC": 303.0, "PR": 0.02029340716786339, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 41, "name": "de.gaalop.gappDebugger", "mask": 1, "atdi": 0.0, "units": 5, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 9.0, "LOC": 302.0, "PR": 0.002862857661858191, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 42, "name": "de.gaalop.gappopencl", "mask": 1, "atdi": 0.0, "units": 4, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 6.0, "LOC": 473.0, "PR": 0.002862857661858191, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 43, "name": "de.gaalop.globalSettings", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 0.7777777777777778, "D": 0.2222222222222222, "FI": 1.0, "FO": 2.0, "LOC": 51.0, "PR": 0.003815824689339088, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 44, "name": "de.gaalop.gui", "mask": 1, "atdi": 4.834342849569203, "units": 21, "Ab": 0.0, "In": 0.9565217391304348, "D": 0.04347826086956519, "FI": 1.0, "FO": 4.0, "LOC": 1534.0, "PR": 0.004484574077634038, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 45, "name": "de.gaalop.gui.util", "mask": 1, "atdi": 4.834342849569203, "units": 2, "Ab": 0.5, "In": 0.6428571428571429, "D": 0.1428571428571428, "FI": 1.0, "FO": 2.0, "LOC": 116.0, "PR": 0.003815824689339088, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 46, "name": "de.gaalop.java", "mask": 1, "atdi": 0.0, "units": 4, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 3.0, "LOC": 424.0, "PR": 0.002862857661858191, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 47, "name": "de.gaalop.julia", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 3.0, "LOC": 131.0, "PR": 0.002862857661858191, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 48, "name": "de.gaalop.latex", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 3.0, "LOC": 148.0, "PR": 0.002862857661858191, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 49, "name": "de.gaalop.mathematica", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 3.0, "LOC": 113.0, "PR": 0.002862857661858191, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 50, "name": "de.gaalop.matlab", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 3.0, "LOC": 123.0, "PR": 0.002862857661858191, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 51, "name": "de.gaalop.optimizations", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.975609756097561, "D": 0.024390243902439046, "FI": 1.0, "FO": 2.0, "LOC": 205.0, "PR": 0.003065642387114305, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 52, "name": "de.gaalop.optimizations.CSE", "mask": 1, "atdi": 0.0, "units": 5, "Ab": 0.0, "In": 0.9761904761904762, "D": 0.023809523809523836, "FI": 1.0, "FO": 2.0, "LOC": 353.0, "PR": 0.003065642387114305, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 53, "name": "de.gaalop.optimizations.ConstantKiller", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.975, "D": 0.025000000000000022, "FI": 1.0, "FO": 2.0, "LOC": 167.0, "PR": 0.003065642387114305, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 54, "name": "de.gaalop.productComputer", "mask": 1, "atdi": 25.08120866401074, "units": 16, "Ab": 0.0625, "In": 0.5882352941176471, "D": 0.3492647058823529, "FI": 4.0, "FO": 4.0, "LOC": 423.0, "PR": 0.007292902922319126, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 55, "name": "de.gaalop.python", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 3.0, "LOC": 163.0, "PR": 0.002862857661858191, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 56, "name": "de.gaalop.quadriererOptimierer", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 2.0, "LOC": 134.0, "PR": 0.002862857661858191, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 57, "name": "de.gaalop.rust", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 3.0, "LOC": 108.0, "PR": 0.002862857661858191, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 58, "name": "de.gaalop.tba", "mask": 1, "atdi": 276.96840558305547, "units": 12, "Ab": 0.08333333333333333, "In": 0.4716981132075472, "D": 0.44496855345911945, "FI": 10.0, "FO": 9.0, "LOC": 378.0, "PR": 0.019322402703182702, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 59, "name": "de.gaalop.tba.baseChange", "mask": 1, "atdi": 32.79884258046361, "units": 7, "Ab": 0.0, "In": 0.9565217391304348, "D": 0.04347826086956519, "FI": 1.0, "FO": 6.0, "LOC": 263.0, "PR": 0.0038262120137831537, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 60, "name": "de.gaalop.tba.cfgImport", "mask": 1, "atdi": 190.287047167994, "units": 9, "Ab": 0.0, "In": 0.95, "D": 0.050000000000000044, "FI": 4.0, "FO": 10.0, "LOC": 518.0, "PR": 0.011333579199389512, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 61, "name": "de.gaalop.tba.cfgImport.optimization", "mask": 1, "atdi": 114.42883192984864, "units": 17, "Ab": 0.058823529411764705, "In": 0.9253731343283582, "D": 0.015803336259877065, "FI": 4.0, "FO": 11.0, "LOC": 826.0, "PR": 0.006194212138971762, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 62, "name": "de.gaalop.tba.cfgImport.optimization.gcse", "mask": 1, "atdi": 19.302638597868672, "units": 6, "Ab": 0.0, "In": 0.9767441860465116, "D": 0.023255813953488413, "FI": 1.0, "FO": 3.0, "LOC": 290.0, "PR": 0.00334149619243781, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 63, "name": "de.gaalop.tba.cfgImport.optimization.maxima", "mask": 1, "atdi": 39.18053775063024, "units": 11, "Ab": 0.09090909090909091, "In": 0.9230769230769231, "D": 0.013986013986013957, "FI": 2.0, "FO": 6.0, "LOC": 427.0, "PR": 0.003993833507728261, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 64, "name": "de.gaalop.tba.table", "mask": 1, "atdi": 16.00915917175707, "units": 6, "Ab": 0.16666666666666666, "In": 0.8421052631578947, "D": 0.00877192982456143, "FI": 3.0, "FO": 4.0, "LOC": 287.0, "PR": 0.006845855784372188, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 65, "name": "de.gaalop.tba.table.BitIO", "mask": 1, "atdi": 0.0, "units": 6, "Ab": 0.3333333333333333, "In": 0.0, "D": 0.6666666666666667, "FI": 1.0, "FO": 0.0, "LOC": 74.0, "PR": 0.004317592600729073, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 66, "name": "de.gaalop.vis2d", "mask": 1, "atdi": 5.392274052878771, "units": 12, "Ab": 0.0, "In": 0.9433962264150944, "D": 0.05660377358490565, "FI": 1.0, "FO": 4.0, "LOC": 590.0, "PR": 0.006463775221430507, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 67, "name": "de.gaalop.vis2d.drawing", "mask": 1, "atdi": 5.392274052878771, "units": 12, "Ab": 0.16666666666666666, "In": 0.3333333333333333, "D": 0.5, "FI": 1.0, "FO": 1.0, "LOC": 299.0, "PR": 0.004236401682850257, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 68, "name": "de.gaalop.visitors", "mask": 1, "atdi": 41.225157052539736, "units": 7, "Ab": 0.14285714285714285, "In": 0.6612903225806451, "D": 0.19585253456221197, "FI": 9.0, "FO": 2.0, "LOC": 436.0, "PR": 0.011429450539065588, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 69, "name": "de.gaalop.visualCodeInserter", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 3.0, "LOC": 61.0, "PR": 0.002862857661858191, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 70, "name": "de.gaalop.visualCodeInserter2d", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 3.0, "LOC": 47.0, "PR": 0.002862857661858191, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 71, "name": "de.gaalop.visualizer", "mask": 1, "atdi": 17.486613645972888, "units": 12, "Ab": 0.16666666666666666, "In": 0.8695652173913043, "D": 0.03623188405797095, "FI": 2.0, "FO": 10.0, "LOC": 804.0, "PR": 0.007672537559445702, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 72, "name": "de.gaalop.visualizer.engines.lwjgl", "mask": 1, "atdi": 12.364345584115586, "units": 4, "Ab": 0.25, "In": 0.75, "D": 0.0, "FI": 2.0, "FO": 2.0, "LOC": 200.0, "PR": 0.009314710056904471, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 73, "name": "de.gaalop.visualizer.engines.lwjgl.recording", "mask": 1, "atdi": 5.84366223016678, "units": 7, "Ab": 0.14285714285714285, "In": 0.5, "D": 0.3571428571428572, "FI": 1.0, "FO": 1.0, "LOC": 1456.0, "PR": 0.006820985981096969, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 74, "name": "de.gaalop.visualizer.gui", "mask": 1, "atdi": 5.451009140652818, "units": 5, "Ab": 0.4, "In": 0.6666666666666666, "D": 0.06666666666666665, "FI": 1.0, "FO": 2.0, "LOC": 252.0, "PR": 0.0035151949771486425, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 75, "name": "de.gaalop.visualizer.ia_math", "mask": 1, "atdi": 0.0, "units": 5, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 1.0, "FO": 0.0, "LOC": 771.0, "PR": 0.003714409240206924, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 76, "name": "de.gaalop.visualizer.zerofinding", "mask": 1, "atdi": 10.965930292024082, "units": 14, "Ab": 0.14285714285714285, "In": 0.9428571428571428, "D": 0.08571428571428563, "FI": 2.0, "FO": 5.0, "LOC": 860.0, "PR": 0.0050090911411555545, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 77, "name": "producttablecreator", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 4.0, "LOC": 92.0, "PR": 0.002862857661858191, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 78, "name": "wordlengthoptimization", "mask": 1, "atdi": 0.0, "units": 19, "Ab": 0.05263157894736842, "In": 0.9791666666666666, "D": 0.0317982456140351, "FI": 1.0, "FO": 5.0, "LOC": 1768.0, "PR": 0.003239063235777829, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}], "edges": [{"source": 0, "target": 1, "w": 3.0}, {"source": 0, "target": 3, "w": 16.0}, {"source": 0, "target": 4, "w": 10.0}, {"source": 0, "target": 5, "w": 133.0}, {"source": 0, "target": 7, "w": 5.0}, {"source": 1, "target": 5, "w": 2.0}, {"source": 2, "target": 1, "w": 7.0}, {"source": 2, "target": 5, "w": 3.0}, {"source": 2, "target": 7, "w": 2.0}, {"source": 4, "target": 3, "w": 10.0}, {"source": 5, "target": 0, "w": 42.0}, {"source": 5, "target": 1, "w": 1.0}, {"source": 5, "target": 6, "w": 1.0}, {"source": 5, "target": 7, "w": 14.0}, {"source": 7, "target": 6, "w": 4.0}, {"source": 8, "target": 0, "w": 2.0}, {"source": 8, "target": 14, "w": 22.0}, {"source": 8, "target": 25, "w": 72.0}, {"source": 9, "target": 8, "w": 9.0}, {"source": 9, "target": 14, "w": 64.0}, {"source": 9, "target": 16, "w": 1.0}, {"source": 9, "target": 25, "w": 35.0}, {"source": 9, "target": 68, "w": 10.0}, {"source": 12, "target": 13, "w": 1.0}, {"source": 12, "target": 14, "w": 19.0}, {"source": 12, "target": 58, "w": 1.0}, {"source": 12, "target": 61, "w": 1.0}, {"source": 13, "target": 25, "w": 75.0}, {"source": 14, "target": 8, "w": 3.0}, {"source": 14, "target": 25, "w": 20.0}, {"source": 14, "target": 32, "w": 1.0}, {"source": 15, "target": 8, "w": 16.0}, {"source": 15, "target": 9, "w": 2.0}, {"source": 16, "target": 8, "w": 7.0}, {"source": 16, "target": 11, "w": 1.0}, {"source": 16, "target": 14, "w": 24.0}, {"source": 16, "target": 25, "w": 15.0}, {"source": 17, "target": 8, "w": 7.0}, {"source": 17, "target": 14, "w": 16.0}, {"source": 17, "target": 16, "w": 2.0}, {"source": 17, "target": 25, "w": 47.0}, {"source": 18, "target": 8, "w": 3.0}, {"source": 18, "target": 14, "w": 1.0}, {"source": 18, "target": 40, "w": 1.0}, {"source": 19, "target": 0, "w": 26.0}, {"source": 19, "target": 1, "w": 1.0}, {"source": 19, "target": 5, "w": 1.0}, {"source": 19, "target": 8, "w": 4.0}, {"source": 19, "target": 14, "w": 1.0}, {"source": 19, "target": 20, "w": 1.0}, {"source": 19, "target": 23, "w": 1.0}, {"source": 19, "target": 25, "w": 11.0}, {"source": 19, "target": 51, "w": 1.0}, {"source": 19, "target": 52, "w": 1.0}, {"source": 19, "target": 53, "w": 1.0}, {"source": 20, "target": 0, "w": 6.0}, {"source": 20, "target": 2, "w": 1.0}, {"source": 20, "target": 5, "w": 25.0}, {"source": 20, "target": 6, "w": 1.0}, {"source": 20, "target": 7, "w": 1.0}, {"source": 20, "target": 14, "w": 17.0}, {"source": 20, "target": 21, "w": 1.0}, {"source": 20, "target": 25, "w": 27.0}, {"source": 20, "target": 78, "w": 4.0}, {"source": 21, "target": 14, "w": 1.0}, {"source": 21, "target": 20, "w": 9.0}, {"source": 21, "target": 25, "w": 1.0}, {"source": 22, "target": 8, "w": 7.0}, {"source": 22, "target": 14, "w": 18.0}, {"source": 22, "target": 23, "w": 1.0}, {"source": 22, "target": 25, "w": 90.0}, {"source": 23, "target": 8, "w": 9.0}, {"source": 23, "target": 14, "w": 9.0}, {"source": 23, "target": 25, "w": 10.0}, {"source": 24, "target": 8, "w": 10.0}, {"source": 24, "target": 14, "w": 9.0}, {"source": 24, "target": 25, "w": 10.0}, {"source": 25, "target": 14, "w": 3.0}, {"source": 26, "target": 8, "w": 3.0}, {"source": 26, "target": 14, "w": 15.0}, {"source": 26, "target": 25, "w": 26.0}, {"source": 27, "target": 8, "w": 8.0}, {"source": 27, "target": 14, "w": 17.0}, {"source": 27, "target": 25, "w": 15.0}, {"source": 27, "target": 28, "w": 3.0}, {"source": 28, "target": 14, "w": 4.0}, {"source": 28, "target": 25, "w": 17.0}, {"source": 28, "target": 27, "w": 1.0}, {"source": 29, "target": 8, "w": 10.0}, {"source": 29, "target": 14, "w": 18.0}, {"source": 29, "target": 23, "w": 1.0}, {"source": 29, "target": 25, "w": 39.0}, {"source": 29, "target": 27, "w": 2.0}, {"source": 30, "target": 8, "w": 10.0}, {"source": 30, "target": 14, "w": 21.0}, {"source": 30, "target": 25, "w": 32.0}, {"source": 31, "target": 8, "w": 5.0}, {"source": 31, "target": 14, "w": 5.0}, {"source": 31, "target": 25, "w": 1.0}, {"source": 32, "target": 8, "w": 7.0}, {"source": 32, "target": 14, "w": 1.0}, {"source": 32, "target": 34, "w": 1.0}, {"source": 32, "target": 37, "w": 1.0}, {"source": 32, "target": 39, "w": 3.0}, {"source": 32, "target": 40, "w": 2.0}, {"source": 32, "target": 58, "w": 1.0}, {"source": 33, "target": 32, "w": 8.0}, {"source": 33, "target": 37, "w": 9.0}, {"source": 33, "target": 39, "w": 4.0}, {"source": 33, "target": 40, "w": 1.0}, {"source": 34, "target": 8, "w": 1.0}, {"source": 34, "target": 14, "w": 12.0}, {"source": 34, "target": 25, "w": 120.0}, {"source": 34, "target": 32, "w": 18.0}, {"source": 34, "target": 35, "w": 1.0}, {"source": 34, "target": 36, "w": 57.0}, {"source": 34, "target": 37, "w": 12.0}, {"source": 34, "target": 39, "w": 12.0}, {"source": 34, "target": 58, "w": 7.0}, {"source": 34, "target": 60, "w": 1.0}, {"source": 34, "target": 68, "w": 1.0}, {"source": 35, "target": 14, "w": 4.0}, {"source": 35, "target": 32, "w": 3.0}, {"source": 35, "target": 37, "w": 5.0}, {"source": 35, "target": 39, "w": 3.0}, {"source": 35, "target": 40, "w": 2.0}, {"source": 36, "target": 25, "w": 1.0}, {"source": 36, "target": 34, "w": 1.0}, {"source": 36, "target": 37, "w": 1.0}, {"source": 37, "target": 32, "w": 7.0}, {"source": 37, "target": 39, "w": 12.0}, {"source": 37, "target": 40, "w": 10.0}, {"source": 38, "target": 14, "w": 1.0}, {"source": 38, "target": 32, "w": 2.0}, {"source": 38, "target": 37, "w": 8.0}, {"source": 38, "target": 39, "w": 3.0}, {"source": 38, "target": 40, "w": 1.0}, {"source": 40, "target": 14, "w": 4.0}, {"source": 40, "target": 32, "w": 19.0}, {"source": 40, "target": 37, "w": 40.0}, {"source": 40, "target": 39, "w": 10.0}, {"source": 41, "target": 8, "w": 6.0}, {"source": 41, "target": 9, "w": 1.0}, {"source": 41, "target": 14, "w": 5.0}, {"source": 41, "target": 32, "w": 3.0}, {"source": 41, "target": 33, "w": 2.0}, {"source": 41, "target": 37, "w": 17.0}, {"source": 41, "target": 39, "w": 3.0}, {"source": 41, "target": 40, "w": 2.0}, {"source": 41, "target": 58, "w": 1.0}, {"source": 42, "target": 8, "w": 5.0}, {"source": 42, "target": 14, "w": 1.0}, {"source": 42, "target": 32, "w": 6.0}, {"source": 42, "target": 37, "w": 17.0}, {"source": 42, "target": 39, "w": 8.0}, {"source": 42, "target": 40, "w": 2.0}, {"source": 43, "target": 8, "w": 6.0}, {"source": 43, "target": 14, "w": 2.0}, {"source": 44, "target": 8, "w": 53.0}, {"source": 44, "target": 9, "w": 2.0}, {"source": 44, "target": 43, "w": 2.0}, {"source": 44, "target": 45, "w": 5.0}, {"source": 45, "target": 8, "w": 9.0}, {"source": 45, "target": 44, "w": 1.0}, {"source": 46, "target": 8, "w": 6.0}, {"source": 46, "target": 14, "w": 18.0}, {"source": 46, "target": 25, "w": 28.0}, {"source": 47, "target": 8, "w": 7.0}, {"source": 47, "target": 14, "w": 10.0}, {"source": 47, "target": 25, "w": 9.0}, {"source": 48, "target": 8, "w": 4.0}, {"source": 48, "target": 14, "w": 13.0}, {"source": 48, "target": 25, "w": 22.0}, {"source": 49, "target": 8, "w": 6.0}, {"source": 49, "target": 14, "w": 9.0}, {"source": 49, "target": 25, "w": 9.0}, {"source": 50, "target": 8, "w": 6.0}, {"source": 50, "target": 14, "w": 9.0}, {"source": 50, "target": 25, "w": 10.0}, {"source": 51, "target": 14, "w": 13.0}, {"source": 51, "target": 25, "w": 27.0}, {"source": 52, "target": 14, "w": 31.0}, {"source": 52, "target": 25, "w": 58.0}, {"source": 53, "target": 14, "w": 13.0}, {"source": 53, "target": 25, "w": 26.0}, {"source": 54, "target": 9, "w": 3.0}, {"source": 54, "target": 14, "w": 2.0}, {"source": 54, "target": 58, "w": 6.0}, {"source": 54, "target": 64, "w": 1.0}, {"source": 55, "target": 8, "w": 8.0}, {"source": 55, "target": 14, "w": 11.0}, {"source": 55, "target": 25, "w": 10.0}, {"source": 56, "target": 14, "w": 14.0}, {"source": 56, "target": 25, "w": 26.0}, {"source": 57, "target": 8, "w": 6.0}, {"source": 57, "target": 14, "w": 9.0}, {"source": 57, "target": 25, "w": 9.0}, {"source": 58, "target": 8, "w": 8.0}, {"source": 58, "target": 9, "w": 6.0}, {"source": 58, "target": 14, "w": 4.0}, {"source": 58, "target": 25, "w": 6.0}, {"source": 58, "target": 54, "w": 6.0}, {"source": 58, "target": 60, "w": 1.0}, {"source": 58, "target": 64, "w": 1.0}, {"source": 58, "target": 68, "w": 1.0}, {"source": 59, "target": 9, "w": 2.0}, {"source": 59, "target": 14, "w": 17.0}, {"source": 59, "target": 25, "w": 10.0}, {"source": 59, "target": 54, "w": 6.0}, {"source": 59, "target": 61, "w": 1.0}, {"source": 59, "target": 68, "w": 3.0}, {"source": 60, "target": 8, "w": 2.0}, {"source": 60, "target": 9, "w": 1.0}, {"source": 60, "target": 12, "w": 1.0}, {"source": 60, "target": 14, "w": 25.0}, {"source": 60, "target": 25, "w": 51.0}, {"source": 60, "target": 58, "w": 7.0}, {"source": 60, "target": 59, "w": 1.0}, {"source": 60, "target": 61, "w": 7.0}, {"source": 60, "target": 68, "w": 2.0}, {"source": 61, "target": 8, "w": 9.0}, {"source": 61, "target": 12, "w": 1.0}, {"source": 61, "target": 13, "w": 6.0}, {"source": 61, "target": 14, "w": 67.0}, {"source": 61, "target": 25, "w": 46.0}, {"source": 61, "target": 58, "w": 9.0}, {"source": 61, "target": 60, "w": 1.0}, {"source": 61, "target": 62, "w": 6.0}, {"source": 61, "target": 63, "w": 3.0}, {"source": 61, "target": 68, "w": 2.0}, {"source": 62, "target": 8, "w": 2.0}, {"source": 62, "target": 14, "w": 21.0}, {"source": 62, "target": 25, "w": 30.0}, {"source": 63, "target": 8, "w": 7.0}, {"source": 63, "target": 12, "w": 1.0}, {"source": 63, "target": 14, "w": 6.0}, {"source": 63, "target": 25, "w": 48.0}, {"source": 63, "target": 58, "w": 1.0}, {"source": 63, "target": 68, "w": 1.0}, {"source": 64, "target": 14, "w": 1.0}, {"source": 64, "target": 54, "w": 3.0}, {"source": 64, "target": 58, "w": 15.0}, {"source": 64, "target": 65, "w": 7.0}, {"source": 66, "target": 8, "w": 6.0}, {"source": 66, "target": 14, "w": 17.0}, {"source": 66, "target": 25, "w": 33.0}, {"source": 66, "target": 67, "w": 15.0}, {"source": 67, "target": 66, "w": 3.0}, {"source": 68, "target": 14, "w": 35.0}, {"source": 68, "target": 25, "w": 81.0}, {"source": 69, "target": 8, "w": 5.0}, {"source": 69, "target": 14, "w": 6.0}, {"source": 69, "target": 25, "w": 4.0}, {"source": 70, "target": 8, "w": 5.0}, {"source": 70, "target": 14, "w": 6.0}, {"source": 70, "target": 25, "w": 2.0}, {"source": 71, "target": 8, "w": 9.0}, {"source": 71, "target": 12, "w": 1.0}, {"source": 71, "target": 14, "w": 11.0}, {"source": 71, "target": 25, "w": 40.0}, {"source": 71, "target": 61, "w": 1.0}, {"source": 71, "target": 63, "w": 6.0}, {"source": 71, "target": 68, "w": 1.0}, {"source": 71, "target": 72, "w": 2.0}, {"source": 71, "target": 74, "w": 4.0}, {"source": 71, "target": 76, "w": 4.0}, {"source": 72, "target": 71, "w": 7.0}, {"source": 72, "target": 73, "w": 2.0}, {"source": 73, "target": 72, "w": 1.0}, {"source": 74, "target": 25, "w": 1.0}, {"source": 74, "target": 76, "w": 1.0}, {"source": 76, "target": 14, "w": 10.0}, {"source": 76, "target": 25, "w": 72.0}, {"source": 76, "target": 68, "w": 3.0}, {"source": 76, "target": 71, "w": 8.0}, {"source": 76, "target": 75, "w": 3.0}, {"source": 77, "target": 14, "w": 1.0}, {"source": 77, "target": 54, "w": 3.0}, {"source": 77, "target": 58, "w": 5.0}, {"source": 77, "target": 64, "w": 1.0}, {"source": 78, "target": 0, "w": 17.0}, {"source": 78, "target": 2, "w": 1.0}, {"source": 78, "target": 5, "w": 285.0}, {"source": 78, "target": 6, "w": 4.0}, {"source": 78, "target": 7, "w": 20.0}], "meta": {"project": "CallForSanity__Gaalop", "n_nodes": 79, "n_edges": 285, "graph_level_smells": ["Dense Structure"], "dense_structure": 1, "label_counts": {"CD": 34, "UD": 20, "AI": 0, "GC": 4, "FC": 16, "SF": 0}, "matching": {"arcan_nodes": 79, "designite_packages": 79, "matched": 79, "coverage": 1.0, "arcan_only": [], "designite_only": [], "smelly_packages_not_in_graph": []}, "dropped_containers": {"default_package": [], "empty_container": ["de.gaalop.clucalc", "de.gaalop.api", "datapath", "de", "de.gaalop.visualizer.engines"]}, "unknown_designite_smells": []}};
+const LABELS = ["CD","UD","AI","GC","FC","SF"];
+const NAMES = {CD:"Cyclic Dependency",UD:"Unstable Dependency",AI:"Ambiguous Interface",
+  GC:"God Component",FC:"Feature Concentration",SF:"Scattered Functionality"};
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const nodes = DATA.nodes.map(d => ({...d, nSmell: LABELS.reduce((s,k)=>s+d[k],0),
+  short: d.name.split(".").slice(-1)[0] || d.name}));
+const byId = new Map(nodes.map(d => [d.id, d]));
+const links = DATA.edges.map(e => ({...e}));
+const meta = DATA.meta;
+let current = null;
+
+// ---------- sidebar ----------
+document.getElementById("title").textContent = meta.project;
+document.getElementById("nN").textContent = nodes.length;
+document.getElementById("nE").textContent = links.length;
+document.getElementById("nS").textContent = nodes.filter(d => d.nSmell > 0).length;
+document.getElementById("names").innerHTML = nodes.map(d => `<option value="${d.name}">`).join("");
+document.getElementById("smellTable").innerHTML = LABELS.map(k =>
+  `<tr><td><i class="dot" style="background:var(--${k})"></i>${NAMES[k]}</td>
+   <td>${meta.label_counts[k]} / ${nodes.length}</td></tr>`).join("");
+document.getElementById("ds").textContent = meta.dense_structure
+  ? "Dense Structure detected at project level (not assigned to individual nodes)."
+  : "Dense Structure not detected.";
+const unmasked = nodes.filter(d => !d.mask).length;
+if (unmasked) document.getElementById("ds").textContent +=
+  ` ${unmasked} nodes not analysed by Designite (dashed outline): labels unavailable.`;
+const rank = [...nodes].sort((a,b) => b.atdi - a.atdi).slice(0,10);
+document.getElementById("rank").innerHTML = rank.map(d =>
+  `<li><button data-id="${d.id}">${d.short}</button> <span class="v">${d.atdi.toFixed(1)}</span></li>`).join("");
+document.querySelectorAll("#rank button").forEach(b =>
+  b.addEventListener("click", () => select(byId.get(+b.dataset.id), true)));
+
+// ---------- graph ----------
+const svg = d3.select("#svg"), g = svg.append("g");
+const W = () => svg.node().clientWidth, H = () => svg.node().clientHeight;
+const maxLoc = d3.max(nodes, d => d.LOC) || 1;
+const r = d3.scaleSqrt().domain([0, maxLoc]).range([4, 26]);
+const wScale = d3.scaleLog().domain([1, d3.max(links, d => d.w) || 1]).range([0.6, 3.5]);
+const maxAtdi = d3.max(nodes, d => d.atdi) || 1;
+
+svg.append("defs").append("marker").attr("id","arrow").attr("viewBox","0 -4 8 8")
+  .attr("refX",8).attr("refY",0).attr("markerUnits","userSpaceOnUse").attr("markerWidth",9).attr("markerHeight",9).attr("orient","auto")
+  .append("path").attr("d","M0,-4L8,0L0,4").attr("fill","var(--edge)");
+
+const link = g.append("g").selectAll("path").data(links).join("path")
+  .attr("class","link").attr("stroke-width", d => wScale(Math.max(1,d.w))).attr("marker-end","url(#arrow)");
+const node = g.append("g").selectAll("g").data(nodes).join("g")
+  .attr("class", d => "node" + (d.mask ? "" : " nomask")).attr("tabindex",0)
+  .attr("aria-label", d => d.name);
+node.append("circle").attr("r", d => r(d.LOC));
+node.append("text").attr("dy", d => -r(d.LOC) - 4).attr("text-anchor","middle").text(d => d.short);
+
+const sim = d3.forceSimulation(nodes)
+  .force("link", d3.forceLink(links).id(d => d.id).distance(95).strength(0.2))
+  .force("charge", d3.forceManyBody().strength(-420))
+  .force("collide", d3.forceCollide(d => r(d.LOC) + 6))
+  .force("x", d3.forceX(() => W()/2).strength(0.05))
+  .force("y", d3.forceY(() => H()/2).strength(0.05))
+  .on("tick", ticked).on("end", fit);
+if (matchMedia("(prefers-reduced-motion: reduce)").matches) { sim.stop(); for (let i=0;i<300;i++) sim.tick(); ticked(); setTimeout(fit, 0); }
+let fitted = false;
+function fit(){
+  if (fitted) return; fitted = true;
+  const pad = 40, xs = nodes.map(d => d.x), ys = nodes.map(d => d.y);
+  const x0 = d3.min(xs) - pad, x1 = d3.max(xs) + pad, y0 = d3.min(ys) - pad, y1 = d3.max(ys) + pad;
+  const k = Math.min(2, 0.95 / Math.max((x1 - x0) / W(), (y1 - y0) / H()));
+  svg.transition().duration(600).call(zoom.transform,
+    d3.zoomIdentity.translate(W()/2, H()/2).scale(k).translate(-(x0 + x1)/2, -(y0 + y1)/2));
+}
+
+function ticked(){
+  link.attr("d", d => {
+    const dx = d.target.x - d.source.x, dy = d.target.y - d.source.y, L = Math.hypot(dx,dy) || 1;
+    const rt = r(d.target.LOC) + 3, rs = r(d.source.LOC);
+    return `M${d.source.x + dx*rs/L},${d.source.y + dy*rs/L}L${d.target.x - dx*rt/L},${d.target.y - dy*rt/L}`;
+  });
+  node.attr("transform", d => `translate(${d.x},${d.y})`);
+}
+
+node.call(d3.drag()
+  .on("start", (e,d) => { if(!e.active) sim.alphaTarget(0.3).restart(); d.fx=d.x; d.fy=d.y; })
+  .on("drag", (e,d) => { d.fx=e.x; d.fy=e.y; })
+  .on("end", (e,d) => { if(!e.active) sim.alphaTarget(0); d.fx=null; d.fy=null; }));
+const zoom = d3.zoom().scaleExtent([0.2,6]).on("zoom", e => g.attr("transform", e.transform));
+svg.call(zoom).on("click", e => { if (e.target === svg.node()) select(null); });
+
+// ---------- colour ----------
+function colour(d){
+  const m = document.getElementById("colorBy").value;
+  if (m === "count") return css("--s" + Math.min(d.nSmell, 4));
+  if (m === "atdi") return d3.interpolateLab(css("--s0"), css("--s4"))(Math.sqrt(d.atdi / maxAtdi));
+  return d[m] ? css("--" + m) : css("--clean");
+}
+function legend(){
+  const m = document.getElementById("colorBy").value, el = document.getElementById("legend");
+  if (m === "count") el.innerHTML = [0,1,2,3,4].map(i =>
+    `<span><i style="background:var(--s${i})"></i>${i===4?"4+":i} ${i===1?"smell":"smells"}</span>`).join("");
+  else if (m === "atdi") el.innerHTML = `<span><i style="background:var(--s0)"></i>0</span>
+    <span><i style="background:var(--s4)"></i>${maxAtdi.toFixed(0)}</span>`;
+  else el.innerHTML = `<span><i style="background:var(--${m})"></i>affected</span>
+    <span><i style="background:var(--clean)"></i>not affected</span>`;
+  el.innerHTML += `<span>node size ∝ LOC</span>`;
+}
+function paint(){ node.select("circle").attr("fill", colour); legend(); }
+document.getElementById("colorBy").addEventListener("change", paint);
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", paint);
+paint();
+
+// ---------- labels ----------
+function labelsVisible(){
+  const all = document.getElementById("showLabels").checked;
+  node.select("text").style("display", d => all || r(d.LOC) > 12 || d === current ? null : "none");
+}
+document.getElementById("showLabels").addEventListener("change", labelsVisible);
+
+// ---------- tooltip ----------
+const tip = document.getElementById("tip");
+node.on("mouseenter", (e,d) => {
+  const s = LABELS.filter(k => d[k]).join(", ") || "none";
+  tip.innerHTML = `<b>${d.name}</b><br>LOC ${d.LOC} · FI ${d.FI} · FO ${d.FO}<br>Smells: ${s}`;
+  tip.style.display = "block";
+}).on("mousemove", e => {
+  const b = document.querySelector("main").getBoundingClientRect();
+  tip.style.left = (e.clientX - b.left + 14) + "px"; tip.style.top = (e.clientY - b.top + 14) + "px";
+}).on("mouseleave", () => tip.style.display = "none")
+  .on("click", (e,d) => { e.stopPropagation(); select(d); })
+  .on("keydown", (e,d) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(d); } });
+
+// ---------- selection ----------
+function select(d, center){
+  current = d;
+  node.classed("sel", n => n === d);
+  if (!d){ node.classed("dim", false); link.classed("dim", false); renderDetail(null); labelsVisible(); return; }
+  const out = links.filter(l => l.source === d), inc = links.filter(l => l.target === d);
+  const nb = new Set([d, ...out.map(l => l.target), ...inc.map(l => l.source)]);
+  node.classed("dim", n => !nb.has(n));
+  link.classed("dim", l => l.source !== d && l.target !== d);
+  renderDetail(d, out, inc); labelsVisible();
+  if (center) svg.transition().duration(500).call(zoom.translateTo, d.x, d.y);
+}
+function renderDetail(d, out, inc){
+  const el = document.getElementById("detail");
+  if (!d){ el.innerHTML = `<h2>Selected component</h2><p class="note">Select a node to inspect its features, labels, and dependencies.</p>`; return; }
+  const chips = LABELS.filter(k => d[k]).map(k => `<span class="chip" style="background:var(--${k})">${NAMES[k]}</span>`).join("")
+    || `<span class="chip none">${d.mask ? "No smells" : "Labels unavailable"}</span>`;
+  const f = (v, p=3) => Number.isInteger(v) ? v : v.toFixed(p);
+  const rows = [["Abstractness (Ab)",d.Ab],["Instability (In)",d.In],["Distance (D)",d.D],["Fan-in (FI)",d.FI],
+    ["Fan-out (FO)",d.FO],["Lines of code (LOC)",d.LOC],["PageRank (PR)",d.PR],["ATDI (Arcan)",d.atdi],["Classes",d.units]];
+  el.innerHTML = `<h2>Selected component</h2><div class="detail-name">${d.name}</div>
+    <div class="chips">${chips}</div>
+    <table>${rows.map(([k,v]) => `<tr><td>${k}</td><td>${f(v)}</td></tr>`).join("")}</table>
+    <p class="note">Efferent dependencies: ${out.length}. Afferent dependencies: ${inc.length}.</p>`;
+}
+document.getElementById("search").addEventListener("change", e => {
+  const d = nodes.find(n => n.name === e.target.value) || nodes.find(n => n.name.includes(e.target.value));
+  if (d) select(d, true);
+});
+labelsVisible();
+</script>
+</body>
+</html>

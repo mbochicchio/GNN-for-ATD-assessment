@@ -1,0 +1,110 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 160,
+  "source_files_removed": 41,
+  "source_files_after": 119,
+  "removed_share": 0.2562,
+  "removed_by_rule": {
+    "R1_arcan_default": 41
+  },
+  "removed_dirs": [
+    {
+      "path": "app/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "app/src/main/java/com/scwang/refresh/layout/activity/example",
+      "rule": "R1_arcan_default",
+      "source_files": 10
+    },
+    {
+      "path": "app/src/main/java/com/scwang/refresh/layout/fragment/example",
+      "rule": "R1_arcan_default",
+      "source_files": 17
+    },
+    {
+      "path": "refresh-drawable-paint/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "refresh-drawable-path/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "refresh-footer/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "refresh-footer-ball/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "refresh-footer-classics/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "refresh-header/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "refresh-header-classics/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "refresh-header-falsify/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "refresh-header-material/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "refresh-header-radar/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "refresh-header-two-level/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "refresh-layout/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "refresh-layout-kernel/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    }
+  ],
+  "residual_test_files": 14,
+  "residual_examples": [
+    "app/src/androidTest/java/com/scwang/refresh/ExampleInstrumentedTest.java",
+    "refresh-drawable-paint/src/androidTest/java/com/scwang/smart/drawable/ExampleInstrumentedTest.java",
+    "refresh-drawable-path/src/androidTest/java/com/scwang/smart/drawable/ExampleInstrumentedTest.java",
+    "refresh-footer/src/androidTest/java/com/scwang/smart/refresh/footer/ExampleInstrumentedTest.java",
+    "refresh-footer-ball/src/androidTest/java/com/scwang/smart/refresh/footer/ExampleInstrumentedTest.java",
+    "refresh-footer-classics/src/androidTest/java/com/scwang/smart/refresh/footer/ExampleInstrumentedTest.java",
+    "refresh-header/src/androidTest/java/com/scwang/smartrefresh/header/ExampleInstrumentedTest.java",
+    "refresh-header-classics/src/androidTest/java/com/scwang/smart/refresh/header/ExampleInstrumentedTest.java",
+    "refresh-header-falsify/src/androidTest/java/com/scwang/smart/refresh/header/ExampleInstrumentedTest.java",
+    "refresh-header-material/src/androidTest/java/com/scwang/smart/refresh/header/ExampleInstrumentedTest.java",
+    "refresh-header-radar/src/androidTest/java/com/scwang/smart/refresh/header/ExampleInstrumentedTest.java",
+    "refresh-header-two-level/src/androidTest/java/com/scwang/smart/refresh/header/ExampleInstrumentedTest.java",
+    "refresh-layout/src/androidTest/java/com/scwang/smart/refresh/layout/ExampleInstrumentedTest.java",
+    "refresh-layout-kernel/src/androidTest/java/com/scwang/smart/refresh/layout/ExampleInstrumentedTest.java"
+  ]
+}

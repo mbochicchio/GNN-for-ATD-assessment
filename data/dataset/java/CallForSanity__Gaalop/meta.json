@@ -1,0 +1,37 @@
+{
+  "project": "CallForSanity__Gaalop",
+  "n_nodes": 79,
+  "n_edges": 285,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 34,
+    "UD": 20,
+    "AI": 0,
+    "GC": 4,
+    "FC": 16,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 79,
+    "designite_packages": 79,
+    "matched": 79,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "de.gaalop.clucalc",
+      "de.gaalop.api",
+      "datapath",
+      "de",
+      "de.gaalop.visualizer.engines"
+    ]
+  },
+  "unknown_designite_smells": []
+}

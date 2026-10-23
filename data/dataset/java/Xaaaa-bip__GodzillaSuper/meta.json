@@ -1,0 +1,40 @@
+{
+  "project": "Xaaaa-bip__GodzillaSuper",
+  "n_nodes": 41,
+  "n_edges": 129,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 10,
+    "UD": 8,
+    "AI": 0,
+    "GC": 0,
+    "FC": 11,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 41,
+    "designite_packages": 40,
+    "matched": 40,
+    "coverage": 0.9756,
+    "arcan_only": [
+      "core.annotation"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "core.c2profile.chain",
+      "core.c2profile.chain.impl",
+      "shells",
+      "shells.payloads",
+      "shells.cryptions",
+      "core.c2profile"
+    ]
+  },
+  "unknown_designite_smells": []
+}

@@ -1,0 +1,121 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 526,
+  "source_files_removed": 214,
+  "source_files_after": 312,
+  "removed_share": 0.4068,
+  "removed_by_rule": {
+    "R1_arcan_default": 209,
+    "R2_java_build": 5
+  },
+  "removed_dirs": [
+    {
+      "path": "deploy/samples",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "hoptimator-api/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 11
+    },
+    {
+      "path": "hoptimator-avro/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 5
+    },
+    {
+      "path": "hoptimator-catalog/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    },
+    {
+      "path": "hoptimator-cli/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "hoptimator-demodb/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 8
+    },
+    {
+      "path": "hoptimator-graph/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "hoptimator-jdbc/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 36
+    },
+    {
+      "path": "hoptimator-jdbc/src/testFixtures",
+      "rule": "R2_java_build",
+      "source_files": 3
+    },
+    {
+      "path": "hoptimator-k8s/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 52
+    },
+    {
+      "path": "hoptimator-k8s/src/testFixtures",
+      "rule": "R2_java_build",
+      "source_files": 2
+    },
+    {
+      "path": "hoptimator-kafka/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 7
+    },
+    {
+      "path": "hoptimator-kafka-controller/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "hoptimator-logical/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 10
+    },
+    {
+      "path": "hoptimator-mcp-server/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "hoptimator-mcp-server-app/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "hoptimator-mysql/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 8
+    },
+    {
+      "path": "hoptimator-operator/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 11
+    },
+    {
+      "path": "hoptimator-planner/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 5
+    },
+    {
+      "path": "hoptimator-util/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 34
+    },
+    {
+      "path": "hoptimator-venice/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 9
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

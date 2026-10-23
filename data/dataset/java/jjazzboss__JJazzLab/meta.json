@@ -1,0 +1,64 @@
+{
+  "project": "jjazzboss__JJazzLab",
+  "n_nodes": 168,
+  "n_edges": 1535,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 62,
+    "UD": 48,
+    "AI": 0,
+    "GC": 9,
+    "FC": 55,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 168,
+    "designite_packages": 168,
+    "matched": 168,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "org.jjazz.testplayerservice",
+      "org.jjazz.utilities",
+      "org.jjazz.importers",
+      "org.jjazz.undomanager",
+      "org.jjazz.activesong.api",
+      "org.jjazz.ss_editor",
+      "org.jjazz.xstream",
+      "org.jjazz.ss_editor.rpviewer",
+      "org.jjazz.fluidsynthembeddedsynth",
+      "org.jjazz.chordleadsheet.spi",
+      "org.jjazz.base.api",
+      "org.jjazz.embeddedsynth.lame",
+      "org.jjazz.cl_editor",
+      "org.jjazz.cl_editor.barrenderer",
+      "org.jjazz.cl_editor.barbox",
+      "org.jjazz.cl_editor.itemrenderer",
+      "org.jjazz.instrumentcomponents.guitardiagram",
+      "org.jjazz.ss_editor.sptviewer",
+      "org.jjazz",
+      "org.jjazz.coreuicomponents",
+      "org.jjazz.rhythmmusicgeneration",
+      "org.jjazz.phrase",
+      "org.jjazz.humanizer",
+      "org",
+      "org.jjazz.rhythmparametersimpl",
+      "org.jjazz.flatcomponents",
+      "org.jjazz.rhythmdatabase",
+      "org.jjazz.instrumentcomponents",
+      "org.jjazz.uiutilities",
+      "org.jjazz.instrumentcomponents.keyboard",
+      "org.jjazz.upgrade",
+      "org.jjazz.quantizer"
+    ]
+  },
+  "unknown_designite_smells": []
+}

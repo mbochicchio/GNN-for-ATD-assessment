@@ -1,0 +1,40 @@
+{
+  "project": "Geforce132__SecurityCraft",
+  "n_nodes": 43,
+  "n_edges": 267,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 22,
+    "UD": 14,
+    "AI": 2,
+    "GC": 6,
+    "FC": 25,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 43,
+    "designite_packages": 43,
+    "matched": 43,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "net.minecraft.client.renderer",
+      "net.minecraft.client.renderer.feature",
+      "net.geforcemods.securitycraft.mixin",
+      "net.geforcemods",
+      "net.geforcemods.securitycraft.network",
+      "net.minecraft",
+      "net.minecraft.client",
+      "net"
+    ]
+  },
+  "unknown_designite_smells": []
+}

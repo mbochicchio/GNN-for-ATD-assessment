@@ -1,0 +1,44 @@
+{
+  "project": "iron431__irons-spells-n-spellbooks",
+  "n_nodes": 158,
+  "n_edges": 1684,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 115,
+    "UD": 32,
+    "AI": 0,
+    "GC": 4,
+    "FC": 48,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 158,
+    "designite_packages": 157,
+    "matched": 157,
+    "coverage": 0.9937,
+    "arcan_only": [
+      "io.redspace.ironsspellbooks.api.item.curios"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com",
+      "com.mojang",
+      "io.redspace.ironsspellbooks.api",
+      "io.redspace.ironsspellbooks.item.spell_books",
+      "io.redspace.ironsspellbooks.capabilities",
+      "io",
+      "io.redspace",
+      "io.redspace.ironsspellbooks.block.statue",
+      "com.mojang.datafixers",
+      "com.mojang.datafixers.util"
+    ]
+  },
+  "unknown_designite_smells": []
+}

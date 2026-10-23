@@ -1,0 +1,44 @@
+{
+  "project": "cloudogu__gitops-playground",
+  "n_nodes": 32,
+  "n_edges": 175,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 15,
+    "UD": 9,
+    "AI": 1,
+    "GC": 1,
+    "FC": 7,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 32,
+    "designite_packages": 32,
+    "matched": 32,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com.cloudogu.gitops.utils.jgit",
+      "retrofit2",
+      "com",
+      "com.cloudogu",
+      "com.cloudogu.gitops",
+      "com.cloudogu.gitops.infrastructure.kubernetes",
+      "io",
+      "io.fabric8",
+      "io.fabric8.kubernetes.client.dsl",
+      "io.fabric8.kubernetes",
+      "io.fabric8.kubernetes.client",
+      "com.cloudogu.gitops.infrastructure"
+    ]
+  },
+  "unknown_designite_smells": []
+}

@@ -1,0 +1,12 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 943,
+  "source_files_removed": 0,
+  "source_files_after": 943,
+  "removed_share": 0.0,
+  "removed_by_rule": {},
+  "removed_dirs": [],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

@@ -1,0 +1,35 @@
+{
+  "project": "MountCloud__BehinderClientSource",
+  "n_nodes": 11,
+  "n_edges": 28,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 7,
+    "UD": 3,
+    "AI": 0,
+    "GC": 0,
+    "FC": 6,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 11,
+    "designite_packages": 11,
+    "matched": 11,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "net",
+      "net.rebeyond",
+      "net.rebeyond.behinder",
+      "net.rebeyond.behinder.resource",
+      "net.rebeyond.behinder.payload"
+    ]
+  },
+  "unknown_designite_smells": []
+}

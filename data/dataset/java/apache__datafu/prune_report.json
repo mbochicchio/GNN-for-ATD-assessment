@@ -1,0 +1,35 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 261,
+  "source_files_removed": 74,
+  "source_files_after": 187,
+  "removed_share": 0.2835,
+  "removed_by_rule": {
+    "R1_arcan_default": 74
+  },
+  "removed_dirs": [
+    {
+      "path": "examples",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "datafu-hourglass/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 27
+    },
+    {
+      "path": "datafu-pig/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 47
+    },
+    {
+      "path": "datafu-spark/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

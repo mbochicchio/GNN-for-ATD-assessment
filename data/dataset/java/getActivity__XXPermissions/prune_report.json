@@ -1,0 +1,20 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 111,
+  "source_files_removed": 11,
+  "source_files_after": 100,
+  "removed_share": 0.0991,
+  "removed_by_rule": {
+    "R1_arcan_default": 11
+  },
+  "removed_dirs": [
+    {
+      "path": "app/src/main/java/com/hjq/permissions/demo",
+      "rule": "R1_arcan_default",
+      "source_files": 11
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

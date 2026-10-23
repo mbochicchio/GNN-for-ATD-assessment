@@ -1,0 +1,30 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 89,
+  "source_files_removed": 20,
+  "source_files_after": 69,
+  "removed_share": 0.2247,
+  "removed_by_rule": {
+    "R1_arcan_default": 20
+  },
+  "removed_dirs": [
+    {
+      "path": "harness-api/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 6
+    },
+    {
+      "path": "harness-common/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "harness-core/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 13
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

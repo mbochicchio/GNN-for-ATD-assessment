@@ -1,0 +1,50 @@
+{
+  "project": "FabricMC__yarn",
+  "n_nodes": 20,
+  "n_edges": 26,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 7,
+    "UD": 3,
+    "AI": 0,
+    "GC": 0,
+    "FC": 9,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 20,
+    "designite_packages": 19,
+    "matched": 19,
+    "coverage": 0.95,
+    "arcan_only": [
+      "net.fabricmc.filament.nameproposal.field"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "net.minecraft",
+      "net.fabricmc",
+      "net.minecraft.client.gui",
+      "net.minecraft.client.gui.screen",
+      "net.minecraft.util.registry",
+      "net.minecraft.block",
+      "net.minecraft.entity.ai",
+      "net.minecraft.entity.ai.goal",
+      "net.minecraft.entity.ai.brain",
+      "net.minecraft.entity",
+      "net.fabricmc.filament.enigma",
+      "net.minecraft.util",
+      "net.minecraft.block.cauldron",
+      "net.minecraft.client",
+      "net.minecraft.nbt",
+      "net.minecraft.client.gui.screen.narration",
+      "net.minecraft.resource",
+      "net"
+    ]
+  },
+  "unknown_designite_smells": []
+}

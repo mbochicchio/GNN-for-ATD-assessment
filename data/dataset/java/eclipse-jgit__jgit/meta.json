@@ -1,0 +1,49 @@
+{
+  "project": "eclipse-jgit__jgit",
+  "n_nodes": 102,
+  "n_edges": 884,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 71,
+    "UD": 37,
+    "AI": 0,
+    "GC": 24,
+    "FC": 38,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 102,
+    "designite_packages": 100,
+    "matched": 100,
+    "coverage": 0.9804,
+    "arcan_only": [
+      "jakarta.servlet.http",
+      "org.eclipse.jgit.annotations"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "org.eclipse",
+      "org.eclipse.jgit",
+      "org.eclipse.jgit.ant",
+      "org.eclipse.jgit.http",
+      "org.eclipse.jgit.signing",
+      "org.eclipse.jgit.storage",
+      "org.eclipse.jgit.gpg",
+      "org.eclipse.jgit.gpg.bc",
+      "jakarta",
+      "jakarta.servlet",
+      "org.eclipse.jgit.internal.storage",
+      "org.eclipse.jgit.internal.transport",
+      "org.eclipse.jgit.internal.signing",
+      "org"
+    ]
+  },
+  "unknown_designite_smells": []
+}

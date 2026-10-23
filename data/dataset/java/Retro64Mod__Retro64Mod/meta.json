@@ -1,0 +1,34 @@
+{
+  "project": "Retro64Mod__Retro64Mod",
+  "n_nodes": 13,
+  "n_edges": 25,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 5,
+    "UD": 1,
+    "AI": 0,
+    "GC": 1,
+    "FC": 1,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 13,
+    "designite_packages": 12,
+    "matched": 12,
+    "coverage": 0.9231,
+    "arcan_only": [
+      "com.dylanpdx.retro64.networking.packets"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com",
+      "com.dylanpdx"
+    ]
+  },
+  "unknown_designite_smells": []
+}

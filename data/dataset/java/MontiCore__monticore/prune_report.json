@@ -1,0 +1,66 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 2296,
+  "source_files_removed": 1087,
+  "source_files_after": 1209,
+  "removed_share": 0.4734,
+  "removed_by_rule": {
+    "R1_arcan_default": 1077,
+    "R2_java_build": 10
+  },
+  "removed_dirs": [
+    {
+      "path": "monticore-test",
+      "rule": "R1_arcan_default",
+      "source_files": 508
+    },
+    {
+      "path": "monticore-generator/gradle-plugin/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "monticore-generator/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 125
+    },
+    {
+      "path": "monticore-grammar/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 398
+    },
+    {
+      "path": "monticore-grammar/src/testFixtures",
+      "rule": "R2_java_build",
+      "source_files": 3
+    },
+    {
+      "path": "monticore-grammar/src/main/examples",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "monticore-libraries/javagen-runtime/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 8
+    },
+    {
+      "path": "monticore-libraries/stream-symbols-it/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "monticore-runtime/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 35
+    },
+    {
+      "path": "monticore-runtime/src/testFixtures",
+      "rule": "R2_java_build",
+      "source_files": 7
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

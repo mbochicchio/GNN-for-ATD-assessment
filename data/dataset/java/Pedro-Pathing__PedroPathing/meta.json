@@ -1,0 +1,34 @@
+{
+  "project": "Pedro-Pathing__PedroPathing",
+  "n_nodes": 17,
+  "n_edges": 53,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 8,
+    "UD": 4,
+    "AI": 0,
+    "GC": 0,
+    "FC": 3,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 17,
+    "designite_packages": 17,
+    "matched": 17,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com",
+      "com.pedropathing"
+    ]
+  },
+  "unknown_designite_smells": []
+}

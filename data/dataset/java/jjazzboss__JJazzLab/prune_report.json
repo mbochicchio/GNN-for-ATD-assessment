@@ -1,0 +1,50 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 1177,
+  "source_files_removed": 34,
+  "source_files_after": 1143,
+  "removed_share": 0.0289,
+  "removed_by_rule": {
+    "R1_arcan_default": 34
+  },
+  "removed_dirs": [
+    {
+      "path": "app/Test",
+      "rule": "R1_arcan_default",
+      "source_files": 14
+    },
+    {
+      "path": "core/Utilities/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "model/Harmony/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "model/Phrase/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "model/SongImpl/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 12
+    },
+    {
+      "path": "plugins/FluidSynthEmbeddedSynth/src/main/java/org/jjazz/fluidsynthembeddedsynth/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "plugins/JJSwing/src/main/java/org/jjazz/jjswing/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

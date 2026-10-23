@@ -1,0 +1,55 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 205,
+  "source_files_removed": 95,
+  "source_files_after": 110,
+  "removed_share": 0.4634,
+  "removed_by_rule": {
+    "R1_arcan_default": 95
+  },
+  "removed_dirs": [
+    {
+      "path": "common/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 37
+    },
+    {
+      "path": "common/src/main/java/com/google/tsunami/common/io/archiving/testing",
+      "rule": "R1_arcan_default",
+      "source_files": 5
+    },
+    {
+      "path": "common/src/main/java/com/google/tsunami/common/time/testing",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "main/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 9
+    },
+    {
+      "path": "plugin/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 13
+    },
+    {
+      "path": "plugin/src/main/java/com/google/tsunami/plugin/testing",
+      "rule": "R1_arcan_default",
+      "source_files": 25
+    },
+    {
+      "path": "plugin/src/main/java/com/google/tsunami/plugin/payload/testing",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "workflow/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

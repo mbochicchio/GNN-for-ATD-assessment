@@ -1,0 +1,215 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 2706,
+  "source_files_removed": 79,
+  "source_files_after": 2627,
+  "removed_share": 0.0292,
+  "removed_by_rule": {
+    "R1_arcan_default": 79
+  },
+  "removed_dirs": [
+    {
+      "path": "examples",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "test",
+      "rule": "R1_arcan_default",
+      "source_files": 5
+    },
+    {
+      "path": "libsrc/substance-skin-plugin-example",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    },
+    {
+      "path": "libsrc/ffdec_lib/test",
+      "rule": "R1_arcan_default",
+      "source_files": 64
+    },
+    {
+      "path": "libsrc/ffdec_lib/testdata/as2/com/jpexs/flash/test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "libsrc/ffdec_lib/testdata/as3_assembled/abc/as3_assembled-0/tests",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "libsrc/ffdec_lib/testdata/as3_assembled/src/tests",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "libsrc/ffdec_lib/testdata/as3_cross_compile/src/tests",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "libsrc/ffdec_lib/testdata/as3_ctor_field_init/src/tests_classes",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "libsrc/ffdec_lib/testdata/as3_ctor_init_after_local/src/tests_classes",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "libsrc/ffdec_lib/testdata/as3_foreach_convert_i/src/tests",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "libsrc/ffdec_lib/testdata/as3_inferred_call_return_import/src/tests",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "libsrc/ffdec_lib/testdata/as3_long/src/tests",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "libsrc/ffdec_lib/testdata/as3_nested_search_loop/src/tests_classes",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "libsrc/ffdec_lib/testdata/as3_new/src/tests",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "libsrc/ffdec_lib/testdata/as3_new/src/tests_classes",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "libsrc/ffdec_lib/testdata/as3_new/src/tests_edit",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "libsrc/ffdec_lib/testdata/as3_new/src/tests_other",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "libsrc/ffdec_lib/testdata/as3_new/src/tests_uses",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "libsrc/ffdec_lib/testdata/as3_samepackage_imports/src/tests_classes",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "libsrc/ffdec_lib/testdata/gfx/gfx_test_fonts",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "libsrc/ffdec_lib/testdata/gfx/gfx_test_fonts_compact",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "libsrc/ffdec_lib/testdata/gfx/gfx_test_fonts_separate",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "libsrc/ffdec_lib/testdata/gfx/gfx_test_fonts_stripped_shapes",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "libsrc/ffdec_lib/testdata/gfx/gfx_test_gradients",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "libsrc/ffdec_lib/testdata/gfx/gfx_test_images_dds",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "libsrc/ffdec_lib/testdata/gfx/gfx_test_images_dds_pack",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "libsrc/ffdec_lib/testdata/gfx/gfx_test_images_tga_pack",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "libsrc/ffdec_lib/testdata/gfx/gfx_test_sounds",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "libsrc/ffdec_lib/testdata/gfx/test_gradients",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "libsrc/ffdec_lib/testdata/gfx/test_images",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "libsrc/ffdec_lib/testdata/gfx/test_sounds",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "libsrc/ffdec_lib/testdata/haxe/src/tests_classes",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "libsrc/ffdec_lib/testexpected/as2/__Packages/com/jpexs/flash/test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "libsrc/ffdec_lib/testexpected/as3_new/tests",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "libsrc/ffdec_lib/testexpected/as3_new/tests_classes",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "libsrc/ffdec_lib/testexpected/as3_new/tests_edit",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "libsrc/ffdec_lib/testexpected/as3_new/tests_other",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "libsrc/ffdec_lib/testexpected/as3_new/tests_uses",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "libsrc/jlayer-1.0.2/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 5
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

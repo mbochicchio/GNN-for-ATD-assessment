@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>stelar7__R4J · dependency graph</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EEF1F0; --panel:#F8FAF9; --ink:#1B2733; --muted:#5E6B78; --rule:#D3DAD8;
+  --edge:#9AA7B2; --clean:#C3CCD3; --focus:#1B2733;
+  --CD:#D55E00; --UD:#0072B2; --AI:#CC79A7; --GC:#009E73; --FC:#E69F00; --SF:#56B4E9;
+  --s0:#C3CCD3; --s1:#F2C27B; --s2:#E58A3C; --s3:#C4462A; --s4:#8E1F2A;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+  --bg:#141B21; --panel:#1B242C; --ink:#E4EAEE; --muted:#93A1AD; --rule:#2C3842;
+  --edge:#4E5E6B; --clean:#3E4B56; --focus:#E4EAEE; --s0:#3E4B56;
+}}
+:root[data-theme="dark"]{
+  --bg:#141B21; --panel:#1B242C; --ink:#E4EAEE; --muted:#93A1AD; --rule:#2C3842;
+  --edge:#4E5E6B; --clean:#3E4B56; --focus:#E4EAEE; --s0:#3E4B56;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{height:100%; scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0; height:100%; background:var(--bg); color:var(--ink);
+  font:14px/1.5 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+.app{display:grid; grid-template-columns:320px 1fr; height:100%}
+aside{background:var(--panel); border-right:1px solid var(--rule); overflow-y:auto; padding:20px 20px 28px}
+h1{font:500 22px/1.2 "IBM Plex Sans Condensed","IBM Plex Sans",sans-serif; margin:0 0 4px; word-break:break-word}
+.sub{color:var(--muted); margin:0 0 18px}
+.stats{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-bottom:18px}
+.stat b{display:block; font-size:20px; font-weight:600}
+.stat span{color:var(--muted); font-size:12px}
+section{border-top:1px solid var(--rule); padding-top:14px; margin-top:14px}
+h2{font-size:13px; font-weight:600; margin:0 0 8px}
+label.ctl{display:block; color:var(--muted); font-size:12px; margin:8px 0 4px}
+select,input[type=search]{width:100%; font:inherit; color:var(--ink); background:var(--bg);
+  border:1px solid var(--rule); border-radius:6px; padding:6px 8px}
+select:focus-visible,input:focus-visible,button:focus-visible{outline:2px solid var(--focus); outline-offset:2px}
+.check{display:flex; gap:8px; align-items:center; margin-top:10px; color:var(--muted); font-size:13px}
+.legend{display:flex; flex-wrap:wrap; gap:6px 12px; margin-top:10px; font-size:12px}
+.dot{display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:7px; vertical-align:-1px}
+.legend i{display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:5px; vertical-align:-1px}
+table{width:100%; border-collapse:collapse; font-size:13px}
+td{padding:3px 0; border-bottom:1px solid var(--rule)}
+td:last-child{text-align:right; font-variant-numeric:tabular-nums}
+.chips{display:flex; flex-wrap:wrap; gap:6px; margin:8px 0}
+.chip{font-size:12px; padding:2px 8px; border-radius:10px; color:#fff}
+.chip.none{background:var(--clean); color:var(--ink)}
+.detail-name{font-weight:600; word-break:break-all; margin-bottom:4px}
+.note{color:var(--muted); font-size:12px}
+ol.rank{margin:0; padding-left:20px; font-size:13px}
+ol.rank li{margin:2px 0}
+ol.rank button{all:unset; cursor:pointer; word-break:break-all}
+ol.rank button:hover{text-decoration:underline}
+ol.rank .v{color:var(--muted); font-variant-numeric:tabular-nums}
+main{position:relative; overflow:hidden}
+svg{width:100%; height:100%; display:block; cursor:grab}
+.link{stroke:var(--edge); stroke-opacity:.55; fill:none}
+.node circle{stroke:var(--panel); stroke-width:1.5}
+.node.nomask circle{stroke-dasharray:3 2; stroke:var(--muted)}
+.node text{font-size:11px; fill:var(--ink); pointer-events:none; paint-order:stroke;
+  stroke:var(--bg); stroke-width:3px}
+.dim{opacity:.12}
+.node.sel circle{stroke:var(--focus); stroke-width:3}
+#tip{position:absolute; pointer-events:none; background:var(--panel); border:1px solid var(--rule);
+  border-radius:6px; padding:6px 9px; font-size:12px; max-width:320px; display:none; word-break:break-all}
+.hint{position:absolute; right:14px; bottom:12px; color:var(--muted); font-size:12px}
+@media (max-width:760px){
+  .app{grid-template-columns:1fr; grid-template-rows:auto 70vh; height:auto}
+  aside{border-right:0; border-bottom:1px solid var(--rule)}
+}
+@media (prefers-reduced-motion:reduce){ *{transition:none!important} }
+</style>
+</head>
+<body>
+<div class="app">
+<aside>
+  <h1 id="title"></h1>
+  <p class="sub">Package-level dependency graph with Designite smell labels</p>
+  <div class="stats">
+    <div class="stat"><b id="nN"></b><span>components</span></div>
+    <div class="stat"><b id="nE"></b><span>dependencies</span></div>
+    <div class="stat"><b id="nS"></b><span>smell-affected components</span></div>
+  </div>
+
+  <label class="ctl" for="colorBy">Colour nodes by</label>
+  <select id="colorBy">
+    <option value="count">Number of smells</option>
+    <option value="CD">Cyclic Dependency</option>
+    <option value="UD">Unstable Dependency</option>
+    <option value="AI">Ambiguous Interface</option>
+    <option value="GC">God Component</option>
+    <option value="FC">Feature Concentration</option>
+    <option value="SF">Scattered Functionality</option>
+    <option value="atdi">ATDI (Arcan)</option>
+  </select>
+  <div class="legend" id="legend"></div>
+
+  <label class="ctl" for="search">Find a component</label>
+  <input id="search" type="search" placeholder="e.g. analyzer" list="names" autocomplete="off">
+  <datalist id="names"></datalist>
+  <label class="check"><input type="checkbox" id="showLabels"> Show all node labels</label>
+
+  <section id="detail">
+    <h2>Selected component</h2>
+    <p class="note">Select a node to inspect its features, labels, and dependencies.</p>
+  </section>
+
+  <section>
+    <h2>Smell distribution</h2>
+    <table id="smellTable"></table>
+    <p class="note" id="ds"></p>
+  </section>
+
+  <section>
+    <h2>Highest ATDI</h2>
+    <ol class="rank" id="rank"></ol>
+  </section>
+</aside>
+<main>
+  <svg id="svg" role="img" aria-label="Dependency graph"></svg>
+  <div id="tip"></div>
+  <div class="hint">Drag to pan, scroll to zoom</div>
+</main>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script>
+const DATA = {"nodes": [{"id": 0, "name": "no.stelar7.api.r4j.basic", "mask": 1, "atdi": 193.03378835691086, "units": 1, "Ab": 0.0, "In": 0.1875, "D": 0.8125, "FI": 17.0, "FO": 10.0, "LOC": 77.0, "PR": 0.028072583582370175, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 1, "name": "no.stelar7.api.r4j.basic.cache", "mask": 1, "atdi": 40.146107094052695, "units": 2, "Ab": 0.5, "In": 0.125, "D": 0.375, "FI": 2.0, "FO": 5.0, "LOC": 113.0, "PR": 0.006956965030674061, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 2, "name": "no.stelar7.api.r4j.basic.cache.impl", "mask": 1, "atdi": 56.73465196755606, "units": 6, "Ab": 0.0, "In": 0.9310344827586207, "D": 0.06896551724137934, "FI": 2.0, "FO": 9.0, "LOC": 821.0, "PR": 0.00709623233705385, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 3, "name": "no.stelar7.api.r4j.basic.calling", "mask": 1, "atdi": 145.2999243487885, "units": 3, "Ab": 0.0, "In": 0.3275862068965517, "D": 0.6724137931034483, "FI": 17.0, "FO": 9.0, "LOC": 823.0, "PR": 0.01974285230636534, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 4, "name": "no.stelar7.api.r4j.basic.constants.api", "mask": 1, "atdi": 271.735981376576, "units": 2, "Ab": 0.0, "In": 0.5963302752293578, "D": 0.4036697247706422, "FI": 25.0, "FO": 33.0, "LOC": 266.0, "PR": 0.029676066749121672, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 5, "name": "no.stelar7.api.r4j.basic.constants.api.regions", "mask": 1, "atdi": 0.0, "units": 5, "Ab": 0.0, "In": 0.061224489795918366, "D": 0.9387755102040817, "FI": 20.0, "FO": 2.0, "LOC": 304.0, "PR": 0.02763568088325531, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 6, "name": "no.stelar7.api.r4j.basic.constants.types", "mask": 1, "atdi": 0.0, "units": 5, "Ab": 0.4, "In": 0.0, "D": 0.6, "FI": 27.0, "FO": 0.0, "LOC": 53.0, "PR": 0.09871935505688074, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 7, "name": "no.stelar7.api.r4j.basic.constants.types.lol", "mask": 1, "atdi": 164.29508038277717, "units": 35, "Ab": 0.0, "In": 0.07894736842105263, "D": 0.9210526315789473, "FI": 15.0, "FO": 2.0, "LOC": 2239.0, "PR": 0.03867763577939296, "CD": 1, "UD": 1, "AI": 0, "GC": 1, "FC": 1, "SF": 0}, {"id": 8, "name": "no.stelar7.api.r4j.basic.constants.types.tft", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.3333333333333333, "D": 0.6666666666666667, "FI": 2.0, "FO": 1.0, "LOC": 34.0, "PR": 0.008655107713082432, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 9, "name": "no.stelar7.api.r4j.basic.constants.types.val", "mask": 1, "atdi": 0.0, "units": 11, "Ab": 0.0, "In": 0.2, "D": 0.8, "FI": 4.0, "FO": 2.0, "LOC": 451.0, "PR": 0.014665424013766925, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 10, "name": "no.stelar7.api.r4j.basic.exceptions", "mask": 1, "atdi": 0.0, "units": 8, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 12.0, "FO": 0.0, "LOC": 81.0, "PR": 0.037177798370497325, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 11, "name": "no.stelar7.api.r4j.basic.ratelimiting", "mask": 1, "atdi": 15.627961775906996, "units": 5, "Ab": 0.2, "In": 0.42857142857142855, "D": 0.37142857142857144, "FI": 3.0, "FO": 3.0, "LOC": 311.0, "PR": 0.01086042967849326, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 12, "name": "no.stelar7.api.r4j.basic.serializer", "mask": 1, "atdi": 5.199321223267876, "units": 3, "Ab": 0.0, "In": 0.8, "D": 0.19999999999999996, "FI": 1.0, "FO": 3.0, "LOC": 62.0, "PR": 0.007009714733594386, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 13, "name": "no.stelar7.api.r4j.basic.utils", "mask": 1, "atdi": 452.4524273914181, "units": 13, "Ab": 0.0, "In": 0.6161616161616161, "D": 0.38383838383838387, "FI": 24.0, "FO": 16.0, "LOC": 796.0, "PR": 0.04870673974557873, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 14, "name": "no.stelar7.api.r4j.basic.utils.sql", "mask": 1, "atdi": 23.37072736334766, "units": 7, "Ab": 0.5714285714285714, "In": 0.15, "D": 0.2785714285714286, "FI": 3.0, "FO": 1.0, "LOC": 167.0, "PR": 0.009774936489747879, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 15, "name": "no.stelar7.api.r4j.impl", "mask": 1, "atdi": 153.12257191606216, "units": 1, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 5.0, "FO": 17.0, "LOC": 122.0, "PR": 0.01618953078719325, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 16, "name": "no.stelar7.api.r4j.impl.lol.builders.champion", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 4.0, "LOC": 43.0, "PR": 0.004422155656647557, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 17, "name": "no.stelar7.api.r4j.impl.lol.builders.championmastery", "mask": 1, "atdi": 19.12780001386871, "units": 1, "Ab": 0.0, "In": 0.875, "D": 0.125, "FI": 1.0, "FO": 5.0, "LOC": 152.0, "PR": 0.005239376313300071, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 18, "name": "no.stelar7.api.r4j.impl.lol.builders.league", "mask": 1, "atdi": 33.022321313075885, "units": 1, "Ab": 0.0, "In": 0.9, "D": 0.09999999999999998, "FI": 1.0, "FO": 6.0, "LOC": 104.0, "PR": 0.005239376313300071, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 19, "name": "no.stelar7.api.r4j.impl.lol.builders.matchv5.match", "mask": 1, "atdi": 132.70096678679243, "units": 4, "Ab": 0.0, "In": 0.8421052631578947, "D": 0.1578947368421053, "FI": 3.0, "FO": 7.0, "LOC": 341.0, "PR": 0.00822668723210489, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 20, "name": "no.stelar7.api.r4j.impl.lol.builders.summoner", "mask": 1, "atdi": 25.265933004888986, "units": 1, "Ab": 0.0, "In": 0.875, "D": 0.125, "FI": 1.0, "FO": 5.0, "LOC": 42.0, "PR": 0.004821907498505548, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 21, "name": "no.stelar7.api.r4j.impl.lol.builders.thirdparty", "mask": 1, "atdi": 19.12780001386871, "units": 1, "Ab": 0.0, "In": 0.8333333333333334, "D": 0.16666666666666663, "FI": 1.0, "FO": 4.0, "LOC": 52.0, "PR": 0.005239376313300071, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 22, "name": "no.stelar7.api.r4j.impl.lol.lcu", "mask": 1, "atdi": 0.0, "units": 4, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 5.0, "LOC": 490.0, "PR": 0.004422155656647557, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 23, "name": "no.stelar7.api.r4j.impl.lol.liveclient", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 7.0, "LOC": 285.0, "PR": 0.004422155656647557, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 24, "name": "no.stelar7.api.r4j.impl.lol.raw", "mask": 1, "atdi": 181.5007422452288, "units": 12, "Ab": 0.0, "In": 0.922077922077922, "D": 0.07792207792207795, "FI": 5.0, "FO": 28.0, "LOC": 1585.0, "PR": 0.013168251080272222, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 25, "name": "no.stelar7.api.r4j.impl.lol.replay", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 5.0, "LOC": 138.0, "PR": 0.004422155656647557, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 26, "name": "no.stelar7.api.r4j.impl.lor", "mask": 1, "atdi": 89.15151736867418, "units": 6, "Ab": 0.0, "In": 0.8857142857142857, "D": 0.11428571428571432, "FI": 4.0, "FO": 14.0, "LOC": 425.0, "PR": 0.01679216284261876, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 27, "name": "no.stelar7.api.r4j.impl.shared", "mask": 1, "atdi": 29.621437657157273, "units": 2, "Ab": 0.0, "In": 0.9375, "D": 0.0625, "FI": 1.0, "FO": 8.0, "LOC": 182.0, "PR": 0.005231622379599689, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 28, "name": "no.stelar7.api.r4j.impl.tft", "mask": 1, "atdi": 73.72816799532599, "units": 3, "Ab": 0.0, "In": 0.85, "D": 0.15000000000000002, "FI": 3.0, "FO": 10.0, "LOC": 270.0, "PR": 0.007302742263549813, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 29, "name": "no.stelar7.api.r4j.impl.val", "mask": 1, "atdi": 35.774221018561136, "units": 3, "Ab": 0.0, "In": 0.7368421052631579, "D": 0.26315789473684215, "FI": 2.0, "FO": 10.0, "LOC": 172.0, "PR": 0.00732664471918084, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 30, "name": "no.stelar7.api.r4j.pojo.lol.challenges", "mask": 1, "atdi": 13.964128360492946, "units": 10, "Ab": 0.0, "In": 0.6666666666666666, "D": 0.33333333333333337, "FI": 2.0, "FO": 1.0, "LOC": 303.0, "PR": 0.005586285822708532, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 31, "name": "no.stelar7.api.r4j.pojo.lol.champion", "mask": 1, "atdi": 11.090227999860769, "units": 1, "Ab": 0.0, "In": 0.4, "D": 0.6, "FI": 3.0, "FO": 2.0, "LOC": 46.0, "PR": 0.006525998844617683, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 32, "name": "no.stelar7.api.r4j.pojo.lol.championmastery", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 4.0, "FO": 0.0, "LOC": 85.0, "PR": 0.007294204729572287, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 33, "name": "no.stelar7.api.r4j.pojo.lol.clash", "mask": 1, "atdi": 0.0, "units": 8, "Ab": 0.0, "In": 0.3333333333333333, "D": 0.6666666666666667, "FI": 2.0, "FO": 1.0, "LOC": 251.0, "PR": 0.005586285822708532, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 34, "name": "no.stelar7.api.r4j.pojo.lol.league", "mask": 1, "atdi": 41.88444603926092, "units": 5, "Ab": 0.0, "In": 0.3, "D": 0.7, "FI": 6.0, "FO": 1.0, "LOC": 281.0, "PR": 0.01137870707763862, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 35, "name": "no.stelar7.api.r4j.pojo.lol.liveclient", "mask": 1, "atdi": 0.0, "units": 16, "Ab": 0.0, "In": 0.3333333333333333, "D": 0.6666666666666667, "FI": 3.0, "FO": 1.0, "LOC": 856.0, "PR": 0.006805778857413121, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 36, "name": "no.stelar7.api.r4j.pojo.lol.liveclient.events", "mask": 1, "atdi": 0.0, "units": 13, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 2.0, "FO": 0.0, "LOC": 420.0, "PR": 0.010744014569264819, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 37, "name": "no.stelar7.api.r4j.pojo.lol.match.v5", "mask": 1, "atdi": 109.14494923735214, "units": 21, "Ab": 0.0, "In": 0.7333333333333333, "D": 0.2666666666666667, "FI": 5.0, "FO": 5.0, "LOC": 2183.0, "PR": 0.010342836136019128, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 38, "name": "no.stelar7.api.r4j.pojo.lol.replay", "mask": 1, "atdi": 0.0, "units": 6, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 3.0, "FO": 0.0, "LOC": 798.0, "PR": 0.006475283268040234, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 39, "name": "no.stelar7.api.r4j.pojo.lol.shared", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 0.42857142857142855, "D": 0.5714285714285714, "FI": 4.0, "FO": 1.0, "LOC": 221.0, "PR": 0.014768791111042148, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 40, "name": "no.stelar7.api.r4j.pojo.lol.spectator", "mask": 1, "atdi": 20.90216466518788, "units": 8, "Ab": 0.0, "In": 0.7272727272727273, "D": 0.2727272727272727, "FI": 3.0, "FO": 4.0, "LOC": 440.0, "PR": 0.006403506479361045, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 41, "name": "no.stelar7.api.r4j.pojo.lol.spectator.v5", "mask": 1, "atdi": 0.0, "units": 7, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 1.0, "LOC": 563.0, "PR": 0.004422155656647557, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 42, "name": "no.stelar7.api.r4j.pojo.lol.staticdata.champion", "mask": 1, "atdi": 0.0, "units": 10, "Ab": 0.0, "In": 0.2857142857142857, "D": 0.7142857142857143, "FI": 4.0, "FO": 2.0, "LOC": 741.0, "PR": 0.00903004227884514, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 43, "name": "no.stelar7.api.r4j.pojo.lol.staticdata.item", "mask": 1, "atdi": 0.0, "units": 5, "Ab": 0.0, "In": 0.5, "D": 0.5, "FI": 2.0, "FO": 1.0, "LOC": 611.0, "PR": 0.005586285822708532, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 44, "name": "no.stelar7.api.r4j.pojo.lol.staticdata.language", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.3333333333333333, "D": 0.6666666666666667, "FI": 2.0, "FO": 1.0, "LOC": 37.0, "PR": 0.005586285822708532, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 45, "name": "no.stelar7.api.r4j.pojo.lol.staticdata.map", "mask": 1, "atdi": 13.511015450294014, "units": 2, "Ab": 0.0, "In": 0.6, "D": 0.4, "FI": 2.0, "FO": 2.0, "LOC": 87.0, "PR": 0.005586285822708532, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 46, "name": "no.stelar7.api.r4j.pojo.lol.staticdata.mastery", "mask": 1, "atdi": 0.0, "units": 4, "Ab": 0.0, "In": 0.25, "D": 0.75, "FI": 2.0, "FO": 1.0, "LOC": 193.0, "PR": 0.005586285822708532, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 47, "name": "no.stelar7.api.r4j.pojo.lol.staticdata.perk", "mask": 1, "atdi": 0.0, "units": 5, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 2.0, "FO": 0.0, "LOC": 156.0, "PR": 0.005586285822708532, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 48, "name": "no.stelar7.api.r4j.pojo.lol.staticdata.profileicon", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 0.5, "D": 0.5, "FI": 2.0, "FO": 1.0, "LOC": 74.0, "PR": 0.005586285822708532, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 49, "name": "no.stelar7.api.r4j.pojo.lol.staticdata.realm", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 2.0, "FO": 0.0, "LOC": 96.0, "PR": 0.005586285822708532, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 50, "name": "no.stelar7.api.r4j.pojo.lol.staticdata.rune", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.0, "In": 0.4, "D": 0.6, "FI": 2.0, "FO": 1.0, "LOC": 720.0, "PR": 0.005586285822708532, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 51, "name": "no.stelar7.api.r4j.pojo.lol.staticdata.shared", "mask": 1, "atdi": 0.0, "units": 6, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 8.0, "FO": 0.0, "LOC": 356.0, "PR": 0.04692941061959048, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 52, "name": "no.stelar7.api.r4j.pojo.lol.staticdata.summonerspell", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 0.25, "D": 0.75, "FI": 2.0, "FO": 1.0, "LOC": 87.0, "PR": 0.005586285822708532, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 53, "name": "no.stelar7.api.r4j.pojo.lol.status", "mask": 1, "atdi": 0.0, "units": 4, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 2.0, "FO": 0.0, "LOC": 212.0, "PR": 0.005742390990841798, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 54, "name": "no.stelar7.api.r4j.pojo.lol.summoner", "mask": 1, "atdi": 167.95761086140772, "units": 1, "Ab": 0.0, "In": 0.6875, "D": 0.3125, "FI": 5.0, "FO": 10.0, "LOC": 112.0, "PR": 0.009614303286176063, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 55, "name": "no.stelar7.api.r4j.pojo.lol.summoner.masteries", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 0.0, "FO": 0.0, "LOC": 129.0, "PR": 0.004422155656647557, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 56, "name": "no.stelar7.api.r4j.pojo.lol.summoner.runes", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 0.0, "FO": 0.0, "LOC": 131.0, "PR": 0.004422155656647557, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 57, "name": "no.stelar7.api.r4j.pojo.lol.tournament", "mask": 1, "atdi": 13.68553608638885, "units": 10, "Ab": 0.0, "In": 0.7142857142857143, "D": 0.2857142857142857, "FI": 2.0, "FO": 3.0, "LOC": 615.0, "PR": 0.005586285822708532, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 58, "name": "no.stelar7.api.r4j.pojo.lor", "mask": 1, "atdi": 23.39515439099582, "units": 1, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 4.0, "FO": 2.0, "LOC": 11.0, "PR": 0.010466097217931541, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 59, "name": "no.stelar7.api.r4j.pojo.lor.match", "mask": 1, "atdi": 19.404513921051386, "units": 3, "Ab": 0.0, "In": 0.5, "D": 0.5, "FI": 2.0, "FO": 2.0, "LOC": 165.0, "PR": 0.006611714353644177, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 60, "name": "no.stelar7.api.r4j.pojo.lor.oauth", "mask": 1, "atdi": 24.352306939993092, "units": 4, "Ab": 0.0, "In": 0.5, "D": 0.5, "FI": 3.0, "FO": 2.0, "LOC": 92.0, "PR": 0.010495848224200782, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 61, "name": "no.stelar7.api.r4j.pojo.lor.offline.card", "mask": 1, "atdi": 72.51519433071633, "units": 3, "Ab": 0.0, "In": 0.2857142857142857, "D": 0.7142857142857143, "FI": 5.0, "FO": 4.0, "LOC": 228.0, "PR": 0.02018707926334036, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 62, "name": "no.stelar7.api.r4j.pojo.lor.offline.expedition", "mask": 1, "atdi": 26.39819164402476, "units": 3, "Ab": 0.0, "In": 0.4, "D": 0.6, "FI": 3.0, "FO": 2.0, "LOC": 172.0, "PR": 0.008793624134388302, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 63, "name": "no.stelar7.api.r4j.pojo.lor.offline.game", "mask": 1, "atdi": 19.645081974461288, "units": 4, "Ab": 0.0, "In": 0.4, "D": 0.6, "FI": 3.0, "FO": 2.0, "LOC": 209.0, "PR": 0.008793624134388302, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 64, "name": "no.stelar7.api.r4j.pojo.lor.ranked", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 2.0, "FO": 0.0, "LOC": 66.0, "PR": 0.006206065057441474, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 65, "name": "no.stelar7.api.r4j.pojo.lor.staticdata", "mask": 1, "atdi": 0.0, "units": 7, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 1.0, "FO": 0.0, "LOC": 355.0, "PR": 0.005441686733238489, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 66, "name": "no.stelar7.api.r4j.pojo.shared", "mask": 1, "atdi": 56.20286458820551, "units": 3, "Ab": 0.0, "In": 0.631578947368421, "D": 0.368421052631579, "FI": 6.0, "FO": 7.0, "LOC": 148.0, "PR": 0.009635514642491239, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 67, "name": "no.stelar7.api.r4j.pojo.tft", "mask": 1, "atdi": 46.2835901702268, "units": 7, "Ab": 0.0, "In": 0.7142857142857143, "D": 0.2857142857142857, "FI": 4.0, "FO": 6.0, "LOC": 367.0, "PR": 0.008851186728976557, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 68, "name": "no.stelar7.api.r4j.pojo.tft.league", "mask": 1, "atdi": 20.256123153798114, "units": 3, "Ab": 0.0, "In": 0.75, "D": 0.25, "FI": 2.0, "FO": 3.0, "LOC": 124.0, "PR": 0.005807263712653361, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 69, "name": "no.stelar7.api.r4j.pojo.val.content", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 3.0, "FO": 0.0, "LOC": 158.0, "PR": 0.007904323151749635, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 70, "name": "no.stelar7.api.r4j.pojo.val.match", "mask": 1, "atdi": 41.46684104719355, "units": 15, "Ab": 0.0, "In": 0.8333333333333334, "D": 0.16666666666666663, "FI": 4.0, "FO": 6.0, "LOC": 1138.0, "PR": 0.014788299999833221, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 71, "name": "no.stelar7.api.r4j.pojo.val.matchlist", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.0, "In": 0.3333333333333333, "D": 0.6666666666666667, "FI": 2.0, "FO": 1.0, "LOC": 107.0, "PR": 0.005809300812168483, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 72, "name": "no.stelar7.api.r4j.pojo.val.ranked", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 2.0, "FO": 0.0, "LOC": 96.0, "PR": 0.005809300812168483, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}], "edges": [{"source": 0, "target": 6, "w": 1.0}, {"source": 0, "target": 10, "w": 1.0}, {"source": 0, "target": 13, "w": 1.0}, {"source": 0, "target": 58, "w": 3.0}, {"source": 1, "target": 4, "w": 2.0}, {"source": 1, "target": 13, "w": 3.0}, {"source": 2, "target": 0, "w": 1.0}, {"source": 2, "target": 1, "w": 12.0}, {"source": 2, "target": 3, "w": 3.0}, {"source": 2, "target": 4, "w": 6.0}, {"source": 2, "target": 10, "w": 1.0}, {"source": 2, "target": 13, "w": 4.0}, {"source": 2, "target": 14, "w": 3.0}, {"source": 2, "target": 42, "w": 1.0}, {"source": 2, "target": 70, "w": 14.0}, {"source": 3, "target": 0, "w": 1.0}, {"source": 3, "target": 1, "w": 1.0}, {"source": 3, "target": 2, "w": 1.0}, {"source": 3, "target": 4, "w": 4.0}, {"source": 3, "target": 5, "w": 1.0}, {"source": 3, "target": 6, "w": 3.0}, {"source": 3, "target": 10, "w": 4.0}, {"source": 3, "target": 11, "w": 6.0}, {"source": 3, "target": 13, "w": 2.0}, {"source": 4, "target": 13, "w": 2.0}, {"source": 4, "target": 30, "w": 6.0}, {"source": 4, "target": 31, "w": 1.0}, {"source": 4, "target": 32, "w": 2.0}, {"source": 4, "target": 33, "w": 4.0}, {"source": 4, "target": 34, "w": 2.0}, {"source": 4, "target": 35, "w": 9.0}, {"source": 4, "target": 37, "w": 1.0}, {"source": 4, "target": 38, "w": 5.0}, {"source": 4, "target": 40, "w": 2.0}, {"source": 4, "target": 42, "w": 1.0}, {"source": 4, "target": 43, "w": 1.0}, {"source": 4, "target": 44, "w": 1.0}, {"source": 4, "target": 45, "w": 1.0}, {"source": 4, "target": 46, "w": 1.0}, {"source": 4, "target": 47, "w": 2.0}, {"source": 4, "target": 48, "w": 1.0}, {"source": 4, "target": 49, "w": 1.0}, {"source": 4, "target": 50, "w": 1.0}, {"source": 4, "target": 52, "w": 1.0}, {"source": 4, "target": 53, "w": 1.0}, {"source": 4, "target": 54, "w": 1.0}, {"source": 4, "target": 57, "w": 2.0}, {"source": 4, "target": 60, "w": 2.0}, {"source": 4, "target": 62, "w": 1.0}, {"source": 4, "target": 63, "w": 2.0}, {"source": 4, "target": 64, "w": 1.0}, {"source": 4, "target": 66, "w": 3.0}, {"source": 4, "target": 68, "w": 2.0}, {"source": 4, "target": 69, "w": 1.0}, {"source": 4, "target": 70, "w": 1.0}, {"source": 4, "target": 71, "w": 2.0}, {"source": 4, "target": 72, "w": 1.0}, {"source": 5, "target": 6, "w": 5.0}, {"source": 5, "target": 10, "w": 1.0}, {"source": 7, "target": 6, "w": 35.0}, {"source": 7, "target": 13, "w": 3.0}, {"source": 8, "target": 6, "w": 1.0}, {"source": 9, "target": 6, "w": 11.0}, {"source": 9, "target": 10, "w": 1.0}, {"source": 11, "target": 3, "w": 2.0}, {"source": 11, "target": 6, "w": 3.0}, {"source": 11, "target": 10, "w": 1.0}, {"source": 12, "target": 6, "w": 2.0}, {"source": 12, "target": 10, "w": 1.0}, {"source": 12, "target": 11, "w": 1.0}, {"source": 13, "target": 5, "w": 3.0}, {"source": 13, "target": 6, "w": 2.0}, {"source": 13, "target": 7, "w": 26.0}, {"source": 13, "target": 8, "w": 1.0}, {"source": 13, "target": 9, "w": 11.0}, {"source": 13, "target": 11, "w": 1.0}, {"source": 13, "target": 12, "w": 3.0}, {"source": 13, "target": 14, "w": 4.0}, {"source": 13, "target": 19, "w": 1.0}, {"source": 13, "target": 24, "w": 1.0}, {"source": 13, "target": 34, "w": 3.0}, {"source": 13, "target": 37, "w": 2.0}, {"source": 13, "target": 54, "w": 1.0}, {"source": 13, "target": 62, "w": 1.0}, {"source": 13, "target": 63, "w": 1.0}, {"source": 14, "target": 70, "w": 3.0}, {"source": 15, "target": 0, "w": 65.0}, {"source": 15, "target": 2, "w": 1.0}, {"source": 15, "target": 3, "w": 1.0}, {"source": 15, "target": 4, "w": 13.0}, {"source": 15, "target": 6, "w": 2.0}, {"source": 15, "target": 24, "w": 11.0}, {"source": 15, "target": 26, "w": 3.0}, {"source": 15, "target": 27, "w": 2.0}, {"source": 15, "target": 28, "w": 3.0}, {"source": 15, "target": 29, "w": 3.0}, {"source": 15, "target": 58, "w": 12.0}, {"source": 15, "target": 67, "w": 2.0}, {"source": 16, "target": 3, "w": 2.0}, {"source": 16, "target": 4, "w": 1.0}, {"source": 16, "target": 5, "w": 1.0}, {"source": 16, "target": 31, "w": 1.0}, {"source": 17, "target": 3, "w": 2.0}, {"source": 17, "target": 4, "w": 2.0}, {"source": 17, "target": 5, "w": 1.0}, {"source": 17, "target": 13, "w": 1.0}, {"source": 17, "target": 32, "w": 1.0}, {"source": 18, "target": 3, "w": 2.0}, {"source": 18, "target": 4, "w": 2.0}, {"source": 18, "target": 5, "w": 1.0}, {"source": 18, "target": 7, "w": 1.0}, {"source": 18, "target": 13, "w": 1.0}, {"source": 18, "target": 34, "w": 2.0}, {"source": 19, "target": 3, "w": 8.0}, {"source": 19, "target": 4, "w": 8.0}, {"source": 19, "target": 5, "w": 8.0}, {"source": 19, "target": 7, "w": 2.0}, {"source": 19, "target": 13, "w": 3.0}, {"source": 19, "target": 37, "w": 6.0}, {"source": 19, "target": 66, "w": 2.0}, {"source": 20, "target": 3, "w": 2.0}, {"source": 20, "target": 4, "w": 2.0}, {"source": 20, "target": 5, "w": 1.0}, {"source": 20, "target": 13, "w": 1.0}, {"source": 20, "target": 54, "w": 1.0}, {"source": 21, "target": 3, "w": 1.0}, {"source": 21, "target": 4, "w": 2.0}, {"source": 21, "target": 5, "w": 1.0}, {"source": 21, "target": 13, "w": 1.0}, {"source": 22, "target": 3, "w": 1.0}, {"source": 22, "target": 4, "w": 2.0}, {"source": 22, "target": 7, "w": 2.0}, {"source": 22, "target": 10, "w": 1.0}, {"source": 22, "target": 13, "w": 4.0}, {"source": 23, "target": 3, "w": 1.0}, {"source": 23, "target": 4, "w": 2.0}, {"source": 23, "target": 10, "w": 1.0}, {"source": 23, "target": 13, "w": 2.0}, {"source": 23, "target": 35, "w": 10.0}, {"source": 23, "target": 36, "w": 12.0}, {"source": 23, "target": 38, "w": 1.0}, {"source": 24, "target": 0, "w": 1.0}, {"source": 24, "target": 3, "w": 17.0}, {"source": 24, "target": 4, "w": 18.0}, {"source": 24, "target": 5, "w": 12.0}, {"source": 24, "target": 7, "w": 7.0}, {"source": 24, "target": 13, "w": 8.0}, {"source": 24, "target": 19, "w": 4.0}, {"source": 24, "target": 20, "w": 1.0}, {"source": 24, "target": 30, "w": 5.0}, {"source": 24, "target": 31, "w": 1.0}, {"source": 24, "target": 32, "w": 1.0}, {"source": 24, "target": 33, "w": 3.0}, {"source": 24, "target": 34, "w": 2.0}, {"source": 24, "target": 37, "w": 4.0}, {"source": 24, "target": 39, "w": 1.0}, {"source": 24, "target": 40, "w": 2.0}, {"source": 24, "target": 42, "w": 6.0}, {"source": 24, "target": 43, "w": 3.0}, {"source": 24, "target": 44, "w": 1.0}, {"source": 24, "target": 45, "w": 2.0}, {"source": 24, "target": 46, "w": 4.0}, {"source": 24, "target": 47, "w": 3.0}, {"source": 24, "target": 48, "w": 2.0}, {"source": 24, "target": 49, "w": 2.0}, {"source": 24, "target": 50, "w": 3.0}, {"source": 24, "target": 52, "w": 3.0}, {"source": 24, "target": 54, "w": 1.0}, {"source": 24, "target": 57, "w": 7.0}, {"source": 25, "target": 3, "w": 1.0}, {"source": 25, "target": 4, "w": 2.0}, {"source": 25, "target": 10, "w": 1.0}, {"source": 25, "target": 13, "w": 1.0}, {"source": 25, "target": 38, "w": 5.0}, {"source": 26, "target": 0, "w": 2.0}, {"source": 26, "target": 3, "w": 6.0}, {"source": 26, "target": 4, "w": 8.0}, {"source": 26, "target": 5, "w": 2.0}, {"source": 26, "target": 13, "w": 7.0}, {"source": 26, "target": 58, "w": 1.0}, {"source": 26, "target": 59, "w": 2.0}, {"source": 26, "target": 60, "w": 2.0}, {"source": 26, "target": 61, "w": 6.0}, {"source": 26, "target": 62, "w": 1.0}, {"source": 26, "target": 63, "w": 2.0}, {"source": 26, "target": 64, "w": 2.0}, {"source": 26, "target": 65, "w": 6.0}, {"source": 26, "target": 66, "w": 1.0}, {"source": 27, "target": 0, "w": 1.0}, {"source": 27, "target": 3, "w": 4.0}, {"source": 27, "target": 4, "w": 3.0}, {"source": 27, "target": 5, "w": 5.0}, {"source": 27, "target": 6, "w": 1.0}, {"source": 27, "target": 13, "w": 1.0}, {"source": 27, "target": 53, "w": 1.0}, {"source": 27, "target": 66, "w": 2.0}, {"source": 28, "target": 0, "w": 3.0}, {"source": 28, "target": 3, "w": 6.0}, {"source": 28, "target": 4, "w": 6.0}, {"source": 28, "target": 5, "w": 3.0}, {"source": 28, "target": 7, "w": 1.0}, {"source": 28, "target": 13, "w": 3.0}, {"source": 28, "target": 54, "w": 1.0}, {"source": 28, "target": 66, "w": 1.0}, {"source": 28, "target": 67, "w": 3.0}, {"source": 28, "target": 68, "w": 2.0}, {"source": 29, "target": 0, "w": 3.0}, {"source": 29, "target": 3, "w": 6.0}, {"source": 29, "target": 4, "w": 6.0}, {"source": 29, "target": 5, "w": 3.0}, {"source": 29, "target": 9, "w": 1.0}, {"source": 29, "target": 13, "w": 1.0}, {"source": 29, "target": 69, "w": 1.0}, {"source": 29, "target": 70, "w": 1.0}, {"source": 29, "target": 71, "w": 3.0}, {"source": 29, "target": 72, "w": 1.0}, {"source": 30, "target": 7, "w": 5.0}, {"source": 31, "target": 24, "w": 1.0}, {"source": 31, "target": 42, "w": 1.0}, {"source": 33, "target": 6, "w": 2.0}, {"source": 34, "target": 7, "w": 7.0}, {"source": 35, "target": 36, "w": 1.0}, {"source": 37, "target": 5, "w": 4.0}, {"source": 37, "target": 6, "w": 2.0}, {"source": 37, "target": 7, "w": 19.0}, {"source": 37, "target": 13, "w": 1.0}, {"source": 37, "target": 24, "w": 2.0}, {"source": 39, "target": 51, "w": 3.0}, {"source": 40, "target": 5, "w": 1.0}, {"source": 40, "target": 6, "w": 11.0}, {"source": 40, "target": 7, "w": 6.0}, {"source": 40, "target": 39, "w": 1.0}, {"source": 41, "target": 7, "w": 11.0}, {"source": 42, "target": 39, "w": 1.0}, {"source": 42, "target": 51, "w": 3.0}, {"source": 43, "target": 51, "w": 3.0}, {"source": 44, "target": 51, "w": 1.0}, {"source": 45, "target": 7, "w": 1.0}, {"source": 45, "target": 51, "w": 2.0}, {"source": 46, "target": 51, "w": 1.0}, {"source": 48, "target": 51, "w": 2.0}, {"source": 50, "target": 51, "w": 2.0}, {"source": 52, "target": 39, "w": 1.0}, {"source": 54, "target": 5, "w": 1.0}, {"source": 54, "target": 17, "w": 1.0}, {"source": 54, "target": 18, "w": 1.0}, {"source": 54, "target": 19, "w": 1.0}, {"source": 54, "target": 21, "w": 1.0}, {"source": 54, "target": 24, "w": 2.0}, {"source": 54, "target": 28, "w": 1.0}, {"source": 54, "target": 32, "w": 1.0}, {"source": 54, "target": 34, "w": 1.0}, {"source": 54, "target": 40, "w": 1.0}, {"source": 57, "target": 5, "w": 2.0}, {"source": 57, "target": 7, "w": 8.0}, {"source": 57, "target": 10, "w": 1.0}, {"source": 58, "target": 0, "w": 3.0}, {"source": 58, "target": 15, "w": 2.0}, {"source": 59, "target": 26, "w": 1.0}, {"source": 59, "target": 61, "w": 1.0}, {"source": 60, "target": 26, "w": 1.0}, {"source": 60, "target": 61, "w": 2.0}, {"source": 61, "target": 6, "w": 1.0}, {"source": 61, "target": 13, "w": 1.0}, {"source": 61, "target": 26, "w": 1.0}, {"source": 61, "target": 60, "w": 1.0}, {"source": 62, "target": 6, "w": 1.0}, {"source": 62, "target": 61, "w": 2.0}, {"source": 63, "target": 6, "w": 1.0}, {"source": 63, "target": 61, "w": 1.0}, {"source": 66, "target": 5, "w": 2.0}, {"source": 66, "target": 6, "w": 1.0}, {"source": 66, "target": 10, "w": 1.0}, {"source": 66, "target": 13, "w": 1.0}, {"source": 66, "target": 37, "w": 3.0}, {"source": 66, "target": 59, "w": 2.0}, {"source": 66, "target": 67, "w": 2.0}, {"source": 67, "target": 5, "w": 2.0}, {"source": 67, "target": 6, "w": 4.0}, {"source": 67, "target": 7, "w": 1.0}, {"source": 67, "target": 28, "w": 1.0}, {"source": 67, "target": 66, "w": 1.0}, {"source": 68, "target": 7, "w": 3.0}, {"source": 68, "target": 8, "w": 1.0}, {"source": 68, "target": 34, "w": 3.0}, {"source": 70, "target": 5, "w": 4.0}, {"source": 70, "target": 9, "w": 12.0}, {"source": 70, "target": 13, "w": 1.0}, {"source": 70, "target": 14, "w": 22.0}, {"source": 70, "target": 29, "w": 4.0}, {"source": 70, "target": 69, "w": 8.0}, {"source": 71, "target": 9, "w": 1.0}], "meta": {"project": "stelar7__R4J", "n_nodes": 73, "n_edges": 292, "graph_level_smells": [], "dense_structure": 0, "label_counts": {"CD": 12, "UD": 6, "AI": 0, "GC": 1, "FC": 20, "SF": 0}, "matching": {"arcan_nodes": 73, "designite_packages": 73, "matched": 73, "coverage": 1.0, "arcan_only": [], "designite_only": [], "smelly_packages_not_in_graph": []}, "dropped_containers": {"default_package": [], "empty_container": ["no.stelar7.api.r4j.pojo.lor.offline", "no.stelar7.api.r4j.pojo.lol.staticdata", "no.stelar7.api.r4j", "no.stelar7.api.r4j.pojo", "no.stelar7", "no.stelar7.api", "no.stelar7.api.r4j.pojo.lol", "no.stelar7.api.r4j.impl.lol.builders.matchv5", "no.stelar7.api.r4j.impl.lol.builders", "no", "no.stelar7.api.r4j.pojo.val", "no.stelar7.api.r4j.pojo.lol.match", "no.stelar7.api.r4j.impl.lol", "no.stelar7.api.r4j.basic.constants"]}, "unknown_designite_smells": []}};
+const LABELS = ["CD","UD","AI","GC","FC","SF"];
+const NAMES = {CD:"Cyclic Dependency",UD:"Unstable Dependency",AI:"Ambiguous Interface",
+  GC:"God Component",FC:"Feature Concentration",SF:"Scattered Functionality"};
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const nodes = DATA.nodes.map(d => ({...d, nSmell: LABELS.reduce((s,k)=>s+d[k],0),
+  short: d.name.split(".").slice(-1)[0] || d.name}));
+const byId = new Map(nodes.map(d => [d.id, d]));
+const links = DATA.edges.map(e => ({...e}));
+const meta = DATA.meta;
+let current = null;
+
+// ---------- sidebar ----------
+document.getElementById("title").textContent = meta.project;
+document.getElementById("nN").textContent = nodes.length;
+document.getElementById("nE").textContent = links.length;
+document.getElementById("nS").textContent = nodes.filter(d => d.nSmell > 0).length;
+document.getElementById("names").innerHTML = nodes.map(d => `<option value="${d.name}">`).join("");
+document.getElementById("smellTable").innerHTML = LABELS.map(k =>
+  `<tr><td><i class="dot" style="background:var(--${k})"></i>${NAMES[k]}</td>
+   <td>${meta.label_counts[k]} / ${nodes.length}</td></tr>`).join("");
+document.getElementById("ds").textContent = meta.dense_structure
+  ? "Dense Structure detected at project level (not assigned to individual nodes)."
+  : "Dense Structure not detected.";
+const unmasked = nodes.filter(d => !d.mask).length;
+if (unmasked) document.getElementById("ds").textContent +=
+  ` ${unmasked} nodes not analysed by Designite (dashed outline): labels unavailable.`;
+const rank = [...nodes].sort((a,b) => b.atdi - a.atdi).slice(0,10);
+document.getElementById("rank").innerHTML = rank.map(d =>
+  `<li><button data-id="${d.id}">${d.short}</button> <span class="v">${d.atdi.toFixed(1)}</span></li>`).join("");
+document.querySelectorAll("#rank button").forEach(b =>
+  b.addEventListener("click", () => select(byId.get(+b.dataset.id), true)));
+
+// ---------- graph ----------
+const svg = d3.select("#svg"), g = svg.append("g");
+const W = () => svg.node().clientWidth, H = () => svg.node().clientHeight;
+const maxLoc = d3.max(nodes, d => d.LOC) || 1;
+const r = d3.scaleSqrt().domain([0, maxLoc]).range([4, 26]);
+const wScale = d3.scaleLog().domain([1, d3.max(links, d => d.w) || 1]).range([0.6, 3.5]);
+const maxAtdi = d3.max(nodes, d => d.atdi) || 1;
+
+svg.append("defs").append("marker").attr("id","arrow").attr("viewBox","0 -4 8 8")
+  .attr("refX",8).attr("refY",0).attr("markerUnits","userSpaceOnUse").attr("markerWidth",9).attr("markerHeight",9).attr("orient","auto")
+  .append("path").attr("d","M0,-4L8,0L0,4").attr("fill","var(--edge)");
+
+const link = g.append("g").selectAll("path").data(links).join("path")
+  .attr("class","link").attr("stroke-width", d => wScale(Math.max(1,d.w))).attr("marker-end","url(#arrow)");
+const node = g.append("g").selectAll("g").data(nodes).join("g")
+  .attr("class", d => "node" + (d.mask ? "" : " nomask")).attr("tabindex",0)
+  .attr("aria-label", d => d.name);
+node.append("circle").attr("r", d => r(d.LOC));
+node.append("text").attr("dy", d => -r(d.LOC) - 4).attr("text-anchor","middle").text(d => d.short);
+
+const sim = d3.forceSimulation(nodes)
+  .force("link", d3.forceLink(links).id(d => d.id).distance(95).strength(0.2))
+  .force("charge", d3.forceManyBody().strength(-420))
+  .force("collide", d3.forceCollide(d => r(d.LOC) + 6))
+  .force("x", d3.forceX(() => W()/2).strength(0.05))
+  .force("y", d3.forceY(() => H()/2).strength(0.05))
+  .on("tick", ticked).on("end", fit);
+if (matchMedia("(prefers-reduced-motion: reduce)").matches) { sim.stop(); for (let i=0;i<300;i++) sim.tick(); ticked(); setTimeout(fit, 0); }
+let fitted = false;
+function fit(){
+  if (fitted) return; fitted = true;
+  const pad = 40, xs = nodes.map(d => d.x), ys = nodes.map(d => d.y);
+  const x0 = d3.min(xs) - pad, x1 = d3.max(xs) + pad, y0 = d3.min(ys) - pad, y1 = d3.max(ys) + pad;
+  const k = Math.min(2, 0.95 / Math.max((x1 - x0) / W(), (y1 - y0) / H()));
+  svg.transition().duration(600).call(zoom.transform,
+    d3.zoomIdentity.translate(W()/2, H()/2).scale(k).translate(-(x0 + x1)/2, -(y0 + y1)/2));
+}
+
+function ticked(){
+  link.attr("d", d => {
+    const dx = d.target.x - d.source.x, dy = d.target.y - d.source.y, L = Math.hypot(dx,dy) || 1;
+    const rt = r(d.target.LOC) + 3, rs = r(d.source.LOC);
+    return `M${d.source.x + dx*rs/L},${d.source.y + dy*rs/L}L${d.target.x - dx*rt/L},${d.target.y - dy*rt/L}`;
+  });
+  node.attr("transform", d => `translate(${d.x},${d.y})`);
+}
+
+node.call(d3.drag()
+  .on("start", (e,d) => { if(!e.active) sim.alphaTarget(0.3).restart(); d.fx=d.x; d.fy=d.y; })
+  .on("drag", (e,d) => { d.fx=e.x; d.fy=e.y; })
+  .on("end", (e,d) => { if(!e.active) sim.alphaTarget(0); d.fx=null; d.fy=null; }));
+const zoom = d3.zoom().scaleExtent([0.2,6]).on("zoom", e => g.attr("transform", e.transform));
+svg.call(zoom).on("click", e => { if (e.target === svg.node()) select(null); });
+
+// ---------- colour ----------
+function colour(d){
+  const m = document.getElementById("colorBy").value;
+  if (m === "count") return css("--s" + Math.min(d.nSmell, 4));
+  if (m === "atdi") return d3.interpolateLab(css("--s0"), css("--s4"))(Math.sqrt(d.atdi / maxAtdi));
+  return d[m] ? css("--" + m) : css("--clean");
+}
+function legend(){
+  const m = document.getElementById("colorBy").value, el = document.getElementById("legend");
+  if (m === "count") el.innerHTML = [0,1,2,3,4].map(i =>
+    `<span><i style="background:var(--s${i})"></i>${i===4?"4+":i} ${i===1?"smell":"smells"}</span>`).join("");
+  else if (m === "atdi") el.innerHTML = `<span><i style="background:var(--s0)"></i>0</span>
+    <span><i style="background:var(--s4)"></i>${maxAtdi.toFixed(0)}</span>`;
+  else el.innerHTML = `<span><i style="background:var(--${m})"></i>affected</span>
+    <span><i style="background:var(--clean)"></i>not affected</span>`;
+  el.innerHTML += `<span>node size ∝ LOC</span>`;
+}
+function paint(){ node.select("circle").attr("fill", colour); legend(); }
+document.getElementById("colorBy").addEventListener("change", paint);
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", paint);
+paint();
+
+// ---------- labels ----------
+function labelsVisible(){
+  const all = document.getElementById("showLabels").checked;
+  node.select("text").style("display", d => all || r(d.LOC) > 12 || d === current ? null : "none");
+}
+document.getElementById("showLabels").addEventListener("change", labelsVisible);
+
+// ---------- tooltip ----------
+const tip = document.getElementById("tip");
+node.on("mouseenter", (e,d) => {
+  const s = LABELS.filter(k => d[k]).join(", ") || "none";
+  tip.innerHTML = `<b>${d.name}</b><br>LOC ${d.LOC} · FI ${d.FI} · FO ${d.FO}<br>Smells: ${s}`;
+  tip.style.display = "block";
+}).on("mousemove", e => {
+  const b = document.querySelector("main").getBoundingClientRect();
+  tip.style.left = (e.clientX - b.left + 14) + "px"; tip.style.top = (e.clientY - b.top + 14) + "px";
+}).on("mouseleave", () => tip.style.display = "none")
+  .on("click", (e,d) => { e.stopPropagation(); select(d); })
+  .on("keydown", (e,d) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(d); } });
+
+// ---------- selection ----------
+function select(d, center){
+  current = d;
+  node.classed("sel", n => n === d);
+  if (!d){ node.classed("dim", false); link.classed("dim", false); renderDetail(null); labelsVisible(); return; }
+  const out = links.filter(l => l.source === d), inc = links.filter(l => l.target === d);
+  const nb = new Set([d, ...out.map(l => l.target), ...inc.map(l => l.source)]);
+  node.classed("dim", n => !nb.has(n));
+  link.classed("dim", l => l.source !== d && l.target !== d);
+  renderDetail(d, out, inc); labelsVisible();
+  if (center) svg.transition().duration(500).call(zoom.translateTo, d.x, d.y);
+}
+function renderDetail(d, out, inc){
+  const el = document.getElementById("detail");
+  if (!d){ el.innerHTML = `<h2>Selected component</h2><p class="note">Select a node to inspect its features, labels, and dependencies.</p>`; return; }
+  const chips = LABELS.filter(k => d[k]).map(k => `<span class="chip" style="background:var(--${k})">${NAMES[k]}</span>`).join("")
+    || `<span class="chip none">${d.mask ? "No smells" : "Labels unavailable"}</span>`;
+  const f = (v, p=3) => Number.isInteger(v) ? v : v.toFixed(p);
+  const rows = [["Abstractness (Ab)",d.Ab],["Instability (In)",d.In],["Distance (D)",d.D],["Fan-in (FI)",d.FI],
+    ["Fan-out (FO)",d.FO],["Lines of code (LOC)",d.LOC],["PageRank (PR)",d.PR],["ATDI (Arcan)",d.atdi],["Classes",d.units]];
+  el.innerHTML = `<h2>Selected component</h2><div class="detail-name">${d.name}</div>
+    <div class="chips">${chips}</div>
+    <table>${rows.map(([k,v]) => `<tr><td>${k}</td><td>${f(v)}</td></tr>`).join("")}</table>
+    <p class="note">Efferent dependencies: ${out.length}. Afferent dependencies: ${inc.length}.</p>`;
+}
+document.getElementById("search").addEventListener("change", e => {
+  const d = nodes.find(n => n.name === e.target.value) || nodes.find(n => n.name.includes(e.target.value));
+  if (d) select(d, true);
+});
+labelsVisible();
+</script>
+</body>
+</html>

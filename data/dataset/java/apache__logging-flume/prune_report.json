@@ -1,0 +1,95 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 460,
+  "source_files_removed": 159,
+  "source_files_after": 301,
+  "removed_share": 0.3457,
+  "removed_by_rule": {
+    "R1_arcan_default": 159
+  },
+  "removed_dirs": [
+    {
+      "path": "flume-ng-sdk-test",
+      "rule": "R1_arcan_default",
+      "source_files": 6
+    },
+    {
+      "path": "flume-ng-auth/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "flume-ng-channels/flume-file-channel/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 29
+    },
+    {
+      "path": "flume-ng-channels/flume-spillable-memory-channel/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "flume-ng-configfilters/flume-ng-environment-variable-config-filter/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "flume-ng-configfilters/flume-ng-external-process-config-filter/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "flume-ng-configuration/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 9
+    },
+    {
+      "path": "flume-ng-core/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 59
+    },
+    {
+      "path": "flume-ng-instrumentation/flume-http-monitor/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "flume-ng-instrumentation/flume-prometheus-monitor/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "flume-ng-node/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 19
+    },
+    {
+      "path": "flume-ng-sdk/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 16
+    },
+    {
+      "path": "flume-ng-sources/flume-netcat-source/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "flume-ng-sources/flume-syslog-source/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 6
+    },
+    {
+      "path": "flume-ng-sources/flume-taildir-source/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "flume-tools/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

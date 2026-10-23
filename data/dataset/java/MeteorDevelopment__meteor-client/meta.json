@@ -1,0 +1,36 @@
+{
+  "project": "MeteorDevelopment__meteor-client",
+  "n_nodes": 93,
+  "n_edges": 873,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 56,
+    "UD": 38,
+    "AI": 1,
+    "GC": 8,
+    "FC": 45,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 93,
+    "designite_packages": 92,
+    "matched": 92,
+    "coverage": 0.9892,
+    "arcan_only": [
+      "meteordevelopment.meteorclient.systems.waypoints.events"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "meteordevelopment",
+      "meteordevelopment.meteorclient.gui.themes"
+    ]
+  },
+  "unknown_designite_smells": []
+}

@@ -1,0 +1,44 @@
+{
+  "project": "stelar7__R4J",
+  "n_nodes": 73,
+  "n_edges": 292,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 12,
+    "UD": 6,
+    "AI": 0,
+    "GC": 1,
+    "FC": 20,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 73,
+    "designite_packages": 73,
+    "matched": 73,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "no.stelar7.api.r4j.pojo.lor.offline",
+      "no.stelar7.api.r4j.pojo.lol.staticdata",
+      "no.stelar7.api.r4j",
+      "no.stelar7.api.r4j.pojo",
+      "no.stelar7",
+      "no.stelar7.api",
+      "no.stelar7.api.r4j.pojo.lol",
+      "no.stelar7.api.r4j.impl.lol.builders.matchv5",
+      "no.stelar7.api.r4j.impl.lol.builders",
+      "no",
+      "no.stelar7.api.r4j.pojo.val",
+      "no.stelar7.api.r4j.pojo.lol.match",
+      "no.stelar7.api.r4j.impl.lol",
+      "no.stelar7.api.r4j.basic.constants"
+    ]
+  },
+  "unknown_designite_smells": []
+}

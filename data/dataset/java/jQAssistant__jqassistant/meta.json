@@ -1,0 +1,74 @@
+{
+  "project": "jQAssistant__jqassistant",
+  "n_nodes": 101,
+  "n_edges": 454,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 11,
+    "UD": 9,
+    "AI": 1,
+    "GC": 3,
+    "FC": 19,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 101,
+    "designite_packages": 98,
+    "matched": 98,
+    "coverage": 0.9703,
+    "arcan_only": [
+      "com.buschmais.jqassistant.core.rule.api.annotation",
+      "com.buschmais.jqassistant.core.shared.annotation",
+      "com.buschmais.jqassistant.plugin.java.api"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com.buschmais.jqassistant.plugin.yaml2",
+      "com.buschmais.jqassistant.core.runtime",
+      "com.buschmais.jqassistant.plugin.yaml2.impl",
+      "com.buschmais.jqassistant.plugin.xml.impl",
+      "com.buschmais.jqassistant.plugin.yaml2.api",
+      "com.buschmais.jqassistant.plugin.common.api",
+      "com.buschmais.jqassistant.plugin.junit.api",
+      "com.buschmais.jqassistant.plugin.common.impl",
+      "com.buschmais.jqassistant.core.report",
+      "com.buschmais.jqassistant.plugin.maven3.api",
+      "com.buschmais.jqassistant.plugin.java",
+      "com.buschmais.jqassistant.plugin.java.impl",
+      "com.buschmais.jqassistant.plugin.maven3",
+      "com.buschmais.jqassistant.plugin.maven3.impl",
+      "com.buschmais.jqassistant.core.store",
+      "com.buschmais.jqassistant.plugin.xml.api",
+      "com.buschmais",
+      "com.buschmais.jqassistant",
+      "com.buschmais.jqassistant.plugin.json",
+      "com.buschmais.jqassistant.plugin.json.impl",
+      "com.buschmais.jqassistant.plugin.junit.impl",
+      "com",
+      "com.buschmais.jqassistant.neo4j.embedded.api",
+      "com.buschmais.jqassistant.plugin",
+      "com.buschmais.jqassistant.core.resolver",
+      "com.buschmais.jqassistant.plugin.common",
+      "com.buschmais.jqassistant.plugin.junit",
+      "com.buschmais.jqassistant.core",
+      "com.buschmais.jqassistant.plugin.xml",
+      "com.buschmais.jqassistant.scm",
+      "com.buschmais.jqassistant.core.scanner",
+      "com.buschmais.jqassistant.core.rule",
+      "com.buschmais.jqassistant.core.analysis",
+      "com.buschmais.jqassistant.core.shared",
+      "com.buschmais.jqassistant.core.runtime.api",
+      "com.buschmais.jqassistant.neo4j",
+      "com.buschmais.jqassistant.plugin.json.api",
+      "com.buschmais.jqassistant.core.runtime.impl"
+    ]
+  },
+  "unknown_designite_smells": []
+}

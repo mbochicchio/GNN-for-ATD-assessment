@@ -1,0 +1,141 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 1052,
+  "source_files_removed": 471,
+  "source_files_after": 581,
+  "removed_share": 0.4477,
+  "removed_by_rule": {
+    "R1_arcan_default": 434,
+    "R2_java_build": 37
+  },
+  "removed_dirs": [
+    {
+      "path": "cli/test",
+      "rule": "R1_arcan_default",
+      "source_files": 9
+    },
+    {
+      "path": "cli/application/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 5
+    },
+    {
+      "path": "core/test",
+      "rule": "R1_arcan_default",
+      "source_files": 13
+    },
+    {
+      "path": "core/analysis/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 7
+    },
+    {
+      "path": "core/artifact-resolver/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "core/neo4j/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "core/report/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 13
+    },
+    {
+      "path": "core/rule/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 23
+    },
+    {
+      "path": "core/runtime/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 14
+    },
+    {
+      "path": "core/scanner/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 11
+    },
+    {
+      "path": "core/shared/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "core/store/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "maven/src/it",
+      "rule": "R2_java_build",
+      "source_files": 37
+    },
+    {
+      "path": "maven/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "plugin/common/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 38
+    },
+    {
+      "path": "plugin/java/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 171
+    },
+    {
+      "path": "plugin/json/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 7
+    },
+    {
+      "path": "plugin/json/src/main/asciidoc/example-01",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "plugin/json/src/main/asciidoc/example-02",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "plugin/json/src/main/asciidoc/example-03",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "plugin/json/src/main/asciidoc/example-04",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "plugin/junit/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 36
+    },
+    {
+      "path": "plugin/maven/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 20
+    },
+    {
+      "path": "plugin/xml/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    },
+    {
+      "path": "plugin/yaml/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 54
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

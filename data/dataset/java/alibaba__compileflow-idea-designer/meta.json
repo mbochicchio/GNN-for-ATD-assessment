@@ -1,0 +1,34 @@
+{
+  "project": "alibaba__compileflow-idea-designer",
+  "n_nodes": 26,
+  "n_edges": 86,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 4,
+    "UD": 3,
+    "AI": 0,
+    "GC": 0,
+    "FC": 6,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 26,
+    "designite_packages": 26,
+    "matched": 26,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com.alibaba",
+      "com.alibaba.compileflow",
+      "com.alibaba.compileflow.idea.graph.codec.impl",
+      "com"
+    ]
+  },
+  "unknown_designite_smells": []
+}

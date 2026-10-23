@@ -1,0 +1,105 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 234,
+  "source_files_removed": 76,
+  "source_files_after": 158,
+  "removed_share": 0.3248,
+  "removed_by_rule": {
+    "R1_arcan_default": 76
+  },
+  "removed_dirs": [
+    {
+      "path": "pitest-mutation-kata",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "pitest-mutation-kata-solutions",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "calendar-kata/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "calendar-kata-solutions/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "code-point-kata/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "code-point-kata-solutions/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "coffee-shop-kata/jdk21/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "coffee-shop-kata/jdk8/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "coffee-shop-kata-solutions/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "deck-of-cards-kata/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 25
+    },
+    {
+      "path": "deck-of-cards-kata-solutions/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 15
+    },
+    {
+      "path": "donut-kata/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "donut-kata-solutions/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "java-lambda-kata/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 7
+    },
+    {
+      "path": "java-lambda-kata-solutions/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 7
+    },
+    {
+      "path": "jmh-kata/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 7
+    },
+    {
+      "path": "kata-of-katas/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "kata-of-katas-solutions/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

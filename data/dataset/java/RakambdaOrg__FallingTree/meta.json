@@ -1,0 +1,35 @@
+{
+  "project": "RakambdaOrg__FallingTree",
+  "n_nodes": 41,
+  "n_edges": 162,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 16,
+    "UD": 6,
+    "AI": 0,
+    "GC": 0,
+    "FC": 7,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 41,
+    "designite_packages": 41,
+    "matched": 41,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "fr",
+      "fr.rakambda",
+      "fr.rakambda.fallingtree",
+      "fr.rakambda.fallingtree.neoforge.client",
+      "fr.rakambda.fallingtree.forge.client"
+    ]
+  },
+  "unknown_designite_smells": []
+}

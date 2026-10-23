@@ -1,0 +1,30 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 699,
+  "source_files_removed": 62,
+  "source_files_after": 637,
+  "removed_share": 0.0887,
+  "removed_by_rule": {
+    "R1_arcan_default": 62
+  },
+  "removed_dirs": [
+    {
+      "path": "api/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "tba/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "testbenchTbaGapp/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 59
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

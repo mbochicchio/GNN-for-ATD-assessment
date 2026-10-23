@@ -1,0 +1,40 @@
+{
+  "project": "diudiu-tech__delivery-harness",
+  "n_nodes": 33,
+  "n_edges": 79,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 0,
+    "UD": 1,
+    "AI": 0,
+    "GC": 0,
+    "FC": 3,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 33,
+    "designite_packages": 33,
+    "matched": 33,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com.delivery.harness",
+      "com.delivery.harness.common",
+      "com.delivery.harness.eval",
+      "com.delivery.harness.observe",
+      "com.delivery.harness.knowledge",
+      "com.delivery.harness.tool",
+      "com.delivery",
+      "com.delivery.harness.agent",
+      "com",
+      "com.delivery.harness.llm"
+    ]
+  },
+  "unknown_designite_smells": []
+}

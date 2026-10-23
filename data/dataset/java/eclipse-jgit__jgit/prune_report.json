@@ -1,0 +1,61 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 1891,
+  "source_files_removed": 24,
+  "source_files_after": 1867,
+  "removed_share": 0.0127,
+  "removed_by_rule": {
+    "R1_arcan_default": 24
+  },
+  "removed_dirs": [
+    {
+      "path": "org.eclipse.jgit.http.test/src/org/eclipse/jgit/http/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "org.eclipse.jgit.http.test/tst/org/eclipse/jgit/http/test",
+      "rule": "R1_arcan_default",
+      "source_files": 20
+    },
+    {
+      "path": "org.eclipse.jgit.lfs.test/src/org/eclipse/jgit/lfs/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "org.eclipse.jgit.test/tst/org/eclipse/jgit/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "org.eclipse.jgit.test/tst-rsrc/org/eclipse/jgit/test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    }
+  ],
+  "residual_test_files": 571,
+  "residual_examples": [
+    "org.eclipse.jgit.ant.test/src/org/eclipse/jgit/ant/tasks/GitCloneTaskTest.java",
+    "org.eclipse.jgit.benchmarks/src/org/eclipse/jgit/benchmarks/GetRefsBenchmark.java",
+    "org.eclipse.jgit.gpg.bc.test/tst/org/eclipse/jgit/gpg/bc/internal/BouncyCastleGpgKeyLocatorTest.java",
+    "org.eclipse.jgit.gpg.bc.test/tst/org/eclipse/jgit/gpg/bc/internal/keys/KeyGrip25519Test.java",
+    "org.eclipse.jgit.gpg.bc.test/tst/org/eclipse/jgit/gpg/bc/internal/keys/KeyGripTest.java",
+    "org.eclipse.jgit.gpg.bc.test/tst/org/eclipse/jgit/gpg/bc/internal/keys/SecretKeysTest.java",
+    "org.eclipse.jgit.http.test/tst/org/eclipse/jgit/http/server/ClientVersionUtilTest.java",
+    "org.eclipse.jgit.http.test/tst/org/eclipse/jgit/http/server/RootLocaleTest.java",
+    "org.eclipse.jgit.http.test/tst/org/eclipse/jgit/http/server/ServletUtilsTest.java",
+    "org.eclipse.jgit.http.test/tst/org/eclipse/jgit/transport/http/apache/HttpClientConnectionTest.java",
+    "org.eclipse.jgit.junit/src/org/eclipse/jgit/junit/JGitTestUtil.java",
+    "org.eclipse.jgit.junit/src/org/eclipse/jgit/junit/LocalDiskRepositoryTestCase.java",
+    "org.eclipse.jgit.junit/src/org/eclipse/jgit/junit/RepeatRule.java",
+    "org.eclipse.jgit.junit/src/org/eclipse/jgit/junit/RepositoryTestCase.java",
+    "org.eclipse.jgit.junit/src/org/eclipse/jgit/junit/SeparateClassloaderTestRunner.java",
+    "org.eclipse.jgit.junit/src/org/eclipse/jgit/junit/StrictWorkMonitor.java",
+    "org.eclipse.jgit.junit/src/org/eclipse/jgit/junit/TestRepository.java",
+    "org.eclipse.jgit.junit.http/src/org/eclipse/jgit/junit/http/AppServerBase.java",
+    "org.eclipse.jgit.junit.http/src/org/eclipse/jgit/junit/http/HttpTestCase.java",
+    "org.eclipse.jgit.junit.ssh/src/org/eclipse/jgit/junit/ssh/SshBasicTestBase.java"
+  ]
+}
