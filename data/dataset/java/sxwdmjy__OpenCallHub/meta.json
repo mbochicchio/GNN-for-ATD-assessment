@@ -1,0 +1,44 @@
+{
+  "project": "sxwdmjy__OpenCallHub",
+  "n_nodes": 142,
+  "n_edges": 488,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 8,
+    "UD": 9,
+    "AI": 0,
+    "GC": 4,
+    "FC": 19,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 142,
+    "designite_packages": 142,
+    "matched": 142,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com.och.system.domain",
+      "com.och.sip.core",
+      "com.och.ivr.handler",
+      "com.och.ivr.domain",
+      "com.och.system",
+      "com.och.websocket",
+      "com.och.sip",
+      "com.och.ai",
+      "com.och.file",
+      "com.och.security",
+      "com.och.ivr",
+      "com.och.calltask",
+      "com",
+      "com.och.esl.handler"
+    ]
+  },
+  "unknown_designite_smells": []
+}

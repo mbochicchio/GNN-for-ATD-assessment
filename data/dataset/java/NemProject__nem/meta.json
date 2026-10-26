@@ -1,0 +1,40 @@
+{
+  "project": "NemProject__nem",
+  "n_nodes": 70,
+  "n_edges": 552,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 20,
+    "UD": 16,
+    "AI": 0,
+    "GC": 4,
+    "FC": 30,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 70,
+    "designite_packages": 69,
+    "matched": 69,
+    "coverage": 0.9857,
+    "arcan_only": [
+      "org.nem.nis.controller.annotations"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "org",
+      "org.nem",
+      "org.nem.core",
+      "org.nem.specific",
+      "org.nem.core.model.transactions",
+      "org.nem.nis.time"
+    ]
+  },
+  "unknown_designite_smells": []
+}

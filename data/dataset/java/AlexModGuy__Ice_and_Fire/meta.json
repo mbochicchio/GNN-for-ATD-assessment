@@ -1,0 +1,44 @@
+{
+  "project": "AlexModGuy__Ice_and_Fire",
+  "n_nodes": 48,
+  "n_edges": 282,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 32,
+    "UD": 19,
+    "AI": 0,
+    "GC": 8,
+    "FC": 21,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 48,
+    "designite_packages": 48,
+    "matched": 48,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com",
+      "com.github",
+      "com.github.alexthe666.iceandfire.compat",
+      "net.minecraftforge",
+      "net.minecraftforge.registries",
+      "net.minecraftforge.common",
+      "net.minecraft",
+      "net.minecraft.util",
+      "net.minecraftforge.common.capabilities",
+      "net.minecraftforge.common.util",
+      "com.github.alexthe666",
+      "net"
+    ]
+  },
+  "unknown_designite_smells": []
+}

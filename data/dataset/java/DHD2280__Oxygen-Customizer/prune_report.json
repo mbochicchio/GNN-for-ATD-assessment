@@ -1,0 +1,25 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 560,
+  "source_files_removed": 471,
+  "source_files_after": 89,
+  "removed_share": 0.8411,
+  "removed_by_rule": {
+    "R2_java_build": 471
+  },
+  "removed_dirs": [
+    {
+      "path": "app/src/main/aidl/it",
+      "rule": "R2_java_build",
+      "source_files": 0
+    },
+    {
+      "path": "app/src/main/java/it",
+      "rule": "R2_java_build",
+      "source_files": 471
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

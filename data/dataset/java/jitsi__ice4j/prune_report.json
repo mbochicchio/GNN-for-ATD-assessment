@@ -1,0 +1,20 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 214,
+  "source_files_removed": 40,
+  "source_files_after": 174,
+  "removed_share": 0.1869,
+  "removed_by_rule": {
+    "R1_arcan_default": 40
+  },
+  "removed_dirs": [
+    {
+      "path": "src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 40
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

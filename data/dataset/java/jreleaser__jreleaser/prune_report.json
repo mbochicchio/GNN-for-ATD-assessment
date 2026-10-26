@@ -1,0 +1,140 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 1242,
+  "source_files_removed": 64,
+  "source_files_after": 1178,
+  "removed_share": 0.0515,
+  "removed_by_rule": {
+    "R1_arcan_default": 64
+  },
+  "removed_dirs": [
+    {
+      "path": "api/jreleaser-logger-api/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "api/jreleaser-model-api/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 5
+    },
+    {
+      "path": "api/jreleaser-utils/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 12
+    },
+    {
+      "path": "core/jreleaser-config-json/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "core/jreleaser-config-toml/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "core/jreleaser-config-yaml/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "core/jreleaser-engine/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "core/jreleaser-model-impl/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 5
+    },
+    {
+      "path": "core/jreleaser-templates/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "infra/jreleaser-test-support",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "sdks/jreleaser-bluesky-java-sdk/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "sdks/jreleaser-discourse-java-sdk/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "sdks/jreleaser-git-java-sdk/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "sdks/jreleaser-github-java-sdk/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "sdks/jreleaser-java-sdk-commons/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "sdks/jreleaser-linkedin-java-sdk/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "sdks/jreleaser-mastodon-java-sdk/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "sdks/jreleaser-mavencentral-java-sdk/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    },
+    {
+      "path": "sdks/jreleaser-reddit-java-sdk/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "sdks/jreleaser-sdkman-java-sdk/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 7
+    },
+    {
+      "path": "sdks/jreleaser-slack-java-sdk/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "sdks/jreleaser-smtp-java-sdk/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "sdks/jreleaser-telegram-java-sdk/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "sdks/jreleaser-zernio-java-sdk/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "sdks/jreleaser-zulip-java-sdk/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

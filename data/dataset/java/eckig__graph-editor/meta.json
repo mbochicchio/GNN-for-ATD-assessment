@@ -1,0 +1,35 @@
+{
+  "project": "eckig__graph-editor",
+  "n_nodes": 22,
+  "n_edges": 66,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 6,
+    "UD": 4,
+    "AI": 0,
+    "GC": 0,
+    "FC": 5,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 22,
+    "designite_packages": 22,
+    "matched": 22,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "io.github",
+      "io.github.eckig",
+      "io"
+    ]
+  },
+  "unknown_designite_smells": []
+}

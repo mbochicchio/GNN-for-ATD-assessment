@@ -1,0 +1,50 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 264,
+  "source_files_removed": 162,
+  "source_files_after": 102,
+  "removed_share": 0.6136,
+  "removed_by_rule": {
+    "R1_arcan_default": 162
+  },
+  "removed_dirs": [
+    {
+      "path": "test-graal-native-image",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "test-jpms",
+      "rule": "R1_arcan_default",
+      "source_files": 6
+    },
+    {
+      "path": "test-shrinker",
+      "rule": "R1_arcan_default",
+      "source_files": 19
+    },
+    {
+      "path": "extras/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    },
+    {
+      "path": "extras/src/main/java/com/google/gson/extras/examples",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "gson/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 123
+    },
+    {
+      "path": "proto/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 7
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

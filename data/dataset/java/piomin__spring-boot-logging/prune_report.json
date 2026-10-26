@@ -1,0 +1,40 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 32,
+  "source_files_removed": 14,
+  "source_files_after": 18,
+  "removed_share": 0.4375,
+  "removed_by_rule": {
+    "R1_arcan_default": 14
+  },
+  "removed_dirs": [
+    {
+      "path": "logging-spring-tests",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    },
+    {
+      "path": "loki-logging-spring-tests",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    },
+    {
+      "path": "reactive-logging-spring-tests",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    },
+    {
+      "path": "logstash-logging-spring-boot-starter/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "reactive-logstash-logging-spring-boot-starter/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

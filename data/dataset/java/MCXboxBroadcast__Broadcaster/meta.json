@@ -1,0 +1,38 @@
+{
+  "project": "MCXboxBroadcast__Broadcaster",
+  "n_nodes": 17,
+  "n_edges": 34,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 4,
+    "UD": 3,
+    "AI": 1,
+    "GC": 0,
+    "FC": 3,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 17,
+    "designite_packages": 15,
+    "matched": 15,
+    "coverage": 0.8824,
+    "arcan_only": [
+      "com.rtm516.mcxboxbroadcast.core.models.gallery",
+      "com.rtm516.mcxboxbroadcast.core.models.session.member"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com",
+      "com.rtm516",
+      "com.rtm516.mcxboxbroadcast",
+      "com.rtm516.mcxboxbroadcast.core.models",
+      "com.rtm516.mcxboxbroadcast.bootstrap"
+    ]
+  },
+  "unknown_designite_smells": []
+}

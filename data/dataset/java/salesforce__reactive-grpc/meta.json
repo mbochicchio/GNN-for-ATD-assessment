@@ -1,0 +1,38 @@
+{
+  "project": "salesforce__reactive-grpc",
+  "n_nodes": 10,
+  "n_edges": 6,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 0,
+    "UD": 0,
+    "AI": 0,
+    "GC": 0,
+    "FC": 8,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 10,
+    "designite_packages": 10,
+    "matched": 10,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com",
+      "com.salesforce",
+      "io.reactivex.rxjava3.functions",
+      "com.salesforce.reactivegrpc",
+      "io.reactivex",
+      "io.reactivex.functions",
+      "io.reactivex.rxjava3",
+      "io"
+    ]
+  },
+  "unknown_designite_smells": []
+}

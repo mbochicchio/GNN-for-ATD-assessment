@@ -1,0 +1,100 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 223,
+  "source_files_removed": 161,
+  "source_files_after": 62,
+  "removed_share": 0.722,
+  "removed_by_rule": {
+    "R1_arcan_default": 161
+  },
+  "removed_dirs": [
+    {
+      "path": "demos",
+      "rule": "R1_arcan_default",
+      "source_files": 34
+    },
+    {
+      "path": "common/reactive-grpc-benchmarks/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "common/reactive-grpc-benchmarks/src/main/proto/grpc/testing",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "common/reactive-grpc-common/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 17
+    },
+    {
+      "path": "inerop/java/src/main/java/com/example",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "reactor/reactor-grpc-test",
+      "rule": "R1_arcan_default",
+      "source_files": 19
+    },
+    {
+      "path": "reactor/reactor-grpc-test-32",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "reactor/reactor-grpc-retry/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "reactor/reactor-grpc-retry-pre3.3.9/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "reactor/reactor-grpc-stub/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    },
+    {
+      "path": "reactor/reactor-grpc-tck/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 12
+    },
+    {
+      "path": "rx-java/rxgrpc-test",
+      "rule": "R1_arcan_default",
+      "source_files": 19
+    },
+    {
+      "path": "rx-java/rxgrpc-stub/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "rx-java/rxgrpc-tck/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 12
+    },
+    {
+      "path": "rx3-java/rx3grpc-test",
+      "rule": "R1_arcan_default",
+      "source_files": 19
+    },
+    {
+      "path": "rx3-java/rx3grpc-stub/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 5
+    },
+    {
+      "path": "rx3-java/rx3grpc-tck/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 12
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

@@ -1,0 +1,41 @@
+{
+  "project": "rbmonster__learning-note",
+  "n_nodes": 117,
+  "n_edges": 35,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 2,
+    "UD": 0,
+    "AI": 0,
+    "GC": 0,
+    "FC": 23,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 117,
+    "designite_packages": 115,
+    "matched": 115,
+    "coverage": 0.9829,
+    "arcan_only": [
+      "com.four.annotation.annotationobj",
+      "com.four.beanproxyannotation.annotation"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com.learning",
+      "com.learning.basic",
+      "com.learning.design",
+      "com",
+      "com.other",
+      "com.design",
+      "com.four",
+      "com.learning.design.statemachine"
+    ]
+  },
+  "unknown_designite_smells": []
+}

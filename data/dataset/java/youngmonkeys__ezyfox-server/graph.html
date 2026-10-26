@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>youngmonkeys__ezyfox-server · dependency graph</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EEF1F0; --panel:#F8FAF9; --ink:#1B2733; --muted:#5E6B78; --rule:#D3DAD8;
+  --edge:#9AA7B2; --clean:#C3CCD3; --focus:#1B2733;
+  --CD:#D55E00; --UD:#0072B2; --AI:#CC79A7; --GC:#009E73; --FC:#E69F00; --SF:#56B4E9;
+  --s0:#C3CCD3; --s1:#F2C27B; --s2:#E58A3C; --s3:#C4462A; --s4:#8E1F2A;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+  --bg:#141B21; --panel:#1B242C; --ink:#E4EAEE; --muted:#93A1AD; --rule:#2C3842;
+  --edge:#4E5E6B; --clean:#3E4B56; --focus:#E4EAEE; --s0:#3E4B56;
+}}
+:root[data-theme="dark"]{
+  --bg:#141B21; --panel:#1B242C; --ink:#E4EAEE; --muted:#93A1AD; --rule:#2C3842;
+  --edge:#4E5E6B; --clean:#3E4B56; --focus:#E4EAEE; --s0:#3E4B56;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{height:100%; scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0; height:100%; background:var(--bg); color:var(--ink);
+  font:14px/1.5 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+.app{display:grid; grid-template-columns:320px 1fr; height:100%}
+aside{background:var(--panel); border-right:1px solid var(--rule); overflow-y:auto; padding:20px 20px 28px}
+h1{font:500 22px/1.2 "IBM Plex Sans Condensed","IBM Plex Sans",sans-serif; margin:0 0 4px; word-break:break-word}
+.sub{color:var(--muted); margin:0 0 18px}
+.stats{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-bottom:18px}
+.stat b{display:block; font-size:20px; font-weight:600}
+.stat span{color:var(--muted); font-size:12px}
+section{border-top:1px solid var(--rule); padding-top:14px; margin-top:14px}
+h2{font-size:13px; font-weight:600; margin:0 0 8px}
+label.ctl{display:block; color:var(--muted); font-size:12px; margin:8px 0 4px}
+select,input[type=search]{width:100%; font:inherit; color:var(--ink); background:var(--bg);
+  border:1px solid var(--rule); border-radius:6px; padding:6px 8px}
+select:focus-visible,input:focus-visible,button:focus-visible{outline:2px solid var(--focus); outline-offset:2px}
+.check{display:flex; gap:8px; align-items:center; margin-top:10px; color:var(--muted); font-size:13px}
+.legend{display:flex; flex-wrap:wrap; gap:6px 12px; margin-top:10px; font-size:12px}
+.dot{display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:7px; vertical-align:-1px}
+.legend i{display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:5px; vertical-align:-1px}
+table{width:100%; border-collapse:collapse; font-size:13px}
+td{padding:3px 0; border-bottom:1px solid var(--rule)}
+td:last-child{text-align:right; font-variant-numeric:tabular-nums}
+.chips{display:flex; flex-wrap:wrap; gap:6px; margin:8px 0}
+.chip{font-size:12px; padding:2px 8px; border-radius:10px; color:#fff}
+.chip.none{background:var(--clean); color:var(--ink)}
+.detail-name{font-weight:600; word-break:break-all; margin-bottom:4px}
+.note{color:var(--muted); font-size:12px}
+ol.rank{margin:0; padding-left:20px; font-size:13px}
+ol.rank li{margin:2px 0}
+ol.rank button{all:unset; cursor:pointer; word-break:break-all}
+ol.rank button:hover{text-decoration:underline}
+ol.rank .v{color:var(--muted); font-variant-numeric:tabular-nums}
+main{position:relative; overflow:hidden}
+svg{width:100%; height:100%; display:block; cursor:grab}
+.link{stroke:var(--edge); stroke-opacity:.55; fill:none}
+.node circle{stroke:var(--panel); stroke-width:1.5}
+.node.nomask circle{stroke-dasharray:3 2; stroke:var(--muted)}
+.node text{font-size:11px; fill:var(--ink); pointer-events:none; paint-order:stroke;
+  stroke:var(--bg); stroke-width:3px}
+.dim{opacity:.12}
+.node.sel circle{stroke:var(--focus); stroke-width:3}
+#tip{position:absolute; pointer-events:none; background:var(--panel); border:1px solid var(--rule);
+  border-radius:6px; padding:6px 9px; font-size:12px; max-width:320px; display:none; word-break:break-all}
+.hint{position:absolute; right:14px; bottom:12px; color:var(--muted); font-size:12px}
+@media (max-width:760px){
+  .app{grid-template-columns:1fr; grid-template-rows:auto 70vh; height:auto}
+  aside{border-right:0; border-bottom:1px solid var(--rule)}
+}
+@media (prefers-reduced-motion:reduce){ *{transition:none!important} }
+</style>
+</head>
+<body>
+<div class="app">
+<aside>
+  <h1 id="title"></h1>
+  <p class="sub">Package-level dependency graph with Designite smell labels</p>
+  <div class="stats">
+    <div class="stat"><b id="nN"></b><span>components</span></div>
+    <div class="stat"><b id="nE"></b><span>dependencies</span></div>
+    <div class="stat"><b id="nS"></b><span>smell-affected components</span></div>
+  </div>
+
+  <label class="ctl" for="colorBy">Colour nodes by</label>
+  <select id="colorBy">
+    <option value="count">Number of smells</option>
+    <option value="CD">Cyclic Dependency</option>
+    <option value="UD">Unstable Dependency</option>
+    <option value="AI">Ambiguous Interface</option>
+    <option value="GC">God Component</option>
+    <option value="FC">Feature Concentration</option>
+    <option value="SF">Scattered Functionality</option>
+    <option value="atdi">ATDI (Arcan)</option>
+  </select>
+  <div class="legend" id="legend"></div>
+
+  <label class="ctl" for="search">Find a component</label>
+  <input id="search" type="search" placeholder="e.g. analyzer" list="names" autocomplete="off">
+  <datalist id="names"></datalist>
+  <label class="check"><input type="checkbox" id="showLabels"> Show all node labels</label>
+
+  <section id="detail">
+    <h2>Selected component</h2>
+    <p class="note">Select a node to inspect its features, labels, and dependencies.</p>
+  </section>
+
+  <section>
+    <h2>Smell distribution</h2>
+    <table id="smellTable"></table>
+    <p class="note" id="ds"></p>
+  </section>
+
+  <section>
+    <h2>Highest ATDI</h2>
+    <ol class="rank" id="rank"></ol>
+  </section>
+</aside>
+<main>
+  <svg id="svg" role="img" aria-label="Dependency graph"></svg>
+  <div id="tip"></div>
+  <div class="hint">Drag to pan, scroll to zoom</div>
+</main>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script>
+const DATA = {"nodes": [{"id": 0, "name": "com.tvd12.ezyfoxserver", "mask": 1, "atdi": 196.5848880035381, "units": 27, "Ab": 0.5555555555555556, "In": 0.5514018691588785, "D": 0.10695742471443404, "FI": 12.0, "FO": 18.0, "LOC": 692.0, "PR": 0.0223377164726694, "CD": 1, "UD": 1, "AI": 0, "GC": 1, "FC": 0, "SF": 0}, {"id": 1, "name": "com.tvd12.ezyfoxserver.api", "mask": 1, "atdi": 26.09321936526612, "units": 15, "Ab": 0.4, "In": 0.6111111111111112, "D": 0.011111111111111072, "FI": 5.0, "FO": 6.0, "LOC": 275.0, "PR": 0.009144302945397635, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 2, "name": "com.tvd12.ezyfoxserver.app", "mask": 1, "atdi": 31.224311800325495, "units": 1, "Ab": 1.0, "In": 0.2727272727272727, "D": 0.2727272727272727, "FI": 6.0, "FO": 3.0, "LOC": 4.0, "PR": 0.011028560279115477, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 3, "name": "com.tvd12.ezyfoxserver.builder", "mask": 1, "atdi": 32.149617271935654, "units": 5, "Ab": 0.8, "In": 0.9130434782608695, "D": 0.7130434782608694, "FI": 4.0, "FO": 9.0, "LOC": 213.0, "PR": 0.01034109343832095, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 4, "name": "com.tvd12.ezyfoxserver.ccl", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 1.0, "FO": 0.0, "LOC": 20.0, "PR": 0.007005867875408458, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 5, "name": "com.tvd12.ezyfoxserver.codec", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.5, "In": 0.5, "D": 0.0, "FI": 2.0, "FO": 2.0, "LOC": 44.0, "PR": 0.007530650692413383, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 6, "name": "com.tvd12.ezyfoxserver.command", "mask": 1, "atdi": 52.16403340764014, "units": 25, "Ab": 0.96, "In": 0.30612244897959184, "D": 0.2661224489795919, "FI": 5.0, "FO": 10.0, "LOC": 268.0, "PR": 0.01273690818650261, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 7, "name": "com.tvd12.ezyfoxserver.command.impl", "mask": 1, "atdi": 67.35733633459479, "units": 19, "Ab": 0.0, "In": 0.9193548387096774, "D": 0.08064516129032262, "FI": 1.0, "FO": 14.0, "LOC": 555.0, "PR": 0.009331071027261693, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 8, "name": "com.tvd12.ezyfoxserver.concurrent", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 1.0, "In": 0.0, "D": 0.0, "FI": 1.0, "FO": 0.0, "LOC": 3.0, "PR": 0.009331071027261693, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 9, "name": "com.tvd12.ezyfoxserver.config", "mask": 1, "atdi": 0.0, "units": 5, "Ab": 0.4, "In": 0.0, "D": 0.6, "FI": 3.0, "FO": 0.0, "LOC": 91.0, "PR": 0.008825583780046834, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 10, "name": "com.tvd12.ezyfoxserver.constant", "mask": 1, "atdi": 0.0, "units": 18, "Ab": 0.2222222222222222, "In": 0.0, "D": 0.7777777777777778, "FI": 25.0, "FO": 0.0, "LOC": 184.0, "PR": 0.12470606112322148, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 11, "name": "com.tvd12.ezyfoxserver.context", "mask": 1, "atdi": 197.6583211539235, "units": 24, "Ab": 0.7083333333333334, "In": 0.3741935483870968, "D": 0.0825268817204301, "FI": 23.0, "FO": 13.0, "LOC": 770.0, "PR": 0.05169462232642145, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 12, "name": "com.tvd12.ezyfoxserver.controller", "mask": 1, "atdi": 155.99899184118087, "units": 28, "Ab": 0.5357142857142857, "In": 0.8053097345132744, "D": 0.34102402022756007, "FI": 10.0, "FO": 13.0, "LOC": 604.0, "PR": 0.023315376201480376, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 13, "name": "com.tvd12.ezyfoxserver.creator", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.5, "In": 0.8, "D": 0.30000000000000004, "FI": 1.0, "FO": 4.0, "LOC": 34.0, "PR": 0.006235212617368447, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 14, "name": "com.tvd12.ezyfoxserver.delegate", "mask": 1, "atdi": 36.223740448184074, "units": 9, "Ab": 0.7777777777777778, "In": 0.75, "D": 0.5277777777777777, "FI": 4.0, "FO": 7.0, "LOC": 81.0, "PR": 0.026413171722926045, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 15, "name": "com.tvd12.ezyfoxserver.embedded", "mask": 1, "atdi": 0.0, "units": 4, "Ab": 0.25, "In": 1.0, "D": 0.25, "FI": 0.0, "FO": 6.0, "LOC": 95.0, "PR": 0.005951039372484516, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 16, "name": "com.tvd12.ezyfoxserver.entity", "mask": 1, "atdi": 177.7777869132412, "units": 14, "Ab": 0.9285714285714286, "In": 0.1111111111111111, "D": 0.039682539682539764, "FI": 25.0, "FO": 5.0, "LOC": 383.0, "PR": 0.10647739941728075, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 17, "name": "com.tvd12.ezyfoxserver.event", "mask": 1, "atdi": 45.677163025963296, "units": 35, "Ab": 0.5142857142857142, "In": 0.043478260869565216, "D": 0.4422360248447206, "FI": 14.0, "FO": 1.0, "LOC": 261.0, "PR": 0.03759143222073913, "CD": 1, "UD": 1, "AI": 0, "GC": 1, "FC": 0, "SF": 0}, {"id": 18, "name": "com.tvd12.ezyfoxserver.exception", "mask": 1, "atdi": 25.179868425475963, "units": 9, "Ab": 0.0, "In": 0.35294117647058826, "D": 0.6470588235294117, "FI": 6.0, "FO": 2.0, "LOC": 86.0, "PR": 0.018589376271919714, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 19, "name": "com.tvd12.ezyfoxserver.ext", "mask": 1, "atdi": 5.17751999293058, "units": 12, "Ab": 0.9166666666666666, "In": 0.2857142857142857, "D": 0.20238095238095233, "FI": 2.0, "FO": 1.0, "LOC": 34.0, "PR": 0.0073671790422559025, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 20, "name": "com.tvd12.ezyfoxserver.factory", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 1.0, "In": 0.8571428571428571, "D": 0.8571428571428572, "FI": 1.0, "FO": 4.0, "LOC": 28.0, "PR": 0.0074092016501897656, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 21, "name": "com.tvd12.ezyfoxserver.handler", "mask": 1, "atdi": 0.0, "units": 6, "Ab": 0.8333333333333334, "In": 0.975609756097561, "D": 0.8089430894308944, "FI": 1.0, "FO": 14.0, "LOC": 264.0, "PR": 0.006837679701996132, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 22, "name": "com.tvd12.ezyfoxserver.interceptor", "mask": 1, "atdi": 26.111251347640792, "units": 5, "Ab": 0.6, "In": 0.625, "D": 0.2250000000000001, "FI": 3.0, "FO": 4.0, "LOC": 31.0, "PR": 0.01062053303177913, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 23, "name": "com.tvd12.ezyfoxserver.nio", "mask": 1, "atdi": 6.654783939776662, "units": 7, "Ab": 0.0, "In": 0.9666666666666667, "D": 0.033333333333333326, "FI": 2.0, "FO": 15.0, "LOC": 427.0, "PR": 0.00707827200667915, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 24, "name": "com.tvd12.ezyfoxserver.nio.builder", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 1.0, "In": 0.5, "D": 0.5, "FI": 1.0, "FO": 2.0, "LOC": 3.0, "PR": 0.006235212617368447, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 25, "name": "com.tvd12.ezyfoxserver.nio.builder.impl", "mask": 1, "atdi": 6.654783939776662, "units": 4, "Ab": 0.0, "In": 0.9583333333333334, "D": 0.04166666666666663, "FI": 1.0, "FO": 19.0, "LOC": 361.0, "PR": 0.006352139851479709, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 26, "name": "com.tvd12.ezyfoxserver.nio.constant", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 1.0, "FO": 0.0, "LOC": 3.0, "PR": 0.006352139851479709, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 27, "name": "com.tvd12.ezyfoxserver.nio.entity", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.5, "In": 0.2, "D": 0.30000000000000004, "FI": 6.0, "FO": 1.0, "LOC": 17.0, "PR": 0.012520322090055836, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 28, "name": "com.tvd12.ezyfoxserver.nio.factory", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.5, "In": 0.5555555555555556, "D": 0.05555555555555558, "FI": 2.0, "FO": 4.0, "LOC": 14.0, "PR": 0.006861972505701468, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 29, "name": "com.tvd12.ezyfoxserver.nio.handler", "mask": 1, "atdi": 25.530585542228806, "units": 8, "Ab": 0.625, "In": 0.7959183673469388, "D": 0.42091836734693877, "FI": 7.0, "FO": 13.0, "LOC": 373.0, "PR": 0.013560439033115431, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 30, "name": "com.tvd12.ezyfoxserver.nio.socket", "mask": 1, "atdi": 25.949438781815044, "units": 11, "Ab": 0.09090909090909091, "In": 0.6956521739130435, "D": 0.2134387351778656, "FI": 4.0, "FO": 8.0, "LOC": 592.0, "PR": 0.008437647087809912, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 31, "name": "com.tvd12.ezyfoxserver.nio.udp", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 0.8333333333333334, "D": 0.16666666666666663, "FI": 1.0, "FO": 2.0, "LOC": 47.0, "PR": 0.006352139851479709, "CD": 0, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 32, "name": "com.tvd12.ezyfoxserver.nio.websocket", "mask": 1, "atdi": 15.520798229175924, "units": 6, "Ab": 0.16666666666666666, "In": 0.75, "D": 0.08333333333333337, "FI": 3.0, "FO": 7.0, "LOC": 183.0, "PR": 0.007532808244375586, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 33, "name": "com.tvd12.ezyfoxserver.nio.wrapper", "mask": 1, "atdi": 15.209108536320759, "units": 3, "Ab": 1.0, "In": 0.45, "D": 0.44999999999999996, "FI": 7.0, "FO": 6.0, "LOC": 25.0, "PR": 0.01261085396318825, "CD": 0, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 34, "name": "com.tvd12.ezyfoxserver.nio.wrapper.impl", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 0.8666666666666667, "D": 0.1333333333333333, "FI": 2.0, "FO": 9.0, "LOC": 111.0, "PR": 0.00663631309636364, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 35, "name": "com.tvd12.ezyfoxserver.plugin", "mask": 1, "atdi": 32.711570482537866, "units": 1, "Ab": 1.0, "In": 0.2727272727272727, "D": 0.2727272727272727, "FI": 6.0, "FO": 3.0, "LOC": 4.0, "PR": 0.011028560279115477, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 36, "name": "com.tvd12.ezyfoxserver.request", "mask": 1, "atdi": 10.181758762823627, "units": 39, "Ab": 0.5641025641025641, "In": 0.2727272727272727, "D": 0.1631701631701632, "FI": 3.0, "FO": 1.0, "LOC": 274.0, "PR": 0.010147504685030905, "CD": 1, "UD": 0, "AI": 0, "GC": 1, "FC": 0, "SF": 0}, {"id": 37, "name": "com.tvd12.ezyfoxserver.response", "mask": 1, "atdi": 35.57268062742855, "units": 31, "Ab": 0.1935483870967742, "In": 0.17647058823529413, "D": 0.6299810246679317, "FI": 8.0, "FO": 3.0, "LOC": 312.0, "PR": 0.023087612001371303, "CD": 0, "UD": 0, "AI": 0, "GC": 1, "FC": 0, "SF": 0}, {"id": 38, "name": "com.tvd12.ezyfoxserver.service", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 1.0, "In": 0.0, "D": 0.0, "FI": 3.0, "FO": 0.0, "LOC": 2.0, "PR": 0.016245877436562365, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 39, "name": "com.tvd12.ezyfoxserver.service.impl", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.5, "D": 0.5, "FI": 1.0, "FO": 1.0, "LOC": 17.0, "PR": 0.007005867875408458, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 40, "name": "com.tvd12.ezyfoxserver.setting", "mask": 1, "atdi": 0.0, "units": 70, "Ab": 0.44285714285714284, "In": 0.06153846153846154, "D": 0.4956043956043956, "FI": 21.0, "FO": 1.0, "LOC": 1779.0, "PR": 0.06033855100537494, "CD": 0, "UD": 0, "AI": 0, "GC": 1, "FC": 0, "SF": 0}, {"id": 41, "name": "com.tvd12.ezyfoxserver.socket", "mask": 1, "atdi": 184.2427559299679, "units": 62, "Ab": 0.5483870967741935, "In": 0.23529411764705882, "D": 0.21631878557874762, "FI": 18.0, "FO": 7.0, "LOC": 822.0, "PR": 0.0466519019540631, "CD": 1, "UD": 1, "AI": 0, "GC": 1, "FC": 0, "SF": 0}, {"id": 42, "name": "com.tvd12.ezyfoxserver.ssl", "mask": 1, "atdi": 0.0, "units": 11, "Ab": 0.36363636363636365, "In": 0.2, "D": 0.4363636363636363, "FI": 4.0, "FO": 1.0, "LOC": 211.0, "PR": 0.008509464759703256, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 43, "name": "com.tvd12.ezyfoxserver.statistics", "mask": 1, "atdi": 0.0, "units": 27, "Ab": 0.5925925925925926, "In": 0.0, "D": 0.40740740740740744, "FI": 7.0, "FO": 0.0, "LOC": 260.0, "PR": 0.0327566591365268, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 44, "name": "com.tvd12.ezyfoxserver.support.annotation", "mask": 0, "atdi": 0.0, "units": 1, "Ab": 1.0, "In": 0.0, "D": 0.0, "FI": 1.0, "FO": 0.0, "LOC": 6.0, "PR": 0.006312350539331961, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 45, "name": "com.tvd12.ezyfoxserver.support.asm", "mask": 1, "atdi": 0.0, "units": 9, "Ab": 0.4444444444444444, "In": 0.9444444444444444, "D": 0.38888888888888884, "FI": 1.0, "FO": 9.0, "LOC": 466.0, "PR": 0.006438809565622607, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 46, "name": "com.tvd12.ezyfoxserver.support.command", "mask": 1, "atdi": 0.0, "units": 10, "Ab": 0.6, "In": 0.7142857142857143, "D": 0.3142857142857143, "FI": 2.0, "FO": 4.0, "LOC": 226.0, "PR": 0.009707630964980616, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 47, "name": "com.tvd12.ezyfoxserver.support.constant", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 2.0, "FO": 0.0, "LOC": 4.0, "PR": 0.006800120732470051, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 48, "name": "com.tvd12.ezyfoxserver.support.controller", "mask": 1, "atdi": 0.0, "units": 8, "Ab": 0.5, "In": 0.9230769230769231, "D": 0.42307692307692313, "FI": 1.0, "FO": 11.0, "LOC": 389.0, "PR": 0.006312350539331961, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 49, "name": "com.tvd12.ezyfoxserver.support.entry", "mask": 1, "atdi": 0.0, "units": 5, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 14.0, "LOC": 285.0, "PR": 0.005951039372484516, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 50, "name": "com.tvd12.ezyfoxserver.support.exception", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 0.3333333333333333, "D": 0.6666666666666667, "FI": 2.0, "FO": 1.0, "LOC": 28.0, "PR": 0.0070469164676561745, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 51, "name": "com.tvd12.ezyfoxserver.support.factory", "mask": 1, "atdi": 0.0, "units": 4, "Ab": 0.5, "In": 0.5333333333333333, "D": 0.033333333333333215, "FI": 3.0, "FO": 2.0, "LOC": 37.0, "PR": 0.007408227634503618, "CD": 0, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 52, "name": "com.tvd12.ezyfoxserver.support.handler", "mask": 1, "atdi": 0.0, "units": 7, "Ab": 0.8571428571428571, "In": 0.36363636363636365, "D": 0.22077922077922074, "FI": 3.0, "FO": 2.0, "LOC": 86.0, "PR": 0.01303677005992646, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 53, "name": "com.tvd12.ezyfoxserver.support.manager", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 3.0, "FO": 0.0, "LOC": 47.0, "PR": 0.007408227634503618, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 54, "name": "com.tvd12.ezyfoxserver.support.reflect", "mask": 1, "atdi": 0.0, "units": 5, "Ab": 0.2, "In": 0.5454545454545454, "D": 0.25454545454545463, "FI": 1.0, "FO": 3.0, "LOC": 147.0, "PR": 0.006559146274518083, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 55, "name": "com.tvd12.ezyfoxserver.util", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 1.0, "FO": 0.0, "LOC": 13.0, "PR": 0.007005867875408458, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 56, "name": "com.tvd12.ezyfoxserver.wrapper", "mask": 1, "atdi": 72.38064120047302, "units": 9, "Ab": 0.8888888888888888, "In": 0.2608695652173913, "D": 0.1497584541062802, "FI": 14.0, "FO": 7.0, "LOC": 290.0, "PR": 0.027053530074357512, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 57, "name": "com.tvd12.ezyfoxserver.wrapper.impl", "mask": 1, "atdi": 36.00180286164174, "units": 4, "Ab": 0.0, "In": 0.9354838709677419, "D": 0.06451612903225812, "FI": 2.0, "FO": 7.0, "LOC": 265.0, "PR": 0.00798252439073613, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}], "edges": [{"source": 0, "target": 1, "w": 6.0}, {"source": 0, "target": 2, "w": 2.0}, {"source": 0, "target": 3, "w": 1.0}, {"source": 0, "target": 4, "w": 1.0}, {"source": 0, "target": 9, "w": 7.0}, {"source": 0, "target": 10, "w": 3.0}, {"source": 0, "target": 11, "w": 13.0}, {"source": 0, "target": 12, "w": 2.0}, {"source": 0, "target": 17, "w": 6.0}, {"source": 0, "target": 19, "w": 9.0}, {"source": 0, "target": 35, "w": 2.0}, {"source": 0, "target": 38, "w": 1.0}, {"source": 0, "target": 39, "w": 1.0}, {"source": 0, "target": 40, "w": 32.0}, {"source": 0, "target": 43, "w": 4.0}, {"source": 0, "target": 55, "w": 1.0}, {"source": 0, "target": 56, "w": 17.0}, {"source": 0, "target": 57, "w": 2.0}, {"source": 1, "target": 5, "w": 2.0}, {"source": 1, "target": 10, "w": 6.0}, {"source": 1, "target": 16, "w": 3.0}, {"source": 1, "target": 18, "w": 1.0}, {"source": 1, "target": 37, "w": 8.0}, {"source": 1, "target": 41, "w": 8.0}, {"source": 2, "target": 11, "w": 1.0}, {"source": 2, "target": 12, "w": 1.0}, {"source": 2, "target": 17, "w": 1.0}, {"source": 3, "target": 0, "w": 11.0}, {"source": 3, "target": 9, "w": 1.0}, {"source": 3, "target": 11, "w": 11.0}, {"source": 3, "target": 14, "w": 4.0}, {"source": 3, "target": 40, "w": 12.0}, {"source": 3, "target": 41, "w": 2.0}, {"source": 3, "target": 42, "w": 1.0}, {"source": 3, "target": 56, "w": 4.0}, {"source": 3, "target": 57, "w": 3.0}, {"source": 5, "target": 10, "w": 1.0}, {"source": 5, "target": 40, "w": 3.0}, {"source": 6, "target": 0, "w": 1.0}, {"source": 6, "target": 2, "w": 1.0}, {"source": 6, "target": 10, "w": 5.0}, {"source": 6, "target": 11, "w": 5.0}, {"source": 6, "target": 12, "w": 6.0}, {"source": 6, "target": 16, "w": 9.0}, {"source": 6, "target": 17, "w": 2.0}, {"source": 6, "target": 35, "w": 1.0}, {"source": 6, "target": 37, "w": 1.0}, {"source": 6, "target": 56, "w": 1.0}, {"source": 7, "target": 0, "w": 11.0}, {"source": 7, "target": 1, "w": 2.0}, {"source": 7, "target": 2, "w": 1.0}, {"source": 7, "target": 6, "w": 36.0}, {"source": 7, "target": 10, "w": 7.0}, {"source": 7, "target": 11, "w": 17.0}, {"source": 7, "target": 12, "w": 3.0}, {"source": 7, "target": 16, "w": 8.0}, {"source": 7, "target": 17, "w": 4.0}, {"source": 7, "target": 35, "w": 1.0}, {"source": 7, "target": 37, "w": 10.0}, {"source": 7, "target": 40, "w": 4.0}, {"source": 7, "target": 41, "w": 2.0}, {"source": 7, "target": 56, "w": 2.0}, {"source": 11, "target": 0, "w": 16.0}, {"source": 11, "target": 6, "w": 21.0}, {"source": 11, "target": 7, "w": 19.0}, {"source": 11, "target": 8, "w": 1.0}, {"source": 11, "target": 10, "w": 6.0}, {"source": 11, "target": 12, "w": 1.0}, {"source": 11, "target": 16, "w": 13.0}, {"source": 11, "target": 17, "w": 6.0}, {"source": 11, "target": 18, "w": 1.0}, {"source": 11, "target": 37, "w": 4.0}, {"source": 11, "target": 40, "w": 8.0}, {"source": 11, "target": 43, "w": 1.0}, {"source": 11, "target": 56, "w": 4.0}, {"source": 12, "target": 0, "w": 7.0}, {"source": 12, "target": 2, "w": 1.0}, {"source": 12, "target": 10, "w": 13.0}, {"source": 12, "target": 11, "w": 34.0}, {"source": 12, "target": 16, "w": 21.0}, {"source": 12, "target": 17, "w": 20.0}, {"source": 12, "target": 18, "w": 6.0}, {"source": 12, "target": 35, "w": 1.0}, {"source": 12, "target": 36, "w": 19.0}, {"source": 12, "target": 37, "w": 22.0}, {"source": 12, "target": 40, "w": 7.0}, {"source": 12, "target": 43, "w": 1.0}, {"source": 12, "target": 56, "w": 9.0}, {"source": 13, "target": 16, "w": 2.0}, {"source": 13, "target": 40, "w": 1.0}, {"source": 13, "target": 41, "w": 2.0}, {"source": 13, "target": 56, "w": 1.0}, {"source": 14, "target": 10, "w": 1.0}, {"source": 14, "target": 11, "w": 5.0}, {"source": 14, "target": 16, "w": 6.0}, {"source": 14, "target": 17, "w": 2.0}, {"source": 14, "target": 37, "w": 3.0}, {"source": 14, "target": 40, "w": 1.0}, {"source": 14, "target": 41, "w": 3.0}, {"source": 15, "target": 0, "w": 5.0}, {"source": 15, "target": 9, "w": 3.0}, {"source": 15, "target": 11, "w": 1.0}, {"source": 15, "target": 23, "w": 1.0}, {"source": 15, "target": 40, "w": 3.0}, {"source": 15, "target": 56, "w": 1.0}, {"source": 16, "target": 10, "w": 2.0}, {"source": 16, "target": 14, "w": 1.0}, {"source": 16, "target": 40, "w": 1.0}, {"source": 16, "target": 41, "w": 19.0}, {"source": 16, "target": 43, "w": 1.0}, {"source": 17, "target": 16, "w": 24.0}, {"source": 18, "target": 10, "w": 5.0}, {"source": 18, "target": 16, "w": 1.0}, {"source": 19, "target": 11, "w": 2.0}, {"source": 20, "target": 16, "w": 3.0}, {"source": 20, "target": 40, "w": 1.0}, {"source": 20, "target": 41, "w": 2.0}, {"source": 20, "target": 43, "w": 1.0}, {"source": 21, "target": 0, "w": 1.0}, {"source": 21, "target": 6, "w": 1.0}, {"source": 21, "target": 10, "w": 7.0}, {"source": 21, "target": 11, "w": 5.0}, {"source": 21, "target": 12, "w": 2.0}, {"source": 21, "target": 14, "w": 1.0}, {"source": 21, "target": 16, "w": 7.0}, {"source": 21, "target": 17, "w": 2.0}, {"source": 21, "target": 22, "w": 1.0}, {"source": 21, "target": 36, "w": 16.0}, {"source": 21, "target": 37, "w": 3.0}, {"source": 21, "target": 40, "w": 4.0}, {"source": 21, "target": 41, "w": 1.0}, {"source": 21, "target": 56, "w": 3.0}, {"source": 22, "target": 11, "w": 3.0}, {"source": 22, "target": 16, "w": 1.0}, {"source": 22, "target": 18, "w": 2.0}, {"source": 22, "target": 36, "w": 2.0}, {"source": 23, "target": 0, "w": 7.0}, {"source": 23, "target": 1, "w": 4.0}, {"source": 23, "target": 3, "w": 1.0}, {"source": 23, "target": 11, "w": 1.0}, {"source": 23, "target": 25, "w": 3.0}, {"source": 23, "target": 26, "w": 2.0}, {"source": 23, "target": 29, "w": 2.0}, {"source": 23, "target": 30, "w": 8.0}, {"source": 23, "target": 31, "w": 2.0}, {"source": 23, "target": 32, "w": 1.0}, {"source": 23, "target": 33, "w": 3.0}, {"source": 23, "target": 34, "w": 1.0}, {"source": 23, "target": 40, "w": 12.0}, {"source": 23, "target": 41, "w": 26.0}, {"source": 23, "target": 42, "w": 3.0}, {"source": 24, "target": 3, "w": 1.0}, {"source": 24, "target": 33, "w": 1.0}, {"source": 25, "target": 0, "w": 3.0}, {"source": 25, "target": 1, "w": 5.0}, {"source": 25, "target": 3, "w": 2.0}, {"source": 25, "target": 5, "w": 3.0}, {"source": 25, "target": 10, "w": 1.0}, {"source": 25, "target": 11, "w": 1.0}, {"source": 25, "target": 13, "w": 2.0}, {"source": 25, "target": 23, "w": 1.0}, {"source": 25, "target": 24, "w": 1.0}, {"source": 25, "target": 28, "w": 2.0}, {"source": 25, "target": 29, "w": 2.0}, {"source": 25, "target": 30, "w": 3.0}, {"source": 25, "target": 32, "w": 2.0}, {"source": 25, "target": 33, "w": 3.0}, {"source": 25, "target": 34, "w": 1.0}, {"source": 25, "target": 40, "w": 6.0}, {"source": 25, "target": 41, "w": 12.0}, {"source": 25, "target": 42, "w": 2.0}, {"source": 25, "target": 43, "w": 5.0}, {"source": 27, "target": 16, "w": 2.0}, {"source": 28, "target": 10, "w": 1.0}, {"source": 28, "target": 20, "w": 1.0}, {"source": 28, "target": 27, "w": 2.0}, {"source": 28, "target": 41, "w": 1.0}, {"source": 29, "target": 0, "w": 1.0}, {"source": 29, "target": 1, "w": 1.0}, {"source": 29, "target": 10, "w": 7.0}, {"source": 29, "target": 11, "w": 2.0}, {"source": 29, "target": 16, "w": 5.0}, {"source": 29, "target": 21, "w": 1.0}, {"source": 29, "target": 27, "w": 3.0}, {"source": 29, "target": 30, "w": 1.0}, {"source": 29, "target": 33, "w": 2.0}, {"source": 29, "target": 40, "w": 1.0}, {"source": 29, "target": 41, "w": 23.0}, {"source": 29, "target": 43, "w": 2.0}, {"source": 29, "target": 56, "w": 2.0}, {"source": 30, "target": 10, "w": 4.0}, {"source": 30, "target": 18, "w": 2.0}, {"source": 30, "target": 27, "w": 1.0}, {"source": 30, "target": 29, "w": 4.0}, {"source": 30, "target": 32, "w": 1.0}, {"source": 30, "target": 33, "w": 3.0}, {"source": 30, "target": 41, "w": 11.0}, {"source": 30, "target": 42, "w": 2.0}, {"source": 31, "target": 29, "w": 1.0}, {"source": 31, "target": 41, "w": 4.0}, {"source": 32, "target": 10, "w": 2.0}, {"source": 32, "target": 27, "w": 1.0}, {"source": 32, "target": 29, "w": 2.0}, {"source": 32, "target": 30, "w": 1.0}, {"source": 32, "target": 33, "w": 2.0}, {"source": 32, "target": 40, "w": 1.0}, {"source": 32, "target": 41, "w": 5.0}, {"source": 33, "target": 10, "w": 1.0}, {"source": 33, "target": 16, "w": 1.0}, {"source": 33, "target": 27, "w": 1.0}, {"source": 33, "target": 29, "w": 1.0}, {"source": 33, "target": 41, "w": 4.0}, {"source": 33, "target": 56, "w": 1.0}, {"source": 34, "target": 10, "w": 1.0}, {"source": 34, "target": 16, "w": 1.0}, {"source": 34, "target": 27, "w": 1.0}, {"source": 34, "target": 28, "w": 2.0}, {"source": 34, "target": 29, "w": 1.0}, {"source": 34, "target": 33, "w": 2.0}, {"source": 34, "target": 40, "w": 1.0}, {"source": 34, "target": 41, "w": 3.0}, {"source": 34, "target": 56, "w": 1.0}, {"source": 35, "target": 11, "w": 1.0}, {"source": 35, "target": 12, "w": 1.0}, {"source": 35, "target": 17, "w": 1.0}, {"source": 36, "target": 16, "w": 11.0}, {"source": 37, "target": 10, "w": 14.0}, {"source": 37, "target": 16, "w": 2.0}, {"source": 37, "target": 40, "w": 6.0}, {"source": 39, "target": 38, "w": 1.0}, {"source": 40, "target": 10, "w": 11.0}, {"source": 41, "target": 0, "w": 2.0}, {"source": 41, "target": 10, "w": 10.0}, {"source": 41, "target": 11, "w": 4.0}, {"source": 41, "target": 16, "w": 23.0}, {"source": 41, "target": 17, "w": 2.0}, {"source": 41, "target": 37, "w": 2.0}, {"source": 41, "target": 56, "w": 1.0}, {"source": 42, "target": 40, "w": 2.0}, {"source": 45, "target": 11, "w": 6.0}, {"source": 45, "target": 16, "w": 2.0}, {"source": 45, "target": 17, "w": 5.0}, {"source": 45, "target": 46, "w": 1.0}, {"source": 45, "target": 50, "w": 1.0}, {"source": 45, "target": 51, "w": 4.0}, {"source": 45, "target": 52, "w": 5.0}, {"source": 45, "target": 53, "w": 2.0}, {"source": 45, "target": 54, "w": 13.0}, {"source": 46, "target": 6, "w": 10.0}, {"source": 46, "target": 10, "w": 2.0}, {"source": 46, "target": 11, "w": 7.0}, {"source": 46, "target": 16, "w": 4.0}, {"source": 48, "target": 2, "w": 2.0}, {"source": 48, "target": 11, "w": 8.0}, {"source": 48, "target": 16, "w": 2.0}, {"source": 48, "target": 17, "w": 8.0}, {"source": 48, "target": 35, "w": 2.0}, {"source": 48, "target": 45, "w": 2.0}, {"source": 48, "target": 47, "w": 1.0}, {"source": 48, "target": 50, "w": 1.0}, {"source": 48, "target": 51, "w": 1.0}, {"source": 48, "target": 52, "w": 4.0}, {"source": 48, "target": 53, "w": 4.0}, {"source": 49, "target": 0, "w": 1.0}, {"source": 49, "target": 2, "w": 1.0}, {"source": 49, "target": 6, "w": 3.0}, {"source": 49, "target": 10, "w": 1.0}, {"source": 49, "target": 11, "w": 7.0}, {"source": 49, "target": 12, "w": 3.0}, {"source": 49, "target": 19, "w": 2.0}, {"source": 49, "target": 35, "w": 1.0}, {"source": 49, "target": 40, "w": 2.0}, {"source": 49, "target": 44, "w": 1.0}, {"source": 49, "target": 47, "w": 2.0}, {"source": 49, "target": 48, "w": 6.0}, {"source": 49, "target": 51, "w": 4.0}, {"source": 49, "target": 53, "w": 4.0}, {"source": 50, "target": 52, "w": 1.0}, {"source": 51, "target": 11, "w": 2.0}, {"source": 51, "target": 46, "w": 10.0}, {"source": 52, "target": 11, "w": 5.0}, {"source": 52, "target": 17, "w": 4.0}, {"source": 54, "target": 11, "w": 3.0}, {"source": 54, "target": 16, "w": 2.0}, {"source": 54, "target": 17, "w": 1.0}, {"source": 56, "target": 10, "w": 2.0}, {"source": 56, "target": 12, "w": 3.0}, {"source": 56, "target": 16, "w": 8.0}, {"source": 56, "target": 18, "w": 2.0}, {"source": 56, "target": 22, "w": 1.0}, {"source": 56, "target": 38, "w": 1.0}, {"source": 56, "target": 41, "w": 2.0}, {"source": 57, "target": 10, "w": 3.0}, {"source": 57, "target": 12, "w": 12.0}, {"source": 57, "target": 14, "w": 2.0}, {"source": 57, "target": 16, "w": 3.0}, {"source": 57, "target": 22, "w": 3.0}, {"source": 57, "target": 40, "w": 2.0}, {"source": 57, "target": 56, "w": 6.0}], "meta": {"project": "youngmonkeys__ezyfox-server", "n_nodes": 58, "n_edges": 299, "graph_level_smells": ["Dense Structure"], "dense_structure": 1, "label_counts": {"CD": 18, "UD": 11, "AI": 0, "GC": 6, "FC": 14, "SF": 0}, "matching": {"arcan_nodes": 58, "designite_packages": 57, "matched": 57, "coverage": 0.9828, "arcan_only": ["com.tvd12.ezyfoxserver.support.annotation"], "designite_only": [], "smelly_packages_not_in_graph": []}, "dropped_containers": {"default_package": [], "empty_container": ["com", "com.tvd12", "com.tvd12.ezyfoxserver.support"]}, "unknown_designite_smells": []}};
+const LABELS = ["CD","UD","AI","GC","FC","SF"];
+const NAMES = {CD:"Cyclic Dependency",UD:"Unstable Dependency",AI:"Ambiguous Interface",
+  GC:"God Component",FC:"Feature Concentration",SF:"Scattered Functionality"};
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const nodes = DATA.nodes.map(d => ({...d, nSmell: LABELS.reduce((s,k)=>s+d[k],0),
+  short: d.name.split(".").slice(-1)[0] || d.name}));
+const byId = new Map(nodes.map(d => [d.id, d]));
+const links = DATA.edges.map(e => ({...e}));
+const meta = DATA.meta;
+let current = null;
+
+// ---------- sidebar ----------
+document.getElementById("title").textContent = meta.project;
+document.getElementById("nN").textContent = nodes.length;
+document.getElementById("nE").textContent = links.length;
+document.getElementById("nS").textContent = nodes.filter(d => d.nSmell > 0).length;
+document.getElementById("names").innerHTML = nodes.map(d => `<option value="${d.name}">`).join("");
+document.getElementById("smellTable").innerHTML = LABELS.map(k =>
+  `<tr><td><i class="dot" style="background:var(--${k})"></i>${NAMES[k]}</td>
+   <td>${meta.label_counts[k]} / ${nodes.length}</td></tr>`).join("");
+document.getElementById("ds").textContent = meta.dense_structure
+  ? "Dense Structure detected at project level (not assigned to individual nodes)."
+  : "Dense Structure not detected.";
+const unmasked = nodes.filter(d => !d.mask).length;
+if (unmasked) document.getElementById("ds").textContent +=
+  ` ${unmasked} nodes not analysed by Designite (dashed outline): labels unavailable.`;
+const rank = [...nodes].sort((a,b) => b.atdi - a.atdi).slice(0,10);
+document.getElementById("rank").innerHTML = rank.map(d =>
+  `<li><button data-id="${d.id}">${d.short}</button> <span class="v">${d.atdi.toFixed(1)}</span></li>`).join("");
+document.querySelectorAll("#rank button").forEach(b =>
+  b.addEventListener("click", () => select(byId.get(+b.dataset.id), true)));
+
+// ---------- graph ----------
+const svg = d3.select("#svg"), g = svg.append("g");
+const W = () => svg.node().clientWidth, H = () => svg.node().clientHeight;
+const maxLoc = d3.max(nodes, d => d.LOC) || 1;
+const r = d3.scaleSqrt().domain([0, maxLoc]).range([4, 26]);
+const wScale = d3.scaleLog().domain([1, d3.max(links, d => d.w) || 1]).range([0.6, 3.5]);
+const maxAtdi = d3.max(nodes, d => d.atdi) || 1;
+
+svg.append("defs").append("marker").attr("id","arrow").attr("viewBox","0 -4 8 8")
+  .attr("refX",8).attr("refY",0).attr("markerUnits","userSpaceOnUse").attr("markerWidth",9).attr("markerHeight",9).attr("orient","auto")
+  .append("path").attr("d","M0,-4L8,0L0,4").attr("fill","var(--edge)");
+
+const link = g.append("g").selectAll("path").data(links).join("path")
+  .attr("class","link").attr("stroke-width", d => wScale(Math.max(1,d.w))).attr("marker-end","url(#arrow)");
+const node = g.append("g").selectAll("g").data(nodes).join("g")
+  .attr("class", d => "node" + (d.mask ? "" : " nomask")).attr("tabindex",0)
+  .attr("aria-label", d => d.name);
+node.append("circle").attr("r", d => r(d.LOC));
+node.append("text").attr("dy", d => -r(d.LOC) - 4).attr("text-anchor","middle").text(d => d.short);
+
+const sim = d3.forceSimulation(nodes)
+  .force("link", d3.forceLink(links).id(d => d.id).distance(95).strength(0.2))
+  .force("charge", d3.forceManyBody().strength(-420))
+  .force("collide", d3.forceCollide(d => r(d.LOC) + 6))
+  .force("x", d3.forceX(() => W()/2).strength(0.05))
+  .force("y", d3.forceY(() => H()/2).strength(0.05))
+  .on("tick", ticked).on("end", fit);
+if (matchMedia("(prefers-reduced-motion: reduce)").matches) { sim.stop(); for (let i=0;i<300;i++) sim.tick(); ticked(); setTimeout(fit, 0); }
+let fitted = false;
+function fit(){
+  if (fitted) return; fitted = true;
+  const pad = 40, xs = nodes.map(d => d.x), ys = nodes.map(d => d.y);
+  const x0 = d3.min(xs) - pad, x1 = d3.max(xs) + pad, y0 = d3.min(ys) - pad, y1 = d3.max(ys) + pad;
+  const k = Math.min(2, 0.95 / Math.max((x1 - x0) / W(), (y1 - y0) / H()));
+  svg.transition().duration(600).call(zoom.transform,
+    d3.zoomIdentity.translate(W()/2, H()/2).scale(k).translate(-(x0 + x1)/2, -(y0 + y1)/2));
+}
+
+function ticked(){
+  link.attr("d", d => {
+    const dx = d.target.x - d.source.x, dy = d.target.y - d.source.y, L = Math.hypot(dx,dy) || 1;
+    const rt = r(d.target.LOC) + 3, rs = r(d.source.LOC);
+    return `M${d.source.x + dx*rs/L},${d.source.y + dy*rs/L}L${d.target.x - dx*rt/L},${d.target.y - dy*rt/L}`;
+  });
+  node.attr("transform", d => `translate(${d.x},${d.y})`);
+}
+
+node.call(d3.drag()
+  .on("start", (e,d) => { if(!e.active) sim.alphaTarget(0.3).restart(); d.fx=d.x; d.fy=d.y; })
+  .on("drag", (e,d) => { d.fx=e.x; d.fy=e.y; })
+  .on("end", (e,d) => { if(!e.active) sim.alphaTarget(0); d.fx=null; d.fy=null; }));
+const zoom = d3.zoom().scaleExtent([0.2,6]).on("zoom", e => g.attr("transform", e.transform));
+svg.call(zoom).on("click", e => { if (e.target === svg.node()) select(null); });
+
+// ---------- colour ----------
+function colour(d){
+  const m = document.getElementById("colorBy").value;
+  if (m === "count") return css("--s" + Math.min(d.nSmell, 4));
+  if (m === "atdi") return d3.interpolateLab(css("--s0"), css("--s4"))(Math.sqrt(d.atdi / maxAtdi));
+  return d[m] ? css("--" + m) : css("--clean");
+}
+function legend(){
+  const m = document.getElementById("colorBy").value, el = document.getElementById("legend");
+  if (m === "count") el.innerHTML = [0,1,2,3,4].map(i =>
+    `<span><i style="background:var(--s${i})"></i>${i===4?"4+":i} ${i===1?"smell":"smells"}</span>`).join("");
+  else if (m === "atdi") el.innerHTML = `<span><i style="background:var(--s0)"></i>0</span>
+    <span><i style="background:var(--s4)"></i>${maxAtdi.toFixed(0)}</span>`;
+  else el.innerHTML = `<span><i style="background:var(--${m})"></i>affected</span>
+    <span><i style="background:var(--clean)"></i>not affected</span>`;
+  el.innerHTML += `<span>node size ∝ LOC</span>`;
+}
+function paint(){ node.select("circle").attr("fill", colour); legend(); }
+document.getElementById("colorBy").addEventListener("change", paint);
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", paint);
+paint();
+
+// ---------- labels ----------
+function labelsVisible(){
+  const all = document.getElementById("showLabels").checked;
+  node.select("text").style("display", d => all || r(d.LOC) > 12 || d === current ? null : "none");
+}
+document.getElementById("showLabels").addEventListener("change", labelsVisible);
+
+// ---------- tooltip ----------
+const tip = document.getElementById("tip");
+node.on("mouseenter", (e,d) => {
+  const s = LABELS.filter(k => d[k]).join(", ") || "none";
+  tip.innerHTML = `<b>${d.name}</b><br>LOC ${d.LOC} · FI ${d.FI} · FO ${d.FO}<br>Smells: ${s}`;
+  tip.style.display = "block";
+}).on("mousemove", e => {
+  const b = document.querySelector("main").getBoundingClientRect();
+  tip.style.left = (e.clientX - b.left + 14) + "px"; tip.style.top = (e.clientY - b.top + 14) + "px";
+}).on("mouseleave", () => tip.style.display = "none")
+  .on("click", (e,d) => { e.stopPropagation(); select(d); })
+  .on("keydown", (e,d) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(d); } });
+
+// ---------- selection ----------
+function select(d, center){
+  current = d;
+  node.classed("sel", n => n === d);
+  if (!d){ node.classed("dim", false); link.classed("dim", false); renderDetail(null); labelsVisible(); return; }
+  const out = links.filter(l => l.source === d), inc = links.filter(l => l.target === d);
+  const nb = new Set([d, ...out.map(l => l.target), ...inc.map(l => l.source)]);
+  node.classed("dim", n => !nb.has(n));
+  link.classed("dim", l => l.source !== d && l.target !== d);
+  renderDetail(d, out, inc); labelsVisible();
+  if (center) svg.transition().duration(500).call(zoom.translateTo, d.x, d.y);
+}
+function renderDetail(d, out, inc){
+  const el = document.getElementById("detail");
+  if (!d){ el.innerHTML = `<h2>Selected component</h2><p class="note">Select a node to inspect its features, labels, and dependencies.</p>`; return; }
+  const chips = LABELS.filter(k => d[k]).map(k => `<span class="chip" style="background:var(--${k})">${NAMES[k]}</span>`).join("")
+    || `<span class="chip none">${d.mask ? "No smells" : "Labels unavailable"}</span>`;
+  const f = (v, p=3) => Number.isInteger(v) ? v : v.toFixed(p);
+  const rows = [["Abstractness (Ab)",d.Ab],["Instability (In)",d.In],["Distance (D)",d.D],["Fan-in (FI)",d.FI],
+    ["Fan-out (FO)",d.FO],["Lines of code (LOC)",d.LOC],["PageRank (PR)",d.PR],["ATDI (Arcan)",d.atdi],["Classes",d.units]];
+  el.innerHTML = `<h2>Selected component</h2><div class="detail-name">${d.name}</div>
+    <div class="chips">${chips}</div>
+    <table>${rows.map(([k,v]) => `<tr><td>${k}</td><td>${f(v)}</td></tr>`).join("")}</table>
+    <p class="note">Efferent dependencies: ${out.length}. Afferent dependencies: ${inc.length}.</p>`;
+}
+document.getElementById("search").addEventListener("change", e => {
+  const d = nodes.find(n => n.name === e.target.value) || nodes.find(n => n.name.includes(e.target.value));
+  if (d) select(d, true);
+});
+labelsVisible();
+</script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 873,
+  "source_files_removed": 483,
+  "source_files_after": 390,
+  "removed_share": 0.5533,
+  "removed_by_rule": {
+    "R1_arcan_default": 483
+  },
+  "removed_dirs": [
+    {
+      "path": "integration-tests",
+      "rule": "R1_arcan_default",
+      "source_files": 61
+    },
+    {
+      "path": "btrace-agent/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 254
+    },
+    {
+      "path": "btrace-boot/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "btrace-client/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 11
+    },
+    {
+      "path": "btrace-compiler/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 11
+    },
+    {
+      "path": "btrace-core/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 36
+    },
+    {
+      "path": "btrace-dist/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 6
+    },
+    {
+      "path": "btrace-dist/src/main/resources/samples",
+      "rule": "R1_arcan_default",
+      "source_files": 54
+    },
+    {
+      "path": "btrace-extensions/btrace-ext-test",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    },
+    {
+      "path": "btrace-extensions/examples",
+      "rule": "R1_arcan_default",
+      "source_files": 15
+    },
+    {
+      "path": "btrace-extensions/btrace-contracts/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "btrace-extensions/btrace-gpu-bridge/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "btrace-extensions/btrace-llm-trace/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "btrace-extensions/btrace-metrics/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "btrace-extensions/btrace-rag-quality/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "btrace-extensions/btrace-statsd/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "btrace-gradle-plugin/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "btrace-runtime/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 13
+    },
+    {
+      "path": "docs/examples",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "docs/samples",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "docs/tutorials/demo",
+      "rule": "R1_arcan_default",
+      "source_files": 7
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

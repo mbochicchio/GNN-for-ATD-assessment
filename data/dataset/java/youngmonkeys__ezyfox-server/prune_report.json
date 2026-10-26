@@ -1,0 +1,65 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 1010,
+  "source_files_removed": 380,
+  "source_files_after": 630,
+  "removed_share": 0.3762,
+  "removed_by_rule": {
+    "R1_arcan_default": 380
+  },
+  "removed_dirs": [
+    {
+      "path": "ezyfox-server-boot/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "ezyfox-server-core/test-data",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "ezyfox-server-core/test-data1",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "ezyfox-server-core/test-input",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "ezyfox-server-core/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 258
+    },
+    {
+      "path": "ezyfox-server-embedded/test-config",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "ezyfox-server-embedded/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 12
+    },
+    {
+      "path": "ezyfox-server-nio/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 30
+    },
+    {
+      "path": "ezyfox-server-niorunner/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "ezyfox-server-support/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 78
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

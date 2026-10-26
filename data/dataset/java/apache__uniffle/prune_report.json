@@ -1,0 +1,105 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 1040,
+  "source_files_removed": 358,
+  "source_files_after": 682,
+  "removed_share": 0.3442,
+  "removed_by_rule": {
+    "R1_arcan_default": 358
+  },
+  "removed_dirs": [
+    {
+      "path": "integration-test",
+      "rule": "R1_arcan_default",
+      "source_files": 105
+    },
+    {
+      "path": "cli/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    },
+    {
+      "path": "client/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 14
+    },
+    {
+      "path": "client-mr/core/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 10
+    },
+    {
+      "path": "client-spark/common/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 18
+    },
+    {
+      "path": "client-spark/spark2/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 5
+    },
+    {
+      "path": "client-spark/spark3/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 10
+    },
+    {
+      "path": "client-spark/spark4/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 10
+    },
+    {
+      "path": "client-tez/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 31
+    },
+    {
+      "path": "common/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 67
+    },
+    {
+      "path": "coordinator/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 27
+    },
+    {
+      "path": "dashboard/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "deploy/kubernetes/integration-test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "deploy/kubernetes/operator/examples",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "deploy/kubernetes/operator/config/samples",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "internal-client/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "server/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 33
+    },
+    {
+      "path": "storage/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 22
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

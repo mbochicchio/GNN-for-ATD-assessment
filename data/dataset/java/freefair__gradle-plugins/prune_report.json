@@ -1,0 +1,110 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 233,
+  "source_files_removed": 65,
+  "source_files_after": 168,
+  "removed_share": 0.279,
+  "removed_by_rule": {
+    "R1_arcan_default": 65
+  },
+  "removed_dirs": [
+    {
+      "path": "examples",
+      "rule": "R1_arcan_default",
+      "source_files": 22
+    },
+    {
+      "path": "test-code-generator",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "test-common",
+      "rule": "R1_arcan_default",
+      "source_files": 5
+    },
+    {
+      "path": "aspectj-plugin/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "code-generator-plugin/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "compress-plugin/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 6
+    },
+    {
+      "path": "embedded-sass-plugin/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "git-plugin/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "github-plugin/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 6
+    },
+    {
+      "path": "gwt-plugin/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "jacoco-plugin/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "lombok-plugin/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "maven-plugin/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 9
+    },
+    {
+      "path": "mjml-plugin/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "mkdocs-plugin/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "okhttp-plugin/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "plantuml-plugin/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "plugin-utils/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "quicktype-plugin/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

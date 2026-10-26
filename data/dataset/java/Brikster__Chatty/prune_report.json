@@ -1,0 +1,20 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 205,
+  "source_files_removed": 31,
+  "source_files_after": 174,
+  "removed_share": 0.1512,
+  "removed_by_rule": {
+    "R1_arcan_default": 31
+  },
+  "removed_dirs": [
+    {
+      "path": "spigot/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 31
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

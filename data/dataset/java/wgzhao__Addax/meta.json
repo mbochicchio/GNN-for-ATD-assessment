@@ -1,0 +1,47 @@
+{
+  "project": "wgzhao__Addax",
+  "n_nodes": 124,
+  "n_edges": 715,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 14,
+    "UD": 9,
+    "AI": 2,
+    "GC": 0,
+    "FC": 15,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 124,
+    "designite_packages": 124,
+    "matched": 124,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com.wgzhao.addax",
+      "org.apache.parquet",
+      "com.wgzhao.addax.plugin",
+      "com.wgzhao.addax.plugin.reader",
+      "com.wgzhao.addax.plugin.writer",
+      "org",
+      "org.apache",
+      "com.wgzhao.addax.core.statistics.container",
+      "org.apache.parquet.hadoop",
+      "com.wgzhao.addax.rdbms",
+      "com",
+      "com.wgzhao",
+      "com.wgzhao.addax.storage",
+      "com.wgzhao.addax.core.container",
+      "com.wgzhao.addax.core.transport"
+    ]
+  },
+  "unknown_designite_smells": []
+}

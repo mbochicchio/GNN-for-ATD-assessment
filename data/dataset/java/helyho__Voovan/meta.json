@@ -1,0 +1,42 @@
+{
+  "project": "helyho__Voovan",
+  "n_nodes": 65,
+  "n_edges": 377,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 37,
+    "UD": 21,
+    "AI": 0,
+    "GC": 1,
+    "FC": 10,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 65,
+    "designite_packages": 58,
+    "matched": 58,
+    "coverage": 0.8923,
+    "arcan_only": [
+      "org.voovan.db.recorder.annotation",
+      "org.voovan.http.server.module.annontationRouter.annotation",
+      "org.voovan.http.server.module.annontationRouter.swagger.annotation",
+      "org.voovan.tools.ioc.annotation",
+      "org.voovan.tools.pool.annotation",
+      "org.voovan.tools.reflect.annotation",
+      "org.voovan.tools.weave.aop.annotation"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "org.voovan.http.server.module",
+      "org"
+    ]
+  },
+  "unknown_designite_smells": []
+}

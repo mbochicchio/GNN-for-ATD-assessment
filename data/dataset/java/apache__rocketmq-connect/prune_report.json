@@ -1,0 +1,185 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 1036,
+  "source_files_removed": 192,
+  "source_files_after": 844,
+  "removed_share": 0.1853,
+  "removed_by_rule": {
+    "R1_arcan_default": 192
+  },
+  "removed_dirs": [
+    {
+      "path": "rocketmq-connect-sample",
+      "rule": "R1_arcan_default",
+      "source_files": 9
+    },
+    {
+      "path": "connectors/aliyun/rocketmq-connect-dingtalk/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "connectors/aliyun/rocketmq-connect-eventbridge/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "connectors/aliyun/rocketmq-connect-fc/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "connectors/aliyun/rocketmq-connect-mns/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "connectors/aliyun/rocketmq-connect-oss/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "connectors/aliyun/rocketmq-connect-rocketmq/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "connectors/rocketmq-connect-activemq/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "connectors/rocketmq-connect-cassandra/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 8
+    },
+    {
+      "path": "connectors/rocketmq-connect-connectors-archetype/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "connectors/rocketmq-connect-connectors-archetype/src/main/resources/archetype-resources/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "connectors/rocketmq-connect-debezium/kafka-connect-adaptor/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "connectors/rocketmq-connect-deltalake/src/main/java/example",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "connectors/rocketmq-connect-doris/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "connectors/rocketmq-connect-elasticsearch/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "connectors/rocketmq-connect-hbase/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "connectors/rocketmq-connect-hive/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 5
+    },
+    {
+      "path": "connectors/rocketmq-connect-http/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "connectors/rocketmq-connect-hudi/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "connectors/rocketmq-connect-iotdb/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "connectors/rocketmq-connect-jdbc/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    },
+    {
+      "path": "connectors/rocketmq-connect-jdbc/src/main/resources/examples",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "connectors/rocketmq-connect-jms/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "connectors/rocketmq-connect-kafka/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "connectors/rocketmq-connect-mongo/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 10
+    },
+    {
+      "path": "connectors/rocketmq-connect-mqtt/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 6
+    },
+    {
+      "path": "connectors/rocketmq-connect-rabbitmq/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    },
+    {
+      "path": "connectors/rocketmq-connect-redis/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 16
+    },
+    {
+      "path": "connectors/rocketmq-replicator/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "rocketmq-connect-runtime/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 84
+    },
+    {
+      "path": "schema-converter/avro-schema-converter/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "schema-converter/json-schema-converter/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "schema-converter/schema-converter-common/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    },
+    {
+      "path": "transforms/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 10
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

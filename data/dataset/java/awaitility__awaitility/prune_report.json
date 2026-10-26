@@ -1,0 +1,50 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 124,
+  "source_files_removed": 63,
+  "source_files_after": 61,
+  "removed_share": 0.5081,
+  "removed_by_rule": {
+    "R1_arcan_default": 63
+  },
+  "removed_dirs": [
+    {
+      "path": "awaitility-java8-test",
+      "rule": "R1_arcan_default",
+      "source_files": 9
+    },
+    {
+      "path": "awaitility-osgi-test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "awaitility-test-support",
+      "rule": "R1_arcan_default",
+      "source_files": 18
+    },
+    {
+      "path": "awaitility/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 35
+    },
+    {
+      "path": "awaitility-groovy/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "awaitility-kotlin/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "awaitility-scala/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

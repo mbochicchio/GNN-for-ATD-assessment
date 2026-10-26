@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>helyho__Voovan · dependency graph</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EEF1F0; --panel:#F8FAF9; --ink:#1B2733; --muted:#5E6B78; --rule:#D3DAD8;
+  --edge:#9AA7B2; --clean:#C3CCD3; --focus:#1B2733;
+  --CD:#D55E00; --UD:#0072B2; --AI:#CC79A7; --GC:#009E73; --FC:#E69F00; --SF:#56B4E9;
+  --s0:#C3CCD3; --s1:#F2C27B; --s2:#E58A3C; --s3:#C4462A; --s4:#8E1F2A;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+  --bg:#141B21; --panel:#1B242C; --ink:#E4EAEE; --muted:#93A1AD; --rule:#2C3842;
+  --edge:#4E5E6B; --clean:#3E4B56; --focus:#E4EAEE; --s0:#3E4B56;
+}}
+:root[data-theme="dark"]{
+  --bg:#141B21; --panel:#1B242C; --ink:#E4EAEE; --muted:#93A1AD; --rule:#2C3842;
+  --edge:#4E5E6B; --clean:#3E4B56; --focus:#E4EAEE; --s0:#3E4B56;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{height:100%; scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0; height:100%; background:var(--bg); color:var(--ink);
+  font:14px/1.5 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+.app{display:grid; grid-template-columns:320px 1fr; height:100%}
+aside{background:var(--panel); border-right:1px solid var(--rule); overflow-y:auto; padding:20px 20px 28px}
+h1{font:500 22px/1.2 "IBM Plex Sans Condensed","IBM Plex Sans",sans-serif; margin:0 0 4px; word-break:break-word}
+.sub{color:var(--muted); margin:0 0 18px}
+.stats{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-bottom:18px}
+.stat b{display:block; font-size:20px; font-weight:600}
+.stat span{color:var(--muted); font-size:12px}
+section{border-top:1px solid var(--rule); padding-top:14px; margin-top:14px}
+h2{font-size:13px; font-weight:600; margin:0 0 8px}
+label.ctl{display:block; color:var(--muted); font-size:12px; margin:8px 0 4px}
+select,input[type=search]{width:100%; font:inherit; color:var(--ink); background:var(--bg);
+  border:1px solid var(--rule); border-radius:6px; padding:6px 8px}
+select:focus-visible,input:focus-visible,button:focus-visible{outline:2px solid var(--focus); outline-offset:2px}
+.check{display:flex; gap:8px; align-items:center; margin-top:10px; color:var(--muted); font-size:13px}
+.legend{display:flex; flex-wrap:wrap; gap:6px 12px; margin-top:10px; font-size:12px}
+.dot{display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:7px; vertical-align:-1px}
+.legend i{display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:5px; vertical-align:-1px}
+table{width:100%; border-collapse:collapse; font-size:13px}
+td{padding:3px 0; border-bottom:1px solid var(--rule)}
+td:last-child{text-align:right; font-variant-numeric:tabular-nums}
+.chips{display:flex; flex-wrap:wrap; gap:6px; margin:8px 0}
+.chip{font-size:12px; padding:2px 8px; border-radius:10px; color:#fff}
+.chip.none{background:var(--clean); color:var(--ink)}
+.detail-name{font-weight:600; word-break:break-all; margin-bottom:4px}
+.note{color:var(--muted); font-size:12px}
+ol.rank{margin:0; padding-left:20px; font-size:13px}
+ol.rank li{margin:2px 0}
+ol.rank button{all:unset; cursor:pointer; word-break:break-all}
+ol.rank button:hover{text-decoration:underline}
+ol.rank .v{color:var(--muted); font-variant-numeric:tabular-nums}
+main{position:relative; overflow:hidden}
+svg{width:100%; height:100%; display:block; cursor:grab}
+.link{stroke:var(--edge); stroke-opacity:.55; fill:none}
+.node circle{stroke:var(--panel); stroke-width:1.5}
+.node.nomask circle{stroke-dasharray:3 2; stroke:var(--muted)}
+.node text{font-size:11px; fill:var(--ink); pointer-events:none; paint-order:stroke;
+  stroke:var(--bg); stroke-width:3px}
+.dim{opacity:.12}
+.node.sel circle{stroke:var(--focus); stroke-width:3}
+#tip{position:absolute; pointer-events:none; background:var(--panel); border:1px solid var(--rule);
+  border-radius:6px; padding:6px 9px; font-size:12px; max-width:320px; display:none; word-break:break-all}
+.hint{position:absolute; right:14px; bottom:12px; color:var(--muted); font-size:12px}
+@media (max-width:760px){
+  .app{grid-template-columns:1fr; grid-template-rows:auto 70vh; height:auto}
+  aside{border-right:0; border-bottom:1px solid var(--rule)}
+}
+@media (prefers-reduced-motion:reduce){ *{transition:none!important} }
+</style>
+</head>
+<body>
+<div class="app">
+<aside>
+  <h1 id="title"></h1>
+  <p class="sub">Package-level dependency graph with Designite smell labels</p>
+  <div class="stats">
+    <div class="stat"><b id="nN"></b><span>components</span></div>
+    <div class="stat"><b id="nE"></b><span>dependencies</span></div>
+    <div class="stat"><b id="nS"></b><span>smell-affected components</span></div>
+  </div>
+
+  <label class="ctl" for="colorBy">Colour nodes by</label>
+  <select id="colorBy">
+    <option value="count">Number of smells</option>
+    <option value="CD">Cyclic Dependency</option>
+    <option value="UD">Unstable Dependency</option>
+    <option value="AI">Ambiguous Interface</option>
+    <option value="GC">God Component</option>
+    <option value="FC">Feature Concentration</option>
+    <option value="SF">Scattered Functionality</option>
+    <option value="atdi">ATDI (Arcan)</option>
+  </select>
+  <div class="legend" id="legend"></div>
+
+  <label class="ctl" for="search">Find a component</label>
+  <input id="search" type="search" placeholder="e.g. analyzer" list="names" autocomplete="off">
+  <datalist id="names"></datalist>
+  <label class="check"><input type="checkbox" id="showLabels"> Show all node labels</label>
+
+  <section id="detail">
+    <h2>Selected component</h2>
+    <p class="note">Select a node to inspect its features, labels, and dependencies.</p>
+  </section>
+
+  <section>
+    <h2>Smell distribution</h2>
+    <table id="smellTable"></table>
+    <p class="note" id="ds"></p>
+  </section>
+
+  <section>
+    <h2>Highest ATDI</h2>
+    <ol class="rank" id="rank"></ol>
+  </section>
+</aside>
+<main>
+  <svg id="svg" role="img" aria-label="Dependency graph"></svg>
+  <div id="tip"></div>
+  <div class="hint">Drag to pan, scroll to zoom</div>
+</main>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script>
+const DATA = {"nodes": [{"id": 0, "name": "org.voovan", "mask": 1, "atdi": 107.1669741262664, "units": 2, "Ab": 0.0, "In": 0.1891891891891892, "D": 0.8108108108108107, "FI": 22.0, "FO": 4.0, "LOC": 99.0, "PR": 0.07822011774262927, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 1, "name": "org.voovan.db", "mask": 1, "atdi": 41.76764382798474, "units": 5, "Ab": 0.0, "In": 0.6666666666666666, "D": 0.33333333333333337, "FI": 3.0, "FO": 6.0, "LOC": 326.0, "PR": 0.027218118159023263, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 2, "name": "org.voovan.db.exception", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 2.0, "FO": 0.0, "LOC": 19.0, "PR": 0.008744539006962437, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 3, "name": "org.voovan.db.recorder", "mask": 1, "atdi": 31.167618702858356, "units": 3, "Ab": 0.0, "In": 0.9473684210526315, "D": 0.052631578947368474, "FI": 1.0, "FO": 9.0, "LOC": 483.0, "PR": 0.01344293127832181, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 4, "name": "org.voovan.db.recorder.annotation", "mask": 0, "atdi": 10.891568570206452, "units": 6, "Ab": 1.0, "In": 0.25, "D": 0.25, "FI": 2.0, "FO": 1.0, "LOC": 40.0, "PR": 0.014712534603857687, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 5, "name": "org.voovan.db.recorder.exception", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 1.0, "FO": 0.0, "LOC": 5.0, "PR": 0.004888669521943077, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 6, "name": "org.voovan.http", "mask": 1, "atdi": 48.3373713362045, "units": 2, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 6.0, "FO": 3.0, "LOC": 16.0, "PR": 0.007369477800861354, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 7, "name": "org.voovan.http.client", "mask": 1, "atdi": 59.92694009584589, "units": 6, "Ab": 0.0, "In": 0.9583333333333334, "D": 0.04166666666666663, "FI": 2.0, "FO": 21.0, "LOC": 443.0, "PR": 0.004239261489291748, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 8, "name": "org.voovan.http.message", "mask": 1, "atdi": 102.34004592989675, "units": 5, "Ab": 0.0, "In": 0.4909090909090909, "D": 0.509090909090909, "FI": 11.0, "FO": 13.0, "LOC": 1018.0, "PR": 0.007613499337552371, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 9, "name": "org.voovan.http.message.exception", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 0.16666666666666666, "D": 0.8333333333333334, "FI": 4.0, "FO": 1.0, "LOC": 43.0, "PR": 0.005143038774050068, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 10, "name": "org.voovan.http.message.packet", "mask": 1, "atdi": 52.57550006009511, "units": 7, "Ab": 0.0, "In": 0.5, "D": 0.5, "FI": 9.0, "FO": 9.0, "LOC": 365.0, "PR": 0.006774949529443614, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 11, "name": "org.voovan.http.server", "mask": 1, "atdi": 207.06668000073415, "units": 18, "Ab": 0.2777777777777778, "In": 0.75, "D": 0.02777777777777768, "FI": 11.0, "FO": 31.0, "LOC": 1303.0, "PR": 0.007830171911828202, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 12, "name": "org.voovan.http.server.context", "mask": 1, "atdi": 148.7270839736586, "units": 6, "Ab": 0.0, "In": 0.559322033898305, "D": 0.44067796610169496, "FI": 9.0, "FO": 16.0, "LOC": 426.0, "PR": 0.007632702065330987, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 13, "name": "org.voovan.http.server.exception", "mask": 1, "atdi": 0.0, "units": 6, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 4.0, "FO": 0.0, "LOC": 37.0, "PR": 0.005145907616144472, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 14, "name": "org.voovan.http.server.filter", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 9.0, "LOC": 147.0, "PR": 0.003619066196407199, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 15, "name": "org.voovan.http.server.module.annontationRouter", "mask": 1, "atdi": 121.67800228237151, "units": 1, "Ab": 0.0, "In": 0.9130434782608695, "D": 0.08695652173913049, "FI": 2.0, "FO": 14.0, "LOC": 74.0, "PR": 0.004233506522818467, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 16, "name": "org.voovan.http.server.module.annontationRouter.annotation", "mask": 0, "atdi": 21.578830908503125, "units": 10, "Ab": 1.0, "In": 0.3333333333333333, "D": 0.33333333333333326, "FI": 3.0, "FO": 2.0, "LOC": 106.0, "PR": 0.0043878532456065635, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 17, "name": "org.voovan.http.server.module.annontationRouter.router", "mask": 1, "atdi": 57.92127901918249, "units": 5, "Ab": 0.4, "In": 0.9512195121951219, "D": 0.3512195121951218, "FI": 2.0, "FO": 17.0, "LOC": 323.0, "PR": 0.004178906312288146, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 18, "name": "org.voovan.http.server.module.annontationRouter.swagger", "mask": 1, "atdi": 52.293813366172586, "units": 1, "Ab": 0.0, "In": 0.9285714285714286, "D": 0.0714285714285714, "FI": 2.0, "FO": 14.0, "LOC": 309.0, "PR": 0.004987306870712448, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 19, "name": "org.voovan.http.server.module.annontationRouter.swagger.annotation", "mask": 0, "atdi": 0.0, "units": 7, "Ab": 1.0, "In": 0.0, "D": 0.0, "FI": 1.0, "FO": 0.0, "LOC": 63.0, "PR": 0.003921869633101064, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 20, "name": "org.voovan.http.server.module.annontationRouter.swagger.entity", "mask": 1, "atdi": 13.374993005542242, "units": 9, "Ab": 0.0, "In": 0.8333333333333334, "D": 0.16666666666666663, "FI": 1.0, "FO": 3.0, "LOC": 253.0, "PR": 0.003921869633101064, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 21, "name": "org.voovan.http.server.module.monitor", "mask": 1, "atdi": 0.0, "units": 6, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 7.0, "LOC": 167.0, "PR": 0.003619066196407199, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 22, "name": "org.voovan.http.server.router", "mask": 1, "atdi": 17.505244744110666, "units": 2, "Ab": 0.0, "In": 0.8125, "D": 0.1875, "FI": 2.0, "FO": 6.0, "LOC": 80.0, "PR": 0.0042732286274325525, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 23, "name": "org.voovan.http.websocket", "mask": 1, "atdi": 43.917414537737166, "units": 6, "Ab": 0.3333333333333333, "In": 0.5172413793103449, "D": 0.14942528735632177, "FI": 5.0, "FO": 11.0, "LOC": 235.0, "PR": 0.0052715448713300615, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 24, "name": "org.voovan.http.websocket.exception", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 3.0, "FO": 0.0, "LOC": 6.0, "PR": 0.004412710544307367, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 25, "name": "org.voovan.http.websocket.filter", "mask": 1, "atdi": 5.679396576607293, "units": 3, "Ab": 0.0, "In": 0.8571428571428571, "D": 0.1428571428571429, "FI": 1.0, "FO": 5.0, "LOC": 52.0, "PR": 0.0038337680961988965, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 26, "name": "org.voovan.network", "mask": 1, "atdi": 158.13945060337977, "units": 17, "Ab": 0.35294117647058826, "In": 0.463768115942029, "D": 0.18329070758738275, "FI": 12.0, "FO": 18.0, "LOC": 1169.0, "PR": 0.015180730066411685, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 27, "name": "org.voovan.network.exception", "mask": 1, "atdi": 0.0, "units": 4, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 7.0, "FO": 0.0, "LOC": 27.0, "PR": 0.007263469294396568, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 28, "name": "org.voovan.network.filter", "mask": 1, "atdi": 5.617677916473811, "units": 4, "Ab": 0.0, "In": 0.8888888888888888, "D": 0.11111111111111116, "FI": 1.0, "FO": 6.0, "LOC": 91.0, "PR": 0.0041924932681627475, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 29, "name": "org.voovan.network.handler", "mask": 1, "atdi": 11.222006473977434, "units": 1, "Ab": 0.0, "In": 0.2857142857142857, "D": 0.7142857142857143, "FI": 2.0, "FO": 1.0, "LOC": 27.0, "PR": 0.00450754890176252, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 30, "name": "org.voovan.network.messagesplitter", "mask": 1, "atdi": 121.7717120608781, "units": 6, "Ab": 0.0, "In": 0.6923076923076923, "D": 0.3076923076923077, "FI": 3.0, "FO": 7.0, "LOC": 113.0, "PR": 0.004722250801554218, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 31, "name": "org.voovan.network.plugin", "mask": 1, "atdi": 16.838703887311926, "units": 3, "Ab": 0.0, "In": 0.7692307692307693, "D": 0.23076923076923073, "FI": 3.0, "FO": 4.0, "LOC": 211.0, "PR": 0.004722250801554218, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 32, "name": "org.voovan.network.tcp", "mask": 1, "atdi": 16.838703887311926, "units": 3, "Ab": 0.0, "In": 0.7333333333333333, "D": 0.2666666666666667, "FI": 3.0, "FO": 5.0, "LOC": 159.0, "PR": 0.004722250801554218, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 33, "name": "org.voovan.network.udp", "mask": 1, "atdi": 5.327889430264666, "units": 3, "Ab": 0.0, "In": 0.9166666666666666, "D": 0.08333333333333337, "FI": 1.0, "FO": 5.0, "LOC": 163.0, "PR": 0.0043359579820882975, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 34, "name": "org.voovan.tools", "mask": 1, "atdi": 177.2322935942723, "units": 18, "Ab": 0.0, "In": 0.125, "D": 0.875, "FI": 45.0, "FO": 11.0, "LOC": 2132.0, "PR": 0.1271327744649461, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 35, "name": "org.voovan.tools.bucket", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.3333333333333333, "In": 0.75, "D": 0.08333333333333326, "FI": 1.0, "FO": 2.0, "LOC": 66.0, "PR": 0.003960868831811153, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 36, "name": "org.voovan.tools.buffer", "mask": 1, "atdi": 28.948349988603866, "units": 5, "Ab": 0.0, "In": 0.36363636363636365, "D": 0.6363636363636364, "FI": 11.0, "FO": 6.0, "LOC": 634.0, "PR": 0.010522338878731032, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 37, "name": "org.voovan.tools.classloader", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 3.0, "LOC": 60.0, "PR": 0.003619066196407199, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 38, "name": "org.voovan.tools.collection", "mask": 1, "atdi": 70.76015715801557, "units": 24, "Ab": 0.041666666666666664, "In": 0.42857142857142855, "D": 0.5297619047619048, "FI": 14.0, "FO": 8.0, "LOC": 2680.0, "PR": 0.0345423883509897, "CD": 1, "UD": 1, "AI": 0, "GC": 1, "FC": 1, "SF": 0}, {"id": 39, "name": "org.voovan.tools.compiler", "mask": 1, "atdi": 60.98660077988477, "units": 6, "Ab": 0.0, "In": 0.8, "D": 0.19999999999999996, "FI": 3.0, "FO": 7.0, "LOC": 180.0, "PR": 0.006238581887656604, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 40, "name": "org.voovan.tools.compiler.clazz", "mask": 1, "atdi": 24.928631074209054, "units": 1, "Ab": 0.0, "In": 0.875, "D": 0.125, "FI": 1.0, "FO": 4.0, "LOC": 67.0, "PR": 0.004376614279034602, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 41, "name": "org.voovan.tools.compiler.function", "mask": 1, "atdi": 107.49014427703437, "units": 2, "Ab": 0.5, "In": 0.7692307692307693, "D": 0.26923076923076916, "FI": 3.0, "FO": 6.0, "LOC": 132.0, "PR": 0.010111455868293494, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 42, "name": "org.voovan.tools.compiler.sandbox", "mask": 1, "atdi": 6.416277075887785, "units": 2, "Ab": 0.0, "In": 0.75, "D": 0.25, "FI": 1.0, "FO": 1.0, "LOC": 176.0, "PR": 0.004376614279034602, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 43, "name": "org.voovan.tools.event", "mask": 1, "atdi": 15.241760140195499, "units": 3, "Ab": 0.0, "In": 0.4, "D": 0.6, "FI": 7.0, "FO": 4.0, "LOC": 139.0, "PR": 0.016337321450048688, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 44, "name": "org.voovan.tools.exception", "mask": 1, "atdi": 0.0, "units": 10, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 12.0, "FO": 0.0, "LOC": 52.0, "PR": 0.035044714367519464, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 45, "name": "org.voovan.tools.hashwheeltimer", "mask": 1, "atdi": 41.18634675252499, "units": 3, "Ab": 0.3333333333333333, "In": 0.25, "D": 0.41666666666666674, "FI": 13.0, "FO": 4.0, "LOC": 136.0, "PR": 0.06409678735898151, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 46, "name": "org.voovan.tools.hotswap", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.875, "D": 0.125, "FI": 1.0, "FO": 4.0, "LOC": 104.0, "PR": 0.0038337680961988965, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 47, "name": "org.voovan.tools.ioc", "mask": 1, "atdi": 0.0, "units": 5, "Ab": 0.0, "In": 0.75, "D": 0.25, "FI": 4.0, "FO": 7.0, "LOC": 412.0, "PR": 0.004705245101797246, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 48, "name": "org.voovan.tools.ioc.annotation", "mask": 0, "atdi": 0.0, "units": 6, "Ab": 1.0, "In": 0.25, "D": 0.25, "FI": 1.0, "FO": 1.0, "LOC": 44.0, "PR": 0.004190423813017271, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 49, "name": "org.voovan.tools.ioc.entity", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 1.0, "FO": 0.0, "LOC": 47.0, "PR": 0.004190423813017271, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 50, "name": "org.voovan.tools.json", "mask": 1, "atdi": 62.45522877099958, "units": 6, "Ab": 0.0, "In": 0.41025641025641024, "D": 0.5897435897435898, "FI": 18.0, "FO": 9.0, "LOC": 695.0, "PR": 0.05343608122288562, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 51, "name": "org.voovan.tools.log", "mask": 1, "atdi": 103.60516033460337, "units": 6, "Ab": 0.0, "In": 0.11504424778761062, "D": 0.8849557522123894, "FI": 38.0, "FO": 4.0, "LOC": 430.0, "PR": 0.0939255999850912, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 52, "name": "org.voovan.tools.pool", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.3333333333333333, "In": 0.6666666666666666, "D": 0.0, "FI": 2.0, "FO": 5.0, "LOC": 189.0, "PR": 0.00450754890176252, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 53, "name": "org.voovan.tools.pool.annotation", "mask": 0, "atdi": 0.0, "units": 1, "Ab": 1.0, "In": 0.0, "D": 0.0, "FI": 1.0, "FO": 0.0, "LOC": 4.0, "PR": 0.004284121298690459, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 54, "name": "org.voovan.tools.reflect", "mask": 1, "atdi": 205.11165674251023, "units": 4, "Ab": 0.25, "In": 0.2903225806451613, "D": 0.45967741935483875, "FI": 25.0, "FO": 11.0, "LOC": 794.0, "PR": 0.0715117125120793, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 55, "name": "org.voovan.tools.reflect.annotation", "mask": 0, "atdi": 0.0, "units": 5, "Ab": 1.0, "In": 0.0, "D": 0.0, "FI": 12.0, "FO": 0.0, "LOC": 47.0, "PR": 0.023206564006898335, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 56, "name": "org.voovan.tools.reflect.convert", "mask": 1, "atdi": 23.47527154772756, "units": 4, "Ab": 0.25, "In": 0.6, "D": 0.15000000000000002, "FI": 2.0, "FO": 3.0, "LOC": 31.0, "PR": 0.014191666094781258, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 57, "name": "org.voovan.tools.reflect.exclude", "mask": 1, "atdi": 11.744180811504187, "units": 2, "Ab": 0.5, "In": 0.6666666666666666, "D": 0.16666666666666652, "FI": 1.0, "FO": 2.0, "LOC": 16.0, "PR": 0.009144960852347674, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 58, "name": "org.voovan.tools.security", "mask": 1, "atdi": 25.148282564401253, "units": 5, "Ab": 0.0, "In": 0.2, "D": 0.8, "FI": 10.0, "FO": 2.0, "LOC": 534.0, "PR": 0.027859699389854282, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 59, "name": "org.voovan.tools.serialize", "mask": 1, "atdi": 29.872689519403334, "units": 6, "Ab": 0.16666666666666666, "In": 0.6875, "D": 0.14583333333333337, "FI": 1.0, "FO": 7.0, "LOC": 214.0, "PR": 0.007289170134823456, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 60, "name": "org.voovan.tools.threadpool", "mask": 1, "atdi": 21.833915558467385, "units": 3, "Ab": 0.0, "In": 0.6, "D": 0.4, "FI": 4.0, "FO": 3.0, "LOC": 113.0, "PR": 0.024643994919062627, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 61, "name": "org.voovan.tools.tuple", "mask": 1, "atdi": 4.953344992289635, "units": 3, "Ab": 0.0, "In": 0.6666666666666666, "D": 0.33333333333333337, "FI": 1.0, "FO": 1.0, "LOC": 67.0, "PR": 0.009144960852347674, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 62, "name": "org.voovan.tools.weave", "mask": 1, "atdi": 5.84366223016678, "units": 3, "Ab": 0.0, "In": 0.6666666666666666, "D": 0.33333333333333337, "FI": 3.0, "FO": 6.0, "LOC": 124.0, "PR": 0.004694453444417474, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 63, "name": "org.voovan.tools.weave.aop", "mask": 1, "atdi": 5.84366223016678, "units": 3, "Ab": 0.0, "In": 0.9230769230769231, "D": 0.07692307692307687, "FI": 1.0, "FO": 8.0, "LOC": 186.0, "PR": 0.004284121298690459, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 64, "name": "org.voovan.tools.weave.aop.annotation", "mask": 0, "atdi": 0.0, "units": 5, "Ab": 1.0, "In": 0.0, "D": 0.0, "FI": 1.0, "FO": 0.0, "LOC": 33.0, "PR": 0.004074258151532925, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}], "edges": [{"source": 0, "target": 34, "w": 3.0}, {"source": 0, "target": 45, "w": 2.0}, {"source": 0, "target": 54, "w": 1.0}, {"source": 0, "target": 60, "w": 1.0}, {"source": 1, "target": 0, "w": 1.0}, {"source": 1, "target": 2, "w": 1.0}, {"source": 1, "target": 34, "w": 9.0}, {"source": 1, "target": 50, "w": 1.0}, {"source": 1, "target": 51, "w": 2.0}, {"source": 1, "target": 54, "w": 2.0}, {"source": 3, "target": 1, "w": 3.0}, {"source": 3, "target": 2, "w": 2.0}, {"source": 3, "target": 4, "w": 8.0}, {"source": 3, "target": 5, "w": 3.0}, {"source": 3, "target": 34, "w": 4.0}, {"source": 3, "target": 50, "w": 1.0}, {"source": 3, "target": 51, "w": 2.0}, {"source": 3, "target": 54, "w": 2.0}, {"source": 3, "target": 55, "w": 1.0}, {"source": 4, "target": 1, "w": 1.0}, {"source": 6, "target": 26, "w": 14.0}, {"source": 6, "target": 34, "w": 73.0}, {"source": 6, "target": 54, "w": 2.0}, {"source": 7, "target": 0, "w": 1.0}, {"source": 7, "target": 6, "w": 1.0}, {"source": 7, "target": 8, "w": 6.0}, {"source": 7, "target": 9, "w": 1.0}, {"source": 7, "target": 10, "w": 5.0}, {"source": 7, "target": 11, "w": 7.0}, {"source": 7, "target": 23, "w": 8.0}, {"source": 7, "target": 24, "w": 2.0}, {"source": 7, "target": 26, "w": 13.0}, {"source": 7, "target": 27, "w": 3.0}, {"source": 7, "target": 29, "w": 2.0}, {"source": 7, "target": 30, "w": 1.0}, {"source": 7, "target": 31, "w": 1.0}, {"source": 7, "target": 32, "w": 1.0}, {"source": 7, "target": 34, "w": 5.0}, {"source": 7, "target": 36, "w": 3.0}, {"source": 7, "target": 38, "w": 2.0}, {"source": 7, "target": 43, "w": 1.0}, {"source": 7, "target": 50, "w": 1.0}, {"source": 7, "target": 51, "w": 5.0}, {"source": 7, "target": 52, "w": 2.0}, {"source": 8, "target": 0, "w": 2.0}, {"source": 8, "target": 9, "w": 2.0}, {"source": 8, "target": 10, "w": 11.0}, {"source": 8, "target": 11, "w": 2.0}, {"source": 8, "target": 12, "w": 5.0}, {"source": 8, "target": 13, "w": 1.0}, {"source": 8, "target": 26, "w": 4.0}, {"source": 8, "target": 34, "w": 19.0}, {"source": 8, "target": 36, "w": 4.0}, {"source": 8, "target": 44, "w": 2.0}, {"source": 8, "target": 45, "w": 1.0}, {"source": 8, "target": 51, "w": 3.0}, {"source": 8, "target": 58, "w": 3.0}, {"source": 9, "target": 44, "w": 1.0}, {"source": 10, "target": 8, "w": 3.0}, {"source": 10, "target": 9, "w": 1.0}, {"source": 10, "target": 12, "w": 2.0}, {"source": 10, "target": 26, "w": 1.0}, {"source": 10, "target": 34, "w": 8.0}, {"source": 10, "target": 36, "w": 2.0}, {"source": 10, "target": 50, "w": 2.0}, {"source": 10, "target": 51, "w": 3.0}, {"source": 10, "target": 58, "w": 1.0}, {"source": 11, "target": 0, "w": 3.0}, {"source": 11, "target": 6, "w": 2.0}, {"source": 11, "target": 7, "w": 1.0}, {"source": 11, "target": 8, "w": 26.0}, {"source": 11, "target": 9, "w": 1.0}, {"source": 11, "target": 10, "w": 13.0}, {"source": 11, "target": 12, "w": 23.0}, {"source": 11, "target": 13, "w": 6.0}, {"source": 11, "target": 22, "w": 2.0}, {"source": 11, "target": 23, "w": 13.0}, {"source": 11, "target": 24, "w": 1.0}, {"source": 11, "target": 25, "w": 1.0}, {"source": 11, "target": 26, "w": 12.0}, {"source": 11, "target": 27, "w": 1.0}, {"source": 11, "target": 30, "w": 1.0}, {"source": 11, "target": 31, "w": 1.0}, {"source": 11, "target": 32, "w": 2.0}, {"source": 11, "target": 34, "w": 51.0}, {"source": 11, "target": 36, "w": 3.0}, {"source": 11, "target": 38, "w": 10.0}, {"source": 11, "target": 44, "w": 1.0}, {"source": 11, "target": 45, "w": 2.0}, {"source": 11, "target": 46, "w": 1.0}, {"source": 11, "target": 47, "w": 2.0}, {"source": 11, "target": 50, "w": 3.0}, {"source": 11, "target": 51, "w": 8.0}, {"source": 11, "target": 54, "w": 6.0}, {"source": 11, "target": 55, "w": 2.0}, {"source": 11, "target": 58, "w": 1.0}, {"source": 11, "target": 60, "w": 1.0}, {"source": 11, "target": 62, "w": 1.0}, {"source": 12, "target": 0, "w": 2.0}, {"source": 12, "target": 7, "w": 1.0}, {"source": 12, "target": 8, "w": 2.0}, {"source": 12, "target": 10, "w": 5.0}, {"source": 12, "target": 11, "w": 6.0}, {"source": 12, "target": 15, "w": 1.0}, {"source": 12, "target": 23, "w": 1.0}, {"source": 12, "target": 34, "w": 9.0}, {"source": 12, "target": 38, "w": 2.0}, {"source": 12, "target": 45, "w": 1.0}, {"source": 12, "target": 47, "w": 2.0}, {"source": 12, "target": 50, "w": 2.0}, {"source": 12, "target": 51, "w": 6.0}, {"source": 12, "target": 54, "w": 5.0}, {"source": 12, "target": 55, "w": 2.0}, {"source": 12, "target": 62, "w": 2.0}, {"source": 14, "target": 8, "w": 5.0}, {"source": 14, "target": 10, "w": 1.0}, {"source": 14, "target": 11, "w": 9.0}, {"source": 14, "target": 12, "w": 3.0}, {"source": 14, "target": 34, "w": 2.0}, {"source": 14, "target": 35, "w": 3.0}, {"source": 14, "target": 38, "w": 3.0}, {"source": 14, "target": 51, "w": 2.0}, {"source": 14, "target": 54, "w": 1.0}, {"source": 15, "target": 0, "w": 1.0}, {"source": 15, "target": 8, "w": 4.0}, {"source": 15, "target": 11, "w": 3.0}, {"source": 15, "target": 12, "w": 1.0}, {"source": 15, "target": 16, "w": 2.0}, {"source": 15, "target": 17, "w": 3.0}, {"source": 15, "target": 18, "w": 1.0}, {"source": 15, "target": 34, "w": 18.0}, {"source": 15, "target": 39, "w": 1.0}, {"source": 15, "target": 43, "w": 1.0}, {"source": 15, "target": 45, "w": 1.0}, {"source": 15, "target": 47, "w": 1.0}, {"source": 15, "target": 51, "w": 1.0}, {"source": 15, "target": 54, "w": 4.0}, {"source": 16, "target": 6, "w": 1.0}, {"source": 16, "target": 55, "w": 2.0}, {"source": 17, "target": 6, "w": 1.0}, {"source": 17, "target": 8, "w": 3.0}, {"source": 17, "target": 10, "w": 3.0}, {"source": 17, "target": 11, "w": 12.0}, {"source": 17, "target": 12, "w": 1.0}, {"source": 17, "target": 13, "w": 2.0}, {"source": 17, "target": 15, "w": 1.0}, {"source": 17, "target": 16, "w": 10.0}, {"source": 17, "target": 23, "w": 1.0}, {"source": 17, "target": 34, "w": 3.0}, {"source": 17, "target": 38, "w": 1.0}, {"source": 17, "target": 41, "w": 1.0}, {"source": 17, "target": 43, "w": 1.0}, {"source": 17, "target": 47, "w": 1.0}, {"source": 17, "target": 50, "w": 1.0}, {"source": 17, "target": 51, "w": 1.0}, {"source": 17, "target": 54, "w": 1.0}, {"source": 18, "target": 0, "w": 1.0}, {"source": 18, "target": 8, "w": 2.0}, {"source": 18, "target": 10, "w": 1.0}, {"source": 18, "target": 11, "w": 7.0}, {"source": 18, "target": 12, "w": 1.0}, {"source": 18, "target": 16, "w": 6.0}, {"source": 18, "target": 17, "w": 2.0}, {"source": 18, "target": 19, "w": 5.0}, {"source": 18, "target": 20, "w": 7.0}, {"source": 18, "target": 34, "w": 3.0}, {"source": 18, "target": 50, "w": 1.0}, {"source": 18, "target": 51, "w": 1.0}, {"source": 18, "target": 54, "w": 5.0}, {"source": 18, "target": 55, "w": 1.0}, {"source": 20, "target": 12, "w": 2.0}, {"source": 20, "target": 18, "w": 2.0}, {"source": 20, "target": 55, "w": 4.0}, {"source": 21, "target": 8, "w": 4.0}, {"source": 21, "target": 11, "w": 7.0}, {"source": 21, "target": 12, "w": 3.0}, {"source": 21, "target": 22, "w": 1.0}, {"source": 21, "target": 34, "w": 8.0}, {"source": 21, "target": 50, "w": 1.0}, {"source": 21, "target": 55, "w": 1.0}, {"source": 22, "target": 8, "w": 6.0}, {"source": 22, "target": 10, "w": 1.0}, {"source": 22, "target": 11, "w": 7.0}, {"source": 22, "target": 13, "w": 1.0}, {"source": 22, "target": 34, "w": 3.0}, {"source": 22, "target": 58, "w": 1.0}, {"source": 23, "target": 8, "w": 2.0}, {"source": 23, "target": 10, "w": 1.0}, {"source": 23, "target": 11, "w": 5.0}, {"source": 23, "target": 24, "w": 1.0}, {"source": 23, "target": 26, "w": 1.0}, {"source": 23, "target": 27, "w": 1.0}, {"source": 23, "target": 34, "w": 5.0}, {"source": 23, "target": 36, "w": 1.0}, {"source": 23, "target": 38, "w": 2.0}, {"source": 23, "target": 51, "w": 3.0}, {"source": 23, "target": 58, "w": 1.0}, {"source": 25, "target": 23, "w": 6.0}, {"source": 25, "target": 34, "w": 2.0}, {"source": 25, "target": 36, "w": 3.0}, {"source": 25, "target": 50, "w": 1.0}, {"source": 25, "target": 51, "w": 1.0}, {"source": 26, "target": 0, "w": 1.0}, {"source": 26, "target": 6, "w": 2.0}, {"source": 26, "target": 27, "w": 4.0}, {"source": 26, "target": 29, "w": 3.0}, {"source": 26, "target": 30, "w": 2.0}, {"source": 26, "target": 31, "w": 1.0}, {"source": 26, "target": 32, "w": 2.0}, {"source": 26, "target": 33, "w": 3.0}, {"source": 26, "target": 34, "w": 27.0}, {"source": 26, "target": 36, "w": 11.0}, {"source": 26, "target": 38, "w": 6.0}, {"source": 26, "target": 43, "w": 5.0}, {"source": 26, "target": 44, "w": 2.0}, {"source": 26, "target": 45, "w": 3.0}, {"source": 26, "target": 51, "w": 6.0}, {"source": 26, "target": 52, "w": 1.0}, {"source": 26, "target": 54, "w": 1.0}, {"source": 26, "target": 60, "w": 1.0}, {"source": 28, "target": 26, "w": 8.0}, {"source": 28, "target": 27, "w": 2.0}, {"source": 28, "target": 34, "w": 2.0}, {"source": 28, "target": 36, "w": 1.0}, {"source": 28, "target": 51, "w": 3.0}, {"source": 28, "target": 58, "w": 1.0}, {"source": 29, "target": 26, "w": 2.0}, {"source": 30, "target": 0, "w": 1.0}, {"source": 30, "target": 6, "w": 1.0}, {"source": 30, "target": 11, "w": 2.0}, {"source": 30, "target": 26, "w": 12.0}, {"source": 30, "target": 28, "w": 1.0}, {"source": 30, "target": 34, "w": 1.0}, {"source": 30, "target": 36, "w": 1.0}, {"source": 31, "target": 26, "w": 11.0}, {"source": 31, "target": 34, "w": 1.0}, {"source": 31, "target": 36, "w": 3.0}, {"source": 31, "target": 51, "w": 2.0}, {"source": 32, "target": 26, "w": 9.0}, {"source": 32, "target": 27, "w": 2.0}, {"source": 32, "target": 34, "w": 1.0}, {"source": 32, "target": 43, "w": 1.0}, {"source": 32, "target": 51, "w": 3.0}, {"source": 33, "target": 26, "w": 9.0}, {"source": 33, "target": 27, "w": 2.0}, {"source": 33, "target": 34, "w": 1.0}, {"source": 33, "target": 43, "w": 1.0}, {"source": 33, "target": 51, "w": 3.0}, {"source": 34, "target": 0, "w": 3.0}, {"source": 34, "target": 1, "w": 2.0}, {"source": 34, "target": 3, "w": 1.0}, {"source": 34, "target": 4, "w": 3.0}, {"source": 34, "target": 43, "w": 1.0}, {"source": 34, "target": 44, "w": 1.0}, {"source": 34, "target": 45, "w": 1.0}, {"source": 34, "target": 50, "w": 2.0}, {"source": 34, "target": 51, "w": 6.0}, {"source": 34, "target": 54, "w": 6.0}, {"source": 34, "target": 58, "w": 1.0}, {"source": 35, "target": 34, "w": 2.0}, {"source": 35, "target": 45, "w": 4.0}, {"source": 36, "target": 0, "w": 1.0}, {"source": 36, "target": 34, "w": 13.0}, {"source": 36, "target": 38, "w": 3.0}, {"source": 36, "target": 44, "w": 2.0}, {"source": 36, "target": 51, "w": 3.0}, {"source": 36, "target": 54, "w": 1.0}, {"source": 37, "target": 34, "w": 3.0}, {"source": 37, "target": 51, "w": 1.0}, {"source": 37, "target": 54, "w": 1.0}, {"source": 38, "target": 34, "w": 15.0}, {"source": 38, "target": 44, "w": 2.0}, {"source": 38, "target": 45, "w": 2.0}, {"source": 38, "target": 50, "w": 2.0}, {"source": 38, "target": 51, "w": 3.0}, {"source": 38, "target": 54, "w": 2.0}, {"source": 38, "target": 55, "w": 3.0}, {"source": 38, "target": 59, "w": 6.0}, {"source": 39, "target": 0, "w": 1.0}, {"source": 39, "target": 34, "w": 1.0}, {"source": 39, "target": 40, "w": 1.0}, {"source": 39, "target": 41, "w": 1.0}, {"source": 39, "target": 42, "w": 2.0}, {"source": 39, "target": 51, "w": 2.0}, {"source": 39, "target": 54, "w": 2.0}, {"source": 40, "target": 0, "w": 1.0}, {"source": 40, "target": 34, "w": 3.0}, {"source": 40, "target": 39, "w": 2.0}, {"source": 40, "target": 51, "w": 1.0}, {"source": 41, "target": 0, "w": 1.0}, {"source": 41, "target": 34, "w": 4.0}, {"source": 41, "target": 36, "w": 1.0}, {"source": 41, "target": 38, "w": 1.0}, {"source": 41, "target": 39, "w": 2.0}, {"source": 41, "target": 51, "w": 1.0}, {"source": 42, "target": 34, "w": 3.0}, {"source": 43, "target": 34, "w": 3.0}, {"source": 43, "target": 44, "w": 1.0}, {"source": 43, "target": 51, "w": 1.0}, {"source": 43, "target": 60, "w": 1.0}, {"source": 45, "target": 0, "w": 1.0}, {"source": 45, "target": 34, "w": 3.0}, {"source": 45, "target": 38, "w": 1.0}, {"source": 45, "target": 51, "w": 3.0}, {"source": 46, "target": 0, "w": 1.0}, {"source": 46, "target": 34, "w": 4.0}, {"source": 46, "target": 45, "w": 1.0}, {"source": 46, "target": 51, "w": 1.0}, {"source": 47, "target": 34, "w": 11.0}, {"source": 47, "target": 44, "w": 4.0}, {"source": 47, "target": 48, "w": 9.0}, {"source": 47, "target": 49, "w": 6.0}, {"source": 47, "target": 50, "w": 2.0}, {"source": 47, "target": 51, "w": 5.0}, {"source": 47, "target": 54, "w": 7.0}, {"source": 48, "target": 55, "w": 3.0}, {"source": 50, "target": 0, "w": 3.0}, {"source": 50, "target": 34, "w": 18.0}, {"source": 50, "target": 38, "w": 2.0}, {"source": 50, "target": 44, "w": 2.0}, {"source": 50, "target": 45, "w": 2.0}, {"source": 50, "target": 51, "w": 4.0}, {"source": 50, "target": 54, "w": 4.0}, {"source": 50, "target": 56, "w": 1.0}, {"source": 50, "target": 58, "w": 1.0}, {"source": 51, "target": 0, "w": 1.0}, {"source": 51, "target": 34, "w": 19.0}, {"source": 51, "target": 45, "w": 2.0}, {"source": 51, "target": 50, "w": 1.0}, {"source": 52, "target": 0, "w": 1.0}, {"source": 52, "target": 45, "w": 2.0}, {"source": 52, "target": 50, "w": 1.0}, {"source": 52, "target": 51, "w": 1.0}, {"source": 52, "target": 55, "w": 1.0}, {"source": 54, "target": 0, "w": 1.0}, {"source": 54, "target": 34, "w": 5.0}, {"source": 54, "target": 38, "w": 1.0}, {"source": 54, "target": 41, "w": 1.0}, {"source": 54, "target": 50, "w": 1.0}, {"source": 54, "target": 51, "w": 1.0}, {"source": 54, "target": 55, "w": 6.0}, {"source": 54, "target": 56, "w": 1.0}, {"source": 54, "target": 57, "w": 1.0}, {"source": 54, "target": 58, "w": 1.0}, {"source": 54, "target": 61, "w": 1.0}, {"source": 56, "target": 34, "w": 1.0}, {"source": 56, "target": 51, "w": 1.0}, {"source": 56, "target": 54, "w": 1.0}, {"source": 57, "target": 51, "w": 1.0}, {"source": 57, "target": 54, "w": 1.0}, {"source": 58, "target": 34, "w": 2.0}, {"source": 58, "target": 51, "w": 3.0}, {"source": 59, "target": 34, "w": 4.0}, {"source": 59, "target": 38, "w": 1.0}, {"source": 59, "target": 44, "w": 1.0}, {"source": 59, "target": 50, "w": 2.0}, {"source": 59, "target": 51, "w": 4.0}, {"source": 59, "target": 54, "w": 3.0}, {"source": 59, "target": 58, "w": 1.0}, {"source": 60, "target": 0, "w": 1.0}, {"source": 60, "target": 34, "w": 5.0}, {"source": 60, "target": 51, "w": 2.0}, {"source": 61, "target": 54, "w": 2.0}, {"source": 62, "target": 34, "w": 4.0}, {"source": 62, "target": 44, "w": 2.0}, {"source": 62, "target": 51, "w": 2.0}, {"source": 62, "target": 53, "w": 1.0}, {"source": 62, "target": 54, "w": 2.0}, {"source": 62, "target": 63, "w": 1.0}, {"source": 63, "target": 0, "w": 1.0}, {"source": 63, "target": 34, "w": 2.0}, {"source": 63, "target": 38, "w": 1.0}, {"source": 63, "target": 50, "w": 1.0}, {"source": 63, "target": 54, "w": 1.0}, {"source": 63, "target": 55, "w": 1.0}, {"source": 63, "target": 62, "w": 1.0}, {"source": 63, "target": 64, "w": 5.0}], "meta": {"project": "helyho__Voovan", "n_nodes": 65, "n_edges": 377, "graph_level_smells": ["Dense Structure"], "dense_structure": 1, "label_counts": {"CD": 37, "UD": 21, "AI": 0, "GC": 1, "FC": 10, "SF": 0}, "matching": {"arcan_nodes": 65, "designite_packages": 58, "matched": 58, "coverage": 0.8923, "arcan_only": ["org.voovan.db.recorder.annotation", "org.voovan.http.server.module.annontationRouter.annotation", "org.voovan.http.server.module.annontationRouter.swagger.annotation", "org.voovan.tools.ioc.annotation", "org.voovan.tools.pool.annotation", "org.voovan.tools.reflect.annotation", "org.voovan.tools.weave.aop.annotation"], "designite_only": [], "smelly_packages_not_in_graph": []}, "dropped_containers": {"default_package": [], "empty_container": ["org.voovan.http.server.module", "org"]}, "unknown_designite_smells": []}};
+const LABELS = ["CD","UD","AI","GC","FC","SF"];
+const NAMES = {CD:"Cyclic Dependency",UD:"Unstable Dependency",AI:"Ambiguous Interface",
+  GC:"God Component",FC:"Feature Concentration",SF:"Scattered Functionality"};
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const nodes = DATA.nodes.map(d => ({...d, nSmell: LABELS.reduce((s,k)=>s+d[k],0),
+  short: d.name.split(".").slice(-1)[0] || d.name}));
+const byId = new Map(nodes.map(d => [d.id, d]));
+const links = DATA.edges.map(e => ({...e}));
+const meta = DATA.meta;
+let current = null;
+
+// ---------- sidebar ----------
+document.getElementById("title").textContent = meta.project;
+document.getElementById("nN").textContent = nodes.length;
+document.getElementById("nE").textContent = links.length;
+document.getElementById("nS").textContent = nodes.filter(d => d.nSmell > 0).length;
+document.getElementById("names").innerHTML = nodes.map(d => `<option value="${d.name}">`).join("");
+document.getElementById("smellTable").innerHTML = LABELS.map(k =>
+  `<tr><td><i class="dot" style="background:var(--${k})"></i>${NAMES[k]}</td>
+   <td>${meta.label_counts[k]} / ${nodes.length}</td></tr>`).join("");
+document.getElementById("ds").textContent = meta.dense_structure
+  ? "Dense Structure detected at project level (not assigned to individual nodes)."
+  : "Dense Structure not detected.";
+const unmasked = nodes.filter(d => !d.mask).length;
+if (unmasked) document.getElementById("ds").textContent +=
+  ` ${unmasked} nodes not analysed by Designite (dashed outline): labels unavailable.`;
+const rank = [...nodes].sort((a,b) => b.atdi - a.atdi).slice(0,10);
+document.getElementById("rank").innerHTML = rank.map(d =>
+  `<li><button data-id="${d.id}">${d.short}</button> <span class="v">${d.atdi.toFixed(1)}</span></li>`).join("");
+document.querySelectorAll("#rank button").forEach(b =>
+  b.addEventListener("click", () => select(byId.get(+b.dataset.id), true)));
+
+// ---------- graph ----------
+const svg = d3.select("#svg"), g = svg.append("g");
+const W = () => svg.node().clientWidth, H = () => svg.node().clientHeight;
+const maxLoc = d3.max(nodes, d => d.LOC) || 1;
+const r = d3.scaleSqrt().domain([0, maxLoc]).range([4, 26]);
+const wScale = d3.scaleLog().domain([1, d3.max(links, d => d.w) || 1]).range([0.6, 3.5]);
+const maxAtdi = d3.max(nodes, d => d.atdi) || 1;
+
+svg.append("defs").append("marker").attr("id","arrow").attr("viewBox","0 -4 8 8")
+  .attr("refX",8).attr("refY",0).attr("markerUnits","userSpaceOnUse").attr("markerWidth",9).attr("markerHeight",9).attr("orient","auto")
+  .append("path").attr("d","M0,-4L8,0L0,4").attr("fill","var(--edge)");
+
+const link = g.append("g").selectAll("path").data(links).join("path")
+  .attr("class","link").attr("stroke-width", d => wScale(Math.max(1,d.w))).attr("marker-end","url(#arrow)");
+const node = g.append("g").selectAll("g").data(nodes).join("g")
+  .attr("class", d => "node" + (d.mask ? "" : " nomask")).attr("tabindex",0)
+  .attr("aria-label", d => d.name);
+node.append("circle").attr("r", d => r(d.LOC));
+node.append("text").attr("dy", d => -r(d.LOC) - 4).attr("text-anchor","middle").text(d => d.short);
+
+const sim = d3.forceSimulation(nodes)
+  .force("link", d3.forceLink(links).id(d => d.id).distance(95).strength(0.2))
+  .force("charge", d3.forceManyBody().strength(-420))
+  .force("collide", d3.forceCollide(d => r(d.LOC) + 6))
+  .force("x", d3.forceX(() => W()/2).strength(0.05))
+  .force("y", d3.forceY(() => H()/2).strength(0.05))
+  .on("tick", ticked).on("end", fit);
+if (matchMedia("(prefers-reduced-motion: reduce)").matches) { sim.stop(); for (let i=0;i<300;i++) sim.tick(); ticked(); setTimeout(fit, 0); }
+let fitted = false;
+function fit(){
+  if (fitted) return; fitted = true;
+  const pad = 40, xs = nodes.map(d => d.x), ys = nodes.map(d => d.y);
+  const x0 = d3.min(xs) - pad, x1 = d3.max(xs) + pad, y0 = d3.min(ys) - pad, y1 = d3.max(ys) + pad;
+  const k = Math.min(2, 0.95 / Math.max((x1 - x0) / W(), (y1 - y0) / H()));
+  svg.transition().duration(600).call(zoom.transform,
+    d3.zoomIdentity.translate(W()/2, H()/2).scale(k).translate(-(x0 + x1)/2, -(y0 + y1)/2));
+}
+
+function ticked(){
+  link.attr("d", d => {
+    const dx = d.target.x - d.source.x, dy = d.target.y - d.source.y, L = Math.hypot(dx,dy) || 1;
+    const rt = r(d.target.LOC) + 3, rs = r(d.source.LOC);
+    return `M${d.source.x + dx*rs/L},${d.source.y + dy*rs/L}L${d.target.x - dx*rt/L},${d.target.y - dy*rt/L}`;
+  });
+  node.attr("transform", d => `translate(${d.x},${d.y})`);
+}
+
+node.call(d3.drag()
+  .on("start", (e,d) => { if(!e.active) sim.alphaTarget(0.3).restart(); d.fx=d.x; d.fy=d.y; })
+  .on("drag", (e,d) => { d.fx=e.x; d.fy=e.y; })
+  .on("end", (e,d) => { if(!e.active) sim.alphaTarget(0); d.fx=null; d.fy=null; }));
+const zoom = d3.zoom().scaleExtent([0.2,6]).on("zoom", e => g.attr("transform", e.transform));
+svg.call(zoom).on("click", e => { if (e.target === svg.node()) select(null); });
+
+// ---------- colour ----------
+function colour(d){
+  const m = document.getElementById("colorBy").value;
+  if (m === "count") return css("--s" + Math.min(d.nSmell, 4));
+  if (m === "atdi") return d3.interpolateLab(css("--s0"), css("--s4"))(Math.sqrt(d.atdi / maxAtdi));
+  return d[m] ? css("--" + m) : css("--clean");
+}
+function legend(){
+  const m = document.getElementById("colorBy").value, el = document.getElementById("legend");
+  if (m === "count") el.innerHTML = [0,1,2,3,4].map(i =>
+    `<span><i style="background:var(--s${i})"></i>${i===4?"4+":i} ${i===1?"smell":"smells"}</span>`).join("");
+  else if (m === "atdi") el.innerHTML = `<span><i style="background:var(--s0)"></i>0</span>
+    <span><i style="background:var(--s4)"></i>${maxAtdi.toFixed(0)}</span>`;
+  else el.innerHTML = `<span><i style="background:var(--${m})"></i>affected</span>
+    <span><i style="background:var(--clean)"></i>not affected</span>`;
+  el.innerHTML += `<span>node size ∝ LOC</span>`;
+}
+function paint(){ node.select("circle").attr("fill", colour); legend(); }
+document.getElementById("colorBy").addEventListener("change", paint);
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", paint);
+paint();
+
+// ---------- labels ----------
+function labelsVisible(){
+  const all = document.getElementById("showLabels").checked;
+  node.select("text").style("display", d => all || r(d.LOC) > 12 || d === current ? null : "none");
+}
+document.getElementById("showLabels").addEventListener("change", labelsVisible);
+
+// ---------- tooltip ----------
+const tip = document.getElementById("tip");
+node.on("mouseenter", (e,d) => {
+  const s = LABELS.filter(k => d[k]).join(", ") || "none";
+  tip.innerHTML = `<b>${d.name}</b><br>LOC ${d.LOC} · FI ${d.FI} · FO ${d.FO}<br>Smells: ${s}`;
+  tip.style.display = "block";
+}).on("mousemove", e => {
+  const b = document.querySelector("main").getBoundingClientRect();
+  tip.style.left = (e.clientX - b.left + 14) + "px"; tip.style.top = (e.clientY - b.top + 14) + "px";
+}).on("mouseleave", () => tip.style.display = "none")
+  .on("click", (e,d) => { e.stopPropagation(); select(d); })
+  .on("keydown", (e,d) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(d); } });
+
+// ---------- selection ----------
+function select(d, center){
+  current = d;
+  node.classed("sel", n => n === d);
+  if (!d){ node.classed("dim", false); link.classed("dim", false); renderDetail(null); labelsVisible(); return; }
+  const out = links.filter(l => l.source === d), inc = links.filter(l => l.target === d);
+  const nb = new Set([d, ...out.map(l => l.target), ...inc.map(l => l.source)]);
+  node.classed("dim", n => !nb.has(n));
+  link.classed("dim", l => l.source !== d && l.target !== d);
+  renderDetail(d, out, inc); labelsVisible();
+  if (center) svg.transition().duration(500).call(zoom.translateTo, d.x, d.y);
+}
+function renderDetail(d, out, inc){
+  const el = document.getElementById("detail");
+  if (!d){ el.innerHTML = `<h2>Selected component</h2><p class="note">Select a node to inspect its features, labels, and dependencies.</p>`; return; }
+  const chips = LABELS.filter(k => d[k]).map(k => `<span class="chip" style="background:var(--${k})">${NAMES[k]}</span>`).join("")
+    || `<span class="chip none">${d.mask ? "No smells" : "Labels unavailable"}</span>`;
+  const f = (v, p=3) => Number.isInteger(v) ? v : v.toFixed(p);
+  const rows = [["Abstractness (Ab)",d.Ab],["Instability (In)",d.In],["Distance (D)",d.D],["Fan-in (FI)",d.FI],
+    ["Fan-out (FO)",d.FO],["Lines of code (LOC)",d.LOC],["PageRank (PR)",d.PR],["ATDI (Arcan)",d.atdi],["Classes",d.units]];
+  el.innerHTML = `<h2>Selected component</h2><div class="detail-name">${d.name}</div>
+    <div class="chips">${chips}</div>
+    <table>${rows.map(([k,v]) => `<tr><td>${k}</td><td>${f(v)}</td></tr>`).join("")}</table>
+    <p class="note">Efferent dependencies: ${out.length}. Afferent dependencies: ${inc.length}.</p>`;
+}
+document.getElementById("search").addEventListener("change", e => {
+  const d = nodes.find(n => n.name === e.target.value) || nodes.find(n => n.name.includes(e.target.value));
+  if (d) select(d, true);
+});
+labelsVisible();
+</script>
+</body>
+</html>

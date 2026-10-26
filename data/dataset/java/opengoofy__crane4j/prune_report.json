@@ -1,0 +1,55 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 462,
+  "source_files_removed": 201,
+  "source_files_after": 261,
+  "removed_share": 0.4351,
+  "removed_by_rule": {
+    "R1_arcan_default": 201
+  },
+  "removed_dirs": [
+    {
+      "path": "crane4j-example",
+      "rule": "R1_arcan_default",
+      "source_files": 19
+    },
+    {
+      "path": "crane4j-core/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 130
+    },
+    {
+      "path": "crane4j-extension/crane4j-extension-datasource/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "crane4j-extension/crane4j-extension-jackson/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    },
+    {
+      "path": "crane4j-extension/crane4j-extension-mybatis-plus/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    },
+    {
+      "path": "crane4j-extension/crane4j-extension-redis/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "crane4j-extension/crane4j-extension-spring/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 29
+    },
+    {
+      "path": "crane4j-spring-boot-starter/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 10
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

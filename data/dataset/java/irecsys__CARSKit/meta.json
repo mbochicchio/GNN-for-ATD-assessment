@@ -1,0 +1,39 @@
+{
+  "project": "irecsys__CARSKit",
+  "n_nodes": 16,
+  "n_edges": 51,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 3,
+    "UD": 2,
+    "AI": 0,
+    "GC": 0,
+    "FC": 4,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 16,
+    "designite_packages": 15,
+    "matched": 15,
+    "coverage": 0.9375,
+    "arcan_only": [
+      "carskit.data.setting"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "carskit.alg.cars",
+      "carskit.alg.cars.transformation",
+      "carskit.data",
+      "carskit.alg",
+      "carskit.alg.baseline",
+      "carskit",
+      "carskit.alg.cars.adaptation"
+    ]
+  },
+  "unknown_designite_smells": []
+}

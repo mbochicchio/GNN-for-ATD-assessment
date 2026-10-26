@@ -1,0 +1,38 @@
+{
+  "project": "xiaolyuh__layering-cache",
+  "n_nodes": 26,
+  "n_edges": 82,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 11,
+    "UD": 6,
+    "AI": 0,
+    "GC": 0,
+    "FC": 3,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 26,
+    "designite_packages": 25,
+    "matched": 25,
+    "coverage": 0.9615,
+    "arcan_only": [
+      "com.github.xiaolyuh.annotation"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com",
+      "com.github",
+      "com.github.xiaolyuh",
+      "com.github.xiaolyuh.redis"
+    ]
+  },
+  "unknown_designite_smells": []
+}

@@ -1,0 +1,64 @@
+{
+  "project": "apache__rocketmq-connect",
+  "n_nodes": 185,
+  "n_edges": 466,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 66,
+    "UD": 38,
+    "AI": 0,
+    "GC": 2,
+    "FC": 32,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 185,
+    "designite_packages": 185,
+    "matched": 185,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [
+      "$"
+    ],
+    "empty_container": [
+      "org.apache.rocketmq.schema",
+      "org.apache.rocketmq.connect.kafka.connect.adaptor",
+      "org.apache.rocketmq.connect.dingtalk",
+      "org.apache.rocketmq.connect.hive.replicator",
+      "org.apache.rocketmq.connect.redis",
+      "org.apache.rocketmq.connect.elasticsearch",
+      "org.apache.rocketmq.connect.elasticsearch.replicator",
+      "io",
+      "io.debezium",
+      "org.apache.rocketmq.connect.eventbridge",
+      "org.apache.rocketmq.connect.runtime.converter",
+      "org.apache.rocketmq.connect.kafka.connect",
+      "org.apache.rocketmq.connect.hudi",
+      "org.apache.rocketmq.connect.fc",
+      "org.apache.rocketmq.connect.mqtt",
+      "org.apache.rocketmq.connect",
+      "org.apache.rocketmq.connect.cassandra",
+      "org.apache.rocketmq.connect.hive",
+      "org.apache.rocketmq.connect.hbase",
+      "org.apache.rocketmq.connect.oss",
+      "org.apache.rocketmq.connect.kafka",
+      "org.apache.rocketmq.connect.mns",
+      "org.apache.rocketmq.connect.deltalake",
+      "org.apache.rocketmq.connect.iotdb",
+      "org.apache.rocketmq.connect.jdbc",
+      "org.apache.rocketmq.connect.iotdb.replicator",
+      "org.apache",
+      "org.apache.rocketmq.connect.jdbc.schema",
+      "org.apache.rocketmq",
+      "org.apache.connect",
+      "org",
+      "io.debezium.connector"
+    ]
+  },
+  "unknown_designite_smells": []
+}

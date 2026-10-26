@@ -1,0 +1,50 @@
+{
+  "project": "ballerina-platform__fhir-tools",
+  "n_nodes": 34,
+  "n_edges": 90,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 17,
+    "UD": 9,
+    "AI": 0,
+    "GC": 0,
+    "FC": 5,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 34,
+    "designite_packages": 34,
+    "matched": 34,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "io.ballerina.health",
+      "org.wso2",
+      "org.wso2.healthcare",
+      "org.wso2.healthcare.cds.codegen.ballerina",
+      "org.wso2.healthcare.fhir",
+      "org.wso2.healthcare.fhir.ballerina.connectorgen",
+      "org.wso2.healthcare.fhir.codegen",
+      "org.wso2.healthcare.fhir.ballerina",
+      "org.wso2.healthcare.cds",
+      "org.wso2.healthcare.cds.codegen",
+      "org",
+      "io",
+      "io.ballerina",
+      "io.ballerina.health.cmd.core",
+      "org.wso2.healthcare.fhir.ballerina.packagegen",
+      "org.wso2.healthcare.fhir.codegen.ballerina",
+      "org.wso2.healthcare.fhir.codegen.ballerina.project",
+      "org.wso2.healthcare.fhir.ballerina.packagegen.tool.modelgen.versions",
+      "org.wso2.healthcare.fhir.codegen.ballerina.project.tool.versions",
+      "org.wso2.healthcare.fhir.codegen.ballerina.project.tool.model.versions"
+    ]
+  },
+  "unknown_designite_smells": []
+}

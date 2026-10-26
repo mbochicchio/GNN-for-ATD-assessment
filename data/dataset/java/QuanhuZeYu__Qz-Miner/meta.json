@@ -1,0 +1,34 @@
+{
+  "project": "QuanhuZeYu__Qz-Miner",
+  "n_nodes": 42,
+  "n_edges": 228,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 26,
+    "UD": 16,
+    "AI": 0,
+    "GC": 7,
+    "FC": 8,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 42,
+    "designite_packages": 42,
+    "matched": 42,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "club",
+      "club.heiqi"
+    ]
+  },
+  "unknown_designite_smells": []
+}

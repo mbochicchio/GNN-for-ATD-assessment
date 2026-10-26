@@ -1,0 +1,100 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 114,
+  "source_files_removed": 63,
+  "source_files_after": 51,
+  "removed_share": 0.5526,
+  "removed_by_rule": {
+    "R1_arcan_default": 63
+  },
+  "removed_dirs": [
+    {
+      "path": "vertx-service-discovery/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 24
+    },
+    {
+      "path": "vertx-service-discovery/src/main/java/examples",
+      "rule": "R1_arcan_default",
+      "source_files": 12
+    },
+    {
+      "path": "vertx-service-discovery-backend-consul/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "vertx-service-discovery-backend-consul/src/main/java/examples",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "vertx-service-discovery-backend-redis/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "vertx-service-discovery-backend-redis/src/main/java/examples",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "vertx-service-discovery-backend-zookeeper/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "vertx-service-discovery-backend-zookeeper/src/main/java/examples",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "vertx-service-discovery-bridge-consul/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "vertx-service-discovery-bridge-consul/src/main/java/examples",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "vertx-service-discovery-bridge-docker/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "vertx-service-discovery-bridge-docker-links/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "vertx-service-discovery-bridge-docker-links/src/main/java/examples",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "vertx-service-discovery-bridge-kubernetes/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    },
+    {
+      "path": "vertx-service-discovery-bridge-kubernetes/src/main/java/examples",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "vertx-service-discovery-bridge-zookeeper/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "vertx-service-discovery-bridge-zookeeper/src/main/java/examples",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

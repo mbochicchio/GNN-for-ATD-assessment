@@ -1,0 +1,56 @@
+{
+  "project": "calimero-project__calimero-core",
+  "n_nodes": 23,
+  "n_edges": 107,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 13,
+    "UD": 7,
+    "AI": 0,
+    "GC": 3,
+    "FC": 9,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 23,
+    "designite_packages": 23,
+    "matched": 23,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "io.calimero",
+      "io.calimero.xml",
+      "io.calimero.log",
+      "io.calimero.cemi",
+      "io.calimero.process",
+      "io.calimero.buffer",
+      "io.calimero.dptxlator",
+      "io.calimero.datapoint",
+      "io.calimero.baos",
+      "io.calimero.knxnetip",
+      "io.calimero.link",
+      "io.calimero.serial",
+      "io.calimero.internal",
+      "io.calimero.mgmt",
+      "io.calimero.secure",
+      "io.calimero.serial.spi",
+      "io.calimero.serial.usb",
+      "io.calimero.serial.usb.spi",
+      "io.calimero.knxnetip.util",
+      "io.calimero.link.medium",
+      "io.calimero.knxnetip.servicetype",
+      "io",
+      "io.calimero.buffer.cache",
+      "io.calimero.baos.ip"
+    ]
+  },
+  "unknown_designite_smells": []
+}

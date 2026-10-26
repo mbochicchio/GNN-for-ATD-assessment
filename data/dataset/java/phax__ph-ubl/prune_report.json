@@ -1,0 +1,110 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 304,
+  "source_files_removed": 119,
+  "source_files_after": 185,
+  "removed_share": 0.3914,
+  "removed_by_rule": {
+    "R1_arcan_default": 119
+  },
+  "removed_dirs": [
+    {
+      "path": "ph-ubl-api/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "ph-ubl-dian/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 5
+    },
+    {
+      "path": "ph-ubl-eforms/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    },
+    {
+      "path": "ph-ubl-testfiles/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "ph-ubl-testfiles/src/main/resources/external/test-ubl",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "ph-ubl20/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 14
+    },
+    {
+      "path": "ph-ubl20-codelists/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    },
+    {
+      "path": "ph-ubl21/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 19
+    },
+    {
+      "path": "ph-ubl21-codelists/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "ph-ubl22/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 14
+    },
+    {
+      "path": "ph-ubl22-codelists/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "ph-ubl23/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 14
+    },
+    {
+      "path": "ph-ubl23-codelists/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "ph-ubl24/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 14
+    },
+    {
+      "path": "ph-ubl24-codelists/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "ph-ubl25/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 14
+    },
+    {
+      "path": "ph-ubl25-codelists/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "ph-ublpe/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    },
+    {
+      "path": "ph-ubltr/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 5
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

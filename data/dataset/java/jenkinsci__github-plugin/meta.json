@@ -1,0 +1,38 @@
+{
+  "project": "jenkinsci__github-plugin",
+  "n_nodes": 19,
+  "n_edges": 66,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 6,
+    "UD": 4,
+    "AI": 0,
+    "GC": 0,
+    "FC": 8,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 19,
+    "designite_packages": 19,
+    "matched": 19,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "org.jenkinsci",
+      "com",
+      "com.cloudbees",
+      "com.coravy",
+      "org",
+      "com.coravy.hudson",
+      "com.coravy.hudson.plugins",
+      "org.jenkinsci.plugins"
+    ]
+  },
+  "unknown_designite_smells": []
+}

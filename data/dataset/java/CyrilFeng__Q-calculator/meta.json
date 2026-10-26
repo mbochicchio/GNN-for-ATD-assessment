@@ -1,0 +1,35 @@
+{
+  "project": "CyrilFeng__Q-calculator",
+  "n_nodes": 9,
+  "n_edges": 16,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 2,
+    "UD": 1,
+    "AI": 0,
+    "GC": 0,
+    "FC": 1,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 9,
+    "designite_packages": 9,
+    "matched": 9,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com",
+      "com.github",
+      "com.github.qcalculator",
+      "com.github.qcalculator.core",
+      "com.github.qcalculator.core.model"
+    ]
+  },
+  "unknown_designite_smells": []
+}

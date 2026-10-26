@@ -1,0 +1,70 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 274,
+  "source_files_removed": 88,
+  "source_files_after": 186,
+  "removed_share": 0.3212,
+  "removed_by_rule": {
+    "R1_arcan_default": 88
+  },
+  "removed_dirs": [
+    {
+      "path": "aws-lambda-java-tests",
+      "rule": "R1_arcan_default",
+      "source_files": 22
+    },
+    {
+      "path": "lambda-integration-tests",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "samples",
+      "rule": "R1_arcan_default",
+      "source_files": 18
+    },
+    {
+      "path": "aws-lambda-java-events/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 5
+    },
+    {
+      "path": "aws-lambda-java-events-sdk-transformer/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 6
+    },
+    {
+      "path": "aws-lambda-java-log4j2/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "aws-lambda-java-runtime-interface-client/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "aws-lambda-java-runtime-interface-client/test-handlers",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "aws-lambda-java-runtime-interface-client/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 28
+    },
+    {
+      "path": "experimental/aws-lambda-java-profiler/examples",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    },
+    {
+      "path": "experimental/aws-lambda-java-profiler/integration_tests",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

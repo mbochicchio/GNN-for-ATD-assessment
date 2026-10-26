@@ -1,0 +1,35 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 120,
+  "source_files_removed": 33,
+  "source_files_after": 87,
+  "removed_share": 0.275,
+  "removed_by_rule": {
+    "R1_arcan_default": 33
+  },
+  "removed_dirs": [
+    {
+      "path": "demo",
+      "rule": "R1_arcan_default",
+      "source_files": 10
+    },
+    {
+      "path": "layering-cache-aspectj/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 12
+    },
+    {
+      "path": "layering-cache-core/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 10
+    },
+    {
+      "path": "layering-cache-web/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

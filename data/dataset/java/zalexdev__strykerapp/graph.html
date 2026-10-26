@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>zalexdev__strykerapp · dependency graph</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EEF1F0; --panel:#F8FAF9; --ink:#1B2733; --muted:#5E6B78; --rule:#D3DAD8;
+  --edge:#9AA7B2; --clean:#C3CCD3; --focus:#1B2733;
+  --CD:#D55E00; --UD:#0072B2; --AI:#CC79A7; --GC:#009E73; --FC:#E69F00; --SF:#56B4E9;
+  --s0:#C3CCD3; --s1:#F2C27B; --s2:#E58A3C; --s3:#C4462A; --s4:#8E1F2A;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+  --bg:#141B21; --panel:#1B242C; --ink:#E4EAEE; --muted:#93A1AD; --rule:#2C3842;
+  --edge:#4E5E6B; --clean:#3E4B56; --focus:#E4EAEE; --s0:#3E4B56;
+}}
+:root[data-theme="dark"]{
+  --bg:#141B21; --panel:#1B242C; --ink:#E4EAEE; --muted:#93A1AD; --rule:#2C3842;
+  --edge:#4E5E6B; --clean:#3E4B56; --focus:#E4EAEE; --s0:#3E4B56;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{height:100%; scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0; height:100%; background:var(--bg); color:var(--ink);
+  font:14px/1.5 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+.app{display:grid; grid-template-columns:320px 1fr; height:100%}
+aside{background:var(--panel); border-right:1px solid var(--rule); overflow-y:auto; padding:20px 20px 28px}
+h1{font:500 22px/1.2 "IBM Plex Sans Condensed","IBM Plex Sans",sans-serif; margin:0 0 4px; word-break:break-word}
+.sub{color:var(--muted); margin:0 0 18px}
+.stats{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-bottom:18px}
+.stat b{display:block; font-size:20px; font-weight:600}
+.stat span{color:var(--muted); font-size:12px}
+section{border-top:1px solid var(--rule); padding-top:14px; margin-top:14px}
+h2{font-size:13px; font-weight:600; margin:0 0 8px}
+label.ctl{display:block; color:var(--muted); font-size:12px; margin:8px 0 4px}
+select,input[type=search]{width:100%; font:inherit; color:var(--ink); background:var(--bg);
+  border:1px solid var(--rule); border-radius:6px; padding:6px 8px}
+select:focus-visible,input:focus-visible,button:focus-visible{outline:2px solid var(--focus); outline-offset:2px}
+.check{display:flex; gap:8px; align-items:center; margin-top:10px; color:var(--muted); font-size:13px}
+.legend{display:flex; flex-wrap:wrap; gap:6px 12px; margin-top:10px; font-size:12px}
+.dot{display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:7px; vertical-align:-1px}
+.legend i{display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:5px; vertical-align:-1px}
+table{width:100%; border-collapse:collapse; font-size:13px}
+td{padding:3px 0; border-bottom:1px solid var(--rule)}
+td:last-child{text-align:right; font-variant-numeric:tabular-nums}
+.chips{display:flex; flex-wrap:wrap; gap:6px; margin:8px 0}
+.chip{font-size:12px; padding:2px 8px; border-radius:10px; color:#fff}
+.chip.none{background:var(--clean); color:var(--ink)}
+.detail-name{font-weight:600; word-break:break-all; margin-bottom:4px}
+.note{color:var(--muted); font-size:12px}
+ol.rank{margin:0; padding-left:20px; font-size:13px}
+ol.rank li{margin:2px 0}
+ol.rank button{all:unset; cursor:pointer; word-break:break-all}
+ol.rank button:hover{text-decoration:underline}
+ol.rank .v{color:var(--muted); font-variant-numeric:tabular-nums}
+main{position:relative; overflow:hidden}
+svg{width:100%; height:100%; display:block; cursor:grab}
+.link{stroke:var(--edge); stroke-opacity:.55; fill:none}
+.node circle{stroke:var(--panel); stroke-width:1.5}
+.node.nomask circle{stroke-dasharray:3 2; stroke:var(--muted)}
+.node text{font-size:11px; fill:var(--ink); pointer-events:none; paint-order:stroke;
+  stroke:var(--bg); stroke-width:3px}
+.dim{opacity:.12}
+.node.sel circle{stroke:var(--focus); stroke-width:3}
+#tip{position:absolute; pointer-events:none; background:var(--panel); border:1px solid var(--rule);
+  border-radius:6px; padding:6px 9px; font-size:12px; max-width:320px; display:none; word-break:break-all}
+.hint{position:absolute; right:14px; bottom:12px; color:var(--muted); font-size:12px}
+@media (max-width:760px){
+  .app{grid-template-columns:1fr; grid-template-rows:auto 70vh; height:auto}
+  aside{border-right:0; border-bottom:1px solid var(--rule)}
+}
+@media (prefers-reduced-motion:reduce){ *{transition:none!important} }
+</style>
+</head>
+<body>
+<div class="app">
+<aside>
+  <h1 id="title"></h1>
+  <p class="sub">Package-level dependency graph with Designite smell labels</p>
+  <div class="stats">
+    <div class="stat"><b id="nN"></b><span>components</span></div>
+    <div class="stat"><b id="nE"></b><span>dependencies</span></div>
+    <div class="stat"><b id="nS"></b><span>smell-affected components</span></div>
+  </div>
+
+  <label class="ctl" for="colorBy">Colour nodes by</label>
+  <select id="colorBy">
+    <option value="count">Number of smells</option>
+    <option value="CD">Cyclic Dependency</option>
+    <option value="UD">Unstable Dependency</option>
+    <option value="AI">Ambiguous Interface</option>
+    <option value="GC">God Component</option>
+    <option value="FC">Feature Concentration</option>
+    <option value="SF">Scattered Functionality</option>
+    <option value="atdi">ATDI (Arcan)</option>
+  </select>
+  <div class="legend" id="legend"></div>
+
+  <label class="ctl" for="search">Find a component</label>
+  <input id="search" type="search" placeholder="e.g. analyzer" list="names" autocomplete="off">
+  <datalist id="names"></datalist>
+  <label class="check"><input type="checkbox" id="showLabels"> Show all node labels</label>
+
+  <section id="detail">
+    <h2>Selected component</h2>
+    <p class="note">Select a node to inspect its features, labels, and dependencies.</p>
+  </section>
+
+  <section>
+    <h2>Smell distribution</h2>
+    <table id="smellTable"></table>
+    <p class="note" id="ds"></p>
+  </section>
+
+  <section>
+    <h2>Highest ATDI</h2>
+    <ol class="rank" id="rank"></ol>
+  </section>
+</aside>
+<main>
+  <svg id="svg" role="img" aria-label="Dependency graph"></svg>
+  <div id="tip"></div>
+  <div class="hint">Drag to pan, scroll to zoom</div>
+</main>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script>
+const DATA = {"nodes": [{"id": 0, "name": "com.github.wrdlbrnft.sortedlistadapter", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 1.0, "In": 0.0, "D": 0.0, "FI": 0.0, "FO": 0.0, "LOC": 107.0, "PR": 0.0029484496571248386, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 1, "name": "com.race604.drawable.wave", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 0.0, "FO": 0.0, "LOC": 173.0, "PR": 0.0029484496571248386, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 2, "name": "com.stryker.terminal", "mask": 1, "atdi": 421.16998941692253, "units": 27, "Ab": 0.14814814814814814, "In": 0.5, "D": 0.35185185185185186, "FI": 1.0, "FO": 1.0, "LOC": 7985.0, "PR": 0.019382013876895324, "CD": 0, "UD": 0, "AI": 0, "GC": 1, "FC": 1, "SF": 0}, {"id": 3, "name": "com.stryker.terminal.backend", "mask": 1, "atdi": 0.0, "units": 13, "Ab": 0.07692307692307693, "In": 0.0, "D": 0.9230769230769231, "FI": 2.0, "FO": 0.0, "LOC": 2222.0, "PR": 0.0067086321088112326, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 4, "name": "com.stryker.terminal.bridge", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 0.0, "FO": 0.0, "LOC": 77.0, "PR": 0.0029484496571248386, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 5, "name": "com.stryker.terminal.component.pm", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 1.0, "LOC": 160.0, "PR": 0.0029484496571248386, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 6, "name": "com.stryker.terminal.framework", "mask": 1, "atdi": 11.50959865023529, "units": 1, "Ab": 0.0, "In": 0.9, "D": 0.09999999999999998, "FI": 1.0, "FO": 3.0, "LOC": 204.0, "PR": 0.007366463579497232, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 7, "name": "com.stryker.terminal.framework.database", "mask": 1, "atdi": 17.288876257787965, "units": 7, "Ab": 0.14285714285714285, "In": 0.75, "D": 0.1071428571428572, "FI": 3.0, "FO": 3.0, "LOC": 224.0, "PR": 0.015584435607297456, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 8, "name": "com.stryker.terminal.framework.database.annotation", "mask": 0, "atdi": 0.0, "units": 4, "Ab": 1.0, "In": 0.0, "D": 0.0, "FI": 2.0, "FO": 0.0, "LOC": 30.0, "PR": 0.009873251880621495, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 9, "name": "com.stryker.terminal.framework.database.bean", "mask": 1, "atdi": 11.445214027621187, "units": 1, "Ab": 0.0, "In": 0.25, "D": 0.75, "FI": 2.0, "FO": 1.0, "LOC": 12.0, "PR": 0.009454713782921547, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 10, "name": "com.stryker.terminal.framework.reflection", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 1.0, "FO": 0.0, "LOC": 138.0, "PR": 0.005036699860549153, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 11, "name": "com.stryker.terminal.frontend.session.terminal", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 1.0, "In": 0.0, "D": 0.0, "FI": 1.0, "FO": 0.0, "LOC": 2.0, "PR": 0.00420184380768697, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 12, "name": "com.stryker.terminal.frontend.session.view", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.3333333333333333, "In": 1.0, "D": 0.33333333333333326, "FI": 0.0, "FO": 2.0, "LOC": 680.0, "PR": 0.0029484496571248386, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 13, "name": "com.stryker.terminal.setup", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.5, "In": 1.0, "D": 0.5, "FI": 0.0, "FO": 1.0, "LOC": 80.0, "PR": 0.0029484496571248386, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 14, "name": "com.stryker.terminal.ui.other", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 0.0, "FO": 0.0, "LOC": 164.0, "PR": 0.0029484496571248386, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 15, "name": "com.stryker.terminal.ui.pm.view", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 0.0, "FO": 0.0, "LOC": 313.0, "PR": 0.0029484496571248386, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 16, "name": "com.stryker.terminal.utils", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 0.0, "FO": 0.0, "LOC": 14.0, "PR": 0.0029484496571248386, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 17, "name": "com.stryker.terminal.xorg", "mask": 1, "atdi": 5.205242331772174, "units": 1, "Ab": 1.0, "In": 0.09090909090909091, "D": 0.09090909090909083, "FI": 1.0, "FO": 1.0, "LOC": 21.0, "PR": 0.019382013876895324, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 18, "name": "com.zalexdev.stryker", "mask": 1, "atdi": 560.9689894709321, "units": 4, "Ab": 0.0, "In": 0.6851851851851852, "D": 0.31481481481481477, "FI": 13.0, "FO": 25.0, "LOC": 587.0, "PR": 0.017940544808878776, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 19, "name": "com.zalexdev.stryker.about", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 1.0, "FO": 0.0, "LOC": 371.0, "PR": 0.003558766079854414, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 20, "name": "com.zalexdev.stryker.account", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 1.0, "LOC": 46.0, "PR": 0.0029484496571248386, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 21, "name": "com.zalexdev.stryker.appintro", "mask": 1, "atdi": 27.529820379670507, "units": 1, "Ab": 0.0, "In": 0.6153846153846154, "D": 0.3846153846153846, "FI": 2.0, "FO": 2.0, "LOC": 94.0, "PR": 0.0043765535806785305, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 22, "name": "com.zalexdev.stryker.appintro.install", "mask": 1, "atdi": 0.0, "units": 5, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 7.0, "FO": 0.0, "LOC": 182.0, "PR": 0.007205700849185792, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 23, "name": "com.zalexdev.stryker.appintro.slides", "mask": 1, "atdi": 22.361458043361253, "units": 7, "Ab": 0.0, "In": 0.9375, "D": 0.0625, "FI": 1.0, "FO": 5.0, "LOC": 1126.0, "PR": 0.004809083266179807, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 24, "name": "com.zalexdev.stryker.arsenal", "mask": 1, "atdi": 31.8109128075708, "units": 9, "Ab": 0.0, "In": 0.7692307692307693, "D": 0.23076923076923073, "FI": 3.0, "FO": 6.0, "LOC": 1301.0, "PR": 0.00496590581093492, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 25, "name": "com.zalexdev.stryker.cameradar", "mask": 1, "atdi": 15.19281749920022, "units": 1, "Ab": 0.0, "In": 0.8888888888888888, "D": 0.11111111111111116, "FI": 1.0, "FO": 5.0, "LOC": 250.0, "PR": 0.003440689586102806, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 26, "name": "com.zalexdev.stryker.cameradar.install", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 1.0, "FO": 0.0, "LOC": 8.0, "PR": 0.003533519602916746, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 27, "name": "com.zalexdev.stryker.coremanger", "mask": 1, "atdi": 20.608834057522873, "units": 2, "Ab": 0.0, "In": 0.8, "D": 0.19999999999999996, "FI": 1.0, "FO": 4.0, "LOC": 410.0, "PR": 0.003558766079854414, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 28, "name": "com.zalexdev.stryker.custom", "mask": 1, "atdi": 101.16325709505547, "units": 17, "Ab": 0.0, "In": 0.02040816326530612, "D": 0.9795918367346939, "FI": 19.0, "FO": 1.0, "LOC": 679.0, "PR": 0.05899721788956462, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 29, "name": "com.zalexdev.stryker.dashboard", "mask": 1, "atdi": 36.32764830758851, "units": 5, "Ab": 0.0, "In": 0.8421052631578947, "D": 0.1578947368421053, "FI": 2.0, "FO": 6.0, "LOC": 763.0, "PR": 0.004033128609573021, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 30, "name": "com.zalexdev.stryker.engine", "mask": 1, "atdi": 105.47869344033315, "units": 18, "Ab": 0.0, "In": 0.2222222222222222, "D": 0.7777777777777778, "FI": 19.0, "FO": 4.0, "LOC": 2080.0, "PR": 0.049374446769811654, "CD": 1, "UD": 1, "AI": 0, "GC": 1, "FC": 0, "SF": 0}, {"id": 31, "name": "com.zalexdev.stryker.exploithub.utils", "mask": 1, "atdi": 22.468880008836358, "units": 1, "Ab": 0.0, "In": 0.6, "D": 0.4, "FI": 2.0, "FO": 3.0, "LOC": 70.0, "PR": 0.004144416550422206, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 32, "name": "com.zalexdev.stryker.geomac", "mask": 1, "atdi": 21.4235668621559, "units": 5, "Ab": 0.0, "In": 0.6666666666666666, "D": 0.33333333333333337, "FI": 2.0, "FO": 6.0, "LOC": 628.0, "PR": 0.004063082549110716, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 33, "name": "com.zalexdev.stryker.geomac.io", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.5, "D": 0.5, "FI": 1.0, "FO": 1.0, "LOC": 66.0, "PR": 0.003524237782476284, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 34, "name": "com.zalexdev.stryker.geomac.model", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 4.0, "FO": 0.0, "LOC": 55.0, "PR": 0.011015229078808333, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 35, "name": "com.zalexdev.stryker.geomac.store", "mask": 1, "atdi": 5.6470822555827, "units": 1, "Ab": 0.0, "In": 0.4, "D": 0.6, "FI": 1.0, "FO": 2.0, "LOC": 92.0, "PR": 0.003524237782476284, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 36, "name": "com.zalexdev.stryker.geomac.ui", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.3333333333333333, "D": 0.6666666666666667, "FI": 1.0, "FO": 1.0, "LOC": 80.0, "PR": 0.003524237782476284, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 37, "name": "com.zalexdev.stryker.handshakes", "mask": 1, "atdi": 37.901955153933685, "units": 2, "Ab": 0.0, "In": 0.75, "D": 0.25, "FI": 1.0, "FO": 3.0, "LOC": 371.0, "PR": 0.003558766079854414, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 38, "name": "com.zalexdev.stryker.handshakes.utils", "mask": 1, "atdi": 27.329811528448182, "units": 1, "Ab": 0.0, "In": 0.8571428571428571, "D": 0.1428571428571429, "FI": 1.0, "FO": 5.0, "LOC": 136.0, "PR": 0.003957082595637444, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 39, "name": "com.zalexdev.stryker.hid.backchannel", "mask": 1, "atdi": 28.679887514007746, "units": 7, "Ab": 0.0, "In": 0.5714285714285714, "D": 0.4285714285714286, "FI": 3.0, "FO": 2.0, "LOC": 521.0, "PR": 0.00619719724255637, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 40, "name": "com.zalexdev.stryker.hid.capability", "mask": 1, "atdi": 22.481656920456068, "units": 2, "Ab": 0.0, "In": 0.14285714285714285, "D": 0.8571428571428572, "FI": 4.0, "FO": 1.0, "LOC": 121.0, "PR": 0.006932696520768513, "CD": 0, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 41, "name": "com.zalexdev.stryker.hid.configfs", "mask": 1, "atdi": 33.42156991708024, "units": 5, "Ab": 0.0, "In": 0.3, "D": 0.7, "FI": 4.0, "FO": 2.0, "LOC": 253.0, "PR": 0.005656125327400194, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 42, "name": "com.zalexdev.stryker.hid.ducky", "mask": 1, "atdi": 17.546387389820403, "units": 6, "Ab": 0.16666666666666666, "In": 0.6363636363636364, "D": 0.19696969696969702, "FI": 3.0, "FO": 3.0, "LOC": 436.0, "PR": 0.006512366014732859, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 43, "name": "com.zalexdev.stryker.hid.exec", "mask": 1, "atdi": 17.13972586303899, "units": 2, "Ab": 0.0, "In": 0.9166666666666666, "D": 0.08333333333333337, "FI": 1.0, "FO": 5.0, "LOC": 100.0, "PR": 0.0032235313676282763, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 44, "name": "com.zalexdev.stryker.hid.keymap", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.0, "In": 0.25, "D": 0.75, "FI": 3.0, "FO": 1.0, "LOC": 108.0, "PR": 0.005617356202370433, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 45, "name": "com.zalexdev.stryker.hid.payload", "mask": 1, "atdi": 5.6688110120048085, "units": 2, "Ab": 0.0, "In": 0.25, "D": 0.75, "FI": 1.0, "FO": 1.0, "LOC": 176.0, "PR": 0.0032235313676282763, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 46, "name": "com.zalexdev.stryker.hid.report", "mask": 1, "atdi": 0.0, "units": 4, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 4.0, "FO": 0.0, "LOC": 122.0, "PR": 0.012752970759826749, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 47, "name": "com.zalexdev.stryker.hid.ui", "mask": 1, "atdi": 68.97310268530518, "units": 3, "Ab": 0.0, "In": 0.9545454545454546, "D": 0.045454545454545414, "FI": 1.0, "FO": 11.0, "LOC": 779.0, "PR": 0.003558766079854414, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 48, "name": "com.zalexdev.stryker.hid.ui.editor", "mask": 1, "atdi": 5.978678975004638, "units": 4, "Ab": 0.0, "In": 0.8, "D": 0.19999999999999996, "FI": 1.0, "FO": 1.0, "LOC": 291.0, "PR": 0.0032235313676282763, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 49, "name": "com.zalexdev.stryker.hydra", "mask": 1, "atdi": 20.122581471367557, "units": 3, "Ab": 0.0, "In": 0.9166666666666666, "D": 0.08333333333333337, "FI": 1.0, "FO": 6.0, "LOC": 621.0, "PR": 0.003440689586102806, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 50, "name": "com.zalexdev.stryker.hydra.install", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 1.0, "FO": 0.0, "LOC": 7.0, "PR": 0.0034360079452847615, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 51, "name": "com.zalexdev.stryker.install", "mask": 1, "atdi": 36.17747755905942, "units": 1, "Ab": 0.0, "In": 0.4, "D": 0.6, "FI": 5.0, "FO": 3.0, "LOC": 414.0, "PR": 0.0056841863840422745, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 52, "name": "com.zalexdev.stryker.license", "mask": 1, "atdi": 9.90668998457927, "units": 1, "Ab": 0.0, "In": 0.6666666666666666, "D": 0.33333333333333337, "FI": 1.0, "FO": 2.0, "LOC": 66.0, "PR": 0.028923726972963075, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 53, "name": "com.zalexdev.stryker.localnetwork", "mask": 1, "atdi": 117.51329350241652, "units": 3, "Ab": 0.0, "In": 0.8235294117647058, "D": 0.17647058823529416, "FI": 3.0, "FO": 8.0, "LOC": 1068.0, "PR": 0.004631394313806245, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 54, "name": "com.zalexdev.stryker.localnetwork.exploits", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 1.0, "LOC": 163.0, "PR": 0.0029484496571248386, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 55, "name": "com.zalexdev.stryker.localnetwork.nonroot", "mask": 1, "atdi": 22.862838375452252, "units": 20, "Ab": 0.05, "In": 0.8333333333333334, "D": 0.11666666666666659, "FI": 1.0, "FO": 4.0, "LOC": 3314.0, "PR": 0.003533519602916746, "CD": 0, "UD": 0, "AI": 0, "GC": 1, "FC": 0, "SF": 0}, {"id": 56, "name": "com.zalexdev.stryker.localnetwork.utils", "mask": 1, "atdi": 44.68078894698968, "units": 7, "Ab": 0.14285714285714285, "In": 0.7777777777777778, "D": 0.0793650793650793, "FI": 1.0, "FO": 5.0, "LOC": 710.0, "PR": 0.003440689586102806, "CD": 0, "UD": 1, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 57, "name": "com.zalexdev.stryker.logger", "mask": 1, "atdi": 412.1775523082679, "units": 7, "Ab": 0.0, "In": 0.07407407407407407, "D": 0.9259259259259259, "FI": 11.0, "FO": 2.0, "LOC": 923.0, "PR": 0.05038773564526956, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 58, "name": "com.zalexdev.stryker.macchanger", "mask": 1, "atdi": 10.462779099445875, "units": 2, "Ab": 0.0, "In": 0.8333333333333334, "D": 0.16666666666666663, "FI": 1.0, "FO": 2.0, "LOC": 383.0, "PR": 0.003558766079854414, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 59, "name": "com.zalexdev.stryker.metasploit", "mask": 1, "atdi": 52.815276337010914, "units": 5, "Ab": 0.0, "In": 0.8421052631578947, "D": 0.1578947368421053, "FI": 3.0, "FO": 9.0, "LOC": 929.0, "PR": 0.005021056432106034, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 60, "name": "com.zalexdev.stryker.metasploit.adapters", "mask": 1, "atdi": 16.013098091792205, "units": 2, "Ab": 0.0, "In": 0.6666666666666666, "D": 0.33333333333333337, "FI": 1.0, "FO": 3.0, "LOC": 232.0, "PR": 0.0034228121868434456, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 61, "name": "com.zalexdev.stryker.metasploit.install", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 1.0, "FO": 0.0, "LOC": 13.0, "PR": 0.0034228121868434456, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 62, "name": "com.zalexdev.stryker.metasploit.utils", "mask": 1, "atdi": 33.439002094604895, "units": 3, "Ab": 0.3333333333333333, "In": 0.5833333333333334, "D": 0.08333333333333326, "FI": 3.0, "FO": 4.0, "LOC": 325.0, "PR": 0.007576092731734636, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 63, "name": "com.zalexdev.stryker.netdetect", "mask": 1, "atdi": 0.0, "units": 13, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 3.0, "FO": 0.0, "LOC": 724.0, "PR": 0.040033000197769585, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 64, "name": "com.zalexdev.stryker.nmap", "mask": 1, "atdi": 16.496145121350725, "units": 1, "Ab": 0.0, "In": 0.6666666666666666, "D": 0.33333333333333337, "FI": 1.0, "FO": 2.0, "LOC": 442.0, "PR": 0.003558766079854414, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 65, "name": "com.zalexdev.stryker.nmap.utils", "mask": 1, "atdi": 11.094564811483032, "units": 1, "Ab": 0.0, "In": 0.6666666666666666, "D": 0.33333333333333337, "FI": 1.0, "FO": 2.0, "LOC": 83.0, "PR": 0.004461399064893746, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 66, "name": "com.zalexdev.stryker.nuclei", "mask": 1, "atdi": 36.60937898103319, "units": 7, "Ab": 0.0, "In": 0.9166666666666666, "D": 0.08333333333333337, "FI": 1.0, "FO": 7.0, "LOC": 1556.0, "PR": 0.003558766079854414, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 67, "name": "com.zalexdev.stryker.nuclei.install", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 1.0, "FO": 0.0, "LOC": 11.0, "PR": 0.0033807209164873836, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 68, "name": "com.zalexdev.stryker.ota", "mask": 1, "atdi": 106.14459145362531, "units": 13, "Ab": 0.0, "In": 0.375, "D": 0.625, "FI": 4.0, "FO": 3.0, "LOC": 559.0, "PR": 0.015447054013461213, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 69, "name": "com.zalexdev.stryker.searchsploit", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 3.0, "LOC": 60.0, "PR": 0.0029484496571248386, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 70, "name": "com.zalexdev.stryker.settings", "mask": 1, "atdi": 412.5522643066164, "units": 4, "Ab": 0.0, "In": 0.8333333333333334, "D": 0.16666666666666663, "FI": 2.0, "FO": 6.0, "LOC": 647.0, "PR": 0.024989346501316494, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 71, "name": "com.zalexdev.stryker.settings.commands", "mask": 1, "atdi": 12.485510324250196, "units": 2, "Ab": 0.0, "In": 0.75, "D": 0.25, "FI": 1.0, "FO": 2.0, "LOC": 190.0, "PR": 0.006491413779286454, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 72, "name": "com.zalexdev.stryker.usbarsenal", "mask": 1, "atdi": 16.5013956725883, "units": 2, "Ab": 0.0, "In": 0.6666666666666666, "D": 0.33333333333333337, "FI": 2.0, "FO": 3.0, "LOC": 188.0, "PR": 0.00398000607151273, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 73, "name": "com.zalexdev.stryker.usbarsenal.ui", "mask": 1, "atdi": 33.1601661178818, "units": 4, "Ab": 0.0, "In": 0.9, "D": 0.09999999999999998, "FI": 1.0, "FO": 4.0, "LOC": 376.0, "PR": 0.003558766079854414, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 74, "name": "com.zalexdev.stryker.utils", "mask": 1, "atdi": 366.244812294842, "units": 15, "Ab": 0.2, "In": 0.16129032258064516, "D": 0.6387096774193548, "FI": 42.0, "FO": 5.0, "LOC": 1784.0, "PR": 0.15268847990922615, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 75, "name": "com.zalexdev.stryker.vnc", "mask": 1, "atdi": 10.809337914507882, "units": 2, "Ab": 0.0, "In": 0.9090909090909091, "D": 0.09090909090909094, "FI": 1.0, "FO": 4.0, "LOC": 647.0, "PR": 0.003558766079854414, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 76, "name": "com.zalexdev.stryker.vnc.install", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 1.0, "FO": 0.0, "LOC": 9.0, "PR": 0.0037049243610092924, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 77, "name": "com.zalexdev.stryker.wifi", "mask": 1, "atdi": 31.253367264516022, "units": 3, "Ab": 0.0, "In": 0.9166666666666666, "D": 0.08333333333333337, "FI": 1.0, "FO": 6.0, "LOC": 1651.0, "PR": 0.003558766079854414, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 78, "name": "com.zalexdev.stryker.wpair", "mask": 1, "atdi": 10.355615552714799, "units": 11, "Ab": 0.0, "In": 0.75, "D": 0.25, "FI": 1.0, "FO": 2.0, "LOC": 2522.0, "PR": 0.003558766079854414, "CD": 0, "UD": 0, "AI": 0, "GC": 1, "FC": 1, "SF": 0}, {"id": 79, "name": "de.mrapp.android.tabswitcher", "mask": 1, "atdi": 35.0719194523709, "units": 12, "Ab": 0.4166666666666667, "In": 0.3333333333333333, "D": 0.25, "FI": 6.0, "FO": 4.0, "LOC": 763.0, "PR": 0.039115164400569065, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 80, "name": "de.mrapp.android.tabswitcher.drawable", "mask": 1, "atdi": 5.219000759607672, "units": 1, "Ab": 0.0, "In": 0.8, "D": 0.19999999999999996, "FI": 1.0, "FO": 1.0, "LOC": 83.0, "PR": 0.007714505044081393, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 81, "name": "de.mrapp.android.tabswitcher.iterator", "mask": 1, "atdi": 10.12631182636018, "units": 3, "Ab": 0.3333333333333333, "In": 0.5, "D": 0.16666666666666674, "FI": 1.0, "FO": 2.0, "LOC": 108.0, "PR": 0.007015768709219557, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 82, "name": "de.mrapp.android.tabswitcher.layout", "mask": 1, "atdi": 14.926459346381614, "units": 6, "Ab": 0.8333333333333334, "In": 0.46153846153846156, "D": 0.29487179487179493, "FI": 3.0, "FO": 2.0, "LOC": 449.0, "PR": 0.0232580939545731, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 83, "name": "de.mrapp.android.tabswitcher.layout.phone", "mask": 1, "atdi": 25.052771172741796, "units": 6, "Ab": 0.0, "In": 0.9130434782608695, "D": 0.08695652173913049, "FI": 2.0, "FO": 4.0, "LOC": 2237.0, "PR": 0.01919077490247838, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 84, "name": "de.mrapp.android.tabswitcher.model", "mask": 1, "atdi": 20.87600303843069, "units": 6, "Ab": 0.3333333333333333, "In": 0.5, "D": 0.16666666666666674, "FI": 4.0, "FO": 3.0, "LOC": 633.0, "PR": 0.028140741500794514, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 85, "name": "de.mrapp.android.tabswitcher.view", "mask": 1, "atdi": 10.438001519215344, "units": 1, "Ab": 0.0, "In": 0.8333333333333334, "D": 0.16666666666666663, "FI": 1.0, "FO": 2.0, "LOC": 46.0, "PR": 0.011239048626551285, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}], "edges": [{"source": 2, "target": 17, "w": 10.0}, {"source": 5, "target": 8, "w": 2.0}, {"source": 6, "target": 7, "w": 7.0}, {"source": 6, "target": 9, "w": 1.0}, {"source": 6, "target": 10, "w": 1.0}, {"source": 7, "target": 6, "w": 1.0}, {"source": 7, "target": 8, "w": 5.0}, {"source": 7, "target": 9, "w": 2.0}, {"source": 9, "target": 7, "w": 1.0}, {"source": 12, "target": 3, "w": 12.0}, {"source": 12, "target": 11, "w": 1.0}, {"source": 13, "target": 3, "w": 1.0}, {"source": 17, "target": 2, "w": 1.0}, {"source": 18, "target": 19, "w": 1.0}, {"source": 18, "target": 21, "w": 1.0}, {"source": 18, "target": 24, "w": 1.0}, {"source": 18, "target": 27, "w": 1.0}, {"source": 18, "target": 28, "w": 2.0}, {"source": 18, "target": 29, "w": 1.0}, {"source": 18, "target": 30, "w": 5.0}, {"source": 18, "target": 32, "w": 1.0}, {"source": 18, "target": 37, "w": 1.0}, {"source": 18, "target": 47, "w": 1.0}, {"source": 18, "target": 53, "w": 1.0}, {"source": 18, "target": 57, "w": 4.0}, {"source": 18, "target": 58, "w": 1.0}, {"source": 18, "target": 59, "w": 1.0}, {"source": 18, "target": 62, "w": 1.0}, {"source": 18, "target": 63, "w": 3.0}, {"source": 18, "target": 64, "w": 1.0}, {"source": 18, "target": 66, "w": 1.0}, {"source": 18, "target": 68, "w": 3.0}, {"source": 18, "target": 70, "w": 1.0}, {"source": 18, "target": 73, "w": 1.0}, {"source": 18, "target": 74, "w": 2.0}, {"source": 18, "target": 75, "w": 1.0}, {"source": 18, "target": 77, "w": 1.0}, {"source": 18, "target": 78, "w": 1.0}, {"source": 20, "target": 74, "w": 1.0}, {"source": 21, "target": 23, "w": 7.0}, {"source": 21, "target": 30, "w": 1.0}, {"source": 23, "target": 21, "w": 4.0}, {"source": 23, "target": 22, "w": 7.0}, {"source": 23, "target": 30, "w": 8.0}, {"source": 23, "target": 68, "w": 3.0}, {"source": 23, "target": 74, "w": 7.0}, {"source": 24, "target": 18, "w": 1.0}, {"source": 24, "target": 22, "w": 4.0}, {"source": 24, "target": 28, "w": 9.0}, {"source": 24, "target": 30, "w": 2.0}, {"source": 24, "target": 31, "w": 1.0}, {"source": 24, "target": 74, "w": 8.0}, {"source": 25, "target": 22, "w": 4.0}, {"source": 25, "target": 26, "w": 1.0}, {"source": 25, "target": 51, "w": 1.0}, {"source": 25, "target": 53, "w": 1.0}, {"source": 25, "target": 74, "w": 1.0}, {"source": 27, "target": 28, "w": 2.0}, {"source": 27, "target": 30, "w": 2.0}, {"source": 27, "target": 51, "w": 1.0}, {"source": 27, "target": 74, "w": 2.0}, {"source": 28, "target": 74, "w": 1.0}, {"source": 29, "target": 18, "w": 2.0}, {"source": 29, "target": 24, "w": 1.0}, {"source": 29, "target": 28, "w": 3.0}, {"source": 29, "target": 30, "w": 8.0}, {"source": 29, "target": 68, "w": 1.0}, {"source": 29, "target": 74, "w": 5.0}, {"source": 30, "target": 57, "w": 2.0}, {"source": 30, "target": 63, "w": 2.0}, {"source": 30, "target": 68, "w": 3.0}, {"source": 30, "target": 74, "w": 8.0}, {"source": 31, "target": 30, "w": 1.0}, {"source": 31, "target": 57, "w": 1.0}, {"source": 31, "target": 74, "w": 1.0}, {"source": 32, "target": 18, "w": 1.0}, {"source": 32, "target": 33, "w": 1.0}, {"source": 32, "target": 34, "w": 4.0}, {"source": 32, "target": 35, "w": 3.0}, {"source": 32, "target": 36, "w": 2.0}, {"source": 32, "target": 74, "w": 4.0}, {"source": 33, "target": 34, "w": 1.0}, {"source": 35, "target": 34, "w": 1.0}, {"source": 35, "target": 74, "w": 1.0}, {"source": 36, "target": 34, "w": 1.0}, {"source": 37, "target": 28, "w": 1.0}, {"source": 37, "target": 38, "w": 1.0}, {"source": 37, "target": 74, "w": 2.0}, {"source": 38, "target": 18, "w": 1.0}, {"source": 38, "target": 28, "w": 1.0}, {"source": 38, "target": 30, "w": 1.0}, {"source": 38, "target": 57, "w": 1.0}, {"source": 38, "target": 74, "w": 2.0}, {"source": 39, "target": 46, "w": 4.0}, {"source": 39, "target": 74, "w": 2.0}, {"source": 40, "target": 74, "w": 1.0}, {"source": 41, "target": 40, "w": 2.0}, {"source": 41, "target": 74, "w": 1.0}, {"source": 42, "target": 39, "w": 1.0}, {"source": 42, "target": 44, "w": 2.0}, {"source": 42, "target": 46, "w": 6.0}, {"source": 43, "target": 40, "w": 3.0}, {"source": 43, "target": 41, "w": 1.0}, {"source": 43, "target": 42, "w": 5.0}, {"source": 43, "target": 44, "w": 2.0}, {"source": 43, "target": 46, "w": 1.0}, {"source": 44, "target": 46, "w": 1.0}, {"source": 45, "target": 74, "w": 1.0}, {"source": 47, "target": 18, "w": 1.0}, {"source": 47, "target": 39, "w": 2.0}, {"source": 47, "target": 40, "w": 4.0}, {"source": 47, "target": 41, "w": 3.0}, {"source": 47, "target": 42, "w": 2.0}, {"source": 47, "target": 43, "w": 2.0}, {"source": 47, "target": 44, "w": 1.0}, {"source": 47, "target": 45, "w": 4.0}, {"source": 47, "target": 48, "w": 4.0}, {"source": 47, "target": 72, "w": 1.0}, {"source": 47, "target": 74, "w": 2.0}, {"source": 48, "target": 42, "w": 4.0}, {"source": 49, "target": 22, "w": 4.0}, {"source": 49, "target": 28, "w": 1.0}, {"source": 49, "target": 50, "w": 1.0}, {"source": 49, "target": 51, "w": 1.0}, {"source": 49, "target": 53, "w": 1.0}, {"source": 49, "target": 74, "w": 5.0}, {"source": 51, "target": 18, "w": 1.0}, {"source": 51, "target": 30, "w": 2.0}, {"source": 51, "target": 74, "w": 1.0}, {"source": 52, "target": 28, "w": 1.0}, {"source": 52, "target": 74, "w": 1.0}, {"source": 53, "target": 18, "w": 1.0}, {"source": 53, "target": 25, "w": 1.0}, {"source": 53, "target": 28, "w": 6.0}, {"source": 53, "target": 31, "w": 1.0}, {"source": 53, "target": 49, "w": 2.0}, {"source": 53, "target": 56, "w": 2.0}, {"source": 53, "target": 59, "w": 2.0}, {"source": 53, "target": 74, "w": 4.0}, {"source": 54, "target": 74, "w": 3.0}, {"source": 55, "target": 28, "w": 2.0}, {"source": 55, "target": 30, "w": 1.0}, {"source": 55, "target": 57, "w": 9.0}, {"source": 55, "target": 74, "w": 3.0}, {"source": 56, "target": 28, "w": 5.0}, {"source": 56, "target": 30, "w": 1.0}, {"source": 56, "target": 55, "w": 1.0}, {"source": 56, "target": 57, "w": 2.0}, {"source": 56, "target": 74, "w": 7.0}, {"source": 57, "target": 70, "w": 1.0}, {"source": 57, "target": 74, "w": 2.0}, {"source": 58, "target": 30, "w": 1.0}, {"source": 58, "target": 74, "w": 7.0}, {"source": 59, "target": 18, "w": 3.0}, {"source": 59, "target": 22, "w": 3.0}, {"source": 59, "target": 28, "w": 5.0}, {"source": 59, "target": 29, "w": 2.0}, {"source": 59, "target": 51, "w": 1.0}, {"source": 59, "target": 60, "w": 2.0}, {"source": 59, "target": 61, "w": 1.0}, {"source": 59, "target": 62, "w": 6.0}, {"source": 59, "target": 74, "w": 6.0}, {"source": 60, "target": 28, "w": 3.0}, {"source": 60, "target": 59, "w": 1.0}, {"source": 60, "target": 74, "w": 2.0}, {"source": 62, "target": 28, "w": 2.0}, {"source": 62, "target": 30, "w": 3.0}, {"source": 62, "target": 57, "w": 1.0}, {"source": 62, "target": 74, "w": 2.0}, {"source": 64, "target": 65, "w": 1.0}, {"source": 64, "target": 74, "w": 1.0}, {"source": 65, "target": 30, "w": 1.0}, {"source": 65, "target": 74, "w": 1.0}, {"source": 66, "target": 18, "w": 1.0}, {"source": 66, "target": 22, "w": 4.0}, {"source": 66, "target": 28, "w": 9.0}, {"source": 66, "target": 30, "w": 1.0}, {"source": 66, "target": 51, "w": 2.0}, {"source": 66, "target": 67, "w": 1.0}, {"source": 66, "target": 74, "w": 5.0}, {"source": 68, "target": 18, "w": 1.0}, {"source": 68, "target": 28, "w": 2.0}, {"source": 68, "target": 74, "w": 1.0}, {"source": 69, "target": 24, "w": 1.0}, {"source": 69, "target": 30, "w": 1.0}, {"source": 69, "target": 74, "w": 2.0}, {"source": 70, "target": 18, "w": 1.0}, {"source": 70, "target": 30, "w": 5.0}, {"source": 70, "target": 57, "w": 1.0}, {"source": 70, "target": 62, "w": 1.0}, {"source": 70, "target": 71, "w": 1.0}, {"source": 70, "target": 74, "w": 3.0}, {"source": 71, "target": 28, "w": 2.0}, {"source": 71, "target": 74, "w": 3.0}, {"source": 72, "target": 39, "w": 1.0}, {"source": 72, "target": 41, "w": 6.0}, {"source": 73, "target": 40, "w": 2.0}, {"source": 73, "target": 41, "w": 9.0}, {"source": 73, "target": 72, "w": 1.0}, {"source": 73, "target": 74, "w": 2.0}, {"source": 74, "target": 28, "w": 9.0}, {"source": 74, "target": 30, "w": 9.0}, {"source": 74, "target": 52, "w": 1.0}, {"source": 74, "target": 57, "w": 8.0}, {"source": 74, "target": 63, "w": 1.0}, {"source": 75, "target": 18, "w": 1.0}, {"source": 75, "target": 22, "w": 4.0}, {"source": 75, "target": 74, "w": 5.0}, {"source": 75, "target": 76, "w": 1.0}, {"source": 77, "target": 18, "w": 2.0}, {"source": 77, "target": 28, "w": 3.0}, {"source": 77, "target": 30, "w": 2.0}, {"source": 77, "target": 32, "w": 2.0}, {"source": 77, "target": 57, "w": 2.0}, {"source": 77, "target": 74, "w": 9.0}, {"source": 78, "target": 57, "w": 2.0}, {"source": 78, "target": 74, "w": 3.0}, {"source": 79, "target": 82, "w": 2.0}, {"source": 79, "target": 83, "w": 2.0}, {"source": 79, "target": 84, "w": 2.0}, {"source": 79, "target": 85, "w": 1.0}, {"source": 80, "target": 79, "w": 4.0}, {"source": 81, "target": 79, "w": 1.0}, {"source": 81, "target": 84, "w": 4.0}, {"source": 82, "target": 79, "w": 7.0}, {"source": 82, "target": 84, "w": 4.0}, {"source": 83, "target": 79, "w": 19.0}, {"source": 83, "target": 81, "w": 7.0}, {"source": 83, "target": 82, "w": 10.0}, {"source": 83, "target": 84, "w": 10.0}, {"source": 84, "target": 79, "w": 16.0}, {"source": 84, "target": 82, "w": 1.0}, {"source": 84, "target": 83, "w": 1.0}, {"source": 85, "target": 79, "w": 4.0}, {"source": 85, "target": 80, "w": 1.0}], "meta": {"project": "zalexdev__strykerapp", "n_nodes": 86, "n_edges": 235, "graph_level_smells": [], "dense_structure": 0, "label_counts": {"CD": 13, "UD": 9, "AI": 0, "GC": 4, "FC": 19, "SF": 0}, "matching": {"arcan_nodes": 86, "designite_packages": 85, "matched": 85, "coverage": 0.9884, "arcan_only": ["com.stryker.terminal.framework.database.annotation"], "designite_only": [], "smelly_packages_not_in_graph": []}, "dropped_containers": {"default_package": [], "empty_container": ["com.github.wrdlbrnft", "com.race604", "com.race604.drawable", "de.mrapp", "de.mrapp.android", "com.stryker.terminal.ui", "com.stryker.terminal.ui.pm", "com.google.android.material", "com.stryker.terminal.frontend.session", "com.stryker", "com.zalexdev.stryker.exploithub", "com.zalexdev.stryker.hid", "com.google", "com.google.android", "de", "com.google.android.material.bottomsheet", "com.stryker.terminal.component", "com.stryker.terminal.frontend", "android", "android.util", "com.zalexdev", "com", "com.github"]}, "unknown_designite_smells": []}};
+const LABELS = ["CD","UD","AI","GC","FC","SF"];
+const NAMES = {CD:"Cyclic Dependency",UD:"Unstable Dependency",AI:"Ambiguous Interface",
+  GC:"God Component",FC:"Feature Concentration",SF:"Scattered Functionality"};
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const nodes = DATA.nodes.map(d => ({...d, nSmell: LABELS.reduce((s,k)=>s+d[k],0),
+  short: d.name.split(".").slice(-1)[0] || d.name}));
+const byId = new Map(nodes.map(d => [d.id, d]));
+const links = DATA.edges.map(e => ({...e}));
+const meta = DATA.meta;
+let current = null;
+
+// ---------- sidebar ----------
+document.getElementById("title").textContent = meta.project;
+document.getElementById("nN").textContent = nodes.length;
+document.getElementById("nE").textContent = links.length;
+document.getElementById("nS").textContent = nodes.filter(d => d.nSmell > 0).length;
+document.getElementById("names").innerHTML = nodes.map(d => `<option value="${d.name}">`).join("");
+document.getElementById("smellTable").innerHTML = LABELS.map(k =>
+  `<tr><td><i class="dot" style="background:var(--${k})"></i>${NAMES[k]}</td>
+   <td>${meta.label_counts[k]} / ${nodes.length}</td></tr>`).join("");
+document.getElementById("ds").textContent = meta.dense_structure
+  ? "Dense Structure detected at project level (not assigned to individual nodes)."
+  : "Dense Structure not detected.";
+const unmasked = nodes.filter(d => !d.mask).length;
+if (unmasked) document.getElementById("ds").textContent +=
+  ` ${unmasked} nodes not analysed by Designite (dashed outline): labels unavailable.`;
+const rank = [...nodes].sort((a,b) => b.atdi - a.atdi).slice(0,10);
+document.getElementById("rank").innerHTML = rank.map(d =>
+  `<li><button data-id="${d.id}">${d.short}</button> <span class="v">${d.atdi.toFixed(1)}</span></li>`).join("");
+document.querySelectorAll("#rank button").forEach(b =>
+  b.addEventListener("click", () => select(byId.get(+b.dataset.id), true)));
+
+// ---------- graph ----------
+const svg = d3.select("#svg"), g = svg.append("g");
+const W = () => svg.node().clientWidth, H = () => svg.node().clientHeight;
+const maxLoc = d3.max(nodes, d => d.LOC) || 1;
+const r = d3.scaleSqrt().domain([0, maxLoc]).range([4, 26]);
+const wScale = d3.scaleLog().domain([1, d3.max(links, d => d.w) || 1]).range([0.6, 3.5]);
+const maxAtdi = d3.max(nodes, d => d.atdi) || 1;
+
+svg.append("defs").append("marker").attr("id","arrow").attr("viewBox","0 -4 8 8")
+  .attr("refX",8).attr("refY",0).attr("markerUnits","userSpaceOnUse").attr("markerWidth",9).attr("markerHeight",9).attr("orient","auto")
+  .append("path").attr("d","M0,-4L8,0L0,4").attr("fill","var(--edge)");
+
+const link = g.append("g").selectAll("path").data(links).join("path")
+  .attr("class","link").attr("stroke-width", d => wScale(Math.max(1,d.w))).attr("marker-end","url(#arrow)");
+const node = g.append("g").selectAll("g").data(nodes).join("g")
+  .attr("class", d => "node" + (d.mask ? "" : " nomask")).attr("tabindex",0)
+  .attr("aria-label", d => d.name);
+node.append("circle").attr("r", d => r(d.LOC));
+node.append("text").attr("dy", d => -r(d.LOC) - 4).attr("text-anchor","middle").text(d => d.short);
+
+const sim = d3.forceSimulation(nodes)
+  .force("link", d3.forceLink(links).id(d => d.id).distance(95).strength(0.2))
+  .force("charge", d3.forceManyBody().strength(-420))
+  .force("collide", d3.forceCollide(d => r(d.LOC) + 6))
+  .force("x", d3.forceX(() => W()/2).strength(0.05))
+  .force("y", d3.forceY(() => H()/2).strength(0.05))
+  .on("tick", ticked).on("end", fit);
+if (matchMedia("(prefers-reduced-motion: reduce)").matches) { sim.stop(); for (let i=0;i<300;i++) sim.tick(); ticked(); setTimeout(fit, 0); }
+let fitted = false;
+function fit(){
+  if (fitted) return; fitted = true;
+  const pad = 40, xs = nodes.map(d => d.x), ys = nodes.map(d => d.y);
+  const x0 = d3.min(xs) - pad, x1 = d3.max(xs) + pad, y0 = d3.min(ys) - pad, y1 = d3.max(ys) + pad;
+  const k = Math.min(2, 0.95 / Math.max((x1 - x0) / W(), (y1 - y0) / H()));
+  svg.transition().duration(600).call(zoom.transform,
+    d3.zoomIdentity.translate(W()/2, H()/2).scale(k).translate(-(x0 + x1)/2, -(y0 + y1)/2));
+}
+
+function ticked(){
+  link.attr("d", d => {
+    const dx = d.target.x - d.source.x, dy = d.target.y - d.source.y, L = Math.hypot(dx,dy) || 1;
+    const rt = r(d.target.LOC) + 3, rs = r(d.source.LOC);
+    return `M${d.source.x + dx*rs/L},${d.source.y + dy*rs/L}L${d.target.x - dx*rt/L},${d.target.y - dy*rt/L}`;
+  });
+  node.attr("transform", d => `translate(${d.x},${d.y})`);
+}
+
+node.call(d3.drag()
+  .on("start", (e,d) => { if(!e.active) sim.alphaTarget(0.3).restart(); d.fx=d.x; d.fy=d.y; })
+  .on("drag", (e,d) => { d.fx=e.x; d.fy=e.y; })
+  .on("end", (e,d) => { if(!e.active) sim.alphaTarget(0); d.fx=null; d.fy=null; }));
+const zoom = d3.zoom().scaleExtent([0.2,6]).on("zoom", e => g.attr("transform", e.transform));
+svg.call(zoom).on("click", e => { if (e.target === svg.node()) select(null); });
+
+// ---------- colour ----------
+function colour(d){
+  const m = document.getElementById("colorBy").value;
+  if (m === "count") return css("--s" + Math.min(d.nSmell, 4));
+  if (m === "atdi") return d3.interpolateLab(css("--s0"), css("--s4"))(Math.sqrt(d.atdi / maxAtdi));
+  return d[m] ? css("--" + m) : css("--clean");
+}
+function legend(){
+  const m = document.getElementById("colorBy").value, el = document.getElementById("legend");
+  if (m === "count") el.innerHTML = [0,1,2,3,4].map(i =>
+    `<span><i style="background:var(--s${i})"></i>${i===4?"4+":i} ${i===1?"smell":"smells"}</span>`).join("");
+  else if (m === "atdi") el.innerHTML = `<span><i style="background:var(--s0)"></i>0</span>
+    <span><i style="background:var(--s4)"></i>${maxAtdi.toFixed(0)}</span>`;
+  else el.innerHTML = `<span><i style="background:var(--${m})"></i>affected</span>
+    <span><i style="background:var(--clean)"></i>not affected</span>`;
+  el.innerHTML += `<span>node size ∝ LOC</span>`;
+}
+function paint(){ node.select("circle").attr("fill", colour); legend(); }
+document.getElementById("colorBy").addEventListener("change", paint);
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", paint);
+paint();
+
+// ---------- labels ----------
+function labelsVisible(){
+  const all = document.getElementById("showLabels").checked;
+  node.select("text").style("display", d => all || r(d.LOC) > 12 || d === current ? null : "none");
+}
+document.getElementById("showLabels").addEventListener("change", labelsVisible);
+
+// ---------- tooltip ----------
+const tip = document.getElementById("tip");
+node.on("mouseenter", (e,d) => {
+  const s = LABELS.filter(k => d[k]).join(", ") || "none";
+  tip.innerHTML = `<b>${d.name}</b><br>LOC ${d.LOC} · FI ${d.FI} · FO ${d.FO}<br>Smells: ${s}`;
+  tip.style.display = "block";
+}).on("mousemove", e => {
+  const b = document.querySelector("main").getBoundingClientRect();
+  tip.style.left = (e.clientX - b.left + 14) + "px"; tip.style.top = (e.clientY - b.top + 14) + "px";
+}).on("mouseleave", () => tip.style.display = "none")
+  .on("click", (e,d) => { e.stopPropagation(); select(d); })
+  .on("keydown", (e,d) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(d); } });
+
+// ---------- selection ----------
+function select(d, center){
+  current = d;
+  node.classed("sel", n => n === d);
+  if (!d){ node.classed("dim", false); link.classed("dim", false); renderDetail(null); labelsVisible(); return; }
+  const out = links.filter(l => l.source === d), inc = links.filter(l => l.target === d);
+  const nb = new Set([d, ...out.map(l => l.target), ...inc.map(l => l.source)]);
+  node.classed("dim", n => !nb.has(n));
+  link.classed("dim", l => l.source !== d && l.target !== d);
+  renderDetail(d, out, inc); labelsVisible();
+  if (center) svg.transition().duration(500).call(zoom.translateTo, d.x, d.y);
+}
+function renderDetail(d, out, inc){
+  const el = document.getElementById("detail");
+  if (!d){ el.innerHTML = `<h2>Selected component</h2><p class="note">Select a node to inspect its features, labels, and dependencies.</p>`; return; }
+  const chips = LABELS.filter(k => d[k]).map(k => `<span class="chip" style="background:var(--${k})">${NAMES[k]}</span>`).join("")
+    || `<span class="chip none">${d.mask ? "No smells" : "Labels unavailable"}</span>`;
+  const f = (v, p=3) => Number.isInteger(v) ? v : v.toFixed(p);
+  const rows = [["Abstractness (Ab)",d.Ab],["Instability (In)",d.In],["Distance (D)",d.D],["Fan-in (FI)",d.FI],
+    ["Fan-out (FO)",d.FO],["Lines of code (LOC)",d.LOC],["PageRank (PR)",d.PR],["ATDI (Arcan)",d.atdi],["Classes",d.units]];
+  el.innerHTML = `<h2>Selected component</h2><div class="detail-name">${d.name}</div>
+    <div class="chips">${chips}</div>
+    <table>${rows.map(([k,v]) => `<tr><td>${k}</td><td>${f(v)}</td></tr>`).join("")}</table>
+    <p class="note">Efferent dependencies: ${out.length}. Afferent dependencies: ${inc.length}.</p>`;
+}
+document.getElementById("search").addEventListener("change", e => {
+  const d = nodes.find(n => n.name === e.target.value) || nodes.find(n => n.name.includes(e.target.value));
+  if (d) select(d, true);
+});
+labelsVisible();
+</script>
+</body>
+</html>

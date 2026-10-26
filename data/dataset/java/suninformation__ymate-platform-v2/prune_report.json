@@ -1,0 +1,25 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 860,
+  "source_files_removed": 11,
+  "source_files_after": 849,
+  "removed_share": 0.0128,
+  "removed_by_rule": {
+    "R1_arcan_default": 11
+  },
+  "removed_dirs": [
+    {
+      "path": "ymate-platform-commons/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 9
+    },
+    {
+      "path": "ymate-platform-serv/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

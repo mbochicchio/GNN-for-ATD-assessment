@@ -1,0 +1,42 @@
+{
+  "project": "fushengqian__fuint",
+  "n_nodes": 66,
+  "n_edges": 337,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 2,
+    "UD": 2,
+    "AI": 0,
+    "GC": 8,
+    "FC": 28,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 66,
+    "designite_packages": 65,
+    "matched": 65,
+    "coverage": 0.9848,
+    "arcan_only": [
+      "com.fuint.framework.annoation"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com.fuint.common.dto",
+      "com",
+      "com.fuint.module.backendApi.controller",
+      "com.fuint.module",
+      "com.fuint.module.clientApi",
+      "com.fuint.module.merchantApi",
+      "com.fuint.module.backendApi",
+      "com.fuint.repository"
+    ]
+  },
+  "unknown_designite_smells": []
+}

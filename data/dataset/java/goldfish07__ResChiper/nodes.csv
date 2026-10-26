@@ -1,0 +1,15 @@
+node_id,name,Ab,In,D,FI,FO,LOC,PR,CD,UD,AI,GC,FC,SF,label_mask,atdi,n_units
+0,io.github.goldfish07.reschiper.plugin,0.0,0.75,0.25,1.0,2.0,163.0,0.04078063194759516,1,1,0,0,0,0,1,6.670275690746873,3
+1,io.github.goldfish07.reschiper.plugin.android,0.0,0.3333333333333333,0.6666666666666667,2.0,1.0,203.0,0.0540766083849297,0,0,0,0,0,0,1,0.0,5
+2,io.github.goldfish07.reschiper.plugin.bundle,0.0,0.3333333333333333,0.6666666666666667,4.0,3.0,223.0,0.0692788975194408,0,1,0,0,1,0,1,0.0,6
+3,io.github.goldfish07.reschiper.plugin.command,1.0,0.9411764705882353,0.9411764705882353,1.0,9.0,193.0,0.04078063194759516,0,0,0,0,0,0,1,0.0,1
+4,io.github.goldfish07.reschiper.plugin.command.extensions,0.0,0.875,0.125,1.0,3.0,352.0,0.034447499830287984,0,0,0,0,0,0,1,0.0,3
+5,io.github.goldfish07.reschiper.plugin.command.model,1.0,0.0,0.0,2.0,0.0,74.0,0.04463213573441067,0,0,0,0,1,0,1,0.0,4
+6,io.github.goldfish07.reschiper.plugin.internal,0.0,0.5,0.5,1.0,1.0,78.0,0.047927763084142275,0,0,0,0,0,0,1,0.0,3
+7,io.github.goldfish07.reschiper.plugin.model,0.0,0.0,1.0,2.0,0.0,6.0,0.08151917556408592,0,0,0,0,0,0,0,0.0,1
+8,io.github.goldfish07.reschiper.plugin.obfuscation,0.0,0.8888888888888888,0.11111111111111116,1.0,4.0,326.0,0.034447499830287984,0,0,0,0,0,0,1,0.0,2
+9,io.github.goldfish07.reschiper.plugin.operations,0.0,0.0,1.0,5.0,0.0,131.0,0.1707093300755996,0,0,0,0,0,0,1,0.0,3
+10,io.github.goldfish07.reschiper.plugin.parser,0.0,0.6666666666666666,0.33333333333333337,2.0,2.0,101.0,0.04176757571824482,0,0,0,0,0,0,1,0.0,2
+11,io.github.goldfish07.reschiper.plugin.parser.xml,0.0,0.0,1.0,2.0,0.0,40.0,0.052198720447541515,0,0,0,0,0,0,1,0.0,3
+12,io.github.goldfish07.reschiper.plugin.tasks,0.0,0.8888888888888888,0.11111111111111116,1.0,4.0,121.0,0.047927763084142275,1,1,0,0,0,0,1,6.670275690746873,1
+13,io.github.goldfish07.reschiper.plugin.utils,0.0,0.09090909090909091,0.9090909090909091,5.0,1.0,114.0,0.11712178265780657,0,0,0,0,0,0,1,0.0,3

@@ -1,0 +1,73 @@
+{
+  "project": "oracle__weblogic-kubernetes-operator",
+  "n_nodes": 34,
+  "n_edges": 167,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 0,
+    "UD": 0,
+    "AI": 0,
+    "GC": 0,
+    "FC": 0,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 34,
+    "designite_packages": 0,
+    "matched": 0,
+    "coverage": 0.0,
+    "arcan_only": [
+      "oracle.kubernetes.common",
+      "oracle.kubernetes.common.helpers",
+      "oracle.kubernetes.common.logging",
+      "oracle.kubernetes.common.utils",
+      "oracle.kubernetes.json",
+      "oracle.kubernetes.json.mojo",
+      "oracle.kubernetes.mojo.shunit2",
+      "oracle.kubernetes.mojosupport",
+      "oracle.kubernetes.operator",
+      "oracle.kubernetes.operator.calls",
+      "oracle.kubernetes.operator.helpers",
+      "oracle.kubernetes.operator.http",
+      "oracle.kubernetes.operator.http.client",
+      "oracle.kubernetes.operator.http.metrics",
+      "oracle.kubernetes.operator.http.rest",
+      "oracle.kubernetes.operator.http.rest.backend",
+      "oracle.kubernetes.operator.http.rest.model",
+      "oracle.kubernetes.operator.http.rest.resource",
+      "oracle.kubernetes.operator.logging",
+      "oracle.kubernetes.operator.makeright",
+      "oracle.kubernetes.operator.processing",
+      "oracle.kubernetes.operator.steps",
+      "oracle.kubernetes.operator.tuning",
+      "oracle.kubernetes.operator.utils",
+      "oracle.kubernetes.operator.watcher",
+      "oracle.kubernetes.operator.webhooks",
+      "oracle.kubernetes.operator.webhooks.model",
+      "oracle.kubernetes.operator.webhooks.resource",
+      "oracle.kubernetes.operator.webhooks.utils",
+      "oracle.kubernetes.operator.wlsconfig",
+      "oracle.kubernetes.operator.work",
+      "oracle.kubernetes.utils",
+      "oracle.kubernetes.weblogic.domain",
+      "oracle.kubernetes.weblogic.domain.model"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "jakarta",
+      "jakarta.ws.rs.ext",
+      "oracle.kubernetes.mojo",
+      "jakarta.ws",
+      "jakarta.ws.rs",
+      "oracle.kubernetes.weblogic",
+      "oracle",
+      "oracle.kubernetes"
+    ]
+  },
+  "unknown_designite_smells": []
+}

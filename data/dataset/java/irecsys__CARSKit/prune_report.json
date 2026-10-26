@@ -1,0 +1,20 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 70,
+  "source_files_removed": 0,
+  "source_files_after": 70,
+  "removed_share": 0.0,
+  "removed_by_rule": {
+    "R1_arcan_default": 0
+  },
+  "removed_dirs": [
+    {
+      "path": "doc_api/carskit/test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

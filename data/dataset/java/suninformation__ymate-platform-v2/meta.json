@@ -1,0 +1,57 @@
+{
+  "project": "suninformation__ymate-platform-v2",
+  "n_nodes": 121,
+  "n_edges": 766,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 46,
+    "UD": 29,
+    "AI": 0,
+    "GC": 4,
+    "FC": 40,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 121,
+    "designite_packages": 105,
+    "matched": 105,
+    "coverage": 0.8678,
+    "arcan_only": [
+      "net.ymate.platform.cache.annotation",
+      "net.ymate.platform.commons.annotation",
+      "net.ymate.platform.commons.serialize.annotation",
+      "net.ymate.platform.configuration.annotation",
+      "net.ymate.platform.core.annotation",
+      "net.ymate.platform.core.beans.annotation",
+      "net.ymate.platform.core.event.annotation",
+      "net.ymate.platform.core.persistence.annotation",
+      "net.ymate.platform.log.annotation",
+      "net.ymate.platform.persistence.jdbc.annotation",
+      "net.ymate.platform.persistence.jdbc.repo.annotation",
+      "net.ymate.platform.persistence.mongodb.annotation",
+      "net.ymate.platform.persistence.redis.annotation",
+      "net.ymate.platform.plugin.annotation",
+      "net.ymate.platform.webmvc.annotation",
+      "net.ymate.platform.webmvc.cors.annotation"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "org.apache.commons",
+      "net.ymate",
+      "org",
+      "org.apache",
+      "net",
+      "org.slf4j",
+      "net.ymate.platform",
+      "net.ymate.platform.persistence"
+    ]
+  },
+  "unknown_designite_smells": []
+}

@@ -1,0 +1,36 @@
+{
+  "project": "Tutorials-By-Kaupenjoe__Fabric-Tutorial-1.21.X",
+  "n_nodes": 29,
+  "n_edges": 97,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 20,
+    "UD": 13,
+    "AI": 0,
+    "GC": 0,
+    "FC": 3,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 29,
+    "designite_packages": 28,
+    "matched": 28,
+    "coverage": 0.9655,
+    "arcan_only": [
+      "net.kaupenjoe.tutorialmod.enchantment.custom"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "net",
+      "net.kaupenjoe"
+    ]
+  },
+  "unknown_designite_smells": []
+}

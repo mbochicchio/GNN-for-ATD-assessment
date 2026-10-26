@@ -1,0 +1,65 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 290,
+  "source_files_removed": 116,
+  "source_files_after": 174,
+  "removed_share": 0.4,
+  "removed_by_rule": {
+    "R1_arcan_default": 116
+  },
+  "removed_dirs": [
+    {
+      "path": "scim-compliance-tests",
+      "rule": "R1_arcan_default",
+      "source_files": 7
+    },
+    {
+      "path": "scim-server-examples",
+      "rule": "R1_arcan_default",
+      "source_files": 37
+    },
+    {
+      "path": "scim-test",
+      "rule": "R1_arcan_default",
+      "source_files": 7
+    },
+    {
+      "path": "scim-client/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "scim-core/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 7
+    },
+    {
+      "path": "scim-server/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 16
+    },
+    {
+      "path": "scim-spec/scim-spec-protocol/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "scim-spec/scim-spec-schema/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 31
+    },
+    {
+      "path": "scim-tools/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "support/spring-boot/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

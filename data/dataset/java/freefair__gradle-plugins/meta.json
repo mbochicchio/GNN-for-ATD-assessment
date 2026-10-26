@@ -1,0 +1,45 @@
+{
+  "project": "freefair__gradle-plugins",
+  "n_nodes": 41,
+  "n_edges": 42,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 6,
+    "UD": 4,
+    "AI": 0,
+    "GC": 0,
+    "FC": 9,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 41,
+    "designite_packages": 39,
+    "matched": 39,
+    "coverage": 0.9512,
+    "arcan_only": [
+      "io.freefair.gradle.codegenerator.api.annotations",
+      "org.gradle.api.plugins"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "lombok",
+      "sass",
+      "sass.embedded_protocol",
+      "org.gradle.api",
+      "io.freefair.gradle.plugins",
+      "io.freefair.gradle.codegenerator",
+      "io",
+      "io.freefair",
+      "io.freefair.gradle.plugin",
+      "org",
+      "org.gradle",
+      "io.freefair.gradle"
+    ]
+  },
+  "unknown_designite_smells": []
+}

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>arx-deidentifier__arx · dependency graph</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EEF1F0; --panel:#F8FAF9; --ink:#1B2733; --muted:#5E6B78; --rule:#D3DAD8;
+  --edge:#9AA7B2; --clean:#C3CCD3; --focus:#1B2733;
+  --CD:#D55E00; --UD:#0072B2; --AI:#CC79A7; --GC:#009E73; --FC:#E69F00; --SF:#56B4E9;
+  --s0:#C3CCD3; --s1:#F2C27B; --s2:#E58A3C; --s3:#C4462A; --s4:#8E1F2A;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+  --bg:#141B21; --panel:#1B242C; --ink:#E4EAEE; --muted:#93A1AD; --rule:#2C3842;
+  --edge:#4E5E6B; --clean:#3E4B56; --focus:#E4EAEE; --s0:#3E4B56;
+}}
+:root[data-theme="dark"]{
+  --bg:#141B21; --panel:#1B242C; --ink:#E4EAEE; --muted:#93A1AD; --rule:#2C3842;
+  --edge:#4E5E6B; --clean:#3E4B56; --focus:#E4EAEE; --s0:#3E4B56;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{height:100%; scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0; height:100%; background:var(--bg); color:var(--ink);
+  font:14px/1.5 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+.app{display:grid; grid-template-columns:320px 1fr; height:100%}
+aside{background:var(--panel); border-right:1px solid var(--rule); overflow-y:auto; padding:20px 20px 28px}
+h1{font:500 22px/1.2 "IBM Plex Sans Condensed","IBM Plex Sans",sans-serif; margin:0 0 4px; word-break:break-word}
+.sub{color:var(--muted); margin:0 0 18px}
+.stats{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-bottom:18px}
+.stat b{display:block; font-size:20px; font-weight:600}
+.stat span{color:var(--muted); font-size:12px}
+section{border-top:1px solid var(--rule); padding-top:14px; margin-top:14px}
+h2{font-size:13px; font-weight:600; margin:0 0 8px}
+label.ctl{display:block; color:var(--muted); font-size:12px; margin:8px 0 4px}
+select,input[type=search]{width:100%; font:inherit; color:var(--ink); background:var(--bg);
+  border:1px solid var(--rule); border-radius:6px; padding:6px 8px}
+select:focus-visible,input:focus-visible,button:focus-visible{outline:2px solid var(--focus); outline-offset:2px}
+.check{display:flex; gap:8px; align-items:center; margin-top:10px; color:var(--muted); font-size:13px}
+.legend{display:flex; flex-wrap:wrap; gap:6px 12px; margin-top:10px; font-size:12px}
+.dot{display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:7px; vertical-align:-1px}
+.legend i{display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:5px; vertical-align:-1px}
+table{width:100%; border-collapse:collapse; font-size:13px}
+td{padding:3px 0; border-bottom:1px solid var(--rule)}
+td:last-child{text-align:right; font-variant-numeric:tabular-nums}
+.chips{display:flex; flex-wrap:wrap; gap:6px; margin:8px 0}
+.chip{font-size:12px; padding:2px 8px; border-radius:10px; color:#fff}
+.chip.none{background:var(--clean); color:var(--ink)}
+.detail-name{font-weight:600; word-break:break-all; margin-bottom:4px}
+.note{color:var(--muted); font-size:12px}
+ol.rank{margin:0; padding-left:20px; font-size:13px}
+ol.rank li{margin:2px 0}
+ol.rank button{all:unset; cursor:pointer; word-break:break-all}
+ol.rank button:hover{text-decoration:underline}
+ol.rank .v{color:var(--muted); font-variant-numeric:tabular-nums}
+main{position:relative; overflow:hidden}
+svg{width:100%; height:100%; display:block; cursor:grab}
+.link{stroke:var(--edge); stroke-opacity:.55; fill:none}
+.node circle{stroke:var(--panel); stroke-width:1.5}
+.node.nomask circle{stroke-dasharray:3 2; stroke:var(--muted)}
+.node text{font-size:11px; fill:var(--ink); pointer-events:none; paint-order:stroke;
+  stroke:var(--bg); stroke-width:3px}
+.dim{opacity:.12}
+.node.sel circle{stroke:var(--focus); stroke-width:3}
+#tip{position:absolute; pointer-events:none; background:var(--panel); border:1px solid var(--rule);
+  border-radius:6px; padding:6px 9px; font-size:12px; max-width:320px; display:none; word-break:break-all}
+.hint{position:absolute; right:14px; bottom:12px; color:var(--muted); font-size:12px}
+@media (max-width:760px){
+  .app{grid-template-columns:1fr; grid-template-rows:auto 70vh; height:auto}
+  aside{border-right:0; border-bottom:1px solid var(--rule)}
+}
+@media (prefers-reduced-motion:reduce){ *{transition:none!important} }
+</style>
+</head>
+<body>
+<div class="app">
+<aside>
+  <h1 id="title"></h1>
+  <p class="sub">Package-level dependency graph with Designite smell labels</p>
+  <div class="stats">
+    <div class="stat"><b id="nN"></b><span>components</span></div>
+    <div class="stat"><b id="nE"></b><span>dependencies</span></div>
+    <div class="stat"><b id="nS"></b><span>smell-affected components</span></div>
+  </div>
+
+  <label class="ctl" for="colorBy">Colour nodes by</label>
+  <select id="colorBy">
+    <option value="count">Number of smells</option>
+    <option value="CD">Cyclic Dependency</option>
+    <option value="UD">Unstable Dependency</option>
+    <option value="AI">Ambiguous Interface</option>
+    <option value="GC">God Component</option>
+    <option value="FC">Feature Concentration</option>
+    <option value="SF">Scattered Functionality</option>
+    <option value="atdi">ATDI (Arcan)</option>
+  </select>
+  <div class="legend" id="legend"></div>
+
+  <label class="ctl" for="search">Find a component</label>
+  <input id="search" type="search" placeholder="e.g. analyzer" list="names" autocomplete="off">
+  <datalist id="names"></datalist>
+  <label class="check"><input type="checkbox" id="showLabels"> Show all node labels</label>
+
+  <section id="detail">
+    <h2>Selected component</h2>
+    <p class="note">Select a node to inspect its features, labels, and dependencies.</p>
+  </section>
+
+  <section>
+    <h2>Smell distribution</h2>
+    <table id="smellTable"></table>
+    <p class="note" id="ds"></p>
+  </section>
+
+  <section>
+    <h2>Highest ATDI</h2>
+    <ol class="rank" id="rank"></ol>
+  </section>
+</aside>
+<main>
+  <svg id="svg" role="img" aria-label="Dependency graph"></svg>
+  <div id="tip"></div>
+  <div class="hint">Drag to pan, scroll to zoom</div>
+</main>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script>
+const DATA = {"nodes": [{"id": 0, "name": "org.deidentifier.arx", "mask": 0, "atdi": 304.8897686824909, "units": 28, "Ab": 0.17857142857142858, "In": 0.20118343195266272, "D": 0.6202451394759088, "FI": 34.0, "FO": 13.0, "LOC": 4943.0, "PR": 0.1667813629954698, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 1, "name": "org.deidentifier.arx.aggregates", "mask": 0, "atdi": 60.71201232512308, "units": 19, "Ab": 0.15789473684210525, "In": 0.43529411764705883, "D": 0.40681114551083586, "FI": 12.0, "FO": 5.0, "LOC": 3681.0, "PR": 0.035837726388315574, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 2, "name": "org.deidentifier.arx.aggregates.classification", "mask": 0, "atdi": 17.422289953199957, "units": 12, "Ab": 0.16666666666666666, "In": 0.9090909090909091, "D": 0.07575757575757569, "FI": 1.0, "FO": 4.0, "LOC": 473.0, "PR": 0.010901178972148108, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 3, "name": "org.deidentifier.arx.aggregates.quality", "mask": 0, "atdi": 18.4006520141751, "units": 20, "Ab": 0.25, "In": 0.8, "D": 0.050000000000000044, "FI": 2.0, "FO": 4.0, "LOC": 1337.0, "PR": 0.011267367225697978, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 4, "name": "org.deidentifier.arx.algorithm", "mask": 0, "atdi": 48.04322521055625, "units": 11, "Ab": 0.09090909090909091, "In": 0.9545454545454546, "D": 0.045454545454545414, "FI": 1.0, "FO": 10.0, "LOC": 930.0, "PR": 0.01571370568001429, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 5, "name": "org.deidentifier.arx.certificate", "mask": 0, "atdi": 23.62986942534212, "units": 2, "Ab": 0.0, "In": 0.625, "D": 0.375, "FI": 4.0, "FO": 5.0, "LOC": 168.0, "PR": 0.024165486427845415, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 6, "name": "org.deidentifier.arx.certificate.elements", "mask": 0, "atdi": 37.044979759398586, "units": 9, "Ab": 0.1111111111111111, "In": 0.03125, "D": 0.8576388888888888, "FI": 6.0, "FO": 2.0, "LOC": 209.0, "PR": 0.03150195448346731, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 7, "name": "org.deidentifier.arx.certificate.resources", "mask": 0, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 1.0, "FO": 0.0, "LOC": 16.0, "PR": 0.008916889626138355, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 8, "name": "org.deidentifier.arx.common", "mask": 0, "atdi": 30.68817263624078, "units": 5, "Ab": 0.0, "In": 0.06060606060606061, "D": 0.9393939393939394, "FI": 5.0, "FO": 1.0, "LOC": 144.0, "PR": 0.02554966453267734, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 9, "name": "org.deidentifier.arx.criteria", "mask": 0, "atdi": 62.37676072741046, "units": 28, "Ab": 0.25, "In": 0.44642857142857145, "D": 0.3035714285714286, "FI": 11.0, "FO": 11.0, "LOC": 1338.0, "PR": 0.043386675252882395, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 10, "name": "org.deidentifier.arx.dp", "mask": 0, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 0.6, "D": 0.4, "FI": 2.0, "FO": 1.0, "LOC": 118.0, "PR": 0.009497020044162377, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 11, "name": "org.deidentifier.arx.exceptions", "mask": 0, "atdi": 0.0, "units": 4, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 6.0, "FO": 0.0, "LOC": 26.0, "PR": 0.03390730583059935, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 12, "name": "org.deidentifier.arx.framework.check", "mask": 0, "atdi": 114.47410560438209, "units": 6, "Ab": 0.0, "In": 0.75, "D": 0.25, "FI": 5.0, "FO": 8.0, "LOC": 562.0, "PR": 0.03416481668579101, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 13, "name": "org.deidentifier.arx.framework.check.distribution", "mask": 0, "atdi": 53.917034171747, "units": 5, "Ab": 0.4, "In": 0.044444444444444446, "D": 0.5555555555555556, "FI": 8.0, "FO": 2.0, "LOC": 612.0, "PR": 0.04020042972288493, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 14, "name": "org.deidentifier.arx.framework.check.groupify", "mask": 0, "atdi": 70.01903251307687, "units": 6, "Ab": 0.0, "In": 0.2727272727272727, "D": 0.7272727272727273, "FI": 8.0, "FO": 8.0, "LOC": 584.0, "PR": 0.041560869555001184, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 15, "name": "org.deidentifier.arx.framework.check.history", "mask": 0, "atdi": 32.80123354279549, "units": 4, "Ab": 0.0, "In": 0.5333333333333333, "D": 0.4666666666666667, "FI": 2.0, "FO": 4.0, "LOC": 206.0, "PR": 0.009774423081339438, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 16, "name": "org.deidentifier.arx.framework.check.transformer", "mask": 0, "atdi": 31.47946617712168, "units": 17, "Ab": 0.058823529411764705, "In": 0.875, "D": 0.06617647058823528, "FI": 1.0, "FO": 5.0, "LOC": 1031.0, "PR": 0.008438756220853647, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 17, "name": "org.deidentifier.arx.framework.data", "mask": 0, "atdi": 66.77050213108384, "units": 8, "Ab": 0.0, "In": 0.2, "D": 0.8, "FI": 8.0, "FO": 5.0, "LOC": 901.0, "PR": 0.037719491490694215, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 18, "name": "org.deidentifier.arx.framework.lattice", "mask": 0, "atdi": 60.584995768399956, "units": 9, "Ab": 0.5555555555555556, "In": 0.05194805194805195, "D": 0.39249639249639245, "FI": 9.0, "FO": 3.0, "LOC": 425.0, "PR": 0.03885235128629373, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 19, "name": "org.deidentifier.arx.gui", "mask": 0, "atdi": 236.22473697888864, "units": 5, "Ab": 0.0, "In": 0.36538461538461536, "D": 0.6346153846153846, "FI": 11.0, "FO": 14.0, "LOC": 1177.0, "PR": 0.01326340408528844, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 20, "name": "org.deidentifier.arx.gui.model", "mask": 0, "atdi": 139.8591675256932, "units": 25, "Ab": 0.16, "In": 0.3422818791946309, "D": 0.49771812080536915, "FI": 12.0, "FO": 9.0, "LOC": 1893.0, "PR": 0.020034034611021843, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 21, "name": "org.deidentifier.arx.gui.resources", "mask": 0, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 0.006578947368421052, "D": 0.993421052631579, "FI": 14.0, "FO": 1.0, "LOC": 196.0, "PR": 0.01746224633761799, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 22, "name": "org.deidentifier.arx.gui.view", "mask": 0, "atdi": 75.08135986844592, "units": 1, "Ab": 0.0, "In": 0.04, "D": 0.96, "FI": 11.0, "FO": 4.0, "LOC": 322.0, "PR": 0.012759096109910998, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 23, "name": "org.deidentifier.arx.gui.view.def", "mask": 0, "atdi": 50.26678375285484, "units": 6, "Ab": 1.0, "In": 0.01694915254237288, "D": 0.016949152542372836, "FI": 8.0, "FO": 1.0, "LOC": 21.0, "PR": 0.00945852634288883, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 24, "name": "org.deidentifier.arx.gui.view.impl", "mask": 0, "atdi": 99.4519141302066, "units": 8, "Ab": 0.375, "In": 0.9565217391304348, "D": 0.3315217391304348, "FI": 1.0, "FO": 16.0, "LOC": 825.0, "PR": 0.005614043110862814, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 25, "name": "org.deidentifier.arx.gui.view.impl.common", "mask": 0, "atdi": 128.03474471055134, "units": 30, "Ab": 0.1, "In": 0.4533333333333333, "D": 0.44666666666666666, "FI": 8.0, "FO": 10.0, "LOC": 3381.0, "PR": 0.010874087890800405, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 26, "name": "org.deidentifier.arx.gui.view.impl.common.async", "mask": 0, "atdi": 13.23833050104638, "units": 5, "Ab": 0.4, "In": 0.3235294117647059, "D": 0.276470588235294, "FI": 2.0, "FO": 3.0, "LOC": 161.0, "PR": 0.005687606117798199, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 27, "name": "org.deidentifier.arx.gui.view.impl.common.datatable", "mask": 0, "atdi": 13.765579920798631, "units": 17, "Ab": 0.0, "In": 0.875, "D": 0.125, "FI": 1.0, "FO": 5.0, "LOC": 683.0, "PR": 0.005733062895845794, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 28, "name": "org.deidentifier.arx.gui.view.impl.common.table", "mask": 0, "atdi": 0.0, "units": 19, "Ab": 0.2631578947368421, "In": 0.0, "D": 0.736842105263158, "FI": 4.0, "FO": 0.0, "LOC": 753.0, "PR": 0.0075076897854421485, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 29, "name": "org.deidentifier.arx.gui.view.impl.define", "mask": 0, "atdi": 33.85810171236468, "units": 14, "Ab": 0.0, "In": 0.9767441860465116, "D": 0.023255813953488413, "FI": 1.0, "FO": 8.0, "LOC": 1856.0, "PR": 0.005107001493460595, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 30, "name": "org.deidentifier.arx.gui.view.impl.explore", "mask": 0, "atdi": 141.11577892541217, "units": 9, "Ab": 0.1111111111111111, "In": 0.9090909090909091, "D": 0.02020202020202011, "FI": 2.0, "FO": 9.0, "LOC": 1677.0, "PR": 0.00699913262443628, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 31, "name": "org.deidentifier.arx.gui.view.impl.menu", "mask": 0, "atdi": 47.00090433106314, "units": 36, "Ab": 0.08333333333333333, "In": 0.8627450980392157, "D": 0.0539215686274509, "FI": 3.0, "FO": 10.0, "LOC": 3683.0, "PR": 0.006346104381127938, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 32, "name": "org.deidentifier.arx.gui.view.impl.risk", "mask": 0, "atdi": 35.89426324672398, "units": 13, "Ab": 0.07692307692307693, "In": 0.95, "D": 0.026923076923076827, "FI": 2.0, "FO": 10.0, "LOC": 1484.0, "PR": 0.006031310080027882, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 33, "name": "org.deidentifier.arx.gui.view.impl.utility", "mask": 0, "atdi": 35.6198780669066, "units": 24, "Ab": 0.16666666666666666, "In": 0.9761904761904762, "D": 0.1428571428571428, "FI": 2.0, "FO": 14.0, "LOC": 3184.0, "PR": 0.006031310080027882, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 34, "name": "org.deidentifier.arx.gui.view.impl.wizard", "mask": 0, "atdi": 47.26527009011276, "units": 38, "Ab": 0.10526315789473684, "In": 0.9761904761904762, "D": 0.081453634085213, "FI": 1.0, "FO": 11.0, "LOC": 4391.0, "PR": 0.005614043110862814, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 35, "name": "org.deidentifier.arx.gui.worker", "mask": 0, "atdi": 25.56719428936324, "units": 11, "Ab": 0.09090909090909091, "In": 0.926829268292683, "D": 0.017738359201773912, "FI": 3.0, "FO": 11.0, "LOC": 1259.0, "PR": 0.006346104381127938, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 36, "name": "org.deidentifier.arx.gui.worker.io", "mask": 0, "atdi": 0.0, "units": 7, "Ab": 0.2857142857142857, "In": 0.6666666666666666, "D": 0.04761904761904767, "FI": 1.0, "FO": 3.0, "LOC": 384.0, "PR": 0.00529913736723581, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 37, "name": "org.deidentifier.arx.io", "mask": 0, "atdi": 11.395572769495216, "units": 24, "Ab": 0.3333333333333333, "In": 0.041666666666666664, "D": 0.625, "FI": 7.0, "FO": 1.0, "LOC": 967.0, "PR": 0.023982879437227506, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 38, "name": "org.deidentifier.arx.metric", "mask": 0, "atdi": 144.99904585548282, "units": 18, "Ab": 0.2777777777777778, "In": 0.36065573770491804, "D": 0.3615664845173041, "FI": 14.0, "FO": 10.0, "LOC": 1162.0, "PR": 0.054973423385533904, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 39, "name": "org.deidentifier.arx.metric.v2", "mask": 0, "atdi": 77.51511808233664, "units": 48, "Ab": 0.125, "In": 0.6829268292682927, "D": 0.19207317073170727, "FI": 9.0, "FO": 10.0, "LOC": 2954.0, "PR": 0.03722827198876752, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 40, "name": "org.deidentifier.arx.reliability", "mask": 0, "atdi": 0.0, "units": 4, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 5.0, "FO": 0.0, "LOC": 205.0, "PR": 0.02466719605275617, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 41, "name": "org.deidentifier.arx.risk", "mask": 0, "atdi": 37.64803178105486, "units": 23, "Ab": 0.17391304347826086, "In": 0.5, "D": 0.32608695652173914, "FI": 7.0, "FO": 5.0, "LOC": 1809.0, "PR": 0.038735956203018534, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 42, "name": "org.deidentifier.arx.risk.resources.us", "mask": 0, "atdi": 6.445445198908455, "units": 1, "Ab": 0.0, "In": 0.5, "D": 0.5, "FI": 1.0, "FO": 1.0, "LOC": 5.0, "PR": 0.011393810370774509, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}], "edges": [{"source": 0, "target": 1, "w": 10.0}, {"source": 0, "target": 4, "w": 7.0}, {"source": 0, "target": 6, "w": 4.0}, {"source": 0, "target": 9, "w": 25.0}, {"source": 0, "target": 11, "w": 1.0}, {"source": 0, "target": 12, "w": 4.0}, {"source": 0, "target": 13, "w": 3.0}, {"source": 0, "target": 17, "w": 18.0}, {"source": 0, "target": 18, "w": 12.0}, {"source": 0, "target": 37, "w": 21.0}, {"source": 0, "target": 38, "w": 10.0}, {"source": 0, "target": 39, "w": 2.0}, {"source": 0, "target": 41, "w": 2.0}, {"source": 1, "target": 0, "w": 34.0}, {"source": 1, "target": 2, "w": 7.0}, {"source": 1, "target": 3, "w": 15.0}, {"source": 1, "target": 8, "w": 10.0}, {"source": 1, "target": 11, "w": 6.0}, {"source": 2, "target": 0, "w": 12.0}, {"source": 2, "target": 1, "w": 3.0}, {"source": 2, "target": 8, "w": 6.0}, {"source": 2, "target": 11, "w": 1.0}, {"source": 3, "target": 0, "w": 14.0}, {"source": 3, "target": 1, "w": 1.0}, {"source": 3, "target": 8, "w": 40.0}, {"source": 3, "target": 11, "w": 1.0}, {"source": 4, "target": 0, "w": 4.0}, {"source": 4, "target": 10, "w": 1.0}, {"source": 4, "target": 12, "w": 8.0}, {"source": 4, "target": 14, "w": 2.0}, {"source": 4, "target": 15, "w": 5.0}, {"source": 4, "target": 17, "w": 1.0}, {"source": 4, "target": 18, "w": 25.0}, {"source": 4, "target": 38, "w": 9.0}, {"source": 4, "target": 39, "w": 1.0}, {"source": 4, "target": 40, "w": 3.0}, {"source": 5, "target": 0, "w": 5.0}, {"source": 5, "target": 6, "w": 6.0}, {"source": 5, "target": 7, "w": 1.0}, {"source": 5, "target": 9, "w": 1.0}, {"source": 5, "target": 37, "w": 2.0}, {"source": 6, "target": 0, "w": 1.0}, {"source": 6, "target": 5, "w": 8.0}, {"source": 8, "target": 0, "w": 2.0}, {"source": 9, "target": 0, "w": 40.0}, {"source": 9, "target": 6, "w": 22.0}, {"source": 9, "target": 8, "w": 1.0}, {"source": 9, "target": 10, "w": 1.0}, {"source": 9, "target": 13, "w": 9.0}, {"source": 9, "target": 14, "w": 25.0}, {"source": 9, "target": 17, "w": 17.0}, {"source": 9, "target": 18, "w": 19.0}, {"source": 9, "target": 39, "w": 2.0}, {"source": 9, "target": 40, "w": 4.0}, {"source": 9, "target": 41, "w": 2.0}, {"source": 10, "target": 40, "w": 3.0}, {"source": 12, "target": 0, "w": 3.0}, {"source": 12, "target": 13, "w": 2.0}, {"source": 12, "target": 14, "w": 4.0}, {"source": 12, "target": 15, "w": 2.0}, {"source": 12, "target": 16, "w": 17.0}, {"source": 12, "target": 17, "w": 14.0}, {"source": 12, "target": 18, "w": 3.0}, {"source": 12, "target": 38, "w": 19.0}, {"source": 13, "target": 0, "w": 2.0}, {"source": 13, "target": 14, "w": 2.0}, {"source": 14, "target": 0, "w": 2.0}, {"source": 14, "target": 9, "w": 4.0}, {"source": 14, "target": 13, "w": 4.0}, {"source": 14, "target": 17, "w": 6.0}, {"source": 14, "target": 18, "w": 2.0}, {"source": 14, "target": 38, "w": 4.0}, {"source": 14, "target": 39, "w": 13.0}, {"source": 14, "target": 41, "w": 1.0}, {"source": 15, "target": 0, "w": 1.0}, {"source": 15, "target": 13, "w": 2.0}, {"source": 15, "target": 14, "w": 2.0}, {"source": 15, "target": 18, "w": 4.0}, {"source": 16, "target": 0, "w": 17.0}, {"source": 16, "target": 12, "w": 1.0}, {"source": 16, "target": 13, "w": 17.0}, {"source": 16, "target": 14, "w": 18.0}, {"source": 16, "target": 17, "w": 34.0}, {"source": 17, "target": 0, "w": 11.0}, {"source": 17, "target": 1, "w": 3.0}, {"source": 17, "target": 9, "w": 3.0}, {"source": 17, "target": 13, "w": 2.0}, {"source": 17, "target": 39, "w": 6.0}, {"source": 18, "target": 0, "w": 6.0}, {"source": 18, "target": 12, "w": 1.0}, {"source": 18, "target": 38, "w": 4.0}, {"source": 19, "target": 0, "w": 18.0}, {"source": 19, "target": 1, "w": 2.0}, {"source": 19, "target": 5, "w": 1.0}, {"source": 19, "target": 11, "w": 1.0}, {"source": 19, "target": 20, "w": 18.0}, {"source": 19, "target": 21, "w": 3.0}, {"source": 19, "target": 22, "w": 2.0}, {"source": 19, "target": 23, "w": 1.0}, {"source": 19, "target": 24, "w": 3.0}, {"source": 19, "target": 31, "w": 4.0}, {"source": 19, "target": 34, "w": 3.0}, {"source": 19, "target": 35, "w": 9.0}, {"source": 19, "target": 37, "w": 4.0}, {"source": 20, "target": 0, "w": 34.0}, {"source": 20, "target": 1, "w": 5.0}, {"source": 20, "target": 9, "w": 34.0}, {"source": 20, "target": 21, "w": 13.0}, {"source": 20, "target": 22, "w": 9.0}, {"source": 20, "target": 30, "w": 1.0}, {"source": 20, "target": 37, "w": 1.0}, {"source": 20, "target": 38, "w": 4.0}, {"source": 20, "target": 41, "w": 1.0}, {"source": 21, "target": 0, "w": 1.0}, {"source": 22, "target": 19, "w": 1.0}, {"source": 22, "target": 21, "w": 1.0}, {"source": 22, "target": 25, "w": 3.0}, {"source": 22, "target": 38, "w": 1.0}, {"source": 23, "target": 20, "w": 1.0}, {"source": 24, "target": 0, "w": 8.0}, {"source": 24, "target": 1, "w": 2.0}, {"source": 24, "target": 19, "w": 7.0}, {"source": 24, "target": 20, "w": 15.0}, {"source": 24, "target": 21, "w": 4.0}, {"source": 24, "target": 22, "w": 4.0}, {"source": 24, "target": 23, "w": 3.0}, {"source": 24, "target": 25, "w": 1.0}, {"source": 24, "target": 29, "w": 1.0}, {"source": 24, "target": 30, "w": 1.0}, {"source": 24, "target": 31, "w": 17.0}, {"source": 24, "target": 32, "w": 1.0}, {"source": 24, "target": 33, "w": 1.0}, {"source": 24, "target": 35, "w": 1.0}, {"source": 24, "target": 38, "w": 3.0}, {"source": 24, "target": 39, "w": 1.0}, {"source": 25, "target": 0, "w": 14.0}, {"source": 25, "target": 19, "w": 11.0}, {"source": 25, "target": 20, "w": 14.0}, {"source": 25, "target": 21, "w": 14.0}, {"source": 25, "target": 22, "w": 15.0}, {"source": 25, "target": 23, "w": 7.0}, {"source": 25, "target": 27, "w": 8.0}, {"source": 25, "target": 28, "w": 10.0}, {"source": 25, "target": 32, "w": 1.0}, {"source": 25, "target": 33, "w": 1.0}, {"source": 26, "target": 0, "w": 6.0}, {"source": 26, "target": 9, "w": 3.0}, {"source": 26, "target": 20, "w": 5.0}, {"source": 27, "target": 0, "w": 9.0}, {"source": 27, "target": 19, "w": 3.0}, {"source": 27, "target": 21, "w": 1.0}, {"source": 27, "target": 22, "w": 1.0}, {"source": 27, "target": 28, "w": 1.0}, {"source": 29, "target": 0, "w": 18.0}, {"source": 29, "target": 19, "w": 14.0}, {"source": 29, "target": 20, "w": 53.0}, {"source": 29, "target": 21, "w": 12.0}, {"source": 29, "target": 22, "w": 13.0}, {"source": 29, "target": 23, "w": 15.0}, {"source": 29, "target": 25, "w": 15.0}, {"source": 29, "target": 38, "w": 7.0}, {"source": 30, "target": 0, "w": 21.0}, {"source": 30, "target": 19, "w": 8.0}, {"source": 30, "target": 20, "w": 21.0}, {"source": 30, "target": 21, "w": 8.0}, {"source": 30, "target": 22, "w": 8.0}, {"source": 30, "target": 23, "w": 5.0}, {"source": 30, "target": 25, "w": 9.0}, {"source": 30, "target": 38, "w": 4.0}, {"source": 30, "target": 39, "w": 1.0}, {"source": 31, "target": 0, "w": 18.0}, {"source": 31, "target": 1, "w": 3.0}, {"source": 31, "target": 9, "w": 2.0}, {"source": 31, "target": 19, "w": 12.0}, {"source": 31, "target": 20, "w": 57.0}, {"source": 31, "target": 21, "w": 33.0}, {"source": 31, "target": 22, "w": 30.0}, {"source": 31, "target": 23, "w": 18.0}, {"source": 31, "target": 25, "w": 2.0}, {"source": 31, "target": 37, "w": 2.0}, {"source": 32, "target": 0, "w": 7.0}, {"source": 32, "target": 19, "w": 12.0}, {"source": 32, "target": 20, "w": 30.0}, {"source": 32, "target": 21, "w": 10.0}, {"source": 32, "target": 22, "w": 7.0}, {"source": 32, "target": 23, "w": 5.0}, {"source": 32, "target": 25, "w": 19.0}, {"source": 32, "target": 26, "w": 24.0}, {"source": 32, "target": 40, "w": 1.0}, {"source": 32, "target": 41, "w": 18.0}, {"source": 33, "target": 0, "w": 40.0}, {"source": 33, "target": 1, "w": 21.0}, {"source": 33, "target": 3, "w": 2.0}, {"source": 33, "target": 9, "w": 25.0}, {"source": 33, "target": 19, "w": 18.0}, {"source": 33, "target": 20, "w": 36.0}, {"source": 33, "target": 21, "w": 14.0}, {"source": 33, "target": 22, "w": 13.0}, {"source": 33, "target": 23, "w": 8.0}, {"source": 33, "target": 25, "w": 23.0}, {"source": 33, "target": 26, "w": 38.0}, {"source": 33, "target": 28, "w": 2.0}, {"source": 33, "target": 38, "w": 4.0}, {"source": 33, "target": 39, "w": 2.0}, {"source": 34, "target": 0, "w": 24.0}, {"source": 34, "target": 1, "w": 33.0}, {"source": 34, "target": 19, "w": 11.0}, {"source": 34, "target": 20, "w": 2.0}, {"source": 34, "target": 21, "w": 28.0}, {"source": 34, "target": 22, "w": 18.0}, {"source": 34, "target": 25, "w": 4.0}, {"source": 34, "target": 28, "w": 1.0}, {"source": 34, "target": 31, "w": 6.0}, {"source": 34, "target": 35, "w": 1.0}, {"source": 34, "target": 37, "w": 27.0}, {"source": 35, "target": 0, "w": 35.0}, {"source": 35, "target": 5, "w": 1.0}, {"source": 35, "target": 6, "w": 1.0}, {"source": 35, "target": 9, "w": 1.0}, {"source": 35, "target": 18, "w": 1.0}, {"source": 35, "target": 19, "w": 2.0}, {"source": 35, "target": 20, "w": 15.0}, {"source": 35, "target": 21, "w": 10.0}, {"source": 35, "target": 36, "w": 8.0}, {"source": 35, "target": 37, "w": 9.0}, {"source": 35, "target": 38, "w": 5.0}, {"source": 36, "target": 0, "w": 2.0}, {"source": 36, "target": 1, "w": 1.0}, {"source": 36, "target": 21, "w": 3.0}, {"source": 37, "target": 0, "w": 10.0}, {"source": 38, "target": 0, "w": 27.0}, {"source": 38, "target": 5, "w": 24.0}, {"source": 38, "target": 6, "w": 10.0}, {"source": 38, "target": 9, "w": 1.0}, {"source": 38, "target": 12, "w": 46.0}, {"source": 38, "target": 14, "w": 22.0}, {"source": 38, "target": 17, "w": 38.0}, {"source": 38, "target": 18, "w": 12.0}, {"source": 38, "target": 39, "w": 35.0}, {"source": 39, "target": 0, "w": 50.0}, {"source": 39, "target": 1, "w": 3.0}, {"source": 39, "target": 6, "w": 24.0}, {"source": 39, "target": 9, "w": 5.0}, {"source": 39, "target": 13, "w": 9.0}, {"source": 39, "target": 14, "w": 37.0}, {"source": 39, "target": 17, "w": 65.0}, {"source": 39, "target": 18, "w": 21.0}, {"source": 39, "target": 38, "w": 71.0}, {"source": 39, "target": 41, "w": 1.0}, {"source": 41, "target": 0, "w": 24.0}, {"source": 41, "target": 8, "w": 27.0}, {"source": 41, "target": 11, "w": 7.0}, {"source": 41, "target": 40, "w": 2.0}, {"source": 41, "target": 42, "w": 1.0}, {"source": 42, "target": 41, "w": 1.0}], "meta": {"project": "arx-deidentifier__arx", "n_nodes": 43, "n_edges": 255, "graph_level_smells": [], "dense_structure": 0, "label_counts": {"CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, "matching": {"arcan_nodes": 43, "designite_packages": 0, "matched": 0, "coverage": 0.0, "arcan_only": ["org.deidentifier.arx", "org.deidentifier.arx.aggregates", "org.deidentifier.arx.aggregates.classification", "org.deidentifier.arx.aggregates.quality", "org.deidentifier.arx.algorithm", "org.deidentifier.arx.certificate", "org.deidentifier.arx.certificate.elements", "org.deidentifier.arx.certificate.resources", "org.deidentifier.arx.common", "org.deidentifier.arx.criteria", "org.deidentifier.arx.dp", "org.deidentifier.arx.exceptions", "org.deidentifier.arx.framework.check", "org.deidentifier.arx.framework.check.distribution", "org.deidentifier.arx.framework.check.groupify", "org.deidentifier.arx.framework.check.history", "org.deidentifier.arx.framework.check.transformer", "org.deidentifier.arx.framework.data", "org.deidentifier.arx.framework.lattice", "org.deidentifier.arx.gui", "org.deidentifier.arx.gui.model", "org.deidentifier.arx.gui.resources", "org.deidentifier.arx.gui.view", "org.deidentifier.arx.gui.view.def", "org.deidentifier.arx.gui.view.impl", "org.deidentifier.arx.gui.view.impl.common", "org.deidentifier.arx.gui.view.impl.common.async", "org.deidentifier.arx.gui.view.impl.common.datatable", "org.deidentifier.arx.gui.view.impl.common.table", "org.deidentifier.arx.gui.view.impl.define", "org.deidentifier.arx.gui.view.impl.explore", "org.deidentifier.arx.gui.view.impl.menu", "org.deidentifier.arx.gui.view.impl.risk", "org.deidentifier.arx.gui.view.impl.utility", "org.deidentifier.arx.gui.view.impl.wizard", "org.deidentifier.arx.gui.worker", "org.deidentifier.arx.gui.worker.io", "org.deidentifier.arx.io", "org.deidentifier.arx.metric", "org.deidentifier.arx.metric.v2", "org.deidentifier.arx.reliability", "org.deidentifier.arx.risk", "org.deidentifier.arx.risk.resources.us"], "designite_only": [], "smelly_packages_not_in_graph": []}, "dropped_containers": {"default_package": [], "empty_container": ["org", "org.deidentifier.arx.risk.resources", "org.deidentifier", "org.deidentifier.arx.framework"]}, "unknown_designite_smells": []}};
+const LABELS = ["CD","UD","AI","GC","FC","SF"];
+const NAMES = {CD:"Cyclic Dependency",UD:"Unstable Dependency",AI:"Ambiguous Interface",
+  GC:"God Component",FC:"Feature Concentration",SF:"Scattered Functionality"};
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const nodes = DATA.nodes.map(d => ({...d, nSmell: LABELS.reduce((s,k)=>s+d[k],0),
+  short: d.name.split(".").slice(-1)[0] || d.name}));
+const byId = new Map(nodes.map(d => [d.id, d]));
+const links = DATA.edges.map(e => ({...e}));
+const meta = DATA.meta;
+let current = null;
+
+// ---------- sidebar ----------
+document.getElementById("title").textContent = meta.project;
+document.getElementById("nN").textContent = nodes.length;
+document.getElementById("nE").textContent = links.length;
+document.getElementById("nS").textContent = nodes.filter(d => d.nSmell > 0).length;
+document.getElementById("names").innerHTML = nodes.map(d => `<option value="${d.name}">`).join("");
+document.getElementById("smellTable").innerHTML = LABELS.map(k =>
+  `<tr><td><i class="dot" style="background:var(--${k})"></i>${NAMES[k]}</td>
+   <td>${meta.label_counts[k]} / ${nodes.length}</td></tr>`).join("");
+document.getElementById("ds").textContent = meta.dense_structure
+  ? "Dense Structure detected at project level (not assigned to individual nodes)."
+  : "Dense Structure not detected.";
+const unmasked = nodes.filter(d => !d.mask).length;
+if (unmasked) document.getElementById("ds").textContent +=
+  ` ${unmasked} nodes not analysed by Designite (dashed outline): labels unavailable.`;
+const rank = [...nodes].sort((a,b) => b.atdi - a.atdi).slice(0,10);
+document.getElementById("rank").innerHTML = rank.map(d =>
+  `<li><button data-id="${d.id}">${d.short}</button> <span class="v">${d.atdi.toFixed(1)}</span></li>`).join("");
+document.querySelectorAll("#rank button").forEach(b =>
+  b.addEventListener("click", () => select(byId.get(+b.dataset.id), true)));
+
+// ---------- graph ----------
+const svg = d3.select("#svg"), g = svg.append("g");
+const W = () => svg.node().clientWidth, H = () => svg.node().clientHeight;
+const maxLoc = d3.max(nodes, d => d.LOC) || 1;
+const r = d3.scaleSqrt().domain([0, maxLoc]).range([4, 26]);
+const wScale = d3.scaleLog().domain([1, d3.max(links, d => d.w) || 1]).range([0.6, 3.5]);
+const maxAtdi = d3.max(nodes, d => d.atdi) || 1;
+
+svg.append("defs").append("marker").attr("id","arrow").attr("viewBox","0 -4 8 8")
+  .attr("refX",8).attr("refY",0).attr("markerUnits","userSpaceOnUse").attr("markerWidth",9).attr("markerHeight",9).attr("orient","auto")
+  .append("path").attr("d","M0,-4L8,0L0,4").attr("fill","var(--edge)");
+
+const link = g.append("g").selectAll("path").data(links).join("path")
+  .attr("class","link").attr("stroke-width", d => wScale(Math.max(1,d.w))).attr("marker-end","url(#arrow)");
+const node = g.append("g").selectAll("g").data(nodes).join("g")
+  .attr("class", d => "node" + (d.mask ? "" : " nomask")).attr("tabindex",0)
+  .attr("aria-label", d => d.name);
+node.append("circle").attr("r", d => r(d.LOC));
+node.append("text").attr("dy", d => -r(d.LOC) - 4).attr("text-anchor","middle").text(d => d.short);
+
+const sim = d3.forceSimulation(nodes)
+  .force("link", d3.forceLink(links).id(d => d.id).distance(95).strength(0.2))
+  .force("charge", d3.forceManyBody().strength(-420))
+  .force("collide", d3.forceCollide(d => r(d.LOC) + 6))
+  .force("x", d3.forceX(() => W()/2).strength(0.05))
+  .force("y", d3.forceY(() => H()/2).strength(0.05))
+  .on("tick", ticked).on("end", fit);
+if (matchMedia("(prefers-reduced-motion: reduce)").matches) { sim.stop(); for (let i=0;i<300;i++) sim.tick(); ticked(); setTimeout(fit, 0); }
+let fitted = false;
+function fit(){
+  if (fitted) return; fitted = true;
+  const pad = 40, xs = nodes.map(d => d.x), ys = nodes.map(d => d.y);
+  const x0 = d3.min(xs) - pad, x1 = d3.max(xs) + pad, y0 = d3.min(ys) - pad, y1 = d3.max(ys) + pad;
+  const k = Math.min(2, 0.95 / Math.max((x1 - x0) / W(), (y1 - y0) / H()));
+  svg.transition().duration(600).call(zoom.transform,
+    d3.zoomIdentity.translate(W()/2, H()/2).scale(k).translate(-(x0 + x1)/2, -(y0 + y1)/2));
+}
+
+function ticked(){
+  link.attr("d", d => {
+    const dx = d.target.x - d.source.x, dy = d.target.y - d.source.y, L = Math.hypot(dx,dy) || 1;
+    const rt = r(d.target.LOC) + 3, rs = r(d.source.LOC);
+    return `M${d.source.x + dx*rs/L},${d.source.y + dy*rs/L}L${d.target.x - dx*rt/L},${d.target.y - dy*rt/L}`;
+  });
+  node.attr("transform", d => `translate(${d.x},${d.y})`);
+}
+
+node.call(d3.drag()
+  .on("start", (e,d) => { if(!e.active) sim.alphaTarget(0.3).restart(); d.fx=d.x; d.fy=d.y; })
+  .on("drag", (e,d) => { d.fx=e.x; d.fy=e.y; })
+  .on("end", (e,d) => { if(!e.active) sim.alphaTarget(0); d.fx=null; d.fy=null; }));
+const zoom = d3.zoom().scaleExtent([0.2,6]).on("zoom", e => g.attr("transform", e.transform));
+svg.call(zoom).on("click", e => { if (e.target === svg.node()) select(null); });
+
+// ---------- colour ----------
+function colour(d){
+  const m = document.getElementById("colorBy").value;
+  if (m === "count") return css("--s" + Math.min(d.nSmell, 4));
+  if (m === "atdi") return d3.interpolateLab(css("--s0"), css("--s4"))(Math.sqrt(d.atdi / maxAtdi));
+  return d[m] ? css("--" + m) : css("--clean");
+}
+function legend(){
+  const m = document.getElementById("colorBy").value, el = document.getElementById("legend");
+  if (m === "count") el.innerHTML = [0,1,2,3,4].map(i =>
+    `<span><i style="background:var(--s${i})"></i>${i===4?"4+":i} ${i===1?"smell":"smells"}</span>`).join("");
+  else if (m === "atdi") el.innerHTML = `<span><i style="background:var(--s0)"></i>0</span>
+    <span><i style="background:var(--s4)"></i>${maxAtdi.toFixed(0)}</span>`;
+  else el.innerHTML = `<span><i style="background:var(--${m})"></i>affected</span>
+    <span><i style="background:var(--clean)"></i>not affected</span>`;
+  el.innerHTML += `<span>node size ∝ LOC</span>`;
+}
+function paint(){ node.select("circle").attr("fill", colour); legend(); }
+document.getElementById("colorBy").addEventListener("change", paint);
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", paint);
+paint();
+
+// ---------- labels ----------
+function labelsVisible(){
+  const all = document.getElementById("showLabels").checked;
+  node.select("text").style("display", d => all || r(d.LOC) > 12 || d === current ? null : "none");
+}
+document.getElementById("showLabels").addEventListener("change", labelsVisible);
+
+// ---------- tooltip ----------
+const tip = document.getElementById("tip");
+node.on("mouseenter", (e,d) => {
+  const s = LABELS.filter(k => d[k]).join(", ") || "none";
+  tip.innerHTML = `<b>${d.name}</b><br>LOC ${d.LOC} · FI ${d.FI} · FO ${d.FO}<br>Smells: ${s}`;
+  tip.style.display = "block";
+}).on("mousemove", e => {
+  const b = document.querySelector("main").getBoundingClientRect();
+  tip.style.left = (e.clientX - b.left + 14) + "px"; tip.style.top = (e.clientY - b.top + 14) + "px";
+}).on("mouseleave", () => tip.style.display = "none")
+  .on("click", (e,d) => { e.stopPropagation(); select(d); })
+  .on("keydown", (e,d) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(d); } });
+
+// ---------- selection ----------
+function select(d, center){
+  current = d;
+  node.classed("sel", n => n === d);
+  if (!d){ node.classed("dim", false); link.classed("dim", false); renderDetail(null); labelsVisible(); return; }
+  const out = links.filter(l => l.source === d), inc = links.filter(l => l.target === d);
+  const nb = new Set([d, ...out.map(l => l.target), ...inc.map(l => l.source)]);
+  node.classed("dim", n => !nb.has(n));
+  link.classed("dim", l => l.source !== d && l.target !== d);
+  renderDetail(d, out, inc); labelsVisible();
+  if (center) svg.transition().duration(500).call(zoom.translateTo, d.x, d.y);
+}
+function renderDetail(d, out, inc){
+  const el = document.getElementById("detail");
+  if (!d){ el.innerHTML = `<h2>Selected component</h2><p class="note">Select a node to inspect its features, labels, and dependencies.</p>`; return; }
+  const chips = LABELS.filter(k => d[k]).map(k => `<span class="chip" style="background:var(--${k})">${NAMES[k]}</span>`).join("")
+    || `<span class="chip none">${d.mask ? "No smells" : "Labels unavailable"}</span>`;
+  const f = (v, p=3) => Number.isInteger(v) ? v : v.toFixed(p);
+  const rows = [["Abstractness (Ab)",d.Ab],["Instability (In)",d.In],["Distance (D)",d.D],["Fan-in (FI)",d.FI],
+    ["Fan-out (FO)",d.FO],["Lines of code (LOC)",d.LOC],["PageRank (PR)",d.PR],["ATDI (Arcan)",d.atdi],["Classes",d.units]];
+  el.innerHTML = `<h2>Selected component</h2><div class="detail-name">${d.name}</div>
+    <div class="chips">${chips}</div>
+    <table>${rows.map(([k,v]) => `<tr><td>${k}</td><td>${f(v)}</td></tr>`).join("")}</table>
+    <p class="note">Efferent dependencies: ${out.length}. Afferent dependencies: ${inc.length}.</p>`;
+}
+document.getElementById("search").addEventListener("change", e => {
+  const d = nodes.find(n => n.name === e.target.value) || nodes.find(n => n.name.includes(e.target.value));
+  if (d) select(d, true);
+});
+labelsVisible();
+</script>
+</body>
+</html>

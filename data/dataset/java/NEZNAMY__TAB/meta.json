@@ -1,0 +1,37 @@
+{
+  "project": "NEZNAMY__TAB",
+  "n_nodes": 120,
+  "n_edges": 1040,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 52,
+    "UD": 26,
+    "AI": 0,
+    "GC": 0,
+    "FC": 24,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 120,
+    "designite_packages": 120,
+    "matched": 120,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "me.neznamy.tab.shared.proxy.message",
+      "me",
+      "me.neznamy",
+      "me.neznamy.tab.platforms",
+      "me.neznamy.tab"
+    ]
+  },
+  "unknown_designite_smells": []
+}

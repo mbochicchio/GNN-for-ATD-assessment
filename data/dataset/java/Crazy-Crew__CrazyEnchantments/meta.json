@@ -1,0 +1,42 @@
+{
+  "project": "Crazy-Crew__CrazyEnchantments",
+  "n_nodes": 48,
+  "n_edges": 303,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 25,
+    "UD": 13,
+    "AI": 0,
+    "GC": 0,
+    "FC": 5,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 48,
+    "designite_packages": 48,
+    "matched": 48,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com.badbones69.crazyenchantments.paper.tasks",
+      "com",
+      "com.badbones69",
+      "com.badbones69.crazyenchantments.paper.support.parties",
+      "com.badbones69.crazyenchantments",
+      "com.badbones69.crazyenchantments.paper.support.protection",
+      "com.badbones69.crazyenchantments.paper.support.factions",
+      "com.badbones69.crazyenchantments.paper.support.skyblock",
+      "com.badbones69.crazyenchantments.paper.support.claim",
+      "com.badbones69.crazyenchantments.paper.support.api"
+    ]
+  },
+  "unknown_designite_smells": []
+}

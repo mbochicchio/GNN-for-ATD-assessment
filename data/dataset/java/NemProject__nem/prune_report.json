@@ -1,0 +1,51 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 1624,
+  "source_files_removed": 779,
+  "source_files_after": 845,
+  "removed_share": 0.4797,
+  "removed_by_rule": {
+    "R2_java_build": 35,
+    "R1_arcan_default": 744
+  },
+  "removed_dirs": [
+    {
+      "path": "core/src/it",
+      "rule": "R2_java_build",
+      "source_files": 7
+    },
+    {
+      "path": "core/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 271
+    },
+    {
+      "path": "deploy/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 12
+    },
+    {
+      "path": "nis/src/it",
+      "rule": "R2_java_build",
+      "source_files": 24
+    },
+    {
+      "path": "nis/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 407
+    },
+    {
+      "path": "peer/src/it",
+      "rule": "R2_java_build",
+      "source_files": 4
+    },
+    {
+      "path": "peer/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 54
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

@@ -1,0 +1,38 @@
+{
+  "project": "btraceio__btrace",
+  "n_nodes": 39,
+  "n_edges": 83,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 6,
+    "UD": 4,
+    "AI": 1,
+    "GC": 5,
+    "FC": 13,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 39,
+    "designite_packages": 40,
+    "matched": 39,
+    "coverage": 0.975,
+    "arcan_only": [],
+    "designite_only": [
+      "(default package)"
+    ],
+    "smelly_packages_not_in_graph": [
+      "(default package)"
+    ]
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "org.opensolaris.os",
+      "org.opensolaris",
+      "org",
+      "io"
+    ]
+  },
+  "unknown_designite_smells": []
+}

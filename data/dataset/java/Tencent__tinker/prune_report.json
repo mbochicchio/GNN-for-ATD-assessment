@@ -1,0 +1,45 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 304,
+  "source_files_removed": 21,
+  "source_files_after": 283,
+  "removed_share": 0.0691,
+  "removed_by_rule": {
+    "R1_arcan_default": 21
+  },
+  "removed_dirs": [
+    {
+      "path": "tinker-sample-android",
+      "rule": "R1_arcan_default",
+      "source_files": 15
+    },
+    {
+      "path": "tinker-android/tinker-android-anno/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "tinker-android/tinker-android-lib/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "tinker-android/tinker-android-lib-no-op/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "tinker-android/tinker-android-loader/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "tinker-android/tinker-android-loader-no-op/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

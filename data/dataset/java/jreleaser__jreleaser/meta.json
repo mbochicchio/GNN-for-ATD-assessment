@@ -1,0 +1,56 @@
+{
+  "project": "jreleaser__jreleaser",
+  "n_nodes": 195,
+  "n_edges": 1509,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 26,
+    "UD": 13,
+    "AI": 0,
+    "GC": 8,
+    "FC": 43,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 195,
+    "designite_packages": 195,
+    "matched": 194,
+    "coverage": 0.9898,
+    "arcan_only": [
+      "org.jreleaser.infra.nativeimage.annotations"
+    ],
+    "designite_only": [
+      "(default package)"
+    ],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "org.jreleaser.jdks.maven",
+      "org.jreleaser.ant",
+      "org.jreleaser.gradle",
+      "org.jreleaser.maven",
+      "org.jreleaser.sdk",
+      "org",
+      "org.jreleaser.graalvm.sdk",
+      "org.jreleaser.engine.deploy",
+      "org.jreleaser.infra",
+      "org.jreleaser.infra.nativeimage",
+      "org.jreleaser.model.internal.validation",
+      "org.jreleaser.jdks.gradle",
+      "org.jreleaser.sdk.generic",
+      "org.jreleaser.dependencies",
+      "org.jreleaser.model.spi",
+      "org.jreleaser",
+      "org.jreleaser.graalvm",
+      "org.jreleaser.engine",
+      "org.jreleaser.extensions",
+      "org.jreleaser.jdks"
+    ]
+  },
+  "unknown_designite_smells": []
+}

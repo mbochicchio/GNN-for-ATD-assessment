@@ -1,0 +1,43 @@
+{
+  "project": "opengoofy__crane4j",
+  "n_nodes": 39,
+  "n_edges": 275,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 23,
+    "UD": 11,
+    "AI": 1,
+    "GC": 1,
+    "FC": 13,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 39,
+    "designite_packages": 36,
+    "matched": 36,
+    "coverage": 0.9231,
+    "arcan_only": [
+      "cn.crane4j.extension.spring.annotation",
+      "cn.crane4j.extension.spring.annotation.compose",
+      "cn.crane4j.spring.boot.annotation"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "cn.crane4j.core",
+      "cn.crane4j.spring.boot",
+      "cn",
+      "cn.crane4j.extension",
+      "cn.crane4j.extension.mybatis",
+      "cn.crane4j",
+      "cn.crane4j.spring"
+    ]
+  },
+  "unknown_designite_smells": []
+}

@@ -1,0 +1,73 @@
+{
+  "project": "Wind-Development__WindSpigot",
+  "n_nodes": 111,
+  "n_edges": 686,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 81,
+    "UD": 26,
+    "AI": 0,
+    "GC": 10,
+    "FC": 18,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 111,
+    "designite_packages": 111,
+    "matched": 111,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "org.spigotmc.event",
+      "net.techcable.tacospigot.event",
+      "co",
+      "co.aikar",
+      "me.suicidalkids.ion",
+      "me.suicidalkids.ion.blocks",
+      "sun",
+      "io.papermc.paper",
+      "io.papermc.paper.util",
+      "xyz",
+      "xyz.sculas",
+      "com.destroystokyo.paper",
+      "com.destroystokyo.paper.event",
+      "dev",
+      "dev.cobblesword",
+      "me",
+      "me.elier.minecraft",
+      "me.suicidalkids",
+      "me.elier",
+      "me.rastrian",
+      "it.unimi.dsi.fastutil",
+      "it.unimi.dsi.fastutil.objects",
+      "org.github.paperspigot.event",
+      "it",
+      "it.unimi",
+      "com.windpvp",
+      "io",
+      "it.unimi.dsi",
+      "org.github",
+      "net.minecraft",
+      "org.sugarcanemc.sugarcane",
+      "org.sugarcanemc.sugarcane.util",
+      "io.papermc",
+      "com.destroystokyo",
+      "xyz.sculas.nacho",
+      "com",
+      "org.sugarcanemc",
+      "net.techcable",
+      "me.elier.nachospigot",
+      "org",
+      "net"
+    ]
+  },
+  "unknown_designite_smells": []
+}

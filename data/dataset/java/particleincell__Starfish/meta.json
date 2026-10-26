@@ -1,0 +1,34 @@
+{
+  "project": "particleincell__Starfish",
+  "n_nodes": 27,
+  "n_edges": 126,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 15,
+    "UD": 10,
+    "AI": 0,
+    "GC": 0,
+    "FC": 7,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 27,
+    "designite_packages": 27,
+    "matched": 27,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "starfish.core",
+      "starfish.plugins"
+    ]
+  },
+  "unknown_designite_smells": []
+}

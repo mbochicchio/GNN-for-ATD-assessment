@@ -1,0 +1,55 @@
+{
+  "project": "zalexdev__strykerapp",
+  "n_nodes": 86,
+  "n_edges": 235,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 13,
+    "UD": 9,
+    "AI": 0,
+    "GC": 4,
+    "FC": 19,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 86,
+    "designite_packages": 85,
+    "matched": 85,
+    "coverage": 0.9884,
+    "arcan_only": [
+      "com.stryker.terminal.framework.database.annotation"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com.github.wrdlbrnft",
+      "com.race604",
+      "com.race604.drawable",
+      "de.mrapp",
+      "de.mrapp.android",
+      "com.stryker.terminal.ui",
+      "com.stryker.terminal.ui.pm",
+      "com.google.android.material",
+      "com.stryker.terminal.frontend.session",
+      "com.stryker",
+      "com.zalexdev.stryker.exploithub",
+      "com.zalexdev.stryker.hid",
+      "com.google",
+      "com.google.android",
+      "de",
+      "com.google.android.material.bottomsheet",
+      "com.stryker.terminal.component",
+      "com.stryker.terminal.frontend",
+      "android",
+      "android.util",
+      "com.zalexdev",
+      "com",
+      "com.github"
+    ]
+  },
+  "unknown_designite_smells": []
+}

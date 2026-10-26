@@ -1,0 +1,46 @@
+{
+  "project": "Tencent__tinker",
+  "n_nodes": 42,
+  "n_edges": 140,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 17,
+    "UD": 11,
+    "AI": 0,
+    "GC": 5,
+    "FC": 14,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 42,
+    "designite_packages": 42,
+    "matched": 42,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com.tencent.tinker.android",
+      "com.tencent.tinker.build.dexpatcher.algorithms",
+      "com.tencent.tinker.commons",
+      "com.tencent.tinker.build",
+      "com.tencent.tinker.ziputils",
+      "org.jf",
+      "com.tencent.tinker.lib",
+      "org",
+      "com",
+      "com.tencent",
+      "com.tencent.tinker.android.dx",
+      "org.jf.dexlib2",
+      "com.tencent.tinker.commons.dexpatcher.algorithms",
+      "com.tencent.tinker"
+    ]
+  },
+  "unknown_designite_smells": []
+}

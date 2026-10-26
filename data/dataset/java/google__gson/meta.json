@@ -1,0 +1,41 @@
+{
+  "project": "google__gson",
+  "n_nodes": 13,
+  "n_edges": 41,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 7,
+    "UD": 4,
+    "AI": 0,
+    "GC": 2,
+    "FC": 4,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 13,
+    "designite_packages": 12,
+    "matched": 12,
+    "coverage": 0.9231,
+    "arcan_only": [
+      "com.google.gson.annotations"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com",
+      "com.google.gson",
+      "com.google",
+      "com.google.gson.stream",
+      "com.google.gson.internal",
+      "com.google.gson.annotations",
+      "com.google.gson.reflect"
+    ]
+  },
+  "unknown_designite_smells": []
+}

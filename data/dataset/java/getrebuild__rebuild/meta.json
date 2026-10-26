@@ -1,0 +1,38 @@
+{
+  "project": "getrebuild__rebuild",
+  "n_nodes": 75,
+  "n_edges": 1001,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 57,
+    "UD": 36,
+    "AI": 0,
+    "GC": 3,
+    "FC": 25,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 75,
+    "designite_packages": 74,
+    "matched": 74,
+    "coverage": 0.9867,
+    "arcan_only": [
+      "com.rebuild.core.support.registry"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com",
+      "com.rebuild",
+      "com.rebuild.api.aibot2",
+      "com.rebuild.web.robot"
+    ]
+  },
+  "unknown_designite_smells": []
+}

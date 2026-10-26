@@ -1,0 +1,36 @@
+{
+  "project": "Tutorials-By-Kaupenjoe__NeoForge-Tutorial-1.21.X",
+  "n_nodes": 28,
+  "n_edges": 98,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 18,
+    "UD": 10,
+    "AI": 0,
+    "GC": 0,
+    "FC": 3,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 28,
+    "designite_packages": 27,
+    "matched": 27,
+    "coverage": 0.9643,
+    "arcan_only": [
+      "net.kaupenjoe.tutorialmod.enchantment.custom"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "net",
+      "net.kaupenjoe"
+    ]
+  },
+  "unknown_designite_smells": []
+}

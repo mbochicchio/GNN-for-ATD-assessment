@@ -1,0 +1,25 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 138,
+  "source_files_removed": 5,
+  "source_files_after": 133,
+  "removed_share": 0.0362,
+  "removed_by_rule": {
+    "R1_arcan_default": 5
+  },
+  "removed_dirs": [
+    {
+      "path": "native/fhir-to-bal-lib/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "native/health-cli/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 5
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

@@ -1,0 +1,181 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 524,
+  "source_files_removed": 238,
+  "source_files_after": 286,
+  "removed_share": 0.4542,
+  "removed_by_rule": {
+    "R1_arcan_default": 238,
+    "R2_java_build": 0
+  },
+  "removed_dirs": [
+    {
+      "path": "api/runtimeTest/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 21
+    },
+    {
+      "path": "api/runtimeTest/src/main/java/org/pentaho/runtime/test",
+      "rule": "R1_arcan_default",
+      "source_files": 36
+    },
+    {
+      "path": "api/runtimeTest/src/main/resources/org/pentaho/runtime/test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "assemblies/samples",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    },
+    {
+      "path": "authentication-mapper/impl/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "impl/cluster/src/it",
+      "rule": "R2_java_build",
+      "source_files": 0
+    },
+    {
+      "path": "impl/cluster/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "impl/clusterTests/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 9
+    },
+    {
+      "path": "impl/clusterTests/src/main/java/org/pentaho/big/data/impl/cluster/tests",
+      "rule": "R1_arcan_default",
+      "source_files": 18
+    },
+    {
+      "path": "impl/clusterTests/src/main/resources/org/pentaho/big/data/impl/cluster/tests",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "impl/shim/jaas/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "impl/shim/shimTests/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "impl/shim/shimTests/src/main/java/org/pentaho/big/data/impl/shim/tests",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "impl/shim/shimTests/src/main/resources/org/pentaho/big/data/impl/shim/tests",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "impl/vfs-hdfs/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 8
+    },
+    {
+      "path": "kettle-plugins/common/job/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "kettle-plugins/common/ui/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "kettle-plugins/formats/core/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 10
+    },
+    {
+      "path": "kettle-plugins/formats-meta/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 6
+    },
+    {
+      "path": "kettle-plugins/guiTestActionHandlers/src/main/java/org/pentaho/big/data/plugins/gui/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "kettle-plugins/hadoop-cluster/ui/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "kettle-plugins/hbase/core/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 13
+    },
+    {
+      "path": "kettle-plugins/hbase-meta/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "kettle-plugins/hdfs/core/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 11
+    },
+    {
+      "path": "kettle-plugins/hive/core/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 19
+    },
+    {
+      "path": "kettle-plugins/mapreduce/core/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 14
+    },
+    {
+      "path": "kettle-plugins/oozie/core/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "kettle-plugins/pig/core/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "kettle-plugins/spark/core/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 5
+    },
+    {
+      "path": "kettle-plugins/sqoop/core/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 5
+    },
+    {
+      "path": "legacy/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 17
+    },
+    {
+      "path": "legacy-amazon/core/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 16
+    },
+    {
+      "path": "services-bootstrap/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

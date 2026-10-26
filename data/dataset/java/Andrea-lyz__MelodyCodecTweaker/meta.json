@@ -1,0 +1,36 @@
+{
+  "project": "Andrea-lyz__MelodyCodecTweaker",
+  "n_nodes": 12,
+  "n_edges": 40,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 9,
+    "UD": 3,
+    "AI": 0,
+    "GC": 1,
+    "FC": 2,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 12,
+    "designite_packages": 12,
+    "matched": 12,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "java",
+      "xyz",
+      "xyz.melodylsp",
+      "java.util"
+    ]
+  },
+  "unknown_designite_smells": []
+}

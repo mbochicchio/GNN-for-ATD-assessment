@@ -1,0 +1,55 @@
+{
+  "project": "apache__uniffle",
+  "n_nodes": 114,
+  "n_edges": 643,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 41,
+    "UD": 35,
+    "AI": 0,
+    "GC": 4,
+    "FC": 35,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 114,
+    "designite_packages": 114,
+    "matched": 114,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "org.apache.tez.runtime",
+      "org.apache.tez.runtime.library",
+      "org.apache.tez.dag.app.security",
+      "org.apache.hadoop",
+      "org.apache.hadoop.mapreduce.task",
+      "org.apache.tez.dag",
+      "io.grpc",
+      "io.grpc.stub",
+      "org.apache.spark",
+      "org.apache.spark.network",
+      "org",
+      "org.apache",
+      "org.apache.uniffle.storage",
+      "org.apache.uniffle.coordinator.web",
+      "org.apache.uniffle.coordinator.strategy",
+      "org.apache.tez.runtime.library.common.sort",
+      "io",
+      "org.apache.uniffle.hadoop",
+      "org.apache.tez.runtime.library.common",
+      "org.apache.hadoop.mapreduce.v2",
+      "org.apache.tez",
+      "org.apache.uniffle.server.web",
+      "org.apache.uniffle.dashboard"
+    ]
+  },
+  "unknown_designite_smells": []
+}

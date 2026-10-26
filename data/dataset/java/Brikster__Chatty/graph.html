@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Brikster__Chatty · dependency graph</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EEF1F0; --panel:#F8FAF9; --ink:#1B2733; --muted:#5E6B78; --rule:#D3DAD8;
+  --edge:#9AA7B2; --clean:#C3CCD3; --focus:#1B2733;
+  --CD:#D55E00; --UD:#0072B2; --AI:#CC79A7; --GC:#009E73; --FC:#E69F00; --SF:#56B4E9;
+  --s0:#C3CCD3; --s1:#F2C27B; --s2:#E58A3C; --s3:#C4462A; --s4:#8E1F2A;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+  --bg:#141B21; --panel:#1B242C; --ink:#E4EAEE; --muted:#93A1AD; --rule:#2C3842;
+  --edge:#4E5E6B; --clean:#3E4B56; --focus:#E4EAEE; --s0:#3E4B56;
+}}
+:root[data-theme="dark"]{
+  --bg:#141B21; --panel:#1B242C; --ink:#E4EAEE; --muted:#93A1AD; --rule:#2C3842;
+  --edge:#4E5E6B; --clean:#3E4B56; --focus:#E4EAEE; --s0:#3E4B56;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{height:100%; scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0; height:100%; background:var(--bg); color:var(--ink);
+  font:14px/1.5 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+.app{display:grid; grid-template-columns:320px 1fr; height:100%}
+aside{background:var(--panel); border-right:1px solid var(--rule); overflow-y:auto; padding:20px 20px 28px}
+h1{font:500 22px/1.2 "IBM Plex Sans Condensed","IBM Plex Sans",sans-serif; margin:0 0 4px; word-break:break-word}
+.sub{color:var(--muted); margin:0 0 18px}
+.stats{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-bottom:18px}
+.stat b{display:block; font-size:20px; font-weight:600}
+.stat span{color:var(--muted); font-size:12px}
+section{border-top:1px solid var(--rule); padding-top:14px; margin-top:14px}
+h2{font-size:13px; font-weight:600; margin:0 0 8px}
+label.ctl{display:block; color:var(--muted); font-size:12px; margin:8px 0 4px}
+select,input[type=search]{width:100%; font:inherit; color:var(--ink); background:var(--bg);
+  border:1px solid var(--rule); border-radius:6px; padding:6px 8px}
+select:focus-visible,input:focus-visible,button:focus-visible{outline:2px solid var(--focus); outline-offset:2px}
+.check{display:flex; gap:8px; align-items:center; margin-top:10px; color:var(--muted); font-size:13px}
+.legend{display:flex; flex-wrap:wrap; gap:6px 12px; margin-top:10px; font-size:12px}
+.dot{display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:7px; vertical-align:-1px}
+.legend i{display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:5px; vertical-align:-1px}
+table{width:100%; border-collapse:collapse; font-size:13px}
+td{padding:3px 0; border-bottom:1px solid var(--rule)}
+td:last-child{text-align:right; font-variant-numeric:tabular-nums}
+.chips{display:flex; flex-wrap:wrap; gap:6px; margin:8px 0}
+.chip{font-size:12px; padding:2px 8px; border-radius:10px; color:#fff}
+.chip.none{background:var(--clean); color:var(--ink)}
+.detail-name{font-weight:600; word-break:break-all; margin-bottom:4px}
+.note{color:var(--muted); font-size:12px}
+ol.rank{margin:0; padding-left:20px; font-size:13px}
+ol.rank li{margin:2px 0}
+ol.rank button{all:unset; cursor:pointer; word-break:break-all}
+ol.rank button:hover{text-decoration:underline}
+ol.rank .v{color:var(--muted); font-variant-numeric:tabular-nums}
+main{position:relative; overflow:hidden}
+svg{width:100%; height:100%; display:block; cursor:grab}
+.link{stroke:var(--edge); stroke-opacity:.55; fill:none}
+.node circle{stroke:var(--panel); stroke-width:1.5}
+.node.nomask circle{stroke-dasharray:3 2; stroke:var(--muted)}
+.node text{font-size:11px; fill:var(--ink); pointer-events:none; paint-order:stroke;
+  stroke:var(--bg); stroke-width:3px}
+.dim{opacity:.12}
+.node.sel circle{stroke:var(--focus); stroke-width:3}
+#tip{position:absolute; pointer-events:none; background:var(--panel); border:1px solid var(--rule);
+  border-radius:6px; padding:6px 9px; font-size:12px; max-width:320px; display:none; word-break:break-all}
+.hint{position:absolute; right:14px; bottom:12px; color:var(--muted); font-size:12px}
+@media (max-width:760px){
+  .app{grid-template-columns:1fr; grid-template-rows:auto 70vh; height:auto}
+  aside{border-right:0; border-bottom:1px solid var(--rule)}
+}
+@media (prefers-reduced-motion:reduce){ *{transition:none!important} }
+</style>
+</head>
+<body>
+<div class="app">
+<aside>
+  <h1 id="title"></h1>
+  <p class="sub">Package-level dependency graph with Designite smell labels</p>
+  <div class="stats">
+    <div class="stat"><b id="nN"></b><span>components</span></div>
+    <div class="stat"><b id="nE"></b><span>dependencies</span></div>
+    <div class="stat"><b id="nS"></b><span>smell-affected components</span></div>
+  </div>
+
+  <label class="ctl" for="colorBy">Colour nodes by</label>
+  <select id="colorBy">
+    <option value="count">Number of smells</option>
+    <option value="CD">Cyclic Dependency</option>
+    <option value="UD">Unstable Dependency</option>
+    <option value="AI">Ambiguous Interface</option>
+    <option value="GC">God Component</option>
+    <option value="FC">Feature Concentration</option>
+    <option value="SF">Scattered Functionality</option>
+    <option value="atdi">ATDI (Arcan)</option>
+  </select>
+  <div class="legend" id="legend"></div>
+
+  <label class="ctl" for="search">Find a component</label>
+  <input id="search" type="search" placeholder="e.g. analyzer" list="names" autocomplete="off">
+  <datalist id="names"></datalist>
+  <label class="check"><input type="checkbox" id="showLabels"> Show all node labels</label>
+
+  <section id="detail">
+    <h2>Selected component</h2>
+    <p class="note">Select a node to inspect its features, labels, and dependencies.</p>
+  </section>
+
+  <section>
+    <h2>Smell distribution</h2>
+    <table id="smellTable"></table>
+    <p class="note" id="ds"></p>
+  </section>
+
+  <section>
+    <h2>Highest ATDI</h2>
+    <ol class="rank" id="rank"></ol>
+  </section>
+</aside>
+<main>
+  <svg id="svg" role="img" aria-label="Dependency graph"></svg>
+  <div id="tip"></div>
+  <div class="hint">Drag to pan, scroll to zoom</div>
+</main>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script>
+const DATA = {"nodes": [{"id": 0, "name": "ru.brikster.chatty", "mask": 1, "atdi": 511.6362706852992, "units": 3, "Ab": 0.0, "In": 0.7254901960784313, "D": 0.27450980392156865, "FI": 4.0, "FO": 21.0, "LOC": 415.0, "PR": 0.03447639486621866, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 1, "name": "ru.brikster.chatty.adventure", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 2.0, "FO": 0.0, "LOC": 207.0, "PR": 0.006190370975254293, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 2, "name": "ru.brikster.chatty.api", "mask": 1, "atdi": 0.0, "units": 4, "Ab": 0.25, "In": 0.5, "D": 0.25, "FI": 6.0, "FO": 1.0, "LOC": 32.0, "PR": 0.009196551420501149, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 3, "name": "ru.brikster.chatty.api.chat", "mask": 1, "atdi": 12.007683478952707, "units": 2, "Ab": 0.5, "In": 0.06451612903225806, "D": 0.435483870967742, "FI": 20.0, "FO": 2.0, "LOC": 65.0, "PR": 0.11028293285884086, "CD": 0, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 4, "name": "ru.brikster.chatty.api.chat.command", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 1.0, "In": 0.0, "D": 0.0, "FI": 5.0, "FO": 0.0, "LOC": 7.0, "PR": 0.05782057641269009, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 5, "name": "ru.brikster.chatty.api.chat.message.context", "mask": 1, "atdi": 12.007683478952707, "units": 2, "Ab": 0.5, "In": 0.03571428571428571, "D": 0.4642857142857143, "FI": 15.0, "FO": 1.0, "LOC": 48.0, "PR": 0.07296668096184279, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 6, "name": "ru.brikster.chatty.api.chat.message.strategy", "mask": 1, "atdi": 12.007683478952707, "units": 1, "Ab": 1.0, "In": 0.10526315789473684, "D": 0.10526315789473673, "FI": 14.0, "FO": 2.0, "LOC": 23.0, "PR": 0.058805589516246336, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 7, "name": "ru.brikster.chatty.api.chat.message.strategy.result", "mask": 1, "atdi": 6.376864372491233, "units": 1, "Ab": 1.0, "In": 0.05, "D": 0.050000000000000044, "FI": 9.0, "FO": 1.0, "LOC": 17.0, "PR": 0.03640778480044033, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 8, "name": "ru.brikster.chatty.api.chat.range", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 1.0, "FO": 0.0, "LOC": 17.0, "PR": 0.005056885517267825, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 9, "name": "ru.brikster.chatty.api.event", "mask": 1, "atdi": 0.0, "units": 5, "Ab": 0.0, "In": 0.4, "D": 0.6, "FI": 3.0, "FO": 1.0, "LOC": 168.0, "PR": 0.006745541336906895, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 10, "name": "ru.brikster.chatty.chat", "mask": 1, "atdi": 50.73011664066017, "units": 3, "Ab": 0.0, "In": 0.6363636363636364, "D": 0.36363636363636365, "FI": 5.0, "FO": 11.0, "LOC": 154.0, "PR": 0.007432395619456196, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 11, "name": "ru.brikster.chatty.chat.command", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.5, "D": 0.5, "FI": 1.0, "FO": 1.0, "LOC": 10.0, "PR": 0.004643733947792827, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 12, "name": "ru.brikster.chatty.chat.component", "mask": 1, "atdi": 40.260154230898536, "units": 1, "Ab": 1.0, "In": 0.0, "D": 0.0, "FI": 7.0, "FO": 2.0, "LOC": 5.0, "PR": 0.012346990245122518, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 13, "name": "ru.brikster.chatty.chat.component.context", "mask": 1, "atdi": 0.0, "units": 4, "Ab": 0.25, "In": 0.0, "D": 0.75, "FI": 13.0, "FO": 0.0, "LOC": 21.0, "PR": 0.020813015413649667, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 14, "name": "ru.brikster.chatty.chat.component.impl", "mask": 1, "atdi": 207.62355498267274, "units": 7, "Ab": 0.42857142857142855, "In": 0.3333333333333333, "D": 0.23809523809523814, "FI": 12.0, "FO": 7.0, "LOC": 97.0, "PR": 0.017515660843854697, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 15, "name": "ru.brikster.chatty.chat.component.impl.dummy", "mask": 1, "atdi": 13.731799446528978, "units": 2, "Ab": 0.0, "In": 0.8571428571428571, "D": 0.1428571428571429, "FI": 1.0, "FO": 3.0, "LOC": 21.0, "PR": 0.004643733947792827, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 16, "name": "ru.brikster.chatty.chat.component.impl.papi", "mask": 1, "atdi": 34.37492483128042, "units": 4, "Ab": 0.25, "In": 0.7, "D": 0.050000000000000044, "FI": 2.0, "FO": 4.0, "LOC": 61.0, "PR": 0.0059988690240293545, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 17, "name": "ru.brikster.chatty.chat.component.impl.pm.placeholders", "mask": 1, "atdi": 27.628504588646866, "units": 4, "Ab": 0.5, "In": 0.5714285714285714, "D": 0.0714285714285714, "FI": 3.0, "FO": 4.0, "LOC": 28.0, "PR": 0.006377048199407478, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 18, "name": "ru.brikster.chatty.chat.component.impl.pm.prefix", "mask": 1, "atdi": 7.018654274263148, "units": 2, "Ab": 0.0, "In": 0.75, "D": 0.25, "FI": 1.0, "FO": 3.0, "LOC": 22.0, "PR": 0.004900123633752026, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 19, "name": "ru.brikster.chatty.chat.component.impl.prefix", "mask": 1, "atdi": 27.192530959415304, "units": 2, "Ab": 0.5, "In": 0.6, "D": 0.10000000000000009, "FI": 3.0, "FO": 5.0, "LOC": 43.0, "PR": 0.007412104825508286, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 20, "name": "ru.brikster.chatty.chat.construct", "mask": 1, "atdi": 17.64241077935146, "units": 2, "Ab": 0.5, "In": 0.7142857142857143, "D": 0.2142857142857144, "FI": 2.0, "FO": 5.0, "LOC": 39.0, "PR": 0.004956017276222415, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 21, "name": "ru.brikster.chatty.chat.executor", "mask": 1, "atdi": 41.04381829486536, "units": 6, "Ab": 0.3333333333333333, "In": 0.9545454545454546, "D": 0.28787878787878785, "FI": 1.0, "FO": 16.0, "LOC": 384.0, "PR": 0.005878087646824704, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 22, "name": "ru.brikster.chatty.chat.message.context", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.6666666666666666, "D": 0.33333333333333337, "FI": 1.0, "FO": 2.0, "LOC": 32.0, "PR": 0.0067704260466253515, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 23, "name": "ru.brikster.chatty.chat.message.transform", "mask": 1, "atdi": 21.508234956240813, "units": 1, "Ab": 1.0, "In": 0.6666666666666666, "D": 0.6666666666666665, "FI": 3.0, "FO": 9.0, "LOC": 21.0, "PR": 0.00650003276849637, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 24, "name": "ru.brikster.chatty.chat.message.transform.decorations", "mask": 1, "atdi": 20.8552953280804, "units": 1, "Ab": 0.0, "In": 0.3333333333333333, "D": 0.6666666666666667, "FI": 2.0, "FO": 1.0, "LOC": 64.0, "PR": 0.005953294223131365, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 25, "name": "ru.brikster.chatty.chat.message.transform.intermediary", "mask": 1, "atdi": 14.002707127556418, "units": 2, "Ab": 0.5, "In": 0.6666666666666666, "D": 0.16666666666666652, "FI": 2.0, "FO": 4.0, "LOC": 24.0, "PR": 0.004956017276222415, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 26, "name": "ru.brikster.chatty.chat.message.transform.processor", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.5, "In": 0.6666666666666666, "D": 0.16666666666666652, "FI": 2.0, "FO": 4.0, "LOC": 50.0, "PR": 0.004956017276222415, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 27, "name": "ru.brikster.chatty.chat.message.transform.result", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.3333333333333333, "In": 0.2, "D": 0.4666666666666667, "FI": 6.0, "FO": 3.0, "LOC": 111.0, "PR": 0.008074825915475103, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 28, "name": "ru.brikster.chatty.chat.message.transform.stage.early", "mask": 1, "atdi": 34.23759536732587, "units": 4, "Ab": 0.0, "In": 0.9230769230769231, "D": 0.07692307692307687, "FI": 1.0, "FO": 11.0, "LOC": 149.0, "PR": 0.004643733947792827, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 29, "name": "ru.brikster.chatty.chat.message.transform.stage.early.moderation", "mask": 1, "atdi": 13.651836076561668, "units": 4, "Ab": 0.25, "In": 0.8888888888888888, "D": 0.13888888888888884, "FI": 1.0, "FO": 7.0, "LOC": 179.0, "PR": 0.004643733947792827, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 30, "name": "ru.brikster.chatty.chat.message.transform.stage.late.papi", "mask": 1, "atdi": 13.904891154308281, "units": 1, "Ab": 0.0, "In": 0.8333333333333334, "D": 0.16666666666666663, "FI": 1.0, "FO": 5.0, "LOC": 13.0, "PR": 0.004643733947792827, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 31, "name": "ru.brikster.chatty.chat.message.transform.stage.late.prefix", "mask": 1, "atdi": 14.028809185563574, "units": 1, "Ab": 0.0, "In": 0.8333333333333334, "D": 0.16666666666666663, "FI": 1.0, "FO": 5.0, "LOC": 13.0, "PR": 0.004643733947792827, "CD": 0, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 32, "name": "ru.brikster.chatty.chat.message.transform.stage.middle", "mask": 1, "atdi": 13.724198077677919, "units": 1, "Ab": 0.0, "In": 0.875, "D": 0.125, "FI": 1.0, "FO": 7.0, "LOC": 26.0, "PR": 0.004643733947792827, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 33, "name": "ru.brikster.chatty.chat.message.transform.stage.post", "mask": 1, "atdi": 20.976776983867524, "units": 2, "Ab": 0.0, "In": 0.9230769230769231, "D": 0.07692307692307687, "FI": 1.0, "FO": 9.0, "LOC": 100.0, "PR": 0.004643733947792827, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 34, "name": "ru.brikster.chatty.chat.registry", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.5, "In": 0.1111111111111111, "D": 0.38888888888888884, "FI": 6.0, "FO": 1.0, "LOC": 20.0, "PR": 0.011727328337195883, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 35, "name": "ru.brikster.chatty.chat.selection", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.3333333333333333, "In": 0.2222222222222222, "D": 0.4444444444444444, "FI": 6.0, "FO": 2.0, "LOC": 56.0, "PR": 0.007669984297879106, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 36, "name": "ru.brikster.chatty.chat.style", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.5, "In": 0.25, "D": 0.25, "FI": 3.0, "FO": 1.0, "LOC": 42.0, "PR": 0.005996366561620428, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 37, "name": "ru.brikster.chatty.command", "mask": 1, "atdi": 39.28267060184922, "units": 3, "Ab": 0.3333333333333333, "In": 0.0, "D": 0.6666666666666667, "FI": 2.0, "FO": 6.0, "LOC": 33.0, "PR": 0.006295655824876594, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 38, "name": "ru.brikster.chatty.command.handler", "mask": 1, "atdi": 17.293311233093792, "units": 5, "Ab": 0.0, "In": 0.9333333333333333, "D": 0.06666666666666665, "FI": 1.0, "FO": 9.0, "LOC": 212.0, "PR": 0.005878087646824704, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 39, "name": "ru.brikster.chatty.config.file", "mask": 1, "atdi": 107.90243043927016, "units": 9, "Ab": 0.0, "In": 0.075, "D": 0.925, "FI": 18.0, "FO": 3.0, "LOC": 1214.0, "PR": 0.04335458490319432, "CD": 1, "UD": 1, "AI": 1, "GC": 1, "FC": 1, "SF": 0}, {"id": 40, "name": "ru.brikster.chatty.config.migration", "mask": 1, "atdi": 5.523490770420787, "units": 1, "Ab": 0.0, "In": 0.5, "D": 0.5, "FI": 1.0, "FO": 1.0, "LOC": 180.0, "PR": 0.005878087646824704, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 41, "name": "ru.brikster.chatty.config.serdes", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.75, "D": 0.25, "FI": 1.0, "FO": 2.0, "LOC": 14.0, "PR": 0.004643733947792827, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 42, "name": "ru.brikster.chatty.config.serdes.serializer.adventure", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 0.5, "D": 0.5, "FI": 1.0, "FO": 1.0, "LOC": 45.0, "PR": 0.006456174566044279, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 43, "name": "ru.brikster.chatty.convert.component", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.5, "In": 0.08695652173913043, "D": 0.4130434782608696, "FI": 13.0, "FO": 1.0, "LOC": 31.0, "PR": 0.03404850435894073, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 44, "name": "ru.brikster.chatty.convert.message", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.5, "In": 0.0, "D": 0.5, "FI": 3.0, "FO": 0.0, "LOC": 100.0, "PR": 0.034427955695913115, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 45, "name": "ru.brikster.chatty.guice", "mask": 1, "atdi": 211.00133229084886, "units": 2, "Ab": 0.0, "In": 0.9879518072289156, "D": 0.012048192771084376, "FI": 1.0, "FO": 31.0, "LOC": 416.0, "PR": 0.005878087646824704, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 46, "name": "ru.brikster.chatty.metrics", "mask": 1, "atdi": 10.73099216677279, "units": 1, "Ab": 0.0, "In": 0.8571428571428571, "D": 0.1428571428571429, "FI": 1.0, "FO": 2.0, "LOC": 49.0, "PR": 0.005878087646824704, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 47, "name": "ru.brikster.chatty.misc", "mask": 1, "atdi": 60.340247840666656, "units": 2, "Ab": 0.0, "In": 0.8181818181818182, "D": 0.18181818181818177, "FI": 2.0, "FO": 7.0, "LOC": 133.0, "PR": 0.006190370975254293, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 48, "name": "ru.brikster.chatty.notification", "mask": 1, "atdi": 112.2059731465444, "units": 7, "Ab": 0.2857142857142857, "In": 0.42857142857142855, "D": 0.2857142857142858, "FI": 4.0, "FO": 4.0, "LOC": 211.0, "PR": 0.021802718343584146, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 49, "name": "ru.brikster.chatty.notification.advancement", "mask": 1, "atdi": 29.705402013902145, "units": 5, "Ab": 0.0, "In": 0.5714285714285714, "D": 0.4285714285714286, "FI": 3.0, "FO": 3.0, "LOC": 169.0, "PR": 0.02156121470591164, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 50, "name": "ru.brikster.chatty.papi", "mask": 1, "atdi": 12.192833736733304, "units": 2, "Ab": 0.0, "In": 0.8571428571428571, "D": 0.1428571428571429, "FI": 1.0, "FO": 6.0, "LOC": 82.0, "PR": 0.005878087646824704, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 51, "name": "ru.brikster.chatty.pm", "mask": 1, "atdi": 80.23519283361864, "units": 5, "Ab": 0.0, "In": 0.8888888888888888, "D": 0.11111111111111116, "FI": 2.0, "FO": 14.0, "LOC": 249.0, "PR": 0.006877394297799388, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 52, "name": "ru.brikster.chatty.pm.ignore", "mask": 1, "atdi": 25.410272126669145, "units": 3, "Ab": 0.0, "In": 0.8571428571428571, "D": 0.1428571428571429, "FI": 1.0, "FO": 5.0, "LOC": 100.0, "PR": 0.005878087646824704, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 53, "name": "ru.brikster.chatty.pm.targets", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.3333333333333333, "In": 0.0, "D": 0.6666666666666667, "FI": 2.0, "FO": 0.0, "LOC": 56.0, "PR": 0.005899430284726708, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 54, "name": "ru.brikster.chatty.prefix", "mask": 1, "atdi": 0.0, "units": 4, "Ab": 0.25, "In": 0.0, "D": 0.75, "FI": 4.0, "FO": 0.0, "LOC": 53.0, "PR": 0.008124946328252763, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 55, "name": "ru.brikster.chatty.proxy", "mask": 1, "atdi": 61.83077098648543, "units": 3, "Ab": 0.3333333333333333, "In": 0.625, "D": 0.04166666666666674, "FI": 5.0, "FO": 6.0, "LOC": 196.0, "PR": 0.007343447706966562, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 56, "name": "ru.brikster.chatty.proxy.data", "mask": 1, "atdi": 0.0, "units": 4, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 2.0, "FO": 0.0, "LOC": 34.0, "PR": 0.005835188069527737, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 57, "name": "ru.brikster.chatty.repository.player", "mask": 1, "atdi": 81.41232297745933, "units": 6, "Ab": 0.16666666666666666, "In": 0.1875, "D": 0.6458333333333334, "FI": 9.0, "FO": 3.0, "LOC": 574.0, "PR": 0.02012397549466229, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 58, "name": "ru.brikster.chatty.repository.swear", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.5, "In": 0.0, "D": 0.5, "FI": 2.0, "FO": 0.0, "LOC": 28.0, "PR": 0.005207625122176867, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 59, "name": "ru.brikster.chatty.util", "mask": 1, "atdi": 174.23881161482709, "units": 10, "Ab": 0.0, "In": 0.11764705882352941, "D": 0.8823529411764706, "FI": 17.0, "FO": 3.0, "LOC": 439.0, "PR": 0.03487223643680262, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 1, "SF": 0}], "edges": [{"source": 0, "target": 1, "w": 1.0}, {"source": 0, "target": 2, "w": 1.0}, {"source": 0, "target": 3, "w": 1.0}, {"source": 0, "target": 4, "w": 1.0}, {"source": 0, "target": 9, "w": 1.0}, {"source": 0, "target": 21, "w": 2.0}, {"source": 0, "target": 34, "w": 1.0}, {"source": 0, "target": 37, "w": 3.0}, {"source": 0, "target": 38, "w": 4.0}, {"source": 0, "target": 39, "w": 3.0}, {"source": 0, "target": 40, "w": 1.0}, {"source": 0, "target": 45, "w": 2.0}, {"source": 0, "target": 46, "w": 1.0}, {"source": 0, "target": 47, "w": 2.0}, {"source": 0, "target": 48, "w": 1.0}, {"source": 0, "target": 50, "w": 1.0}, {"source": 0, "target": 51, "w": 3.0}, {"source": 0, "target": 52, "w": 3.0}, {"source": 0, "target": 55, "w": 1.0}, {"source": 0, "target": 57, "w": 1.0}, {"source": 0, "target": 59, "w": 3.0}, {"source": 2, "target": 3, "w": 4.0}, {"source": 3, "target": 4, "w": 1.0}, {"source": 3, "target": 6, "w": 1.0}, {"source": 5, "target": 3, "w": 1.0}, {"source": 6, "target": 5, "w": 1.0}, {"source": 6, "target": 7, "w": 1.0}, {"source": 7, "target": 5, "w": 1.0}, {"source": 9, "target": 3, "w": 3.0}, {"source": 10, "target": 2, "w": 24.0}, {"source": 10, "target": 3, "w": 14.0}, {"source": 10, "target": 4, "w": 1.0}, {"source": 10, "target": 6, "w": 1.0}, {"source": 10, "target": 8, "w": 1.0}, {"source": 10, "target": 14, "w": 1.0}, {"source": 10, "target": 35, "w": 1.0}, {"source": 10, "target": 55, "w": 1.0}, {"source": 11, "target": 4, "w": 1.0}, {"source": 14, "target": 0, "w": 1.0}, {"source": 14, "target": 12, "w": 3.0}, {"source": 14, "target": 13, "w": 5.0}, {"source": 14, "target": 39, "w": 2.0}, {"source": 14, "target": 43, "w": 2.0}, {"source": 14, "target": 59, "w": 1.0}, {"source": 15, "target": 13, "w": 2.0}, {"source": 15, "target": 14, "w": 2.0}, {"source": 15, "target": 17, "w": 2.0}, {"source": 16, "target": 13, "w": 2.0}, {"source": 16, "target": 14, "w": 3.0}, {"source": 16, "target": 43, "w": 3.0}, {"source": 16, "target": 59, "w": 2.0}, {"source": 17, "target": 12, "w": 2.0}, {"source": 17, "target": 13, "w": 2.0}, {"source": 17, "target": 16, "w": 2.0}, {"source": 17, "target": 43, "w": 2.0}, {"source": 18, "target": 19, "w": 2.0}, {"source": 18, "target": 43, "w": 2.0}, {"source": 18, "target": 54, "w": 2.0}, {"source": 19, "target": 12, "w": 1.0}, {"source": 19, "target": 13, "w": 1.0}, {"source": 19, "target": 43, "w": 2.0}, {"source": 19, "target": 54, "w": 2.0}, {"source": 19, "target": 59, "w": 2.0}, {"source": 20, "target": 5, "w": 2.0}, {"source": 20, "target": 14, "w": 1.0}, {"source": 20, "target": 43, "w": 1.0}, {"source": 20, "target": 44, "w": 1.0}, {"source": 20, "target": 59, "w": 1.0}, {"source": 21, "target": 1, "w": 1.0}, {"source": 21, "target": 3, "w": 2.0}, {"source": 21, "target": 5, "w": 2.0}, {"source": 21, "target": 6, "w": 1.0}, {"source": 21, "target": 9, "w": 2.0}, {"source": 21, "target": 10, "w": 1.0}, {"source": 21, "target": 20, "w": 1.0}, {"source": 21, "target": 25, "w": 1.0}, {"source": 21, "target": 26, "w": 1.0}, {"source": 21, "target": 35, "w": 1.0}, {"source": 21, "target": 36, "w": 1.0}, {"source": 21, "target": 39, "w": 2.0}, {"source": 21, "target": 47, "w": 1.0}, {"source": 21, "target": 55, "w": 1.0}, {"source": 21, "target": 56, "w": 1.0}, {"source": 21, "target": 59, "w": 2.0}, {"source": 22, "target": 3, "w": 1.0}, {"source": 22, "target": 5, "w": 1.0}, {"source": 23, "target": 2, "w": 11.0}, {"source": 23, "target": 3, "w": 20.0}, {"source": 23, "target": 5, "w": 1.0}, {"source": 23, "target": 6, "w": 8.0}, {"source": 23, "target": 7, "w": 1.0}, {"source": 23, "target": 12, "w": 1.0}, {"source": 23, "target": 13, "w": 1.0}, {"source": 23, "target": 27, "w": 1.0}, {"source": 24, "target": 59, "w": 1.0}, {"source": 25, "target": 5, "w": 2.0}, {"source": 25, "target": 7, "w": 2.0}, {"source": 25, "target": 24, "w": 1.0}, {"source": 25, "target": 27, "w": 1.0}, {"source": 26, "target": 3, "w": 1.0}, {"source": 26, "target": 5, "w": 2.0}, {"source": 26, "target": 6, "w": 1.0}, {"source": 26, "target": 7, "w": 2.0}, {"source": 27, "target": 5, "w": 3.0}, {"source": 27, "target": 7, "w": 3.0}, {"source": 27, "target": 22, "w": 1.0}, {"source": 28, "target": 3, "w": 3.0}, {"source": 28, "target": 5, "w": 5.0}, {"source": 28, "target": 6, "w": 8.0}, {"source": 28, "target": 7, "w": 4.0}, {"source": 28, "target": 27, "w": 4.0}, {"source": 28, "target": 39, "w": 2.0}, {"source": 28, "target": 57, "w": 3.0}, {"source": 28, "target": 59, "w": 5.0}, {"source": 29, "target": 5, "w": 4.0}, {"source": 29, "target": 6, "w": 2.0}, {"source": 29, "target": 7, "w": 4.0}, {"source": 29, "target": 27, "w": 4.0}, {"source": 29, "target": 39, "w": 6.0}, {"source": 29, "target": 58, "w": 1.0}, {"source": 29, "target": 59, "w": 3.0}, {"source": 30, "target": 5, "w": 1.0}, {"source": 30, "target": 6, "w": 1.0}, {"source": 30, "target": 13, "w": 1.0}, {"source": 30, "target": 14, "w": 1.0}, {"source": 30, "target": 23, "w": 1.0}, {"source": 31, "target": 5, "w": 1.0}, {"source": 31, "target": 6, "w": 1.0}, {"source": 31, "target": 13, "w": 1.0}, {"source": 31, "target": 19, "w": 1.0}, {"source": 31, "target": 23, "w": 1.0}, {"source": 32, "target": 5, "w": 1.0}, {"source": 32, "target": 6, "w": 1.0}, {"source": 32, "target": 7, "w": 1.0}, {"source": 32, "target": 13, "w": 1.0}, {"source": 32, "target": 14, "w": 1.0}, {"source": 32, "target": 27, "w": 1.0}, {"source": 32, "target": 39, "w": 1.0}, {"source": 33, "target": 5, "w": 3.0}, {"source": 33, "target": 6, "w": 2.0}, {"source": 33, "target": 7, "w": 1.0}, {"source": 33, "target": 13, "w": 3.0}, {"source": 33, "target": 14, "w": 3.0}, {"source": 33, "target": 23, "w": 1.0}, {"source": 33, "target": 27, "w": 1.0}, {"source": 33, "target": 39, "w": 2.0}, {"source": 33, "target": 43, "w": 1.0}, {"source": 34, "target": 3, "w": 2.0}, {"source": 35, "target": 3, "w": 2.0}, {"source": 35, "target": 34, "w": 1.0}, {"source": 36, "target": 3, "w": 2.0}, {"source": 37, "target": 2, "w": 4.0}, {"source": 37, "target": 3, "w": 1.0}, {"source": 37, "target": 10, "w": 3.0}, {"source": 38, "target": 3, "w": 2.0}, {"source": 38, "target": 4, "w": 1.0}, {"source": 38, "target": 9, "w": 2.0}, {"source": 38, "target": 34, "w": 2.0}, {"source": 38, "target": 35, "w": 1.0}, {"source": 38, "target": 39, "w": 5.0}, {"source": 38, "target": 43, "w": 1.0}, {"source": 38, "target": 57, "w": 3.0}, {"source": 38, "target": 59, "w": 10.0}, {"source": 39, "target": 0, "w": 9.0}, {"source": 39, "target": 43, "w": 2.0}, {"source": 39, "target": 49, "w": 1.0}, {"source": 40, "target": 39, "w": 1.0}, {"source": 41, "target": 42, "w": 2.0}, {"source": 41, "target": 43, "w": 1.0}, {"source": 42, "target": 43, "w": 1.0}, {"source": 43, "target": 44, "w": 2.0}, {"source": 45, "target": 3, "w": 2.0}, {"source": 45, "target": 6, "w": 1.0}, {"source": 45, "target": 10, "w": 2.0}, {"source": 45, "target": 11, "w": 1.0}, {"source": 45, "target": 14, "w": 8.0}, {"source": 45, "target": 15, "w": 2.0}, {"source": 45, "target": 16, "w": 3.0}, {"source": 45, "target": 17, "w": 4.0}, {"source": 45, "target": 20, "w": 2.0}, {"source": 45, "target": 25, "w": 2.0}, {"source": 45, "target": 26, "w": 2.0}, {"source": 45, "target": 28, "w": 4.0}, {"source": 45, "target": 29, "w": 3.0}, {"source": 45, "target": 30, "w": 1.0}, {"source": 45, "target": 31, "w": 1.0}, {"source": 45, "target": 32, "w": 1.0}, {"source": 45, "target": 33, "w": 2.0}, {"source": 45, "target": 34, "w": 3.0}, {"source": 45, "target": 35, "w": 3.0}, {"source": 45, "target": 36, "w": 2.0}, {"source": 45, "target": 39, "w": 11.0}, {"source": 45, "target": 41, "w": 1.0}, {"source": 45, "target": 43, "w": 3.0}, {"source": 45, "target": 44, "w": 2.0}, {"source": 45, "target": 48, "w": 7.0}, {"source": 45, "target": 49, "w": 2.0}, {"source": 45, "target": 54, "w": 4.0}, {"source": 45, "target": 55, "w": 3.0}, {"source": 45, "target": 57, "w": 4.0}, {"source": 45, "target": 58, "w": 2.0}, {"source": 45, "target": 59, "w": 1.0}, {"source": 46, "target": 39, "w": 5.0}, {"source": 46, "target": 59, "w": 1.0}, {"source": 47, "target": 10, "w": 1.0}, {"source": 47, "target": 13, "w": 1.0}, {"source": 47, "target": 14, "w": 1.0}, {"source": 47, "target": 19, "w": 1.0}, {"source": 47, "target": 35, "w": 1.0}, {"source": 47, "target": 39, "w": 3.0}, {"source": 47, "target": 59, "w": 1.0}, {"source": 48, "target": 13, "w": 3.0}, {"source": 48, "target": 14, "w": 3.0}, {"source": 48, "target": 49, "w": 1.0}, {"source": 49, "target": 39, "w": 1.0}, {"source": 49, "target": 48, "w": 2.0}, {"source": 49, "target": 59, "w": 1.0}, {"source": 50, "target": 3, "w": 1.0}, {"source": 50, "target": 10, "w": 1.0}, {"source": 50, "target": 34, "w": 1.0}, {"source": 50, "target": 35, "w": 1.0}, {"source": 50, "target": 54, "w": 1.0}, {"source": 50, "target": 57, "w": 1.0}, {"source": 51, "target": 13, "w": 3.0}, {"source": 51, "target": 14, "w": 2.0}, {"source": 51, "target": 17, "w": 2.0}, {"source": 51, "target": 18, "w": 2.0}, {"source": 51, "target": 24, "w": 1.0}, {"source": 51, "target": 37, "w": 1.0}, {"source": 51, "target": 39, "w": 7.0}, {"source": 51, "target": 43, "w": 1.0}, {"source": 51, "target": 53, "w": 6.0}, {"source": 51, "target": 55, "w": 3.0}, {"source": 51, "target": 57, "w": 2.0}, {"source": 51, "target": 59, "w": 6.0}, {"source": 52, "target": 39, "w": 3.0}, {"source": 52, "target": 51, "w": 2.0}, {"source": 52, "target": 53, "w": 2.0}, {"source": 52, "target": 57, "w": 3.0}, {"source": 52, "target": 59, "w": 4.0}, {"source": 55, "target": 3, "w": 4.0}, {"source": 55, "target": 34, "w": 1.0}, {"source": 55, "target": 36, "w": 1.0}, {"source": 55, "target": 39, "w": 1.0}, {"source": 55, "target": 56, "w": 6.0}, {"source": 55, "target": 57, "w": 1.0}, {"source": 57, "target": 0, "w": 3.0}, {"source": 57, "target": 39, "w": 2.0}, {"source": 57, "target": 59, "w": 1.0}, {"source": 59, "target": 0, "w": 1.0}, {"source": 59, "target": 39, "w": 2.0}, {"source": 59, "target": 57, "w": 1.0}], "meta": {"project": "Brikster__Chatty", "n_nodes": 60, "n_edges": 252, "graph_level_smells": ["Dense Structure"], "dense_structure": 1, "label_counts": {"CD": 19, "UD": 9, "AI": 1, "GC": 1, "FC": 3, "SF": 0}, "matching": {"arcan_nodes": 60, "designite_packages": 60, "matched": 60, "coverage": 1.0, "arcan_only": [], "designite_only": [], "smelly_packages_not_in_graph": []}, "dropped_containers": {"default_package": [], "empty_container": ["ru.brikster.chatty.api.chat.message", "ru", "ru.brikster", "ru.brikster.chatty.config", "ru.brikster.chatty.chat.message", "ru.brikster.chatty.config.serdes.serializer", "ru.brikster.chatty.chat.message.transform.stage", "ru.brikster.chatty.chat.message.transform.stage.late", "ru.brikster.chatty.convert", "ru.brikster.chatty.chat.component.impl.pm", "ru.brikster.chatty.repository"]}, "unknown_designite_smells": []}};
+const LABELS = ["CD","UD","AI","GC","FC","SF"];
+const NAMES = {CD:"Cyclic Dependency",UD:"Unstable Dependency",AI:"Ambiguous Interface",
+  GC:"God Component",FC:"Feature Concentration",SF:"Scattered Functionality"};
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const nodes = DATA.nodes.map(d => ({...d, nSmell: LABELS.reduce((s,k)=>s+d[k],0),
+  short: d.name.split(".").slice(-1)[0] || d.name}));
+const byId = new Map(nodes.map(d => [d.id, d]));
+const links = DATA.edges.map(e => ({...e}));
+const meta = DATA.meta;
+let current = null;
+
+// ---------- sidebar ----------
+document.getElementById("title").textContent = meta.project;
+document.getElementById("nN").textContent = nodes.length;
+document.getElementById("nE").textContent = links.length;
+document.getElementById("nS").textContent = nodes.filter(d => d.nSmell > 0).length;
+document.getElementById("names").innerHTML = nodes.map(d => `<option value="${d.name}">`).join("");
+document.getElementById("smellTable").innerHTML = LABELS.map(k =>
+  `<tr><td><i class="dot" style="background:var(--${k})"></i>${NAMES[k]}</td>
+   <td>${meta.label_counts[k]} / ${nodes.length}</td></tr>`).join("");
+document.getElementById("ds").textContent = meta.dense_structure
+  ? "Dense Structure detected at project level (not assigned to individual nodes)."
+  : "Dense Structure not detected.";
+const unmasked = nodes.filter(d => !d.mask).length;
+if (unmasked) document.getElementById("ds").textContent +=
+  ` ${unmasked} nodes not analysed by Designite (dashed outline): labels unavailable.`;
+const rank = [...nodes].sort((a,b) => b.atdi - a.atdi).slice(0,10);
+document.getElementById("rank").innerHTML = rank.map(d =>
+  `<li><button data-id="${d.id}">${d.short}</button> <span class="v">${d.atdi.toFixed(1)}</span></li>`).join("");
+document.querySelectorAll("#rank button").forEach(b =>
+  b.addEventListener("click", () => select(byId.get(+b.dataset.id), true)));
+
+// ---------- graph ----------
+const svg = d3.select("#svg"), g = svg.append("g");
+const W = () => svg.node().clientWidth, H = () => svg.node().clientHeight;
+const maxLoc = d3.max(nodes, d => d.LOC) || 1;
+const r = d3.scaleSqrt().domain([0, maxLoc]).range([4, 26]);
+const wScale = d3.scaleLog().domain([1, d3.max(links, d => d.w) || 1]).range([0.6, 3.5]);
+const maxAtdi = d3.max(nodes, d => d.atdi) || 1;
+
+svg.append("defs").append("marker").attr("id","arrow").attr("viewBox","0 -4 8 8")
+  .attr("refX",8).attr("refY",0).attr("markerUnits","userSpaceOnUse").attr("markerWidth",9).attr("markerHeight",9).attr("orient","auto")
+  .append("path").attr("d","M0,-4L8,0L0,4").attr("fill","var(--edge)");
+
+const link = g.append("g").selectAll("path").data(links).join("path")
+  .attr("class","link").attr("stroke-width", d => wScale(Math.max(1,d.w))).attr("marker-end","url(#arrow)");
+const node = g.append("g").selectAll("g").data(nodes).join("g")
+  .attr("class", d => "node" + (d.mask ? "" : " nomask")).attr("tabindex",0)
+  .attr("aria-label", d => d.name);
+node.append("circle").attr("r", d => r(d.LOC));
+node.append("text").attr("dy", d => -r(d.LOC) - 4).attr("text-anchor","middle").text(d => d.short);
+
+const sim = d3.forceSimulation(nodes)
+  .force("link", d3.forceLink(links).id(d => d.id).distance(95).strength(0.2))
+  .force("charge", d3.forceManyBody().strength(-420))
+  .force("collide", d3.forceCollide(d => r(d.LOC) + 6))
+  .force("x", d3.forceX(() => W()/2).strength(0.05))
+  .force("y", d3.forceY(() => H()/2).strength(0.05))
+  .on("tick", ticked).on("end", fit);
+if (matchMedia("(prefers-reduced-motion: reduce)").matches) { sim.stop(); for (let i=0;i<300;i++) sim.tick(); ticked(); setTimeout(fit, 0); }
+let fitted = false;
+function fit(){
+  if (fitted) return; fitted = true;
+  const pad = 40, xs = nodes.map(d => d.x), ys = nodes.map(d => d.y);
+  const x0 = d3.min(xs) - pad, x1 = d3.max(xs) + pad, y0 = d3.min(ys) - pad, y1 = d3.max(ys) + pad;
+  const k = Math.min(2, 0.95 / Math.max((x1 - x0) / W(), (y1 - y0) / H()));
+  svg.transition().duration(600).call(zoom.transform,
+    d3.zoomIdentity.translate(W()/2, H()/2).scale(k).translate(-(x0 + x1)/2, -(y0 + y1)/2));
+}
+
+function ticked(){
+  link.attr("d", d => {
+    const dx = d.target.x - d.source.x, dy = d.target.y - d.source.y, L = Math.hypot(dx,dy) || 1;
+    const rt = r(d.target.LOC) + 3, rs = r(d.source.LOC);
+    return `M${d.source.x + dx*rs/L},${d.source.y + dy*rs/L}L${d.target.x - dx*rt/L},${d.target.y - dy*rt/L}`;
+  });
+  node.attr("transform", d => `translate(${d.x},${d.y})`);
+}
+
+node.call(d3.drag()
+  .on("start", (e,d) => { if(!e.active) sim.alphaTarget(0.3).restart(); d.fx=d.x; d.fy=d.y; })
+  .on("drag", (e,d) => { d.fx=e.x; d.fy=e.y; })
+  .on("end", (e,d) => { if(!e.active) sim.alphaTarget(0); d.fx=null; d.fy=null; }));
+const zoom = d3.zoom().scaleExtent([0.2,6]).on("zoom", e => g.attr("transform", e.transform));
+svg.call(zoom).on("click", e => { if (e.target === svg.node()) select(null); });
+
+// ---------- colour ----------
+function colour(d){
+  const m = document.getElementById("colorBy").value;
+  if (m === "count") return css("--s" + Math.min(d.nSmell, 4));
+  if (m === "atdi") return d3.interpolateLab(css("--s0"), css("--s4"))(Math.sqrt(d.atdi / maxAtdi));
+  return d[m] ? css("--" + m) : css("--clean");
+}
+function legend(){
+  const m = document.getElementById("colorBy").value, el = document.getElementById("legend");
+  if (m === "count") el.innerHTML = [0,1,2,3,4].map(i =>
+    `<span><i style="background:var(--s${i})"></i>${i===4?"4+":i} ${i===1?"smell":"smells"}</span>`).join("");
+  else if (m === "atdi") el.innerHTML = `<span><i style="background:var(--s0)"></i>0</span>
+    <span><i style="background:var(--s4)"></i>${maxAtdi.toFixed(0)}</span>`;
+  else el.innerHTML = `<span><i style="background:var(--${m})"></i>affected</span>
+    <span><i style="background:var(--clean)"></i>not affected</span>`;
+  el.innerHTML += `<span>node size ∝ LOC</span>`;
+}
+function paint(){ node.select("circle").attr("fill", colour); legend(); }
+document.getElementById("colorBy").addEventListener("change", paint);
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", paint);
+paint();
+
+// ---------- labels ----------
+function labelsVisible(){
+  const all = document.getElementById("showLabels").checked;
+  node.select("text").style("display", d => all || r(d.LOC) > 12 || d === current ? null : "none");
+}
+document.getElementById("showLabels").addEventListener("change", labelsVisible);
+
+// ---------- tooltip ----------
+const tip = document.getElementById("tip");
+node.on("mouseenter", (e,d) => {
+  const s = LABELS.filter(k => d[k]).join(", ") || "none";
+  tip.innerHTML = `<b>${d.name}</b><br>LOC ${d.LOC} · FI ${d.FI} · FO ${d.FO}<br>Smells: ${s}`;
+  tip.style.display = "block";
+}).on("mousemove", e => {
+  const b = document.querySelector("main").getBoundingClientRect();
+  tip.style.left = (e.clientX - b.left + 14) + "px"; tip.style.top = (e.clientY - b.top + 14) + "px";
+}).on("mouseleave", () => tip.style.display = "none")
+  .on("click", (e,d) => { e.stopPropagation(); select(d); })
+  .on("keydown", (e,d) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(d); } });
+
+// ---------- selection ----------
+function select(d, center){
+  current = d;
+  node.classed("sel", n => n === d);
+  if (!d){ node.classed("dim", false); link.classed("dim", false); renderDetail(null); labelsVisible(); return; }
+  const out = links.filter(l => l.source === d), inc = links.filter(l => l.target === d);
+  const nb = new Set([d, ...out.map(l => l.target), ...inc.map(l => l.source)]);
+  node.classed("dim", n => !nb.has(n));
+  link.classed("dim", l => l.source !== d && l.target !== d);
+  renderDetail(d, out, inc); labelsVisible();
+  if (center) svg.transition().duration(500).call(zoom.translateTo, d.x, d.y);
+}
+function renderDetail(d, out, inc){
+  const el = document.getElementById("detail");
+  if (!d){ el.innerHTML = `<h2>Selected component</h2><p class="note">Select a node to inspect its features, labels, and dependencies.</p>`; return; }
+  const chips = LABELS.filter(k => d[k]).map(k => `<span class="chip" style="background:var(--${k})">${NAMES[k]}</span>`).join("")
+    || `<span class="chip none">${d.mask ? "No smells" : "Labels unavailable"}</span>`;
+  const f = (v, p=3) => Number.isInteger(v) ? v : v.toFixed(p);
+  const rows = [["Abstractness (Ab)",d.Ab],["Instability (In)",d.In],["Distance (D)",d.D],["Fan-in (FI)",d.FI],
+    ["Fan-out (FO)",d.FO],["Lines of code (LOC)",d.LOC],["PageRank (PR)",d.PR],["ATDI (Arcan)",d.atdi],["Classes",d.units]];
+  el.innerHTML = `<h2>Selected component</h2><div class="detail-name">${d.name}</div>
+    <div class="chips">${chips}</div>
+    <table>${rows.map(([k,v]) => `<tr><td>${k}</td><td>${f(v)}</td></tr>`).join("")}</table>
+    <p class="note">Efferent dependencies: ${out.length}. Afferent dependencies: ${inc.length}.</p>`;
+}
+document.getElementById("search").addEventListener("change", e => {
+  const d = nodes.find(n => n.name === e.target.value) || nodes.find(n => n.name.includes(e.target.value));
+  if (d) select(d, true);
+});
+labelsVisible();
+</script>
+</body>
+</html>

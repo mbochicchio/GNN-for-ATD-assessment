@@ -1,0 +1,31 @@
+{
+  "project": "dylwedma11748__JTegraNX",
+  "n_nodes": 10,
+  "n_edges": 28,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 9,
+    "UD": 8,
+    "AI": 0,
+    "GC": 0,
+    "FC": 1,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 10,
+    "designite_packages": 10,
+    "matched": 10,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": []
+  },
+  "unknown_designite_smells": []
+}
