@@ -1,0 +1,115 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 1445,
+  "source_files_removed": 688,
+  "source_files_after": 757,
+  "removed_share": 0.4761,
+  "removed_by_rule": {
+    "R1_arcan_default": 688
+  },
+  "removed_dirs": [
+    {
+      "path": "elide-integration-tests",
+      "rule": "R1_arcan_default",
+      "source_files": 126
+    },
+    {
+      "path": "elide-test",
+      "rule": "R1_arcan_default",
+      "source_files": 41
+    },
+    {
+      "path": "elide-async/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 26
+    },
+    {
+      "path": "elide-core/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 184
+    },
+    {
+      "path": "elide-core/src/main/java/com/yahoo/elide/core/datastore/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "elide-datastore/elide-datastore-aggregation/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 90
+    },
+    {
+      "path": "elide-datastore/elide-datastore-inmemorydb/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 9
+    },
+    {
+      "path": "elide-datastore/elide-datastore-jms/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 13
+    },
+    {
+      "path": "elide-datastore/elide-datastore-jpa/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 16
+    },
+    {
+      "path": "elide-datastore/elide-datastore-jpql/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 13
+    },
+    {
+      "path": "elide-datastore/elide-datastore-multiplex/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 7
+    },
+    {
+      "path": "elide-datastore/elide-datastore-noop/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "elide-datastore/elide-datastore-search/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 6
+    },
+    {
+      "path": "elide-graphql/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 57
+    },
+    {
+      "path": "elide-model-config/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 6
+    },
+    {
+      "path": "elide-quarkus/integration-tests",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "elide-quarkus/deployment/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 5
+    },
+    {
+      "path": "elide-spring/elide-spring-boot-autoconfigure/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 57
+    },
+    {
+      "path": "elide-standalone/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 12
+    },
+    {
+      "path": "elide-swagger/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 13
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

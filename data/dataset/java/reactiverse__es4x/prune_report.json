@@ -1,0 +1,60 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 145,
+  "source_files_removed": 63,
+  "source_files_after": 82,
+  "removed_share": 0.4345,
+  "removed_by_rule": {
+    "R1_arcan_default": 63
+  },
+  "removed_dirs": [
+    {
+      "path": "examples",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "codegen/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "docs/examples",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "docs/es/examples",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "docs/gr/examples",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "docs/pl/examples",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "docs/ru/examples",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "es4x/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 54
+    },
+    {
+      "path": "pm/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 7
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

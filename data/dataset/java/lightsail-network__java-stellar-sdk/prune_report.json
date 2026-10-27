@@ -1,0 +1,35 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 981,
+  "source_files_removed": 235,
+  "source_files_after": 746,
+  "removed_share": 0.2396,
+  "removed_by_rule": {
+    "R1_arcan_default": 235
+  },
+  "removed_dirs": [
+    {
+      "path": "android_test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "examples",
+      "rule": "R1_arcan_default",
+      "source_files": 8
+    },
+    {
+      "path": "src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 130
+    },
+    {
+      "path": "xdr-generator/test",
+      "rule": "R1_arcan_default",
+      "source_files": 96
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

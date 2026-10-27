@@ -1,0 +1,43 @@
+{
+  "project": "FasterXML__jackson-dataformats-binary",
+  "n_nodes": 19,
+  "n_edges": 25,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 8,
+    "UD": 4,
+    "AI": 0,
+    "GC": 2,
+    "FC": 6,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 19,
+    "designite_packages": 19,
+    "matched": 18,
+    "coverage": 0.9,
+    "arcan_only": [
+      "tools.jackson.dataformat.avro.annotation"
+    ],
+    "designite_only": [
+      "(default package)"
+    ],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "tools.jackson.dataformat.avro.apacheimpl",
+      "tools.jackson.dataformat.avro.schema",
+      "tools.jackson",
+      "tools.jackson.dataformat.smile.async",
+      "tools.jackson.dataformat.smile",
+      "tools.jackson.dataformat.protobuf.schema",
+      "tools.jackson.dataformat",
+      "tools",
+      "tools.jackson.dataformat.protobuf.schemagen"
+    ]
+  },
+  "unknown_designite_smells": []
+}

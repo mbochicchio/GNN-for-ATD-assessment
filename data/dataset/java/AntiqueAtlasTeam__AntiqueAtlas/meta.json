@@ -1,0 +1,37 @@
+{
+  "project": "AntiqueAtlasTeam__AntiqueAtlas",
+  "n_nodes": 38,
+  "n_edges": 142,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 16,
+    "UD": 8,
+    "AI": 0,
+    "GC": 0,
+    "FC": 6,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 38,
+    "designite_packages": 38,
+    "matched": 38,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "hunternif",
+      "hunternif.mc",
+      "hunternif.mc.impl.atlas.api.client",
+      "hunternif.mc.impl",
+      "hunternif.mc.impl.atlas.api"
+    ]
+  },
+  "unknown_designite_smells": []
+}

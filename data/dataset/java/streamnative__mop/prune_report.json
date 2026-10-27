@@ -1,0 +1,30 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 243,
+  "source_files_removed": 59,
+  "source_files_after": 184,
+  "removed_share": 0.2428,
+  "removed_by_rule": {
+    "R1_arcan_default": 59
+  },
+  "removed_dirs": [
+    {
+      "path": "tests",
+      "rule": "R1_arcan_default",
+      "source_files": 47
+    },
+    {
+      "path": "mqtt-broker/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 10
+    },
+    {
+      "path": "mqtt-proxy/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

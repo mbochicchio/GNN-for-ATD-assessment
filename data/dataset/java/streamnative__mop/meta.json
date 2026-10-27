@@ -1,0 +1,47 @@
+{
+  "project": "streamnative__mop",
+  "n_nodes": 40,
+  "n_edges": 155,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 17,
+    "UD": 12,
+    "AI": 0,
+    "GC": 0,
+    "FC": 6,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 40,
+    "designite_packages": 39,
+    "matched": 39,
+    "coverage": 0.975,
+    "arcan_only": [
+      "io.streamnative.oidc.broker.common.pojo"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "io.streamnative.pulsar.handlers.mqtt.proxy.authentication",
+      "io.streamnative.mqtt",
+      "io.streamnative.oidc",
+      "io.streamnative.pulsar",
+      "io.streamnative.oidc.broker",
+      "org",
+      "org.apache",
+      "io.streamnative.pulsar.handlers",
+      "io",
+      "io.streamnative",
+      "org.apache.pulsar",
+      "org.apache.pulsar.client",
+      "org.apache.pulsar.client.api"
+    ]
+  },
+  "unknown_designite_smells": []
+}

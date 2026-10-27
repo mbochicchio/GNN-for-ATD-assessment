@@ -1,0 +1,30 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 1791,
+  "source_files_removed": 519,
+  "source_files_after": 1272,
+  "removed_share": 0.2898,
+  "removed_by_rule": {
+    "R1_arcan_default": 519
+  },
+  "removed_dirs": [
+    {
+      "path": "test",
+      "rule": "R1_arcan_default",
+      "source_files": 460
+    },
+    {
+      "path": "contrib/piggybank/java/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 59
+    },
+    {
+      "path": "shims/test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

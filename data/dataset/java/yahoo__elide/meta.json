@@ -1,0 +1,54 @@
+{
+  "project": "yahoo__elide",
+  "n_nodes": 135,
+  "n_edges": 1014,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 57,
+    "UD": 35,
+    "AI": 0,
+    "GC": 3,
+    "FC": 40,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 135,
+    "designite_packages": 131,
+    "matched": 131,
+    "coverage": 0.9704,
+    "arcan_only": [
+      "com.yahoo.elide.datastores.aggregation.queryengines.sql.annotation",
+      "com.yahoo.elide.datastores.jpql.annotations",
+      "com.yahoo.elide.graphql.annotation",
+      "io.quarkus.deployment.annotations"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com.yahoo.elide.datastores",
+      "com.yahoo.elide.jsonapi.document",
+      "com.yahoo.elide.modelconfig.parser",
+      "com.yahoo.elide.datastores.aggregation.queryengines",
+      "com.yahoo.elide.spring",
+      "com.yahoo.elide.spring.datastore",
+      "com.yahoo.elide.spring.orm",
+      "io.quarkus.deployment",
+      "com.yahoo.elide.datastores.aggregation.filter",
+      "graphql",
+      "com.yahoo.elide.extension",
+      "com.yahoo.elide.swagger.models",
+      "com.yahoo.elide.async.export",
+      "io",
+      "io.quarkus",
+      "com",
+      "com.yahoo"
+    ]
+  },
+  "unknown_designite_smells": []
+}
