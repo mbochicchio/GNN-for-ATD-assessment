@@ -1,0 +1,40 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 88,
+  "source_files_removed": 17,
+  "source_files_after": 71,
+  "removed_share": 0.1932,
+  "removed_by_rule": {
+    "R1_arcan_default": 17
+  },
+  "removed_dirs": [
+    {
+      "path": "testing",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "app-authenticator/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 7
+    },
+    {
+      "path": "email-authenticator/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "sms-authenticator/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 5
+    },
+    {
+      "path": "trusted-device-authenticator/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

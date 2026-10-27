@@ -1,0 +1,41 @@
+{
+  "project": "spring-ai-alibaba__DataAgent",
+  "n_nodes": 75,
+  "n_edges": 321,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 17,
+    "UD": 11,
+    "AI": 2,
+    "GC": 0,
+    "FC": 15,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 75,
+    "designite_packages": 75,
+    "matched": 75,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com.alibaba.cloud.ai.dataagent.dto.knowledge",
+      "com.alibaba.cloud.ai.dataagent.service",
+      "com.alibaba.cloud.ai.dataagent.workflow",
+      "com.alibaba.cloud.ai.dataagent.service.hybrid",
+      "com.alibaba.cloud.ai.dataagent.connector.impls",
+      "com.alibaba.cloud",
+      "com.alibaba.cloud.ai",
+      "com",
+      "com.alibaba"
+    ]
+  },
+  "unknown_designite_smells": []
+}

@@ -1,0 +1,43 @@
+{
+  "project": "protegeproject__protege",
+  "n_nodes": 158,
+  "n_edges": 1059,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 78,
+    "UD": 40,
+    "AI": 0,
+    "GC": 7,
+    "FC": 60,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 158,
+    "designite_packages": 157,
+    "matched": 157,
+    "coverage": 0.9937,
+    "arcan_only": [
+      "org.semanticweb.owlapi.model"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "org.protege",
+      "org.protege.osgi",
+      "org.protege.owlapi",
+      "org.protege.editor",
+      "org.protege.editor.owl.ui.action.export",
+      "org.semanticweb",
+      "org.semanticweb.owlapi",
+      "org.protege.owlapi.inference",
+      "org"
+    ]
+  },
+  "unknown_designite_smells": []
+}

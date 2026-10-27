@@ -1,0 +1,41 @@
+{
+  "project": "SwingFrog__Summer",
+  "n_nodes": 56,
+  "n_edges": 171,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 15,
+    "UD": 13,
+    "AI": 0,
+    "GC": 0,
+    "FC": 9,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 56,
+    "designite_packages": 52,
+    "matched": 52,
+    "coverage": 0.9286,
+    "arcan_only": [
+      "com.swingfrog.summer.annotation",
+      "com.swingfrog.summer.annotation.base",
+      "com.swingfrog.summer.db.repository.annotation",
+      "com.swingfrog.summer.ecs.annotation"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com.swingfrog.summer.ecs.quick",
+      "com.google.protobuf",
+      "com.swingfrog.summer",
+      "com",
+      "com.google",
+      "com.swingfrog"
+    ]
+  },
+  "unknown_designite_smells": []
+}

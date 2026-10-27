@@ -1,0 +1,20 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 186,
+  "source_files_removed": 1,
+  "source_files_after": 185,
+  "removed_share": 0.0054,
+  "removed_by_rule": {
+    "R1_arcan_default": 1
+  },
+  "removed_dirs": [
+    {
+      "path": "protocolize-api/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

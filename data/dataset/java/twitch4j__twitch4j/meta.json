@@ -1,0 +1,38 @@
+{
+  "project": "twitch4j__twitch4j",
+  "n_nodes": 69,
+  "n_edges": 290,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 16,
+    "UD": 13,
+    "AI": 1,
+    "GC": 11,
+    "FC": 21,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 69,
+    "designite_packages": 68,
+    "matched": 68,
+    "coverage": 0.9855,
+    "arcan_only": [
+      "com.github.twitch4j.common.annotation"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com.github.twitch4j.client",
+      "com",
+      "com.github",
+      "com.github.twitch4j.helix.webhooks"
+    ]
+  },
+  "unknown_designite_smells": []
+}

@@ -1,0 +1,46 @@
+{
+  "project": "sofastack__sofa-jraft",
+  "n_nodes": 57,
+  "n_edges": 366,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 41,
+    "UD": 24,
+    "AI": 0,
+    "GC": 8,
+    "FC": 26,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 57,
+    "designite_packages": 57,
+    "matched": 57,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "io.grpc.netty.shaded",
+      "io.grpc.netty.shaded.io",
+      "io",
+      "io.grpc",
+      "com.alipay.sofa.jraft.rhea.serialization.impl",
+      "com.alipay.sofa.jraft.rhea.cmd",
+      "com.alipay.sofa.jraft.rhea.pipeline",
+      "com.alipay.sofa.jraft.rhea.rocks",
+      "io.grpc.netty",
+      "com.alipay",
+      "com.alipay.sofa",
+      "com",
+      "com.google",
+      "io.grpc.netty.shaded.io.grpc"
+    ]
+  },
+  "unknown_designite_smells": []
+}

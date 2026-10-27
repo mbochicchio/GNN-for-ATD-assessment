@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ta4j__ta4j · dependency graph</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EEF1F0; --panel:#F8FAF9; --ink:#1B2733; --muted:#5E6B78; --rule:#D3DAD8;
+  --edge:#9AA7B2; --clean:#C3CCD3; --focus:#1B2733;
+  --CD:#D55E00; --UD:#0072B2; --AI:#CC79A7; --GC:#009E73; --FC:#E69F00; --SF:#56B4E9;
+  --s0:#C3CCD3; --s1:#F2C27B; --s2:#E58A3C; --s3:#C4462A; --s4:#8E1F2A;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+  --bg:#141B21; --panel:#1B242C; --ink:#E4EAEE; --muted:#93A1AD; --rule:#2C3842;
+  --edge:#4E5E6B; --clean:#3E4B56; --focus:#E4EAEE; --s0:#3E4B56;
+}}
+:root[data-theme="dark"]{
+  --bg:#141B21; --panel:#1B242C; --ink:#E4EAEE; --muted:#93A1AD; --rule:#2C3842;
+  --edge:#4E5E6B; --clean:#3E4B56; --focus:#E4EAEE; --s0:#3E4B56;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{height:100%; scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0; height:100%; background:var(--bg); color:var(--ink);
+  font:14px/1.5 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+.app{display:grid; grid-template-columns:320px 1fr; height:100%}
+aside{background:var(--panel); border-right:1px solid var(--rule); overflow-y:auto; padding:20px 20px 28px}
+h1{font:500 22px/1.2 "IBM Plex Sans Condensed","IBM Plex Sans",sans-serif; margin:0 0 4px; word-break:break-word}
+.sub{color:var(--muted); margin:0 0 18px}
+.stats{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-bottom:18px}
+.stat b{display:block; font-size:20px; font-weight:600}
+.stat span{color:var(--muted); font-size:12px}
+section{border-top:1px solid var(--rule); padding-top:14px; margin-top:14px}
+h2{font-size:13px; font-weight:600; margin:0 0 8px}
+label.ctl{display:block; color:var(--muted); font-size:12px; margin:8px 0 4px}
+select,input[type=search]{width:100%; font:inherit; color:var(--ink); background:var(--bg);
+  border:1px solid var(--rule); border-radius:6px; padding:6px 8px}
+select:focus-visible,input:focus-visible,button:focus-visible{outline:2px solid var(--focus); outline-offset:2px}
+.check{display:flex; gap:8px; align-items:center; margin-top:10px; color:var(--muted); font-size:13px}
+.legend{display:flex; flex-wrap:wrap; gap:6px 12px; margin-top:10px; font-size:12px}
+.dot{display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:7px; vertical-align:-1px}
+.legend i{display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:5px; vertical-align:-1px}
+table{width:100%; border-collapse:collapse; font-size:13px}
+td{padding:3px 0; border-bottom:1px solid var(--rule)}
+td:last-child{text-align:right; font-variant-numeric:tabular-nums}
+.chips{display:flex; flex-wrap:wrap; gap:6px; margin:8px 0}
+.chip{font-size:12px; padding:2px 8px; border-radius:10px; color:#fff}
+.chip.none{background:var(--clean); color:var(--ink)}
+.detail-name{font-weight:600; word-break:break-all; margin-bottom:4px}
+.note{color:var(--muted); font-size:12px}
+ol.rank{margin:0; padding-left:20px; font-size:13px}
+ol.rank li{margin:2px 0}
+ol.rank button{all:unset; cursor:pointer; word-break:break-all}
+ol.rank button:hover{text-decoration:underline}
+ol.rank .v{color:var(--muted); font-variant-numeric:tabular-nums}
+main{position:relative; overflow:hidden}
+svg{width:100%; height:100%; display:block; cursor:grab}
+.link{stroke:var(--edge); stroke-opacity:.55; fill:none}
+.node circle{stroke:var(--panel); stroke-width:1.5}
+.node.nomask circle{stroke-dasharray:3 2; stroke:var(--muted)}
+.node text{font-size:11px; fill:var(--ink); pointer-events:none; paint-order:stroke;
+  stroke:var(--bg); stroke-width:3px}
+.dim{opacity:.12}
+.node.sel circle{stroke:var(--focus); stroke-width:3}
+#tip{position:absolute; pointer-events:none; background:var(--panel); border:1px solid var(--rule);
+  border-radius:6px; padding:6px 9px; font-size:12px; max-width:320px; display:none; word-break:break-all}
+.hint{position:absolute; right:14px; bottom:12px; color:var(--muted); font-size:12px}
+@media (max-width:760px){
+  .app{grid-template-columns:1fr; grid-template-rows:auto 70vh; height:auto}
+  aside{border-right:0; border-bottom:1px solid var(--rule)}
+}
+@media (prefers-reduced-motion:reduce){ *{transition:none!important} }
+</style>
+</head>
+<body>
+<div class="app">
+<aside>
+  <h1 id="title"></h1>
+  <p class="sub">Package-level dependency graph with Designite smell labels</p>
+  <div class="stats">
+    <div class="stat"><b id="nN"></b><span>components</span></div>
+    <div class="stat"><b id="nE"></b><span>dependencies</span></div>
+    <div class="stat"><b id="nS"></b><span>smell-affected components</span></div>
+  </div>
+
+  <label class="ctl" for="colorBy">Colour nodes by</label>
+  <select id="colorBy">
+    <option value="count">Number of smells</option>
+    <option value="CD">Cyclic Dependency</option>
+    <option value="UD">Unstable Dependency</option>
+    <option value="AI">Ambiguous Interface</option>
+    <option value="GC">God Component</option>
+    <option value="FC">Feature Concentration</option>
+    <option value="SF">Scattered Functionality</option>
+    <option value="atdi">ATDI (Arcan)</option>
+  </select>
+  <div class="legend" id="legend"></div>
+
+  <label class="ctl" for="search">Find a component</label>
+  <input id="search" type="search" placeholder="e.g. analyzer" list="names" autocomplete="off">
+  <datalist id="names"></datalist>
+  <label class="check"><input type="checkbox" id="showLabels"> Show all node labels</label>
+
+  <section id="detail">
+    <h2>Selected component</h2>
+    <p class="note">Select a node to inspect its features, labels, and dependencies.</p>
+  </section>
+
+  <section>
+    <h2>Smell distribution</h2>
+    <table id="smellTable"></table>
+    <p class="note" id="ds"></p>
+  </section>
+
+  <section>
+    <h2>Highest ATDI</h2>
+    <ol class="rank" id="rank"></ol>
+  </section>
+</aside>
+<main>
+  <svg id="svg" role="img" aria-label="Dependency graph"></svg>
+  <div id="tip"></div>
+  <div class="hint">Drag to pan, scroll to zoom</div>
+</main>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script>
+const DATA = {"nodes": [{"id": 0, "name": "org.ta4j.core", "mask": 1, "atdi": 247.2608277330132, "units": 31, "Ab": 0.45161290322580644, "In": 0.04203152364273205, "D": 0.5063555731314615, "FI": 54.0, "FO": 8.0, "LOC": 2953.0, "PR": 0.13662058045136669, "CD": 1, "UD": 1, "AI": 0, "GC": 1, "FC": 0, "SF": 0}, {"id": 1, "name": "org.ta4j.core.aggregator", "mask": 1, "atdi": 9.987585628328713, "units": 9, "Ab": 0.2222222222222222, "In": 0.8888888888888888, "D": 0.11111111111111116, "FI": 1.0, "FO": 3.0, "LOC": 406.0, "PR": 0.01222226273546681, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 2, "name": "org.ta4j.core.analysis", "mask": 1, "atdi": 197.04806024886395, "units": 15, "Ab": 0.3333333333333333, "In": 0.36585365853658536, "D": 0.30081300813008127, "FI": 12.0, "FO": 6.0, "LOC": 591.0, "PR": 0.0345607004695327, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 3, "name": "org.ta4j.core.analysis.cost", "mask": 1, "atdi": 12.485158082437028, "units": 6, "Ab": 0.16666666666666666, "In": 0.25, "D": 0.5833333333333334, "FI": 4.0, "FO": 2.0, "LOC": 118.0, "PR": 0.023575279740316115, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 4, "name": "org.ta4j.core.analysis.elliott", "mask": 1, "atdi": 16.993742951363853, "units": 22, "Ab": 0.045454545454545456, "In": 1.0, "D": 0.045454545454545414, "FI": 2.0, "FO": 4.0, "LOC": 1672.0, "PR": 0.008346573042677273, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 5, "name": "org.ta4j.core.analysis.elliott.swing", "mask": 1, "atdi": 84.72368080908132, "units": 17, "Ab": 0.11764705882352941, "In": 0.6842105263157895, "D": 0.19814241486068107, "FI": 4.0, "FO": 7.0, "LOC": 826.0, "PR": 0.010764604933303074, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 6, "name": "org.ta4j.core.analysis.event", "mask": 1, "atdi": 0.0, "units": 4, "Ab": 0.0, "In": 0.875, "D": 0.125, "FI": 1.0, "FO": 4.0, "LOC": 264.0, "PR": 0.005192847350501579, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 7, "name": "org.ta4j.core.analysis.frequency", "mask": 1, "atdi": 17.93284710601325, "units": 5, "Ab": 0.0, "In": 0.4, "D": 0.6, "FI": 3.0, "FO": 2.0, "LOC": 164.0, "PR": 0.012523414088750861, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 8, "name": "org.ta4j.core.analysis.montecarlo", "mask": 1, "atdi": 11.487285080021586, "units": 4, "Ab": 0.25, "In": 0.5714285714285714, "D": 0.1785714285714286, "FI": 1.0, "FO": 3.0, "LOC": 209.0, "PR": 0.005747711872117164, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 9, "name": "org.ta4j.core.backtest", "mask": 1, "atdi": 5.0314791675095, "units": 17, "Ab": 0.17647058823529413, "In": 0.96875, "D": 0.14522058823529416, "FI": 1.0, "FO": 8.0, "LOC": 1612.0, "PR": 0.0057825181450541375, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 10, "name": "org.ta4j.core.bars", "mask": 1, "atdi": 10.215782726613023, "units": 11, "Ab": 0.0, "In": 0.5555555555555556, "D": 0.4444444444444444, "FI": 2.0, "FO": 2.0, "LOC": 1126.0, "PR": 0.022527265732036596, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 11, "name": "org.ta4j.core.criteria", "mask": 1, "atdi": 168.45728660811628, "units": 35, "Ab": 0.08571428571428572, "In": 0.3764705882352941, "D": 0.5378151260504201, "FI": 13.0, "FO": 9.0, "LOC": 1374.0, "PR": 0.03307057094639478, "CD": 1, "UD": 1, "AI": 0, "GC": 1, "FC": 0, "SF": 0}, {"id": 12, "name": "org.ta4j.core.criteria.commissions", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 5.0, "LOC": 97.0, "PR": 0.004548476639952468, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 13, "name": "org.ta4j.core.criteria.drawdown", "mask": 1, "atdi": 17.81940277134259, "units": 6, "Ab": 0.0, "In": 0.9444444444444444, "D": 0.05555555555555558, "FI": 1.0, "FO": 4.0, "LOC": 257.0, "PR": 0.0076718029847307615, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 14, "name": "org.ta4j.core.criteria.helpers", "mask": 1, "atdi": 11.81879345233262, "units": 5, "Ab": 0.0, "In": 0.875, "D": 0.125, "FI": 1.0, "FO": 3.0, "LOC": 134.0, "PR": 0.0076718029847307615, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 15, "name": "org.ta4j.core.criteria.pnl", "mask": 1, "atdi": 12.491403291315196, "units": 26, "Ab": 0.23076923076923078, "In": 0.6190476190476191, "D": 0.1501831501831501, "FI": 3.0, "FO": 3.0, "LOC": 357.0, "PR": 0.009542161952337916, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 16, "name": "org.ta4j.core.criteria.risk", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.3333333333333333, "In": 1.0, "D": 0.33333333333333326, "FI": 0.0, "FO": 4.0, "LOC": 66.0, "PR": 0.004548476639952468, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 17, "name": "org.ta4j.core.indicators", "mask": 1, "atdi": 341.3514803457557, "units": 74, "Ab": 0.13513513513513514, "In": 0.24437299035369775, "D": 0.6204918745111672, "FI": 33.0, "FO": 17.0, "LOC": 3737.0, "PR": 0.06071107950202466, "CD": 1, "UD": 1, "AI": 0, "GC": 1, "FC": 0, "SF": 0}, {"id": 18, "name": "org.ta4j.core.indicators.adx", "mask": 1, "atdi": 22.253836812538783, "units": 6, "Ab": 0.0, "In": 0.6923076923076923, "D": 0.3076923076923077, "FI": 2.0, "FO": 4.0, "LOC": 127.0, "PR": 0.008778874764605434, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 19, "name": "org.ta4j.core.indicators.aroon", "mask": 1, "atdi": 0.0, "units": 4, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 5.0, "LOC": 91.0, "PR": 0.004548476639952468, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 20, "name": "org.ta4j.core.indicators.averages", "mask": 1, "atdi": 77.22060632973847, "units": 25, "Ab": 0.04, "In": 0.2807017543859649, "D": 0.6792982456140351, "FI": 12.0, "FO": 6.0, "LOC": 717.0, "PR": 0.025506485222619744, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 21, "name": "org.ta4j.core.indicators.bollinger", "mask": 1, "atdi": 33.355691316805874, "units": 6, "Ab": 0.0, "In": 0.9090909090909091, "D": 0.09090909090909094, "FI": 1.0, "FO": 7.0, "LOC": 122.0, "PR": 0.007584010555504684, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 22, "name": "org.ta4j.core.indicators.candles", "mask": 1, "atdi": 39.02242534281146, "units": 31, "Ab": 0.06451612903225806, "In": 0.9285714285714286, "D": 0.00691244239631339, "FI": 1.0, "FO": 6.0, "LOC": 1227.0, "PR": 0.007584010555504684, "CD": 0, "UD": 0, "AI": 0, "GC": 1, "FC": 0, "SF": 0}, {"id": 23, "name": "org.ta4j.core.indicators.donchian", "mask": 1, "atdi": 22.193197126286897, "units": 4, "Ab": 0.0, "In": 0.9, "D": 0.09999999999999998, "FI": 1.0, "FO": 5.0, "LOC": 81.0, "PR": 0.007584010555504684, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 24, "name": "org.ta4j.core.indicators.elliott", "mask": 1, "atdi": 60.597492264416246, "units": 34, "Ab": 0.0, "In": 0.4868421052631579, "D": 0.513157894736842, "FI": 4.0, "FO": 10.0, "LOC": 4821.0, "PR": 0.008971339556115345, "CD": 1, "UD": 1, "AI": 0, "GC": 1, "FC": 0, "SF": 0}, {"id": 25, "name": "org.ta4j.core.indicators.elliott.confidence", "mask": 1, "atdi": 12.347498475536016, "units": 14, "Ab": 0.14285714285714285, "In": 0.8, "D": 0.05714285714285716, "FI": 1.0, "FO": 3.0, "LOC": 318.0, "PR": 0.005311039127125056, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 26, "name": "org.ta4j.core.indicators.elliott.walkforward", "mask": 1, "atdi": 0.0, "units": 5, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 6.0, "LOC": 144.0, "PR": 0.004548476639952468, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 27, "name": "org.ta4j.core.indicators.forecast", "mask": 1, "atdi": 75.61695945619736, "units": 11, "Ab": 0.0, "In": 0.9459459459459459, "D": 0.05405405405405406, "FI": 3.0, "FO": 10.0, "LOC": 1396.0, "PR": 0.014108669553857443, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 28, "name": "org.ta4j.core.indicators.forecast.adapters", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 5.0, "LOC": 105.0, "PR": 0.004548476639952468, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 29, "name": "org.ta4j.core.indicators.forecast.projection", "mask": 1, "atdi": 30.235347821925235, "units": 5, "Ab": 0.6, "In": 0.4666666666666667, "D": 0.06666666666666665, "FI": 3.0, "FO": 5.0, "LOC": 224.0, "PR": 0.007283519211948686, "CD": 0, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 30, "name": "org.ta4j.core.indicators.forecast.state", "mask": 1, "atdi": 29.921628773056806, "units": 13, "Ab": 0.38461538461538464, "In": 0.3684210526315789, "D": 0.24696356275303644, "FI": 3.0, "FO": 4.0, "LOC": 398.0, "PR": 0.010411771768895899, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 31, "name": "org.ta4j.core.indicators.helpers", "mask": 1, "atdi": 98.0041601230804, "units": 39, "Ab": 0.0, "In": 0.11564625850340136, "D": 0.8843537414965986, "FI": 22.0, "FO": 6.0, "LOC": 907.0, "PR": 0.04110191856260839, "CD": 1, "UD": 1, "AI": 0, "GC": 1, "FC": 1, "SF": 0}, {"id": 32, "name": "org.ta4j.core.indicators.ichimoku", "mask": 1, "atdi": 0.0, "units": 6, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 4.0, "LOC": 96.0, "PR": 0.004548476639952468, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 33, "name": "org.ta4j.core.indicators.keltner", "mask": 1, "atdi": 0.0, "units": 4, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 6.0, "LOC": 100.0, "PR": 0.004548476639952468, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 34, "name": "org.ta4j.core.indicators.lppl", "mask": 1, "atdi": 0.0, "units": 6, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 5.0, "LOC": 417.0, "PR": 0.004548476639952468, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 35, "name": "org.ta4j.core.indicators.macd", "mask": 1, "atdi": 33.3821032407947, "units": 7, "Ab": 0.0, "In": 0.9473684210526315, "D": 0.052631578947368474, "FI": 1.0, "FO": 7.0, "LOC": 427.0, "PR": 0.008840662561041074, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 36, "name": "org.ta4j.core.indicators.numeric", "mask": 1, "atdi": 49.546410780800635, "units": 3, "Ab": 0.0, "In": 0.34615384615384615, "D": 0.6538461538461539, "FI": 9.0, "FO": 6.0, "LOC": 186.0, "PR": 0.020674217477026507, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 37, "name": "org.ta4j.core.indicators.pivotpoints", "mask": 1, "atdi": 0.0, "units": 8, "Ab": 0.125, "In": 1.0, "D": 0.125, "FI": 0.0, "FO": 3.0, "LOC": 258.0, "PR": 0.004548476639952468, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 38, "name": "org.ta4j.core.indicators.renko", "mask": 1, "atdi": 0.0, "units": 4, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 3.0, "LOC": 152.0, "PR": 0.004548476639952468, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 39, "name": "org.ta4j.core.indicators.statistics", "mask": 1, "atdi": 38.484995324975934, "units": 26, "Ab": 0.0, "In": 0.4782608695652174, "D": 0.5217391304347826, "FI": 7.0, "FO": 5.0, "LOC": 1531.0, "PR": 0.01958340487321454, "CD": 1, "UD": 0, "AI": 0, "GC": 1, "FC": 1, "SF": 0}, {"id": 40, "name": "org.ta4j.core.indicators.statistics.event", "mask": 1, "atdi": 0.0, "units": 5, "Ab": 0.2, "In": 0.8888888888888888, "D": 0.0888888888888888, "FI": 1.0, "FO": 3.0, "LOC": 479.0, "PR": 0.005192847350501579, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 41, "name": "org.ta4j.core.indicators.supertrend", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 4.0, "LOC": 116.0, "PR": 0.004548476639952468, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 42, "name": "org.ta4j.core.indicators.supportresistance", "mask": 1, "atdi": 0.0, "units": 10, "Ab": 0.3, "In": 1.0, "D": 0.30000000000000004, "FI": 0.0, "FO": 5.0, "LOC": 1025.0, "PR": 0.004548476639952468, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 43, "name": "org.ta4j.core.indicators.trend", "mask": 1, "atdi": 16.878277839117455, "units": 2, "Ab": 0.0, "In": 0.7777777777777778, "D": 0.2222222222222222, "FI": 1.0, "FO": 4.0, "LOC": 64.0, "PR": 0.005622887248728033, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 44, "name": "org.ta4j.core.indicators.volume", "mask": 1, "atdi": 0.0, "units": 22, "Ab": 0.045454545454545456, "In": 1.0, "D": 0.045454545454545414, "FI": 0.0, "FO": 8.0, "LOC": 981.0, "PR": 0.004548476639952468, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 45, "name": "org.ta4j.core.indicators.wyckoff", "mask": 1, "atdi": 0.0, "units": 12, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 6.0, "LOC": 763.0, "PR": 0.004548476639952468, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 46, "name": "org.ta4j.core.indicators.zigzag", "mask": 1, "atdi": 28.29156505125903, "units": 7, "Ab": 0.0, "In": 0.7777777777777778, "D": 0.2222222222222222, "FI": 3.0, "FO": 4.0, "LOC": 304.0, "PR": 0.009653707405484695, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 47, "name": "org.ta4j.core.named", "mask": 1, "atdi": 15.834249250218628, "units": 3, "Ab": 0.3333333333333333, "In": 0.2727272727272727, "D": 0.39393939393939403, "FI": 2.0, "FO": 3.0, "LOC": 486.0, "PR": 0.02271523681922877, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 48, "name": "org.ta4j.core.num", "mask": 1, "atdi": 0.0, "units": 7, "Ab": 0.2857142857142857, "In": 0.0, "D": 0.7142857142857143, "FI": 54.0, "FO": 0.0, "LOC": 574.0, "PR": 0.13630480706131723, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 49, "name": "org.ta4j.core.reports", "mask": 1, "atdi": 0.0, "units": 9, "Ab": 0.3333333333333333, "In": 0.6666666666666666, "D": 0.0, "FI": 1.0, "FO": 4.0, "LOC": 150.0, "PR": 0.005162871063598778, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 50, "name": "org.ta4j.core.research", "mask": 1, "atdi": 0.0, "units": 7, "Ab": 0.14285714285714285, "In": 1.0, "D": 0.1428571428571428, "FI": 0.0, "FO": 6.0, "LOC": 1285.0, "PR": 0.004548476639952468, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 51, "name": "org.ta4j.core.rules", "mask": 1, "atdi": 98.55485340940167, "units": 64, "Ab": 0.109375, "In": 0.5106382978723404, "D": 0.3799867021276596, "FI": 9.0, "FO": 8.0, "LOC": 2258.0, "PR": 0.04039672159678492, "CD": 1, "UD": 1, "AI": 0, "GC": 1, "FC": 0, "SF": 0}, {"id": 52, "name": "org.ta4j.core.rules.elliott", "mask": 1, "atdi": 0.0, "units": 13, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 4.0, "LOC": 342.0, "PR": 0.004548476639952468, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 53, "name": "org.ta4j.core.rules.helper", "mask": 1, "atdi": 16.853872269394902, "units": 1, "Ab": 0.0, "In": 0.5, "D": 0.5, "FI": 2.0, "FO": 2.0, "LOC": 22.0, "PR": 0.012491585261037268, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 54, "name": "org.ta4j.core.serialization", "mask": 1, "atdi": 48.959085904350296, "units": 10, "Ab": 0.0, "In": 0.6590909090909091, "D": 0.34090909090909094, "FI": 8.0, "FO": 9.0, "LOC": 2148.0, "PR": 0.038656711858233155, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 55, "name": "org.ta4j.core.strategy.named", "mask": 1, "atdi": 11.332292435217003, "units": 1, "Ab": 1.0, "In": 0.7142857142857143, "D": 0.7142857142857144, "FI": 2.0, "FO": 2.0, "LOC": 121.0, "PR": 0.014635441643788872, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 56, "name": "org.ta4j.core.utils", "mask": 1, "atdi": 25.20788936891213, "units": 3, "Ab": 0.0, "In": 0.6470588235294118, "D": 0.3529411764705882, "FI": 3.0, "FO": 3.0, "LOC": 110.0, "PR": 0.027083773481137115, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 57, "name": "org.ta4j.core.walkforward", "mask": 1, "atdi": 5.0314791675095, "units": 19, "Ab": 0.2631578947368421, "In": 0.5333333333333333, "D": 0.20350877192982453, "FI": 2.0, "FO": 4.0, "LOC": 1168.0, "PR": 0.005807241774147889, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}], "edges": [{"source": 0, "target": 2, "w": 2.0}, {"source": 0, "target": 3, "w": 18.0}, {"source": 0, "target": 10, "w": 4.0}, {"source": 0, "target": 47, "w": 4.0}, {"source": 0, "target": 48, "w": 35.0}, {"source": 0, "target": 51, "w": 5.0}, {"source": 0, "target": 54, "w": 9.0}, {"source": 0, "target": 56, "w": 3.0}, {"source": 1, "target": 0, "w": 15.0}, {"source": 1, "target": 10, "w": 5.0}, {"source": 1, "target": 48, "w": 10.0}, {"source": 2, "target": 0, "w": 37.0}, {"source": 2, "target": 11, "w": 2.0}, {"source": 2, "target": 17, "w": 2.0}, {"source": 2, "target": 27, "w": 2.0}, {"source": 2, "target": 48, "w": 14.0}, {"source": 2, "target": 56, "w": 1.0}, {"source": 3, "target": 0, "w": 9.0}, {"source": 3, "target": 48, "w": 10.0}, {"source": 4, "target": 0, "w": 14.0}, {"source": 4, "target": 5, "w": 10.0}, {"source": 4, "target": 17, "w": 35.0}, {"source": 4, "target": 48, "w": 13.0}, {"source": 5, "target": 0, "w": 18.0}, {"source": 5, "target": 17, "w": 11.0}, {"source": 5, "target": 20, "w": 1.0}, {"source": 5, "target": 24, "w": 22.0}, {"source": 5, "target": 31, "w": 9.0}, {"source": 5, "target": 46, "w": 2.0}, {"source": 5, "target": 48, "w": 10.0}, {"source": 6, "target": 0, "w": 2.0}, {"source": 6, "target": 2, "w": 2.0}, {"source": 6, "target": 17, "w": 1.0}, {"source": 6, "target": 48, "w": 5.0}, {"source": 7, "target": 0, "w": 1.0}, {"source": 7, "target": 48, "w": 4.0}, {"source": 8, "target": 27, "w": 1.0}, {"source": 8, "target": 30, "w": 2.0}, {"source": 8, "target": 48, "w": 7.0}, {"source": 9, "target": 0, "w": 63.0}, {"source": 9, "target": 2, "w": 1.0}, {"source": 9, "target": 3, "w": 6.0}, {"source": 9, "target": 48, "w": 21.0}, {"source": 9, "target": 49, "w": 9.0}, {"source": 9, "target": 51, "w": 1.0}, {"source": 9, "target": 54, "w": 2.0}, {"source": 9, "target": 57, "w": 14.0}, {"source": 10, "target": 0, "w": 41.0}, {"source": 10, "target": 48, "w": 14.0}, {"source": 11, "target": 0, "w": 105.0}, {"source": 11, "target": 2, "w": 23.0}, {"source": 11, "target": 3, "w": 2.0}, {"source": 11, "target": 7, "w": 11.0}, {"source": 11, "target": 13, "w": 1.0}, {"source": 11, "target": 14, "w": 1.0}, {"source": 11, "target": 15, "w": 6.0}, {"source": 11, "target": 48, "w": 60.0}, {"source": 11, "target": 56, "w": 2.0}, {"source": 12, "target": 0, "w": 11.0}, {"source": 12, "target": 3, "w": 2.0}, {"source": 12, "target": 11, "w": 4.0}, {"source": 12, "target": 15, "w": 2.0}, {"source": 12, "target": 48, "w": 6.0}, {"source": 13, "target": 0, "w": 20.0}, {"source": 13, "target": 2, "w": 17.0}, {"source": 13, "target": 11, "w": 7.0}, {"source": 13, "target": 48, "w": 9.0}, {"source": 14, "target": 0, "w": 20.0}, {"source": 14, "target": 11, "w": 8.0}, {"source": 14, "target": 48, "w": 5.0}, {"source": 15, "target": 0, "w": 40.0}, {"source": 15, "target": 11, "w": 23.0}, {"source": 15, "target": 48, "w": 23.0}, {"source": 16, "target": 0, "w": 8.0}, {"source": 16, "target": 11, "w": 1.0}, {"source": 16, "target": 48, "w": 4.0}, {"source": 16, "target": 51, "w": 2.0}, {"source": 17, "target": 0, "w": 124.0}, {"source": 17, "target": 2, "w": 9.0}, {"source": 17, "target": 4, "w": 7.0}, {"source": 17, "target": 5, "w": 10.0}, {"source": 17, "target": 11, "w": 2.0}, {"source": 17, "target": 18, "w": 2.0}, {"source": 17, "target": 20, "w": 46.0}, {"source": 17, "target": 21, "w": 1.0}, {"source": 17, "target": 22, "w": 1.0}, {"source": 17, "target": 23, "w": 1.0}, {"source": 17, "target": 27, "w": 2.0}, {"source": 17, "target": 30, "w": 2.0}, {"source": 17, "target": 31, "w": 92.0}, {"source": 17, "target": 36, "w": 15.0}, {"source": 17, "target": 39, "w": 6.0}, {"source": 17, "target": 46, "w": 3.0}, {"source": 17, "target": 48, "w": 117.0}, {"source": 18, "target": 0, "w": 8.0}, {"source": 18, "target": 17, "w": 13.0}, {"source": 18, "target": 20, "w": 5.0}, {"source": 18, "target": 48, "w": 8.0}, {"source": 19, "target": 0, "w": 8.0}, {"source": 19, "target": 17, "w": 6.0}, {"source": 19, "target": 31, "w": 4.0}, {"source": 19, "target": 36, "w": 1.0}, {"source": 19, "target": 48, "w": 7.0}, {"source": 20, "target": 0, "w": 39.0}, {"source": 20, "target": 7, "w": 1.0}, {"source": 20, "target": 17, "w": 39.0}, {"source": 20, "target": 31, "w": 5.0}, {"source": 20, "target": 36, "w": 2.0}, {"source": 20, "target": 48, "w": 52.0}, {"source": 21, "target": 0, "w": 10.0}, {"source": 21, "target": 17, "w": 9.0}, {"source": 21, "target": 20, "w": 1.0}, {"source": 21, "target": 31, "w": 1.0}, {"source": 21, "target": 36, "w": 1.0}, {"source": 21, "target": 39, "w": 1.0}, {"source": 21, "target": 48, "w": 7.0}, {"source": 22, "target": 0, "w": 70.0}, {"source": 22, "target": 17, "w": 36.0}, {"source": 22, "target": 20, "w": 1.0}, {"source": 22, "target": 31, "w": 1.0}, {"source": 22, "target": 43, "w": 2.0}, {"source": 22, "target": 48, "w": 41.0}, {"source": 23, "target": 0, "w": 4.0}, {"source": 23, "target": 17, "w": 6.0}, {"source": 23, "target": 31, "w": 4.0}, {"source": 23, "target": 36, "w": 1.0}, {"source": 23, "target": 48, "w": 3.0}, {"source": 24, "target": 0, "w": 23.0}, {"source": 24, "target": 2, "w": 2.0}, {"source": 24, "target": 4, "w": 2.0}, {"source": 24, "target": 5, "w": 7.0}, {"source": 24, "target": 17, "w": 33.0}, {"source": 24, "target": 25, "w": 9.0}, {"source": 24, "target": 29, "w": 1.0}, {"source": 24, "target": 31, "w": 5.0}, {"source": 24, "target": 46, "w": 3.0}, {"source": 24, "target": 48, "w": 44.0}, {"source": 25, "target": 2, "w": 2.0}, {"source": 25, "target": 24, "w": 29.0}, {"source": 25, "target": 48, "w": 14.0}, {"source": 26, "target": 0, "w": 4.0}, {"source": 26, "target": 2, "w": 1.0}, {"source": 26, "target": 5, "w": 2.0}, {"source": 26, "target": 24, "w": 7.0}, {"source": 26, "target": 48, "w": 4.0}, {"source": 26, "target": 57, "w": 6.0}, {"source": 27, "target": 0, "w": 16.0}, {"source": 27, "target": 2, "w": 1.0}, {"source": 27, "target": 8, "w": 6.0}, {"source": 27, "target": 11, "w": 8.0}, {"source": 27, "target": 17, "w": 31.0}, {"source": 27, "target": 29, "w": 14.0}, {"source": 27, "target": 30, "w": 29.0}, {"source": 27, "target": 31, "w": 1.0}, {"source": 27, "target": 39, "w": 3.0}, {"source": 27, "target": 48, "w": 20.0}, {"source": 28, "target": 0, "w": 2.0}, {"source": 28, "target": 11, "w": 1.0}, {"source": 28, "target": 17, "w": 2.0}, {"source": 28, "target": 29, "w": 4.0}, {"source": 28, "target": 48, "w": 2.0}, {"source": 29, "target": 0, "w": 1.0}, {"source": 29, "target": 7, "w": 1.0}, {"source": 29, "target": 11, "w": 1.0}, {"source": 29, "target": 17, "w": 1.0}, {"source": 29, "target": 48, "w": 7.0}, {"source": 30, "target": 0, "w": 1.0}, {"source": 30, "target": 11, "w": 8.0}, {"source": 30, "target": 17, "w": 1.0}, {"source": 30, "target": 48, "w": 18.0}, {"source": 31, "target": 0, "w": 60.0}, {"source": 31, "target": 11, "w": 1.0}, {"source": 31, "target": 17, "w": 63.0}, {"source": 31, "target": 39, "w": 2.0}, {"source": 31, "target": 48, "w": 47.0}, {"source": 31, "target": 51, "w": 2.0}, {"source": 32, "target": 0, "w": 7.0}, {"source": 32, "target": 17, "w": 10.0}, {"source": 32, "target": 31, "w": 5.0}, {"source": 32, "target": 48, "w": 7.0}, {"source": 33, "target": 0, "w": 7.0}, {"source": 33, "target": 17, "w": 8.0}, {"source": 33, "target": 20, "w": 1.0}, {"source": 33, "target": 31, "w": 2.0}, {"source": 33, "target": 36, "w": 1.0}, {"source": 33, "target": 48, "w": 6.0}, {"source": 34, "target": 0, "w": 4.0}, {"source": 34, "target": 17, "w": 4.0}, {"source": 34, "target": 31, "w": 2.0}, {"source": 34, "target": 48, "w": 3.0}, {"source": 34, "target": 54, "w": 1.0}, {"source": 35, "target": 0, "w": 7.0}, {"source": 35, "target": 17, "w": 8.0}, {"source": 35, "target": 20, "w": 3.0}, {"source": 35, "target": 31, "w": 3.0}, {"source": 35, "target": 36, "w": 2.0}, {"source": 35, "target": 48, "w": 11.0}, {"source": 35, "target": 51, "w": 6.0}, {"source": 36, "target": 0, "w": 7.0}, {"source": 36, "target": 20, "w": 2.0}, {"source": 36, "target": 31, "w": 7.0}, {"source": 36, "target": 39, "w": 1.0}, {"source": 36, "target": 48, "w": 5.0}, {"source": 36, "target": 51, "w": 4.0}, {"source": 37, "target": 0, "w": 12.0}, {"source": 37, "target": 17, "w": 12.0}, {"source": 37, "target": 48, "w": 12.0}, {"source": 38, "target": 0, "w": 5.0}, {"source": 38, "target": 17, "w": 3.0}, {"source": 38, "target": 48, "w": 7.0}, {"source": 39, "target": 0, "w": 35.0}, {"source": 39, "target": 17, "w": 51.0}, {"source": 39, "target": 20, "w": 3.0}, {"source": 39, "target": 31, "w": 3.0}, {"source": 39, "target": 48, "w": 58.0}, {"source": 40, "target": 0, "w": 6.0}, {"source": 40, "target": 17, "w": 3.0}, {"source": 40, "target": 48, "w": 6.0}, {"source": 41, "target": 0, "w": 8.0}, {"source": 41, "target": 17, "w": 11.0}, {"source": 41, "target": 31, "w": 2.0}, {"source": 41, "target": 48, "w": 4.0}, {"source": 42, "target": 0, "w": 21.0}, {"source": 42, "target": 17, "w": 13.0}, {"source": 42, "target": 31, "w": 11.0}, {"source": 42, "target": 48, "w": 18.0}, {"source": 42, "target": 54, "w": 2.0}, {"source": 43, "target": 0, "w": 2.0}, {"source": 43, "target": 17, "w": 4.0}, {"source": 43, "target": 18, "w": 6.0}, {"source": 43, "target": 48, "w": 2.0}, {"source": 44, "target": 0, "w": 33.0}, {"source": 44, "target": 17, "w": 43.0}, {"source": 44, "target": 20, "w": 6.0}, {"source": 44, "target": 31, "w": 28.0}, {"source": 44, "target": 36, "w": 3.0}, {"source": 44, "target": 39, "w": 2.0}, {"source": 44, "target": 48, "w": 34.0}, {"source": 44, "target": 54, "w": 8.0}, {"source": 45, "target": 0, "w": 9.0}, {"source": 45, "target": 2, "w": 2.0}, {"source": 45, "target": 17, "w": 5.0}, {"source": 45, "target": 20, "w": 1.0}, {"source": 45, "target": 31, "w": 7.0}, {"source": 45, "target": 48, "w": 13.0}, {"source": 46, "target": 0, "w": 8.0}, {"source": 46, "target": 17, "w": 15.0}, {"source": 46, "target": 31, "w": 8.0}, {"source": 46, "target": 48, "w": 5.0}, {"source": 47, "target": 0, "w": 1.0}, {"source": 47, "target": 54, "w": 1.0}, {"source": 47, "target": 55, "w": 1.0}, {"source": 49, "target": 0, "w": 18.0}, {"source": 49, "target": 11, "w": 3.0}, {"source": 49, "target": 15, "w": 4.0}, {"source": 49, "target": 48, "w": 7.0}, {"source": 50, "target": 0, "w": 5.0}, {"source": 50, "target": 6, "w": 3.0}, {"source": 50, "target": 17, "w": 1.0}, {"source": 50, "target": 39, "w": 2.0}, {"source": 50, "target": 40, "w": 1.0}, {"source": 50, "target": 48, "w": 4.0}, {"source": 51, "target": 0, "w": 171.0}, {"source": 51, "target": 17, "w": 32.0}, {"source": 51, "target": 31, "w": 36.0}, {"source": 51, "target": 35, "w": 1.0}, {"source": 51, "target": 36, "w": 9.0}, {"source": 51, "target": 48, "w": 47.0}, {"source": 51, "target": 53, "w": 1.0}, {"source": 51, "target": 54, "w": 2.0}, {"source": 52, "target": 0, "w": 33.0}, {"source": 52, "target": 24, "w": 27.0}, {"source": 52, "target": 48, "w": 10.0}, {"source": 52, "target": 51, "w": 19.0}, {"source": 53, "target": 0, "w": 1.0}, {"source": 53, "target": 51, "w": 1.0}, {"source": 54, "target": 0, "w": 15.0}, {"source": 54, "target": 17, "w": 5.0}, {"source": 54, "target": 20, "w": 2.0}, {"source": 54, "target": 31, "w": 1.0}, {"source": 54, "target": 47, "w": 8.0}, {"source": 54, "target": 48, "w": 3.0}, {"source": 54, "target": 51, "w": 9.0}, {"source": 54, "target": 53, "w": 1.0}, {"source": 54, "target": 55, "w": 1.0}, {"source": 55, "target": 0, "w": 4.0}, {"source": 55, "target": 54, "w": 1.0}, {"source": 56, "target": 0, "w": 5.0}, {"source": 56, "target": 1, "w": 4.0}, {"source": 56, "target": 48, "w": 2.0}, {"source": 57, "target": 0, "w": 7.0}, {"source": 57, "target": 2, "w": 2.0}, {"source": 57, "target": 9, "w": 1.0}, {"source": 57, "target": 48, "w": 18.0}], "meta": {"project": "ta4j__ta4j", "n_nodes": 58, "n_edges": 294, "graph_level_smells": ["Dense Structure"], "dense_structure": 1, "label_counts": {"CD": 31, "UD": 16, "AI": 0, "GC": 8, "FC": 18, "SF": 0}, "matching": {"arcan_nodes": 58, "designite_packages": 58, "matched": 58, "coverage": 1.0, "arcan_only": [], "designite_only": [], "smelly_packages_not_in_graph": []}, "dropped_containers": {"default_package": [], "empty_container": ["org.ta4j.core.strategy", "org", "org.ta4j"]}, "unknown_designite_smells": []}};
+const LABELS = ["CD","UD","AI","GC","FC","SF"];
+const NAMES = {CD:"Cyclic Dependency",UD:"Unstable Dependency",AI:"Ambiguous Interface",
+  GC:"God Component",FC:"Feature Concentration",SF:"Scattered Functionality"};
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const nodes = DATA.nodes.map(d => ({...d, nSmell: LABELS.reduce((s,k)=>s+d[k],0),
+  short: d.name.split(".").slice(-1)[0] || d.name}));
+const byId = new Map(nodes.map(d => [d.id, d]));
+const links = DATA.edges.map(e => ({...e}));
+const meta = DATA.meta;
+let current = null;
+
+// ---------- sidebar ----------
+document.getElementById("title").textContent = meta.project;
+document.getElementById("nN").textContent = nodes.length;
+document.getElementById("nE").textContent = links.length;
+document.getElementById("nS").textContent = nodes.filter(d => d.nSmell > 0).length;
+document.getElementById("names").innerHTML = nodes.map(d => `<option value="${d.name}">`).join("");
+document.getElementById("smellTable").innerHTML = LABELS.map(k =>
+  `<tr><td><i class="dot" style="background:var(--${k})"></i>${NAMES[k]}</td>
+   <td>${meta.label_counts[k]} / ${nodes.length}</td></tr>`).join("");
+document.getElementById("ds").textContent = meta.dense_structure
+  ? "Dense Structure detected at project level (not assigned to individual nodes)."
+  : "Dense Structure not detected.";
+const unmasked = nodes.filter(d => !d.mask).length;
+if (unmasked) document.getElementById("ds").textContent +=
+  ` ${unmasked} nodes not analysed by Designite (dashed outline): labels unavailable.`;
+const rank = [...nodes].sort((a,b) => b.atdi - a.atdi).slice(0,10);
+document.getElementById("rank").innerHTML = rank.map(d =>
+  `<li><button data-id="${d.id}">${d.short}</button> <span class="v">${d.atdi.toFixed(1)}</span></li>`).join("");
+document.querySelectorAll("#rank button").forEach(b =>
+  b.addEventListener("click", () => select(byId.get(+b.dataset.id), true)));
+
+// ---------- graph ----------
+const svg = d3.select("#svg"), g = svg.append("g");
+const W = () => svg.node().clientWidth, H = () => svg.node().clientHeight;
+const maxLoc = d3.max(nodes, d => d.LOC) || 1;
+const r = d3.scaleSqrt().domain([0, maxLoc]).range([4, 26]);
+const wScale = d3.scaleLog().domain([1, d3.max(links, d => d.w) || 1]).range([0.6, 3.5]);
+const maxAtdi = d3.max(nodes, d => d.atdi) || 1;
+
+svg.append("defs").append("marker").attr("id","arrow").attr("viewBox","0 -4 8 8")
+  .attr("refX",8).attr("refY",0).attr("markerUnits","userSpaceOnUse").attr("markerWidth",9).attr("markerHeight",9).attr("orient","auto")
+  .append("path").attr("d","M0,-4L8,0L0,4").attr("fill","var(--edge)");
+
+const link = g.append("g").selectAll("path").data(links).join("path")
+  .attr("class","link").attr("stroke-width", d => wScale(Math.max(1,d.w))).attr("marker-end","url(#arrow)");
+const node = g.append("g").selectAll("g").data(nodes).join("g")
+  .attr("class", d => "node" + (d.mask ? "" : " nomask")).attr("tabindex",0)
+  .attr("aria-label", d => d.name);
+node.append("circle").attr("r", d => r(d.LOC));
+node.append("text").attr("dy", d => -r(d.LOC) - 4).attr("text-anchor","middle").text(d => d.short);
+
+const sim = d3.forceSimulation(nodes)
+  .force("link", d3.forceLink(links).id(d => d.id).distance(95).strength(0.2))
+  .force("charge", d3.forceManyBody().strength(-420))
+  .force("collide", d3.forceCollide(d => r(d.LOC) + 6))
+  .force("x", d3.forceX(() => W()/2).strength(0.05))
+  .force("y", d3.forceY(() => H()/2).strength(0.05))
+  .on("tick", ticked).on("end", fit);
+if (matchMedia("(prefers-reduced-motion: reduce)").matches) { sim.stop(); for (let i=0;i<300;i++) sim.tick(); ticked(); setTimeout(fit, 0); }
+let fitted = false;
+function fit(){
+  if (fitted) return; fitted = true;
+  const pad = 40, xs = nodes.map(d => d.x), ys = nodes.map(d => d.y);
+  const x0 = d3.min(xs) - pad, x1 = d3.max(xs) + pad, y0 = d3.min(ys) - pad, y1 = d3.max(ys) + pad;
+  const k = Math.min(2, 0.95 / Math.max((x1 - x0) / W(), (y1 - y0) / H()));
+  svg.transition().duration(600).call(zoom.transform,
+    d3.zoomIdentity.translate(W()/2, H()/2).scale(k).translate(-(x0 + x1)/2, -(y0 + y1)/2));
+}
+
+function ticked(){
+  link.attr("d", d => {
+    const dx = d.target.x - d.source.x, dy = d.target.y - d.source.y, L = Math.hypot(dx,dy) || 1;
+    const rt = r(d.target.LOC) + 3, rs = r(d.source.LOC);
+    return `M${d.source.x + dx*rs/L},${d.source.y + dy*rs/L}L${d.target.x - dx*rt/L},${d.target.y - dy*rt/L}`;
+  });
+  node.attr("transform", d => `translate(${d.x},${d.y})`);
+}
+
+node.call(d3.drag()
+  .on("start", (e,d) => { if(!e.active) sim.alphaTarget(0.3).restart(); d.fx=d.x; d.fy=d.y; })
+  .on("drag", (e,d) => { d.fx=e.x; d.fy=e.y; })
+  .on("end", (e,d) => { if(!e.active) sim.alphaTarget(0); d.fx=null; d.fy=null; }));
+const zoom = d3.zoom().scaleExtent([0.2,6]).on("zoom", e => g.attr("transform", e.transform));
+svg.call(zoom).on("click", e => { if (e.target === svg.node()) select(null); });
+
+// ---------- colour ----------
+function colour(d){
+  const m = document.getElementById("colorBy").value;
+  if (m === "count") return css("--s" + Math.min(d.nSmell, 4));
+  if (m === "atdi") return d3.interpolateLab(css("--s0"), css("--s4"))(Math.sqrt(d.atdi / maxAtdi));
+  return d[m] ? css("--" + m) : css("--clean");
+}
+function legend(){
+  const m = document.getElementById("colorBy").value, el = document.getElementById("legend");
+  if (m === "count") el.innerHTML = [0,1,2,3,4].map(i =>
+    `<span><i style="background:var(--s${i})"></i>${i===4?"4+":i} ${i===1?"smell":"smells"}</span>`).join("");
+  else if (m === "atdi") el.innerHTML = `<span><i style="background:var(--s0)"></i>0</span>
+    <span><i style="background:var(--s4)"></i>${maxAtdi.toFixed(0)}</span>`;
+  else el.innerHTML = `<span><i style="background:var(--${m})"></i>affected</span>
+    <span><i style="background:var(--clean)"></i>not affected</span>`;
+  el.innerHTML += `<span>node size ∝ LOC</span>`;
+}
+function paint(){ node.select("circle").attr("fill", colour); legend(); }
+document.getElementById("colorBy").addEventListener("change", paint);
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", paint);
+paint();
+
+// ---------- labels ----------
+function labelsVisible(){
+  const all = document.getElementById("showLabels").checked;
+  node.select("text").style("display", d => all || r(d.LOC) > 12 || d === current ? null : "none");
+}
+document.getElementById("showLabels").addEventListener("change", labelsVisible);
+
+// ---------- tooltip ----------
+const tip = document.getElementById("tip");
+node.on("mouseenter", (e,d) => {
+  const s = LABELS.filter(k => d[k]).join(", ") || "none";
+  tip.innerHTML = `<b>${d.name}</b><br>LOC ${d.LOC} · FI ${d.FI} · FO ${d.FO}<br>Smells: ${s}`;
+  tip.style.display = "block";
+}).on("mousemove", e => {
+  const b = document.querySelector("main").getBoundingClientRect();
+  tip.style.left = (e.clientX - b.left + 14) + "px"; tip.style.top = (e.clientY - b.top + 14) + "px";
+}).on("mouseleave", () => tip.style.display = "none")
+  .on("click", (e,d) => { e.stopPropagation(); select(d); })
+  .on("keydown", (e,d) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(d); } });
+
+// ---------- selection ----------
+function select(d, center){
+  current = d;
+  node.classed("sel", n => n === d);
+  if (!d){ node.classed("dim", false); link.classed("dim", false); renderDetail(null); labelsVisible(); return; }
+  const out = links.filter(l => l.source === d), inc = links.filter(l => l.target === d);
+  const nb = new Set([d, ...out.map(l => l.target), ...inc.map(l => l.source)]);
+  node.classed("dim", n => !nb.has(n));
+  link.classed("dim", l => l.source !== d && l.target !== d);
+  renderDetail(d, out, inc); labelsVisible();
+  if (center) svg.transition().duration(500).call(zoom.translateTo, d.x, d.y);
+}
+function renderDetail(d, out, inc){
+  const el = document.getElementById("detail");
+  if (!d){ el.innerHTML = `<h2>Selected component</h2><p class="note">Select a node to inspect its features, labels, and dependencies.</p>`; return; }
+  const chips = LABELS.filter(k => d[k]).map(k => `<span class="chip" style="background:var(--${k})">${NAMES[k]}</span>`).join("")
+    || `<span class="chip none">${d.mask ? "No smells" : "Labels unavailable"}</span>`;
+  const f = (v, p=3) => Number.isInteger(v) ? v : v.toFixed(p);
+  const rows = [["Abstractness (Ab)",d.Ab],["Instability (In)",d.In],["Distance (D)",d.D],["Fan-in (FI)",d.FI],
+    ["Fan-out (FO)",d.FO],["Lines of code (LOC)",d.LOC],["PageRank (PR)",d.PR],["ATDI (Arcan)",d.atdi],["Classes",d.units]];
+  el.innerHTML = `<h2>Selected component</h2><div class="detail-name">${d.name}</div>
+    <div class="chips">${chips}</div>
+    <table>${rows.map(([k,v]) => `<tr><td>${k}</td><td>${f(v)}</td></tr>`).join("")}</table>
+    <p class="note">Efferent dependencies: ${out.length}. Afferent dependencies: ${inc.length}.</p>`;
+}
+document.getElementById("search").addEventListener("change", e => {
+  const d = nodes.find(n => n.name === e.target.value) || nodes.find(n => n.name.includes(e.target.value));
+  if (d) select(d, true);
+});
+labelsVisible();
+</script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 1171,
+  "source_files_removed": 429,
+  "source_files_after": 742,
+  "removed_share": 0.3664,
+  "removed_by_rule": {
+    "R1_arcan_default": 429,
+    "R2_java_build": 0
+  },
+  "removed_dirs": [
+    {
+      "path": "hyperjaxb/ejb/samples",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    },
+    {
+      "path": "hyperjaxb/ejb/tests",
+      "rule": "R1_arcan_default",
+      "source_files": 50
+    },
+    {
+      "path": "hyperjaxb/ejb/plugin/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    },
+    {
+      "path": "hyperjaxb/ejb/roundtrip/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 22
+    },
+    {
+      "path": "hyperjaxb/ejb/roundtrip/src/main/java/org/jvnet/hyperjaxb3/ejb/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "hyperjaxb/ejb/runtime/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 15
+    },
+    {
+      "path": "hyperjaxb/ejb/schemas/customizations/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "hyperjaxb/ejb/templates/basic/src/it",
+      "rule": "R2_java_build",
+      "source_files": 0
+    },
+    {
+      "path": "hyperjaxb/ejb/templates/basic/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "hyperjaxb/ejb/tutorials/po/step-one/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    },
+    {
+      "path": "hyperjaxb/ejb/tutorials/po/step-three/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "hyperjaxb/ejb/tutorials/po/step-two/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "hyperjaxb/maven/testing",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "hyperjaxb/maven/plugin/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "hyperjaxb/misc/dynamic/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "hyperjaxb/misc/jdo/sample-hotel",
+      "rule": "R1_arcan_default",
+      "source_files": 7
+    },
+    {
+      "path": "hyperjaxb/misc/jdo/roundtrip/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 5
+    },
+    {
+      "path": "hyperjaxb/misc/jdo/roundtrip/src/main/java/org/jvnet/hyperjaxb3/jdo/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "jaxb-annotate-parent/samples",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "jaxb-annotate-parent/tests",
+      "rule": "R1_arcan_default",
+      "source_files": 25
+    },
+    {
+      "path": "jaxb-annotate-parent/plugin/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 5
+    },
+    {
+      "path": "jaxb-annox-parent/samples",
+      "rule": "R1_arcan_default",
+      "source_files": 6
+    },
+    {
+      "path": "jaxb-annox-parent/jaxb-annox/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 46
+    },
+    {
+      "path": "jaxb-plugins-parent/jaxb-plugins-testing",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "jaxb-plugins-parent/samples",
+      "rule": "R1_arcan_default",
+      "source_files": 7
+    },
+    {
+      "path": "jaxb-plugins-parent/tests",
+      "rule": "R1_arcan_default",
+      "source_files": 107
+    },
+    {
+      "path": "jaxb-plugins-parent/jaxb-plugins/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 8
+    },
+    {
+      "path": "jaxb-plugins-parent/jaxb-plugins-runtime/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 53
+    },
+    {
+      "path": "jaxb-plugins-parent/jaxb-plugins-tools/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 6
+    },
+    {
+      "path": "maven-plugin/samples",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "maven-plugin/testing",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "maven-plugin/tests",
+      "rule": "R1_arcan_default",
+      "source_files": 27
+    },
+    {
+      "path": "maven-plugin/plugin/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "maven-plugin/plugin-core/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 7
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

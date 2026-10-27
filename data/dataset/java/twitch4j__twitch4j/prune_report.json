@@ -1,0 +1,85 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 1210,
+  "source_files_removed": 77,
+  "source_files_after": 1133,
+  "removed_share": 0.0636,
+  "removed_by_rule": {
+    "R1_arcan_default": 77
+  },
+  "removed_dirs": [
+    {
+      "path": "auth/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "chat/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 8
+    },
+    {
+      "path": "client-websocket/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "common/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "common/src/main/java/com/github/twitch4j/common/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "eventsub-common/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 9
+    },
+    {
+      "path": "graphql/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "kotlin/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "pubsub/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 19
+    },
+    {
+      "path": "rest-extensions/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "rest-helix/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 21
+    },
+    {
+      "path": "rest-kraken/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 6
+    },
+    {
+      "path": "rest-tmi/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "twitch4j/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 5
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

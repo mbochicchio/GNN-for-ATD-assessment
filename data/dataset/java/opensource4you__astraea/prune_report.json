@@ -1,0 +1,46 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 576,
+  "source_files_removed": 209,
+  "source_files_after": 367,
+  "removed_share": 0.3628,
+  "removed_by_rule": {
+    "R2_java_build": 7,
+    "R1_arcan_default": 202
+  },
+  "removed_dirs": [
+    {
+      "path": "it",
+      "rule": "R2_java_build",
+      "source_files": 7
+    },
+    {
+      "path": "app/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 51
+    },
+    {
+      "path": "common/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 131
+    },
+    {
+      "path": "connector/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 8
+    },
+    {
+      "path": "fs/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 5
+    },
+    {
+      "path": "gui/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 7
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

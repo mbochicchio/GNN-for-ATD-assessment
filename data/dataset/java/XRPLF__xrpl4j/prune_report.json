@@ -1,0 +1,30 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 1183,
+  "source_files_removed": 550,
+  "source_files_after": 633,
+  "removed_share": 0.4649,
+  "removed_by_rule": {
+    "R1_arcan_default": 550
+  },
+  "removed_dirs": [
+    {
+      "path": "xrpl4j-integration-tests",
+      "rule": "R1_arcan_default",
+      "source_files": 55
+    },
+    {
+      "path": "xrpl4j-client/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "xrpl4j-core/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 493
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

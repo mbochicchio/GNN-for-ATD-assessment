@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Leavesfly__Jimi · dependency graph</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EEF1F0; --panel:#F8FAF9; --ink:#1B2733; --muted:#5E6B78; --rule:#D3DAD8;
+  --edge:#9AA7B2; --clean:#C3CCD3; --focus:#1B2733;
+  --CD:#D55E00; --UD:#0072B2; --AI:#CC79A7; --GC:#009E73; --FC:#E69F00; --SF:#56B4E9;
+  --s0:#C3CCD3; --s1:#F2C27B; --s2:#E58A3C; --s3:#C4462A; --s4:#8E1F2A;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+  --bg:#141B21; --panel:#1B242C; --ink:#E4EAEE; --muted:#93A1AD; --rule:#2C3842;
+  --edge:#4E5E6B; --clean:#3E4B56; --focus:#E4EAEE; --s0:#3E4B56;
+}}
+:root[data-theme="dark"]{
+  --bg:#141B21; --panel:#1B242C; --ink:#E4EAEE; --muted:#93A1AD; --rule:#2C3842;
+  --edge:#4E5E6B; --clean:#3E4B56; --focus:#E4EAEE; --s0:#3E4B56;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{height:100%; scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0; height:100%; background:var(--bg); color:var(--ink);
+  font:14px/1.5 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+.app{display:grid; grid-template-columns:320px 1fr; height:100%}
+aside{background:var(--panel); border-right:1px solid var(--rule); overflow-y:auto; padding:20px 20px 28px}
+h1{font:500 22px/1.2 "IBM Plex Sans Condensed","IBM Plex Sans",sans-serif; margin:0 0 4px; word-break:break-word}
+.sub{color:var(--muted); margin:0 0 18px}
+.stats{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-bottom:18px}
+.stat b{display:block; font-size:20px; font-weight:600}
+.stat span{color:var(--muted); font-size:12px}
+section{border-top:1px solid var(--rule); padding-top:14px; margin-top:14px}
+h2{font-size:13px; font-weight:600; margin:0 0 8px}
+label.ctl{display:block; color:var(--muted); font-size:12px; margin:8px 0 4px}
+select,input[type=search]{width:100%; font:inherit; color:var(--ink); background:var(--bg);
+  border:1px solid var(--rule); border-radius:6px; padding:6px 8px}
+select:focus-visible,input:focus-visible,button:focus-visible{outline:2px solid var(--focus); outline-offset:2px}
+.check{display:flex; gap:8px; align-items:center; margin-top:10px; color:var(--muted); font-size:13px}
+.legend{display:flex; flex-wrap:wrap; gap:6px 12px; margin-top:10px; font-size:12px}
+.dot{display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:7px; vertical-align:-1px}
+.legend i{display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:5px; vertical-align:-1px}
+table{width:100%; border-collapse:collapse; font-size:13px}
+td{padding:3px 0; border-bottom:1px solid var(--rule)}
+td:last-child{text-align:right; font-variant-numeric:tabular-nums}
+.chips{display:flex; flex-wrap:wrap; gap:6px; margin:8px 0}
+.chip{font-size:12px; padding:2px 8px; border-radius:10px; color:#fff}
+.chip.none{background:var(--clean); color:var(--ink)}
+.detail-name{font-weight:600; word-break:break-all; margin-bottom:4px}
+.note{color:var(--muted); font-size:12px}
+ol.rank{margin:0; padding-left:20px; font-size:13px}
+ol.rank li{margin:2px 0}
+ol.rank button{all:unset; cursor:pointer; word-break:break-all}
+ol.rank button:hover{text-decoration:underline}
+ol.rank .v{color:var(--muted); font-variant-numeric:tabular-nums}
+main{position:relative; overflow:hidden}
+svg{width:100%; height:100%; display:block; cursor:grab}
+.link{stroke:var(--edge); stroke-opacity:.55; fill:none}
+.node circle{stroke:var(--panel); stroke-width:1.5}
+.node.nomask circle{stroke-dasharray:3 2; stroke:var(--muted)}
+.node text{font-size:11px; fill:var(--ink); pointer-events:none; paint-order:stroke;
+  stroke:var(--bg); stroke-width:3px}
+.dim{opacity:.12}
+.node.sel circle{stroke:var(--focus); stroke-width:3}
+#tip{position:absolute; pointer-events:none; background:var(--panel); border:1px solid var(--rule);
+  border-radius:6px; padding:6px 9px; font-size:12px; max-width:320px; display:none; word-break:break-all}
+.hint{position:absolute; right:14px; bottom:12px; color:var(--muted); font-size:12px}
+@media (max-width:760px){
+  .app{grid-template-columns:1fr; grid-template-rows:auto 70vh; height:auto}
+  aside{border-right:0; border-bottom:1px solid var(--rule)}
+}
+@media (prefers-reduced-motion:reduce){ *{transition:none!important} }
+</style>
+</head>
+<body>
+<div class="app">
+<aside>
+  <h1 id="title"></h1>
+  <p class="sub">Package-level dependency graph with Designite smell labels</p>
+  <div class="stats">
+    <div class="stat"><b id="nN"></b><span>components</span></div>
+    <div class="stat"><b id="nE"></b><span>dependencies</span></div>
+    <div class="stat"><b id="nS"></b><span>smell-affected components</span></div>
+  </div>
+
+  <label class="ctl" for="colorBy">Colour nodes by</label>
+  <select id="colorBy">
+    <option value="count">Number of smells</option>
+    <option value="CD">Cyclic Dependency</option>
+    <option value="UD">Unstable Dependency</option>
+    <option value="AI">Ambiguous Interface</option>
+    <option value="GC">God Component</option>
+    <option value="FC">Feature Concentration</option>
+    <option value="SF">Scattered Functionality</option>
+    <option value="atdi">ATDI (Arcan)</option>
+  </select>
+  <div class="legend" id="legend"></div>
+
+  <label class="ctl" for="search">Find a component</label>
+  <input id="search" type="search" placeholder="e.g. analyzer" list="names" autocomplete="off">
+  <datalist id="names"></datalist>
+  <label class="check"><input type="checkbox" id="showLabels"> Show all node labels</label>
+
+  <section id="detail">
+    <h2>Selected component</h2>
+    <p class="note">Select a node to inspect its features, labels, and dependencies.</p>
+  </section>
+
+  <section>
+    <h2>Smell distribution</h2>
+    <table id="smellTable"></table>
+    <p class="note" id="ds"></p>
+  </section>
+
+  <section>
+    <h2>Highest ATDI</h2>
+    <ol class="rank" id="rank"></ol>
+  </section>
+</aside>
+<main>
+  <svg id="svg" role="img" aria-label="Dependency graph"></svg>
+  <div id="tip"></div>
+  <div class="hint">Drag to pan, scroll to zoom</div>
+</main>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script>
+const DATA = {"nodes": [{"id": 0, "name": "io.leavesfly.jimi", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 6.0, "LOC": 102.0, "PR": 0.005966095705460121, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 1, "name": "io.leavesfly.jimi.client", "mask": 1, "atdi": 98.50928933645645, "units": 2, "Ab": 0.5, "In": 0.6666666666666666, "D": 0.16666666666666652, "FI": 8.0, "FO": 8.0, "LOC": 132.0, "PR": 0.023668549256377392, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 2, "name": "io.leavesfly.jimi.command", "mask": 1, "atdi": 161.66155748279377, "units": 3, "Ab": 0.3333333333333333, "In": 0.07142857142857142, "D": 0.5952380952380952, "FI": 8.0, "FO": 6.0, "LOC": 128.0, "PR": 0.0205693102116148, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 3, "name": "io.leavesfly.jimi.command.custom", "mask": 1, "atdi": 52.047028389306604, "units": 7, "Ab": 0.0, "In": 0.6666666666666666, "D": 0.33333333333333337, "FI": 3.0, "FO": 4.0, "LOC": 348.0, "PR": 0.008370000331836262, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 4, "name": "io.leavesfly.jimi.command.handlers", "mask": 1, "atdi": 57.67766497562596, "units": 20, "Ab": 0.0, "In": 0.967741935483871, "D": 0.032258064516129004, "FI": 1.0, "FO": 11.0, "LOC": 1732.0, "PR": 0.006590686326054068, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 5, "name": "io.leavesfly.jimi.command.wiki", "mask": 1, "atdi": 5.9319900920391335, "units": 2, "Ab": 0.0, "In": 0.5, "D": 0.5, "FI": 1.0, "FO": 1.0, "LOC": 298.0, "PR": 0.006475377213890063, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 6, "name": "io.leavesfly.jimi.common", "mask": 1, "atdi": 85.33600304595328, "units": 3, "Ab": 0.0, "In": 0.36363636363636365, "D": 0.6363636363636364, "FI": 5.0, "FO": 4.0, "LOC": 151.0, "PR": 0.038891643273405954, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 7, "name": "io.leavesfly.jimi.config", "mask": 1, "atdi": 129.54616553363581, "units": 2, "Ab": 0.0, "In": 0.8, "D": 0.19999999999999996, "FI": 11.0, "FO": 6.0, "LOC": 174.0, "PR": 0.03700715892127253, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 8, "name": "io.leavesfly.jimi.config.info", "mask": 1, "atdi": 0.0, "units": 13, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 21.0, "FO": 0.0, "LOC": 620.0, "PR": 0.07344657926098538, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 9, "name": "io.leavesfly.jimi.core", "mask": 1, "atdi": 274.3353024772607, "units": 2, "Ab": 0.0, "In": 0.8857142857142857, "D": 0.11428571428571432, "FI": 8.0, "FO": 18.0, "LOC": 218.0, "PR": 0.019093987928866612, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 10, "name": "io.leavesfly.jimi.core.agent", "mask": 1, "atdi": 83.48859202763391, "units": 5, "Ab": 0.0, "In": 0.2916666666666667, "D": 0.7083333333333333, "FI": 9.0, "FO": 4.0, "LOC": 394.0, "PR": 0.017505711986427638, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 11, "name": "io.leavesfly.jimi.core.approval", "mask": 1, "atdi": 39.500513214725515, "units": 3, "Ab": 0.0, "In": 0.1, "D": 0.9, "FI": 7.0, "FO": 1.0, "LOC": 75.0, "PR": 0.02286649687462548, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 12, "name": "io.leavesfly.jimi.core.compaction", "mask": 1, "atdi": 32.807590037074235, "units": 2, "Ab": 0.5, "In": 0.4, "D": 0.09999999999999998, "FI": 6.0, "FO": 2.0, "LOC": 99.0, "PR": 0.017954170485981333, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 13, "name": "io.leavesfly.jimi.core.engine", "mask": 1, "atdi": 253.42058180172975, "units": 7, "Ab": 0.14285714285714285, "In": 0.6862745098039216, "D": 0.17086834733893563, "FI": 8.0, "FO": 17.0, "LOC": 473.0, "PR": 0.02337616591310101, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 14, "name": "io.leavesfly.jimi.core.engine.context", "mask": 1, "atdi": 80.7936806686518, "units": 6, "Ab": 0.16666666666666666, "In": 0.47058823529411764, "D": 0.36274509803921573, "FI": 10.0, "FO": 8.0, "LOC": 452.0, "PR": 0.026253343950886583, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 15, "name": "io.leavesfly.jimi.core.engine.toolcall", "mask": 1, "atdi": 34.327182725650204, "units": 2, "Ab": 0.0, "In": 0.8823529411764706, "D": 0.11764705882352944, "FI": 1.0, "FO": 8.0, "LOC": 215.0, "PR": 0.0071349059713514025, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 16, "name": "io.leavesfly.jimi.core.hook", "mask": 1, "atdi": 28.514575500151537, "units": 9, "Ab": 0.0, "In": 0.25, "D": 0.75, "FI": 5.0, "FO": 1.0, "LOC": 652.0, "PR": 0.01156624120801681, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 17, "name": "io.leavesfly.jimi.core.sandbox", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.16666666666666666, "D": 0.8333333333333334, "FI": 4.0, "FO": 1.0, "LOC": 170.0, "PR": 0.01697399688911291, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 18, "name": "io.leavesfly.jimi.core.session", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 6.0, "FO": 0.0, "LOC": 182.0, "PR": 0.015261248918050318, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 19, "name": "io.leavesfly.jimi.exception", "mask": 1, "atdi": 0.0, "units": 7, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 7.0, "FO": 0.0, "LOC": 49.0, "PR": 0.03600402985175449, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 20, "name": "io.leavesfly.jimi.harness", "mask": 1, "atdi": 55.986943569792025, "units": 6, "Ab": 0.16666666666666666, "In": 0.5, "D": 0.33333333333333337, "FI": 6.0, "FO": 6.0, "LOC": 463.0, "PR": 0.01519998112031723, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 21, "name": "io.leavesfly.jimi.llm", "mask": 1, "atdi": 119.29047634489696, "units": 7, "Ab": 0.14285714285714285, "In": 0.35714285714285715, "D": 0.5, "FI": 13.0, "FO": 5.0, "LOC": 292.0, "PR": 0.04566369240937198, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 22, "name": "io.leavesfly.jimi.llm.message", "mask": 1, "atdi": 0.0, "units": 7, "Ab": 0.14285714285714285, "In": 0.0, "D": 0.8571428571428572, "FI": 19.0, "FO": 0.0, "LOC": 216.0, "PR": 0.06256606589255538, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 23, "name": "io.leavesfly.jimi.llm.provider", "mask": 1, "atdi": 44.224182684540644, "units": 6, "Ab": 0.0, "In": 0.9166666666666666, "D": 0.08333333333333337, "FI": 1.0, "FO": 4.0, "LOC": 853.0, "PR": 0.013728894965162983, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 24, "name": "io.leavesfly.jimi.loop", "mask": 1, "atdi": 16.64700062630047, "units": 7, "Ab": 0.0, "In": 0.6666666666666666, "D": 0.33333333333333337, "FI": 2.0, "FO": 4.0, "LOC": 532.0, "PR": 0.00709996783448401, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 25, "name": "io.leavesfly.jimi.mcp", "mask": 1, "atdi": 11.470470436698914, "units": 8, "Ab": 0.25, "In": 0.5714285714285714, "D": 0.1785714285714286, "FI": 2.0, "FO": 2.0, "LOC": 455.0, "PR": 0.009898531673362616, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 26, "name": "io.leavesfly.jimi.memory", "mask": 1, "atdi": 124.02314872003211, "units": 6, "Ab": 0.0, "In": 0.47058823529411764, "D": 0.5294117647058824, "FI": 8.0, "FO": 5.0, "LOC": 475.0, "PR": 0.022595940921253166, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 27, "name": "io.leavesfly.jimi.plugin", "mask": 1, "atdi": 153.07290247086934, "units": 2, "Ab": 0.0, "In": 0.7272727272727273, "D": 0.2727272727272727, "FI": 3.0, "FO": 6.0, "LOC": 290.0, "PR": 0.00964282522700725, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 28, "name": "io.leavesfly.jimi.plugin.command", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 6.0, "LOC": 231.0, "PR": 0.005966095705460121, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 29, "name": "io.leavesfly.jimi.plugin.dispatcher", "mask": 1, "atdi": 34.01154422109378, "units": 9, "Ab": 0.1111111111111111, "In": 0.8666666666666667, "D": 0.022222222222222143, "FI": 2.0, "FO": 7.0, "LOC": 337.0, "PR": 0.008177362574243221, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 30, "name": "io.leavesfly.jimi.plugin.installer", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.0, "In": 0.8, "D": 0.19999999999999996, "FI": 1.0, "FO": 3.0, "LOC": 220.0, "PR": 0.00681129560866039, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 31, "name": "io.leavesfly.jimi.plugin.spec", "mask": 1, "atdi": 0.0, "units": 9, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 4.0, "FO": 0.0, "LOC": 183.0, "PR": 0.01110020150033527, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 32, "name": "io.leavesfly.jimi.plugin.util", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 1.0, "FO": 0.0, "LOC": 50.0, "PR": 0.007332162671042952, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 33, "name": "io.leavesfly.jimi.skill", "mask": 1, "atdi": 45.00468994217214, "units": 5, "Ab": 0.0, "In": 0.1111111111111111, "D": 0.8888888888888888, "FI": 6.0, "FO": 1.0, "LOC": 579.0, "PR": 0.0216388694663593, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 34, "name": "io.leavesfly.jimi.team", "mask": 1, "atdi": 55.303697287006585, "units": 12, "Ab": 0.0, "In": 0.8421052631578947, "D": 0.1578947368421053, "FI": 2.0, "FO": 9.0, "LOC": 573.0, "PR": 0.010573055510360217, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 35, "name": "io.leavesfly.jimi.tool", "mask": 1, "atdi": 418.9530194107174, "units": 8, "Ab": 0.5, "In": 0.35384615384615387, "D": 0.14615384615384608, "FI": 21.0, "FO": 17.0, "LOC": 465.0, "PR": 0.05955452530153932, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 36, "name": "io.leavesfly.jimi.tool.core", "mask": 1, "atdi": 163.3141500635432, "units": 9, "Ab": 0.0, "In": 0.9090909090909091, "D": 0.09090909090909094, "FI": 4.0, "FO": 18.0, "LOC": 1372.0, "PR": 0.018783045841002065, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 37, "name": "io.leavesfly.jimi.tool.core.ask", "mask": 1, "atdi": 23.234059286061402, "units": 4, "Ab": 0.0, "In": 0.5714285714285714, "D": 0.4285714285714286, "FI": 2.0, "FO": 3.0, "LOC": 212.0, "PR": 0.007716676829075341, "CD": 0, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 38, "name": "io.leavesfly.jimi.tool.core.file", "mask": 1, "atdi": 18.170567186538783, "units": 5, "Ab": 0.0, "In": 0.875, "D": 0.125, "FI": 1.0, "FO": 4.0, "LOC": 1026.0, "PR": 0.008943816943036071, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 39, "name": "io.leavesfly.jimi.tool.core.mcp", "mask": 1, "atdi": 11.493464915447454, "units": 2, "Ab": 0.0, "In": 0.9, "D": 0.09999999999999998, "FI": 1.0, "FO": 2.0, "LOC": 115.0, "PR": 0.0069163773158282885, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 40, "name": "io.leavesfly.jimi.tool.core.meta", "mask": 1, "atdi": 5.832750618043725, "units": 5, "Ab": 0.0, "In": 0.8, "D": 0.19999999999999996, "FI": 1.0, "FO": 2.0, "LOC": 367.0, "PR": 0.0069163773158282885, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 41, "name": "io.leavesfly.jimi.tool.core.web", "mask": 1, "atdi": 11.998831160271497, "units": 2, "Ab": 0.0, "In": 0.8, "D": 0.19999999999999996, "FI": 1.0, "FO": 3.0, "LOC": 280.0, "PR": 0.008943816943036071, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 42, "name": "io.leavesfly.jimi.tool.provider", "mask": 1, "atdi": 57.10054403013185, "units": 5, "Ab": 0.0, "In": 0.9285714285714286, "D": 0.0714285714285714, "FI": 1.0, "FO": 8.0, "LOC": 182.0, "PR": 0.008943816943036071, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 43, "name": "io.leavesfly.jimi.ui", "mask": 1, "atdi": 118.13824499415847, "units": 1, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 4.0, "FO": 4.0, "LOC": 71.0, "PR": 0.011655578651253155, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 44, "name": "io.leavesfly.jimi.ui.notification", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 0.5, "D": 0.5, "FI": 1.0, "FO": 1.0, "LOC": 135.0, "PR": 0.006590686326054068, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 45, "name": "io.leavesfly.jimi.ui.shell", "mask": 1, "atdi": 183.1349734594585, "units": 2, "Ab": 0.0, "In": 0.8275862068965517, "D": 0.1724137931034483, "FI": 4.0, "FO": 17.0, "LOC": 178.0, "PR": 0.012491866572117021, "CD": 0, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 46, "name": "io.leavesfly.jimi.ui.shell.handler", "mask": 1, "atdi": 29.04471899897949, "units": 2, "Ab": 0.0, "In": 0.9583333333333334, "D": 0.04166666666666663, "FI": 1.0, "FO": 7.0, "LOC": 228.0, "PR": 0.006590686326054068, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 47, "name": "io.leavesfly.jimi.ui.shell.input", "mask": 1, "atdi": 23.018347717267915, "units": 4, "Ab": 0.25, "In": 0.8333333333333334, "D": 0.08333333333333348, "FI": 1.0, "FO": 4.0, "LOC": 148.0, "PR": 0.006590686326054068, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 48, "name": "io.leavesfly.jimi.ui.shell.jline", "mask": 1, "atdi": 5.81704597174876, "units": 3, "Ab": 0.0, "In": 0.6666666666666666, "D": 0.33333333333333337, "FI": 1.0, "FO": 1.0, "LOC": 247.0, "PR": 0.006590686326054068, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 49, "name": "io.leavesfly.jimi.ui.shell.output", "mask": 1, "atdi": 47.55334521117328, "units": 5, "Ab": 0.0, "In": 0.22857142857142856, "D": 0.7714285714285715, "FI": 7.0, "FO": 6.0, "LOC": 347.0, "PR": 0.014838597205998214, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 50, "name": "io.leavesfly.jimi.ui.shell.style", "mask": 1, "atdi": 12.20249544972675, "units": 3, "Ab": 0.0, "In": 0.375, "D": 0.625, "FI": 2.0, "FO": 2.0, "LOC": 143.0, "PR": 0.008692812473768841, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 51, "name": "io.leavesfly.jimi.util", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 0.0, "FO": 0.0, "LOC": 13.0, "PR": 0.005966095705460121, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 52, "name": "io.leavesfly.jimi.wire", "mask": 1, "atdi": 161.69834971180714, "units": 3, "Ab": 0.3333333333333333, "In": 0.5862068965517241, "D": 0.08045977011494254, "FI": 12.0, "FO": 8.0, "LOC": 143.0, "PR": 0.029492566331585042, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 53, "name": "io.leavesfly.jimi.wire.message", "mask": 1, "atdi": 141.27623328193488, "units": 18, "Ab": 0.1111111111111111, "In": 0.14814814814814814, "D": 0.7407407407407407, "FI": 13.0, "FO": 5.0, "LOC": 260.0, "PR": 0.04675472484773194, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 54, "name": "io.leavesfly.jimi.wire.message.request", "mask": 1, "atdi": 22.268422910129292, "units": 8, "Ab": 0.0, "In": 0.5, "D": 0.5, "FI": 3.0, "FO": 4.0, "LOC": 79.0, "PR": 0.012123724505521056, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}], "edges": [{"source": 0, "target": 1, "w": 2.0}, {"source": 0, "target": 7, "w": 1.0}, {"source": 0, "target": 9, "w": 2.0}, {"source": 0, "target": 18, "w": 2.0}, {"source": 0, "target": 43, "w": 1.0}, {"source": 0, "target": 45, "w": 1.0}, {"source": 1, "target": 8, "w": 4.0}, {"source": 1, "target": 9, "w": 1.0}, {"source": 1, "target": 18, "w": 2.0}, {"source": 1, "target": 22, "w": 3.0}, {"source": 1, "target": 35, "w": 2.0}, {"source": 1, "target": 52, "w": 1.0}, {"source": 1, "target": 53, "w": 2.0}, {"source": 1, "target": 54, "w": 8.0}, {"source": 2, "target": 1, "w": 1.0}, {"source": 2, "target": 7, "w": 5.0}, {"source": 2, "target": 9, "w": 4.0}, {"source": 2, "target": 45, "w": 19.0}, {"source": 2, "target": 49, "w": 1.0}, {"source": 2, "target": 53, "w": 2.0}, {"source": 3, "target": 2, "w": 3.0}, {"source": 3, "target": 6, "w": 1.0}, {"source": 3, "target": 16, "w": 2.0}, {"source": 3, "target": 49, "w": 1.0}, {"source": 4, "target": 1, "w": 1.0}, {"source": 4, "target": 2, "w": 40.0}, {"source": 4, "target": 3, "w": 2.0}, {"source": 4, "target": 5, "w": 2.0}, {"source": 4, "target": 8, "w": 5.0}, {"source": 4, "target": 10, "w": 2.0}, {"source": 4, "target": 20, "w": 7.0}, {"source": 4, "target": 24, "w": 7.0}, {"source": 4, "target": 26, "w": 3.0}, {"source": 4, "target": 49, "w": 18.0}, {"source": 4, "target": 54, "w": 2.0}, {"source": 5, "target": 1, "w": 1.0}, {"source": 6, "target": 11, "w": 1.0}, {"source": 6, "target": 19, "w": 1.0}, {"source": 6, "target": 35, "w": 1.0}, {"source": 6, "target": 36, "w": 1.0}, {"source": 7, "target": 8, "w": 17.0}, {"source": 7, "target": 12, "w": 2.0}, {"source": 7, "target": 17, "w": 1.0}, {"source": 7, "target": 19, "w": 1.0}, {"source": 7, "target": 26, "w": 2.0}, {"source": 7, "target": 52, "w": 2.0}, {"source": 9, "target": 3, "w": 1.0}, {"source": 9, "target": 7, "w": 2.0}, {"source": 9, "target": 10, "w": 4.0}, {"source": 9, "target": 11, "w": 1.0}, {"source": 9, "target": 12, "w": 1.0}, {"source": 9, "target": 13, "w": 6.0}, {"source": 9, "target": 14, "w": 3.0}, {"source": 9, "target": 16, "w": 2.0}, {"source": 9, "target": 18, "w": 2.0}, {"source": 9, "target": 19, "w": 1.0}, {"source": 9, "target": 20, "w": 1.0}, {"source": 9, "target": 21, "w": 15.0}, {"source": 9, "target": 22, "w": 3.0}, {"source": 9, "target": 26, "w": 1.0}, {"source": 9, "target": 27, "w": 1.0}, {"source": 9, "target": 33, "w": 1.0}, {"source": 9, "target": 35, "w": 3.0}, {"source": 9, "target": 52, "w": 8.0}, {"source": 10, "target": 13, "w": 1.0}, {"source": 10, "target": 14, "w": 1.0}, {"source": 10, "target": 19, "w": 2.0}, {"source": 10, "target": 34, "w": 5.0}, {"source": 11, "target": 53, "w": 1.0}, {"source": 12, "target": 21, "w": 2.0}, {"source": 12, "target": 22, "w": 4.0}, {"source": 13, "target": 7, "w": 2.0}, {"source": 13, "target": 10, "w": 1.0}, {"source": 13, "target": 11, "w": 1.0}, {"source": 13, "target": 12, "w": 1.0}, {"source": 13, "target": 14, "w": 4.0}, {"source": 13, "target": 15, "w": 3.0}, {"source": 13, "target": 16, "w": 3.0}, {"source": 13, "target": 18, "w": 3.0}, {"source": 13, "target": 19, "w": 2.0}, {"source": 13, "target": 20, "w": 1.0}, {"source": 13, "target": 21, "w": 19.0}, {"source": 13, "target": 22, "w": 8.0}, {"source": 13, "target": 26, "w": 3.0}, {"source": 13, "target": 35, "w": 1.0}, {"source": 13, "target": 43, "w": 1.0}, {"source": 13, "target": 52, "w": 5.0}, {"source": 13, "target": 53, "w": 4.0}, {"source": 14, "target": 12, "w": 1.0}, {"source": 14, "target": 20, "w": 2.0}, {"source": 14, "target": 21, "w": 1.0}, {"source": 14, "target": 22, "w": 12.0}, {"source": 14, "target": 26, "w": 4.0}, {"source": 14, "target": 33, "w": 3.0}, {"source": 14, "target": 52, "w": 1.0}, {"source": 14, "target": 53, "w": 2.0}, {"source": 15, "target": 8, "w": 1.0}, {"source": 15, "target": 14, "w": 1.0}, {"source": 15, "target": 16, "w": 4.0}, {"source": 15, "target": 22, "w": 2.0}, {"source": 15, "target": 35, "w": 3.0}, {"source": 15, "target": 43, "w": 1.0}, {"source": 15, "target": 52, "w": 1.0}, {"source": 15, "target": 53, "w": 2.0}, {"source": 16, "target": 6, "w": 2.0}, {"source": 17, "target": 8, "w": 1.0}, {"source": 20, "target": 8, "w": 1.0}, {"source": 20, "target": 10, "w": 2.0}, {"source": 20, "target": 21, "w": 3.0}, {"source": 20, "target": 22, "w": 1.0}, {"source": 20, "target": 26, "w": 1.0}, {"source": 20, "target": 33, "w": 2.0}, {"source": 21, "target": 7, "w": 4.0}, {"source": 21, "target": 8, "w": 3.0}, {"source": 21, "target": 19, "w": 1.0}, {"source": 21, "target": 22, "w": 6.0}, {"source": 21, "target": 23, "w": 3.0}, {"source": 23, "target": 8, "w": 3.0}, {"source": 23, "target": 21, "w": 14.0}, {"source": 23, "target": 22, "w": 9.0}, {"source": 23, "target": 43, "w": 1.0}, {"source": 24, "target": 1, "w": 1.0}, {"source": 24, "target": 8, "w": 5.0}, {"source": 24, "target": 21, "w": 3.0}, {"source": 24, "target": 22, "w": 1.0}, {"source": 25, "target": 22, "w": 3.0}, {"source": 25, "target": 35, "w": 1.0}, {"source": 26, "target": 8, "w": 2.0}, {"source": 26, "target": 13, "w": 1.0}, {"source": 26, "target": 14, "w": 1.0}, {"source": 26, "target": 21, "w": 1.0}, {"source": 26, "target": 22, "w": 5.0}, {"source": 27, "target": 2, "w": 2.0}, {"source": 27, "target": 9, "w": 4.0}, {"source": 27, "target": 29, "w": 3.0}, {"source": 27, "target": 31, "w": 6.0}, {"source": 27, "target": 32, "w": 1.0}, {"source": 27, "target": 45, "w": 1.0}, {"source": 28, "target": 2, "w": 2.0}, {"source": 28, "target": 27, "w": 2.0}, {"source": 28, "target": 29, "w": 2.0}, {"source": 28, "target": 30, "w": 2.0}, {"source": 28, "target": 31, "w": 2.0}, {"source": 28, "target": 49, "w": 1.0}, {"source": 29, "target": 3, "w": 2.0}, {"source": 29, "target": 6, "w": 2.0}, {"source": 29, "target": 10, "w": 2.0}, {"source": 29, "target": 16, "w": 2.0}, {"source": 29, "target": 25, "w": 1.0}, {"source": 29, "target": 31, "w": 9.0}, {"source": 29, "target": 33, "w": 3.0}, {"source": 30, "target": 6, "w": 1.0}, {"source": 30, "target": 27, "w": 1.0}, {"source": 30, "target": 31, "w": 3.0}, {"source": 33, "target": 6, "w": 1.0}, {"source": 34, "target": 9, "w": 1.0}, {"source": 34, "target": 10, "w": 5.0}, {"source": 34, "target": 12, "w": 1.0}, {"source": 34, "target": 13, "w": 3.0}, {"source": 34, "target": 14, "w": 3.0}, {"source": 34, "target": 22, "w": 2.0}, {"source": 34, "target": 35, "w": 3.0}, {"source": 34, "target": 52, "w": 2.0}, {"source": 34, "target": 53, "w": 2.0}, {"source": 35, "target": 7, "w": 2.0}, {"source": 35, "target": 9, "w": 28.0}, {"source": 35, "target": 10, "w": 2.0}, {"source": 35, "target": 11, "w": 1.0}, {"source": 35, "target": 13, "w": 4.0}, {"source": 35, "target": 14, "w": 1.0}, {"source": 35, "target": 17, "w": 1.0}, {"source": 35, "target": 18, "w": 1.0}, {"source": 35, "target": 19, "w": 1.0}, {"source": 35, "target": 20, "w": 1.0}, {"source": 35, "target": 21, "w": 2.0}, {"source": 35, "target": 26, "w": 1.0}, {"source": 35, "target": 36, "w": 5.0}, {"source": 35, "target": 38, "w": 5.0}, {"source": 35, "target": 41, "w": 2.0}, {"source": 35, "target": 42, "w": 2.0}, {"source": 35, "target": 52, "w": 3.0}, {"source": 36, "target": 7, "w": 2.0}, {"source": 36, "target": 8, "w": 1.0}, {"source": 36, "target": 9, "w": 5.0}, {"source": 36, "target": 10, "w": 5.0}, {"source": 36, "target": 11, "w": 1.0}, {"source": 36, "target": 12, "w": 1.0}, {"source": 36, "target": 13, "w": 8.0}, {"source": 36, "target": 14, "w": 2.0}, {"source": 36, "target": 17, "w": 1.0}, {"source": 36, "target": 18, "w": 2.0}, {"source": 36, "target": 20, "w": 6.0}, {"source": 36, "target": 22, "w": 2.0}, {"source": 36, "target": 26, "w": 3.0}, {"source": 36, "target": 33, "w": 3.0}, {"source": 36, "target": 34, "w": 5.0}, {"source": 36, "target": 35, "w": 20.0}, {"source": 36, "target": 52, "w": 3.0}, {"source": 36, "target": 53, "w": 3.0}, {"source": 37, "target": 35, "w": 2.0}, {"source": 37, "target": 52, "w": 1.0}, {"source": 37, "target": 53, "w": 1.0}, {"source": 38, "target": 11, "w": 2.0}, {"source": 38, "target": 14, "w": 5.0}, {"source": 38, "target": 17, "w": 2.0}, {"source": 38, "target": 35, "w": 11.0}, {"source": 39, "target": 25, "w": 8.0}, {"source": 39, "target": 35, "w": 3.0}, {"source": 40, "target": 8, "w": 1.0}, {"source": 40, "target": 35, "w": 6.0}, {"source": 41, "target": 7, "w": 1.0}, {"source": 41, "target": 8, "w": 1.0}, {"source": 41, "target": 35, "w": 4.0}, {"source": 42, "target": 8, "w": 1.0}, {"source": 42, "target": 10, "w": 5.0}, {"source": 42, "target": 13, "w": 5.0}, {"source": 42, "target": 35, "w": 12.0}, {"source": 42, "target": 36, "w": 3.0}, {"source": 42, "target": 37, "w": 1.0}, {"source": 42, "target": 39, "w": 2.0}, {"source": 42, "target": 40, "w": 1.0}, {"source": 43, "target": 2, "w": 1.0}, {"source": 43, "target": 7, "w": 3.0}, {"source": 43, "target": 35, "w": 3.0}, {"source": 43, "target": 52, "w": 2.0}, {"source": 44, "target": 8, "w": 1.0}, {"source": 45, "target": 1, "w": 2.0}, {"source": 45, "target": 2, "w": 1.0}, {"source": 45, "target": 4, "w": 1.0}, {"source": 45, "target": 7, "w": 8.0}, {"source": 45, "target": 8, "w": 2.0}, {"source": 45, "target": 9, "w": 3.0}, {"source": 45, "target": 21, "w": 4.0}, {"source": 45, "target": 24, "w": 1.0}, {"source": 45, "target": 36, "w": 3.0}, {"source": 45, "target": 44, "w": 1.0}, {"source": 45, "target": 46, "w": 2.0}, {"source": 45, "target": 47, "w": 4.0}, {"source": 45, "target": 48, "w": 3.0}, {"source": 45, "target": 49, "w": 6.0}, {"source": 45, "target": 50, "w": 1.0}, {"source": 45, "target": 52, "w": 10.0}, {"source": 45, "target": 53, "w": 2.0}, {"source": 46, "target": 8, "w": 1.0}, {"source": 46, "target": 11, "w": 3.0}, {"source": 46, "target": 22, "w": 3.0}, {"source": 46, "target": 35, "w": 1.0}, {"source": 46, "target": 37, "w": 3.0}, {"source": 46, "target": 49, "w": 6.0}, {"source": 46, "target": 53, "w": 10.0}, {"source": 47, "target": 2, "w": 2.0}, {"source": 47, "target": 35, "w": 1.0}, {"source": 47, "target": 45, "w": 4.0}, {"source": 47, "target": 49, "w": 2.0}, {"source": 48, "target": 2, "w": 2.0}, {"source": 49, "target": 1, "w": 1.0}, {"source": 49, "target": 8, "w": 5.0}, {"source": 49, "target": 21, "w": 1.0}, {"source": 49, "target": 22, "w": 1.0}, {"source": 49, "target": 35, "w": 1.0}, {"source": 49, "target": 50, "w": 4.0}, {"source": 50, "target": 1, "w": 1.0}, {"source": 50, "target": 8, "w": 2.0}, {"source": 52, "target": 8, "w": 1.0}, {"source": 52, "target": 13, "w": 2.0}, {"source": 52, "target": 14, "w": 1.0}, {"source": 52, "target": 21, "w": 2.0}, {"source": 52, "target": 22, "w": 1.0}, {"source": 52, "target": 35, "w": 2.0}, {"source": 52, "target": 53, "w": 5.0}, {"source": 52, "target": 54, "w": 8.0}, {"source": 53, "target": 7, "w": 1.0}, {"source": 53, "target": 21, "w": 1.0}, {"source": 53, "target": 22, "w": 2.0}, {"source": 53, "target": 33, "w": 1.0}, {"source": 53, "target": 35, "w": 1.0}, {"source": 54, "target": 8, "w": 1.0}, {"source": 54, "target": 22, "w": 1.0}, {"source": 54, "target": 35, "w": 1.0}, {"source": 54, "target": 53, "w": 8.0}], "meta": {"project": "Leavesfly__Jimi", "n_nodes": 55, "n_edges": 280, "graph_level_smells": ["Dense Structure"], "dense_structure": 1, "label_counts": {"CD": 25, "UD": 17, "AI": 0, "GC": 0, "FC": 19, "SF": 0}, "matching": {"arcan_nodes": 55, "designite_packages": 55, "matched": 55, "coverage": 1.0, "arcan_only": [], "designite_only": [], "smelly_packages_not_in_graph": []}, "dropped_containers": {"default_package": [], "empty_container": ["io", "io.leavesfly"]}, "unknown_designite_smells": []}};
+const LABELS = ["CD","UD","AI","GC","FC","SF"];
+const NAMES = {CD:"Cyclic Dependency",UD:"Unstable Dependency",AI:"Ambiguous Interface",
+  GC:"God Component",FC:"Feature Concentration",SF:"Scattered Functionality"};
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const nodes = DATA.nodes.map(d => ({...d, nSmell: LABELS.reduce((s,k)=>s+d[k],0),
+  short: d.name.split(".").slice(-1)[0] || d.name}));
+const byId = new Map(nodes.map(d => [d.id, d]));
+const links = DATA.edges.map(e => ({...e}));
+const meta = DATA.meta;
+let current = null;
+
+// ---------- sidebar ----------
+document.getElementById("title").textContent = meta.project;
+document.getElementById("nN").textContent = nodes.length;
+document.getElementById("nE").textContent = links.length;
+document.getElementById("nS").textContent = nodes.filter(d => d.nSmell > 0).length;
+document.getElementById("names").innerHTML = nodes.map(d => `<option value="${d.name}">`).join("");
+document.getElementById("smellTable").innerHTML = LABELS.map(k =>
+  `<tr><td><i class="dot" style="background:var(--${k})"></i>${NAMES[k]}</td>
+   <td>${meta.label_counts[k]} / ${nodes.length}</td></tr>`).join("");
+document.getElementById("ds").textContent = meta.dense_structure
+  ? "Dense Structure detected at project level (not assigned to individual nodes)."
+  : "Dense Structure not detected.";
+const unmasked = nodes.filter(d => !d.mask).length;
+if (unmasked) document.getElementById("ds").textContent +=
+  ` ${unmasked} nodes not analysed by Designite (dashed outline): labels unavailable.`;
+const rank = [...nodes].sort((a,b) => b.atdi - a.atdi).slice(0,10);
+document.getElementById("rank").innerHTML = rank.map(d =>
+  `<li><button data-id="${d.id}">${d.short}</button> <span class="v">${d.atdi.toFixed(1)}</span></li>`).join("");
+document.querySelectorAll("#rank button").forEach(b =>
+  b.addEventListener("click", () => select(byId.get(+b.dataset.id), true)));
+
+// ---------- graph ----------
+const svg = d3.select("#svg"), g = svg.append("g");
+const W = () => svg.node().clientWidth, H = () => svg.node().clientHeight;
+const maxLoc = d3.max(nodes, d => d.LOC) || 1;
+const r = d3.scaleSqrt().domain([0, maxLoc]).range([4, 26]);
+const wScale = d3.scaleLog().domain([1, d3.max(links, d => d.w) || 1]).range([0.6, 3.5]);
+const maxAtdi = d3.max(nodes, d => d.atdi) || 1;
+
+svg.append("defs").append("marker").attr("id","arrow").attr("viewBox","0 -4 8 8")
+  .attr("refX",8).attr("refY",0).attr("markerUnits","userSpaceOnUse").attr("markerWidth",9).attr("markerHeight",9).attr("orient","auto")
+  .append("path").attr("d","M0,-4L8,0L0,4").attr("fill","var(--edge)");
+
+const link = g.append("g").selectAll("path").data(links).join("path")
+  .attr("class","link").attr("stroke-width", d => wScale(Math.max(1,d.w))).attr("marker-end","url(#arrow)");
+const node = g.append("g").selectAll("g").data(nodes).join("g")
+  .attr("class", d => "node" + (d.mask ? "" : " nomask")).attr("tabindex",0)
+  .attr("aria-label", d => d.name);
+node.append("circle").attr("r", d => r(d.LOC));
+node.append("text").attr("dy", d => -r(d.LOC) - 4).attr("text-anchor","middle").text(d => d.short);
+
+const sim = d3.forceSimulation(nodes)
+  .force("link", d3.forceLink(links).id(d => d.id).distance(95).strength(0.2))
+  .force("charge", d3.forceManyBody().strength(-420))
+  .force("collide", d3.forceCollide(d => r(d.LOC) + 6))
+  .force("x", d3.forceX(() => W()/2).strength(0.05))
+  .force("y", d3.forceY(() => H()/2).strength(0.05))
+  .on("tick", ticked).on("end", fit);
+if (matchMedia("(prefers-reduced-motion: reduce)").matches) { sim.stop(); for (let i=0;i<300;i++) sim.tick(); ticked(); setTimeout(fit, 0); }
+let fitted = false;
+function fit(){
+  if (fitted) return; fitted = true;
+  const pad = 40, xs = nodes.map(d => d.x), ys = nodes.map(d => d.y);
+  const x0 = d3.min(xs) - pad, x1 = d3.max(xs) + pad, y0 = d3.min(ys) - pad, y1 = d3.max(ys) + pad;
+  const k = Math.min(2, 0.95 / Math.max((x1 - x0) / W(), (y1 - y0) / H()));
+  svg.transition().duration(600).call(zoom.transform,
+    d3.zoomIdentity.translate(W()/2, H()/2).scale(k).translate(-(x0 + x1)/2, -(y0 + y1)/2));
+}
+
+function ticked(){
+  link.attr("d", d => {
+    const dx = d.target.x - d.source.x, dy = d.target.y - d.source.y, L = Math.hypot(dx,dy) || 1;
+    const rt = r(d.target.LOC) + 3, rs = r(d.source.LOC);
+    return `M${d.source.x + dx*rs/L},${d.source.y + dy*rs/L}L${d.target.x - dx*rt/L},${d.target.y - dy*rt/L}`;
+  });
+  node.attr("transform", d => `translate(${d.x},${d.y})`);
+}
+
+node.call(d3.drag()
+  .on("start", (e,d) => { if(!e.active) sim.alphaTarget(0.3).restart(); d.fx=d.x; d.fy=d.y; })
+  .on("drag", (e,d) => { d.fx=e.x; d.fy=e.y; })
+  .on("end", (e,d) => { if(!e.active) sim.alphaTarget(0); d.fx=null; d.fy=null; }));
+const zoom = d3.zoom().scaleExtent([0.2,6]).on("zoom", e => g.attr("transform", e.transform));
+svg.call(zoom).on("click", e => { if (e.target === svg.node()) select(null); });
+
+// ---------- colour ----------
+function colour(d){
+  const m = document.getElementById("colorBy").value;
+  if (m === "count") return css("--s" + Math.min(d.nSmell, 4));
+  if (m === "atdi") return d3.interpolateLab(css("--s0"), css("--s4"))(Math.sqrt(d.atdi / maxAtdi));
+  return d[m] ? css("--" + m) : css("--clean");
+}
+function legend(){
+  const m = document.getElementById("colorBy").value, el = document.getElementById("legend");
+  if (m === "count") el.innerHTML = [0,1,2,3,4].map(i =>
+    `<span><i style="background:var(--s${i})"></i>${i===4?"4+":i} ${i===1?"smell":"smells"}</span>`).join("");
+  else if (m === "atdi") el.innerHTML = `<span><i style="background:var(--s0)"></i>0</span>
+    <span><i style="background:var(--s4)"></i>${maxAtdi.toFixed(0)}</span>`;
+  else el.innerHTML = `<span><i style="background:var(--${m})"></i>affected</span>
+    <span><i style="background:var(--clean)"></i>not affected</span>`;
+  el.innerHTML += `<span>node size ∝ LOC</span>`;
+}
+function paint(){ node.select("circle").attr("fill", colour); legend(); }
+document.getElementById("colorBy").addEventListener("change", paint);
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", paint);
+paint();
+
+// ---------- labels ----------
+function labelsVisible(){
+  const all = document.getElementById("showLabels").checked;
+  node.select("text").style("display", d => all || r(d.LOC) > 12 || d === current ? null : "none");
+}
+document.getElementById("showLabels").addEventListener("change", labelsVisible);
+
+// ---------- tooltip ----------
+const tip = document.getElementById("tip");
+node.on("mouseenter", (e,d) => {
+  const s = LABELS.filter(k => d[k]).join(", ") || "none";
+  tip.innerHTML = `<b>${d.name}</b><br>LOC ${d.LOC} · FI ${d.FI} · FO ${d.FO}<br>Smells: ${s}`;
+  tip.style.display = "block";
+}).on("mousemove", e => {
+  const b = document.querySelector("main").getBoundingClientRect();
+  tip.style.left = (e.clientX - b.left + 14) + "px"; tip.style.top = (e.clientY - b.top + 14) + "px";
+}).on("mouseleave", () => tip.style.display = "none")
+  .on("click", (e,d) => { e.stopPropagation(); select(d); })
+  .on("keydown", (e,d) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(d); } });
+
+// ---------- selection ----------
+function select(d, center){
+  current = d;
+  node.classed("sel", n => n === d);
+  if (!d){ node.classed("dim", false); link.classed("dim", false); renderDetail(null); labelsVisible(); return; }
+  const out = links.filter(l => l.source === d), inc = links.filter(l => l.target === d);
+  const nb = new Set([d, ...out.map(l => l.target), ...inc.map(l => l.source)]);
+  node.classed("dim", n => !nb.has(n));
+  link.classed("dim", l => l.source !== d && l.target !== d);
+  renderDetail(d, out, inc); labelsVisible();
+  if (center) svg.transition().duration(500).call(zoom.translateTo, d.x, d.y);
+}
+function renderDetail(d, out, inc){
+  const el = document.getElementById("detail");
+  if (!d){ el.innerHTML = `<h2>Selected component</h2><p class="note">Select a node to inspect its features, labels, and dependencies.</p>`; return; }
+  const chips = LABELS.filter(k => d[k]).map(k => `<span class="chip" style="background:var(--${k})">${NAMES[k]}</span>`).join("")
+    || `<span class="chip none">${d.mask ? "No smells" : "Labels unavailable"}</span>`;
+  const f = (v, p=3) => Number.isInteger(v) ? v : v.toFixed(p);
+  const rows = [["Abstractness (Ab)",d.Ab],["Instability (In)",d.In],["Distance (D)",d.D],["Fan-in (FI)",d.FI],
+    ["Fan-out (FO)",d.FO],["Lines of code (LOC)",d.LOC],["PageRank (PR)",d.PR],["ATDI (Arcan)",d.atdi],["Classes",d.units]];
+  el.innerHTML = `<h2>Selected component</h2><div class="detail-name">${d.name}</div>
+    <div class="chips">${chips}</div>
+    <table>${rows.map(([k,v]) => `<tr><td>${k}</td><td>${f(v)}</td></tr>`).join("")}</table>
+    <p class="note">Efferent dependencies: ${out.length}. Afferent dependencies: ${inc.length}.</p>`;
+}
+document.getElementById("search").addEventListener("change", e => {
+  const d = nodes.find(n => n.name === e.target.value) || nodes.find(n => n.name.includes(e.target.value));
+  if (d) select(d, true);
+});
+labelsVisible();
+</script>
+</body>
+</html>

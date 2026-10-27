@@ -1,0 +1,32 @@
+{
+  "project": "60124808866__OpenMyau",
+  "n_nodes": 29,
+  "n_edges": 110,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 10,
+    "UD": 3,
+    "AI": 0,
+    "GC": 2,
+    "FC": 7,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 29,
+    "designite_packages": 29,
+    "matched": 29,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "me",
+      "me.ksyz"
+    ]
+  },
+  "unknown_designite_smells": []
+}

@@ -1,0 +1,46 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 278,
+  "source_files_removed": 22,
+  "source_files_after": 256,
+  "removed_share": 0.0791,
+  "removed_by_rule": {
+    "R1_arcan_default": 22
+  },
+  "removed_dirs": [
+    {
+      "path": "samples",
+      "rule": "R1_arcan_default",
+      "source_files": 22
+    },
+    {
+      "path": "ask-sdk-core/tst/com/amazon/ask/response/template/test_template",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    }
+  ],
+  "residual_test_files": 56,
+  "residual_examples": [
+    "ask-sdk/tst/com/amazon/ask/builder/StandardSkillBuilderTest.java",
+    "ask-sdk-apache-client/tst/com/amazon/ask/services/ApacheHttpApiClientTest.java",
+    "ask-sdk-core/tst/com/amazon/ask/SkillTest.java",
+    "ask-sdk-core/tst/com/amazon/ask/attributes/AttributesManagerTest.java",
+    "ask-sdk-core/tst/com/amazon/ask/builder/SkillBuilderTest.java",
+    "ask-sdk-core/tst/com/amazon/ask/builder/SkillConfigurationTest.java",
+    "ask-sdk-core/tst/com/amazon/ask/dispatcher/DefaultRequestDispatcherTest.java",
+    "ask-sdk-core/tst/com/amazon/ask/dispatcher/exception/DefaultExceptionMapperTest.java",
+    "ask-sdk-core/tst/com/amazon/ask/dispatcher/request/handler/HandlerInputTest.java",
+    "ask-sdk-core/tst/com/amazon/ask/dispatcher/request/mapper/DefaultRequestMapperTest.java",
+    "ask-sdk-core/tst/com/amazon/ask/handler/DefaultHandlerAdapterTest.java",
+    "ask-sdk-core/tst/com/amazon/ask/request/PredicatesTest.java",
+    "ask-sdk-core/tst/com/amazon/ask/request/RequestHelperTest.java",
+    "ask-sdk-core/tst/com/amazon/ask/request/ViewportUtilsTest.java",
+    "ask-sdk-core/tst/com/amazon/ask/request/intent/SlotValueWrapperTest.java",
+    "ask-sdk-core/tst/com/amazon/ask/response/ResponseBuilderTest.java",
+    "ask-sdk-core/tst/com/amazon/ask/response/TextContentHelperTest.java",
+    "ask-sdk-core/tst/com/amazon/ask/response/template/FileLoaderTest.java",
+    "ask-sdk-core/tst/com/amazon/ask/response/template/LocaleEnumeratorTest.java",
+    "ask-sdk-core/tst/com/amazon/ask/util/JacksonSerializerTest.java"
+  ]
+}

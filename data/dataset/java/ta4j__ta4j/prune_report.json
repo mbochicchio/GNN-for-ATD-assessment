@@ -1,0 +1,30 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 1599,
+  "source_files_removed": 789,
+  "source_files_after": 810,
+  "removed_share": 0.4934,
+  "removed_by_rule": {
+    "R1_arcan_default": 789
+  },
+  "removed_dirs": [
+    {
+      "path": "ta4j-examples",
+      "rule": "R1_arcan_default",
+      "source_files": 157
+    },
+    {
+      "path": "scripts/tests",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "ta4j-core/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 632
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

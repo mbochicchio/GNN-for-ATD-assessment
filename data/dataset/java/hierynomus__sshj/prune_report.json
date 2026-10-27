@@ -1,0 +1,46 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 388,
+  "source_files_removed": 103,
+  "source_files_after": 285,
+  "removed_share": 0.2655,
+  "removed_by_rule": {
+    "R1_arcan_default": 103
+  },
+  "removed_dirs": [
+    {
+      "path": "examples",
+      "rule": "R1_arcan_default",
+      "source_files": 14
+    },
+    {
+      "path": "src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 89
+    },
+    {
+      "path": "src/itest/docker-image/test-container",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    }
+  ],
+  "residual_test_files": 15,
+  "residual_examples": [
+    "src/itest/java/com/hierynomus/sshj/HostKeyVerifierTest.java",
+    "src/itest/java/com/hierynomus/sshj/ManyChannelsTest.java",
+    "src/itest/java/com/hierynomus/sshj/PublicKeyAuthTest.java",
+    "src/itest/java/com/hierynomus/sshj/RsaShaKeySignatureTest.java",
+    "src/itest/java/com/hierynomus/sshj/SshdContainer.java",
+    "src/itest/java/com/hierynomus/sshj/sftp/FileWriteTest.java",
+    "src/itest/java/com/hierynomus/sshj/sftp/PutFileCompressedTest.java",
+    "src/itest/java/com/hierynomus/sshj/sftp/SftpIntegrationTest.java",
+    "src/itest/java/com/hierynomus/sshj/signature/HostKeyWithCertificateTest.java",
+    "src/itest/java/com/hierynomus/sshj/signature/PublicKeyAuthWithCertificateTest.java",
+    "src/itest/java/com/hierynomus/sshj/signature/SignatureTest.java",
+    "src/itest/java/com/hierynomus/sshj/transport/cipher/CipherTest.java",
+    "src/itest/java/com/hierynomus/sshj/transport/kex/KexTest.java",
+    "src/itest/java/com/hierynomus/sshj/transport/kex/StrictKeyExchangeTest.java",
+    "src/itest/java/com/hierynomus/sshj/transport/mac/MacTest.java"
+  ]
+}

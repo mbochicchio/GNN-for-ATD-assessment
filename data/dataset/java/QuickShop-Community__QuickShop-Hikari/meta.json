@@ -1,0 +1,50 @@
+{
+  "project": "QuickShop-Community__QuickShop-Hikari",
+  "n_nodes": 207,
+  "n_edges": 1459,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 51,
+    "UD": 27,
+    "AI": 1,
+    "GC": 2,
+    "FC": 23,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 207,
+    "designite_packages": 207,
+    "matched": 207,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com.ghostchu.quickshop.util.logging",
+      "com.ghostchu.quickshop.util.reporter",
+      "com.ghostchu.quickshop.util.matcher",
+      "com",
+      "com.ghostchu",
+      "org",
+      "org.quickshophikari.community.compatibility",
+      "com.ghostchu.quickshop.localization.text.postprocessing",
+      "com.ghostchu.quickshop.api.localization",
+      "com.ghostchu.quickshop.api.registry.builtin",
+      "com.ghostchu.quickshop.common",
+      "com.ghostchu.quickshop.registry.builtin",
+      "com.ghostchu.quickshop.addon",
+      "com.ghostchu.quickshop.localization",
+      "org.quickshophikari.community",
+      "org.quickshophikari.community.addon",
+      "org.quickshophikari",
+      "com.ghostchu.quickshop.shop.layout"
+    ]
+  },
+  "unknown_designite_smells": []
+}

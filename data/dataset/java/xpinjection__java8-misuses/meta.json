@@ -1,0 +1,34 @@
+{
+  "project": "xpinjection__java8-misuses",
+  "n_nodes": 14,
+  "n_edges": 8,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 0,
+    "UD": 0,
+    "AI": 0,
+    "GC": 1,
+    "FC": 9,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 14,
+    "designite_packages": 14,
+    "matched": 14,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com",
+      "com.xpinjection",
+      "com.xpinjection.java8",
+      "com.xpinjection.java8.good"
+    ]
+  },
+  "unknown_designite_smells": []
+}

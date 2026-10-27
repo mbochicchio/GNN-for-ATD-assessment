@@ -1,0 +1,37 @@
+{
+  "project": "hierynomus__sshj",
+  "n_nodes": 40,
+  "n_edges": 193,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 21,
+    "UD": 12,
+    "AI": 1,
+    "GC": 2,
+    "FC": 16,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 40,
+    "designite_packages": 40,
+    "matched": 40,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "net",
+      "net.schmizz",
+      "com.hierynomus.sshj.userauth",
+      "com",
+      "com.hierynomus"
+    ]
+  },
+  "unknown_designite_smells": []
+}

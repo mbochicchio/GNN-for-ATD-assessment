@@ -1,0 +1,36 @@
+{
+  "project": "serezhka__java-airplay",
+  "n_nodes": 22,
+  "n_edges": 43,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 5,
+    "UD": 3,
+    "AI": 0,
+    "GC": 0,
+    "FC": 3,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 22,
+    "designite_packages": 22,
+    "matched": 22,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com.github.serezhka.airplay.player",
+      "com.github.serezhka",
+      "com.github.serezhka.airplay",
+      "com.github.serezhka.airplay.server.internal.handler",
+      "com",
+      "com.github"
+    ]
+  },
+  "unknown_designite_smells": []
+}

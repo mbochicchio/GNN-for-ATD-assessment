@@ -1,0 +1,50 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 872,
+  "source_files_removed": 270,
+  "source_files_after": 602,
+  "removed_share": 0.3096,
+  "removed_by_rule": {
+    "R1_arcan_default": 270
+  },
+  "removed_dirs": [
+    {
+      "path": "jraft-example",
+      "rule": "R1_arcan_default",
+      "source_files": 46
+    },
+    {
+      "path": "jraft-test",
+      "rule": "R1_arcan_default",
+      "source_files": 28
+    },
+    {
+      "path": "jraft-core/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 115
+    },
+    {
+      "path": "jraft-extension/bdb-log-storage-impl/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    },
+    {
+      "path": "jraft-extension/rpc-grpc-impl/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 20
+    },
+    {
+      "path": "jraft-rheakv/rheakv-core/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 54
+    },
+    {
+      "path": "jraft-rheakv/rheakv-pd/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

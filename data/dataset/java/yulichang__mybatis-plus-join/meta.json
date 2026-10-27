@@ -1,0 +1,41 @@
+{
+  "project": "yulichang__mybatis-plus-join",
+  "n_nodes": 50,
+  "n_edges": 214,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 16,
+    "UD": 13,
+    "AI": 1,
+    "GC": 0,
+    "FC": 8,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 50,
+    "designite_packages": 49,
+    "matched": 49,
+    "coverage": 0.98,
+    "arcan_only": [
+      "com.github.yulichang.annotation"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com.github.yulichang.extension",
+      "com.github.yulichang.mybatisplusjoin.solon",
+      "com.github.yulichang.mybatisplusjoin",
+      "com",
+      "com.github",
+      "com.github.yulichang.extension.mapping",
+      "com.github.yulichang"
+    ]
+  },
+  "unknown_designite_smells": []
+}

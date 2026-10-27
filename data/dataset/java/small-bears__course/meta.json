@@ -1,0 +1,35 @@
+{
+  "project": "small-bears__course",
+  "n_nodes": 29,
+  "n_edges": 101,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 0,
+    "UD": 1,
+    "AI": 0,
+    "GC": 0,
+    "FC": 6,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 29,
+    "designite_packages": 28,
+    "matched": 28,
+    "coverage": 0.9655,
+    "arcan_only": [
+      "com.rainng.coursesystem.config.themis.annotation"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com",
+      "com.rainng",
+      "com.rainng.coursesystem.model"
+    ]
+  },
+  "unknown_designite_smells": []
+}

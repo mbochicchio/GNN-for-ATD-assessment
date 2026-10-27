@@ -1,0 +1,25 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 326,
+  "source_files_removed": 44,
+  "source_files_after": 282,
+  "removed_share": 0.135,
+  "removed_by_rule": {
+    "R1_arcan_default": 44
+  },
+  "removed_dirs": [
+    {
+      "path": "src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 44
+    },
+    {
+      "path": "src/main/resources/skills/unit-testing",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

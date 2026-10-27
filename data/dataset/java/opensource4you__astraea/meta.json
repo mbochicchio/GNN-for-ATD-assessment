@@ -1,0 +1,44 @@
+{
+  "project": "opensource4you__astraea",
+  "n_nodes": 55,
+  "n_edges": 251,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 8,
+    "UD": 10,
+    "AI": 0,
+    "GC": 3,
+    "FC": 18,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 55,
+    "designite_packages": 55,
+    "matched": 55,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "org",
+      "org.apache",
+      "javafx",
+      "javafx.scene",
+      "org.apache.kafka.common",
+      "org.apache.kafka.common.serialization",
+      "org.apache.kafka.clients",
+      "org.apache.kafka.clients.producer",
+      "org.apache.kafka.clients.consumer",
+      "org.astraea",
+      "javafx.scene.control",
+      "org.apache.kafka"
+    ]
+  },
+  "unknown_designite_smells": []
+}

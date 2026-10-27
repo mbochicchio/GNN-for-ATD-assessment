@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>alexa__alexa-skills-kit-sdk-for-java · dependency graph</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EEF1F0; --panel:#F8FAF9; --ink:#1B2733; --muted:#5E6B78; --rule:#D3DAD8;
+  --edge:#9AA7B2; --clean:#C3CCD3; --focus:#1B2733;
+  --CD:#D55E00; --UD:#0072B2; --AI:#CC79A7; --GC:#009E73; --FC:#E69F00; --SF:#56B4E9;
+  --s0:#C3CCD3; --s1:#F2C27B; --s2:#E58A3C; --s3:#C4462A; --s4:#8E1F2A;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+  --bg:#141B21; --panel:#1B242C; --ink:#E4EAEE; --muted:#93A1AD; --rule:#2C3842;
+  --edge:#4E5E6B; --clean:#3E4B56; --focus:#E4EAEE; --s0:#3E4B56;
+}}
+:root[data-theme="dark"]{
+  --bg:#141B21; --panel:#1B242C; --ink:#E4EAEE; --muted:#93A1AD; --rule:#2C3842;
+  --edge:#4E5E6B; --clean:#3E4B56; --focus:#E4EAEE; --s0:#3E4B56;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{height:100%; scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0; height:100%; background:var(--bg); color:var(--ink);
+  font:14px/1.5 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+.app{display:grid; grid-template-columns:320px 1fr; height:100%}
+aside{background:var(--panel); border-right:1px solid var(--rule); overflow-y:auto; padding:20px 20px 28px}
+h1{font:500 22px/1.2 "IBM Plex Sans Condensed","IBM Plex Sans",sans-serif; margin:0 0 4px; word-break:break-word}
+.sub{color:var(--muted); margin:0 0 18px}
+.stats{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-bottom:18px}
+.stat b{display:block; font-size:20px; font-weight:600}
+.stat span{color:var(--muted); font-size:12px}
+section{border-top:1px solid var(--rule); padding-top:14px; margin-top:14px}
+h2{font-size:13px; font-weight:600; margin:0 0 8px}
+label.ctl{display:block; color:var(--muted); font-size:12px; margin:8px 0 4px}
+select,input[type=search]{width:100%; font:inherit; color:var(--ink); background:var(--bg);
+  border:1px solid var(--rule); border-radius:6px; padding:6px 8px}
+select:focus-visible,input:focus-visible,button:focus-visible{outline:2px solid var(--focus); outline-offset:2px}
+.check{display:flex; gap:8px; align-items:center; margin-top:10px; color:var(--muted); font-size:13px}
+.legend{display:flex; flex-wrap:wrap; gap:6px 12px; margin-top:10px; font-size:12px}
+.dot{display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:7px; vertical-align:-1px}
+.legend i{display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:5px; vertical-align:-1px}
+table{width:100%; border-collapse:collapse; font-size:13px}
+td{padding:3px 0; border-bottom:1px solid var(--rule)}
+td:last-child{text-align:right; font-variant-numeric:tabular-nums}
+.chips{display:flex; flex-wrap:wrap; gap:6px; margin:8px 0}
+.chip{font-size:12px; padding:2px 8px; border-radius:10px; color:#fff}
+.chip.none{background:var(--clean); color:var(--ink)}
+.detail-name{font-weight:600; word-break:break-all; margin-bottom:4px}
+.note{color:var(--muted); font-size:12px}
+ol.rank{margin:0; padding-left:20px; font-size:13px}
+ol.rank li{margin:2px 0}
+ol.rank button{all:unset; cursor:pointer; word-break:break-all}
+ol.rank button:hover{text-decoration:underline}
+ol.rank .v{color:var(--muted); font-variant-numeric:tabular-nums}
+main{position:relative; overflow:hidden}
+svg{width:100%; height:100%; display:block; cursor:grab}
+.link{stroke:var(--edge); stroke-opacity:.55; fill:none}
+.node circle{stroke:var(--panel); stroke-width:1.5}
+.node.nomask circle{stroke-dasharray:3 2; stroke:var(--muted)}
+.node text{font-size:11px; fill:var(--ink); pointer-events:none; paint-order:stroke;
+  stroke:var(--bg); stroke-width:3px}
+.dim{opacity:.12}
+.node.sel circle{stroke:var(--focus); stroke-width:3}
+#tip{position:absolute; pointer-events:none; background:var(--panel); border:1px solid var(--rule);
+  border-radius:6px; padding:6px 9px; font-size:12px; max-width:320px; display:none; word-break:break-all}
+.hint{position:absolute; right:14px; bottom:12px; color:var(--muted); font-size:12px}
+@media (max-width:760px){
+  .app{grid-template-columns:1fr; grid-template-rows:auto 70vh; height:auto}
+  aside{border-right:0; border-bottom:1px solid var(--rule)}
+}
+@media (prefers-reduced-motion:reduce){ *{transition:none!important} }
+</style>
+</head>
+<body>
+<div class="app">
+<aside>
+  <h1 id="title"></h1>
+  <p class="sub">Package-level dependency graph with Designite smell labels</p>
+  <div class="stats">
+    <div class="stat"><b id="nN"></b><span>components</span></div>
+    <div class="stat"><b id="nE"></b><span>dependencies</span></div>
+    <div class="stat"><b id="nS"></b><span>smell-affected components</span></div>
+  </div>
+
+  <label class="ctl" for="colorBy">Colour nodes by</label>
+  <select id="colorBy">
+    <option value="count">Number of smells</option>
+    <option value="CD">Cyclic Dependency</option>
+    <option value="UD">Unstable Dependency</option>
+    <option value="AI">Ambiguous Interface</option>
+    <option value="GC">God Component</option>
+    <option value="FC">Feature Concentration</option>
+    <option value="SF">Scattered Functionality</option>
+    <option value="atdi">ATDI (Arcan)</option>
+  </select>
+  <div class="legend" id="legend"></div>
+
+  <label class="ctl" for="search">Find a component</label>
+  <input id="search" type="search" placeholder="e.g. analyzer" list="names" autocomplete="off">
+  <datalist id="names"></datalist>
+  <label class="check"><input type="checkbox" id="showLabels"> Show all node labels</label>
+
+  <section id="detail">
+    <h2>Selected component</h2>
+    <p class="note">Select a node to inspect its features, labels, and dependencies.</p>
+  </section>
+
+  <section>
+    <h2>Smell distribution</h2>
+    <table id="smellTable"></table>
+    <p class="note" id="ds"></p>
+  </section>
+
+  <section>
+    <h2>Highest ATDI</h2>
+    <ol class="rank" id="rank"></ol>
+  </section>
+</aside>
+<main>
+  <svg id="svg" role="img" aria-label="Dependency graph"></svg>
+  <div id="tip"></div>
+  <div class="hint">Drag to pan, scroll to zoom</div>
+</main>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script>
+const DATA = {"nodes": [{"id": 0, "name": "com.amazon.ask", "mask": 1, "atdi": 17.42787855819884, "units": 9, "Ab": 0.2222222222222222, "In": 0.8421052631578947, "D": 0.06432748538011701, "FI": 4.0, "FO": 20.0, "LOC": 369.0, "PR": 0.008336386379750125, "CD": 0, "UD": 1, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 1, "name": "com.amazon.ask.attributes", "mask": 1, "atdi": 17.78279488733321, "units": 2, "Ab": 0.0, "In": 0.3333333333333333, "D": 0.6666666666666667, "FI": 4.0, "FO": 2.0, "LOC": 244.0, "PR": 0.013289935883055708, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 2, "name": "com.amazon.ask.attributes.persistence", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 1.0, "In": 0.07692307692307693, "D": 0.07692307692307687, "FI": 6.0, "FO": 1.0, "LOC": 15.0, "PR": 0.015120209602132634, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 3, "name": "com.amazon.ask.attributes.persistence.impl", "mask": 1, "atdi": 0.0, "units": 4, "Ab": 0.0, "In": 0.6, "D": 0.4, "FI": 2.0, "FO": 3.0, "LOC": 449.0, "PR": 0.005710119977374769, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 4, "name": "com.amazon.ask.builder", "mask": 1, "atdi": 21.908622363764394, "units": 10, "Ab": 0.2, "In": 0.8378378378378378, "D": 0.037837837837837895, "FI": 3.0, "FO": 25.0, "LOC": 516.0, "PR": 0.006318213006537617, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 5, "name": "com.amazon.ask.builder.impl", "mask": 1, "atdi": 18.00555249732493, "units": 2, "Ab": 1.0, "In": 0.6, "D": 0.6000000000000001, "FI": 3.0, "FO": 11.0, "LOC": 138.0, "PR": 0.006064417682144257, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 6, "name": "com.amazon.ask.dispatcher", "mask": 1, "atdi": 140.7860937666084, "units": 2, "Ab": 0.5, "In": 0.9583333333333334, "D": 0.4583333333333335, "FI": 2.0, "FO": 20.0, "LOC": 351.0, "PR": 0.007144301901715896, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 7, "name": "com.amazon.ask.dispatcher.exception", "mask": 1, "atdi": 31.796097515026922, "units": 3, "Ab": 0.6666666666666666, "In": 0.4166666666666667, "D": 0.08333333333333326, "FI": 5.0, "FO": 7.0, "LOC": 64.0, "PR": 0.009004524919192188, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 8, "name": "com.amazon.ask.dispatcher.exception.impl", "mask": 1, "atdi": 12.223033221592665, "units": 1, "Ab": 0.0, "In": 0.6666666666666666, "D": 0.33333333333333337, "FI": 2.0, "FO": 4.0, "LOC": 21.0, "PR": 0.006634856626133818, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 9, "name": "com.amazon.ask.dispatcher.impl", "mask": 1, "atdi": 23.836565921866917, "units": 1, "Ab": 0.0, "In": 0.8888888888888888, "D": 0.11111111111111116, "FI": 1.0, "FO": 7.0, "LOC": 30.0, "PR": 0.005541447612199821, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 10, "name": "com.amazon.ask.dispatcher.request.handler", "mask": 1, "atdi": 290.49298883812605, "units": 5, "Ab": 0.6, "In": 0.10679611650485436, "D": 0.2932038834951457, "FI": 16.0, "FO": 14.0, "LOC": 163.0, "PR": 0.02947842139957031, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 11, "name": "com.amazon.ask.dispatcher.request.handler.impl", "mask": 1, "atdi": 13.710780528594821, "units": 61, "Ab": 0.9672131147540983, "In": 0.8461538461538461, "D": 0.8133669609079446, "FI": 2.0, "FO": 7.0, "LOC": 810.0, "PR": 0.007507102895578417, "CD": 0, "UD": 0, "AI": 0, "GC": 1, "FC": 1, "SF": 0}, {"id": 12, "name": "com.amazon.ask.dispatcher.request.interceptor", "mask": 1, "atdi": 5.712686015389427, "units": 2, "Ab": 1.0, "In": 0.5, "D": 0.5, "FI": 2.0, "FO": 2.0, "LOC": 22.0, "PR": 0.005756267277411532, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 13, "name": "com.amazon.ask.dispatcher.request.mapper", "mask": 1, "atdi": 51.98624700509828, "units": 2, "Ab": 0.5, "In": 0.6923076923076923, "D": 0.1923076923076923, "FI": 4.0, "FO": 8.0, "LOC": 115.0, "PR": 0.007390466280788646, "CD": 0, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 14, "name": "com.amazon.ask.dispatcher.request.mapper.impl", "mask": 1, "atdi": 20.04542756387153, "units": 1, "Ab": 0.0, "In": 0.8, "D": 0.19999999999999996, "FI": 1.0, "FO": 4.0, "LOC": 19.0, "PR": 0.0060230530682026774, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 15, "name": "com.amazon.ask.exception", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 19.0, "FO": 0.0, "LOC": 29.0, "PR": 0.0783213304977491, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 16, "name": "com.amazon.ask.exception.template", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.0, "In": 0.09090909090909091, "D": 0.9090909090909091, "FI": 7.0, "FO": 1.0, "LOC": 31.0, "PR": 0.01691569509299485, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 17, "name": "com.amazon.ask.handler", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 3.0, "LOC": 30.0, "PR": 0.0052378143754361894, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 18, "name": "com.amazon.ask.impl", "mask": 1, "atdi": 5.514921151371263, "units": 1, "Ab": 1.0, "In": 0.8888888888888888, "D": 0.8888888888888888, "FI": 1.0, "FO": 5.0, "LOC": 35.0, "PR": 0.005592112080205678, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 19, "name": "com.amazon.ask.localdebug", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.3333333333333333, "In": 1.0, "D": 0.33333333333333326, "FI": 0.0, "FO": 4.0, "LOC": 50.0, "PR": 0.0052378143754361894, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 20, "name": "com.amazon.ask.localdebug.certificate", "mask": 1, "atdi": 5.160738502954024, "units": 3, "Ab": 0.3333333333333333, "In": 0.5, "D": 0.16666666666666674, "FI": 1.0, "FO": 1.0, "LOC": 65.0, "PR": 0.008272861324634864, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 21, "name": "com.amazon.ask.localdebug.client", "mask": 1, "atdi": 5.160738502954024, "units": 3, "Ab": 0.3333333333333333, "In": 0.6666666666666666, "D": 0.0, "FI": 3.0, "FO": 4.0, "LOC": 171.0, "PR": 0.014282558878422398, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 22, "name": "com.amazon.ask.localdebug.config", "mask": 1, "atdi": 4.741885263367785, "units": 6, "Ab": 0.0, "In": 0.2, "D": 0.8, "FI": 5.0, "FO": 3.0, "LOC": 169.0, "PR": 0.014806483558079248, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 23, "name": "com.amazon.ask.localdebug.constants", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 2.0, "FO": 0.0, "LOC": 13.0, "PR": 0.009545361867816965, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 24, "name": "com.amazon.ask.localdebug.exception", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 5.0, "FO": 0.0, "LOC": 13.0, "PR": 0.017888651587553643, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 25, "name": "com.amazon.ask.localdebug.guice", "mask": 1, "atdi": 0.0, "units": 4, "Ab": 0.0, "In": 0.9, "D": 0.09999999999999998, "FI": 1.0, "FO": 6.0, "LOC": 228.0, "PR": 0.006350851745967994, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 26, "name": "com.amazon.ask.localdebug.lambdaContext", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 1.0, "FO": 0.0, "LOC": 34.0, "PR": 0.008645656308471505, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 27, "name": "com.amazon.ask.localdebug.request", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 1.0, "LOC": 18.0, "PR": 0.0052378143754361894, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 28, "name": "com.amazon.ask.localdebug.type", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 4.0, "FO": 0.0, "LOC": 18.0, "PR": 0.014853604638354966, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 29, "name": "com.amazon.ask.localdebug.util", "mask": 1, "atdi": 4.741885263367785, "units": 4, "Ab": 0.0, "In": 0.4, "D": 0.6, "FI": 6.0, "FO": 5.0, "LOC": 160.0, "PR": 0.02004599650717735, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 30, "name": "com.amazon.ask.localdebug.utils", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 4.0, "LOC": 142.0, "PR": 0.0052378143754361894, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 31, "name": "com.amazon.ask.module", "mask": 1, "atdi": 10.672686080718844, "units": 3, "Ab": 0.3333333333333333, "In": 0.8695652173913043, "D": 0.2028985507246377, "FI": 1.0, "FO": 18.0, "LOC": 142.0, "PR": 0.0054526340406479004, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 32, "name": "com.amazon.ask.request", "mask": 1, "atdi": 208.21684925189854, "units": 7, "Ab": 0.2857142857142857, "In": 0.35, "D": 0.3642857142857143, "FI": 10.0, "FO": 6.0, "LOC": 606.0, "PR": 0.03530365072122006, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 33, "name": "com.amazon.ask.request.dispatcher", "mask": 1, "atdi": 18.345024359324746, "units": 2, "Ab": 0.5, "In": 0.8235294117647058, "D": 0.32352941176470584, "FI": 3.0, "FO": 12.0, "LOC": 390.0, "PR": 0.00656000317973488, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 34, "name": "com.amazon.ask.request.dispatcher.impl", "mask": 1, "atdi": 29.6843195598725, "units": 1, "Ab": 0.0, "In": 0.7333333333333333, "D": 0.2666666666666667, "FI": 4.0, "FO": 9.0, "LOC": 113.0, "PR": 0.007033304347994347, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 35, "name": "com.amazon.ask.request.exception", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 8.0, "FO": 4.0, "LOC": 45.0, "PR": 0.031030626859380343, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 36, "name": "com.amazon.ask.request.exception.handler", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 1.0, "In": 0.0, "D": 0.0, "FI": 15.0, "FO": 0.0, "LOC": 10.0, "PR": 0.05171085193456963, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 37, "name": "com.amazon.ask.request.exception.handler.impl", "mask": 1, "atdi": 20.30834435334641, "units": 1, "Ab": 1.0, "In": 0.015873015873015872, "D": 0.015873015873015817, "FI": 4.0, "FO": 1.0, "LOC": 23.0, "PR": 0.013155256032315297, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 38, "name": "com.amazon.ask.request.exception.mapper", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 1.0, "In": 0.058823529411764705, "D": 0.05882352941176472, "FI": 10.0, "FO": 1.0, "LOC": 12.0, "PR": 0.022589796983924208, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 39, "name": "com.amazon.ask.request.exception.mapper.impl", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.25, "D": 0.75, "FI": 6.0, "FO": 2.0, "LOC": 30.0, "PR": 0.01557208427261747, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 40, "name": "com.amazon.ask.request.handler", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 1.0, "In": 0.0, "D": 0.0, "FI": 12.0, "FO": 1.0, "LOC": 10.0, "PR": 0.021740992903668942, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 41, "name": "com.amazon.ask.request.handler.adapter", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 1.0, "In": 0.0, "D": 0.0, "FI": 10.0, "FO": 0.0, "LOC": 10.0, "PR": 0.013133029377805198, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 42, "name": "com.amazon.ask.request.handler.adapter.impl", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.4, "D": 0.6, "FI": 2.0, "FO": 2.0, "LOC": 17.0, "PR": 0.006364212663460931, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 43, "name": "com.amazon.ask.request.handler.chain", "mask": 1, "atdi": 69.85824687966233, "units": 3, "Ab": 0.3333333333333333, "In": 0.4375, "D": 0.22916666666666674, "FI": 10.0, "FO": 6.0, "LOC": 75.0, "PR": 0.01792830805592932, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 44, "name": "com.amazon.ask.request.handler.chain.impl", "mask": 1, "atdi": 6.264424479573609, "units": 1, "Ab": 0.0, "In": 0.38461538461538464, "D": 0.6153846153846154, "FI": 7.0, "FO": 4.0, "LOC": 60.0, "PR": 0.015492232103808602, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 45, "name": "com.amazon.ask.request.impl", "mask": 1, "atdi": 12.61943822201059, "units": 2, "Ab": 0.0, "In": 0.42857142857142855, "D": 0.5714285714285714, "FI": 3.0, "FO": 2.0, "LOC": 33.0, "PR": 0.011972856601050842, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 46, "name": "com.amazon.ask.request.intent", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 1.0, "FO": 0.0, "LOC": 105.0, "PR": 0.010239107005415051, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 47, "name": "com.amazon.ask.request.interceptor", "mask": 1, "atdi": 0.0, "units": 4, "Ab": 0.5, "In": 0.09090909090909091, "D": 0.40909090909090906, "FI": 12.0, "FO": 1.0, "LOC": 56.0, "PR": 0.017828442898524026, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 48, "name": "com.amazon.ask.request.mapper", "mask": 1, "atdi": 42.807142705496055, "units": 2, "Ab": 0.5, "In": 0.30434782608695654, "D": 0.19565217391304346, "FI": 11.0, "FO": 5.0, "LOC": 69.0, "PR": 0.012478399945072086, "CD": 0, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 49, "name": "com.amazon.ask.request.mapper.impl", "mask": 1, "atdi": 55.91817836885127, "units": 1, "Ab": 0.0, "In": 0.4444444444444444, "D": 0.5555555555555556, "FI": 5.0, "FO": 4.0, "LOC": 32.0, "PR": 0.010107723852733595, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 50, "name": "com.amazon.ask.request.viewport", "mask": 1, "atdi": 0.0, "units": 5, "Ab": 0.0, "In": 0.25, "D": 0.75, "FI": 1.0, "FO": 1.0, "LOC": 158.0, "PR": 0.010239107005415051, "CD": 0, "UD": 0, "AI": 1, "GC": 0, "FC": 0, "SF": 0}, {"id": 51, "name": "com.amazon.ask.response", "mask": 1, "atdi": 45.55068447091982, "units": 8, "Ab": 0.25, "In": 0.36363636363636365, "D": 0.38636363636363635, "FI": 7.0, "FO": 5.0, "LOC": 946.0, "PR": 0.013406570116788722, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 52, "name": "com.amazon.ask.response.impl", "mask": 1, "atdi": 12.028497839663762, "units": 1, "Ab": 0.0, "In": 0.6666666666666666, "D": 0.33333333333333337, "FI": 2.0, "FO": 3.0, "LOC": 27.0, "PR": 0.008467596180383341, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 53, "name": "com.amazon.ask.response.template", "mask": 1, "atdi": 273.5951163249819, "units": 8, "Ab": 0.125, "In": 0.4857142857142857, "D": 0.38928571428571423, "FI": 10.0, "FO": 12.0, "LOC": 425.0, "PR": 0.017415482492860037, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 54, "name": "com.amazon.ask.response.template.impl", "mask": 1, "atdi": 24.21431138067105, "units": 1, "Ab": 0.0, "In": 0.625, "D": 0.375, "FI": 3.0, "FO": 4.0, "LOC": 59.0, "PR": 0.008518647391877104, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 55, "name": "com.amazon.ask.response.template.loader", "mask": 1, "atdi": 23.380995731586424, "units": 3, "Ab": 1.0, "In": 0.2, "D": 0.19999999999999996, "FI": 4.0, "FO": 4.0, "LOC": 32.0, "PR": 0.009683020529633839, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 56, "name": "com.amazon.ask.response.template.loader.impl", "mask": 1, "atdi": 25.423562845517402, "units": 5, "Ab": 0.2, "In": 0.6363636363636364, "D": 0.16363636363636358, "FI": 2.0, "FO": 5.0, "LOC": 278.0, "PR": 0.006728896653001601, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 57, "name": "com.amazon.ask.response.template.renderer", "mask": 1, "atdi": 17.204601301783917, "units": 1, "Ab": 1.0, "In": 0.3333333333333333, "D": 0.33333333333333326, "FI": 4.0, "FO": 3.0, "LOC": 12.0, "PR": 0.009492368214950277, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 58, "name": "com.amazon.ask.response.template.renderer.impl", "mask": 1, "atdi": 25.26352482999277, "units": 1, "Ab": 0.0, "In": 0.7777777777777778, "D": 0.2222222222222222, "FI": 2.0, "FO": 6.0, "LOC": 74.0, "PR": 0.006728896653001601, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 59, "name": "com.amazon.ask.sdk", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 8.0, "FO": 0.0, "LOC": 22.0, "PR": 0.035839476231133954, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 60, "name": "com.amazon.ask.services", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 3.0, "FO": 0.0, "LOC": 205.0, "PR": 0.013946604955284138, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 61, "name": "com.amazon.ask.servlet", "mask": 1, "atdi": 11.435908116612858, "units": 4, "Ab": 0.0, "In": 0.6666666666666666, "D": 0.33333333333333337, "FI": 2.0, "FO": 8.0, "LOC": 280.0, "PR": 0.013783266989225041, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 62, "name": "com.amazon.ask.servlet.util", "mask": 1, "atdi": 5.779277607552675, "units": 2, "Ab": 0.0, "In": 0.5, "D": 0.5, "FI": 1.0, "FO": 1.0, "LOC": 64.0, "PR": 0.0067022909404557355, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 63, "name": "com.amazon.ask.servlet.verifiers", "mask": 1, "atdi": 5.656630509060183, "units": 7, "Ab": 0.2857142857142857, "In": 0.5, "D": 0.2142857142857143, "FI": 1.0, "FO": 2.0, "LOC": 441.0, "PR": 0.0067022909404557355, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 64, "name": "com.amazon.ask.smapi", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 1.0, "LOC": 32.0, "PR": 0.0052378143754361894, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 65, "name": "com.amazon.ask.smapi.builder.refreshtoken", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.3333333333333333, "D": 0.6666666666666667, "FI": 1.0, "FO": 1.0, "LOC": 48.0, "PR": 0.009689963857563409, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 66, "name": "com.amazon.ask.smapi.utils", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 1.0, "LOC": 38.0, "PR": 0.0052378143754361894, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 67, "name": "com.amazon.ask.util", "mask": 1, "atdi": 154.22472578217952, "units": 10, "Ab": 0.2, "In": 0.0967741935483871, "D": 0.7032258064516129, "FI": 18.0, "FO": 3.0, "LOC": 300.0, "PR": 0.05148723777388656, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 68, "name": "com.amazon.ask.util.impl", "mask": 1, "atdi": 31.680406576076795, "units": 9, "Ab": 0.0, "In": 0.5, "D": 0.5, "FI": 5.0, "FO": 4.0, "LOC": 321.0, "PR": 0.023135600286406065, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 69, "name": "com.amazon.ask.utils", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 1.0, "FO": 0.0, "LOC": 17.0, "PR": 0.009689963857563409, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}], "edges": [{"source": 0, "target": 1, "w": 1.0}, {"source": 0, "target": 2, "w": 1.0}, {"source": 0, "target": 4, "w": 7.0}, {"source": 0, "target": 5, "w": 1.0}, {"source": 0, "target": 7, "w": 1.0}, {"source": 0, "target": 10, "w": 3.0}, {"source": 0, "target": 13, "w": 1.0}, {"source": 0, "target": 15, "w": 2.0}, {"source": 0, "target": 18, "w": 1.0}, {"source": 0, "target": 32, "w": 3.0}, {"source": 0, "target": 33, "w": 1.0}, {"source": 0, "target": 34, "w": 1.0}, {"source": 0, "target": 41, "w": 2.0}, {"source": 0, "target": 45, "w": 1.0}, {"source": 0, "target": 47, "w": 2.0}, {"source": 0, "target": 48, "w": 1.0}, {"source": 0, "target": 51, "w": 3.0}, {"source": 0, "target": 53, "w": 1.0}, {"source": 0, "target": 67, "w": 4.0}, {"source": 0, "target": 68, "w": 2.0}, {"source": 1, "target": 2, "w": 2.0}, {"source": 1, "target": 10, "w": 1.0}, {"source": 2, "target": 15, "w": 1.0}, {"source": 3, "target": 2, "w": 2.0}, {"source": 3, "target": 15, "w": 4.0}, {"source": 3, "target": 67, "w": 1.0}, {"source": 4, "target": 0, "w": 2.0}, {"source": 4, "target": 2, "w": 5.0}, {"source": 4, "target": 3, "w": 1.0}, {"source": 4, "target": 5, "w": 6.0}, {"source": 4, "target": 7, "w": 3.0}, {"source": 4, "target": 10, "w": 10.0}, {"source": 4, "target": 12, "w": 4.0}, {"source": 4, "target": 13, "w": 1.0}, {"source": 4, "target": 31, "w": 5.0}, {"source": 4, "target": 32, "w": 7.0}, {"source": 4, "target": 35, "w": 3.0}, {"source": 4, "target": 36, "w": 2.0}, {"source": 4, "target": 37, "w": 1.0}, {"source": 4, "target": 38, "w": 6.0}, {"source": 4, "target": 40, "w": 4.0}, {"source": 4, "target": 41, "w": 6.0}, {"source": 4, "target": 42, "w": 2.0}, {"source": 4, "target": 43, "w": 1.0}, {"source": 4, "target": 47, "w": 9.0}, {"source": 4, "target": 48, "w": 7.0}, {"source": 4, "target": 49, "w": 1.0}, {"source": 4, "target": 53, "w": 6.0}, {"source": 4, "target": 59, "w": 2.0}, {"source": 4, "target": 60, "w": 1.0}, {"source": 4, "target": 67, "w": 2.0}, {"source": 5, "target": 0, "w": 1.0}, {"source": 5, "target": 4, "w": 1.0}, {"source": 5, "target": 36, "w": 1.0}, {"source": 5, "target": 38, "w": 2.0}, {"source": 5, "target": 39, "w": 1.0}, {"source": 5, "target": 40, "w": 1.0}, {"source": 5, "target": 41, "w": 1.0}, {"source": 5, "target": 44, "w": 1.0}, {"source": 5, "target": 47, "w": 4.0}, {"source": 5, "target": 48, "w": 2.0}, {"source": 5, "target": 49, "w": 1.0}, {"source": 6, "target": 7, "w": 2.0}, {"source": 6, "target": 8, "w": 1.0}, {"source": 6, "target": 9, "w": 1.0}, {"source": 6, "target": 10, "w": 5.0}, {"source": 6, "target": 12, "w": 2.0}, {"source": 6, "target": 13, "w": 1.0}, {"source": 6, "target": 15, "w": 2.0}, {"source": 6, "target": 32, "w": 70.0}, {"source": 6, "target": 33, "w": 2.0}, {"source": 6, "target": 34, "w": 1.0}, {"source": 6, "target": 35, "w": 7.0}, {"source": 6, "target": 36, "w": 1.0}, {"source": 6, "target": 38, "w": 2.0}, {"source": 6, "target": 39, "w": 1.0}, {"source": 6, "target": 40, "w": 2.0}, {"source": 6, "target": 41, "w": 1.0}, {"source": 6, "target": 43, "w": 1.0}, {"source": 6, "target": 47, "w": 2.0}, {"source": 6, "target": 48, "w": 1.0}, {"source": 6, "target": 51, "w": 1.0}, {"source": 7, "target": 8, "w": 1.0}, {"source": 7, "target": 10, "w": 3.0}, {"source": 7, "target": 35, "w": 1.0}, {"source": 7, "target": 36, "w": 2.0}, {"source": 7, "target": 38, "w": 3.0}, {"source": 7, "target": 39, "w": 1.0}, {"source": 8, "target": 7, "w": 1.0}, {"source": 8, "target": 10, "w": 1.0}, {"source": 8, "target": 36, "w": 1.0}, {"source": 8, "target": 39, "w": 1.0}, {"source": 9, "target": 6, "w": 1.0}, {"source": 9, "target": 10, "w": 1.0}, {"source": 9, "target": 34, "w": 1.0}, {"source": 9, "target": 38, "w": 1.0}, {"source": 9, "target": 41, "w": 1.0}, {"source": 9, "target": 47, "w": 2.0}, {"source": 9, "target": 48, "w": 1.0}, {"source": 10, "target": 1, "w": 1.0}, {"source": 10, "target": 2, "w": 1.0}, {"source": 10, "target": 16, "w": 2.0}, {"source": 10, "target": 32, "w": 3.0}, {"source": 10, "target": 35, "w": 1.0}, {"source": 10, "target": 36, "w": 59.0}, {"source": 10, "target": 37, "w": 1.0}, {"source": 10, "target": 40, "w": 1.0}, {"source": 10, "target": 41, "w": 2.0}, {"source": 10, "target": 43, "w": 2.0}, {"source": 10, "target": 51, "w": 1.0}, {"source": 10, "target": 53, "w": 1.0}, {"source": 10, "target": 54, "w": 1.0}, {"source": 10, "target": 67, "w": 1.0}, {"source": 11, "target": 10, "w": 124.0}, {"source": 11, "target": 36, "w": 1.0}, {"source": 11, "target": 37, "w": 59.0}, {"source": 11, "target": 40, "w": 1.0}, {"source": 11, "target": 42, "w": 1.0}, {"source": 11, "target": 44, "w": 1.0}, {"source": 11, "target": 47, "w": 2.0}, {"source": 12, "target": 10, "w": 2.0}, {"source": 12, "target": 47, "w": 2.0}, {"source": 13, "target": 10, "w": 3.0}, {"source": 13, "target": 11, "w": 1.0}, {"source": 13, "target": 14, "w": 1.0}, {"source": 13, "target": 40, "w": 1.0}, {"source": 13, "target": 43, "w": 2.0}, {"source": 13, "target": 44, "w": 1.0}, {"source": 13, "target": 48, "w": 2.0}, {"source": 13, "target": 49, "w": 1.0}, {"source": 14, "target": 10, "w": 1.0}, {"source": 14, "target": 13, "w": 1.0}, {"source": 14, "target": 44, "w": 1.0}, {"source": 14, "target": 49, "w": 1.0}, {"source": 16, "target": 15, "w": 1.0}, {"source": 17, "target": 7, "w": 1.0}, {"source": 17, "target": 10, "w": 3.0}, {"source": 17, "target": 11, "w": 1.0}, {"source": 18, "target": 0, "w": 1.0}, {"source": 18, "target": 32, "w": 2.0}, {"source": 18, "target": 51, "w": 1.0}, {"source": 18, "target": 52, "w": 1.0}, {"source": 18, "target": 67, "w": 3.0}, {"source": 19, "target": 21, "w": 2.0}, {"source": 19, "target": 22, "w": 2.0}, {"source": 19, "target": 25, "w": 2.0}, {"source": 19, "target": 29, "w": 1.0}, {"source": 20, "target": 21, "w": 1.0}, {"source": 21, "target": 20, "w": 2.0}, {"source": 21, "target": 22, "w": 4.0}, {"source": 21, "target": 24, "w": 1.0}, {"source": 21, "target": 29, "w": 2.0}, {"source": 22, "target": 24, "w": 1.0}, {"source": 22, "target": 28, "w": 1.0}, {"source": 22, "target": 29, "w": 1.0}, {"source": 25, "target": 21, "w": 1.0}, {"source": 25, "target": 22, "w": 8.0}, {"source": 25, "target": 23, "w": 1.0}, {"source": 25, "target": 24, "w": 3.0}, {"source": 25, "target": 28, "w": 1.0}, {"source": 25, "target": 29, "w": 1.0}, {"source": 27, "target": 29, "w": 1.0}, {"source": 29, "target": 22, "w": 2.0}, {"source": 29, "target": 23, "w": 1.0}, {"source": 29, "target": 24, "w": 3.0}, {"source": 29, "target": 26, "w": 1.0}, {"source": 29, "target": 28, "w": 1.0}, {"source": 30, "target": 22, "w": 2.0}, {"source": 30, "target": 24, "w": 2.0}, {"source": 30, "target": 28, "w": 1.0}, {"source": 30, "target": 29, "w": 5.0}, {"source": 31, "target": 2, "w": 1.0}, {"source": 31, "target": 3, "w": 1.0}, {"source": 31, "target": 4, "w": 1.0}, {"source": 31, "target": 5, "w": 1.0}, {"source": 31, "target": 10, "w": 1.0}, {"source": 31, "target": 15, "w": 1.0}, {"source": 31, "target": 38, "w": 1.0}, {"source": 31, "target": 41, "w": 1.0}, {"source": 31, "target": 47, "w": 2.0}, {"source": 31, "target": 48, "w": 1.0}, {"source": 31, "target": 53, "w": 2.0}, {"source": 31, "target": 54, "w": 1.0}, {"source": 31, "target": 55, "w": 1.0}, {"source": 31, "target": 56, "w": 2.0}, {"source": 31, "target": 57, "w": 1.0}, {"source": 31, "target": 58, "w": 1.0}, {"source": 31, "target": 60, "w": 1.0}, {"source": 31, "target": 68, "w": 1.0}, {"source": 32, "target": 1, "w": 2.0}, {"source": 32, "target": 10, "w": 4.0}, {"source": 32, "target": 37, "w": 1.0}, {"source": 32, "target": 46, "w": 2.0}, {"source": 32, "target": 50, "w": 5.0}, {"source": 32, "target": 67, "w": 1.0}, {"source": 33, "target": 15, "w": 3.0}, {"source": 33, "target": 34, "w": 1.0}, {"source": 33, "target": 35, "w": 2.0}, {"source": 33, "target": 36, "w": 1.0}, {"source": 33, "target": 38, "w": 1.0}, {"source": 33, "target": 39, "w": 1.0}, {"source": 33, "target": 40, "w": 3.0}, {"source": 33, "target": 41, "w": 1.0}, {"source": 33, "target": 43, "w": 1.0}, {"source": 33, "target": 47, "w": 2.0}, {"source": 33, "target": 48, "w": 1.0}, {"source": 33, "target": 59, "w": 2.0}, {"source": 34, "target": 15, "w": 2.0}, {"source": 34, "target": 33, "w": 1.0}, {"source": 34, "target": 36, "w": 1.0}, {"source": 34, "target": 38, "w": 1.0}, {"source": 34, "target": 41, "w": 1.0}, {"source": 34, "target": 43, "w": 1.0}, {"source": 34, "target": 47, "w": 2.0}, {"source": 34, "target": 48, "w": 1.0}, {"source": 34, "target": 67, "w": 1.0}, {"source": 35, "target": 36, "w": 1.0}, {"source": 35, "target": 38, "w": 1.0}, {"source": 35, "target": 39, "w": 1.0}, {"source": 35, "target": 59, "w": 2.0}, {"source": 37, "target": 67, "w": 1.0}, {"source": 38, "target": 36, "w": 1.0}, {"source": 39, "target": 36, "w": 1.0}, {"source": 39, "target": 38, "w": 1.0}, {"source": 40, "target": 35, "w": 2.0}, {"source": 42, "target": 40, "w": 1.0}, {"source": 42, "target": 41, "w": 1.0}, {"source": 43, "target": 35, "w": 1.0}, {"source": 43, "target": 36, "w": 2.0}, {"source": 43, "target": 40, "w": 2.0}, {"source": 43, "target": 44, "w": 2.0}, {"source": 43, "target": 47, "w": 6.0}, {"source": 43, "target": 59, "w": 4.0}, {"source": 44, "target": 36, "w": 1.0}, {"source": 44, "target": 40, "w": 1.0}, {"source": 44, "target": 43, "w": 1.0}, {"source": 44, "target": 47, "w": 2.0}, {"source": 45, "target": 32, "w": 2.0}, {"source": 45, "target": 67, "w": 2.0}, {"source": 47, "target": 59, "w": 3.0}, {"source": 48, "target": 40, "w": 2.0}, {"source": 48, "target": 43, "w": 4.0}, {"source": 48, "target": 44, "w": 1.0}, {"source": 48, "target": 49, "w": 1.0}, {"source": 48, "target": 59, "w": 2.0}, {"source": 49, "target": 43, "w": 1.0}, {"source": 49, "target": 44, "w": 1.0}, {"source": 49, "target": 48, "w": 1.0}, {"source": 49, "target": 67, "w": 1.0}, {"source": 50, "target": 15, "w": 1.0}, {"source": 51, "target": 15, "w": 6.0}, {"source": 51, "target": 52, "w": 1.0}, {"source": 51, "target": 59, "w": 1.0}, {"source": 51, "target": 67, "w": 2.0}, {"source": 52, "target": 15, "w": 1.0}, {"source": 52, "target": 51, "w": 1.0}, {"source": 52, "target": 67, "w": 2.0}, {"source": 53, "target": 6, "w": 2.0}, {"source": 53, "target": 10, "w": 2.0}, {"source": 53, "target": 15, "w": 3.0}, {"source": 53, "target": 16, "w": 5.0}, {"source": 53, "target": 54, "w": 1.0}, {"source": 53, "target": 55, "w": 2.0}, {"source": 53, "target": 56, "w": 4.0}, {"source": 53, "target": 57, "w": 1.0}, {"source": 53, "target": 58, "w": 1.0}, {"source": 53, "target": 59, "w": 2.0}, {"source": 53, "target": 67, "w": 1.0}, {"source": 53, "target": 68, "w": 1.0}, {"source": 54, "target": 16, "w": 1.0}, {"source": 54, "target": 53, "w": 2.0}, {"source": 54, "target": 55, "w": 1.0}, {"source": 54, "target": 57, "w": 1.0}, {"source": 55, "target": 15, "w": 1.0}, {"source": 55, "target": 16, "w": 1.0}, {"source": 55, "target": 53, "w": 2.0}, {"source": 56, "target": 10, "w": 2.0}, {"source": 56, "target": 16, "w": 1.0}, {"source": 56, "target": 53, "w": 3.0}, {"source": 56, "target": 55, "w": 7.0}, {"source": 56, "target": 67, "w": 3.0}, {"source": 57, "target": 15, "w": 1.0}, {"source": 57, "target": 16, "w": 1.0}, {"source": 57, "target": 53, "w": 1.0}, {"source": 58, "target": 15, "w": 1.0}, {"source": 58, "target": 16, "w": 1.0}, {"source": 58, "target": 32, "w": 1.0}, {"source": 58, "target": 53, "w": 1.0}, {"source": 58, "target": 57, "w": 1.0}, {"source": 58, "target": 67, "w": 2.0}, {"source": 61, "target": 0, "w": 3.0}, {"source": 61, "target": 15, "w": 2.0}, {"source": 61, "target": 45, "w": 1.0}, {"source": 61, "target": 51, "w": 1.0}, {"source": 61, "target": 62, "w": 1.0}, {"source": 61, "target": 63, "w": 7.0}, {"source": 61, "target": 67, "w": 3.0}, {"source": 61, "target": 68, "w": 1.0}, {"source": 62, "target": 61, "w": 2.0}, {"source": 63, "target": 61, "w": 5.0}, {"source": 63, "target": 67, "w": 1.0}, {"source": 64, "target": 65, "w": 2.0}, {"source": 65, "target": 60, "w": 1.0}, {"source": 66, "target": 69, "w": 1.0}, {"source": 67, "target": 15, "w": 2.0}, {"source": 67, "target": 32, "w": 3.0}, {"source": 67, "target": 68, "w": 1.0}, {"source": 68, "target": 15, "w": 5.0}, {"source": 68, "target": 32, "w": 5.0}, {"source": 68, "target": 45, "w": 2.0}, {"source": 68, "target": 67, "w": 4.0}], "meta": {"project": "alexa__alexa-skills-kit-sdk-for-java", "n_nodes": 70, "n_edges": 311, "graph_level_smells": [], "dense_structure": 0, "label_counts": {"CD": 19, "UD": 13, "AI": 1, "GC": 1, "FC": 11, "SF": 0}, "matching": {"arcan_nodes": 70, "designite_packages": 70, "matched": 70, "coverage": 1.0, "arcan_only": [], "designite_only": [], "smelly_packages_not_in_graph": []}, "dropped_containers": {"default_package": [], "empty_container": ["com", "com.amazon", "com.amazon.ask.dispatcher.request", "com.amazon.ask.smapi.builder"]}, "unknown_designite_smells": []}};
+const LABELS = ["CD","UD","AI","GC","FC","SF"];
+const NAMES = {CD:"Cyclic Dependency",UD:"Unstable Dependency",AI:"Ambiguous Interface",
+  GC:"God Component",FC:"Feature Concentration",SF:"Scattered Functionality"};
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const nodes = DATA.nodes.map(d => ({...d, nSmell: LABELS.reduce((s,k)=>s+d[k],0),
+  short: d.name.split(".").slice(-1)[0] || d.name}));
+const byId = new Map(nodes.map(d => [d.id, d]));
+const links = DATA.edges.map(e => ({...e}));
+const meta = DATA.meta;
+let current = null;
+
+// ---------- sidebar ----------
+document.getElementById("title").textContent = meta.project;
+document.getElementById("nN").textContent = nodes.length;
+document.getElementById("nE").textContent = links.length;
+document.getElementById("nS").textContent = nodes.filter(d => d.nSmell > 0).length;
+document.getElementById("names").innerHTML = nodes.map(d => `<option value="${d.name}">`).join("");
+document.getElementById("smellTable").innerHTML = LABELS.map(k =>
+  `<tr><td><i class="dot" style="background:var(--${k})"></i>${NAMES[k]}</td>
+   <td>${meta.label_counts[k]} / ${nodes.length}</td></tr>`).join("");
+document.getElementById("ds").textContent = meta.dense_structure
+  ? "Dense Structure detected at project level (not assigned to individual nodes)."
+  : "Dense Structure not detected.";
+const unmasked = nodes.filter(d => !d.mask).length;
+if (unmasked) document.getElementById("ds").textContent +=
+  ` ${unmasked} nodes not analysed by Designite (dashed outline): labels unavailable.`;
+const rank = [...nodes].sort((a,b) => b.atdi - a.atdi).slice(0,10);
+document.getElementById("rank").innerHTML = rank.map(d =>
+  `<li><button data-id="${d.id}">${d.short}</button> <span class="v">${d.atdi.toFixed(1)}</span></li>`).join("");
+document.querySelectorAll("#rank button").forEach(b =>
+  b.addEventListener("click", () => select(byId.get(+b.dataset.id), true)));
+
+// ---------- graph ----------
+const svg = d3.select("#svg"), g = svg.append("g");
+const W = () => svg.node().clientWidth, H = () => svg.node().clientHeight;
+const maxLoc = d3.max(nodes, d => d.LOC) || 1;
+const r = d3.scaleSqrt().domain([0, maxLoc]).range([4, 26]);
+const wScale = d3.scaleLog().domain([1, d3.max(links, d => d.w) || 1]).range([0.6, 3.5]);
+const maxAtdi = d3.max(nodes, d => d.atdi) || 1;
+
+svg.append("defs").append("marker").attr("id","arrow").attr("viewBox","0 -4 8 8")
+  .attr("refX",8).attr("refY",0).attr("markerUnits","userSpaceOnUse").attr("markerWidth",9).attr("markerHeight",9).attr("orient","auto")
+  .append("path").attr("d","M0,-4L8,0L0,4").attr("fill","var(--edge)");
+
+const link = g.append("g").selectAll("path").data(links).join("path")
+  .attr("class","link").attr("stroke-width", d => wScale(Math.max(1,d.w))).attr("marker-end","url(#arrow)");
+const node = g.append("g").selectAll("g").data(nodes).join("g")
+  .attr("class", d => "node" + (d.mask ? "" : " nomask")).attr("tabindex",0)
+  .attr("aria-label", d => d.name);
+node.append("circle").attr("r", d => r(d.LOC));
+node.append("text").attr("dy", d => -r(d.LOC) - 4).attr("text-anchor","middle").text(d => d.short);
+
+const sim = d3.forceSimulation(nodes)
+  .force("link", d3.forceLink(links).id(d => d.id).distance(95).strength(0.2))
+  .force("charge", d3.forceManyBody().strength(-420))
+  .force("collide", d3.forceCollide(d => r(d.LOC) + 6))
+  .force("x", d3.forceX(() => W()/2).strength(0.05))
+  .force("y", d3.forceY(() => H()/2).strength(0.05))
+  .on("tick", ticked).on("end", fit);
+if (matchMedia("(prefers-reduced-motion: reduce)").matches) { sim.stop(); for (let i=0;i<300;i++) sim.tick(); ticked(); setTimeout(fit, 0); }
+let fitted = false;
+function fit(){
+  if (fitted) return; fitted = true;
+  const pad = 40, xs = nodes.map(d => d.x), ys = nodes.map(d => d.y);
+  const x0 = d3.min(xs) - pad, x1 = d3.max(xs) + pad, y0 = d3.min(ys) - pad, y1 = d3.max(ys) + pad;
+  const k = Math.min(2, 0.95 / Math.max((x1 - x0) / W(), (y1 - y0) / H()));
+  svg.transition().duration(600).call(zoom.transform,
+    d3.zoomIdentity.translate(W()/2, H()/2).scale(k).translate(-(x0 + x1)/2, -(y0 + y1)/2));
+}
+
+function ticked(){
+  link.attr("d", d => {
+    const dx = d.target.x - d.source.x, dy = d.target.y - d.source.y, L = Math.hypot(dx,dy) || 1;
+    const rt = r(d.target.LOC) + 3, rs = r(d.source.LOC);
+    return `M${d.source.x + dx*rs/L},${d.source.y + dy*rs/L}L${d.target.x - dx*rt/L},${d.target.y - dy*rt/L}`;
+  });
+  node.attr("transform", d => `translate(${d.x},${d.y})`);
+}
+
+node.call(d3.drag()
+  .on("start", (e,d) => { if(!e.active) sim.alphaTarget(0.3).restart(); d.fx=d.x; d.fy=d.y; })
+  .on("drag", (e,d) => { d.fx=e.x; d.fy=e.y; })
+  .on("end", (e,d) => { if(!e.active) sim.alphaTarget(0); d.fx=null; d.fy=null; }));
+const zoom = d3.zoom().scaleExtent([0.2,6]).on("zoom", e => g.attr("transform", e.transform));
+svg.call(zoom).on("click", e => { if (e.target === svg.node()) select(null); });
+
+// ---------- colour ----------
+function colour(d){
+  const m = document.getElementById("colorBy").value;
+  if (m === "count") return css("--s" + Math.min(d.nSmell, 4));
+  if (m === "atdi") return d3.interpolateLab(css("--s0"), css("--s4"))(Math.sqrt(d.atdi / maxAtdi));
+  return d[m] ? css("--" + m) : css("--clean");
+}
+function legend(){
+  const m = document.getElementById("colorBy").value, el = document.getElementById("legend");
+  if (m === "count") el.innerHTML = [0,1,2,3,4].map(i =>
+    `<span><i style="background:var(--s${i})"></i>${i===4?"4+":i} ${i===1?"smell":"smells"}</span>`).join("");
+  else if (m === "atdi") el.innerHTML = `<span><i style="background:var(--s0)"></i>0</span>
+    <span><i style="background:var(--s4)"></i>${maxAtdi.toFixed(0)}</span>`;
+  else el.innerHTML = `<span><i style="background:var(--${m})"></i>affected</span>
+    <span><i style="background:var(--clean)"></i>not affected</span>`;
+  el.innerHTML += `<span>node size ∝ LOC</span>`;
+}
+function paint(){ node.select("circle").attr("fill", colour); legend(); }
+document.getElementById("colorBy").addEventListener("change", paint);
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", paint);
+paint();
+
+// ---------- labels ----------
+function labelsVisible(){
+  const all = document.getElementById("showLabels").checked;
+  node.select("text").style("display", d => all || r(d.LOC) > 12 || d === current ? null : "none");
+}
+document.getElementById("showLabels").addEventListener("change", labelsVisible);
+
+// ---------- tooltip ----------
+const tip = document.getElementById("tip");
+node.on("mouseenter", (e,d) => {
+  const s = LABELS.filter(k => d[k]).join(", ") || "none";
+  tip.innerHTML = `<b>${d.name}</b><br>LOC ${d.LOC} · FI ${d.FI} · FO ${d.FO}<br>Smells: ${s}`;
+  tip.style.display = "block";
+}).on("mousemove", e => {
+  const b = document.querySelector("main").getBoundingClientRect();
+  tip.style.left = (e.clientX - b.left + 14) + "px"; tip.style.top = (e.clientY - b.top + 14) + "px";
+}).on("mouseleave", () => tip.style.display = "none")
+  .on("click", (e,d) => { e.stopPropagation(); select(d); })
+  .on("keydown", (e,d) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(d); } });
+
+// ---------- selection ----------
+function select(d, center){
+  current = d;
+  node.classed("sel", n => n === d);
+  if (!d){ node.classed("dim", false); link.classed("dim", false); renderDetail(null); labelsVisible(); return; }
+  const out = links.filter(l => l.source === d), inc = links.filter(l => l.target === d);
+  const nb = new Set([d, ...out.map(l => l.target), ...inc.map(l => l.source)]);
+  node.classed("dim", n => !nb.has(n));
+  link.classed("dim", l => l.source !== d && l.target !== d);
+  renderDetail(d, out, inc); labelsVisible();
+  if (center) svg.transition().duration(500).call(zoom.translateTo, d.x, d.y);
+}
+function renderDetail(d, out, inc){
+  const el = document.getElementById("detail");
+  if (!d){ el.innerHTML = `<h2>Selected component</h2><p class="note">Select a node to inspect its features, labels, and dependencies.</p>`; return; }
+  const chips = LABELS.filter(k => d[k]).map(k => `<span class="chip" style="background:var(--${k})">${NAMES[k]}</span>`).join("")
+    || `<span class="chip none">${d.mask ? "No smells" : "Labels unavailable"}</span>`;
+  const f = (v, p=3) => Number.isInteger(v) ? v : v.toFixed(p);
+  const rows = [["Abstractness (Ab)",d.Ab],["Instability (In)",d.In],["Distance (D)",d.D],["Fan-in (FI)",d.FI],
+    ["Fan-out (FO)",d.FO],["Lines of code (LOC)",d.LOC],["PageRank (PR)",d.PR],["ATDI (Arcan)",d.atdi],["Classes",d.units]];
+  el.innerHTML = `<h2>Selected component</h2><div class="detail-name">${d.name}</div>
+    <div class="chips">${chips}</div>
+    <table>${rows.map(([k,v]) => `<tr><td>${k}</td><td>${f(v)}</td></tr>`).join("")}</table>
+    <p class="note">Efferent dependencies: ${out.length}. Afferent dependencies: ${inc.length}.</p>`;
+}
+document.getElementById("search").addEventListener("change", e => {
+  const d = nodes.find(n => n.name === e.target.value) || nodes.find(n => n.name.includes(e.target.value));
+  if (d) select(d, true);
+});
+labelsVisible();
+</script>
+</body>
+</html>

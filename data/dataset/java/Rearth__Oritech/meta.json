@@ -1,0 +1,49 @@
+{
+  "project": "Rearth__Oritech",
+  "n_nodes": 82,
+  "n_edges": 616,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 54,
+    "UD": 29,
+    "AI": 0,
+    "GC": 3,
+    "FC": 34,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 82,
+    "designite_packages": 82,
+    "matched": 82,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "net.minecraft.network.codec",
+      "net.minecraft.world.inventory",
+      "net.neoforged",
+      "rearth.oritech.init.world.features",
+      "net.minecraft",
+      "net.minecraft.network",
+      "net.minecraft.world",
+      "rearth.oritech.init.compat",
+      "rearth.oritech.client",
+      "rearth.oritech.api",
+      "rearth.oritech.block",
+      "rearth.oritech.block.blocks",
+      "rearth",
+      "net",
+      "rearth.oritech.block.base",
+      "net.neoforged.neoforge",
+      "net.neoforged.neoforge.registries"
+    ]
+  },
+  "unknown_designite_smells": []
+}

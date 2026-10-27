@@ -1,0 +1,46 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 99,
+  "source_files_removed": 38,
+  "source_files_after": 61,
+  "removed_share": 0.3838,
+  "removed_by_rule": {
+    "R1_arcan_default": 27,
+    "R2_java_build": 11
+  },
+  "removed_dirs": [
+    {
+      "path": "player/dump/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    },
+    {
+      "path": "player/ffmpeg/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "player/gstreamer/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "player/harness/src/integrationTest",
+      "rule": "R2_java_build",
+      "source_files": 11
+    },
+    {
+      "path": "protocol/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 6
+    },
+    {
+      "path": "server/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 11
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

@@ -1,0 +1,30 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 1499,
+  "source_files_removed": 78,
+  "source_files_after": 1421,
+  "removed_share": 0.052,
+  "removed_by_rule": {
+    "R1_arcan_default": 78
+  },
+  "removed_dirs": [
+    {
+      "path": "protege-editor-core/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    },
+    {
+      "path": "protege-editor-owl/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 71
+    },
+    {
+      "path": "protege-launcher/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

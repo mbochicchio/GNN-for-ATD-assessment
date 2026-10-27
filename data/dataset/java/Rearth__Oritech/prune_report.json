@@ -1,0 +1,20 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 559,
+  "source_files_removed": 16,
+  "source_files_after": 543,
+  "removed_share": 0.0286,
+  "removed_by_rule": {
+    "R1_arcan_default": 16
+  },
+  "removed_dirs": [
+    {
+      "path": "space-age/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 16
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

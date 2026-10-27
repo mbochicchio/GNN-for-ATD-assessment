@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>sofastack__sofa-jraft · dependency graph</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EEF1F0; --panel:#F8FAF9; --ink:#1B2733; --muted:#5E6B78; --rule:#D3DAD8;
+  --edge:#9AA7B2; --clean:#C3CCD3; --focus:#1B2733;
+  --CD:#D55E00; --UD:#0072B2; --AI:#CC79A7; --GC:#009E73; --FC:#E69F00; --SF:#56B4E9;
+  --s0:#C3CCD3; --s1:#F2C27B; --s2:#E58A3C; --s3:#C4462A; --s4:#8E1F2A;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+  --bg:#141B21; --panel:#1B242C; --ink:#E4EAEE; --muted:#93A1AD; --rule:#2C3842;
+  --edge:#4E5E6B; --clean:#3E4B56; --focus:#E4EAEE; --s0:#3E4B56;
+}}
+:root[data-theme="dark"]{
+  --bg:#141B21; --panel:#1B242C; --ink:#E4EAEE; --muted:#93A1AD; --rule:#2C3842;
+  --edge:#4E5E6B; --clean:#3E4B56; --focus:#E4EAEE; --s0:#3E4B56;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{height:100%; scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0; height:100%; background:var(--bg); color:var(--ink);
+  font:14px/1.5 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+.app{display:grid; grid-template-columns:320px 1fr; height:100%}
+aside{background:var(--panel); border-right:1px solid var(--rule); overflow-y:auto; padding:20px 20px 28px}
+h1{font:500 22px/1.2 "IBM Plex Sans Condensed","IBM Plex Sans",sans-serif; margin:0 0 4px; word-break:break-word}
+.sub{color:var(--muted); margin:0 0 18px}
+.stats{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-bottom:18px}
+.stat b{display:block; font-size:20px; font-weight:600}
+.stat span{color:var(--muted); font-size:12px}
+section{border-top:1px solid var(--rule); padding-top:14px; margin-top:14px}
+h2{font-size:13px; font-weight:600; margin:0 0 8px}
+label.ctl{display:block; color:var(--muted); font-size:12px; margin:8px 0 4px}
+select,input[type=search]{width:100%; font:inherit; color:var(--ink); background:var(--bg);
+  border:1px solid var(--rule); border-radius:6px; padding:6px 8px}
+select:focus-visible,input:focus-visible,button:focus-visible{outline:2px solid var(--focus); outline-offset:2px}
+.check{display:flex; gap:8px; align-items:center; margin-top:10px; color:var(--muted); font-size:13px}
+.legend{display:flex; flex-wrap:wrap; gap:6px 12px; margin-top:10px; font-size:12px}
+.dot{display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:7px; vertical-align:-1px}
+.legend i{display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:5px; vertical-align:-1px}
+table{width:100%; border-collapse:collapse; font-size:13px}
+td{padding:3px 0; border-bottom:1px solid var(--rule)}
+td:last-child{text-align:right; font-variant-numeric:tabular-nums}
+.chips{display:flex; flex-wrap:wrap; gap:6px; margin:8px 0}
+.chip{font-size:12px; padding:2px 8px; border-radius:10px; color:#fff}
+.chip.none{background:var(--clean); color:var(--ink)}
+.detail-name{font-weight:600; word-break:break-all; margin-bottom:4px}
+.note{color:var(--muted); font-size:12px}
+ol.rank{margin:0; padding-left:20px; font-size:13px}
+ol.rank li{margin:2px 0}
+ol.rank button{all:unset; cursor:pointer; word-break:break-all}
+ol.rank button:hover{text-decoration:underline}
+ol.rank .v{color:var(--muted); font-variant-numeric:tabular-nums}
+main{position:relative; overflow:hidden}
+svg{width:100%; height:100%; display:block; cursor:grab}
+.link{stroke:var(--edge); stroke-opacity:.55; fill:none}
+.node circle{stroke:var(--panel); stroke-width:1.5}
+.node.nomask circle{stroke-dasharray:3 2; stroke:var(--muted)}
+.node text{font-size:11px; fill:var(--ink); pointer-events:none; paint-order:stroke;
+  stroke:var(--bg); stroke-width:3px}
+.dim{opacity:.12}
+.node.sel circle{stroke:var(--focus); stroke-width:3}
+#tip{position:absolute; pointer-events:none; background:var(--panel); border:1px solid var(--rule);
+  border-radius:6px; padding:6px 9px; font-size:12px; max-width:320px; display:none; word-break:break-all}
+.hint{position:absolute; right:14px; bottom:12px; color:var(--muted); font-size:12px}
+@media (max-width:760px){
+  .app{grid-template-columns:1fr; grid-template-rows:auto 70vh; height:auto}
+  aside{border-right:0; border-bottom:1px solid var(--rule)}
+}
+@media (prefers-reduced-motion:reduce){ *{transition:none!important} }
+</style>
+</head>
+<body>
+<div class="app">
+<aside>
+  <h1 id="title"></h1>
+  <p class="sub">Package-level dependency graph with Designite smell labels</p>
+  <div class="stats">
+    <div class="stat"><b id="nN"></b><span>components</span></div>
+    <div class="stat"><b id="nE"></b><span>dependencies</span></div>
+    <div class="stat"><b id="nS"></b><span>smell-affected components</span></div>
+  </div>
+
+  <label class="ctl" for="colorBy">Colour nodes by</label>
+  <select id="colorBy">
+    <option value="count">Number of smells</option>
+    <option value="CD">Cyclic Dependency</option>
+    <option value="UD">Unstable Dependency</option>
+    <option value="AI">Ambiguous Interface</option>
+    <option value="GC">God Component</option>
+    <option value="FC">Feature Concentration</option>
+    <option value="SF">Scattered Functionality</option>
+    <option value="atdi">ATDI (Arcan)</option>
+  </select>
+  <div class="legend" id="legend"></div>
+
+  <label class="ctl" for="search">Find a component</label>
+  <input id="search" type="search" placeholder="e.g. analyzer" list="names" autocomplete="off">
+  <datalist id="names"></datalist>
+  <label class="check"><input type="checkbox" id="showLabels"> Show all node labels</label>
+
+  <section id="detail">
+    <h2>Selected component</h2>
+    <p class="note">Select a node to inspect its features, labels, and dependencies.</p>
+  </section>
+
+  <section>
+    <h2>Smell distribution</h2>
+    <table id="smellTable"></table>
+    <p class="note" id="ds"></p>
+  </section>
+
+  <section>
+    <h2>Highest ATDI</h2>
+    <ol class="rank" id="rank"></ol>
+  </section>
+</aside>
+<main>
+  <svg id="svg" role="img" aria-label="Dependency graph"></svg>
+  <div id="tip"></div>
+  <div class="hint">Drag to pan, scroll to zoom</div>
+</main>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script>
+const DATA = {"nodes": [{"id": 0, "name": "com.alipay.sofa.jraft", "mask": 1, "atdi": 273.2049501260317, "units": 19, "Ab": 0.5263157894736842, "In": 0.35185185185185186, "D": 0.12183235867446396, "FI": 25.0, "FO": 16.0, "LOC": 627.0, "PR": 0.07916480843749156, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 1, "name": "com.alipay.sofa.jraft.closure", "mask": 1, "atdi": 52.59742580783204, "units": 10, "Ab": 0.7, "In": 0.4117647058823529, "D": 0.11176470588235299, "FI": 9.0, "FO": 5.0, "LOC": 187.0, "PR": 0.04050885235098075, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 2, "name": "com.alipay.sofa.jraft.conf", "mask": 1, "atdi": 42.835632022855606, "units": 3, "Ab": 0.0, "In": 0.12121212121212122, "D": 0.8787878787878788, "FI": 10.0, "FO": 2.0, "LOC": 162.0, "PR": 0.018847988957284935, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 3, "name": "com.alipay.sofa.jraft.core", "mask": 1, "atdi": 297.95888908028314, "units": 19, "Ab": 0.10526315789473684, "In": 0.8206896551724138, "D": 0.0740471869328494, "FI": 11.0, "FO": 20.0, "LOC": 3906.0, "PR": 0.0328456993668555, "CD": 1, "UD": 0, "AI": 0, "GC": 1, "FC": 1, "SF": 0}, {"id": 4, "name": "com.alipay.sofa.jraft.entity", "mask": 1, "atdi": 236.23760460751146, "units": 15, "Ab": 0.06666666666666667, "In": 0.18446601941747573, "D": 0.7488673139158576, "FI": 21.0, "FO": 7.0, "LOC": 3460.0, "PR": 0.05504233606874547, "CD": 1, "UD": 1, "AI": 0, "GC": 1, "FC": 1, "SF": 0}, {"id": 5, "name": "com.alipay.sofa.jraft.entity.codec", "mask": 1, "atdi": 39.7422834053496, "units": 5, "Ab": 0.6, "In": 0.25, "D": 0.15000000000000002, "FI": 6.0, "FO": 4.0, "LOC": 34.0, "PR": 0.014959956351346067, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 6, "name": "com.alipay.sofa.jraft.entity.codec.v1", "mask": 1, "atdi": 16.585445997350377, "units": 3, "Ab": 0.0, "In": 0.8333333333333334, "D": 0.16666666666666663, "FI": 2.0, "FO": 3.0, "LOC": 124.0, "PR": 0.012548383589745544, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 7, "name": "com.alipay.sofa.jraft.entity.codec.v2", "mask": 1, "atdi": 31.70433643482802, "units": 4, "Ab": 0.0, "In": 0.8125, "D": 0.1875, "FI": 3.0, "FO": 6.0, "LOC": 702.0, "PR": 0.008761910268878207, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 8, "name": "com.alipay.sofa.jraft.error", "mask": 1, "atdi": 95.15804394953132, "units": 12, "Ab": 0.0, "In": 0.03508771929824561, "D": 0.9649122807017544, "FI": 19.0, "FO": 2.0, "LOC": 137.0, "PR": 0.046478650054772856, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 9, "name": "com.alipay.sofa.jraft.option", "mask": 1, "atdi": 124.35049760489133, "units": 18, "Ab": 0.0, "In": 0.358695652173913, "D": 0.6413043478260869, "FI": 17.0, "FO": 11.0, "LOC": 624.0, "PR": 0.019422511386885454, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 10, "name": "com.alipay.sofa.jraft.rhea", "mask": 1, "atdi": 313.24563281972064, "units": 25, "Ab": 0.24, "In": 0.9080459770114943, "D": 0.14804597701149413, "FI": 5.0, "FO": 26.0, "LOC": 1869.0, "PR": 0.00420816944359817, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 11, "name": "com.alipay.sofa.jraft.rhea.client", "mask": 1, "atdi": 106.82562689361582, "units": 14, "Ab": 0.35714285714285715, "In": 0.8983050847457628, "D": 0.25544794188861997, "FI": 4.0, "FO": 27.0, "LOC": 1632.0, "PR": 0.004278185280786643, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 12, "name": "com.alipay.sofa.jraft.rhea.client.failover", "mask": 1, "atdi": 26.080712475459585, "units": 4, "Ab": 1.0, "In": 0.23076923076923078, "D": 0.23076923076923084, "FI": 3.0, "FO": 3.0, "LOC": 18.0, "PR": 0.003331395883696195, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 13, "name": "com.alipay.sofa.jraft.rhea.client.failover.impl", "mask": 1, "atdi": 31.476334105339113, "units": 4, "Ab": 0.0, "In": 0.875, "D": 0.125, "FI": 2.0, "FO": 6.0, "LOC": 134.0, "PR": 0.0029180103616737547, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 14, "name": "com.alipay.sofa.jraft.rhea.client.pd", "mask": 1, "atdi": 106.07932760391333, "units": 10, "Ab": 0.3, "In": 0.9302325581395349, "D": 0.2302325581395348, "FI": 2.0, "FO": 26.0, "LOC": 801.0, "PR": 0.002958854246861076, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 15, "name": "com.alipay.sofa.jraft.rhea.cmd.pd", "mask": 1, "atdi": 32.61122289724199, "units": 16, "Ab": 0.125, "In": 0.36, "D": 0.515, "FI": 4.0, "FO": 4.0, "LOC": 117.0, "PR": 0.0038444472420678614, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 16, "name": "com.alipay.sofa.jraft.rhea.cmd.store", "mask": 1, "atdi": 304.46242233363114, "units": 43, "Ab": 0.023255813953488372, "In": 0.5, "D": 0.4767441860465116, "FI": 3.0, "FO": 6.0, "LOC": 347.0, "PR": 0.010302519265532932, "CD": 1, "UD": 1, "AI": 0, "GC": 1, "FC": 0, "SF": 0}, {"id": 17, "name": "com.alipay.sofa.jraft.rhea.errors", "mask": 1, "atdi": 53.721117049713236, "units": 33, "Ab": 0.06060606060606061, "In": 0.047619047619047616, "D": 0.8917748917748918, "FI": 10.0, "FO": 1.0, "LOC": 227.0, "PR": 0.014666486202137011, "CD": 1, "UD": 1, "AI": 0, "GC": 1, "FC": 1, "SF": 0}, {"id": 18, "name": "com.alipay.sofa.jraft.rhea.metadata", "mask": 1, "atdi": 48.38618914835776, "units": 12, "Ab": 0.0, "In": 0.08163265306122448, "D": 0.9183673469387755, "FI": 9.0, "FO": 2.0, "LOC": 342.0, "PR": 0.013966020445796135, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 19, "name": "com.alipay.sofa.jraft.rhea.metrics", "mask": 1, "atdi": 21.56319492854252, "units": 2, "Ab": 0.0, "In": 0.2, "D": 0.8, "FI": 4.0, "FO": 2.0, "LOC": 32.0, "PR": 0.003422200262609656, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 20, "name": "com.alipay.sofa.jraft.rhea.options", "mask": 1, "atdi": 47.73595562381285, "units": 11, "Ab": 0.0, "In": 0.21951219512195122, "D": 0.7804878048780488, "FI": 6.0, "FO": 4.0, "LOC": 337.0, "PR": 0.004744188469589334, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 21, "name": "com.alipay.sofa.jraft.rhea.options.configured", "mask": 1, "atdi": 21.07247041005035, "units": 11, "Ab": 0.0, "In": 0.9047619047619048, "D": 0.09523809523809523, "FI": 2.0, "FO": 5.0, "LOC": 266.0, "PR": 0.0037914770758535384, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 22, "name": "com.alipay.sofa.jraft.rhea.pipeline.event", "mask": 1, "atdi": 20.90705836593915, "units": 4, "Ab": 0.25, "In": 0.4, "D": 0.35, "FI": 2.0, "FO": 4.0, "LOC": 27.0, "PR": 0.0030908979133133724, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 23, "name": "com.alipay.sofa.jraft.rhea.pipeline.handler", "mask": 1, "atdi": 36.644256385028314, "units": 8, "Ab": 0.0, "In": 0.9615384615384616, "D": 0.038461538461538436, "FI": 1.0, "FO": 9.0, "LOC": 245.0, "PR": 0.002824170195691278, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 24, "name": "com.alipay.sofa.jraft.rhea.rocks.support", "mask": 1, "atdi": 15.504942296437395, "units": 2, "Ab": 0.0, "In": 0.75, "D": 0.25, "FI": 2.0, "FO": 4.0, "LOC": 78.0, "PR": 0.003149940336152161, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 25, "name": "com.alipay.sofa.jraft.rhea.rpc", "mask": 1, "atdi": 22.83565901290661, "units": 2, "Ab": 0.0, "In": 0.4444444444444444, "D": 0.5555555555555556, "FI": 3.0, "FO": 3.0, "LOC": 30.0, "PR": 0.003055586236961451, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 26, "name": "com.alipay.sofa.jraft.rhea.serialization", "mask": 1, "atdi": 44.91853707748251, "units": 2, "Ab": 0.5, "In": 0.23076923076923078, "D": 0.26923076923076916, "FI": 6.0, "FO": 3.0, "LOC": 24.0, "PR": 0.008270945921610815, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 27, "name": "com.alipay.sofa.jraft.rhea.serialization.impl.protostuff", "mask": 1, "atdi": 40.11838955746108, "units": 1, "Ab": 0.0, "In": 0.8888888888888888, "D": 0.11111111111111116, "FI": 1.0, "FO": 5.0, "LOC": 65.0, "PR": 0.005030086631248973, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 28, "name": "com.alipay.sofa.jraft.rhea.serialization.impl.protostuff.io", "mask": 1, "atdi": 29.20843282281517, "units": 6, "Ab": 0.0, "In": 0.8888888888888888, "D": 0.11111111111111116, "FI": 1.0, "FO": 5.0, "LOC": 413.0, "PR": 0.0035417274407880447, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 29, "name": "com.alipay.sofa.jraft.rhea.serialization.io", "mask": 1, "atdi": 16.209891002721665, "units": 3, "Ab": 0.6666666666666666, "In": 0.375, "D": 0.04166666666666652, "FI": 3.0, "FO": 2.0, "LOC": 29.0, "PR": 0.0064873198818005415, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 30, "name": "com.alipay.sofa.jraft.rhea.storage", "mask": 1, "atdi": 362.6430491878693, "units": 31, "Ab": 0.3225806451612903, "In": 0.6835443037974683, "D": 0.0061249489587587025, "FI": 9.0, "FO": 19.0, "LOC": 2720.0, "PR": 0.008194605949193657, "CD": 1, "UD": 1, "AI": 0, "GC": 1, "FC": 1, "SF": 0}, {"id": 31, "name": "com.alipay.sofa.jraft.rhea.storage.zip", "mask": 1, "atdi": 21.08835979943076, "units": 4, "Ab": 0.25, "In": 0.8333333333333334, "D": 0.08333333333333348, "FI": 2.0, "FO": 4.0, "LOC": 138.0, "PR": 0.003187892397221586, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 32, "name": "com.alipay.sofa.jraft.rhea.util", "mask": 1, "atdi": 304.0970987294206, "units": 21, "Ab": 0.19047619047619047, "In": 0.14772727272727273, "D": 0.6617965367965368, "FI": 23.0, "FO": 5.0, "LOC": 778.0, "PR": 0.04319469284320167, "CD": 1, "UD": 1, "AI": 0, "GC": 1, "FC": 1, "SF": 0}, {"id": 33, "name": "com.alipay.sofa.jraft.rhea.util.concurrent", "mask": 1, "atdi": 37.45727073544925, "units": 10, "Ab": 0.3, "In": 0.25, "D": 0.44999999999999996, "FI": 7.0, "FO": 3.0, "LOC": 271.0, "PR": 0.006228663877545925, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 34, "name": "com.alipay.sofa.jraft.rhea.util.concurrent.collection", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 1.0, "LOC": 22.0, "PR": 0.0026865943204035818, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 35, "name": "com.alipay.sofa.jraft.rhea.util.concurrent.disruptor", "mask": 1, "atdi": 5.435203816206998, "units": 6, "Ab": 0.16666666666666666, "In": 0.75, "D": 0.08333333333333337, "FI": 1.0, "FO": 2.0, "LOC": 109.0, "PR": 0.0028212783715733806, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 36, "name": "com.alipay.sofa.jraft.rhea.util.pipeline", "mask": 1, "atdi": 16.994111346268987, "units": 16, "Ab": 0.6875, "In": 0.47058823529411764, "D": 0.15808823529411775, "FI": 3.0, "FO": 4.0, "LOC": 559.0, "PR": 0.0038521006271175023, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 37, "name": "com.alipay.sofa.jraft.rhea.util.pipeline.event", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 1.0, "In": 0.0, "D": 0.0, "FI": 3.0, "FO": 0.0, "LOC": 25.0, "PR": 0.00442871306260729, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 38, "name": "com.alipay.sofa.jraft.rhea.util.pipeline.future", "mask": 1, "atdi": 11.088762283365693, "units": 2, "Ab": 0.5, "In": 0.25, "D": 0.25, "FI": 2.0, "FO": 1.0, "LOC": 41.0, "PR": 0.0036427438816187766, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 39, "name": "com.alipay.sofa.jraft.rpc", "mask": 1, "atdi": 782.3664162560597, "units": 23, "Ab": 0.6521739130434783, "In": 0.3523809523809524, "D": 0.004554865424430732, "FI": 17.0, "FO": 12.0, "LOC": 12295.0, "PR": 0.04478809537195881, "CD": 1, "UD": 1, "AI": 0, "GC": 1, "FC": 0, "SF": 0}, {"id": 40, "name": "com.alipay.sofa.jraft.rpc.impl", "mask": 1, "atdi": 55.556761465359564, "units": 17, "Ab": 0.17647058823529413, "In": 0.7647058823529411, "D": 0.05882352941176472, "FI": 6.0, "FO": 10.0, "LOC": 848.0, "PR": 0.008583523652207749, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 41, "name": "com.alipay.sofa.jraft.rpc.impl.cli", "mask": 1, "atdi": 42.507001599984775, "units": 13, "Ab": 0.07692307692307693, "In": 0.9047619047619048, "D": 0.01831501831501825, "FI": 2.0, "FO": 8.0, "LOC": 442.0, "PR": 0.007255172383650438, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 42, "name": "com.alipay.sofa.jraft.rpc.impl.core", "mask": 1, "atdi": 52.193903812263265, "units": 9, "Ab": 0.1111111111111111, "In": 0.9210526315789473, "D": 0.032163742690058506, "FI": 3.0, "FO": 9.0, "LOC": 414.0, "PR": 0.007984721582208879, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 43, "name": "com.alipay.sofa.jraft.storage", "mask": 1, "atdi": 96.52442871445918, "units": 8, "Ab": 0.875, "In": 0.5272727272727272, "D": 0.40227272727272734, "FI": 9.0, "FO": 13.0, "LOC": 161.0, "PR": 0.01317819782960417, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 44, "name": "com.alipay.sofa.jraft.storage.impl", "mask": 1, "atdi": 52.80735969778296, "units": 4, "Ab": 0.0, "In": 0.8958333333333334, "D": 0.10416666666666663, "FI": 2.0, "FO": 10.0, "LOC": 1252.0, "PR": 0.004408656452714191, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 45, "name": "com.alipay.sofa.jraft.storage.io", "mask": 1, "atdi": 31.729176592448248, "units": 3, "Ab": 0.3333333333333333, "In": 0.45454545454545453, "D": 0.21212121212121215, "FI": 5.0, "FO": 3.0, "LOC": 92.0, "PR": 0.007881877752685836, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 46, "name": "com.alipay.sofa.jraft.storage.log", "mask": 1, "atdi": 0.0, "units": 5, "Ab": 0.2, "In": 1.0, "D": 0.19999999999999996, "FI": 0.0, "FO": 7.0, "LOC": 926.0, "PR": 0.0026865943204035818, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 47, "name": "com.alipay.sofa.jraft.storage.snapshot", "mask": 1, "atdi": 106.40954692360049, "units": 6, "Ab": 0.6666666666666666, "In": 0.6170212765957447, "D": 0.2836879432624113, "FI": 7.0, "FO": 11.0, "LOC": 452.0, "PR": 0.017197526373757717, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 48, "name": "com.alipay.sofa.jraft.storage.snapshot.local", "mask": 1, "atdi": 85.93751802094225, "units": 7, "Ab": 0.0, "In": 0.9375, "D": 0.0625, "FI": 2.0, "FO": 10.0, "LOC": 601.0, "PR": 0.005411202519084988, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 49, "name": "com.alipay.sofa.jraft.storage.snapshot.remote", "mask": 1, "atdi": 43.006848494022485, "units": 3, "Ab": 0.3333333333333333, "In": 0.95, "D": 0.2833333333333332, "FI": 1.0, "FO": 8.0, "LOC": 231.0, "PR": 0.0031465469211580965, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 50, "name": "com.alipay.sofa.jraft.util", "mask": 1, "atdi": 159.77704531655377, "units": 54, "Ab": 0.16666666666666666, "In": 0.05581395348837209, "D": 0.7775193798449612, "FI": 45.0, "FO": 6.0, "LOC": 2206.0, "PR": 0.1292445588461107, "CD": 1, "UD": 1, "AI": 0, "GC": 1, "FC": 1, "SF": 0}, {"id": 51, "name": "com.alipay.sofa.jraft.util.concurrent", "mask": 1, "atdi": 26.134868473165376, "units": 14, "Ab": 0.42857142857142855, "In": 0.5, "D": 0.0714285714285714, "FI": 6.0, "FO": 1.0, "LOC": 402.0, "PR": 0.029216709865308367, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 52, "name": "com.alipay.sofa.jraft.util.internal", "mask": 1, "atdi": 0.0, "units": 8, "Ab": 0.375, "In": 0.0, "D": 0.625, "FI": 15.0, "FO": 0.0, "LOC": 59.0, "PR": 0.024277294327421383, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 53, "name": "com.alipay.sofa.jraft.util.timer", "mask": 1, "atdi": 20.909464295471597, "units": 7, "Ab": 0.5714285714285714, "In": 0.6428571428571429, "D": 0.2142857142857144, "FI": 5.0, "FO": 2.0, "LOC": 416.0, "PR": 0.03357900857942973, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 54, "name": "com.google.protobuf", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 5.0, "FO": 0.0, "LOC": 40.0, "PR": 0.006971449776329742, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 55, "name": "io.grpc.internal", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.6666666666666666, "D": 0.33333333333333337, "FI": 1.0, "FO": 1.0, "LOC": 17.0, "PR": 0.003416143518962023, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 56, "name": "io.grpc.netty.shaded.io.grpc.netty", "mask": 1, "atdi": 13.138384482164332, "units": 2, "Ab": 0.0, "In": 0.8, "D": 0.19999999999999996, "FI": 1.0, "FO": 3.0, "LOC": 86.0, "PR": 0.003416143518962023, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}], "edges": [{"source": 0, "target": 1, "w": 5.0}, {"source": 0, "target": 2, "w": 6.0}, {"source": 0, "target": 3, "w": 7.0}, {"source": 0, "target": 4, "w": 15.0}, {"source": 0, "target": 5, "w": 1.0}, {"source": 0, "target": 8, "w": 5.0}, {"source": 0, "target": 9, "w": 15.0}, {"source": 0, "target": 39, "w": 8.0}, {"source": 0, "target": 43, "w": 3.0}, {"source": 0, "target": 47, "w": 2.0}, {"source": 0, "target": 50, "w": 26.0}, {"source": 0, "target": 51, "w": 1.0}, {"source": 0, "target": 53, "w": 1.0}, {"source": 1, "target": 0, "w": 16.0}, {"source": 1, "target": 8, "w": 2.0}, {"source": 1, "target": 47, "w": 2.0}, {"source": 1, "target": 50, "w": 5.0}, {"source": 1, "target": 53, "w": 4.0}, {"source": 2, "target": 4, "w": 4.0}, {"source": 2, "target": 50, "w": 3.0}, {"source": 3, "target": 0, "w": 35.0}, {"source": 3, "target": 1, "w": 15.0}, {"source": 3, "target": 2, "w": 9.0}, {"source": 3, "target": 4, "w": 34.0}, {"source": 3, "target": 5, "w": 1.0}, {"source": 3, "target": 7, "w": 1.0}, {"source": 3, "target": 8, "w": 19.0}, {"source": 3, "target": 9, "w": 29.0}, {"source": 3, "target": 39, "w": 24.0}, {"source": 3, "target": 41, "w": 1.0}, {"source": 3, "target": 42, "w": 1.0}, {"source": 3, "target": 43, "w": 12.0}, {"source": 3, "target": 44, "w": 4.0}, {"source": 3, "target": 47, "w": 7.0}, {"source": 3, "target": 48, "w": 1.0}, {"source": 3, "target": 50, "w": 63.0}, {"source": 3, "target": 51, "w": 1.0}, {"source": 3, "target": 52, "w": 1.0}, {"source": 3, "target": 53, "w": 2.0}, {"source": 3, "target": 54, "w": 2.0}, {"source": 4, "target": 0, "w": 2.0}, {"source": 4, "target": 1, "w": 2.0}, {"source": 4, "target": 2, "w": 1.0}, {"source": 4, "target": 3, "w": 1.0}, {"source": 4, "target": 6, "w": 3.0}, {"source": 4, "target": 39, "w": 1.0}, {"source": 4, "target": 50, "w": 12.0}, {"source": 5, "target": 4, "w": 4.0}, {"source": 5, "target": 6, "w": 1.0}, {"source": 5, "target": 7, "w": 2.0}, {"source": 6, "target": 4, "w": 8.0}, {"source": 6, "target": 5, "w": 5.0}, {"source": 6, "target": 50, "w": 5.0}, {"source": 7, "target": 0, "w": 1.0}, {"source": 7, "target": 4, "w": 6.0}, {"source": 7, "target": 5, "w": 6.0}, {"source": 7, "target": 8, "w": 1.0}, {"source": 7, "target": 50, "w": 3.0}, {"source": 7, "target": 54, "w": 2.0}, {"source": 8, "target": 0, "w": 1.0}, {"source": 8, "target": 4, "w": 1.0}, {"source": 9, "target": 0, "w": 10.0}, {"source": 9, "target": 1, "w": 2.0}, {"source": 9, "target": 2, "w": 4.0}, {"source": 9, "target": 3, "w": 15.0}, {"source": 9, "target": 4, "w": 4.0}, {"source": 9, "target": 5, "w": 2.0}, {"source": 9, "target": 7, "w": 1.0}, {"source": 9, "target": 39, "w": 4.0}, {"source": 9, "target": 43, "w": 9.0}, {"source": 9, "target": 50, "w": 9.0}, {"source": 9, "target": 51, "w": 1.0}, {"source": 10, "target": 0, "w": 13.0}, {"source": 10, "target": 2, "w": 3.0}, {"source": 10, "target": 4, "w": 8.0}, {"source": 10, "target": 8, "w": 1.0}, {"source": 10, "target": 9, "w": 3.0}, {"source": 10, "target": 11, "w": 6.0}, {"source": 10, "target": 14, "w": 4.0}, {"source": 10, "target": 15, "w": 41.0}, {"source": 10, "target": 16, "w": 107.0}, {"source": 10, "target": 17, "w": 8.0}, {"source": 10, "target": 18, "w": 22.0}, {"source": 10, "target": 19, "w": 2.0}, {"source": 10, "target": 20, "w": 13.0}, {"source": 10, "target": 22, "w": 2.0}, {"source": 10, "target": 23, "w": 2.0}, {"source": 10, "target": 25, "w": 1.0}, {"source": 10, "target": 26, "w": 3.0}, {"source": 10, "target": 30, "w": 20.0}, {"source": 10, "target": 32, "w": 25.0}, {"source": 10, "target": 33, "w": 7.0}, {"source": 10, "target": 36, "w": 5.0}, {"source": 10, "target": 38, "w": 1.0}, {"source": 10, "target": 39, "w": 12.0}, {"source": 10, "target": 43, "w": 7.0}, {"source": 10, "target": 50, "w": 44.0}, {"source": 10, "target": 52, "w": 1.0}, {"source": 11, "target": 0, "w": 12.0}, {"source": 11, "target": 2, "w": 2.0}, {"source": 11, "target": 3, "w": 1.0}, {"source": 11, "target": 4, "w": 2.0}, {"source": 11, "target": 8, "w": 1.0}, {"source": 11, "target": 9, "w": 2.0}, {"source": 11, "target": 10, "w": 11.0}, {"source": 11, "target": 12, "w": 6.0}, {"source": 11, "target": 13, "w": 4.0}, {"source": 11, "target": 14, "w": 7.0}, {"source": 11, "target": 16, "w": 24.0}, {"source": 11, "target": 17, "w": 10.0}, {"source": 11, "target": 18, "w": 3.0}, {"source": 11, "target": 19, "w": 2.0}, {"source": 11, "target": 20, "w": 9.0}, {"source": 11, "target": 25, "w": 2.0}, {"source": 11, "target": 30, "w": 14.0}, {"source": 11, "target": 31, "w": 1.0}, {"source": 11, "target": 32, "w": 17.0}, {"source": 11, "target": 33, "w": 7.0}, {"source": 11, "target": 35, "w": 3.0}, {"source": 11, "target": 39, "w": 8.0}, {"source": 11, "target": 40, "w": 2.0}, {"source": 11, "target": 50, "w": 19.0}, {"source": 11, "target": 52, "w": 2.0}, {"source": 12, "target": 11, "w": 2.0}, {"source": 12, "target": 17, "w": 2.0}, {"source": 12, "target": 30, "w": 1.0}, {"source": 13, "target": 0, "w": 1.0}, {"source": 13, "target": 11, "w": 3.0}, {"source": 13, "target": 12, "w": 5.0}, {"source": 13, "target": 17, "w": 5.0}, {"source": 13, "target": 30, "w": 1.0}, {"source": 13, "target": 32, "w": 8.0}, {"source": 14, "target": 0, "w": 14.0}, {"source": 14, "target": 2, "w": 1.0}, {"source": 14, "target": 3, "w": 1.0}, {"source": 14, "target": 4, "w": 2.0}, {"source": 14, "target": 8, "w": 1.0}, {"source": 14, "target": 9, "w": 1.0}, {"source": 14, "target": 10, "w": 5.0}, {"source": 14, "target": 11, "w": 4.0}, {"source": 14, "target": 12, "w": 4.0}, {"source": 14, "target": 13, "w": 1.0}, {"source": 14, "target": 15, "w": 12.0}, {"source": 14, "target": 17, "w": 7.0}, {"source": 14, "target": 18, "w": 25.0}, {"source": 14, "target": 19, "w": 2.0}, {"source": 14, "target": 20, "w": 16.0}, {"source": 14, "target": 21, "w": 1.0}, {"source": 14, "target": 24, "w": 1.0}, {"source": 14, "target": 25, "w": 2.0}, {"source": 14, "target": 30, "w": 10.0}, {"source": 14, "target": 32, "w": 9.0}, {"source": 14, "target": 33, "w": 4.0}, {"source": 14, "target": 39, "w": 8.0}, {"source": 14, "target": 40, "w": 3.0}, {"source": 14, "target": 50, "w": 14.0}, {"source": 14, "target": 52, "w": 1.0}, {"source": 14, "target": 53, "w": 3.0}, {"source": 15, "target": 17, "w": 1.0}, {"source": 15, "target": 18, "w": 8.0}, {"source": 15, "target": 32, "w": 1.0}, {"source": 15, "target": 50, "w": 3.0}, {"source": 16, "target": 17, "w": 1.0}, {"source": 16, "target": 18, "w": 2.0}, {"source": 16, "target": 30, "w": 5.0}, {"source": 16, "target": 32, "w": 1.0}, {"source": 16, "target": 33, "w": 2.0}, {"source": 16, "target": 50, "w": 14.0}, {"source": 17, "target": 32, "w": 2.0}, {"source": 18, "target": 32, "w": 3.0}, {"source": 18, "target": 50, "w": 11.0}, {"source": 19, "target": 32, "w": 1.0}, {"source": 19, "target": 50, "w": 1.0}, {"source": 20, "target": 9, "w": 3.0}, {"source": 20, "target": 21, "w": 2.0}, {"source": 20, "target": 30, "w": 1.0}, {"source": 20, "target": 50, "w": 8.0}, {"source": 21, "target": 9, "w": 3.0}, {"source": 21, "target": 20, "w": 22.0}, {"source": 21, "target": 30, "w": 1.0}, {"source": 21, "target": 32, "w": 15.0}, {"source": 21, "target": 50, "w": 3.0}, {"source": 22, "target": 10, "w": 3.0}, {"source": 22, "target": 15, "w": 2.0}, {"source": 22, "target": 18, "w": 2.0}, {"source": 22, "target": 37, "w": 2.0}, {"source": 23, "target": 10, "w": 8.0}, {"source": 23, "target": 15, "w": 8.0}, {"source": 23, "target": 17, "w": 2.0}, {"source": 23, "target": 18, "w": 17.0}, {"source": 23, "target": 22, "w": 9.0}, {"source": 23, "target": 32, "w": 6.0}, {"source": 23, "target": 36, "w": 24.0}, {"source": 23, "target": 37, "w": 1.0}, {"source": 23, "target": 50, "w": 7.0}, {"source": 24, "target": 30, "w": 1.0}, {"source": 24, "target": 33, "w": 1.0}, {"source": 24, "target": 50, "w": 1.0}, {"source": 24, "target": 52, "w": 3.0}, {"source": 25, "target": 26, "w": 2.0}, {"source": 25, "target": 32, "w": 1.0}, {"source": 25, "target": 52, "w": 1.0}, {"source": 26, "target": 27, "w": 1.0}, {"source": 26, "target": 29, "w": 2.0}, {"source": 26, "target": 50, "w": 2.0}, {"source": 27, "target": 26, "w": 1.0}, {"source": 27, "target": 28, "w": 3.0}, {"source": 27, "target": 29, "w": 2.0}, {"source": 27, "target": 50, "w": 4.0}, {"source": 27, "target": 52, "w": 1.0}, {"source": 28, "target": 26, "w": 1.0}, {"source": 28, "target": 29, "w": 3.0}, {"source": 28, "target": 32, "w": 1.0}, {"source": 28, "target": 50, "w": 2.0}, {"source": 28, "target": 52, "w": 3.0}, {"source": 29, "target": 26, "w": 1.0}, {"source": 29, "target": 52, "w": 2.0}, {"source": 30, "target": 0, "w": 14.0}, {"source": 30, "target": 1, "w": 1.0}, {"source": 30, "target": 3, "w": 1.0}, {"source": 30, "target": 4, "w": 5.0}, {"source": 30, "target": 8, "w": 6.0}, {"source": 30, "target": 10, "w": 2.0}, {"source": 30, "target": 17, "w": 14.0}, {"source": 30, "target": 18, "w": 7.0}, {"source": 30, "target": 19, "w": 8.0}, {"source": 30, "target": 20, "w": 2.0}, {"source": 30, "target": 24, "w": 1.0}, {"source": 30, "target": 26, "w": 7.0}, {"source": 30, "target": 31, "w": 1.0}, {"source": 30, "target": 32, "w": 25.0}, {"source": 30, "target": 33, "w": 7.0}, {"source": 30, "target": 47, "w": 7.0}, {"source": 30, "target": 50, "w": 23.0}, {"source": 30, "target": 51, "w": 1.0}, {"source": 30, "target": 52, "w": 1.0}, {"source": 31, "target": 20, "w": 1.0}, {"source": 31, "target": 32, "w": 3.0}, {"source": 31, "target": 33, "w": 2.0}, {"source": 31, "target": 50, "w": 4.0}, {"source": 32, "target": 16, "w": 1.0}, {"source": 32, "target": 17, "w": 2.0}, {"source": 32, "target": 18, "w": 2.0}, {"source": 32, "target": 50, "w": 12.0}, {"source": 32, "target": 52, "w": 3.0}, {"source": 33, "target": 32, "w": 3.0}, {"source": 33, "target": 50, "w": 5.0}, {"source": 33, "target": 52, "w": 1.0}, {"source": 34, "target": 32, "w": 1.0}, {"source": 35, "target": 32, "w": 1.0}, {"source": 35, "target": 50, "w": 2.0}, {"source": 36, "target": 32, "w": 5.0}, {"source": 36, "target": 37, "w": 29.0}, {"source": 36, "target": 38, "w": 3.0}, {"source": 36, "target": 50, "w": 1.0}, {"source": 38, "target": 32, "w": 1.0}, {"source": 39, "target": 0, "w": 9.0}, {"source": 39, "target": 1, "w": 2.0}, {"source": 39, "target": 4, "w": 2.0}, {"source": 39, "target": 8, "w": 3.0}, {"source": 39, "target": 9, "w": 3.0}, {"source": 39, "target": 40, "w": 2.0}, {"source": 39, "target": 41, "w": 11.0}, {"source": 39, "target": 42, "w": 6.0}, {"source": 39, "target": 45, "w": 1.0}, {"source": 39, "target": 50, "w": 16.0}, {"source": 40, "target": 0, "w": 4.0}, {"source": 40, "target": 4, "w": 1.0}, {"source": 40, "target": 8, "w": 8.0}, {"source": 40, "target": 9, "w": 3.0}, {"source": 40, "target": 39, "w": 43.0}, {"source": 40, "target": 42, "w": 1.0}, {"source": 40, "target": 50, "w": 31.0}, {"source": 40, "target": 52, "w": 2.0}, {"source": 40, "target": 55, "w": 1.0}, {"source": 40, "target": 56, "w": 1.0}, {"source": 41, "target": 0, "w": 20.0}, {"source": 41, "target": 2, "w": 2.0}, {"source": 41, "target": 4, "w": 11.0}, {"source": 41, "target": 8, "w": 10.0}, {"source": 41, "target": 9, "w": 3.0}, {"source": 41, "target": 39, "w": 31.0}, {"source": 41, "target": 40, "w": 1.0}, {"source": 41, "target": 50, "w": 11.0}, {"source": 42, "target": 0, "w": 10.0}, {"source": 42, "target": 4, "w": 3.0}, {"source": 42, "target": 8, "w": 3.0}, {"source": 42, "target": 9, "w": 3.0}, {"source": 42, "target": 39, "w": 30.0}, {"source": 42, "target": 40, "w": 3.0}, {"source": 42, "target": 43, "w": 1.0}, {"source": 42, "target": 50, "w": 5.0}, {"source": 42, "target": 51, "w": 5.0}, {"source": 43, "target": 0, "w": 7.0}, {"source": 43, "target": 1, "w": 1.0}, {"source": 43, "target": 2, "w": 1.0}, {"source": 43, "target": 3, "w": 1.0}, {"source": 43, "target": 4, "w": 8.0}, {"source": 43, "target": 8, "w": 2.0}, {"source": 43, "target": 9, "w": 5.0}, {"source": 43, "target": 39, "w": 3.0}, {"source": 43, "target": 45, "w": 1.0}, {"source": 43, "target": 47, "w": 3.0}, {"source": 43, "target": 50, "w": 7.0}, {"source": 43, "target": 54, "w": 1.0}, {"source": 44, "target": 0, "w": 3.0}, {"source": 44, "target": 2, "w": 9.0}, {"source": 44, "target": 3, "w": 3.0}, {"source": 44, "target": 4, "w": 16.0}, {"source": 44, "target": 5, "w": 4.0}, {"source": 44, "target": 8, "w": 5.0}, {"source": 44, "target": 9, "w": 9.0}, {"source": 44, "target": 43, "w": 5.0}, {"source": 44, "target": 45, "w": 1.0}, {"source": 44, "target": 50, "w": 27.0}, {"source": 45, "target": 8, "w": 2.0}, {"source": 45, "target": 39, "w": 1.0}, {"source": 45, "target": 50, "w": 4.0}, {"source": 46, "target": 0, "w": 1.0}, {"source": 46, "target": 4, "w": 1.0}, {"source": 46, "target": 9, "w": 1.0}, {"source": 46, "target": 44, "w": 2.0}, {"source": 46, "target": 45, "w": 1.0}, {"source": 46, "target": 50, "w": 16.0}, {"source": 46, "target": 54, "w": 1.0}, {"source": 47, "target": 0, "w": 8.0}, {"source": 47, "target": 1, "w": 3.0}, {"source": 47, "target": 3, "w": 1.0}, {"source": 47, "target": 4, "w": 3.0}, {"source": 47, "target": 8, "w": 2.0}, {"source": 47, "target": 9, "w": 3.0}, {"source": 47, "target": 39, "w": 2.0}, {"source": 47, "target": 43, "w": 4.0}, {"source": 47, "target": 48, "w": 1.0}, {"source": 47, "target": 50, "w": 8.0}, {"source": 48, "target": 0, "w": 2.0}, {"source": 48, "target": 4, "w": 7.0}, {"source": 48, "target": 8, "w": 5.0}, {"source": 48, "target": 9, "w": 7.0}, {"source": 48, "target": 43, "w": 7.0}, {"source": 48, "target": 45, "w": 3.0}, {"source": 48, "target": 47, "w": 13.0}, {"source": 48, "target": 49, "w": 2.0}, {"source": 48, "target": 50, "w": 14.0}, {"source": 48, "target": 54, "w": 1.0}, {"source": 49, "target": 0, "w": 2.0}, {"source": 49, "target": 3, "w": 2.0}, {"source": 49, "target": 8, "w": 1.0}, {"source": 49, "target": 9, "w": 5.0}, {"source": 49, "target": 39, "w": 7.0}, {"source": 49, "target": 43, "w": 2.0}, {"source": 49, "target": 47, "w": 1.0}, {"source": 49, "target": 50, "w": 10.0}, {"source": 50, "target": 0, "w": 4.0}, {"source": 50, "target": 1, "w": 1.0}, {"source": 50, "target": 8, "w": 1.0}, {"source": 50, "target": 39, "w": 2.0}, {"source": 50, "target": 51, "w": 2.0}, {"source": 50, "target": 53, "w": 4.0}, {"source": 51, "target": 50, "w": 10.0}, {"source": 53, "target": 3, "w": 3.0}, {"source": 53, "target": 50, "w": 8.0}, {"source": 55, "target": 52, "w": 2.0}, {"source": 56, "target": 39, "w": 2.0}, {"source": 56, "target": 40, "w": 2.0}, {"source": 56, "target": 52, "w": 2.0}], "meta": {"project": "sofastack__sofa-jraft", "n_nodes": 57, "n_edges": 366, "graph_level_smells": ["Dense Structure"], "dense_structure": 1, "label_counts": {"CD": 41, "UD": 24, "AI": 0, "GC": 8, "FC": 26, "SF": 0}, "matching": {"arcan_nodes": 57, "designite_packages": 57, "matched": 57, "coverage": 1.0, "arcan_only": [], "designite_only": [], "smelly_packages_not_in_graph": []}, "dropped_containers": {"default_package": [], "empty_container": ["io.grpc.netty.shaded", "io.grpc.netty.shaded.io", "io", "io.grpc", "com.alipay.sofa.jraft.rhea.serialization.impl", "com.alipay.sofa.jraft.rhea.cmd", "com.alipay.sofa.jraft.rhea.pipeline", "com.alipay.sofa.jraft.rhea.rocks", "io.grpc.netty", "com.alipay", "com.alipay.sofa", "com", "com.google", "io.grpc.netty.shaded.io.grpc"]}, "unknown_designite_smells": []}};
+const LABELS = ["CD","UD","AI","GC","FC","SF"];
+const NAMES = {CD:"Cyclic Dependency",UD:"Unstable Dependency",AI:"Ambiguous Interface",
+  GC:"God Component",FC:"Feature Concentration",SF:"Scattered Functionality"};
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const nodes = DATA.nodes.map(d => ({...d, nSmell: LABELS.reduce((s,k)=>s+d[k],0),
+  short: d.name.split(".").slice(-1)[0] || d.name}));
+const byId = new Map(nodes.map(d => [d.id, d]));
+const links = DATA.edges.map(e => ({...e}));
+const meta = DATA.meta;
+let current = null;
+
+// ---------- sidebar ----------
+document.getElementById("title").textContent = meta.project;
+document.getElementById("nN").textContent = nodes.length;
+document.getElementById("nE").textContent = links.length;
+document.getElementById("nS").textContent = nodes.filter(d => d.nSmell > 0).length;
+document.getElementById("names").innerHTML = nodes.map(d => `<option value="${d.name}">`).join("");
+document.getElementById("smellTable").innerHTML = LABELS.map(k =>
+  `<tr><td><i class="dot" style="background:var(--${k})"></i>${NAMES[k]}</td>
+   <td>${meta.label_counts[k]} / ${nodes.length}</td></tr>`).join("");
+document.getElementById("ds").textContent = meta.dense_structure
+  ? "Dense Structure detected at project level (not assigned to individual nodes)."
+  : "Dense Structure not detected.";
+const unmasked = nodes.filter(d => !d.mask).length;
+if (unmasked) document.getElementById("ds").textContent +=
+  ` ${unmasked} nodes not analysed by Designite (dashed outline): labels unavailable.`;
+const rank = [...nodes].sort((a,b) => b.atdi - a.atdi).slice(0,10);
+document.getElementById("rank").innerHTML = rank.map(d =>
+  `<li><button data-id="${d.id}">${d.short}</button> <span class="v">${d.atdi.toFixed(1)}</span></li>`).join("");
+document.querySelectorAll("#rank button").forEach(b =>
+  b.addEventListener("click", () => select(byId.get(+b.dataset.id), true)));
+
+// ---------- graph ----------
+const svg = d3.select("#svg"), g = svg.append("g");
+const W = () => svg.node().clientWidth, H = () => svg.node().clientHeight;
+const maxLoc = d3.max(nodes, d => d.LOC) || 1;
+const r = d3.scaleSqrt().domain([0, maxLoc]).range([4, 26]);
+const wScale = d3.scaleLog().domain([1, d3.max(links, d => d.w) || 1]).range([0.6, 3.5]);
+const maxAtdi = d3.max(nodes, d => d.atdi) || 1;
+
+svg.append("defs").append("marker").attr("id","arrow").attr("viewBox","0 -4 8 8")
+  .attr("refX",8).attr("refY",0).attr("markerUnits","userSpaceOnUse").attr("markerWidth",9).attr("markerHeight",9).attr("orient","auto")
+  .append("path").attr("d","M0,-4L8,0L0,4").attr("fill","var(--edge)");
+
+const link = g.append("g").selectAll("path").data(links).join("path")
+  .attr("class","link").attr("stroke-width", d => wScale(Math.max(1,d.w))).attr("marker-end","url(#arrow)");
+const node = g.append("g").selectAll("g").data(nodes).join("g")
+  .attr("class", d => "node" + (d.mask ? "" : " nomask")).attr("tabindex",0)
+  .attr("aria-label", d => d.name);
+node.append("circle").attr("r", d => r(d.LOC));
+node.append("text").attr("dy", d => -r(d.LOC) - 4).attr("text-anchor","middle").text(d => d.short);
+
+const sim = d3.forceSimulation(nodes)
+  .force("link", d3.forceLink(links).id(d => d.id).distance(95).strength(0.2))
+  .force("charge", d3.forceManyBody().strength(-420))
+  .force("collide", d3.forceCollide(d => r(d.LOC) + 6))
+  .force("x", d3.forceX(() => W()/2).strength(0.05))
+  .force("y", d3.forceY(() => H()/2).strength(0.05))
+  .on("tick", ticked).on("end", fit);
+if (matchMedia("(prefers-reduced-motion: reduce)").matches) { sim.stop(); for (let i=0;i<300;i++) sim.tick(); ticked(); setTimeout(fit, 0); }
+let fitted = false;
+function fit(){
+  if (fitted) return; fitted = true;
+  const pad = 40, xs = nodes.map(d => d.x), ys = nodes.map(d => d.y);
+  const x0 = d3.min(xs) - pad, x1 = d3.max(xs) + pad, y0 = d3.min(ys) - pad, y1 = d3.max(ys) + pad;
+  const k = Math.min(2, 0.95 / Math.max((x1 - x0) / W(), (y1 - y0) / H()));
+  svg.transition().duration(600).call(zoom.transform,
+    d3.zoomIdentity.translate(W()/2, H()/2).scale(k).translate(-(x0 + x1)/2, -(y0 + y1)/2));
+}
+
+function ticked(){
+  link.attr("d", d => {
+    const dx = d.target.x - d.source.x, dy = d.target.y - d.source.y, L = Math.hypot(dx,dy) || 1;
+    const rt = r(d.target.LOC) + 3, rs = r(d.source.LOC);
+    return `M${d.source.x + dx*rs/L},${d.source.y + dy*rs/L}L${d.target.x - dx*rt/L},${d.target.y - dy*rt/L}`;
+  });
+  node.attr("transform", d => `translate(${d.x},${d.y})`);
+}
+
+node.call(d3.drag()
+  .on("start", (e,d) => { if(!e.active) sim.alphaTarget(0.3).restart(); d.fx=d.x; d.fy=d.y; })
+  .on("drag", (e,d) => { d.fx=e.x; d.fy=e.y; })
+  .on("end", (e,d) => { if(!e.active) sim.alphaTarget(0); d.fx=null; d.fy=null; }));
+const zoom = d3.zoom().scaleExtent([0.2,6]).on("zoom", e => g.attr("transform", e.transform));
+svg.call(zoom).on("click", e => { if (e.target === svg.node()) select(null); });
+
+// ---------- colour ----------
+function colour(d){
+  const m = document.getElementById("colorBy").value;
+  if (m === "count") return css("--s" + Math.min(d.nSmell, 4));
+  if (m === "atdi") return d3.interpolateLab(css("--s0"), css("--s4"))(Math.sqrt(d.atdi / maxAtdi));
+  return d[m] ? css("--" + m) : css("--clean");
+}
+function legend(){
+  const m = document.getElementById("colorBy").value, el = document.getElementById("legend");
+  if (m === "count") el.innerHTML = [0,1,2,3,4].map(i =>
+    `<span><i style="background:var(--s${i})"></i>${i===4?"4+":i} ${i===1?"smell":"smells"}</span>`).join("");
+  else if (m === "atdi") el.innerHTML = `<span><i style="background:var(--s0)"></i>0</span>
+    <span><i style="background:var(--s4)"></i>${maxAtdi.toFixed(0)}</span>`;
+  else el.innerHTML = `<span><i style="background:var(--${m})"></i>affected</span>
+    <span><i style="background:var(--clean)"></i>not affected</span>`;
+  el.innerHTML += `<span>node size ∝ LOC</span>`;
+}
+function paint(){ node.select("circle").attr("fill", colour); legend(); }
+document.getElementById("colorBy").addEventListener("change", paint);
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", paint);
+paint();
+
+// ---------- labels ----------
+function labelsVisible(){
+  const all = document.getElementById("showLabels").checked;
+  node.select("text").style("display", d => all || r(d.LOC) > 12 || d === current ? null : "none");
+}
+document.getElementById("showLabels").addEventListener("change", labelsVisible);
+
+// ---------- tooltip ----------
+const tip = document.getElementById("tip");
+node.on("mouseenter", (e,d) => {
+  const s = LABELS.filter(k => d[k]).join(", ") || "none";
+  tip.innerHTML = `<b>${d.name}</b><br>LOC ${d.LOC} · FI ${d.FI} · FO ${d.FO}<br>Smells: ${s}`;
+  tip.style.display = "block";
+}).on("mousemove", e => {
+  const b = document.querySelector("main").getBoundingClientRect();
+  tip.style.left = (e.clientX - b.left + 14) + "px"; tip.style.top = (e.clientY - b.top + 14) + "px";
+}).on("mouseleave", () => tip.style.display = "none")
+  .on("click", (e,d) => { e.stopPropagation(); select(d); })
+  .on("keydown", (e,d) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(d); } });
+
+// ---------- selection ----------
+function select(d, center){
+  current = d;
+  node.classed("sel", n => n === d);
+  if (!d){ node.classed("dim", false); link.classed("dim", false); renderDetail(null); labelsVisible(); return; }
+  const out = links.filter(l => l.source === d), inc = links.filter(l => l.target === d);
+  const nb = new Set([d, ...out.map(l => l.target), ...inc.map(l => l.source)]);
+  node.classed("dim", n => !nb.has(n));
+  link.classed("dim", l => l.source !== d && l.target !== d);
+  renderDetail(d, out, inc); labelsVisible();
+  if (center) svg.transition().duration(500).call(zoom.translateTo, d.x, d.y);
+}
+function renderDetail(d, out, inc){
+  const el = document.getElementById("detail");
+  if (!d){ el.innerHTML = `<h2>Selected component</h2><p class="note">Select a node to inspect its features, labels, and dependencies.</p>`; return; }
+  const chips = LABELS.filter(k => d[k]).map(k => `<span class="chip" style="background:var(--${k})">${NAMES[k]}</span>`).join("")
+    || `<span class="chip none">${d.mask ? "No smells" : "Labels unavailable"}</span>`;
+  const f = (v, p=3) => Number.isInteger(v) ? v : v.toFixed(p);
+  const rows = [["Abstractness (Ab)",d.Ab],["Instability (In)",d.In],["Distance (D)",d.D],["Fan-in (FI)",d.FI],
+    ["Fan-out (FO)",d.FO],["Lines of code (LOC)",d.LOC],["PageRank (PR)",d.PR],["ATDI (Arcan)",d.atdi],["Classes",d.units]];
+  el.innerHTML = `<h2>Selected component</h2><div class="detail-name">${d.name}</div>
+    <div class="chips">${chips}</div>
+    <table>${rows.map(([k,v]) => `<tr><td>${k}</td><td>${f(v)}</td></tr>`).join("")}</table>
+    <p class="note">Efferent dependencies: ${out.length}. Afferent dependencies: ${inc.length}.</p>`;
+}
+document.getElementById("search").addEventListener("change", e => {
+  const d = nodes.find(n => n.name === e.target.value) || nodes.find(n => n.name.includes(e.target.value));
+  if (d) select(d, true);
+});
+labelsVisible();
+</script>
+</body>
+</html>
