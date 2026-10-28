@@ -1,0 +1,75 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 224,
+  "source_files_removed": 48,
+  "source_files_after": 176,
+  "removed_share": 0.2143,
+  "removed_by_rule": {
+    "R1_arcan_default": 48
+  },
+  "removed_dirs": [
+    {
+      "path": "unipop-test",
+      "rule": "R1_arcan_default",
+      "source_files": 6
+    },
+    {
+      "path": "unipop-core/test",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    },
+    {
+      "path": "unipop-core/src/org/unipop/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "unipop-elastic/test",
+      "rule": "R1_arcan_default",
+      "source_files": 9
+    },
+    {
+      "path": "unipop-elastic/test-resources",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "unipop-elastic/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "unipop-jdbc/test",
+      "rule": "R1_arcan_default",
+      "source_files": 21
+    },
+    {
+      "path": "unipop-jdbc/test-resources",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "unipop-jdbc/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "unipop-rest/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "unipop-rest/test-resources",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "unipop-rest/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

@@ -1,0 +1,40 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 746,
+  "source_files_removed": 229,
+  "source_files_after": 517,
+  "removed_share": 0.307,
+  "removed_by_rule": {
+    "R1_arcan_default": 229
+  },
+  "removed_dirs": [
+    {
+      "path": "spring-binding/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 19
+    },
+    {
+      "path": "spring-faces/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 34
+    },
+    {
+      "path": "spring-js-resources/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "spring-webflow/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 158
+    },
+    {
+      "path": "spring-webflow/src/main/java/org/springframework/webflow/test",
+      "rule": "R1_arcan_default",
+      "source_files": 18
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

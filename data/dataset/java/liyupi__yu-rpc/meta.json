@@ -1,0 +1,39 @@
+{
+  "project": "liyupi__yu-rpc",
+  "n_nodes": 19,
+  "n_edges": 54,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 4,
+    "UD": 3,
+    "AI": 0,
+    "GC": 0,
+    "FC": 7,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 19,
+    "designite_packages": 18,
+    "matched": 18,
+    "coverage": 0.9474,
+    "arcan_only": [
+      "com.yupi.yurpc.springboot.starter.annotation"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com",
+      "com.yupi",
+      "com.yupi.yurpc.fault",
+      "com.yupi.yurpc.springboot",
+      "com.yupi.yurpc.springboot.starter"
+    ]
+  },
+  "unknown_designite_smells": []
+}

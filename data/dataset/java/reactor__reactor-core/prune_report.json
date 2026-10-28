@@ -1,0 +1,71 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 1004,
+  "source_files_removed": 450,
+  "source_files_after": 554,
+  "removed_share": 0.4482,
+  "removed_by_rule": {
+    "R1_arcan_default": 450
+  },
+  "removed_dirs": [
+    {
+      "path": "reactor-test",
+      "rule": "R1_arcan_default",
+      "source_files": 41
+    },
+    {
+      "path": "buildSrc/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "reactor-core/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 396
+    },
+    {
+      "path": "reactor-core-micrometer/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 9
+    },
+    {
+      "path": "reactor-tools/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "reactor-tools/src/buildPluginTest/resources/mock-gradle/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "reactor-tools/src/buildPluginTest/resources/mock-gradle/src/main/java/demo",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    }
+  ],
+  "residual_test_files": 24,
+  "residual_examples": [
+    "reactor-core/src/blockHoundTest/java/reactor/core/scheduler/BoundedElasticSchedulerBlockhoundTest.java",
+    "reactor-core/src/blockHoundTest/java/reactor/core/scheduler/ReactorBlockHoundIntegrationSPITest.java",
+    "reactor-core/src/blockHoundTest/java/reactor/core/scheduler/ReactorBlockHoundIntegrationTest.java",
+    "reactor-core/src/tckTest/java/reactor/core/publisher/tck/FluxBlackboxProcessorVerification.java",
+    "reactor-core/src/tckTest/java/reactor/core/publisher/tck/FluxGenerateVerification.java",
+    "reactor-core/src/tckTest/java/reactor/core/publisher/tck/FluxSwitchOnFirstVerification.java",
+    "reactor-core/src/withContextPropagation102Test/java/reactor/core/publisher/ContextPropagationTest.java",
+    "reactor-core/src/withMicrometerTest/java/reactor/core/publisher/AutomaticContextPropagationTest.java",
+    "reactor-core/src/withMicrometerTest/java/reactor/core/publisher/ContextPropagationTest.java",
+    "reactor-core/src/withMicrometerTest/java/reactor/core/publisher/ContextPropagationWithScopesTest.java",
+    "reactor-core/src/withMicrometerTest/java/reactor/core/publisher/FluxContextWriteRestoringThreadLocalsTest.java",
+    "reactor-core/src/withMicrometerTest/java/reactor/core/publisher/FluxMetricsFuseableTest.java",
+    "reactor-core/src/withMicrometerTest/java/reactor/core/publisher/FluxMetricsTest.java",
+    "reactor-core/src/withMicrometerTest/java/reactor/core/publisher/FluxRetryWhenTest.java",
+    "reactor-core/src/withMicrometerTest/java/reactor/core/publisher/FluxTapTest.java",
+    "reactor-core/src/withMicrometerTest/java/reactor/core/publisher/MonoContextWriteRestoringThreadLocalsTest.java",
+    "reactor-core/src/withMicrometerTest/java/reactor/core/publisher/MonoMetricsFuseableTest.java",
+    "reactor-core/src/withMicrometerTest/java/reactor/core/publisher/MonoMetricsTest.java",
+    "reactor-core/src/withMicrometerTest/java/reactor/core/scheduler/SchedulersMetricsTest.java",
+    "reactor-core/src/withMicrometerTest/java/reactor/util/MetricsTest.java"
+  ]
+}

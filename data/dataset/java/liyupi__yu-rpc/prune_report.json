@@ -1,0 +1,45 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 96,
+  "source_files_removed": 17,
+  "source_files_after": 79,
+  "removed_share": 0.1771,
+  "removed_by_rule": {
+    "R1_arcan_default": 17
+  },
+  "removed_dirs": [
+    {
+      "path": "example-common",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "example-consumer",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "example-provider",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "example-springboot-consumer",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "example-springboot-provider",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "yu-rpc-core/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

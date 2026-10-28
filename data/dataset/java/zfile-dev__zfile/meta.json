@@ -1,0 +1,69 @@
+{
+  "project": "zfile-dev__zfile",
+  "n_nodes": 154,
+  "n_edges": 627,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 28,
+    "UD": 13,
+    "AI": 0,
+    "GC": 0,
+    "FC": 17,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 154,
+    "designite_packages": 152,
+    "matched": 152,
+    "coverage": 0.987,
+    "arcan_only": [
+      "im.zhaojun.zfile.core.annotation",
+      "im.zhaojun.zfile.module.config.annotation"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "im.zhaojun.zfile.module.config.model",
+      "im.zhaojun.zfile.core",
+      "im.zhaojun.zfile.module",
+      "im.zhaojun.zfile.module.share",
+      "im.zhaojun.zfile.module.share.model",
+      "im.zhaojun.zfile.module.permission.model",
+      "im.zhaojun",
+      "im.zhaojun.zfile.core.model",
+      "im.zhaojun.zfile.module.log.model",
+      "im.zhaojun.zfile.module.log",
+      "im.zhaojun.zfile.module.admin",
+      "im.zhaojun.zfile.module.filter",
+      "im.zhaojun.zfile.module.readme",
+      "im.zhaojun.zfile.module.install",
+      "im.zhaojun.zfile.module.admin.model",
+      "im.zhaojun.zfile.module.config",
+      "im.zhaojun.zfile.module.storage",
+      "im.zhaojun.zfile.module.link",
+      "im.zhaojun.zfile.module.onlyoffice",
+      "im.zhaojun.zfile.module.sso",
+      "im.zhaojun.zfile.module.permission",
+      "im.zhaojun.zfile.module.user",
+      "im.zhaojun.zfile.module.install.model",
+      "im.zhaojun.zfile.module.link.model",
+      "im.zhaojun.zfile.module.filter.model",
+      "im",
+      "im.zhaojun.zfile.module.storage.model",
+      "im.zhaojun.zfile.module.storage.oauth2",
+      "im.zhaojun.zfile.module.storage.controller",
+      "im.zhaojun.zfile.module.sso.model",
+      "im.zhaojun.zfile.module.user.model",
+      "im.zhaojun.zfile.module.password",
+      "im.zhaojun.zfile.module.password.model",
+      "im.zhaojun.zfile.module.readme.model"
+    ]
+  },
+  "unknown_designite_smells": []
+}

@@ -1,0 +1,33 @@
+{
+  "project": "baicaizhale__FancyHelper",
+  "n_nodes": 10,
+  "n_edges": 34,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 7,
+    "UD": 4,
+    "AI": 0,
+    "GC": 1,
+    "FC": 5,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 10,
+    "designite_packages": 10,
+    "matched": 10,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "org"
+    ]
+  },
+  "unknown_designite_smells": []
+}

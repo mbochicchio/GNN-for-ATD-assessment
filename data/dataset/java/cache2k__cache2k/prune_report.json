@@ -1,0 +1,121 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 546,
+  "source_files_removed": 244,
+  "source_files_after": 302,
+  "removed_share": 0.4469,
+  "removed_by_rule": {
+    "R1_arcan_default": 244
+  },
+  "removed_dirs": [
+    {
+      "path": "cache2k-jcache-tests",
+      "rule": "R1_arcan_default",
+      "source_files": 98
+    },
+    {
+      "path": "cache2k-testing",
+      "rule": "R1_arcan_default",
+      "source_files": 7
+    },
+    {
+      "path": "test-android-gradle",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "test-init",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    },
+    {
+      "path": "test-init-java11",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "test-kotlin",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "test-parent",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "cache2k-addon/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    },
+    {
+      "path": "cache2k-config/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 7
+    },
+    {
+      "path": "cache2k-core/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 86
+    },
+    {
+      "path": "cache2k-jcache/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 13
+    },
+    {
+      "path": "cache2k-jmx/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    },
+    {
+      "path": "cache2k-micrometer/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "cache2k-pinpoint/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 9
+    },
+    {
+      "path": "cache2k-schema/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "cache2k-spring/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    },
+    {
+      "path": "cache2k-testsuite/src/main/java/org/cache2k/testsuite/example",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    }
+  ],
+  "residual_test_files": 25,
+  "residual_examples": [
+    "cache2k-testsuite/src/main/java/org/cache2k/testsuite/CacheControlTest.java",
+    "cache2k-testsuite/src/main/java/org/cache2k/testsuite/DefaultExceptionPropagationTest.java",
+    "cache2k-testsuite/src/main/java/org/cache2k/testsuite/LagTimeTest.java",
+    "cache2k-testsuite/src/main/java/org/cache2k/testsuite/api/BulkCacheLoaderTest.java",
+    "cache2k-testsuite/src/main/java/org/cache2k/testsuite/api/Cache2kConfigurationTest.java",
+    "cache2k-testsuite/src/main/java/org/cache2k/testsuite/api/CacheTypeTest.java",
+    "cache2k-testsuite/src/main/java/org/cache2k/testsuite/api/ExpiryApiTest.java",
+    "cache2k-testsuite/src/main/java/org/cache2k/testsuite/api/MapTest.java",
+    "cache2k-testsuite/src/main/java/org/cache2k/testsuite/api/NullnessTest.java",
+    "cache2k-testsuite/src/main/java/org/cache2k/testsuite/eviction/IdleScanPlaybackTest.java",
+    "cache2k-testsuite/src/main/java/org/cache2k/testsuite/eviction/TimeTracePlaybackTest.java",
+    "cache2k-testsuite/src/main/java/org/cache2k/testsuite/expiry/ExpirySetupTest.java",
+    "cache2k-testsuite/src/main/java/org/cache2k/testsuite/expiry/RefreshAheadPlaybackTest.java",
+    "cache2k-testsuite/src/main/java/org/cache2k/testsuite/expiry/RefreshAheadTest.java",
+    "cache2k-testsuite/src/main/java/org/cache2k/testsuite/manager/CacheManagerTest.java",
+    "cache2k-testsuite/src/main/java/org/cache2k/testsuite/regression/Issue171Test.java",
+    "cache2k-testsuite/src/main/java/org/cache2k/testsuite/stress/AsyncBulkLoadingPairwiseStressTest.java",
+    "cache2k-testsuite/src/main/java/org/cache2k/testsuite/stress/AsyncLoaderStressTest.java",
+    "cache2k-testsuite/src/main/java/org/cache2k/testsuite/stress/AtomicOperationsPairwiseStressTest.java",
+    "cache2k-testsuite/src/main/java/org/cache2k/testsuite/stress/ConcurrentMapStressTest.java"
+  ]
+}

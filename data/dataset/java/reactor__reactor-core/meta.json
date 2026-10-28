@@ -1,0 +1,38 @@
+{
+  "project": "reactor__reactor-core",
+  "n_nodes": 21,
+  "n_edges": 53,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 6,
+    "UD": 4,
+    "AI": 0,
+    "GC": 3,
+    "FC": 5,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 21,
+    "designite_packages": 20,
+    "matched": 20,
+    "coverage": 0.9524,
+    "arcan_only": [
+      "reactor.util.annotation"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "org.reactivestreams.tck",
+      "org.reactivestreams",
+      "org",
+      "io",
+      "io.reactor",
+      "io.micrometer"
+    ]
+  },
+  "unknown_designite_smells": []
+}

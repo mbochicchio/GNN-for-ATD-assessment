@@ -1,0 +1,35 @@
+{
+  "project": "mangstadt__ez-vcard",
+  "n_nodes": 13,
+  "n_edges": 58,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 10,
+    "UD": 8,
+    "AI": 0,
+    "GC": 2,
+    "FC": 6,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 13,
+    "designite_packages": 13,
+    "matched": 13,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "ezvcard.util.org.apache.commons",
+      "ezvcard.util.org",
+      "ezvcard.util.org.apache"
+    ]
+  },
+  "unknown_designite_smells": []
+}

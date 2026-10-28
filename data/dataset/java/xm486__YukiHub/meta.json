@@ -1,0 +1,60 @@
+{
+  "project": "xm486__YukiHub",
+  "n_nodes": 46,
+  "n_edges": 99,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 11,
+    "UD": 4,
+    "AI": 0,
+    "GC": 4,
+    "FC": 15,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 46,
+    "designite_packages": 45,
+    "matched": 45,
+    "coverage": 0.9783,
+    "arcan_only": [
+      "tv.danmaku.ijk.media.player.annotations"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "tv.danmaku.ijk.media",
+      "com",
+      "com.yuri",
+      "com.akira",
+      "com.bytedance",
+      "com.yuki",
+      "com.pika",
+      "com.ies_net",
+      "androidx.activity",
+      "androidx.activity.result",
+      "com.akira.tyranoemu",
+      "retrofit2",
+      "moe.artemis",
+      "java",
+      "moe",
+      "java.util",
+      "android",
+      "android.util",
+      "org",
+      "org.cocos2dx",
+      "org.tvp",
+      "org.libsdl",
+      "com.bytedance.android",
+      "androidx",
+      "tv",
+      "tv.danmaku",
+      "android.widget",
+      "tv.danmaku.ijk"
+    ]
+  },
+  "unknown_designite_smells": []
+}

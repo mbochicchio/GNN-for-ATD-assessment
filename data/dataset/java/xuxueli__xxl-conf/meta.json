@@ -1,0 +1,44 @@
+{
+  "project": "xuxueli__xxl-conf",
+  "n_nodes": 40,
+  "n_edges": 102,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 6,
+    "UD": 2,
+    "AI": 0,
+    "GC": 0,
+    "FC": 6,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 40,
+    "designite_packages": 39,
+    "matched": 39,
+    "coverage": 0.975,
+    "arcan_only": [
+      "com.xxl.conf.core.annotation"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com.xxl.conf.core.openapi",
+      "com.xxl",
+      "com.xxl.conf.admin.framework.model",
+      "com.xxl.conf.admin.business.model",
+      "com.xxl.conf.admin.business.openapi.registry",
+      "com.xxl.conf.admin.business.openapi.confdata",
+      "com.xxl.conf.admin.business",
+      "com.xxl.conf.admin.framework.constant",
+      "com.xxl.conf.admin.framework",
+      "com",
+      "com.xxl.conf",
+      "com.xxl.conf.admin.framework.web"
+    ]
+  },
+  "unknown_designite_smells": []
+}

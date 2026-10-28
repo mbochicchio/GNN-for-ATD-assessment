@@ -1,0 +1,40 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 64,
+  "source_files_removed": 10,
+  "source_files_after": 54,
+  "removed_share": 0.1562,
+  "removed_by_rule": {
+    "R1_arcan_default": 10
+  },
+  "removed_dirs": [
+    {
+      "path": "freeswitch-cdr-example",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "freeswitch-cdr-spring-boot-starter-example",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "freeswitch-esl-example",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "freeswitch-esl-spring-boot-starter-example",
+      "rule": "R1_arcan_default",
+      "source_files": 7
+    },
+    {
+      "path": "freeswitch-esl/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

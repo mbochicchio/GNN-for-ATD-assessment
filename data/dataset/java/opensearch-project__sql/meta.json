@@ -1,0 +1,57 @@
+{
+  "project": "opensearch-project__sql",
+  "n_nodes": 308,
+  "n_edges": 1905,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 129,
+    "UD": 86,
+    "AI": 0,
+    "GC": 8,
+    "FC": 69,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 308,
+    "designite_packages": 308,
+    "matched": 308,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "org.opensearch.sql.spark.antlr",
+      "org.opensearch.sql.spark.antlr.parser",
+      "org.opensearch.sql.legacy.expression",
+      "org.opensearch.sql.common",
+      "org.opensearch.sql.opensearch",
+      "org.opensearch.sql.spi",
+      "org.opensearch.sql.protocol",
+      "org.opensearch.sql.legacy",
+      "org.opensearch.sql.data",
+      "org.opensearch.sql.spark.functions",
+      "org.opensearch.sql.spark",
+      "org.opensearch.sql.datasources",
+      "org.opensearch.sql.prometheus",
+      "org",
+      "org.opensearch.sql.opensearch.planner",
+      "org.opensearch.sql.spark.execution",
+      "org.opensearch.sql.expression.conditional",
+      "org.opensearch.sql.prometheus.data",
+      "org.opensearch.sql.prometheus.planner",
+      "org.opensearch.sql.prometheus.functions",
+      "org.opensearch.sql.datasources.model",
+      "org.opensearch.sql.opensearch.data",
+      "org.opensearch.sql.spark.data",
+      "org.opensearch",
+      "org.opensearch.sql.expression.operator"
+    ]
+  },
+  "unknown_designite_smells": []
+}

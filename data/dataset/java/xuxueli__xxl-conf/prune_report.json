@@ -1,0 +1,30 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 121,
+  "source_files_removed": 14,
+  "source_files_after": 107,
+  "removed_share": 0.1157,
+  "removed_by_rule": {
+    "R1_arcan_default": 14
+  },
+  "removed_dirs": [
+    {
+      "path": "xxl-conf-samples",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    },
+    {
+      "path": "xxl-conf-admin/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 6
+    },
+    {
+      "path": "xxl-conf-core/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

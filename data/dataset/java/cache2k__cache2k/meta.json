@@ -1,0 +1,42 @@
+{
+  "project": "cache2k__cache2k",
+  "n_nodes": 43,
+  "n_edges": 183,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 16,
+    "UD": 11,
+    "AI": 2,
+    "GC": 3,
+    "FC": 19,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 43,
+    "designite_packages": 42,
+    "matched": 42,
+    "coverage": 0.9767,
+    "arcan_only": [
+      "org.cache2k.annotation"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "javax.cache.processor",
+      "javax.cache",
+      "javax.cache.integration",
+      "org.cache2k.extra.config",
+      "javax",
+      "org.cache2k.jcache.provider.generic",
+      "org",
+      "org.cache2k.extra"
+    ]
+  },
+  "unknown_designite_smells": []
+}

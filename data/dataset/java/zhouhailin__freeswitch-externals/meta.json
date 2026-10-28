@@ -1,0 +1,38 @@
+{
+  "project": "zhouhailin__freeswitch-externals",
+  "n_nodes": 19,
+  "n_edges": 55,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 4,
+    "UD": 3,
+    "AI": 1,
+    "GC": 0,
+    "FC": 3,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 19,
+    "designite_packages": 17,
+    "matched": 17,
+    "coverage": 0.8947,
+    "arcan_only": [
+      "link.thingscloud.freeswitch.esl.spring.boot.starter",
+      "link.thingscloud.freeswitch.esl.spring.boot.starter.annotation"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "link.thingscloud.freeswitch.esl.spring.boot",
+      "link.thingscloud.freeswitch",
+      "link",
+      "link.thingscloud",
+      "link.thingscloud.freeswitch.esl.spring"
+    ]
+  },
+  "unknown_designite_smells": []
+}

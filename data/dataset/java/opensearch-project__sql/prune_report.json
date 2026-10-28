@@ -1,0 +1,126 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 2729,
+  "source_files_removed": 1190,
+  "source_files_after": 1539,
+  "removed_share": 0.4361,
+  "removed_by_rule": {
+    "R1_arcan_default": 1183,
+    "R2_java_build": 7
+  },
+  "removed_dirs": [
+    {
+      "path": "integ-test",
+      "rule": "R1_arcan_default",
+      "source_files": 390
+    },
+    {
+      "path": "api/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 20
+    },
+    {
+      "path": "api/src/testFixtures",
+      "rule": "R2_java_build",
+      "source_files": 3
+    },
+    {
+      "path": "async-query/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 52
+    },
+    {
+      "path": "async-query-core/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 37
+    },
+    {
+      "path": "common/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 14
+    },
+    {
+      "path": "core/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 249
+    },
+    {
+      "path": "core/src/testFixtures",
+      "rule": "R2_java_build",
+      "source_files": 2
+    },
+    {
+      "path": "datasources/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 18
+    },
+    {
+      "path": "direct-query/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 14
+    },
+    {
+      "path": "direct-query-core/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 18
+    },
+    {
+      "path": "direct-query-core/src/testFixtures",
+      "rule": "R2_java_build",
+      "source_files": 2
+    },
+    {
+      "path": "doctest/test_data",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "doctest/test_mapping",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "legacy/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 123
+    },
+    {
+      "path": "opensearch/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 102
+    },
+    {
+      "path": "plugin/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 6
+    },
+    {
+      "path": "ppl/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 90
+    },
+    {
+      "path": "prometheus/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 21
+    },
+    {
+      "path": "protocol/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 10
+    },
+    {
+      "path": "scripts/ppl-lint/__tests__",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "sql/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 19
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}
