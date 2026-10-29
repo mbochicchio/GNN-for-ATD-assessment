@@ -1,0 +1,33 @@
+{
+  "project": "boxbeam__RedLib",
+  "n_nodes": 26,
+  "n_edges": 61,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 10,
+    "UD": 6,
+    "AI": 0,
+    "GC": 0,
+    "FC": 2,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 26,
+    "designite_packages": 25,
+    "matched": 25,
+    "coverage": 0.9615,
+    "arcan_only": [
+      "redempt.redlib.config.annotations"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "redempt"
+    ]
+  },
+  "unknown_designite_smells": []
+}

@@ -1,0 +1,140 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 302,
+  "source_files_removed": 179,
+  "source_files_after": 123,
+  "removed_share": 0.5927,
+  "removed_by_rule": {
+    "R1_arcan_default": 179
+  },
+  "removed_dirs": [
+    {
+      "path": "debezium-system-tests",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "debezium-quarkus-bridge/deployment/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 5
+    },
+    {
+      "path": "debezium-server-core/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 22
+    },
+    {
+      "path": "debezium-server-databricks-zerobus/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 16
+    },
+    {
+      "path": "debezium-server-dist/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "debezium-server-eventhubs/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 7
+    },
+    {
+      "path": "debezium-server-fluss/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 11
+    },
+    {
+      "path": "debezium-server-http/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 10
+    },
+    {
+      "path": "debezium-server-infinispan/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "debezium-server-instructlab/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    },
+    {
+      "path": "debezium-server-jdbc/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 14
+    },
+    {
+      "path": "debezium-server-kafka/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 9
+    },
+    {
+      "path": "debezium-server-kinesis/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "debezium-server-milvus/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 5
+    },
+    {
+      "path": "debezium-server-nats-jetstream/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "debezium-server-nats-streaming/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "debezium-server-pravega/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "debezium-server-pubsub/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 5
+    },
+    {
+      "path": "debezium-server-pulsar/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "debezium-server-qdrant/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 5
+    },
+    {
+      "path": "debezium-server-rabbitmq/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 10
+    },
+    {
+      "path": "debezium-server-redis/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 23
+    },
+    {
+      "path": "debezium-server-rocketmq/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    },
+    {
+      "path": "debezium-server-sns/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 6
+    },
+    {
+      "path": "debezium-server-sqs/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

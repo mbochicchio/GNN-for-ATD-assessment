@@ -1,0 +1,22 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 72,
+  "source_files_removed": 1,
+  "source_files_after": 71,
+  "removed_share": 0.0139,
+  "removed_by_rule": {
+    "R1_arcan_default": 1
+  },
+  "removed_dirs": [
+    {
+      "path": "source/did-ca-aos/app/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    }
+  ],
+  "residual_test_files": 1,
+  "residual_examples": [
+    "source/did-ca-aos/app/src/androidTest/java/org/omnione/did/ca/ExampleInstrumentedTest.java"
+  ]
+}

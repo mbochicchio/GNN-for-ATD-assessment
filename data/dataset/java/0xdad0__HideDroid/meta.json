@@ -1,0 +1,39 @@
+{
+  "project": "0xdad0__HideDroid",
+  "n_nodes": 50,
+  "n_edges": 184,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 29,
+    "UD": 15,
+    "AI": 0,
+    "GC": 2,
+    "FC": 17,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 50,
+    "designite_packages": 50,
+    "matched": 50,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "apktool",
+      "com.github.megatronking",
+      "brut",
+      "com.android.apksig.internal",
+      "com",
+      "com.android",
+      "com.github"
+    ]
+  },
+  "unknown_designite_smells": []
+}

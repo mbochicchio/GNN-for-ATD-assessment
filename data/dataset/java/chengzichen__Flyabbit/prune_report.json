@@ -1,0 +1,64 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 120,
+  "source_files_removed": 8,
+  "source_files_after": 112,
+  "removed_share": 0.0667,
+  "removed_by_rule": {
+    "R1_arcan_default": 8
+  },
+  "removed_dirs": [
+    {
+      "path": "app/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "baselib/rxbus2/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "baselib/timberhelper/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "baselib/uikit/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "businesslib/businessComponent/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "girls/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "home/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "my/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    }
+  ],
+  "residual_test_files": 8,
+  "residual_examples": [
+    "app/src/androidTest/java/com/dhc/flyabbit/ExampleInstrumentedTest.java",
+    "baselib/rxbus2/src/androidTest/java/com/dhc/rxbus2/ExampleInstrumentedTest.java",
+    "baselib/timberhelper/src/androidTest/java/com/dhc/timberhelper/ExampleInstrumentedTest.java",
+    "baselib/uikit/src/androidTest/java/com/haokukeji/coolfood/ExampleInstrumentedTest.java",
+    "businesslib/businessComponent/src/androidTest/java/com/dhc/businesscomponent/ExampleInstrumentedTest.java",
+    "girls/src/androidTest/java/com/dhc/flyabbit/gank/ExampleInstrumentedTest.java",
+    "home/src/androidTest/java/com/dhc/flyabbit/home/ExampleInstrumentedTest.java",
+    "my/src/androidTest/java/com/dhc/flyabbit/my/ExampleInstrumentedTest.java"
+  ]
+}

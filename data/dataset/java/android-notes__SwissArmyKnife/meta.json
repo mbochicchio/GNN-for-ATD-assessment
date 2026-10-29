@@ -1,0 +1,36 @@
+{
+  "project": "android-notes__SwissArmyKnife",
+  "n_nodes": 24,
+  "n_edges": 50,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 0,
+    "UD": 3,
+    "AI": 0,
+    "GC": 0,
+    "FC": 6,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 24,
+    "designite_packages": 24,
+    "matched": 24,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com",
+      "com.wanjian",
+      "android",
+      "com.wanjian.sak.system",
+      "com.wanjian.sak.system.window",
+      "com.wanjian.sak.system.canvas"
+    ]
+  },
+  "unknown_designite_smells": []
+}

@@ -1,0 +1,43 @@
+{
+  "project": "CorfuDB__CorfuDB",
+  "n_nodes": 80,
+  "n_edges": 529,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 40,
+    "UD": 29,
+    "AI": 1,
+    "GC": 4,
+    "FC": 21,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 80,
+    "designite_packages": 81,
+    "matched": 80,
+    "coverage": 0.9877,
+    "arcan_only": [],
+    "designite_only": [
+      "(default package)"
+    ],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "io.vavr.collection",
+      "org.corfudb.security",
+      "org.corfudb.common",
+      "org.corfudb.common.metrics",
+      "org",
+      "org.corfudb",
+      "io",
+      "io.vavr",
+      "org.corfudb.utils"
+    ]
+  },
+  "unknown_designite_smells": []
+}

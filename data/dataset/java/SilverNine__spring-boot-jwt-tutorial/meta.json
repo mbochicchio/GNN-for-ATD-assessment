@@ -1,0 +1,34 @@
+{
+  "project": "SilverNine__spring-boot-jwt-tutorial",
+  "n_nodes": 11,
+  "n_edges": 13,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 0,
+    "UD": 0,
+    "AI": 0,
+    "GC": 0,
+    "FC": 0,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 11,
+    "designite_packages": 10,
+    "matched": 10,
+    "coverage": 0.9091,
+    "arcan_only": [
+      "me.silvernine.tutorial.dto"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "me.silvernine",
+      "me"
+    ]
+  },
+  "unknown_designite_smells": []
+}

@@ -1,0 +1,39 @@
+{
+  "project": "debezium__debezium-server",
+  "n_nodes": 38,
+  "n_edges": 60,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 3,
+    "UD": 0,
+    "AI": 0,
+    "GC": 0,
+    "FC": 3,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 38,
+    "designite_packages": 37,
+    "matched": 37,
+    "coverage": 0.9737,
+    "arcan_only": [
+      "io.debezium.config"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "io.debezium.server.nats",
+      "io.debezium.server.databricks",
+      "oracle",
+      "io",
+      "io.debezium",
+      "oracle.sql",
+      "io.debezium.quarkus"
+    ]
+  },
+  "unknown_designite_smells": []
+}

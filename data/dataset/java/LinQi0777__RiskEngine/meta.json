@@ -1,0 +1,41 @@
+{
+  "project": "LinQi0777__RiskEngine",
+  "n_nodes": 26,
+  "n_edges": 11,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 0,
+    "UD": 0,
+    "AI": 0,
+    "GC": 0,
+    "FC": 3,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 26,
+    "designite_packages": 26,
+    "matched": 26,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "flink.clickhouse",
+      "flink.redis",
+      "com.linqi.RiskCtrlSys.commons",
+      "org.apache",
+      "org.apache.flink",
+      "org.apache.flink.cep",
+      "org",
+      "com",
+      "com.linqi",
+      "com.linqi.RiskCtrlSys",
+      "com.linqi.RiskCtrlSys.service"
+    ]
+  },
+  "unknown_designite_smells": []
+}

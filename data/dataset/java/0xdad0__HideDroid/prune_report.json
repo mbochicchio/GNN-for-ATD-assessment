@@ -1,0 +1,41 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 377,
+  "source_files_removed": 44,
+  "source_files_after": 333,
+  "removed_share": 0.1167,
+  "removed_by_rule": {
+    "R1_arcan_default": 40,
+    "R2_java_build": 4
+  },
+  "removed_dirs": [
+    {
+      "path": "netbare-sample",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "anonymization-data/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "apksig/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 38
+    },
+    {
+      "path": "app/src/main/java/it",
+      "rule": "R2_java_build",
+      "source_files": 4
+    },
+    {
+      "path": "realmdatahelper/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

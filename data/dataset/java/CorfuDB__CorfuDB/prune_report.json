@@ -1,0 +1,53 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 956,
+  "source_files_removed": 339,
+  "source_files_after": 617,
+  "removed_share": 0.3546,
+  "removed_by_rule": {
+    "R2_java_build": 78,
+    "R1_arcan_default": 261
+  },
+  "removed_dirs": [
+    {
+      "path": "it",
+      "rule": "R2_java_build",
+      "source_files": 78
+    },
+    {
+      "path": "samples",
+      "rule": "R1_arcan_default",
+      "source_files": 7
+    },
+    {
+      "path": "test",
+      "rule": "R1_arcan_default",
+      "source_files": 183
+    },
+    {
+      "path": "common/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "infrastructure/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 45
+    },
+    {
+      "path": "infrastructure/src/main/java/org/corfudb/infrastructure/logreplication/transport/sample",
+      "rule": "R1_arcan_default",
+      "source_files": 7
+    },
+    {
+      "path": "runtime/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 17
+    }
+  ],
+  "residual_test_files": 1,
+  "residual_examples": [
+    "infrastructure/src/main/java/org/corfudb/infrastructure/logreplication/infrastructure/plugins/DefaultSnapshotSyncPlugin.java"
+  ]
+}

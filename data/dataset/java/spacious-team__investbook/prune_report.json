@@ -1,0 +1,25 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 402,
+  "source_files_removed": 12,
+  "source_files_after": 390,
+  "removed_share": 0.0299,
+  "removed_by_rule": {
+    "R1_arcan_default": 12
+  },
+  "removed_dirs": [
+    {
+      "path": "src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 12
+    },
+    {
+      "path": "src/main/resources/static/portfolios/demo",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

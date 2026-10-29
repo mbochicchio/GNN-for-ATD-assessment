@@ -1,0 +1,41 @@
+{
+  "project": "spacious-team__investbook",
+  "n_nodes": 36,
+  "n_edges": 125,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 7,
+    "UD": 7,
+    "AI": 1,
+    "GC": 3,
+    "FC": 21,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 36,
+    "designite_packages": 35,
+    "matched": 35,
+    "coverage": 0.9722,
+    "arcan_only": [
+      "org.spacious_team.broker.pojo"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "ru",
+      "org.spacious_team",
+      "ru.investbook.web.forms",
+      "org.spacious_team.broker",
+      "db.migration",
+      "org",
+      "db"
+    ]
+  },
+  "unknown_designite_smells": []
+}

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>chengzichen__Flyabbit · dependency graph</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EEF1F0; --panel:#F8FAF9; --ink:#1B2733; --muted:#5E6B78; --rule:#D3DAD8;
+  --edge:#9AA7B2; --clean:#C3CCD3; --focus:#1B2733;
+  --CD:#D55E00; --UD:#0072B2; --AI:#CC79A7; --GC:#009E73; --FC:#E69F00; --SF:#56B4E9;
+  --s0:#C3CCD3; --s1:#F2C27B; --s2:#E58A3C; --s3:#C4462A; --s4:#8E1F2A;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+  --bg:#141B21; --panel:#1B242C; --ink:#E4EAEE; --muted:#93A1AD; --rule:#2C3842;
+  --edge:#4E5E6B; --clean:#3E4B56; --focus:#E4EAEE; --s0:#3E4B56;
+}}
+:root[data-theme="dark"]{
+  --bg:#141B21; --panel:#1B242C; --ink:#E4EAEE; --muted:#93A1AD; --rule:#2C3842;
+  --edge:#4E5E6B; --clean:#3E4B56; --focus:#E4EAEE; --s0:#3E4B56;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{height:100%; scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0; height:100%; background:var(--bg); color:var(--ink);
+  font:14px/1.5 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+.app{display:grid; grid-template-columns:320px 1fr; height:100%}
+aside{background:var(--panel); border-right:1px solid var(--rule); overflow-y:auto; padding:20px 20px 28px}
+h1{font:500 22px/1.2 "IBM Plex Sans Condensed","IBM Plex Sans",sans-serif; margin:0 0 4px; word-break:break-word}
+.sub{color:var(--muted); margin:0 0 18px}
+.stats{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-bottom:18px}
+.stat b{display:block; font-size:20px; font-weight:600}
+.stat span{color:var(--muted); font-size:12px}
+section{border-top:1px solid var(--rule); padding-top:14px; margin-top:14px}
+h2{font-size:13px; font-weight:600; margin:0 0 8px}
+label.ctl{display:block; color:var(--muted); font-size:12px; margin:8px 0 4px}
+select,input[type=search]{width:100%; font:inherit; color:var(--ink); background:var(--bg);
+  border:1px solid var(--rule); border-radius:6px; padding:6px 8px}
+select:focus-visible,input:focus-visible,button:focus-visible{outline:2px solid var(--focus); outline-offset:2px}
+.check{display:flex; gap:8px; align-items:center; margin-top:10px; color:var(--muted); font-size:13px}
+.legend{display:flex; flex-wrap:wrap; gap:6px 12px; margin-top:10px; font-size:12px}
+.dot{display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:7px; vertical-align:-1px}
+.legend i{display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:5px; vertical-align:-1px}
+table{width:100%; border-collapse:collapse; font-size:13px}
+td{padding:3px 0; border-bottom:1px solid var(--rule)}
+td:last-child{text-align:right; font-variant-numeric:tabular-nums}
+.chips{display:flex; flex-wrap:wrap; gap:6px; margin:8px 0}
+.chip{font-size:12px; padding:2px 8px; border-radius:10px; color:#fff}
+.chip.none{background:var(--clean); color:var(--ink)}
+.detail-name{font-weight:600; word-break:break-all; margin-bottom:4px}
+.note{color:var(--muted); font-size:12px}
+ol.rank{margin:0; padding-left:20px; font-size:13px}
+ol.rank li{margin:2px 0}
+ol.rank button{all:unset; cursor:pointer; word-break:break-all}
+ol.rank button:hover{text-decoration:underline}
+ol.rank .v{color:var(--muted); font-variant-numeric:tabular-nums}
+main{position:relative; overflow:hidden}
+svg{width:100%; height:100%; display:block; cursor:grab}
+.link{stroke:var(--edge); stroke-opacity:.55; fill:none}
+.node circle{stroke:var(--panel); stroke-width:1.5}
+.node.nomask circle{stroke-dasharray:3 2; stroke:var(--muted)}
+.node text{font-size:11px; fill:var(--ink); pointer-events:none; paint-order:stroke;
+  stroke:var(--bg); stroke-width:3px}
+.dim{opacity:.12}
+.node.sel circle{stroke:var(--focus); stroke-width:3}
+#tip{position:absolute; pointer-events:none; background:var(--panel); border:1px solid var(--rule);
+  border-radius:6px; padding:6px 9px; font-size:12px; max-width:320px; display:none; word-break:break-all}
+.hint{position:absolute; right:14px; bottom:12px; color:var(--muted); font-size:12px}
+@media (max-width:760px){
+  .app{grid-template-columns:1fr; grid-template-rows:auto 70vh; height:auto}
+  aside{border-right:0; border-bottom:1px solid var(--rule)}
+}
+@media (prefers-reduced-motion:reduce){ *{transition:none!important} }
+</style>
+</head>
+<body>
+<div class="app">
+<aside>
+  <h1 id="title"></h1>
+  <p class="sub">Package-level dependency graph with Designite smell labels</p>
+  <div class="stats">
+    <div class="stat"><b id="nN"></b><span>components</span></div>
+    <div class="stat"><b id="nE"></b><span>dependencies</span></div>
+    <div class="stat"><b id="nS"></b><span>smell-affected components</span></div>
+  </div>
+
+  <label class="ctl" for="colorBy">Colour nodes by</label>
+  <select id="colorBy">
+    <option value="count">Number of smells</option>
+    <option value="CD">Cyclic Dependency</option>
+    <option value="UD">Unstable Dependency</option>
+    <option value="AI">Ambiguous Interface</option>
+    <option value="GC">God Component</option>
+    <option value="FC">Feature Concentration</option>
+    <option value="SF">Scattered Functionality</option>
+    <option value="atdi">ATDI (Arcan)</option>
+  </select>
+  <div class="legend" id="legend"></div>
+
+  <label class="ctl" for="search">Find a component</label>
+  <input id="search" type="search" placeholder="e.g. analyzer" list="names" autocomplete="off">
+  <datalist id="names"></datalist>
+  <label class="check"><input type="checkbox" id="showLabels"> Show all node labels</label>
+
+  <section id="detail">
+    <h2>Selected component</h2>
+    <p class="note">Select a node to inspect its features, labels, and dependencies.</p>
+  </section>
+
+  <section>
+    <h2>Smell distribution</h2>
+    <table id="smellTable"></table>
+    <p class="note" id="ds"></p>
+  </section>
+
+  <section>
+    <h2>Highest ATDI</h2>
+    <ol class="rank" id="rank"></ol>
+  </section>
+</aside>
+<main>
+  <svg id="svg" role="img" aria-label="Dependency graph"></svg>
+  <div id="tip"></div>
+  <div class="hint">Drag to pan, scroll to zoom</div>
+</main>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script>
+const DATA = {"nodes": [{"id": 0, "name": "com.dhc.businesscomponent", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 10.0, "FO": 2.0, "LOC": 23.0, "PR": 0.046983648527774764, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 1, "name": "com.dhc.businesscomponent.anim", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 0.0, "FO": 0.0, "LOC": 38.0, "PR": 0.009173801780884209, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 2, "name": "com.dhc.businesscomponent.base", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.0, "In": 0.4444444444444444, "D": 0.5555555555555556, "FI": 5.0, "FO": 3.0, "LOC": 188.0, "PR": 0.02335026006714186, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 3, "name": "com.dhc.businesscomponent.data", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 0.5, "D": 0.5, "FI": 6.0, "FO": 1.0, "LOC": 301.0, "PR": 0.02231051330425901, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 4, "name": "com.dhc.businesscomponent.data.account", "mask": 1, "atdi": 0.0, "units": 4, "Ab": 0.5, "In": 0.0, "D": 0.5, "FI": 4.0, "FO": 0.0, "LOC": 60.0, "PR": 0.04107961587492772, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 5, "name": "com.dhc.businesscomponent.data.net", "mask": 1, "atdi": 0.0, "units": 4, "Ab": 0.25, "In": 0.23529411764705882, "D": 0.5147058823529411, "FI": 8.0, "FO": 3.0, "LOC": 66.0, "PR": 0.03551571894646877, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 6, "name": "com.dhc.businesscomponent.framework", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 1.0, "In": 0.0, "D": 0.0, "FI": 2.0, "FO": 0.0, "LOC": 4.0, "PR": 0.014352555173252592, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 7, "name": "com.dhc.flyabbit", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 0.0, "FO": 4.0, "LOC": 11.0, "PR": 0.009173801780884209, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 8, "name": "com.dhc.flyabbit.app", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 6.0, "LOC": 56.0, "PR": 0.009173801780884209, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 9, "name": "com.dhc.flyabbit.di", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 1.0, "LOC": 17.0, "PR": 0.009173801780884209, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 10, "name": "com.dhc.flyabbit.di.component", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 1.0, "In": 0.0, "D": 0.0, "FI": 1.0, "FO": 0.0, "LOC": 14.0, "PR": 0.016975694823031098, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 11, "name": "com.dhc.flyabbit.gank.app", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 2.0, "LOC": 22.0, "PR": 0.009173801780884209, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 12, "name": "com.dhc.flyabbit.gank.di", "mask": 1, "atdi": 6.002013965796888, "units": 1, "Ab": 0.0, "In": 0.6666666666666666, "D": 0.33333333333333337, "FI": 1.0, "FO": 1.0, "LOC": 17.0, "PR": 0.012792176564823215, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 13, "name": "com.dhc.flyabbit.gank.di.component", "mask": 1, "atdi": 6.002013965796888, "units": 2, "Ab": 1.0, "In": 0.5, "D": 0.5, "FI": 1.0, "FO": 1.0, "LOC": 16.0, "PR": 0.02005379687937031, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 14, "name": "com.dhc.flyabbit.gank.modle", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.5, "In": 0.75, "D": 0.25, "FI": 2.0, "FO": 3.0, "LOC": 26.0, "PR": 0.015512175339444741, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 15, "name": "com.dhc.flyabbit.gank.modle.bean", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 5.0, "FO": 0.0, "LOC": 31.0, "PR": 0.034691011638928765, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 16, "name": "com.dhc.flyabbit.gank.presenter", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.8, "D": 0.19999999999999996, "FI": 1.0, "FO": 4.0, "LOC": 34.0, "PR": 0.012792176564823215, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 17, "name": "com.dhc.flyabbit.gank.presenter.contract", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 1.0, "In": 1.0, "D": 1.0, "FI": 0.0, "FO": 2.0, "LOC": 14.0, "PR": 0.009173801780884209, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 18, "name": "com.dhc.flyabbit.gank.ui", "mask": 1, "atdi": 6.002013965796888, "units": 2, "Ab": 0.0, "In": 0.8, "D": 0.19999999999999996, "FI": 2.0, "FO": 8.0, "LOC": 89.0, "PR": 0.034032343630327276, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 19, "name": "com.dhc.flyabbit.gank.ui.adapter", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.5, "D": 0.5, "FI": 1.0, "FO": 1.0, "LOC": 32.0, "PR": 0.012792176564823215, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 20, "name": "com.dhc.flyabbit.grils", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 1.0, "LOC": 10.0, "PR": 0.009173801780884209, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 21, "name": "com.dhc.flyabbit.home", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 4.0, "LOC": 20.0, "PR": 0.009173801780884209, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 22, "name": "com.dhc.flyabbit.home.app", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 4.0, "LOC": 33.0, "PR": 0.009173801780884209, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 23, "name": "com.dhc.flyabbit.home.di", "mask": 1, "atdi": 6.002013965796888, "units": 1, "Ab": 0.0, "In": 0.5, "D": 0.5, "FI": 1.0, "FO": 1.0, "LOC": 17.0, "PR": 0.012297578257433765, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 24, "name": "com.dhc.flyabbit.home.di.component", "mask": 1, "atdi": 6.002013965796888, "units": 2, "Ab": 1.0, "In": 0.6666666666666666, "D": 0.6666666666666665, "FI": 1.0, "FO": 1.0, "LOC": 18.0, "PR": 0.019633080607309755, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 25, "name": "com.dhc.flyabbit.home.modle", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.3333333333333333, "In": 0.6, "D": 0.06666666666666665, "FI": 2.0, "FO": 3.0, "LOC": 52.0, "PR": 0.01491239796404015, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 26, "name": "com.dhc.flyabbit.home.modle.bean", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 5.0, "FO": 0.0, "LOC": 82.0, "PR": 0.029599506093050447, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 27, "name": "com.dhc.flyabbit.home.presenter", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 0.7142857142857143, "D": 0.2857142857142857, "FI": 1.0, "FO": 4.0, "LOC": 89.0, "PR": 0.012297578257433765, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 28, "name": "com.dhc.flyabbit.home.presenter.contract", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 1.0, "In": 0.6666666666666666, "D": 0.6666666666666665, "FI": 1.0, "FO": 2.0, "LOC": 30.0, "PR": 0.012297578257433765, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 29, "name": "com.dhc.flyabbit.home.ui", "mask": 1, "atdi": 11.736472135807295, "units": 3, "Ab": 0.0, "In": 0.7142857142857143, "D": 0.2857142857142857, "FI": 3.0, "FO": 9.0, "LOC": 222.0, "PR": 0.03305264382209536, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 30, "name": "com.dhc.flyabbit.home.ui.adapter", "mask": 1, "atdi": 5.734458170010408, "units": 2, "Ab": 0.0, "In": 0.6, "D": 0.4, "FI": 1.0, "FO": 2.0, "LOC": 42.0, "PR": 0.012297578257433765, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 31, "name": "com.dhc.flyabbit.home.ui.widget", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 0.0, "FO": 0.0, "LOC": 151.0, "PR": 0.009173801780884209, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 32, "name": "com.dhc.flyabbit.home.util", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 1.0, "FO": 0.0, "LOC": 69.0, "PR": 0.012297578257433765, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 33, "name": "com.dhc.flyabbit.my", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 0.0, "FO": 1.0, "LOC": 7.0, "PR": 0.009173801780884209, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 34, "name": "com.dhc.flyabbit.my.app", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 2.0, "LOC": 22.0, "PR": 0.009173801780884209, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 35, "name": "com.dhc.flyabbit.ui", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 5.0, "LOC": 176.0, "PR": 0.009173801780884209, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 36, "name": "com.dhc.flyabbit.ui.adapter", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 1.0, "FO": 0.0, "LOC": 19.0, "PR": 0.010734180389313586, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 37, "name": "com.dhc.lib.widget", "mask": 1, "atdi": 0.0, "units": 13, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 5.0, "FO": 0.0, "LOC": 1293.0, "PR": 0.04227688673703041, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 38, "name": "com.dhc.lib.widget.bean", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.5, "In": 0.0, "D": 0.5, "FI": 3.0, "FO": 0.0, "LOC": 53.0, "PR": 0.03858077812161839, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 39, "name": "com.dhc.lib.widget.bottombar", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 1.0, "FO": 0.0, "LOC": 194.0, "PR": 0.010734180389313586, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 40, "name": "com.dhc.lib.widget.loadingview", "mask": 1, "atdi": 5.561459191050224, "units": 2, "Ab": 0.5, "In": 0.25, "D": 0.25, "FI": 1.0, "FO": 1.0, "LOC": 255.0, "PR": 0.059583524692781865, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 41, "name": "com.dhc.lib.widget.loadingview.indicators", "mask": 1, "atdi": 5.561459191050224, "units": 3, "Ab": 0.0, "In": 0.5, "D": 0.5, "FI": 1.0, "FO": 1.0, "LOC": 127.0, "PR": 0.059583524692781865, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 42, "name": "com.dhc.lib.widget.loadview", "mask": 1, "atdi": 0.0, "units": 5, "Ab": 0.2, "In": 0.0, "D": 0.8, "FI": 0.0, "FO": 0.0, "LOC": 161.0, "PR": 0.009173801780884209, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 43, "name": "com.dhc.lib.widget.swipe", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 0.0, "FO": 0.0, "LOC": 215.0, "PR": 0.009173801780884209, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 44, "name": "com.dhc.lib.widget.util", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.0, "In": 0.2857142857142857, "D": 0.7142857142857143, "FI": 3.0, "FO": 1.0, "LOC": 197.0, "PR": 0.022535972365347677, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 45, "name": "com.dhc.rxbus2", "mask": 1, "atdi": 0.0, "units": 5, "Ab": 0.2, "In": 0.0, "D": 0.8, "FI": 1.0, "FO": 0.0, "LOC": 70.0, "PR": 0.019243286592005665, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 46, "name": "com.dhc.timberhelper", "mask": 1, "atdi": 0.0, "units": 5, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 4.0, "FO": 0.0, "LOC": 101.0, "PR": 0.0202264835905923, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 47, "name": "com.haokukeji.coolfood", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 0.0, "FO": 0.0, "LOC": 11.0, "PR": 0.009173801780884209, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}], "edges": [{"source": 0, "target": 37, "w": 4.0}, {"source": 2, "target": 37, "w": 3.0}, {"source": 2, "target": 38, "w": 2.0}, {"source": 2, "target": 44, "w": 2.0}, {"source": 3, "target": 4, "w": 1.0}, {"source": 5, "target": 0, "w": 1.0}, {"source": 5, "target": 4, "w": 2.0}, {"source": 5, "target": 45, "w": 2.0}, {"source": 7, "target": 0, "w": 17.0}, {"source": 7, "target": 3, "w": 3.0}, {"source": 7, "target": 37, "w": 2.0}, {"source": 8, "target": 0, "w": 1.0}, {"source": 8, "target": 2, "w": 1.0}, {"source": 8, "target": 3, "w": 1.0}, {"source": 8, "target": 4, "w": 1.0}, {"source": 8, "target": 5, "w": 1.0}, {"source": 8, "target": 46, "w": 1.0}, {"source": 9, "target": 10, "w": 2.0}, {"source": 11, "target": 2, "w": 1.0}, {"source": 11, "target": 46, "w": 1.0}, {"source": 12, "target": 13, "w": 2.0}, {"source": 13, "target": 18, "w": 1.0}, {"source": 14, "target": 0, "w": 1.0}, {"source": 14, "target": 5, "w": 2.0}, {"source": 14, "target": 15, "w": 2.0}, {"source": 16, "target": 3, "w": 1.0}, {"source": 16, "target": 5, "w": 2.0}, {"source": 16, "target": 14, "w": 2.0}, {"source": 16, "target": 15, "w": 1.0}, {"source": 17, "target": 5, "w": 1.0}, {"source": 17, "target": 15, "w": 1.0}, {"source": 18, "target": 6, "w": 1.0}, {"source": 18, "target": 12, "w": 1.0}, {"source": 18, "target": 14, "w": 1.0}, {"source": 18, "target": 15, "w": 1.0}, {"source": 18, "target": 16, "w": 1.0}, {"source": 18, "target": 19, "w": 1.0}, {"source": 18, "target": 38, "w": 1.0}, {"source": 18, "target": 44, "w": 2.0}, {"source": 19, "target": 15, "w": 1.0}, {"source": 20, "target": 18, "w": 1.0}, {"source": 21, "target": 0, "w": 4.0}, {"source": 21, "target": 3, "w": 8.0}, {"source": 21, "target": 29, "w": 1.0}, {"source": 21, "target": 37, "w": 1.0}, {"source": 22, "target": 0, "w": 1.0}, {"source": 22, "target": 2, "w": 1.0}, {"source": 22, "target": 5, "w": 1.0}, {"source": 22, "target": 46, "w": 1.0}, {"source": 23, "target": 24, "w": 2.0}, {"source": 24, "target": 29, "w": 2.0}, {"source": 25, "target": 0, "w": 1.0}, {"source": 25, "target": 5, "w": 3.0}, {"source": 25, "target": 26, "w": 3.0}, {"source": 27, "target": 3, "w": 2.0}, {"source": 27, "target": 5, "w": 4.0}, {"source": 27, "target": 25, "w": 4.0}, {"source": 27, "target": 26, "w": 2.0}, {"source": 28, "target": 5, "w": 2.0}, {"source": 28, "target": 26, "w": 2.0}, {"source": 29, "target": 2, "w": 1.0}, {"source": 29, "target": 23, "w": 2.0}, {"source": 29, "target": 25, "w": 1.0}, {"source": 29, "target": 26, "w": 1.0}, {"source": 29, "target": 27, "w": 2.0}, {"source": 29, "target": 28, "w": 1.0}, {"source": 29, "target": 30, "w": 2.0}, {"source": 29, "target": 32, "w": 1.0}, {"source": 29, "target": 44, "w": 1.0}, {"source": 30, "target": 26, "w": 1.0}, {"source": 30, "target": 29, "w": 2.0}, {"source": 33, "target": 0, "w": 1.0}, {"source": 34, "target": 2, "w": 1.0}, {"source": 34, "target": 46, "w": 1.0}, {"source": 35, "target": 0, "w": 2.0}, {"source": 35, "target": 4, "w": 1.0}, {"source": 35, "target": 6, "w": 3.0}, {"source": 35, "target": 36, "w": 1.0}, {"source": 35, "target": 39, "w": 2.0}, {"source": 40, "target": 41, "w": 1.0}, {"source": 41, "target": 40, "w": 3.0}, {"source": 44, "target": 38, "w": 2.0}], "meta": {"project": "chengzichen__Flyabbit", "n_nodes": 48, "n_edges": 82, "graph_level_smells": [], "dense_structure": 0, "label_counts": {"CD": 2, "UD": 1, "AI": 0, "GC": 0, "FC": 2, "SF": 0}, "matching": {"arcan_nodes": 48, "designite_packages": 48, "matched": 48, "coverage": 1.0, "arcan_only": [], "designite_only": [], "smelly_packages_not_in_graph": []}, "dropped_containers": {"default_package": [], "empty_container": ["com", "com.dhc", "com.haokukeji", "com.dhc.flyabbit.gank", "com.dhc.lib"]}, "unknown_designite_smells": []}};
+const LABELS = ["CD","UD","AI","GC","FC","SF"];
+const NAMES = {CD:"Cyclic Dependency",UD:"Unstable Dependency",AI:"Ambiguous Interface",
+  GC:"God Component",FC:"Feature Concentration",SF:"Scattered Functionality"};
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const nodes = DATA.nodes.map(d => ({...d, nSmell: LABELS.reduce((s,k)=>s+d[k],0),
+  short: d.name.split(".").slice(-1)[0] || d.name}));
+const byId = new Map(nodes.map(d => [d.id, d]));
+const links = DATA.edges.map(e => ({...e}));
+const meta = DATA.meta;
+let current = null;
+
+// ---------- sidebar ----------
+document.getElementById("title").textContent = meta.project;
+document.getElementById("nN").textContent = nodes.length;
+document.getElementById("nE").textContent = links.length;
+document.getElementById("nS").textContent = nodes.filter(d => d.nSmell > 0).length;
+document.getElementById("names").innerHTML = nodes.map(d => `<option value="${d.name}">`).join("");
+document.getElementById("smellTable").innerHTML = LABELS.map(k =>
+  `<tr><td><i class="dot" style="background:var(--${k})"></i>${NAMES[k]}</td>
+   <td>${meta.label_counts[k]} / ${nodes.length}</td></tr>`).join("");
+document.getElementById("ds").textContent = meta.dense_structure
+  ? "Dense Structure detected at project level (not assigned to individual nodes)."
+  : "Dense Structure not detected.";
+const unmasked = nodes.filter(d => !d.mask).length;
+if (unmasked) document.getElementById("ds").textContent +=
+  ` ${unmasked} nodes not analysed by Designite (dashed outline): labels unavailable.`;
+const rank = [...nodes].sort((a,b) => b.atdi - a.atdi).slice(0,10);
+document.getElementById("rank").innerHTML = rank.map(d =>
+  `<li><button data-id="${d.id}">${d.short}</button> <span class="v">${d.atdi.toFixed(1)}</span></li>`).join("");
+document.querySelectorAll("#rank button").forEach(b =>
+  b.addEventListener("click", () => select(byId.get(+b.dataset.id), true)));
+
+// ---------- graph ----------
+const svg = d3.select("#svg"), g = svg.append("g");
+const W = () => svg.node().clientWidth, H = () => svg.node().clientHeight;
+const maxLoc = d3.max(nodes, d => d.LOC) || 1;
+const r = d3.scaleSqrt().domain([0, maxLoc]).range([4, 26]);
+const wScale = d3.scaleLog().domain([1, d3.max(links, d => d.w) || 1]).range([0.6, 3.5]);
+const maxAtdi = d3.max(nodes, d => d.atdi) || 1;
+
+svg.append("defs").append("marker").attr("id","arrow").attr("viewBox","0 -4 8 8")
+  .attr("refX",8).attr("refY",0).attr("markerUnits","userSpaceOnUse").attr("markerWidth",9).attr("markerHeight",9).attr("orient","auto")
+  .append("path").attr("d","M0,-4L8,0L0,4").attr("fill","var(--edge)");
+
+const link = g.append("g").selectAll("path").data(links).join("path")
+  .attr("class","link").attr("stroke-width", d => wScale(Math.max(1,d.w))).attr("marker-end","url(#arrow)");
+const node = g.append("g").selectAll("g").data(nodes).join("g")
+  .attr("class", d => "node" + (d.mask ? "" : " nomask")).attr("tabindex",0)
+  .attr("aria-label", d => d.name);
+node.append("circle").attr("r", d => r(d.LOC));
+node.append("text").attr("dy", d => -r(d.LOC) - 4).attr("text-anchor","middle").text(d => d.short);
+
+const sim = d3.forceSimulation(nodes)
+  .force("link", d3.forceLink(links).id(d => d.id).distance(95).strength(0.2))
+  .force("charge", d3.forceManyBody().strength(-420))
+  .force("collide", d3.forceCollide(d => r(d.LOC) + 6))
+  .force("x", d3.forceX(() => W()/2).strength(0.05))
+  .force("y", d3.forceY(() => H()/2).strength(0.05))
+  .on("tick", ticked).on("end", fit);
+if (matchMedia("(prefers-reduced-motion: reduce)").matches) { sim.stop(); for (let i=0;i<300;i++) sim.tick(); ticked(); setTimeout(fit, 0); }
+let fitted = false;
+function fit(){
+  if (fitted) return; fitted = true;
+  const pad = 40, xs = nodes.map(d => d.x), ys = nodes.map(d => d.y);
+  const x0 = d3.min(xs) - pad, x1 = d3.max(xs) + pad, y0 = d3.min(ys) - pad, y1 = d3.max(ys) + pad;
+  const k = Math.min(2, 0.95 / Math.max((x1 - x0) / W(), (y1 - y0) / H()));
+  svg.transition().duration(600).call(zoom.transform,
+    d3.zoomIdentity.translate(W()/2, H()/2).scale(k).translate(-(x0 + x1)/2, -(y0 + y1)/2));
+}
+
+function ticked(){
+  link.attr("d", d => {
+    const dx = d.target.x - d.source.x, dy = d.target.y - d.source.y, L = Math.hypot(dx,dy) || 1;
+    const rt = r(d.target.LOC) + 3, rs = r(d.source.LOC);
+    return `M${d.source.x + dx*rs/L},${d.source.y + dy*rs/L}L${d.target.x - dx*rt/L},${d.target.y - dy*rt/L}`;
+  });
+  node.attr("transform", d => `translate(${d.x},${d.y})`);
+}
+
+node.call(d3.drag()
+  .on("start", (e,d) => { if(!e.active) sim.alphaTarget(0.3).restart(); d.fx=d.x; d.fy=d.y; })
+  .on("drag", (e,d) => { d.fx=e.x; d.fy=e.y; })
+  .on("end", (e,d) => { if(!e.active) sim.alphaTarget(0); d.fx=null; d.fy=null; }));
+const zoom = d3.zoom().scaleExtent([0.2,6]).on("zoom", e => g.attr("transform", e.transform));
+svg.call(zoom).on("click", e => { if (e.target === svg.node()) select(null); });
+
+// ---------- colour ----------
+function colour(d){
+  const m = document.getElementById("colorBy").value;
+  if (m === "count") return css("--s" + Math.min(d.nSmell, 4));
+  if (m === "atdi") return d3.interpolateLab(css("--s0"), css("--s4"))(Math.sqrt(d.atdi / maxAtdi));
+  return d[m] ? css("--" + m) : css("--clean");
+}
+function legend(){
+  const m = document.getElementById("colorBy").value, el = document.getElementById("legend");
+  if (m === "count") el.innerHTML = [0,1,2,3,4].map(i =>
+    `<span><i style="background:var(--s${i})"></i>${i===4?"4+":i} ${i===1?"smell":"smells"}</span>`).join("");
+  else if (m === "atdi") el.innerHTML = `<span><i style="background:var(--s0)"></i>0</span>
+    <span><i style="background:var(--s4)"></i>${maxAtdi.toFixed(0)}</span>`;
+  else el.innerHTML = `<span><i style="background:var(--${m})"></i>affected</span>
+    <span><i style="background:var(--clean)"></i>not affected</span>`;
+  el.innerHTML += `<span>node size ∝ LOC</span>`;
+}
+function paint(){ node.select("circle").attr("fill", colour); legend(); }
+document.getElementById("colorBy").addEventListener("change", paint);
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", paint);
+paint();
+
+// ---------- labels ----------
+function labelsVisible(){
+  const all = document.getElementById("showLabels").checked;
+  node.select("text").style("display", d => all || r(d.LOC) > 12 || d === current ? null : "none");
+}
+document.getElementById("showLabels").addEventListener("change", labelsVisible);
+
+// ---------- tooltip ----------
+const tip = document.getElementById("tip");
+node.on("mouseenter", (e,d) => {
+  const s = LABELS.filter(k => d[k]).join(", ") || "none";
+  tip.innerHTML = `<b>${d.name}</b><br>LOC ${d.LOC} · FI ${d.FI} · FO ${d.FO}<br>Smells: ${s}`;
+  tip.style.display = "block";
+}).on("mousemove", e => {
+  const b = document.querySelector("main").getBoundingClientRect();
+  tip.style.left = (e.clientX - b.left + 14) + "px"; tip.style.top = (e.clientY - b.top + 14) + "px";
+}).on("mouseleave", () => tip.style.display = "none")
+  .on("click", (e,d) => { e.stopPropagation(); select(d); })
+  .on("keydown", (e,d) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(d); } });
+
+// ---------- selection ----------
+function select(d, center){
+  current = d;
+  node.classed("sel", n => n === d);
+  if (!d){ node.classed("dim", false); link.classed("dim", false); renderDetail(null); labelsVisible(); return; }
+  const out = links.filter(l => l.source === d), inc = links.filter(l => l.target === d);
+  const nb = new Set([d, ...out.map(l => l.target), ...inc.map(l => l.source)]);
+  node.classed("dim", n => !nb.has(n));
+  link.classed("dim", l => l.source !== d && l.target !== d);
+  renderDetail(d, out, inc); labelsVisible();
+  if (center) svg.transition().duration(500).call(zoom.translateTo, d.x, d.y);
+}
+function renderDetail(d, out, inc){
+  const el = document.getElementById("detail");
+  if (!d){ el.innerHTML = `<h2>Selected component</h2><p class="note">Select a node to inspect its features, labels, and dependencies.</p>`; return; }
+  const chips = LABELS.filter(k => d[k]).map(k => `<span class="chip" style="background:var(--${k})">${NAMES[k]}</span>`).join("")
+    || `<span class="chip none">${d.mask ? "No smells" : "Labels unavailable"}</span>`;
+  const f = (v, p=3) => Number.isInteger(v) ? v : v.toFixed(p);
+  const rows = [["Abstractness (Ab)",d.Ab],["Instability (In)",d.In],["Distance (D)",d.D],["Fan-in (FI)",d.FI],
+    ["Fan-out (FO)",d.FO],["Lines of code (LOC)",d.LOC],["PageRank (PR)",d.PR],["ATDI (Arcan)",d.atdi],["Classes",d.units]];
+  el.innerHTML = `<h2>Selected component</h2><div class="detail-name">${d.name}</div>
+    <div class="chips">${chips}</div>
+    <table>${rows.map(([k,v]) => `<tr><td>${k}</td><td>${f(v)}</td></tr>`).join("")}</table>
+    <p class="note">Efferent dependencies: ${out.length}. Afferent dependencies: ${inc.length}.</p>`;
+}
+document.getElementById("search").addEventListener("change", e => {
+  const d = nodes.find(n => n.name === e.target.value) || nodes.find(n => n.name.includes(e.target.value));
+  if (d) select(d, true);
+});
+labelsVisible();
+</script>
+</body>
+</html>
