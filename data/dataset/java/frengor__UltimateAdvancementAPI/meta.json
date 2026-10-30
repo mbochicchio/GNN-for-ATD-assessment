@@ -1,0 +1,35 @@
+{
+  "project": "frengor__UltimateAdvancementAPI",
+  "n_nodes": 91,
+  "n_edges": 301,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 9,
+    "UD": 6,
+    "AI": 0,
+    "GC": 0,
+    "FC": 4,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 91,
+    "designite_packages": 91,
+    "matched": 91,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com",
+      "com.fren_gor",
+      "com.fren_gor.ultimateAdvancementAPI.nms"
+    ]
+  },
+  "unknown_designite_smells": []
+}

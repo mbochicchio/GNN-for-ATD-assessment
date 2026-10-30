@@ -1,0 +1,58 @@
+{
+  "project": "apache__bookkeeper",
+  "n_nodes": 213,
+  "n_edges": 1354,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 60,
+    "UD": 42,
+    "AI": 2,
+    "GC": 13,
+    "FC": 69,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 213,
+    "designite_packages": 212,
+    "matched": 212,
+    "coverage": 0.9953,
+    "arcan_only": [
+      "org.apache.bookkeeper.stats.annotations"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "org.apache.bookkeeper.statelib.impl.mvcc.op",
+      "io",
+      "com.codahale",
+      "com.codahale.metrics",
+      "io.netty",
+      "io.netty.util",
+      "org.apache",
+      "org.apache.thrift",
+      "com",
+      "com.scurrilous",
+      "io.etcd",
+      "io.etcd.jetcd",
+      "org.apache.bookkeeper.common.grpc",
+      "org.apache.bookkeeper",
+      "org.apache.bookkeeper.grpc",
+      "org.apache.bookkeeper.stream",
+      "org.apache.bookkeeper.clients.impl",
+      "org.apache.bookkeeper.tools",
+      "org.apache.bookkeeper.metadata",
+      "org.apache.bookkeeper.shims",
+      "org.apache.distributedlog.common",
+      "org.apache.bookkeeper.api.kv.impl",
+      "org.apache.bookkeeper.clients.impl.kv.interceptors",
+      "org"
+    ]
+  },
+  "unknown_designite_smells": []
+}

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>hiforce__lattice · dependency graph</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EEF1F0; --panel:#F8FAF9; --ink:#1B2733; --muted:#5E6B78; --rule:#D3DAD8;
+  --edge:#9AA7B2; --clean:#C3CCD3; --focus:#1B2733;
+  --CD:#D55E00; --UD:#0072B2; --AI:#CC79A7; --GC:#009E73; --FC:#E69F00; --SF:#56B4E9;
+  --s0:#C3CCD3; --s1:#F2C27B; --s2:#E58A3C; --s3:#C4462A; --s4:#8E1F2A;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+  --bg:#141B21; --panel:#1B242C; --ink:#E4EAEE; --muted:#93A1AD; --rule:#2C3842;
+  --edge:#4E5E6B; --clean:#3E4B56; --focus:#E4EAEE; --s0:#3E4B56;
+}}
+:root[data-theme="dark"]{
+  --bg:#141B21; --panel:#1B242C; --ink:#E4EAEE; --muted:#93A1AD; --rule:#2C3842;
+  --edge:#4E5E6B; --clean:#3E4B56; --focus:#E4EAEE; --s0:#3E4B56;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{height:100%; scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0; height:100%; background:var(--bg); color:var(--ink);
+  font:14px/1.5 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+.app{display:grid; grid-template-columns:320px 1fr; height:100%}
+aside{background:var(--panel); border-right:1px solid var(--rule); overflow-y:auto; padding:20px 20px 28px}
+h1{font:500 22px/1.2 "IBM Plex Sans Condensed","IBM Plex Sans",sans-serif; margin:0 0 4px; word-break:break-word}
+.sub{color:var(--muted); margin:0 0 18px}
+.stats{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-bottom:18px}
+.stat b{display:block; font-size:20px; font-weight:600}
+.stat span{color:var(--muted); font-size:12px}
+section{border-top:1px solid var(--rule); padding-top:14px; margin-top:14px}
+h2{font-size:13px; font-weight:600; margin:0 0 8px}
+label.ctl{display:block; color:var(--muted); font-size:12px; margin:8px 0 4px}
+select,input[type=search]{width:100%; font:inherit; color:var(--ink); background:var(--bg);
+  border:1px solid var(--rule); border-radius:6px; padding:6px 8px}
+select:focus-visible,input:focus-visible,button:focus-visible{outline:2px solid var(--focus); outline-offset:2px}
+.check{display:flex; gap:8px; align-items:center; margin-top:10px; color:var(--muted); font-size:13px}
+.legend{display:flex; flex-wrap:wrap; gap:6px 12px; margin-top:10px; font-size:12px}
+.dot{display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:7px; vertical-align:-1px}
+.legend i{display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:5px; vertical-align:-1px}
+table{width:100%; border-collapse:collapse; font-size:13px}
+td{padding:3px 0; border-bottom:1px solid var(--rule)}
+td:last-child{text-align:right; font-variant-numeric:tabular-nums}
+.chips{display:flex; flex-wrap:wrap; gap:6px; margin:8px 0}
+.chip{font-size:12px; padding:2px 8px; border-radius:10px; color:#fff}
+.chip.none{background:var(--clean); color:var(--ink)}
+.detail-name{font-weight:600; word-break:break-all; margin-bottom:4px}
+.note{color:var(--muted); font-size:12px}
+ol.rank{margin:0; padding-left:20px; font-size:13px}
+ol.rank li{margin:2px 0}
+ol.rank button{all:unset; cursor:pointer; word-break:break-all}
+ol.rank button:hover{text-decoration:underline}
+ol.rank .v{color:var(--muted); font-variant-numeric:tabular-nums}
+main{position:relative; overflow:hidden}
+svg{width:100%; height:100%; display:block; cursor:grab}
+.link{stroke:var(--edge); stroke-opacity:.55; fill:none}
+.node circle{stroke:var(--panel); stroke-width:1.5}
+.node.nomask circle{stroke-dasharray:3 2; stroke:var(--muted)}
+.node text{font-size:11px; fill:var(--ink); pointer-events:none; paint-order:stroke;
+  stroke:var(--bg); stroke-width:3px}
+.dim{opacity:.12}
+.node.sel circle{stroke:var(--focus); stroke-width:3}
+#tip{position:absolute; pointer-events:none; background:var(--panel); border:1px solid var(--rule);
+  border-radius:6px; padding:6px 9px; font-size:12px; max-width:320px; display:none; word-break:break-all}
+.hint{position:absolute; right:14px; bottom:12px; color:var(--muted); font-size:12px}
+@media (max-width:760px){
+  .app{grid-template-columns:1fr; grid-template-rows:auto 70vh; height:auto}
+  aside{border-right:0; border-bottom:1px solid var(--rule)}
+}
+@media (prefers-reduced-motion:reduce){ *{transition:none!important} }
+</style>
+</head>
+<body>
+<div class="app">
+<aside>
+  <h1 id="title"></h1>
+  <p class="sub">Package-level dependency graph with Designite smell labels</p>
+  <div class="stats">
+    <div class="stat"><b id="nN"></b><span>components</span></div>
+    <div class="stat"><b id="nE"></b><span>dependencies</span></div>
+    <div class="stat"><b id="nS"></b><span>smell-affected components</span></div>
+  </div>
+
+  <label class="ctl" for="colorBy">Colour nodes by</label>
+  <select id="colorBy">
+    <option value="count">Number of smells</option>
+    <option value="CD">Cyclic Dependency</option>
+    <option value="UD">Unstable Dependency</option>
+    <option value="AI">Ambiguous Interface</option>
+    <option value="GC">God Component</option>
+    <option value="FC">Feature Concentration</option>
+    <option value="SF">Scattered Functionality</option>
+    <option value="atdi">ATDI (Arcan)</option>
+  </select>
+  <div class="legend" id="legend"></div>
+
+  <label class="ctl" for="search">Find a component</label>
+  <input id="search" type="search" placeholder="e.g. analyzer" list="names" autocomplete="off">
+  <datalist id="names"></datalist>
+  <label class="check"><input type="checkbox" id="showLabels"> Show all node labels</label>
+
+  <section id="detail">
+    <h2>Selected component</h2>
+    <p class="note">Select a node to inspect its features, labels, and dependencies.</p>
+  </section>
+
+  <section>
+    <h2>Smell distribution</h2>
+    <table id="smellTable"></table>
+    <p class="note" id="ds"></p>
+  </section>
+
+  <section>
+    <h2>Highest ATDI</h2>
+    <ol class="rank" id="rank"></ol>
+  </section>
+</aside>
+<main>
+  <svg id="svg" role="img" aria-label="Dependency graph"></svg>
+  <div id="tip"></div>
+  <div class="hint">Drag to pan, scroll to zoom</div>
+</main>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script>
+const DATA = {"nodes": [{"id": 0, "name": "org.hiforce.lattice.annotation", "mask": 0, "atdi": 51.85921243102668, "units": 9, "Ab": 1.0, "In": 0.11764705882352941, "D": 0.11764705882352944, "FI": 11.0, "FO": 3.0, "LOC": 78.0, "PR": 0.04097167191756428, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 1, "name": "org.hiforce.lattice.annotation.model", "mask": 1, "atdi": 30.850092888708666, "units": 10, "Ab": 0.0, "In": 0.06060606060606061, "D": 0.9393939393939394, "FI": 15.0, "FO": 1.0, "LOC": 115.0, "PR": 0.04316733750302315, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 2, "name": "org.hiforce.lattice.annotation.parser", "mask": 1, "atdi": 0.0, "units": 8, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 3.0, "LOC": 109.0, "PR": 0.0027304484026635704, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 3, "name": "org.hiforce.lattice.annotation.processor", "mask": 1, "atdi": 0.0, "units": 5, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 4.0, "LOC": 60.0, "PR": 0.0027304484026635704, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 4, "name": "org.hiforce.lattice.cache", "mask": 1, "atdi": 35.08521825044424, "units": 4, "Ab": 0.75, "In": 0.18181818181818182, "D": 0.06818181818181812, "FI": 10.0, "FO": 2.0, "LOC": 25.0, "PR": 0.05016727370177239, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 5, "name": "org.hiforce.lattice.cache.invoke", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 0.3333333333333333, "D": 0.6666666666666667, "FI": 4.0, "FO": 2.0, "LOC": 129.0, "PR": 0.019992998421948245, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 6, "name": "org.hiforce.lattice.dynamic", "mask": 1, "atdi": 15.611904560520564, "units": 1, "Ab": 0.0, "In": 0.9411764705882353, "D": 0.05882352941176472, "FI": 1.0, "FO": 12.0, "LOC": 104.0, "PR": 0.004298922656092051, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 7, "name": "org.hiforce.lattice.dynamic.classloader", "mask": 1, "atdi": 15.611904560520564, "units": 2, "Ab": 0.0, "In": 0.18181818181818182, "D": 0.8181818181818181, "FI": 3.0, "FO": 2.0, "LOC": 17.0, "PR": 0.003690208172804954, "CD": 0, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 8, "name": "org.hiforce.lattice.dynamic.config", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 0.0, "FO": 0.0, "LOC": 5.0, "PR": 0.0027304484026635704, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 9, "name": "org.hiforce.lattice.dynamic.destroy", "mask": 1, "atdi": 4.822797615930646, "units": 5, "Ab": 0.2, "In": 0.9166666666666666, "D": 0.1166666666666667, "FI": 1.0, "FO": 7.0, "LOC": 84.0, "PR": 0.0030349827728739214, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 10, "name": "org.hiforce.lattice.dynamic.installer", "mask": 1, "atdi": 4.822797615930646, "units": 5, "Ab": 0.2, "In": 0.9333333333333333, "D": 0.1333333333333333, "FI": 1.0, "FO": 9.0, "LOC": 189.0, "PR": 0.0030349827728739214, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 11, "name": "org.hiforce.lattice.dynamic.model", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 4.0, "FO": 0.0, "LOC": 78.0, "PR": 0.004649563362749968, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 12, "name": "org.hiforce.lattice.dynamic.properties", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 1.0, "FO": 0.0, "LOC": 31.0, "PR": 0.0030349827728739214, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 13, "name": "org.hiforce.lattice.dynamic.utils", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 0.3333333333333333, "D": 0.6666666666666667, "FI": 2.0, "FO": 3.0, "LOC": 31.0, "PR": 0.003385673802594603, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 14, "name": "org.hiforce.lattice.exception", "mask": 1, "atdi": 5.95603158466634, "units": 2, "Ab": 0.5, "In": 0.05555555555555555, "D": 0.4444444444444444, "FI": 13.0, "FO": 1.0, "LOC": 30.0, "PR": 0.13371780930292682, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 15, "name": "org.hiforce.lattice.extension", "mask": 1, "atdi": 0.0, "units": 5, "Ab": 0.6, "In": 0.4166666666666667, "D": 0.016666666666666607, "FI": 4.0, "FO": 4.0, "LOC": 67.0, "PR": 0.003972031837762082, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 16, "name": "org.hiforce.lattice.jar", "mask": 1, "atdi": 9.452925997749954, "units": 1, "Ab": 0.0, "In": 0.75, "D": 0.25, "FI": 2.0, "FO": 4.0, "LOC": 25.0, "PR": 0.003363454284209746, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 17, "name": "org.hiforce.lattice.jar.model", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.2, "D": 0.8, "FI": 2.0, "FO": 1.0, "LOC": 12.0, "PR": 0.0036865221395755146, "CD": 0, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 18, "name": "org.hiforce.lattice.maven", "mask": 1, "atdi": 50.96789174298795, "units": 1, "Ab": 0.0, "In": 0.6, "D": 0.4, "FI": 2.0, "FO": 8.0, "LOC": 82.0, "PR": 0.0036865221395755146, "CD": 0, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 19, "name": "org.hiforce.lattice.maven.builder", "mask": 1, "atdi": 10.108528642787856, "units": 6, "Ab": 0.16666666666666666, "In": 0.96875, "D": 0.13541666666666674, "FI": 1.0, "FO": 11.0, "LOC": 374.0, "PR": 0.0031221751720463408, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 20, "name": "org.hiforce.lattice.maven.model", "mask": 1, "atdi": 0.0, "units": 16, "Ab": 0.0, "In": 0.2727272727272727, "D": 0.7272727272727273, "FI": 4.0, "FO": 2.0, "LOC": 273.0, "PR": 0.007212063064020448, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 21, "name": "org.hiforce.lattice.message", "mask": 1, "atdi": 5.95603158466634, "units": 3, "Ab": 0.0, "In": 0.08333333333333333, "D": 0.9166666666666666, "FI": 9.0, "FO": 1.0, "LOC": 217.0, "PR": 0.12704523838302328, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 22, "name": "org.hiforce.lattice.model.ability", "mask": 1, "atdi": 82.75723130551536, "units": 3, "Ab": 1.0, "In": 0.13043478260869565, "D": 0.13043478260869557, "FI": 24.0, "FO": 5.0, "LOC": 37.0, "PR": 0.1056316603846571, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 23, "name": "org.hiforce.lattice.model.ability.cache", "mask": 1, "atdi": 12.301964185933285, "units": 1, "Ab": 1.0, "In": 0.25, "D": 0.25, "FI": 3.0, "FO": 1.0, "LOC": 5.0, "PR": 0.042639433678290005, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 24, "name": "org.hiforce.lattice.model.ability.execute", "mask": 1, "atdi": 11.580297456009724, "units": 2, "Ab": 1.0, "In": 0.11764705882352941, "D": 0.11764705882352944, "FI": 7.0, "FO": 2.0, "LOC": 19.0, "PR": 0.02406988509677564, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 25, "name": "org.hiforce.lattice.model.business", "mask": 1, "atdi": 16.357365660912507, "units": 11, "Ab": 0.9090909090909091, "In": 0.11764705882352941, "D": 0.026737967914438387, "FI": 20.0, "FO": 3.0, "LOC": 132.0, "PR": 0.03815424512239821, "CD": 0, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 26, "name": "org.hiforce.lattice.model.config", "mask": 1, "atdi": 0.0, "units": 5, "Ab": 0.0, "In": 0.2, "D": 0.8, "FI": 7.0, "FO": 2.0, "LOC": 111.0, "PR": 0.010968552551273504, "CD": 0, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 27, "name": "org.hiforce.lattice.model.config.builder", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 0.8333333333333334, "D": 0.16666666666666663, "FI": 1.0, "FO": 2.0, "LOC": 82.0, "PR": 0.00305037546195437, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 28, "name": "org.hiforce.lattice.model.context", "mask": 1, "atdi": 16.383233763920312, "units": 2, "Ab": 0.0, "In": 0.42857142857142855, "D": 0.5714285714285714, "FI": 4.0, "FO": 3.0, "LOC": 55.0, "PR": 0.021313267714611325, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 29, "name": "org.hiforce.lattice.model.register", "mask": 1, "atdi": 39.48087481556046, "units": 9, "Ab": 0.2222222222222222, "In": 0.26666666666666666, "D": 0.5111111111111111, "FI": 19.0, "FO": 6.0, "LOC": 264.0, "PR": 0.037640860552377385, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 30, "name": "org.hiforce.lattice.model.scenario", "mask": 1, "atdi": 5.238566163904248, "units": 1, "Ab": 1.0, "In": 0.125, "D": 0.125, "FI": 4.0, "FO": 1.0, "LOC": 4.0, "PR": 0.014477642756123092, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 31, "name": "org.hiforce.lattice.remote.client", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.5, "In": 0.2, "D": 0.30000000000000004, "FI": 3.0, "FO": 1.0, "LOC": 20.0, "PR": 0.0037936232307282723, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 32, "name": "org.hiforce.lattice.remote.client.config", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 0.0, "FO": 0.0, "LOC": 5.0, "PR": 0.0027304484026635704, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 33, "name": "org.hiforce.lattice.remote.client.model", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 2.0, "FO": 0.0, "LOC": 41.0, "PR": 0.006166310058305445, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 34, "name": "org.hiforce.lattice.remote.client.properties", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 2.0, "FO": 0.0, "LOC": 57.0, "PR": 0.005562469275766122, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 35, "name": "org.hiforce.lattice.remote.container", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 7.0, "LOC": 36.0, "PR": 0.0027304484026635704, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 36, "name": "org.hiforce.lattice.remote.container.config", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 0.0, "FO": 0.0, "LOC": 5.0, "PR": 0.0027304484026635704, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 37, "name": "org.hiforce.lattice.remote.container.service", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.8333333333333334, "D": 0.16666666666666663, "FI": 1.0, "FO": 5.0, "LOC": 31.0, "PR": 0.003062029413407359, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 38, "name": "org.hiforce.lattice.remote.runner", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 11.0, "LOC": 111.0, "PR": 0.0027304484026635704, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 39, "name": "org.hiforce.lattice.remote.runner.config", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 0.0, "FO": 0.0, "LOC": 5.0, "PR": 0.0027304484026635704, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 40, "name": "org.hiforce.lattice.remote.runner.init", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.5, "D": 0.5, "FI": 1.0, "FO": 1.0, "LOC": 20.0, "PR": 0.002941454500409618, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 41, "name": "org.hiforce.lattice.remote.runner.key", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 1.0, "FO": 0.0, "LOC": 23.0, "PR": 0.002941454500409618, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 42, "name": "org.hiforce.lattice.runtime", "mask": 1, "atdi": 117.1468388955364, "units": 1, "Ab": 0.0, "In": 0.7142857142857143, "D": 0.2857142857142857, "FI": 14.0, "FO": 22.0, "LOC": 273.0, "PR": 0.0082796425489152, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 43, "name": "org.hiforce.lattice.runtime.ability", "mask": 1, "atdi": 5.285731026857212, "units": 1, "Ab": 1.0, "In": 0.95, "D": 0.95, "FI": 4.0, "FO": 18.0, "LOC": 109.0, "PR": 0.004300146739306752, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 44, "name": "org.hiforce.lattice.runtime.ability.cache", "mask": 1, "atdi": 11.887245775559599, "units": 3, "Ab": 0.0, "In": 0.7777777777777778, "D": 0.2222222222222222, "FI": 2.0, "FO": 6.0, "LOC": 106.0, "PR": 0.003966586409539305, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 45, "name": "org.hiforce.lattice.runtime.ability.creator", "mask": 1, "atdi": 12.762752107783585, "units": 1, "Ab": 0.0, "In": 0.8888888888888888, "D": 0.11111111111111116, "FI": 1.0, "FO": 6.0, "LOC": 42.0, "PR": 0.00305037546195437, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 46, "name": "org.hiforce.lattice.runtime.ability.delegate", "mask": 1, "atdi": 5.285731026857212, "units": 1, "Ab": 0.0, "In": 0.9767441860465116, "D": 0.023255813953488413, "FI": 1.0, "FO": 25.0, "LOC": 284.0, "PR": 0.002933528840573893, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 47, "name": "org.hiforce.lattice.runtime.ability.execute", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.0, "In": 0.7142857142857143, "D": 0.2857142857142857, "FI": 3.0, "FO": 7.0, "LOC": 219.0, "PR": 0.0037027353104281883, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 48, "name": "org.hiforce.lattice.runtime.ability.execute.filter", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 2.0, "FO": 0.0, "LOC": 21.0, "PR": 0.0030332770125551132, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 49, "name": "org.hiforce.lattice.runtime.ability.execute.runner", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.875, "D": 0.125, "FI": 1.0, "FO": 5.0, "LOC": 27.0, "PR": 0.0028301965746447906, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 50, "name": "org.hiforce.lattice.runtime.ability.reduce", "mask": 1, "atdi": 0.0, "units": 10, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 2.0, "LOC": 220.0, "PR": 0.0027304484026635704, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 51, "name": "org.hiforce.lattice.runtime.ability.register", "mask": 1, "atdi": 42.24585461925319, "units": 4, "Ab": 0.0, "In": 0.7380952380952381, "D": 0.26190476190476186, "FI": 6.0, "FO": 13.0, "LOC": 287.0, "PR": 0.004813609759607663, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 52, "name": "org.hiforce.lattice.runtime.cache", "mask": 1, "atdi": 122.9184145852922, "units": 3, "Ab": 0.6666666666666666, "In": 0.45454545454545453, "D": 0.1212121212121211, "FI": 9.0, "FO": 9.0, "LOC": 105.0, "PR": 0.008511677002591915, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 53, "name": "org.hiforce.lattice.runtime.cache.ability", "mask": 1, "atdi": 23.001527543696852, "units": 1, "Ab": 0.0, "In": 0.5, "D": 0.5, "FI": 4.0, "FO": 4.0, "LOC": 40.0, "PR": 0.004268854620809236, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 54, "name": "org.hiforce.lattice.runtime.cache.config", "mask": 1, "atdi": 11.976744023714852, "units": 1, "Ab": 0.0, "In": 0.6, "D": 0.4, "FI": 2.0, "FO": 2.0, "LOC": 24.0, "PR": 0.0038543403522494227, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 55, "name": "org.hiforce.lattice.runtime.cache.exension", "mask": 1, "atdi": 23.149190713030723, "units": 3, "Ab": 0.0, "In": 0.8181818181818182, "D": 0.18181818181818177, "FI": 2.0, "FO": 6.0, "LOC": 68.0, "PR": 0.003634161464939843, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 56, "name": "org.hiforce.lattice.runtime.cache.index", "mask": 1, "atdi": 23.21718650730082, "units": 2, "Ab": 0.0, "In": 0.75, "D": 0.25, "FI": 4.0, "FO": 6.0, "LOC": 30.0, "PR": 0.004463814395181714, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 57, "name": "org.hiforce.lattice.runtime.cache.key", "mask": 1, "atdi": 16.92805466830651, "units": 3, "Ab": 0.3333333333333333, "In": 0.625, "D": 0.04166666666666674, "FI": 3.0, "FO": 4.0, "LOC": 154.0, "PR": 0.004252302287272696, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 58, "name": "org.hiforce.lattice.runtime.config", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 0.0, "FO": 0.0, "LOC": 5.0, "PR": 0.0027304484026635704, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 59, "name": "org.hiforce.lattice.runtime.session", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 1.0, "In": 1.0, "D": 1.0, "FI": 0.0, "FO": 8.0, "LOC": 103.0, "PR": 0.0027304484026635704, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 60, "name": "org.hiforce.lattice.runtime.spi", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.5, "In": 0.6666666666666666, "D": 0.16666666666666652, "FI": 2.0, "FO": 4.0, "LOC": 52.0, "PR": 0.00315012363393559, "CD": 0, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 61, "name": "org.hiforce.lattice.runtime.utils", "mask": 1, "atdi": 0.0, "units": 6, "Ab": 0.16666666666666666, "In": 0.5, "D": 0.33333333333333337, "FI": 7.0, "FO": 4.0, "LOC": 329.0, "PR": 0.00575886265578557, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 62, "name": "org.hiforce.lattice.sequence", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 2.0, "FO": 0.0, "LOC": 9.0, "PR": 0.008703840410061149, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 63, "name": "org.hiforce.lattice.spi", "mask": 1, "atdi": 45.5455729709952, "units": 1, "Ab": 0.0, "In": 0.6666666666666666, "D": 0.33333333333333337, "FI": 8.0, "FO": 3.0, "LOC": 50.0, "PR": 0.022249142516851485, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 64, "name": "org.hiforce.lattice.spi.annotation", "mask": 1, "atdi": 40.77670483281908, "units": 10, "Ab": 1.0, "In": 0.43333333333333335, "D": 0.43333333333333335, "FI": 6.0, "FO": 4.0, "LOC": 196.0, "PR": 0.014397409408194064, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 65, "name": "org.hiforce.lattice.spi.classloader", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.5, "In": 0.0, "D": 0.5, "FI": 3.0, "FO": 0.0, "LOC": 43.0, "PR": 0.005288308013255925, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 66, "name": "org.hiforce.lattice.spi.config", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 1.0, "In": 0.25, "D": 0.25, "FI": 3.0, "FO": 1.0, "LOC": 6.0, "PR": 0.004493522784896285, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 67, "name": "org.hiforce.lattice.tool", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 3.0, "LOC": 42.0, "PR": 0.0027304484026635704, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 68, "name": "org.hiforce.lattice.utils", "mask": 1, "atdi": 22.75576948936091, "units": 6, "Ab": 0.0, "In": 0.5151515151515151, "D": 0.48484848484848486, "FI": 14.0, "FO": 5.0, "LOC": 278.0, "PR": 0.014479607815652747, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}], "edges": [{"source": 0, "target": 1, "w": 2.0}, {"source": 0, "target": 63, "w": 13.0}, {"source": 1, "target": 22, "w": 2.0}, {"source": 2, "target": 0, "w": 8.0}, {"source": 2, "target": 1, "w": 2.0}, {"source": 2, "target": 64, "w": 8.0}, {"source": 3, "target": 0, "w": 5.0}, {"source": 3, "target": 22, "w": 2.0}, {"source": 3, "target": 25, "w": 3.0}, {"source": 3, "target": 64, "w": 5.0}, {"source": 4, "target": 23, "w": 1.0}, {"source": 4, "target": 29, "w": 1.0}, {"source": 5, "target": 14, "w": 1.0}, {"source": 5, "target": 21, "w": 1.0}, {"source": 6, "target": 0, "w": 2.0}, {"source": 6, "target": 7, "w": 1.0}, {"source": 6, "target": 9, "w": 5.0}, {"source": 6, "target": 10, "w": 5.0}, {"source": 6, "target": 11, "w": 1.0}, {"source": 6, "target": 12, "w": 1.0}, {"source": 6, "target": 14, "w": 1.0}, {"source": 6, "target": 21, "w": 1.0}, {"source": 6, "target": 42, "w": 4.0}, {"source": 6, "target": 43, "w": 2.0}, {"source": 6, "target": 63, "w": 1.0}, {"source": 7, "target": 6, "w": 1.0}, {"source": 7, "target": 65, "w": 1.0}, {"source": 9, "target": 1, "w": 2.0}, {"source": 9, "target": 7, "w": 4.0}, {"source": 9, "target": 11, "w": 5.0}, {"source": 9, "target": 13, "w": 3.0}, {"source": 9, "target": 25, "w": 2.0}, {"source": 9, "target": 42, "w": 2.0}, {"source": 9, "target": 61, "w": 1.0}, {"source": 10, "target": 7, "w": 4.0}, {"source": 10, "target": 11, "w": 6.0}, {"source": 10, "target": 13, "w": 3.0}, {"source": 10, "target": 22, "w": 2.0}, {"source": 10, "target": 25, "w": 2.0}, {"source": 10, "target": 29, "w": 4.0}, {"source": 10, "target": 51, "w": 2.0}, {"source": 10, "target": 61, "w": 1.0}, {"source": 10, "target": 68, "w": 1.0}, {"source": 13, "target": 11, "w": 1.0}, {"source": 13, "target": 14, "w": 1.0}, {"source": 13, "target": 61, "w": 1.0}, {"source": 14, "target": 21, "w": 2.0}, {"source": 15, "target": 22, "w": 4.0}, {"source": 15, "target": 24, "w": 1.0}, {"source": 15, "target": 25, "w": 1.0}, {"source": 15, "target": 29, "w": 2.0}, {"source": 16, "target": 17, "w": 1.0}, {"source": 16, "target": 18, "w": 1.0}, {"source": 16, "target": 20, "w": 1.0}, {"source": 16, "target": 68, "w": 1.0}, {"source": 17, "target": 20, "w": 1.0}, {"source": 18, "target": 0, "w": 4.0}, {"source": 18, "target": 16, "w": 3.0}, {"source": 18, "target": 19, "w": 6.0}, {"source": 18, "target": 20, "w": 1.0}, {"source": 18, "target": 42, "w": 1.0}, {"source": 18, "target": 43, "w": 7.0}, {"source": 18, "target": 68, "w": 1.0}, {"source": 19, "target": 0, "w": 1.0}, {"source": 19, "target": 1, "w": 2.0}, {"source": 19, "target": 16, "w": 1.0}, {"source": 19, "target": 17, "w": 3.0}, {"source": 19, "target": 18, "w": 6.0}, {"source": 19, "target": 20, "w": 19.0}, {"source": 19, "target": 22, "w": 6.0}, {"source": 19, "target": 25, "w": 3.0}, {"source": 19, "target": 29, "w": 8.0}, {"source": 19, "target": 42, "w": 1.0}, {"source": 19, "target": 51, "w": 7.0}, {"source": 20, "target": 1, "w": 2.0}, {"source": 20, "target": 68, "w": 1.0}, {"source": 21, "target": 14, "w": 1.0}, {"source": 22, "target": 0, "w": 2.0}, {"source": 22, "target": 4, "w": 1.0}, {"source": 22, "target": 23, "w": 1.0}, {"source": 22, "target": 24, "w": 2.0}, {"source": 22, "target": 28, "w": 1.0}, {"source": 23, "target": 22, "w": 1.0}, {"source": 24, "target": 1, "w": 1.0}, {"source": 24, "target": 22, "w": 1.0}, {"source": 25, "target": 4, "w": 2.0}, {"source": 25, "target": 5, "w": 1.0}, {"source": 25, "target": 30, "w": 4.0}, {"source": 26, "target": 14, "w": 1.0}, {"source": 26, "target": 25, "w": 1.0}, {"source": 27, "target": 25, "w": 1.0}, {"source": 27, "target": 26, "w": 5.0}, {"source": 28, "target": 5, "w": 1.0}, {"source": 28, "target": 25, "w": 1.0}, {"source": 28, "target": 29, "w": 1.0}, {"source": 29, "target": 1, "w": 2.0}, {"source": 29, "target": 4, "w": 2.0}, {"source": 29, "target": 14, "w": 3.0}, {"source": 29, "target": 22, "w": 1.0}, {"source": 29, "target": 25, "w": 8.0}, {"source": 29, "target": 62, "w": 1.0}, {"source": 30, "target": 25, "w": 1.0}, {"source": 31, "target": 33, "w": 1.0}, {"source": 35, "target": 29, "w": 1.0}, {"source": 35, "target": 31, "w": 1.0}, {"source": 35, "target": 34, "w": 1.0}, {"source": 35, "target": 37, "w": 1.0}, {"source": 35, "target": 42, "w": 1.0}, {"source": 35, "target": 51, "w": 1.0}, {"source": 37, "target": 22, "w": 1.0}, {"source": 37, "target": 29, "w": 1.0}, {"source": 37, "target": 31, "w": 1.0}, {"source": 37, "target": 42, "w": 1.0}, {"source": 37, "target": 68, "w": 1.0}, {"source": 38, "target": 14, "w": 1.0}, {"source": 38, "target": 15, "w": 5.0}, {"source": 38, "target": 22, "w": 3.0}, {"source": 38, "target": 24, "w": 1.0}, {"source": 38, "target": 25, "w": 1.0}, {"source": 38, "target": 29, "w": 2.0}, {"source": 38, "target": 31, "w": 3.0}, {"source": 38, "target": 33, "w": 3.0}, {"source": 38, "target": 40, "w": 1.0}, {"source": 38, "target": 41, "w": 1.0}, {"source": 38, "target": 68, "w": 1.0}, {"source": 40, "target": 34, "w": 1.0}, {"source": 42, "target": 0, "w": 2.0}, {"source": 42, "target": 4, "w": 2.0}, {"source": 42, "target": 14, "w": 1.0}, {"source": 42, "target": 21, "w": 2.0}, {"source": 42, "target": 22, "w": 4.0}, {"source": 42, "target": 25, "w": 6.0}, {"source": 42, "target": 26, "w": 5.0}, {"source": 42, "target": 27, "w": 1.0}, {"source": 42, "target": 29, "w": 7.0}, {"source": 42, "target": 30, "w": 1.0}, {"source": 42, "target": 45, "w": 1.0}, {"source": 42, "target": 51, "w": 3.0}, {"source": 42, "target": 52, "w": 1.0}, {"source": 42, "target": 53, "w": 1.0}, {"source": 42, "target": 54, "w": 1.0}, {"source": 42, "target": 60, "w": 1.0}, {"source": 42, "target": 61, "w": 2.0}, {"source": 42, "target": 63, "w": 5.0}, {"source": 42, "target": 65, "w": 2.0}, {"source": 42, "target": 66, "w": 1.0}, {"source": 42, "target": 68, "w": 1.0}, {"source": 43, "target": 0, "w": 20.0}, {"source": 43, "target": 1, "w": 2.0}, {"source": 43, "target": 4, "w": 1.0}, {"source": 43, "target": 14, "w": 1.0}, {"source": 43, "target": 21, "w": 1.0}, {"source": 43, "target": 22, "w": 14.0}, {"source": 43, "target": 24, "w": 2.0}, {"source": 43, "target": 25, "w": 1.0}, {"source": 43, "target": 28, "w": 1.0}, {"source": 43, "target": 29, "w": 1.0}, {"source": 43, "target": 42, "w": 1.0}, {"source": 43, "target": 46, "w": 1.0}, {"source": 43, "target": 47, "w": 2.0}, {"source": 43, "target": 48, "w": 1.0}, {"source": 43, "target": 52, "w": 9.0}, {"source": 43, "target": 63, "w": 1.0}, {"source": 43, "target": 68, "w": 2.0}, {"source": 44, "target": 1, "w": 1.0}, {"source": 44, "target": 22, "w": 2.0}, {"source": 44, "target": 23, "w": 1.0}, {"source": 44, "target": 52, "w": 2.0}, {"source": 44, "target": 61, "w": 1.0}, {"source": 44, "target": 68, "w": 1.0}, {"source": 45, "target": 22, "w": 1.0}, {"source": 45, "target": 25, "w": 1.0}, {"source": 45, "target": 29, "w": 2.0}, {"source": 45, "target": 42, "w": 1.0}, {"source": 45, "target": 44, "w": 2.0}, {"source": 45, "target": 61, "w": 1.0}, {"source": 46, "target": 1, "w": 1.0}, {"source": 46, "target": 4, "w": 1.0}, {"source": 46, "target": 5, "w": 1.0}, {"source": 46, "target": 14, "w": 1.0}, {"source": 46, "target": 15, "w": 3.0}, {"source": 46, "target": 21, "w": 1.0}, {"source": 46, "target": 22, "w": 2.0}, {"source": 46, "target": 25, "w": 3.0}, {"source": 46, "target": 26, "w": 3.0}, {"source": 46, "target": 28, "w": 1.0}, {"source": 46, "target": 29, "w": 7.0}, {"source": 46, "target": 42, "w": 1.0}, {"source": 46, "target": 43, "w": 1.0}, {"source": 46, "target": 47, "w": 1.0}, {"source": 46, "target": 48, "w": 2.0}, {"source": 46, "target": 49, "w": 1.0}, {"source": 46, "target": 51, "w": 1.0}, {"source": 46, "target": 52, "w": 1.0}, {"source": 46, "target": 53, "w": 1.0}, {"source": 46, "target": 55, "w": 2.0}, {"source": 46, "target": 56, "w": 1.0}, {"source": 46, "target": 57, "w": 2.0}, {"source": 46, "target": 60, "w": 2.0}, {"source": 46, "target": 61, "w": 1.0}, {"source": 46, "target": 68, "w": 1.0}, {"source": 47, "target": 15, "w": 5.0}, {"source": 47, "target": 21, "w": 1.0}, {"source": 47, "target": 22, "w": 2.0}, {"source": 47, "target": 24, "w": 2.0}, {"source": 47, "target": 25, "w": 2.0}, {"source": 47, "target": 29, "w": 2.0}, {"source": 49, "target": 15, "w": 2.0}, {"source": 49, "target": 21, "w": 1.0}, {"source": 49, "target": 22, "w": 2.0}, {"source": 49, "target": 24, "w": 1.0}, {"source": 49, "target": 25, "w": 1.0}, {"source": 50, "target": 1, "w": 8.0}, {"source": 50, "target": 24, "w": 9.0}, {"source": 51, "target": 1, "w": 10.0}, {"source": 51, "target": 14, "w": 2.0}, {"source": 51, "target": 21, "w": 2.0}, {"source": 51, "target": 22, "w": 2.0}, {"source": 51, "target": 25, "w": 1.0}, {"source": 51, "target": 29, "w": 10.0}, {"source": 51, "target": 30, "w": 1.0}, {"source": 51, "target": 42, "w": 1.0}, {"source": 51, "target": 53, "w": 1.0}, {"source": 51, "target": 56, "w": 1.0}, {"source": 51, "target": 63, "w": 1.0}, {"source": 51, "target": 64, "w": 1.0}, {"source": 51, "target": 68, "w": 3.0}, {"source": 52, "target": 0, "w": 1.0}, {"source": 52, "target": 4, "w": 2.0}, {"source": 52, "target": 44, "w": 2.0}, {"source": 52, "target": 51, "w": 1.0}, {"source": 52, "target": 53, "w": 1.0}, {"source": 52, "target": 54, "w": 1.0}, {"source": 52, "target": 55, "w": 2.0}, {"source": 52, "target": 56, "w": 1.0}, {"source": 53, "target": 1, "w": 1.0}, {"source": 53, "target": 29, "w": 1.0}, {"source": 53, "target": 52, "w": 1.0}, {"source": 53, "target": 57, "w": 1.0}, {"source": 54, "target": 26, "w": 2.0}, {"source": 54, "target": 52, "w": 1.0}, {"source": 55, "target": 22, "w": 2.0}, {"source": 55, "target": 29, "w": 3.0}, {"source": 55, "target": 42, "w": 2.0}, {"source": 55, "target": 52, "w": 3.0}, {"source": 55, "target": 56, "w": 1.0}, {"source": 55, "target": 57, "w": 1.0}, {"source": 56, "target": 4, "w": 1.0}, {"source": 56, "target": 25, "w": 1.0}, {"source": 56, "target": 29, "w": 6.0}, {"source": 56, "target": 42, "w": 1.0}, {"source": 56, "target": 52, "w": 4.0}, {"source": 56, "target": 62, "w": 1.0}, {"source": 57, "target": 4, "w": 2.0}, {"source": 57, "target": 29, "w": 1.0}, {"source": 57, "target": 42, "w": 1.0}, {"source": 57, "target": 52, "w": 1.0}, {"source": 59, "target": 5, "w": 1.0}, {"source": 59, "target": 14, "w": 2.0}, {"source": 59, "target": 25, "w": 2.0}, {"source": 59, "target": 26, "w": 2.0}, {"source": 59, "target": 28, "w": 1.0}, {"source": 59, "target": 29, "w": 3.0}, {"source": 59, "target": 30, "w": 1.0}, {"source": 59, "target": 42, "w": 1.0}, {"source": 60, "target": 22, "w": 2.0}, {"source": 60, "target": 47, "w": 2.0}, {"source": 60, "target": 65, "w": 1.0}, {"source": 60, "target": 66, "w": 1.0}, {"source": 61, "target": 22, "w": 2.0}, {"source": 61, "target": 63, "w": 1.0}, {"source": 61, "target": 64, "w": 3.0}, {"source": 61, "target": 68, "w": 1.0}, {"source": 63, "target": 0, "w": 8.0}, {"source": 63, "target": 64, "w": 8.0}, {"source": 64, "target": 1, "w": 8.0}, {"source": 64, "target": 22, "w": 2.0}, {"source": 64, "target": 63, "w": 1.0}, {"source": 64, "target": 68, "w": 2.0}, {"source": 66, "target": 26, "w": 1.0}, {"source": 67, "target": 26, "w": 1.0}, {"source": 67, "target": 66, "w": 1.0}, {"source": 67, "target": 68, "w": 1.0}, {"source": 68, "target": 1, "w": 8.0}, {"source": 68, "target": 14, "w": 1.0}, {"source": 68, "target": 22, "w": 2.0}, {"source": 68, "target": 63, "w": 1.0}, {"source": 68, "target": 64, "w": 7.0}], "meta": {"project": "hiforce__lattice", "n_nodes": 69, "n_edges": 288, "graph_level_smells": ["Dense Structure"], "dense_structure": 1, "label_counts": {"CD": 12, "UD": 11, "AI": 0, "GC": 0, "FC": 8, "SF": 0}, "matching": {"arcan_nodes": 69, "designite_packages": 68, "matched": 68, "coverage": 0.9855, "arcan_only": ["org.hiforce.lattice.annotation"], "designite_only": [], "smelly_packages_not_in_graph": []}, "dropped_containers": {"default_package": [], "empty_container": ["org", "org.hiforce.lattice.model", "org.hiforce.lattice.remote", "org.hiforce", "org.hiforce.lattice"]}, "unknown_designite_smells": []}};
+const LABELS = ["CD","UD","AI","GC","FC","SF"];
+const NAMES = {CD:"Cyclic Dependency",UD:"Unstable Dependency",AI:"Ambiguous Interface",
+  GC:"God Component",FC:"Feature Concentration",SF:"Scattered Functionality"};
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const nodes = DATA.nodes.map(d => ({...d, nSmell: LABELS.reduce((s,k)=>s+d[k],0),
+  short: d.name.split(".").slice(-1)[0] || d.name}));
+const byId = new Map(nodes.map(d => [d.id, d]));
+const links = DATA.edges.map(e => ({...e}));
+const meta = DATA.meta;
+let current = null;
+
+// ---------- sidebar ----------
+document.getElementById("title").textContent = meta.project;
+document.getElementById("nN").textContent = nodes.length;
+document.getElementById("nE").textContent = links.length;
+document.getElementById("nS").textContent = nodes.filter(d => d.nSmell > 0).length;
+document.getElementById("names").innerHTML = nodes.map(d => `<option value="${d.name}">`).join("");
+document.getElementById("smellTable").innerHTML = LABELS.map(k =>
+  `<tr><td><i class="dot" style="background:var(--${k})"></i>${NAMES[k]}</td>
+   <td>${meta.label_counts[k]} / ${nodes.length}</td></tr>`).join("");
+document.getElementById("ds").textContent = meta.dense_structure
+  ? "Dense Structure detected at project level (not assigned to individual nodes)."
+  : "Dense Structure not detected.";
+const unmasked = nodes.filter(d => !d.mask).length;
+if (unmasked) document.getElementById("ds").textContent +=
+  ` ${unmasked} nodes not analysed by Designite (dashed outline): labels unavailable.`;
+const rank = [...nodes].sort((a,b) => b.atdi - a.atdi).slice(0,10);
+document.getElementById("rank").innerHTML = rank.map(d =>
+  `<li><button data-id="${d.id}">${d.short}</button> <span class="v">${d.atdi.toFixed(1)}</span></li>`).join("");
+document.querySelectorAll("#rank button").forEach(b =>
+  b.addEventListener("click", () => select(byId.get(+b.dataset.id), true)));
+
+// ---------- graph ----------
+const svg = d3.select("#svg"), g = svg.append("g");
+const W = () => svg.node().clientWidth, H = () => svg.node().clientHeight;
+const maxLoc = d3.max(nodes, d => d.LOC) || 1;
+const r = d3.scaleSqrt().domain([0, maxLoc]).range([4, 26]);
+const wScale = d3.scaleLog().domain([1, d3.max(links, d => d.w) || 1]).range([0.6, 3.5]);
+const maxAtdi = d3.max(nodes, d => d.atdi) || 1;
+
+svg.append("defs").append("marker").attr("id","arrow").attr("viewBox","0 -4 8 8")
+  .attr("refX",8).attr("refY",0).attr("markerUnits","userSpaceOnUse").attr("markerWidth",9).attr("markerHeight",9).attr("orient","auto")
+  .append("path").attr("d","M0,-4L8,0L0,4").attr("fill","var(--edge)");
+
+const link = g.append("g").selectAll("path").data(links).join("path")
+  .attr("class","link").attr("stroke-width", d => wScale(Math.max(1,d.w))).attr("marker-end","url(#arrow)");
+const node = g.append("g").selectAll("g").data(nodes).join("g")
+  .attr("class", d => "node" + (d.mask ? "" : " nomask")).attr("tabindex",0)
+  .attr("aria-label", d => d.name);
+node.append("circle").attr("r", d => r(d.LOC));
+node.append("text").attr("dy", d => -r(d.LOC) - 4).attr("text-anchor","middle").text(d => d.short);
+
+const sim = d3.forceSimulation(nodes)
+  .force("link", d3.forceLink(links).id(d => d.id).distance(95).strength(0.2))
+  .force("charge", d3.forceManyBody().strength(-420))
+  .force("collide", d3.forceCollide(d => r(d.LOC) + 6))
+  .force("x", d3.forceX(() => W()/2).strength(0.05))
+  .force("y", d3.forceY(() => H()/2).strength(0.05))
+  .on("tick", ticked).on("end", fit);
+if (matchMedia("(prefers-reduced-motion: reduce)").matches) { sim.stop(); for (let i=0;i<300;i++) sim.tick(); ticked(); setTimeout(fit, 0); }
+let fitted = false;
+function fit(){
+  if (fitted) return; fitted = true;
+  const pad = 40, xs = nodes.map(d => d.x), ys = nodes.map(d => d.y);
+  const x0 = d3.min(xs) - pad, x1 = d3.max(xs) + pad, y0 = d3.min(ys) - pad, y1 = d3.max(ys) + pad;
+  const k = Math.min(2, 0.95 / Math.max((x1 - x0) / W(), (y1 - y0) / H()));
+  svg.transition().duration(600).call(zoom.transform,
+    d3.zoomIdentity.translate(W()/2, H()/2).scale(k).translate(-(x0 + x1)/2, -(y0 + y1)/2));
+}
+
+function ticked(){
+  link.attr("d", d => {
+    const dx = d.target.x - d.source.x, dy = d.target.y - d.source.y, L = Math.hypot(dx,dy) || 1;
+    const rt = r(d.target.LOC) + 3, rs = r(d.source.LOC);
+    return `M${d.source.x + dx*rs/L},${d.source.y + dy*rs/L}L${d.target.x - dx*rt/L},${d.target.y - dy*rt/L}`;
+  });
+  node.attr("transform", d => `translate(${d.x},${d.y})`);
+}
+
+node.call(d3.drag()
+  .on("start", (e,d) => { if(!e.active) sim.alphaTarget(0.3).restart(); d.fx=d.x; d.fy=d.y; })
+  .on("drag", (e,d) => { d.fx=e.x; d.fy=e.y; })
+  .on("end", (e,d) => { if(!e.active) sim.alphaTarget(0); d.fx=null; d.fy=null; }));
+const zoom = d3.zoom().scaleExtent([0.2,6]).on("zoom", e => g.attr("transform", e.transform));
+svg.call(zoom).on("click", e => { if (e.target === svg.node()) select(null); });
+
+// ---------- colour ----------
+function colour(d){
+  const m = document.getElementById("colorBy").value;
+  if (m === "count") return css("--s" + Math.min(d.nSmell, 4));
+  if (m === "atdi") return d3.interpolateLab(css("--s0"), css("--s4"))(Math.sqrt(d.atdi / maxAtdi));
+  return d[m] ? css("--" + m) : css("--clean");
+}
+function legend(){
+  const m = document.getElementById("colorBy").value, el = document.getElementById("legend");
+  if (m === "count") el.innerHTML = [0,1,2,3,4].map(i =>
+    `<span><i style="background:var(--s${i})"></i>${i===4?"4+":i} ${i===1?"smell":"smells"}</span>`).join("");
+  else if (m === "atdi") el.innerHTML = `<span><i style="background:var(--s0)"></i>0</span>
+    <span><i style="background:var(--s4)"></i>${maxAtdi.toFixed(0)}</span>`;
+  else el.innerHTML = `<span><i style="background:var(--${m})"></i>affected</span>
+    <span><i style="background:var(--clean)"></i>not affected</span>`;
+  el.innerHTML += `<span>node size ∝ LOC</span>`;
+}
+function paint(){ node.select("circle").attr("fill", colour); legend(); }
+document.getElementById("colorBy").addEventListener("change", paint);
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", paint);
+paint();
+
+// ---------- labels ----------
+function labelsVisible(){
+  const all = document.getElementById("showLabels").checked;
+  node.select("text").style("display", d => all || r(d.LOC) > 12 || d === current ? null : "none");
+}
+document.getElementById("showLabels").addEventListener("change", labelsVisible);
+
+// ---------- tooltip ----------
+const tip = document.getElementById("tip");
+node.on("mouseenter", (e,d) => {
+  const s = LABELS.filter(k => d[k]).join(", ") || "none";
+  tip.innerHTML = `<b>${d.name}</b><br>LOC ${d.LOC} · FI ${d.FI} · FO ${d.FO}<br>Smells: ${s}`;
+  tip.style.display = "block";
+}).on("mousemove", e => {
+  const b = document.querySelector("main").getBoundingClientRect();
+  tip.style.left = (e.clientX - b.left + 14) + "px"; tip.style.top = (e.clientY - b.top + 14) + "px";
+}).on("mouseleave", () => tip.style.display = "none")
+  .on("click", (e,d) => { e.stopPropagation(); select(d); })
+  .on("keydown", (e,d) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(d); } });
+
+// ---------- selection ----------
+function select(d, center){
+  current = d;
+  node.classed("sel", n => n === d);
+  if (!d){ node.classed("dim", false); link.classed("dim", false); renderDetail(null); labelsVisible(); return; }
+  const out = links.filter(l => l.source === d), inc = links.filter(l => l.target === d);
+  const nb = new Set([d, ...out.map(l => l.target), ...inc.map(l => l.source)]);
+  node.classed("dim", n => !nb.has(n));
+  link.classed("dim", l => l.source !== d && l.target !== d);
+  renderDetail(d, out, inc); labelsVisible();
+  if (center) svg.transition().duration(500).call(zoom.translateTo, d.x, d.y);
+}
+function renderDetail(d, out, inc){
+  const el = document.getElementById("detail");
+  if (!d){ el.innerHTML = `<h2>Selected component</h2><p class="note">Select a node to inspect its features, labels, and dependencies.</p>`; return; }
+  const chips = LABELS.filter(k => d[k]).map(k => `<span class="chip" style="background:var(--${k})">${NAMES[k]}</span>`).join("")
+    || `<span class="chip none">${d.mask ? "No smells" : "Labels unavailable"}</span>`;
+  const f = (v, p=3) => Number.isInteger(v) ? v : v.toFixed(p);
+  const rows = [["Abstractness (Ab)",d.Ab],["Instability (In)",d.In],["Distance (D)",d.D],["Fan-in (FI)",d.FI],
+    ["Fan-out (FO)",d.FO],["Lines of code (LOC)",d.LOC],["PageRank (PR)",d.PR],["ATDI (Arcan)",d.atdi],["Classes",d.units]];
+  el.innerHTML = `<h2>Selected component</h2><div class="detail-name">${d.name}</div>
+    <div class="chips">${chips}</div>
+    <table>${rows.map(([k,v]) => `<tr><td>${k}</td><td>${f(v)}</td></tr>`).join("")}</table>
+    <p class="note">Efferent dependencies: ${out.length}. Afferent dependencies: ${inc.length}.</p>`;
+}
+document.getElementById("search").addEventListener("change", e => {
+  const d = nodes.find(n => n.name === e.target.value) || nodes.find(n => n.name.includes(e.target.value));
+  if (d) select(d, true);
+});
+labelsVisible();
+</script>
+</body>
+</html>

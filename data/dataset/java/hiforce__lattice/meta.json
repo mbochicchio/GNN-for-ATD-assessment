@@ -1,0 +1,39 @@
+{
+  "project": "hiforce__lattice",
+  "n_nodes": 69,
+  "n_edges": 288,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 12,
+    "UD": 11,
+    "AI": 0,
+    "GC": 0,
+    "FC": 8,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 69,
+    "designite_packages": 68,
+    "matched": 68,
+    "coverage": 0.9855,
+    "arcan_only": [
+      "org.hiforce.lattice.annotation"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "org",
+      "org.hiforce.lattice.model",
+      "org.hiforce.lattice.remote",
+      "org.hiforce",
+      "org.hiforce.lattice"
+    ]
+  },
+  "unknown_designite_smells": []
+}

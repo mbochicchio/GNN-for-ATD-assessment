@@ -1,0 +1,39 @@
+{
+  "project": "zeljkoobrenovic__sokrates",
+  "n_nodes": 108,
+  "n_edges": 762,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 38,
+    "UD": 26,
+    "AI": 0,
+    "GC": 0,
+    "FC": 27,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 108,
+    "designite_packages": 108,
+    "matched": 108,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "nl",
+      "nl.obren",
+      "nl.obren.sokrates.reports.generators",
+      "nl.obren.sokrates.reports.landscape",
+      "nl.obren.sokrates",
+      "nl.obren.sokrates.common",
+      "nl.obren.sokrates.reports"
+    ]
+  },
+  "unknown_designite_smells": []
+}

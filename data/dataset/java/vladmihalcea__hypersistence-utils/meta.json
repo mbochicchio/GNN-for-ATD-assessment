@@ -1,0 +1,38 @@
+{
+  "project": "vladmihalcea__hypersistence-utils",
+  "n_nodes": 25,
+  "n_edges": 45,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 0,
+    "UD": 0,
+    "AI": 0,
+    "GC": 5,
+    "FC": 16,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 25,
+    "designite_packages": 24,
+    "matched": 24,
+    "coverage": 0.96,
+    "arcan_only": [
+      "io.hypersistence.utils.spring.annotation"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "io.hypersistence.utils",
+      "io.hypersistence.utils.jdbc",
+      "io.hypersistence.utils.hibernate",
+      "io.hypersistence.utils.spring",
+      "io",
+      "io.hypersistence"
+    ]
+  },
+  "unknown_designite_smells": []
+}

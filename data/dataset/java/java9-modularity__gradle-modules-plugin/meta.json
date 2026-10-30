@@ -1,0 +1,32 @@
+{
+  "project": "java9-modularity__gradle-modules-plugin",
+  "n_nodes": 4,
+  "n_edges": 11,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 3,
+    "UD": 2,
+    "AI": 0,
+    "GC": 0,
+    "FC": 2,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 4,
+    "designite_packages": 4,
+    "matched": 4,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "org",
+      "org.javamodularity"
+    ]
+  },
+  "unknown_designite_smells": []
+}

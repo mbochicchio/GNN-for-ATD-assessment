@@ -1,0 +1,38 @@
+{
+  "project": "aliyun__aliyun-log-java-sdk",
+  "n_nodes": 12,
+  "n_edges": 55,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 9,
+    "UD": 3,
+    "AI": 0,
+    "GC": 3,
+    "FC": 4,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 12,
+    "designite_packages": 12,
+    "matched": 12,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com",
+      "com.google",
+      "com.aliyun",
+      "com.aliyun.openservices",
+      "com.aliyun.openservices.log.http",
+      "com.google.protobuf"
+    ]
+  },
+  "unknown_designite_smells": []
+}

@@ -1,0 +1,30 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 523,
+  "source_files_removed": 164,
+  "source_files_after": 359,
+  "removed_share": 0.3136,
+  "removed_by_rule": {
+    "R1_arcan_default": 164
+  },
+  "removed_dirs": [
+    {
+      "path": "core/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 146
+    },
+    {
+      "path": "javase/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 7
+    },
+    {
+      "path": "zxingorg/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 11
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

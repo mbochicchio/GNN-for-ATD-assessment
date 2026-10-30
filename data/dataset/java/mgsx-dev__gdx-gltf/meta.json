@@ -1,0 +1,37 @@
+{
+  "project": "mgsx-dev__gdx-gltf",
+  "n_nodes": 35,
+  "n_edges": 151,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 16,
+    "UD": 11,
+    "AI": 1,
+    "GC": 0,
+    "FC": 7,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 35,
+    "designite_packages": 35,
+    "matched": 35,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "net",
+      "net.mgsx",
+      "net.mgsx.gltf",
+      "net.mgsx.gltf.scene3d",
+      "net.mgsx.gltf.loaders"
+    ]
+  },
+  "unknown_designite_smells": []
+}

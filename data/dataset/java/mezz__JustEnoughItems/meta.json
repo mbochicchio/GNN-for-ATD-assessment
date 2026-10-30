@@ -1,0 +1,52 @@
+{
+  "project": "mezz__JustEnoughItems",
+  "n_nodes": 148,
+  "n_edges": 1449,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 47,
+    "UD": 45,
+    "AI": 2,
+    "GC": 1,
+    "FC": 42,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 148,
+    "designite_packages": 147,
+    "matched": 147,
+    "coverage": 0.9932,
+    "arcan_only": [
+      "mezz.jei.api.ingredients.rendering"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "mezz",
+      "mezz.jei",
+      "mezz.jei.library.gui.recipes.supplier",
+      "mezz.jei.library",
+      "mezz.jei.api.fabric.ingredients",
+      "net.minecraft.world.item.crafting",
+      "mezz.jei.gui.network",
+      "mezz.jei.library.gui.recipes.layout",
+      "mezz.jei.api.recipe.category.extensions.vanilla",
+      "net",
+      "net.minecraft.world.item",
+      "mezz.jei.library.plugins",
+      "mezz.jei.fabric.ingredients",
+      "mezz.jei.api.fabric",
+      "mezz.jei.fabric.plugins",
+      "mezz.jei.neoforge.plugins",
+      "net.minecraft",
+      "net.minecraft.world"
+    ]
+  },
+  "unknown_designite_smells": []
+}

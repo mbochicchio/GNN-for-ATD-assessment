@@ -1,0 +1,71 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 1195,
+  "source_files_removed": 173,
+  "source_files_after": 1022,
+  "removed_share": 0.1448,
+  "removed_by_rule": {
+    "R1_arcan_default": 168,
+    "R2_java_build": 5
+  },
+  "removed_dirs": [
+    {
+      "path": "Common/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 26
+    },
+    {
+      "path": "Common/src/testFixtures",
+      "rule": "R2_java_build",
+      "source_files": 5
+    },
+    {
+      "path": "Common/src/clientTestFixtures/java/mezz/jei/test",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    },
+    {
+      "path": "Fabric/src/gametest/java/mezz/jei/fabric/test",
+      "rule": "R1_arcan_default",
+      "source_files": 13
+    },
+    {
+      "path": "Fabric/src/keyMappingGametest/java/mezz/jei/fabric/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "Gui/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 29
+    },
+    {
+      "path": "Library/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 22
+    },
+    {
+      "path": "NeoForge/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 29
+    },
+    {
+      "path": "NeoForge/src/clientGameTest/java/mezz/jei/neoforge/tests",
+      "rule": "R1_arcan_default",
+      "source_files": 7
+    },
+    {
+      "path": "NeoForge/src/clientGameTest/templates/resourcepacks/jei-client-test-pack",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "NeoForge/src/gameTest/java/mezz/jei/neoforge/tests",
+      "rule": "R1_arcan_default",
+      "source_files": 35
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

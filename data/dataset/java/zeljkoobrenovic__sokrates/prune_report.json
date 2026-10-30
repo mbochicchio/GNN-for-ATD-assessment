@@ -1,0 +1,40 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 713,
+  "source_files_removed": 219,
+  "source_files_after": 494,
+  "removed_share": 0.3072,
+  "removed_by_rule": {
+    "R1_arcan_default": 219
+  },
+  "removed_dirs": [
+    {
+      "path": "cli/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 5
+    },
+    {
+      "path": "codeanalyzer/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 164
+    },
+    {
+      "path": "codeexplorer/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "common/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 10
+    },
+    {
+      "path": "reports/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 37
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

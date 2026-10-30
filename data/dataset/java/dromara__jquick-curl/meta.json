@@ -1,0 +1,36 @@
+{
+  "project": "dromara__jquick-curl",
+  "n_nodes": 22,
+  "n_edges": 49,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 4,
+    "UD": 2,
+    "AI": 1,
+    "GC": 0,
+    "FC": 2,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 22,
+    "designite_packages": 21,
+    "matched": 21,
+    "coverage": 0.9545,
+    "arcan_only": [
+      "com.github.paohaijiao.anno"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com.github.paohaijiao.domain",
+      "com.github.paohaijiao",
+      "com",
+      "com.github"
+    ]
+  },
+  "unknown_designite_smells": []
+}

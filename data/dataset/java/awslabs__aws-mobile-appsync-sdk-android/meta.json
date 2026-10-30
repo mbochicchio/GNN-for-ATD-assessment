@@ -1,0 +1,39 @@
+{
+  "project": "awslabs__aws-mobile-appsync-sdk-android",
+  "n_nodes": 32,
+  "n_edges": 146,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 14,
+    "UD": 10,
+    "AI": 0,
+    "GC": 2,
+    "FC": 11,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 32,
+    "designite_packages": 32,
+    "matched": 32,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com.amazonaws.mobileconnectors.appsync.cache",
+      "com",
+      "com.apollographql",
+      "com.apollographql.apollo.internal.cache",
+      "com.amazonaws",
+      "com.amazonaws.mobileconnectors",
+      "com.apollographql.apollo.api.cache"
+    ]
+  },
+  "unknown_designite_smells": []
+}

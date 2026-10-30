@@ -1,0 +1,43 @@
+{
+  "project": "spring-projects__spring-data-jpa",
+  "n_nodes": 21,
+  "n_edges": 47,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 3,
+    "UD": 2,
+    "AI": 1,
+    "GC": 2,
+    "FC": 10,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 21,
+    "designite_packages": 20,
+    "matched": 20,
+    "coverage": 0.9524,
+    "arcan_only": [
+      "org.springframework.data.envers.repository.config"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "org.springframework.data.envers.repository",
+      "jakarta",
+      "jakarta.persistence",
+      "org.springframework",
+      "org.springframework.data",
+      "org.springframework.core.convert",
+      "org",
+      "org.springframework.core",
+      "org.springframework.core.convert.converter",
+      "org.springframework.data.jpa",
+      "org.springframework.data.envers"
+    ]
+  },
+  "unknown_designite_smells": []
+}

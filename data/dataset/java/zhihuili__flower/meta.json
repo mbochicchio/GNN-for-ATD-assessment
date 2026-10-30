@@ -1,0 +1,48 @@
+{
+  "project": "zhihuili__flower",
+  "n_nodes": 81,
+  "n_edges": 305,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 7,
+    "UD": 7,
+    "AI": 1,
+    "GC": 1,
+    "FC": 2,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 81,
+    "designite_packages": 81,
+    "matched": 80,
+    "coverage": 0.9756,
+    "arcan_only": [
+      "com.ly.train.flower.ddd.annotation"
+    ],
+    "designite_only": [
+      "(default package)"
+    ],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com.ly.train.flower.center.core",
+      "com.ly.train.flower",
+      "com.ly.train.flower.ddd",
+      "com.ly.train.flower.web.spring.boot",
+      "com.ly.train.flower.core",
+      "com.ly.train.flower.web",
+      "com.ly.train.flower.common",
+      "com.ly.train.flower.tools",
+      "com.ly",
+      "com.ly.train",
+      "com.ly.train.flower.common.io",
+      "com",
+      "com.ly.train.flower.core.akka.serializer",
+      "com.ly.train.flower.tools.http.factory"
+    ]
+  },
+  "unknown_designite_smells": []
+}

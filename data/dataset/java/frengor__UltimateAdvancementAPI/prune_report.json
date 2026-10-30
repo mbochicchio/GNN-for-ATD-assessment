@@ -1,0 +1,35 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 313,
+  "source_files_removed": 11,
+  "source_files_after": 302,
+  "removed_share": 0.0351,
+  "removed_by_rule": {
+    "R1_arcan_default": 11
+  },
+  "removed_dirs": [
+    {
+      "path": "Commands/Common/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "Common/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 8
+    },
+    {
+      "path": "NMS/Common/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "Plugin/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

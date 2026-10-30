@@ -1,0 +1,36 @@
+{
+  "project": "roshkadev__rshk-jsifenlib",
+  "n_nodes": 20,
+  "n_edges": 86,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 10,
+    "UD": 5,
+    "AI": 0,
+    "GC": 2,
+    "FC": 2,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 20,
+    "designite_packages": 20,
+    "matched": 20,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com",
+      "com.roshka",
+      "com.roshka.sifen.core.fields.request",
+      "com.roshka.sifen.core.fields"
+    ]
+  },
+  "unknown_designite_smells": []
+}

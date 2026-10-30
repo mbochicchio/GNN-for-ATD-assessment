@@ -1,0 +1,40 @@
+{
+  "project": "StarRocks__starrocks-connector-for-apache-flink",
+  "n_nodes": 28,
+  "n_edges": 89,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 19,
+    "UD": 12,
+    "AI": 0,
+    "GC": 1,
+    "FC": 6,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 28,
+    "designite_packages": 27,
+    "matched": 27,
+    "coverage": 0.9643,
+    "arcan_only": [
+      "com.starrocks.data.load.stream.annotation"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com.starrocks.connector.flink.row",
+      "com.starrocks",
+      "com",
+      "com.starrocks.data.load",
+      "com.starrocks.connector",
+      "com.starrocks.data"
+    ]
+  },
+  "unknown_designite_smells": []
+}

@@ -1,0 +1,42 @@
+{
+  "project": "apache__roller",
+  "n_nodes": 62,
+  "n_edges": 389,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 22,
+    "UD": 12,
+    "AI": 0,
+    "GC": 4,
+    "FC": 23,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 62,
+    "designite_packages": 62,
+    "matched": 62,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "org.apache.roller.weblogger.webservices",
+      "org.apache.roller.weblogger.ui.struts2",
+      "org",
+      "org.apache",
+      "org.apache.roller.weblogger.ui.core.util",
+      "org.apache.roller.weblogger.planet",
+      "org.apache.roller.weblogger.ui",
+      "org.apache.roller.planet",
+      "org.apache.roller.weblogger.ui.rendering.plugins",
+      "org.apache.roller.weblogger.ui.core.tags"
+    ]
+  },
+  "unknown_designite_smells": []
+}

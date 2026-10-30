@@ -1,0 +1,37 @@
+{
+  "project": "FlashyReese__nuit",
+  "n_nodes": 19,
+  "n_edges": 76,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 15,
+    "UD": 7,
+    "AI": 0,
+    "GC": 0,
+    "FC": 2,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 19,
+    "designite_packages": 18,
+    "matched": 18,
+    "coverage": 0.9474,
+    "arcan_only": [
+      "me.flashyreese.mods.nuit.components.clock.runtime.source"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "me.flashyreese",
+      "me.flashyreese.mods",
+      "me"
+    ]
+  },
+  "unknown_designite_smells": []
+}

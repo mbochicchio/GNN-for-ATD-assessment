@@ -1,0 +1,35 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 659,
+  "source_files_removed": 114,
+  "source_files_after": 545,
+  "removed_share": 0.173,
+  "removed_by_rule": {
+    "R1_arcan_default": 114
+  },
+  "removed_dirs": [
+    {
+      "path": "testing",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "app/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 90
+    },
+    {
+      "path": "docs/examples",
+      "rule": "R1_arcan_default",
+      "source_files": 9
+    },
+    {
+      "path": "it-selenium/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 15
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

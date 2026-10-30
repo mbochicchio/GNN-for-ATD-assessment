@@ -1,0 +1,25 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 239,
+  "source_files_removed": 37,
+  "source_files_after": 202,
+  "removed_share": 0.1548,
+  "removed_by_rule": {
+    "R1_arcan_default": 37
+  },
+  "removed_dirs": [
+    {
+      "path": "aws-android-sdk-appsync-tests",
+      "rule": "R1_arcan_default",
+      "source_files": 32
+    },
+    {
+      "path": "aws-android-sdk-appsync/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 5
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

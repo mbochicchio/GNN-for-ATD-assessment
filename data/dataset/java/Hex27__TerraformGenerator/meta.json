@@ -1,0 +1,36 @@
+{
+  "project": "Hex27__TerraformGenerator",
+  "n_nodes": 90,
+  "n_edges": 984,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 38,
+    "UD": 16,
+    "AI": 0,
+    "GC": 1,
+    "FC": 43,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 90,
+    "designite_packages": 90,
+    "matched": 90,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "org",
+      "org.terraform",
+      "org.terraform.spigot",
+      "org.terraform.structure.pillager"
+    ]
+  },
+  "unknown_designite_smells": []
+}

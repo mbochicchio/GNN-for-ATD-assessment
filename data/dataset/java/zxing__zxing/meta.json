@@ -1,0 +1,37 @@
+{
+  "project": "zxing__zxing",
+  "n_nodes": 46,
+  "n_edges": 150,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 11,
+    "UD": 6,
+    "AI": 0,
+    "GC": 3,
+    "FC": 9,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 46,
+    "designite_packages": 46,
+    "matched": 46,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com.google.zxing.web.generator",
+      "com",
+      "com.google",
+      "com.google.zxing.integration",
+      "com.google.zxing.client"
+    ]
+  },
+  "unknown_designite_smells": []
+}

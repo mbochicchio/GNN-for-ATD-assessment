@@ -1,0 +1,30 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 255,
+  "source_files_removed": 12,
+  "source_files_after": 243,
+  "removed_share": 0.0471,
+  "removed_by_rule": {
+    "R1_arcan_default": 12
+  },
+  "removed_dirs": [
+    {
+      "path": "duo-video-api/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "duo-video-base/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 5
+    },
+    {
+      "path": "duo-video-jy/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

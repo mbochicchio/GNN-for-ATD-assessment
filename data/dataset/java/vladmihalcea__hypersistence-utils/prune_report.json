@@ -1,0 +1,45 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 1064,
+  "source_files_removed": 648,
+  "source_files_after": 416,
+  "removed_share": 0.609,
+  "removed_by_rule": {
+    "R1_arcan_default": 648
+  },
+  "removed_dirs": [
+    {
+      "path": "hypersistence-utils-hibernate-63/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 202
+    },
+    {
+      "path": "hypersistence-utils-hibernate-63/src/main/java/io/hypersistence/utils/test",
+      "rule": "R1_arcan_default",
+      "source_files": 12
+    },
+    {
+      "path": "hypersistence-utils-hibernate-71/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 204
+    },
+    {
+      "path": "hypersistence-utils-hibernate-71/src/main/java/io/hypersistence/utils/test",
+      "rule": "R1_arcan_default",
+      "source_files": 12
+    },
+    {
+      "path": "hypersistence-utils-hibernate-73/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 206
+    },
+    {
+      "path": "hypersistence-utils-hibernate-73/src/main/java/io/hypersistence/utils/test",
+      "rule": "R1_arcan_default",
+      "source_files": 12
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

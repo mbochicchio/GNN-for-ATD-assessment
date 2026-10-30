@@ -1,0 +1,38 @@
+{
+  "project": "BukkitAPI-Translation-Group__Chinese_BukkitAPI",
+  "n_nodes": 80,
+  "n_edges": 409,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 39,
+    "UD": 10,
+    "AI": 1,
+    "GC": 9,
+    "FC": 18,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 80,
+    "designite_packages": 80,
+    "matched": 80,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "net.md_5.bungee.api.chat.hover",
+      "org",
+      "net",
+      "net.md_5",
+      "org.spigotmc.event",
+      "net.md_5.bungee"
+    ]
+  },
+  "unknown_designite_smells": []
+}

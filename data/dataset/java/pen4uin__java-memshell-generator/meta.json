@@ -1,0 +1,44 @@
+{
+  "project": "pen4uin__java-memshell-generator",
+  "n_nodes": 36,
+  "n_edges": 108,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 3,
+    "UD": 3,
+    "AI": 0,
+    "GC": 0,
+    "FC": 8,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 36,
+    "designite_packages": 36,
+    "matched": 36,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "jmg.custom",
+      "me.gv7",
+      "me.gv7.woodpecker",
+      "jmg.godzilla",
+      "jmg.extender",
+      "org",
+      "jmg.antsword",
+      "me",
+      "org.springframework",
+      "org.springframework.web",
+      "jmg",
+      "jmg.neoregeorg",
+      "jmg.suo5",
+      "jmg.behinder"
+    ]
+  },
+  "unknown_designite_smells": []
+}

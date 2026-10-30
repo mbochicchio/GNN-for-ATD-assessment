@@ -1,0 +1,41 @@
+{
+  "project": "reserveword__IMBlocker",
+  "n_nodes": 16,
+  "n_edges": 32,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 3,
+    "UD": 2,
+    "AI": 0,
+    "GC": 3,
+    "FC": 3,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 16,
+    "designite_packages": 16,
+    "matched": 16,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com.lowdragmc.lowdraglib2",
+      "net",
+      "gg.essential.gui",
+      "gg.essential.gui.common",
+      "io.github",
+      "io.github.reserveword",
+      "io",
+      "com",
+      "com.lowdragmc",
+      "gg",
+      "gg.essential"
+    ]
+  },
+  "unknown_designite_smells": []
+}

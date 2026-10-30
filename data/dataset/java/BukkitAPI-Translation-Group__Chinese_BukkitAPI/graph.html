@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BukkitAPI-Translation-Group__Chinese_BukkitAPI · dependency graph</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EEF1F0; --panel:#F8FAF9; --ink:#1B2733; --muted:#5E6B78; --rule:#D3DAD8;
+  --edge:#9AA7B2; --clean:#C3CCD3; --focus:#1B2733;
+  --CD:#D55E00; --UD:#0072B2; --AI:#CC79A7; --GC:#009E73; --FC:#E69F00; --SF:#56B4E9;
+  --s0:#C3CCD3; --s1:#F2C27B; --s2:#E58A3C; --s3:#C4462A; --s4:#8E1F2A;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+  --bg:#141B21; --panel:#1B242C; --ink:#E4EAEE; --muted:#93A1AD; --rule:#2C3842;
+  --edge:#4E5E6B; --clean:#3E4B56; --focus:#E4EAEE; --s0:#3E4B56;
+}}
+:root[data-theme="dark"]{
+  --bg:#141B21; --panel:#1B242C; --ink:#E4EAEE; --muted:#93A1AD; --rule:#2C3842;
+  --edge:#4E5E6B; --clean:#3E4B56; --focus:#E4EAEE; --s0:#3E4B56;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{height:100%; scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0; height:100%; background:var(--bg); color:var(--ink);
+  font:14px/1.5 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+.app{display:grid; grid-template-columns:320px 1fr; height:100%}
+aside{background:var(--panel); border-right:1px solid var(--rule); overflow-y:auto; padding:20px 20px 28px}
+h1{font:500 22px/1.2 "IBM Plex Sans Condensed","IBM Plex Sans",sans-serif; margin:0 0 4px; word-break:break-word}
+.sub{color:var(--muted); margin:0 0 18px}
+.stats{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-bottom:18px}
+.stat b{display:block; font-size:20px; font-weight:600}
+.stat span{color:var(--muted); font-size:12px}
+section{border-top:1px solid var(--rule); padding-top:14px; margin-top:14px}
+h2{font-size:13px; font-weight:600; margin:0 0 8px}
+label.ctl{display:block; color:var(--muted); font-size:12px; margin:8px 0 4px}
+select,input[type=search]{width:100%; font:inherit; color:var(--ink); background:var(--bg);
+  border:1px solid var(--rule); border-radius:6px; padding:6px 8px}
+select:focus-visible,input:focus-visible,button:focus-visible{outline:2px solid var(--focus); outline-offset:2px}
+.check{display:flex; gap:8px; align-items:center; margin-top:10px; color:var(--muted); font-size:13px}
+.legend{display:flex; flex-wrap:wrap; gap:6px 12px; margin-top:10px; font-size:12px}
+.dot{display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:7px; vertical-align:-1px}
+.legend i{display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:5px; vertical-align:-1px}
+table{width:100%; border-collapse:collapse; font-size:13px}
+td{padding:3px 0; border-bottom:1px solid var(--rule)}
+td:last-child{text-align:right; font-variant-numeric:tabular-nums}
+.chips{display:flex; flex-wrap:wrap; gap:6px; margin:8px 0}
+.chip{font-size:12px; padding:2px 8px; border-radius:10px; color:#fff}
+.chip.none{background:var(--clean); color:var(--ink)}
+.detail-name{font-weight:600; word-break:break-all; margin-bottom:4px}
+.note{color:var(--muted); font-size:12px}
+ol.rank{margin:0; padding-left:20px; font-size:13px}
+ol.rank li{margin:2px 0}
+ol.rank button{all:unset; cursor:pointer; word-break:break-all}
+ol.rank button:hover{text-decoration:underline}
+ol.rank .v{color:var(--muted); font-variant-numeric:tabular-nums}
+main{position:relative; overflow:hidden}
+svg{width:100%; height:100%; display:block; cursor:grab}
+.link{stroke:var(--edge); stroke-opacity:.55; fill:none}
+.node circle{stroke:var(--panel); stroke-width:1.5}
+.node.nomask circle{stroke-dasharray:3 2; stroke:var(--muted)}
+.node text{font-size:11px; fill:var(--ink); pointer-events:none; paint-order:stroke;
+  stroke:var(--bg); stroke-width:3px}
+.dim{opacity:.12}
+.node.sel circle{stroke:var(--focus); stroke-width:3}
+#tip{position:absolute; pointer-events:none; background:var(--panel); border:1px solid var(--rule);
+  border-radius:6px; padding:6px 9px; font-size:12px; max-width:320px; display:none; word-break:break-all}
+.hint{position:absolute; right:14px; bottom:12px; color:var(--muted); font-size:12px}
+@media (max-width:760px){
+  .app{grid-template-columns:1fr; grid-template-rows:auto 70vh; height:auto}
+  aside{border-right:0; border-bottom:1px solid var(--rule)}
+}
+@media (prefers-reduced-motion:reduce){ *{transition:none!important} }
+</style>
+</head>
+<body>
+<div class="app">
+<aside>
+  <h1 id="title"></h1>
+  <p class="sub">Package-level dependency graph with Designite smell labels</p>
+  <div class="stats">
+    <div class="stat"><b id="nN"></b><span>components</span></div>
+    <div class="stat"><b id="nE"></b><span>dependencies</span></div>
+    <div class="stat"><b id="nS"></b><span>smell-affected components</span></div>
+  </div>
+
+  <label class="ctl" for="colorBy">Colour nodes by</label>
+  <select id="colorBy">
+    <option value="count">Number of smells</option>
+    <option value="CD">Cyclic Dependency</option>
+    <option value="UD">Unstable Dependency</option>
+    <option value="AI">Ambiguous Interface</option>
+    <option value="GC">God Component</option>
+    <option value="FC">Feature Concentration</option>
+    <option value="SF">Scattered Functionality</option>
+    <option value="atdi">ATDI (Arcan)</option>
+  </select>
+  <div class="legend" id="legend"></div>
+
+  <label class="ctl" for="search">Find a component</label>
+  <input id="search" type="search" placeholder="e.g. analyzer" list="names" autocomplete="off">
+  <datalist id="names"></datalist>
+  <label class="check"><input type="checkbox" id="showLabels"> Show all node labels</label>
+
+  <section id="detail">
+    <h2>Selected component</h2>
+    <p class="note">Select a node to inspect its features, labels, and dependencies.</p>
+  </section>
+
+  <section>
+    <h2>Smell distribution</h2>
+    <table id="smellTable"></table>
+    <p class="note" id="ds"></p>
+  </section>
+
+  <section>
+    <h2>Highest ATDI</h2>
+    <ol class="rank" id="rank"></ol>
+  </section>
+</aside>
+<main>
+  <svg id="svg" role="img" aria-label="Dependency graph"></svg>
+  <div id="tip"></div>
+  <div class="hint">Drag to pan, scroll to zoom</div>
+</main>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script>
+const DATA = {"nodes": [{"id": 0, "name": "net.md_5.bungee.api", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 5.0, "FO": 0.0, "LOC": 128.0, "PR": 0.014088959273481779, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 1, "name": "net.md_5.bungee.api.chat", "mask": 1, "atdi": 4.800147520021434, "units": 15, "Ab": 0.2, "In": 0.42857142857142855, "D": 0.37142857142857144, "FI": 5.0, "FO": 3.0, "LOC": 996.0, "PR": 0.013558630197757151, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 2, "name": "net.md_5.bungee.api.chat.hover.content", "mask": 1, "atdi": 4.800147520021434, "units": 4, "Ab": 0.25, "In": 0.75, "D": 0.0, "FI": 1.0, "FO": 1.0, "LOC": 81.0, "PR": 0.00608791489045507, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 3, "name": "net.md_5.bungee.chat", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 1.0, "FO": 0.0, "LOC": 61.0, "PR": 0.00608791489045507, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 4, "name": "org.bukkit", "mask": 1, "atdi": 1191.6949767601432, "units": 69, "Ab": 0.4782608695652174, "In": 0.473015873015873, "D": 0.048723257418909593, "FI": 58.0, "FO": 41.0, "LOC": 9491.0, "PR": 0.15183030656862573, "CD": 1, "UD": 1, "AI": 0, "GC": 1, "FC": 1, "SF": 0}, {"id": 5, "name": "org.bukkit.advancement", "mask": 1, "atdi": 16.223463322049767, "units": 6, "Ab": 0.8333333333333334, "In": 0.3333333333333333, "D": 0.16666666666666674, "FI": 3.0, "FO": 2.0, "LOC": 64.0, "PR": 0.007314800782878201, "CD": 1, "UD": 0, "AI": 1, "GC": 0, "FC": 1, "SF": 0}, {"id": 6, "name": "org.bukkit.attribute", "mask": 1, "atdi": 32.30289057567062, "units": 4, "Ab": 0.75, "In": 0.6111111111111112, "D": 0.36111111111111116, "FI": 5.0, "FO": 5.0, "LOC": 173.0, "PR": 0.014453282943929993, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 7, "name": "org.bukkit.ban", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 1.0, "In": 1.0, "D": 1.0, "FI": 0.0, "FO": 2.0, "LOC": 12.0, "PR": 0.002245908130701377, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 8, "name": "org.bukkit.block", "mask": 1, "atdi": 191.60583162929305, "units": 60, "Ab": 0.9333333333333333, "In": 0.5073746312684366, "D": 0.44070796460177, "FI": 24.0, "FO": 19.0, "LOC": 2217.0, "PR": 0.04652882898619836, "CD": 1, "UD": 1, "AI": 0, "GC": 1, "FC": 0, "SF": 0}, {"id": 9, "name": "org.bukkit.block.banner", "mask": 1, "atdi": 32.89262871013279, "units": 2, "Ab": 0.5, "In": 0.6428571428571429, "D": 0.1428571428571428, "FI": 5.0, "FO": 4.0, "LOC": 126.0, "PR": 0.013566010847096991, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 10, "name": "org.bukkit.block.data", "mask": 1, "atdi": 55.55417233656061, "units": 20, "Ab": 1.0, "In": 0.09701492537313433, "D": 0.09701492537313428, "FI": 8.0, "FO": 4.0, "LOC": 155.0, "PR": 0.01591725070788619, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 11, "name": "org.bukkit.block.data.type", "mask": 1, "atdi": 18.48785721891222, "units": 99, "Ab": 1.0, "In": 0.9130434782608695, "D": 0.9130434782608696, "FI": 2.0, "FO": 3.0, "LOC": 627.0, "PR": 0.007475149435789351, "CD": 0, "UD": 0, "AI": 0, "GC": 1, "FC": 1, "SF": 0}, {"id": 12, "name": "org.bukkit.block.sign", "mask": 1, "atdi": 15.56803434610757, "units": 2, "Ab": 0.5, "In": 0.2, "D": 0.30000000000000004, "FI": 4.0, "FO": 1.0, "LOC": 13.0, "PR": 0.006599841814653142, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 13, "name": "org.bukkit.block.spawner", "mask": 1, "atdi": 29.57375884240252, "units": 2, "Ab": 0.0, "In": 0.7142857142857143, "D": 0.2857142857142857, "FI": 2.0, "FO": 4.0, "LOC": 115.0, "PR": 0.008519628829766493, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 14, "name": "org.bukkit.block.structure", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 3.0, "FO": 0.0, "LOC": 14.0, "PR": 0.008473965756476394, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 15, "name": "org.bukkit.boss", "mask": 1, "atdi": 10.608581309943435, "units": 6, "Ab": 0.5, "In": 0.45454545454545453, "D": 0.045454545454545414, "FI": 2.0, "FO": 2.0, "LOC": 78.0, "PR": 0.0071219080185539185, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 16, "name": "org.bukkit.command", "mask": 1, "atdi": 74.27247888096471, "units": 17, "Ab": 0.6470588235294118, "In": 0.5348837209302325, "D": 0.1819425444596443, "FI": 7.0, "FO": 11.0, "LOC": 450.0, "PR": 0.0126780388817279, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 17, "name": "org.bukkit.command.defaults", "mask": 1, "atdi": 41.703895079679455, "units": 6, "Ab": 0.16666666666666666, "In": 0.88, "D": 0.046666666666666634, "FI": 3.0, "FO": 7.0, "LOC": 427.0, "PR": 0.007249114587109725, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 18, "name": "org.bukkit.configuration", "mask": 1, "atdi": 54.73609152911284, "units": 8, "Ab": 0.25, "In": 0.6363636363636364, "D": 0.11363636363636365, "FI": 8.0, "FO": 5.0, "LOC": 683.0, "PR": 0.01788360097345819, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 19, "name": "org.bukkit.configuration.file", "mask": 1, "atdi": 21.82965726635688, "units": 6, "Ab": 0.16666666666666666, "In": 0.7692307692307693, "D": 0.0641025641025641, "FI": 3.0, "FO": 3.0, "LOC": 354.0, "PR": 0.008042819229007193, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 20, "name": "org.bukkit.configuration.serialization", "mask": 1, "atdi": 104.6221593493758, "units": 4, "Ab": 0.75, "In": 0.22, "D": 0.030000000000000027, "FI": 16.0, "FO": 7.0, "LOC": 129.0, "PR": 0.03755155502376058, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 21, "name": "org.bukkit.conversations", "mask": 1, "atdi": 20.19174347677328, "units": 22, "Ab": 0.5909090909090909, "In": 0.7142857142857143, "D": 0.30519480519480524, "FI": 2.0, "FO": 3.0, "LOC": 381.0, "PR": 0.004953874858747687, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 22, "name": "org.bukkit.damage", "mask": 1, "atdi": 32.706268775740476, "units": 5, "Ab": 0.6, "In": 0.45, "D": 0.050000000000000044, "FI": 6.0, "FO": 3.0, "LOC": 127.0, "PR": 0.009111114187232462, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 23, "name": "org.bukkit.enchantments", "mask": 1, "atdi": 27.405057515941753, "units": 4, "Ab": 0.5, "In": 0.5, "D": 0.0, "FI": 5.0, "FO": 3.0, "LOC": 235.0, "PR": 0.009686070413260398, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 24, "name": "org.bukkit.entity", "mask": 1, "atdi": 397.2700989893543, "units": 188, "Ab": 0.9787234042553191, "In": 0.2853598014888337, "D": 0.2640832057441529, "FI": 38.0, "FO": 32.0, "LOC": 2804.0, "PR": 0.06506556406387805, "CD": 1, "UD": 1, "AI": 0, "GC": 1, "FC": 0, "SF": 0}, {"id": 25, "name": "org.bukkit.entity.boat", "mask": 1, "atdi": 5.405717091214891, "units": 20, "Ab": 1.0, "In": 0.6666666666666666, "D": 0.6666666666666665, "FI": 1.0, "FO": 1.0, "LOC": 44.0, "PR": 0.003974212957015679, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 26, "name": "org.bukkit.entity.memory", "mask": 1, "atdi": 16.778102148561153, "units": 1, "Ab": 0.0, "In": 0.6666666666666666, "D": 0.33333333333333337, "FI": 2.0, "FO": 2.0, "LOC": 66.0, "PR": 0.0071219080185539185, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 27, "name": "org.bukkit.entity.minecart", "mask": 1, "atdi": 31.504259312559622, "units": 7, "Ab": 1.0, "In": 0.625, "D": 0.625, "FI": 3.0, "FO": 4.0, "LOC": 38.0, "PR": 0.008101569920285927, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 28, "name": "org.bukkit.entity.model", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 1.0, "FO": 0.0, "LOC": 10.0, "PR": 0.003974212957015679, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 29, "name": "org.bukkit.event", "mask": 1, "atdi": 51.00021646637613, "units": 7, "Ab": 0.5714285714285714, "In": 0.007662835249042145, "D": 0.4209085933223865, "FI": 16.0, "FO": 4.0, "LOC": 106.0, "PR": 0.012334943470444107, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 30, "name": "org.bukkit.event.block", "mask": 1, "atdi": 42.05427293325208, "units": 48, "Ab": 0.041666666666666664, "In": 0.75, "D": 0.20833333333333337, "FI": 2.0, "FO": 8.0, "LOC": 1217.0, "PR": 0.0033052679757523268, "CD": 0, "UD": 0, "AI": 0, "GC": 1, "FC": 0, "SF": 0}, {"id": 31, "name": "org.bukkit.event.enchantment", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 7.0, "LOC": 106.0, "PR": 0.002245908130701377, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 32, "name": "org.bukkit.event.entity", "mask": 1, "atdi": 47.14005376944519, "units": 77, "Ab": 0.012987012987012988, "In": 0.9629629629629629, "D": 0.0240500240500241, "FI": 2.0, "FO": 9.0, "LOC": 2246.0, "PR": 0.0041671057213399625, "CD": 1, "UD": 0, "AI": 0, "GC": 1, "FC": 0, "SF": 0}, {"id": 33, "name": "org.bukkit.event.hanging", "mask": 1, "atdi": 0.0, "units": 4, "Ab": 0.25, "In": 1.0, "D": 0.25, "FI": 0.0, "FO": 4.0, "LOC": 90.0, "PR": 0.002245908130701377, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 34, "name": "org.bukkit.event.inventory", "mask": 1, "atdi": 85.35110712194748, "units": 28, "Ab": 0.03571428571428571, "In": 0.8285714285714286, "D": 0.13571428571428568, "FI": 3.0, "FO": 8.0, "LOC": 684.0, "PR": 0.008155019070318152, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 35, "name": "org.bukkit.event.player", "mask": 1, "atdi": 0.0, "units": 74, "Ab": 0.04054054054054054, "In": 0.975609756097561, "D": 0.016150296638101524, "FI": 1.0, "FO": 12.0, "LOC": 1986.0, "PR": 0.002723170690639395, "CD": 0, "UD": 0, "AI": 0, "GC": 1, "FC": 0, "SF": 0}, {"id": 36, "name": "org.bukkit.event.raid", "mask": 1, "atdi": 0.0, "units": 5, "Ab": 0.2, "In": 1.0, "D": 0.19999999999999996, "FI": 0.0, "FO": 4.0, "LOC": 97.0, "PR": 0.002245908130701377, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 37, "name": "org.bukkit.event.server", "mask": 1, "atdi": 31.47115380418552, "units": 14, "Ab": 0.21428571428571427, "In": 0.8181818181818182, "D": 0.032467532467532534, "FI": 2.0, "FO": 6.0, "LOC": 247.0, "PR": 0.004895124167468954, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 38, "name": "org.bukkit.event.vehicle", "mask": 1, "atdi": 0.0, "units": 11, "Ab": 0.18181818181818182, "In": 1.0, "D": 0.18181818181818188, "FI": 0.0, "FO": 4.0, "LOC": 198.0, "PR": 0.002245908130701377, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 39, "name": "org.bukkit.event.weather", "mask": 1, "atdi": 0.0, "units": 4, "Ab": 0.25, "In": 1.0, "D": 0.25, "FI": 0.0, "FO": 3.0, "LOC": 84.0, "PR": 0.002245908130701377, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 40, "name": "org.bukkit.event.world", "mask": 1, "atdi": 0.0, "units": 19, "Ab": 0.10526315789473684, "In": 0.9523809523809523, "D": 0.057644110275689275, "FI": 1.0, "FO": 8.0, "LOC": 456.0, "PR": 0.002723170690639395, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 41, "name": "org.bukkit.generator", "mask": 1, "atdi": 38.58106491910524, "units": 6, "Ab": 1.0, "In": 0.5217391304347826, "D": 0.5217391304347827, "FI": 6.0, "FO": 4.0, "LOC": 139.0, "PR": 0.016791563950564223, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 42, "name": "org.bukkit.generator.structure", "mask": 1, "atdi": 22.335967013359003, "units": 4, "Ab": 1.0, "In": 0.5, "D": 0.5, "FI": 3.0, "FO": 4.0, "LOC": 92.0, "PR": 0.010856013929311667, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 43, "name": "org.bukkit.help", "mask": 1, "atdi": 29.2012705577513, "units": 6, "Ab": 0.5, "In": 0.6666666666666666, "D": 0.16666666666666652, "FI": 2.0, "FO": 4.0, "LOC": 140.0, "PR": 0.006273851799751538, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 44, "name": "org.bukkit.inventory", "mask": 1, "atdi": 373.3138741768155, "units": 57, "Ab": 0.6666666666666666, "In": 0.32599118942731276, "D": 0.007342143906020615, "FI": 26.0, "FO": 17.0, "LOC": 3098.0, "PR": 0.04977361290460331, "CD": 1, "UD": 1, "AI": 0, "GC": 1, "FC": 0, "SF": 0}, {"id": 45, "name": "org.bukkit.inventory.meta", "mask": 1, "atdi": 177.19512174019184, "units": 28, "Ab": 1.0, "In": 0.9056603773584906, "D": 0.9056603773584906, "FI": 3.0, "FO": 20.0, "LOC": 615.0, "PR": 0.006655800136596772, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 46, "name": "org.bukkit.inventory.meta.components", "mask": 1, "atdi": 37.97060522198612, "units": 13, "Ab": 1.0, "In": 0.9090909090909091, "D": 0.9090909090909092, "FI": 1.0, "FO": 6.0, "LOC": 283.0, "PR": 0.0025287785724552457, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 47, "name": "org.bukkit.inventory.meta.components.consumable", "mask": 1, "atdi": 41.177779895917354, "units": 1, "Ab": 1.0, "In": 0.75, "D": 0.75, "FI": 1.0, "FO": 4.0, "LOC": 34.0, "PR": 0.0025287785724552457, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 48, "name": "org.bukkit.inventory.meta.components.consumable.effects", "mask": 1, "atdi": 21.24795879970286, "units": 6, "Ab": 1.0, "In": 0.8, "D": 0.8, "FI": 1.0, "FO": 3.0, "LOC": 32.0, "PR": 0.0027832817011479577, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 49, "name": "org.bukkit.inventory.meta.tags", "mask": 1, "atdi": 6.399116126149037, "units": 3, "Ab": 1.0, "In": 0.5, "D": 0.5, "FI": 1.0, "FO": 1.0, "LOC": 62.0, "PR": 0.0025287785724552457, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 50, "name": "org.bukkit.inventory.meta.trim", "mask": 1, "atdi": 25.435970266018007, "units": 3, "Ab": 0.6666666666666666, "In": 0.625, "D": 0.2916666666666665, "FI": 3.0, "FO": 2.0, "LOC": 82.0, "PR": 0.008165168049250295, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 51, "name": "org.bukkit.inventory.recipe", "mask": 1, "atdi": 0.0, "units": 2, "Ab": 0.0, "In": 0.0, "D": 1.0, "FI": 1.0, "FO": 0.0, "LOC": 9.0, "PR": 0.004734602545958188, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 52, "name": "org.bukkit.inventory.view", "mask": 1, "atdi": 28.316067922297208, "units": 10, "Ab": 1.0, "In": 0.8, "D": 0.8, "FI": 3.0, "FO": 4.0, "LOC": 122.0, "PR": 0.005873791089506579, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 53, "name": "org.bukkit.inventory.view.builder", "mask": 1, "atdi": 18.367607667381602, "units": 3, "Ab": 1.0, "In": 0.8, "D": 0.8, "FI": 1.0, "FO": 3.0, "LOC": 45.0, "PR": 0.004734602545958188, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 54, "name": "org.bukkit.loot", "mask": 1, "atdi": 36.02342631041623, "units": 4, "Ab": 0.5, "In": 0.2962962962962963, "D": 0.20370370370370372, "FI": 7.0, "FO": 3.0, "LOC": 305.0, "PR": 0.014738720193939901, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 55, "name": "org.bukkit.map", "mask": 1, "atdi": 31.75069927955069, "units": 8, "Ab": 0.375, "In": 0.5333333333333333, "D": 0.09166666666666667, "FI": 4.0, "FO": 4.0, "LOC": 418.0, "PR": 0.008098251852018753, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 56, "name": "org.bukkit.material", "mask": 1, "atdi": 52.363119687339115, "units": 66, "Ab": 0.12121212121212122, "In": 0.36363636363636365, "D": 0.5151515151515151, "FI": 8.0, "FO": 5.0, "LOC": 2314.0, "PR": 0.02192960247403522, "CD": 1, "UD": 0, "AI": 0, "GC": 1, "FC": 0, "SF": 0}, {"id": 57, "name": "org.bukkit.material.types", "mask": 1, "atdi": 5.487540929056149, "units": 1, "Ab": 0.0, "In": 0.5, "D": 0.5, "FI": 1.0, "FO": 1.0, "LOC": 35.0, "PR": 0.005973935493432548, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 58, "name": "org.bukkit.metadata", "mask": 1, "atdi": 21.66623968098186, "units": 9, "Ab": 0.5555555555555556, "In": 0.3333333333333333, "D": 0.11111111111111116, "FI": 3.0, "FO": 2.0, "LOC": 161.0, "PR": 0.009203454262103653, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 59, "name": "org.bukkit.packs", "mask": 1, "atdi": 23.713729628695148, "units": 4, "Ab": 1.0, "In": 0.8, "D": 0.8, "FI": 1.0, "FO": 4.0, "LOC": 77.0, "PR": 0.005393603192239617, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 60, "name": "org.bukkit.permissions", "mask": 1, "atdi": 26.379619232384314, "units": 8, "Ab": 0.375, "In": 0.4, "D": 0.22499999999999998, "FI": 4.0, "FO": 3.0, "LOC": 310.0, "PR": 0.009764889557309453, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 61, "name": "org.bukkit.persistence", "mask": 1, "atdi": 35.16229497561886, "units": 6, "Ab": 0.8333333333333334, "In": 0.125, "D": 0.04166666666666663, "FI": 6.0, "FO": 1.0, "LOC": 154.0, "PR": 0.012557325414463194, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 62, "name": "org.bukkit.plugin", "mask": 1, "atdi": 136.27203132652514, "units": 22, "Ab": 0.3181818181818182, "In": 0.3108108108108108, "D": 0.371007371007371, "FI": 13.0, "FO": 10.0, "LOC": 970.0, "PR": 0.028671742675371467, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 63, "name": "org.bukkit.plugin.java", "mask": 1, "atdi": 0.0, "units": 4, "Ab": 0.25, "In": 1.0, "D": 0.25, "FI": 0.0, "FO": 9.0, "LOC": 557.0, "PR": 0.002245908130701377, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 64, "name": "org.bukkit.plugin.messaging", "mask": 1, "atdi": 15.65153673191965, "units": 10, "Ab": 0.3, "In": 0.3333333333333333, "D": 0.3666666666666667, "FI": 2.0, "FO": 2.0, "LOC": 288.0, "PR": 0.0071219080185539185, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 65, "name": "org.bukkit.potion", "mask": 1, "atdi": 50.57991402022554, "units": 7, "Ab": 0.42857142857142855, "In": 0.4230769230769231, "D": 0.14835164835164838, "FI": 8.0, "FO": 4.0, "LOC": 343.0, "PR": 0.016476479243304726, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 66, "name": "org.bukkit.profile", "mask": 1, "atdi": 29.547412963512535, "units": 3, "Ab": 1.0, "In": 0.2, "D": 0.19999999999999996, "FI": 5.0, "FO": 2.0, "LOC": 61.0, "PR": 0.010440849823733557, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 67, "name": "org.bukkit.projectiles", "mask": 1, "atdi": 14.098145713386252, "units": 2, "Ab": 1.0, "In": 0.42857142857142855, "D": 0.4285714285714286, "FI": 2.0, "FO": 3.0, "LOC": 14.0, "PR": 0.006055759200565414, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 68, "name": "org.bukkit.registry", "mask": 1, "atdi": 74.20313340696681, "units": 1, "Ab": 1.0, "In": 0.02857142857142857, "D": 0.02857142857142847, "FI": 13.0, "FO": 1.0, "LOC": 10.0, "PR": 0.036383918665443486, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 69, "name": "org.bukkit.scheduler", "mask": 1, "atdi": 16.128598518309445, "units": 4, "Ab": 1.0, "In": 0.4, "D": 0.3999999999999999, "FI": 2.0, "FO": 2.0, "LOC": 118.0, "PR": 0.00816030675877431, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 70, "name": "org.bukkit.scoreboard", "mask": 1, "atdi": 10.485934211450942, "units": 10, "Ab": 0.6, "In": 0.7, "D": 0.2999999999999998, "FI": 2.0, "FO": 2.0, "LOC": 293.0, "PR": 0.0071219080185539185, "CD": 1, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 71, "name": "org.bukkit.spawner", "mask": 1, "atdi": 20.698516331347953, "units": 3, "Ab": 1.0, "In": 0.625, "D": 0.625, "FI": 2.0, "FO": 3.0, "LOC": 60.0, "PR": 0.006049038320465407, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 72, "name": "org.bukkit.structure", "mask": 1, "atdi": 29.82436453487227, "units": 3, "Ab": 1.0, "In": 0.8461538461538461, "D": 0.8461538461538463, "FI": 1.0, "FO": 6.0, "LOC": 75.0, "PR": 0.005393603192239617, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 73, "name": "org.bukkit.tag", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 2.0, "LOC": 47.0, "PR": 0.002245908130701377, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 74, "name": "org.bukkit.util", "mask": 1, "atdi": 130.27397684483117, "units": 19, "Ab": 0.42105263157894735, "In": 0.18840579710144928, "D": 0.39054157131960343, "FI": 22.0, "FO": 7.0, "LOC": 1167.0, "PR": 0.04260185550298866, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 1, "SF": 0}, {"id": 75, "name": "org.bukkit.util.io", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 1.0, "LOC": 40.0, "PR": 0.002245908130701377, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 76, "name": "org.bukkit.util.noise", "mask": 1, "atdi": 0.0, "units": 6, "Ab": 0.3333333333333333, "In": 1.0, "D": 0.33333333333333326, "FI": 0.0, "FO": 2.0, "LOC": 398.0, "PR": 0.002245908130701377, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 77, "name": "org.bukkit.util.permissions", "mask": 1, "atdi": 0.0, "units": 3, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 2.0, "LOC": 74.0, "PR": 0.002245908130701377, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 78, "name": "org.spigotmc", "mask": 1, "atdi": 29.420382679690444, "units": 1, "Ab": 0.0, "In": 0.6, "D": 0.4, "FI": 4.0, "FO": 4.0, "LOC": 54.0, "PR": 0.007465630394789332, "CD": 1, "UD": 1, "AI": 0, "GC": 0, "FC": 0, "SF": 0}, {"id": 79, "name": "org.spigotmc.event.player", "mask": 1, "atdi": 0.0, "units": 1, "Ab": 0.0, "In": 1.0, "D": 0.0, "FI": 0.0, "FO": 4.0, "LOC": 18.0, "PR": 0.002245908130701377, "CD": 0, "UD": 0, "AI": 0, "GC": 0, "FC": 0, "SF": 0}], "edges": [{"source": 1, "target": 0, "w": 5.0}, {"source": 1, "target": 2, "w": 4.0}, {"source": 1, "target": 3, "w": 1.0}, {"source": 2, "target": 1, "w": 7.0}, {"source": 4, "target": 0, "w": 3.0}, {"source": 4, "target": 1, "w": 1.0}, {"source": 4, "target": 5, "w": 4.0}, {"source": 4, "target": 6, "w": 5.0}, {"source": 4, "target": 8, "w": 15.0}, {"source": 4, "target": 9, "w": 1.0}, {"source": 4, "target": 10, "w": 25.0}, {"source": 4, "target": 11, "w": 98.0}, {"source": 4, "target": 15, "w": 12.0}, {"source": 4, "target": 16, "w": 9.0}, {"source": 4, "target": 19, "w": 1.0}, {"source": 4, "target": 20, "w": 6.0}, {"source": 4, "target": 22, "w": 3.0}, {"source": 4, "target": 23, "w": 1.0}, {"source": 4, "target": 24, "w": 68.0}, {"source": 4, "target": 26, "w": 1.0}, {"source": 4, "target": 27, "w": 2.0}, {"source": 4, "target": 34, "w": 2.0}, {"source": 4, "target": 41, "w": 7.0}, {"source": 4, "target": 42, "w": 7.0}, {"source": 4, "target": 43, "w": 2.0}, {"source": 4, "target": 44, "w": 24.0}, {"source": 4, "target": 50, "w": 2.0}, {"source": 4, "target": 54, "w": 3.0}, {"source": 4, "target": 55, "w": 4.0}, {"source": 4, "target": 56, "w": 57.0}, {"source": 4, "target": 58, "w": 1.0}, {"source": 4, "target": 59, "w": 4.0}, {"source": 4, "target": 60, "w": 1.0}, {"source": 4, "target": 61, "w": 2.0}, {"source": 4, "target": 62, "w": 11.0}, {"source": 4, "target": 64, "w": 4.0}, {"source": 4, "target": 65, "w": 2.0}, {"source": 4, "target": 66, "w": 3.0}, {"source": 4, "target": 68, "w": 9.0}, {"source": 4, "target": 69, "w": 2.0}, {"source": 4, "target": 70, "w": 4.0}, {"source": 4, "target": 72, "w": 2.0}, {"source": 4, "target": 74, "w": 12.0}, {"source": 4, "target": 78, "w": 1.0}, {"source": 5, "target": 4, "w": 2.0}, {"source": 5, "target": 44, "w": 1.0}, {"source": 6, "target": 4, "w": 7.0}, {"source": 6, "target": 20, "w": 1.0}, {"source": 6, "target": 44, "w": 2.0}, {"source": 6, "target": 68, "w": 1.0}, {"source": 6, "target": 74, "w": 2.0}, {"source": 7, "target": 4, "w": 3.0}, {"source": 7, "target": 66, "w": 1.0}, {"source": 8, "target": 4, "w": 37.0}, {"source": 8, "target": 9, "w": 1.0}, {"source": 8, "target": 10, "w": 18.0}, {"source": 8, "target": 11, "w": 98.0}, {"source": 8, "target": 12, "w": 2.0}, {"source": 8, "target": 14, "w": 3.0}, {"source": 8, "target": 18, "w": 4.0}, {"source": 8, "target": 24, "w": 12.0}, {"source": 8, "target": 44, "w": 26.0}, {"source": 8, "target": 54, "w": 9.0}, {"source": 8, "target": 56, "w": 3.0}, {"source": 8, "target": 58, "w": 2.0}, {"source": 8, "target": 61, "w": 2.0}, {"source": 8, "target": 65, "w": 2.0}, {"source": 8, "target": 66, "w": 1.0}, {"source": 8, "target": 67, "w": 1.0}, {"source": 8, "target": 68, "w": 2.0}, {"source": 8, "target": 71, "w": 2.0}, {"source": 8, "target": 74, "w": 10.0}, {"source": 9, "target": 4, "w": 7.0}, {"source": 9, "target": 20, "w": 2.0}, {"source": 9, "target": 68, "w": 1.0}, {"source": 9, "target": 74, "w": 1.0}, {"source": 10, "target": 4, "w": 5.0}, {"source": 10, "target": 8, "w": 8.0}, {"source": 10, "target": 14, "w": 2.0}, {"source": 10, "target": 44, "w": 1.0}, {"source": 11, "target": 4, "w": 2.0}, {"source": 11, "target": 8, "w": 4.0}, {"source": 11, "target": 10, "w": 161.0}, {"source": 12, "target": 56, "w": 1.0}, {"source": 13, "target": 20, "w": 2.0}, {"source": 13, "target": 24, "w": 1.0}, {"source": 13, "target": 44, "w": 1.0}, {"source": 13, "target": 54, "w": 1.0}, {"source": 15, "target": 4, "w": 2.0}, {"source": 15, "target": 24, "w": 3.0}, {"source": 16, "target": 1, "w": 1.0}, {"source": 16, "target": 4, "w": 14.0}, {"source": 16, "target": 8, "w": 2.0}, {"source": 16, "target": 17, "w": 6.0}, {"source": 16, "target": 21, "w": 1.0}, {"source": 16, "target": 24, "w": 3.0}, {"source": 16, "target": 27, "w": 1.0}, {"source": 16, "target": 60, "w": 2.0}, {"source": 16, "target": 62, "w": 4.0}, {"source": 16, "target": 74, "w": 2.0}, {"source": 16, "target": 78, "w": 1.0}, {"source": 17, "target": 4, "w": 12.0}, {"source": 17, "target": 16, "w": 13.0}, {"source": 17, "target": 29, "w": 2.0}, {"source": 17, "target": 43, "w": 4.0}, {"source": 17, "target": 62, "w": 10.0}, {"source": 17, "target": 74, "w": 3.0}, {"source": 17, "target": 78, "w": 1.0}, {"source": 18, "target": 4, "w": 6.0}, {"source": 18, "target": 8, "w": 2.0}, {"source": 18, "target": 20, "w": 2.0}, {"source": 18, "target": 44, "w": 2.0}, {"source": 18, "target": 74, "w": 3.0}, {"source": 19, "target": 4, "w": 1.0}, {"source": 19, "target": 18, "w": 11.0}, {"source": 19, "target": 20, "w": 4.0}, {"source": 20, "target": 4, "w": 3.0}, {"source": 20, "target": 6, "w": 1.0}, {"source": 20, "target": 9, "w": 1.0}, {"source": 20, "target": 13, "w": 1.0}, {"source": 20, "target": 44, "w": 1.0}, {"source": 20, "target": 65, "w": 1.0}, {"source": 20, "target": 74, "w": 3.0}, {"source": 21, "target": 4, "w": 4.0}, {"source": 21, "target": 24, "w": 2.0}, {"source": 21, "target": 62, "w": 7.0}, {"source": 22, "target": 4, "w": 8.0}, {"source": 22, "target": 24, "w": 1.0}, {"source": 22, "target": 68, "w": 1.0}, {"source": 23, "target": 4, "w": 5.0}, {"source": 23, "target": 44, "w": 2.0}, {"source": 23, "target": 68, "w": 1.0}, {"source": 24, "target": 0, "w": 1.0}, {"source": 24, "target": 1, "w": 1.0}, {"source": 24, "target": 4, "w": 95.0}, {"source": 24, "target": 5, "w": 2.0}, {"source": 24, "target": 6, "w": 1.0}, {"source": 24, "target": 8, "w": 10.0}, {"source": 24, "target": 10, "w": 5.0}, {"source": 24, "target": 12, "w": 1.0}, {"source": 24, "target": 15, "w": 2.0}, {"source": 24, "target": 16, "w": 1.0}, {"source": 24, "target": 21, "w": 1.0}, {"source": 24, "target": 22, "w": 1.0}, {"source": 24, "target": 25, "w": 20.0}, {"source": 24, "target": 26, "w": 1.0}, {"source": 24, "target": 27, "w": 7.0}, {"source": 24, "target": 28, "w": 2.0}, {"source": 24, "target": 32, "w": 1.0}, {"source": 24, "target": 44, "w": 36.0}, {"source": 24, "target": 45, "w": 1.0}, {"source": 24, "target": 54, "w": 2.0}, {"source": 24, "target": 55, "w": 1.0}, {"source": 24, "target": 56, "w": 5.0}, {"source": 24, "target": 58, "w": 1.0}, {"source": 24, "target": 61, "w": 1.0}, {"source": 24, "target": 62, "w": 1.0}, {"source": 24, "target": 64, "w": 1.0}, {"source": 24, "target": 65, "w": 15.0}, {"source": 24, "target": 66, "w": 2.0}, {"source": 24, "target": 67, "w": 3.0}, {"source": 24, "target": 68, "w": 9.0}, {"source": 24, "target": 70, "w": 1.0}, {"source": 24, "target": 74, "w": 11.0}, {"source": 25, "target": 24, "w": 20.0}, {"source": 26, "target": 4, "w": 3.0}, {"source": 26, "target": 68, "w": 1.0}, {"source": 27, "target": 24, "w": 8.0}, {"source": 27, "target": 44, "w": 2.0}, {"source": 27, "target": 54, "w": 2.0}, {"source": 27, "target": 71, "w": 1.0}, {"source": 29, "target": 8, "w": 8.0}, {"source": 29, "target": 41, "w": 2.0}, {"source": 29, "target": 44, "w": 4.0}, {"source": 29, "target": 62, "w": 2.0}, {"source": 30, "target": 4, "w": 9.0}, {"source": 30, "target": 8, "w": 66.0}, {"source": 30, "target": 10, "w": 5.0}, {"source": 30, "target": 12, "w": 1.0}, {"source": 30, "target": 24, "w": 22.0}, {"source": 30, "target": 29, "w": 73.0}, {"source": 30, "target": 44, "w": 17.0}, {"source": 30, "target": 74, "w": 2.0}, {"source": 31, "target": 8, "w": 2.0}, {"source": 31, "target": 23, "w": 2.0}, {"source": 31, "target": 24, "w": 2.0}, {"source": 31, "target": 29, "w": 4.0}, {"source": 31, "target": 34, "w": 2.0}, {"source": 31, "target": 44, "w": 3.0}, {"source": 31, "target": 52, "w": 1.0}, {"source": 32, "target": 4, "w": 14.0}, {"source": 32, "target": 8, "w": 21.0}, {"source": 32, "target": 10, "w": 1.0}, {"source": 32, "target": 22, "w": 8.0}, {"source": 32, "target": 24, "w": 104.0}, {"source": 32, "target": 29, "w": 121.0}, {"source": 32, "target": 44, "w": 12.0}, {"source": 32, "target": 65, "w": 2.0}, {"source": 32, "target": 74, "w": 3.0}, {"source": 33, "target": 8, "w": 2.0}, {"source": 33, "target": 24, "w": 6.0}, {"source": 33, "target": 29, "w": 5.0}, {"source": 33, "target": 44, "w": 2.0}, {"source": 34, "target": 4, "w": 2.0}, {"source": 34, "target": 8, "w": 7.0}, {"source": 34, "target": 24, "w": 6.0}, {"source": 34, "target": 29, "w": 29.0}, {"source": 34, "target": 30, "w": 7.0}, {"source": 34, "target": 44, "w": 44.0}, {"source": 34, "target": 52, "w": 2.0}, {"source": 34, "target": 56, "w": 1.0}, {"source": 35, "target": 4, "w": 30.0}, {"source": 35, "target": 5, "w": 1.0}, {"source": 35, "target": 8, "w": 13.0}, {"source": 35, "target": 12, "w": 1.0}, {"source": 35, "target": 24, "w": 92.0}, {"source": 35, "target": 29, "w": 105.0}, {"source": 35, "target": 30, "w": 1.0}, {"source": 35, "target": 32, "w": 1.0}, {"source": 35, "target": 44, "w": 34.0}, {"source": 35, "target": 45, "w": 1.0}, {"source": 35, "target": 56, "w": 2.0}, {"source": 35, "target": 74, "w": 4.0}, {"source": 36, "target": 4, "w": 10.0}, {"source": 36, "target": 24, "w": 3.0}, {"source": 36, "target": 29, "w": 5.0}, {"source": 36, "target": 40, "w": 1.0}, {"source": 37, "target": 16, "w": 4.0}, {"source": 37, "target": 24, "w": 1.0}, {"source": 37, "target": 29, "w": 16.0}, {"source": 37, "target": 55, "w": 1.0}, {"source": 37, "target": 62, "w": 6.0}, {"source": 37, "target": 74, "w": 1.0}, {"source": 38, "target": 4, "w": 1.0}, {"source": 38, "target": 8, "w": 1.0}, {"source": 38, "target": 24, "w": 16.0}, {"source": 38, "target": 29, "w": 16.0}, {"source": 39, "target": 4, "w": 4.0}, {"source": 39, "target": 24, "w": 1.0}, {"source": 39, "target": 29, "w": 7.0}, {"source": 40, "target": 4, "w": 23.0}, {"source": 40, "target": 8, "w": 2.0}, {"source": 40, "target": 24, "w": 6.0}, {"source": 40, "target": 29, "w": 25.0}, {"source": 40, "target": 42, "w": 2.0}, {"source": 40, "target": 44, "w": 2.0}, {"source": 40, "target": 54, "w": 2.0}, {"source": 40, "target": 74, "w": 4.0}, {"source": 41, "target": 4, "w": 9.0}, {"source": 41, "target": 8, "w": 4.0}, {"source": 41, "target": 10, "w": 1.0}, {"source": 41, "target": 56, "w": 1.0}, {"source": 42, "target": 4, "w": 6.0}, {"source": 42, "target": 61, "w": 1.0}, {"source": 42, "target": 68, "w": 2.0}, {"source": 42, "target": 74, "w": 2.0}, {"source": 43, "target": 4, "w": 2.0}, {"source": 43, "target": 16, "w": 6.0}, {"source": 43, "target": 24, "w": 1.0}, {"source": 43, "target": 74, "w": 1.0}, {"source": 44, "target": 0, "w": 1.0}, {"source": 44, "target": 4, "w": 55.0}, {"source": 44, "target": 6, "w": 2.0}, {"source": 44, "target": 8, "w": 13.0}, {"source": 44, "target": 18, "w": 1.0}, {"source": 44, "target": 20, "w": 1.0}, {"source": 44, "target": 23, "w": 1.0}, {"source": 44, "target": 24, "w": 8.0}, {"source": 44, "target": 34, "w": 2.0}, {"source": 44, "target": 45, "w": 27.0}, {"source": 44, "target": 50, "w": 1.0}, {"source": 44, "target": 51, "w": 2.0}, {"source": 44, "target": 52, "w": 10.0}, {"source": 44, "target": 53, "w": 3.0}, {"source": 44, "target": 56, "w": 5.0}, {"source": 44, "target": 68, "w": 2.0}, {"source": 44, "target": 74, "w": 1.0}, {"source": 45, "target": 1, "w": 1.0}, {"source": 45, "target": 4, "w": 16.0}, {"source": 45, "target": 6, "w": 2.0}, {"source": 45, "target": 8, "w": 1.0}, {"source": 45, "target": 9, "w": 1.0}, {"source": 45, "target": 10, "w": 1.0}, {"source": 45, "target": 18, "w": 13.0}, {"source": 45, "target": 20, "w": 1.0}, {"source": 45, "target": 22, "w": 1.0}, {"source": 45, "target": 23, "w": 2.0}, {"source": 45, "target": 24, "w": 2.0}, {"source": 45, "target": 44, "w": 6.0}, {"source": 45, "target": 46, "w": 13.0}, {"source": 45, "target": 47, "w": 1.0}, {"source": 45, "target": 49, "w": 1.0}, {"source": 45, "target": 50, "w": 1.0}, {"source": 45, "target": 55, "w": 1.0}, {"source": 45, "target": 61, "w": 1.0}, {"source": 45, "target": 65, "w": 6.0}, {"source": 45, "target": 66, "w": 1.0}, {"source": 46, "target": 4, "w": 13.0}, {"source": 46, "target": 18, "w": 1.0}, {"source": 46, "target": 20, "w": 13.0}, {"source": 46, "target": 22, "w": 1.0}, {"source": 46, "target": 24, "w": 1.0}, {"source": 46, "target": 44, "w": 1.0}, {"source": 47, "target": 4, "w": 1.0}, {"source": 47, "target": 18, "w": 1.0}, {"source": 47, "target": 20, "w": 1.0}, {"source": 47, "target": 48, "w": 1.0}, {"source": 48, "target": 4, "w": 1.0}, {"source": 48, "target": 20, "w": 1.0}, {"source": 48, "target": 65, "w": 2.0}, {"source": 49, "target": 4, "w": 1.0}, {"source": 50, "target": 4, "w": 8.0}, {"source": 50, "target": 68, "w": 2.0}, {"source": 52, "target": 9, "w": 1.0}, {"source": 52, "target": 23, "w": 1.0}, {"source": 52, "target": 44, "w": 22.0}, {"source": 52, "target": 65, "w": 1.0}, {"source": 53, "target": 4, "w": 1.0}, {"source": 53, "target": 24, "w": 1.0}, {"source": 53, "target": 44, "w": 4.0}, {"source": 54, "target": 4, "w": 5.0}, {"source": 54, "target": 24, "w": 2.0}, {"source": 54, "target": 44, "w": 2.0}, {"source": 55, "target": 4, "w": 5.0}, {"source": 55, "target": 24, "w": 1.0}, {"source": 55, "target": 68, "w": 1.0}, {"source": 55, "target": 74, "w": 1.0}, {"source": 56, "target": 4, "w": 76.0}, {"source": 56, "target": 8, "w": 34.0}, {"source": 56, "target": 24, "w": 1.0}, {"source": 56, "target": 44, "w": 1.0}, {"source": 56, "target": 57, "w": 1.0}, {"source": 57, "target": 8, "w": 1.0}, {"source": 58, "target": 62, "w": 7.0}, {"source": 58, "target": 74, "w": 1.0}, {"source": 59, "target": 4, "w": 5.0}, {"source": 59, "target": 8, "w": 1.0}, {"source": 59, "target": 24, "w": 1.0}, {"source": 59, "target": 44, "w": 1.0}, {"source": 60, "target": 4, "w": 4.0}, {"source": 60, "target": 62, "w": 6.0}, {"source": 60, "target": 69, "w": 1.0}, {"source": 61, "target": 4, "w": 1.0}, {"source": 62, "target": 4, "w": 5.0}, {"source": 62, "target": 16, "w": 4.0}, {"source": 62, "target": 17, "w": 1.0}, {"source": 62, "target": 18, "w": 4.0}, {"source": 62, "target": 19, "w": 1.0}, {"source": 62, "target": 29, "w": 22.0}, {"source": 62, "target": 37, "w": 2.0}, {"source": 62, "target": 41, "w": 2.0}, {"source": 62, "target": 60, "w": 7.0}, {"source": 62, "target": 74, "w": 1.0}, {"source": 63, "target": 4, "w": 4.0}, {"source": 63, "target": 16, "w": 3.0}, {"source": 63, "target": 19, "w": 2.0}, {"source": 63, "target": 20, "w": 2.0}, {"source": 63, "target": 29, "w": 4.0}, {"source": 63, "target": 37, "w": 2.0}, {"source": 63, "target": 41, "w": 2.0}, {"source": 63, "target": 62, "w": 19.0}, {"source": 63, "target": 78, "w": 1.0}, {"source": 64, "target": 24, "w": 3.0}, {"source": 64, "target": 62, "w": 4.0}, {"source": 65, "target": 4, "w": 14.0}, {"source": 65, "target": 20, "w": 2.0}, {"source": 65, "target": 24, "w": 1.0}, {"source": 65, "target": 68, "w": 2.0}, {"source": 66, "target": 4, "w": 1.0}, {"source": 66, "target": 20, "w": 2.0}, {"source": 67, "target": 8, "w": 1.0}, {"source": 67, "target": 24, "w": 1.0}, {"source": 67, "target": 74, "w": 1.0}, {"source": 68, "target": 4, "w": 1.0}, {"source": 69, "target": 4, "w": 1.0}, {"source": 69, "target": 62, "w": 4.0}, {"source": 70, "target": 4, "w": 9.0}, {"source": 70, "target": 24, "w": 1.0}, {"source": 71, "target": 13, "w": 2.0}, {"source": 71, "target": 24, "w": 2.0}, {"source": 71, "target": 54, "w": 1.0}, {"source": 72, "target": 4, "w": 3.0}, {"source": 72, "target": 8, "w": 1.0}, {"source": 72, "target": 14, "w": 2.0}, {"source": 72, "target": 24, "w": 1.0}, {"source": 72, "target": 61, "w": 1.0}, {"source": 72, "target": 74, "w": 3.0}, {"source": 73, "target": 4, "w": 3.0}, {"source": 73, "target": 22, "w": 1.0}, {"source": 74, "target": 4, "w": 8.0}, {"source": 74, "target": 8, "w": 8.0}, {"source": 74, "target": 18, "w": 4.0}, {"source": 74, "target": 20, "w": 5.0}, {"source": 74, "target": 24, "w": 3.0}, {"source": 74, "target": 41, "w": 2.0}, {"source": 74, "target": 42, "w": 1.0}, {"source": 75, "target": 20, "w": 4.0}, {"source": 76, "target": 4, "w": 4.0}, {"source": 76, "target": 41, "w": 4.0}, {"source": 77, "target": 4, "w": 1.0}, {"source": 77, "target": 60, "w": 6.0}, {"source": 78, "target": 4, "w": 3.0}, {"source": 78, "target": 17, "w": 1.0}, {"source": 78, "target": 24, "w": 2.0}, {"source": 78, "target": 62, "w": 1.0}, {"source": 79, "target": 4, "w": 1.0}, {"source": 79, "target": 24, "w": 1.0}, {"source": 79, "target": 29, "w": 1.0}, {"source": 79, "target": 35, "w": 1.0}], "meta": {"project": "BukkitAPI-Translation-Group__Chinese_BukkitAPI", "n_nodes": 80, "n_edges": 409, "graph_level_smells": ["Dense Structure"], "dense_structure": 1, "label_counts": {"CD": 39, "UD": 10, "AI": 1, "GC": 9, "FC": 18, "SF": 0}, "matching": {"arcan_nodes": 80, "designite_packages": 80, "matched": 80, "coverage": 1.0, "arcan_only": [], "designite_only": [], "smelly_packages_not_in_graph": []}, "dropped_containers": {"default_package": [], "empty_container": ["net.md_5.bungee.api.chat.hover", "org", "net", "net.md_5", "org.spigotmc.event", "net.md_5.bungee"]}, "unknown_designite_smells": []}};
+const LABELS = ["CD","UD","AI","GC","FC","SF"];
+const NAMES = {CD:"Cyclic Dependency",UD:"Unstable Dependency",AI:"Ambiguous Interface",
+  GC:"God Component",FC:"Feature Concentration",SF:"Scattered Functionality"};
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const nodes = DATA.nodes.map(d => ({...d, nSmell: LABELS.reduce((s,k)=>s+d[k],0),
+  short: d.name.split(".").slice(-1)[0] || d.name}));
+const byId = new Map(nodes.map(d => [d.id, d]));
+const links = DATA.edges.map(e => ({...e}));
+const meta = DATA.meta;
+let current = null;
+
+// ---------- sidebar ----------
+document.getElementById("title").textContent = meta.project;
+document.getElementById("nN").textContent = nodes.length;
+document.getElementById("nE").textContent = links.length;
+document.getElementById("nS").textContent = nodes.filter(d => d.nSmell > 0).length;
+document.getElementById("names").innerHTML = nodes.map(d => `<option value="${d.name}">`).join("");
+document.getElementById("smellTable").innerHTML = LABELS.map(k =>
+  `<tr><td><i class="dot" style="background:var(--${k})"></i>${NAMES[k]}</td>
+   <td>${meta.label_counts[k]} / ${nodes.length}</td></tr>`).join("");
+document.getElementById("ds").textContent = meta.dense_structure
+  ? "Dense Structure detected at project level (not assigned to individual nodes)."
+  : "Dense Structure not detected.";
+const unmasked = nodes.filter(d => !d.mask).length;
+if (unmasked) document.getElementById("ds").textContent +=
+  ` ${unmasked} nodes not analysed by Designite (dashed outline): labels unavailable.`;
+const rank = [...nodes].sort((a,b) => b.atdi - a.atdi).slice(0,10);
+document.getElementById("rank").innerHTML = rank.map(d =>
+  `<li><button data-id="${d.id}">${d.short}</button> <span class="v">${d.atdi.toFixed(1)}</span></li>`).join("");
+document.querySelectorAll("#rank button").forEach(b =>
+  b.addEventListener("click", () => select(byId.get(+b.dataset.id), true)));
+
+// ---------- graph ----------
+const svg = d3.select("#svg"), g = svg.append("g");
+const W = () => svg.node().clientWidth, H = () => svg.node().clientHeight;
+const maxLoc = d3.max(nodes, d => d.LOC) || 1;
+const r = d3.scaleSqrt().domain([0, maxLoc]).range([4, 26]);
+const wScale = d3.scaleLog().domain([1, d3.max(links, d => d.w) || 1]).range([0.6, 3.5]);
+const maxAtdi = d3.max(nodes, d => d.atdi) || 1;
+
+svg.append("defs").append("marker").attr("id","arrow").attr("viewBox","0 -4 8 8")
+  .attr("refX",8).attr("refY",0).attr("markerUnits","userSpaceOnUse").attr("markerWidth",9).attr("markerHeight",9).attr("orient","auto")
+  .append("path").attr("d","M0,-4L8,0L0,4").attr("fill","var(--edge)");
+
+const link = g.append("g").selectAll("path").data(links).join("path")
+  .attr("class","link").attr("stroke-width", d => wScale(Math.max(1,d.w))).attr("marker-end","url(#arrow)");
+const node = g.append("g").selectAll("g").data(nodes).join("g")
+  .attr("class", d => "node" + (d.mask ? "" : " nomask")).attr("tabindex",0)
+  .attr("aria-label", d => d.name);
+node.append("circle").attr("r", d => r(d.LOC));
+node.append("text").attr("dy", d => -r(d.LOC) - 4).attr("text-anchor","middle").text(d => d.short);
+
+const sim = d3.forceSimulation(nodes)
+  .force("link", d3.forceLink(links).id(d => d.id).distance(95).strength(0.2))
+  .force("charge", d3.forceManyBody().strength(-420))
+  .force("collide", d3.forceCollide(d => r(d.LOC) + 6))
+  .force("x", d3.forceX(() => W()/2).strength(0.05))
+  .force("y", d3.forceY(() => H()/2).strength(0.05))
+  .on("tick", ticked).on("end", fit);
+if (matchMedia("(prefers-reduced-motion: reduce)").matches) { sim.stop(); for (let i=0;i<300;i++) sim.tick(); ticked(); setTimeout(fit, 0); }
+let fitted = false;
+function fit(){
+  if (fitted) return; fitted = true;
+  const pad = 40, xs = nodes.map(d => d.x), ys = nodes.map(d => d.y);
+  const x0 = d3.min(xs) - pad, x1 = d3.max(xs) + pad, y0 = d3.min(ys) - pad, y1 = d3.max(ys) + pad;
+  const k = Math.min(2, 0.95 / Math.max((x1 - x0) / W(), (y1 - y0) / H()));
+  svg.transition().duration(600).call(zoom.transform,
+    d3.zoomIdentity.translate(W()/2, H()/2).scale(k).translate(-(x0 + x1)/2, -(y0 + y1)/2));
+}
+
+function ticked(){
+  link.attr("d", d => {
+    const dx = d.target.x - d.source.x, dy = d.target.y - d.source.y, L = Math.hypot(dx,dy) || 1;
+    const rt = r(d.target.LOC) + 3, rs = r(d.source.LOC);
+    return `M${d.source.x + dx*rs/L},${d.source.y + dy*rs/L}L${d.target.x - dx*rt/L},${d.target.y - dy*rt/L}`;
+  });
+  node.attr("transform", d => `translate(${d.x},${d.y})`);
+}
+
+node.call(d3.drag()
+  .on("start", (e,d) => { if(!e.active) sim.alphaTarget(0.3).restart(); d.fx=d.x; d.fy=d.y; })
+  .on("drag", (e,d) => { d.fx=e.x; d.fy=e.y; })
+  .on("end", (e,d) => { if(!e.active) sim.alphaTarget(0); d.fx=null; d.fy=null; }));
+const zoom = d3.zoom().scaleExtent([0.2,6]).on("zoom", e => g.attr("transform", e.transform));
+svg.call(zoom).on("click", e => { if (e.target === svg.node()) select(null); });
+
+// ---------- colour ----------
+function colour(d){
+  const m = document.getElementById("colorBy").value;
+  if (m === "count") return css("--s" + Math.min(d.nSmell, 4));
+  if (m === "atdi") return d3.interpolateLab(css("--s0"), css("--s4"))(Math.sqrt(d.atdi / maxAtdi));
+  return d[m] ? css("--" + m) : css("--clean");
+}
+function legend(){
+  const m = document.getElementById("colorBy").value, el = document.getElementById("legend");
+  if (m === "count") el.innerHTML = [0,1,2,3,4].map(i =>
+    `<span><i style="background:var(--s${i})"></i>${i===4?"4+":i} ${i===1?"smell":"smells"}</span>`).join("");
+  else if (m === "atdi") el.innerHTML = `<span><i style="background:var(--s0)"></i>0</span>
+    <span><i style="background:var(--s4)"></i>${maxAtdi.toFixed(0)}</span>`;
+  else el.innerHTML = `<span><i style="background:var(--${m})"></i>affected</span>
+    <span><i style="background:var(--clean)"></i>not affected</span>`;
+  el.innerHTML += `<span>node size ∝ LOC</span>`;
+}
+function paint(){ node.select("circle").attr("fill", colour); legend(); }
+document.getElementById("colorBy").addEventListener("change", paint);
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", paint);
+paint();
+
+// ---------- labels ----------
+function labelsVisible(){
+  const all = document.getElementById("showLabels").checked;
+  node.select("text").style("display", d => all || r(d.LOC) > 12 || d === current ? null : "none");
+}
+document.getElementById("showLabels").addEventListener("change", labelsVisible);
+
+// ---------- tooltip ----------
+const tip = document.getElementById("tip");
+node.on("mouseenter", (e,d) => {
+  const s = LABELS.filter(k => d[k]).join(", ") || "none";
+  tip.innerHTML = `<b>${d.name}</b><br>LOC ${d.LOC} · FI ${d.FI} · FO ${d.FO}<br>Smells: ${s}`;
+  tip.style.display = "block";
+}).on("mousemove", e => {
+  const b = document.querySelector("main").getBoundingClientRect();
+  tip.style.left = (e.clientX - b.left + 14) + "px"; tip.style.top = (e.clientY - b.top + 14) + "px";
+}).on("mouseleave", () => tip.style.display = "none")
+  .on("click", (e,d) => { e.stopPropagation(); select(d); })
+  .on("keydown", (e,d) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(d); } });
+
+// ---------- selection ----------
+function select(d, center){
+  current = d;
+  node.classed("sel", n => n === d);
+  if (!d){ node.classed("dim", false); link.classed("dim", false); renderDetail(null); labelsVisible(); return; }
+  const out = links.filter(l => l.source === d), inc = links.filter(l => l.target === d);
+  const nb = new Set([d, ...out.map(l => l.target), ...inc.map(l => l.source)]);
+  node.classed("dim", n => !nb.has(n));
+  link.classed("dim", l => l.source !== d && l.target !== d);
+  renderDetail(d, out, inc); labelsVisible();
+  if (center) svg.transition().duration(500).call(zoom.translateTo, d.x, d.y);
+}
+function renderDetail(d, out, inc){
+  const el = document.getElementById("detail");
+  if (!d){ el.innerHTML = `<h2>Selected component</h2><p class="note">Select a node to inspect its features, labels, and dependencies.</p>`; return; }
+  const chips = LABELS.filter(k => d[k]).map(k => `<span class="chip" style="background:var(--${k})">${NAMES[k]}</span>`).join("")
+    || `<span class="chip none">${d.mask ? "No smells" : "Labels unavailable"}</span>`;
+  const f = (v, p=3) => Number.isInteger(v) ? v : v.toFixed(p);
+  const rows = [["Abstractness (Ab)",d.Ab],["Instability (In)",d.In],["Distance (D)",d.D],["Fan-in (FI)",d.FI],
+    ["Fan-out (FO)",d.FO],["Lines of code (LOC)",d.LOC],["PageRank (PR)",d.PR],["ATDI (Arcan)",d.atdi],["Classes",d.units]];
+  el.innerHTML = `<h2>Selected component</h2><div class="detail-name">${d.name}</div>
+    <div class="chips">${chips}</div>
+    <table>${rows.map(([k,v]) => `<tr><td>${k}</td><td>${f(v)}</td></tr>`).join("")}</table>
+    <p class="note">Efferent dependencies: ${out.length}. Afferent dependencies: ${inc.length}.</p>`;
+}
+document.getElementById("search").addEventListener("change", e => {
+  const d = nodes.find(n => n.name === e.target.value) || nodes.find(n => n.name.includes(e.target.value));
+  if (d) select(d, true);
+});
+labelsVisible();
+</script>
+</body>
+</html>

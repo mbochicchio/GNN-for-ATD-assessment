@@ -1,0 +1,25 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 166,
+  "source_files_removed": 1,
+  "source_files_after": 165,
+  "removed_share": 0.006,
+  "removed_by_rule": {
+    "R1_arcan_default": 1
+  },
+  "removed_dirs": [
+    {
+      "path": "src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "src/main/resources/psbc-merchant-toolkit/test-env",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

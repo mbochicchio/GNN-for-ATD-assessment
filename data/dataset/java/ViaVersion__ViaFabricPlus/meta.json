@@ -1,0 +1,39 @@
+{
+  "project": "ViaVersion__ViaFabricPlus",
+  "n_nodes": 173,
+  "n_edges": 462,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 21,
+    "UD": 5,
+    "AI": 9,
+    "GC": 0,
+    "FC": 26,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 173,
+    "designite_packages": 172,
+    "matched": 172,
+    "coverage": 0.9942,
+    "arcan_only": [
+      "com.viaversion.viafabricplus.features.v1_19_1"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com.viaversion.viafabricplus.injection.mixin",
+      "com.viaversion.viafabricplus.injection.mixin.features",
+      "com.viaversion.viafabricplus.protocoltranslator.impl.provider",
+      "com.viaversion.viafabricplus.injection.mixin.compat",
+      "com.viaversion.viafabricplus.injection.access",
+      "com",
+      "com.viaversion"
+    ]
+  },
+  "unknown_designite_smells": []
+}

@@ -1,0 +1,36 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 636,
+  "source_files_removed": 393,
+  "source_files_after": 243,
+  "removed_share": 0.6179,
+  "removed_by_rule": {
+    "R1_arcan_default": 393
+  },
+  "removed_dirs": [
+    {
+      "path": ".github/actions/release-train-test",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "spring-data-envers/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 16
+    },
+    {
+      "path": "spring-data-jpa/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 377
+    }
+  ],
+  "residual_test_files": 5,
+  "residual_examples": [
+    "spring-data-jpa/src/jmh/java/org/springframework/data/jpa/benchmark/AotRepositoryQueryMethodBenchmarks.java",
+    "spring-data-jpa/src/jmh/java/org/springframework/data/jpa/benchmark/RepositoryQueryMethodBenchmarks.java",
+    "spring-data-jpa/src/jmh/java/org/springframework/data/jpa/repository/query/HqlParserBenchmarks.java",
+    "spring-data-jpa/src/jmh/java/org/springframework/data/jpa/repository/query/JpaQueryParserColdStartBenchmarks.java",
+    "spring-data-jpa/src/jmh/java/org/springframework/data/jpa/repository/query/JSqlParserQueryEnhancerBenchmarks.java"
+  ]
+}

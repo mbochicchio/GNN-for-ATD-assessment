@@ -1,0 +1,57 @@
+{
+  "project": "Martin404__PayMap",
+  "n_nodes": 45,
+  "n_edges": 94,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 0,
+    "UD": 0,
+    "AI": 0,
+    "GC": 0,
+    "FC": 6,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 45,
+    "designite_packages": 45,
+    "matched": 45,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com",
+      "com.hugnew",
+      "com.hugnew.sps.services.pay.util.web",
+      "com.hugnew.sps.services.pay.util.web.ali.main",
+      "com.hugnew.sps",
+      "com.hugnew.core",
+      "com.hugnew.sps.services.pay.util.app.ali",
+      "com.hugnew.sps.services.pay.util.web.ali",
+      "com.hugnew.sps.services.pay.util.app.ali.main",
+      "com.hugnew.sps.services.pay.util.web.ali.bonded",
+      "com.hugnew.sps.services.pay.util.web.unionpay.upop",
+      "com.hugnew.sps.services.pay.util.app.ali.global",
+      "com.hugnew.sps.services.pay.util.web.unionpay",
+      "com.hugnew.sps.controllers",
+      "com.hugnew.sps.controllers.front",
+      "com.hugnew.core.web",
+      "com.hugnew.core.web.system",
+      "com.hugnew.sps.controllers.front.pc",
+      "com.hugnew.sps.services.pay.util.web.ali.global",
+      "com.hugnew.sps.controllers.front.mobile",
+      "com.hugnew.sps.services.pay",
+      "com.hugnew.sps.services.pay.util",
+      "com.hugnew.core.common",
+      "com.hugnew.core.common.model",
+      "com.hugnew.sps.services.pay.util.app",
+      "com.hugnew.sps.services.pay.util.app.wechat",
+      "com.hugnew.sps.controllers.front.open"
+    ]
+  },
+  "unknown_designite_smells": []
+}

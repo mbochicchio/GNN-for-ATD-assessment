@@ -1,0 +1,195 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 2376,
+  "source_files_removed": 703,
+  "source_files_after": 1673,
+  "removed_share": 0.2959,
+  "removed_by_rule": {
+    "R1_arcan_default": 703
+  },
+  "removed_dirs": [
+    {
+      "path": ".test-infra",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "tests",
+      "rule": "R1_arcan_default",
+      "source_files": 38
+    },
+    {
+      "path": ".github/actions/copy-test-reports",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "bookkeeper-benchmark/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "bookkeeper-common/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 34
+    },
+    {
+      "path": "bookkeeper-common-allocator/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "bookkeeper-http/servlet-http-server/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "bookkeeper-http/vertx-http-server/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "bookkeeper-server/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 339
+    },
+    {
+      "path": "circe-checksum/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 10
+    },
+    {
+      "path": "cpu-affinity/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "metadata-drivers/etcd/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 12
+    },
+    {
+      "path": "native-io/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "native-library-common/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "shaded/bookkeeper-server-tests-shaded",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "stats/bookkeeper-stats-providers/codahale-metrics-provider/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "stats/bookkeeper-stats-providers/prometheus-metrics-provider/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "stream/tests-common",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "stream/bk-grpc-name-resolver/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "stream/clients/java/all/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "stream/clients/java/base/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 28
+    },
+    {
+      "path": "stream/clients/java/kv/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 9
+    },
+    {
+      "path": "stream/clients/python/examples",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "stream/clients/python/tests",
+      "rule": "R1_arcan_default",
+      "source_files": 0
+    },
+    {
+      "path": "stream/common/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 18
+    },
+    {
+      "path": "stream/distributedlog/common/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    },
+    {
+      "path": "stream/distributedlog/core/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 78
+    },
+    {
+      "path": "stream/distributedlog/io/dlfs/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "stream/distributedlog/protocol/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "stream/proto/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "stream/server/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 2
+    },
+    {
+      "path": "stream/statelib/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 19
+    },
+    {
+      "path": "stream/storage/api/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "stream/storage/impl/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 29
+    },
+    {
+      "path": "tools/framework/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "tools/ledger/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 52
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

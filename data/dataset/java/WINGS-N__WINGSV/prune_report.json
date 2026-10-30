@@ -1,0 +1,23 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 303,
+  "source_files_removed": 13,
+  "source_files_after": 290,
+  "removed_share": 0.0429,
+  "removed_by_rule": {
+    "R1_arcan_default": 13
+  },
+  "removed_dirs": [
+    {
+      "path": "app/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 13
+    }
+  ],
+  "residual_test_files": 2,
+  "residual_examples": [
+    "app/src/androidTest/java/wings/v/BrotliCodecTest.java",
+    "app/src/androidTest/java/wings/v/ExampleInstrumentedTest.java"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 644,
+  "source_files_removed": 161,
+  "source_files_after": 483,
+  "removed_share": 0.25,
+  "removed_by_rule": {
+    "R2_java_build": 5,
+    "R1_arcan_default": 156
+  },
+  "removed_dirs": [
+    {
+      "path": "cruise-control/src/integrationTest",
+      "rule": "R2_java_build",
+      "source_files": 5
+    },
+    {
+      "path": "cruise-control/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 133
+    },
+    {
+      "path": "cruise-control-core/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 6
+    },
+    {
+      "path": "cruise-control-metrics-reporter/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 17
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

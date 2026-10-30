@@ -1,0 +1,36 @@
+{
+  "project": "duoec__duo-video",
+  "n_nodes": 27,
+  "n_edges": 104,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 5,
+    "UD": 3,
+    "AI": 0,
+    "GC": 1,
+    "FC": 8,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 27,
+    "designite_packages": 27,
+    "matched": 27,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com.duoec.base.dto",
+      "com",
+      "com.duoec",
+      "com.duoec.video.dto"
+    ]
+  },
+  "unknown_designite_smells": []
+}

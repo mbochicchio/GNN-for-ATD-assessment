@@ -1,0 +1,25 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 139,
+  "source_files_removed": 48,
+  "source_files_after": 91,
+  "removed_share": 0.3453,
+  "removed_by_rule": {
+    "R1_arcan_default": 48
+  },
+  "removed_dirs": [
+    {
+      "path": "jbake-core/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 45
+    },
+    {
+      "path": "jbake-dist/src/smoke-test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

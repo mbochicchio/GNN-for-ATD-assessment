@@ -1,0 +1,25 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 894,
+  "source_files_removed": 138,
+  "source_files_after": 756,
+  "removed_share": 0.1544,
+  "removed_by_rule": {
+    "R1_arcan_default": 138
+  },
+  "removed_dirs": [
+    {
+      "path": "src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 113
+    },
+    {
+      "path": "src/main/java/com/aliyun/openservices/log/sample",
+      "rule": "R1_arcan_default",
+      "source_files": 25
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

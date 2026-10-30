@@ -1,0 +1,41 @@
+{
+  "project": "yellowstonegames__SquidLib",
+  "n_nodes": 18,
+  "n_edges": 53,
+  "graph_level_smells": [
+    "Dense Structure"
+  ],
+  "dense_structure": 1,
+  "label_counts": {
+    "CD": 8,
+    "UD": 2,
+    "AI": 1,
+    "GC": 4,
+    "FC": 7,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 18,
+    "designite_packages": 17,
+    "matched": 17,
+    "coverage": 0.9444,
+    "arcan_only": [
+      "squidpony.annotation"
+    ],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com.badlogic.gdx.utils",
+      "com",
+      "com.badlogic",
+      "com.badlogic.gdx",
+      "squidpony.squidgrid.gui",
+      "squidpony.gdx",
+      "squidpony.store"
+    ]
+  },
+  "unknown_designite_smells": []
+}

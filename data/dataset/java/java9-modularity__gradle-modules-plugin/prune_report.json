@@ -1,0 +1,40 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 109,
+  "source_files_removed": 69,
+  "source_files_after": 40,
+  "removed_share": 0.633,
+  "removed_by_rule": {
+    "R1_arcan_default": 69
+  },
+  "removed_dirs": [
+    {
+      "path": "test-project",
+      "rule": "R1_arcan_default",
+      "source_files": 26
+    },
+    {
+      "path": "test-project-groovy",
+      "rule": "R1_arcan_default",
+      "source_files": 9
+    },
+    {
+      "path": "test-project-kotlin",
+      "rule": "R1_arcan_default",
+      "source_files": 7
+    },
+    {
+      "path": "test-project-mixed",
+      "rule": "R1_arcan_default",
+      "source_files": 19
+    },
+    {
+      "path": "src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 8
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

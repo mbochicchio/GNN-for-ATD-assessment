@@ -1,0 +1,25 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 202,
+  "source_files_removed": 42,
+  "source_files_after": 160,
+  "removed_share": 0.2079,
+  "removed_by_rule": {
+    "R1_arcan_default": 42
+  },
+  "removed_dirs": [
+    {
+      "path": "demo",
+      "rule": "R1_arcan_default",
+      "source_files": 35
+    },
+    {
+      "path": "gltf/test",
+      "rule": "R1_arcan_default",
+      "source_files": 7
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

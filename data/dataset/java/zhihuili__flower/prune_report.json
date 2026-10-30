@@ -1,0 +1,85 @@
+{
+  "lang": "java",
+  "applied": true,
+  "source_files_before": 418,
+  "source_files_removed": 185,
+  "source_files_after": 233,
+  "removed_share": 0.4426,
+  "removed_by_rule": {
+    "R1_arcan_default": 185
+  },
+  "removed_dirs": [
+    {
+      "path": "flower.center/flower.center.impl/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "flower.common/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 3
+    },
+    {
+      "path": "flower.config/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "flower.container/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "flower.core/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 31
+    },
+    {
+      "path": "flower.ddd/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 7
+    },
+    {
+      "path": "flower.filter/flower.filter.opentracing/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 8
+    },
+    {
+      "path": "flower.registry/flower.registry.simple/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 9
+    },
+    {
+      "path": "flower.registry/flower.registry.zookeeper/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 1
+    },
+    {
+      "path": "flower.sample/src/main/java/com/ly/train/flower/sample",
+      "rule": "R1_arcan_default",
+      "source_files": 97
+    },
+    {
+      "path": "flower.serializer/flower.serializer.hessian/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    },
+    {
+      "path": "flower.test/src/main/java/com/ly/train/flower/test",
+      "rule": "R1_arcan_default",
+      "source_files": 10
+    },
+    {
+      "path": "flower.tools/flower.tools.http/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 4
+    },
+    {
+      "path": "flower.web/src/test",
+      "rule": "R1_arcan_default",
+      "source_files": 8
+    }
+  ],
+  "residual_test_files": 0,
+  "residual_examples": []
+}

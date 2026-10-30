@@ -1,0 +1,40 @@
+{
+  "project": "WangJi92__arthas-idea-plugin",
+  "n_nodes": 27,
+  "n_edges": 60,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 5,
+    "UD": 3,
+    "AI": 0,
+    "GC": 1,
+    "FC": 4,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 27,
+    "designite_packages": 27,
+    "matched": 27,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com.github.idea.json",
+      "com.github.idea",
+      "com",
+      "com.github",
+      "com.github.idea.arthas",
+      "com.github.idea.arthas.plugin",
+      "com.github.idea.arthas.plugin.common",
+      "com.github.idea.json.parser.typevalue.jdk",
+      "com.github.idea.json.parser.typevalue.thirdlib",
+      "com.github.idea.arthas.plugin.action"
+    ]
+  },
+  "unknown_designite_smells": []
+}

@@ -1,0 +1,36 @@
+{
+  "project": "alibaba__bytekit",
+  "n_nodes": 17,
+  "n_edges": 42,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 3,
+    "UD": 4,
+    "AI": 0,
+    "GC": 2,
+    "FC": 6,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 17,
+    "designite_packages": 18,
+    "matched": 17,
+    "coverage": 0.9444,
+    "arcan_only": [],
+    "designite_only": [
+      "(default package)"
+    ],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com",
+      "com.alibaba.bytekit.asm.inst",
+      "com.alibaba",
+      "com.alibaba.bytekit.agent"
+    ]
+  },
+  "unknown_designite_smells": []
+}

@@ -1,0 +1,36 @@
+{
+  "project": "csx-bill__quick-boot",
+  "n_nodes": 20,
+  "n_edges": 35,
+  "graph_level_smells": [],
+  "dense_structure": 0,
+  "label_counts": {
+    "CD": 2,
+    "UD": 1,
+    "AI": 0,
+    "GC": 0,
+    "FC": 6,
+    "SF": 0
+  },
+  "matching": {
+    "arcan_nodes": 20,
+    "designite_packages": 20,
+    "matched": 20,
+    "coverage": 1.0,
+    "arcan_only": [],
+    "designite_only": [],
+    "smelly_packages_not_in_graph": []
+  },
+  "dropped_containers": {
+    "default_package": [],
+    "empty_container": [
+      "com.quick.boot.modules.common.config",
+      "com.quick.boot.modules",
+      "com.quick.boot.modules.system",
+      "com",
+      "com.quick.boot.modules.common",
+      "com.quick"
+    ]
+  },
+  "unknown_designite_smells": []
+}
